@@ -1,7 +1,7 @@
 <?php
 
 require_once '../config/database.php';
-require_once 'operation.php';
+require_once '../config/CRUD.php';
 
 $action = $_GET['action'];
 
@@ -61,16 +61,17 @@ function logout()
 function update()
 {
 	$obj = new Profile;
-	$obj->username = $_POST['username'];
-	$obj->firstName = $_POST['firstName'];
-	$obj->lastName = $_POST['lastName'];
-	$obj->email = $_POST['email'];
-	$obj->contact = $_POST['contact'];
-	$obj->address = $_POST['address'];
-	$obj->aboutMe = $_POST['aboutMe'];
-	$obj->linkdin = $_POST['linkdin'];
-	$obj->skype = $_POST['skype'];
-	$obj->updateOne($_GET['Id']);
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->username = $_POST['username'];
+	$newObj->firstName = $_POST['firstName'];
+	$newObj->lastName = $_POST['lastName'];
+	$newObj->email = $_POST['email'];
+	$newObj->contact = $_POST['contact'];
+	$newObj->address = $_POST['address'];
+	$newObj->aboutMe = $_POST['aboutMe'];
+	$newObj->linkdin = $_POST['linkdin'];
+	$newObj->skype = $_POST['skype'];
+	$obj->updateOne($newObj);
 
 	header('Location: ../user/?view=profileDisplay');
 }

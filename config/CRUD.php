@@ -2,14 +2,6 @@
 class Profile {
 	 /* Member variables */
 	 var $username;
-	 var $firstName;
-	 var $lastName;
-	 var $email;
-	 var $contact;
-	 var $linbdin;
-	 var $skype;
-	 var $aboutMe;
-	 var $address;
 
 	 /* Retrieve one record */
 	 function readOne($val){
@@ -27,17 +19,17 @@ class Profile {
 			}
 	 }
 
-	 function createOne(){
-		 mysql_query("insert into user set userName='$this->username',
-													 						 firstName='$this->firstName',
-																			 lastName='$this->lastName',
-																			 email='$this->email',
-																			 contact='$this->contact',
-																			 address='$this->address',
-																			 aboutMe='$this->aboutMe',
-																			 linkdin='$this->linkdin',
-																			 skype='$this->skype'
-													 					 	 ");
+	 function createOne($obj){
+		 mysql_query("insert into user set userName='$obj->username',
+																	firstName='$obj->firstName',
+																	lastName='$obj->lastName',
+																	email='$obj->email',
+																	contact='$obj->contact',
+																	address='$obj->address',
+																	aboutMe='$obj->aboutMe',
+																	linkdin='$obj->linkdin',
+																	skype='$obj->skype'
+																	");
 	 }
 
 	 function updateOne($obj){
