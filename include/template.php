@@ -16,8 +16,7 @@
                         <!--</a>-->
                         <!-- Image Logo -->
                         <a href="index.php" class="logo">
-                            <img src="../include/assets/images/logo_dark.png" alt="" height="24" class="logo-lg">
-                            <img src="../include/assets/images/logo_sm.png" alt="" height="24" class="logo-sm">
+                          Teamire
                         </a>
                     </div>
                     <!-- End Logo container-->
@@ -50,7 +49,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2017 © Adminox - Coderthemes.com
+                        2018 © Hyndrance - hyndrance.com
                     </div>
                 </div>
             </div>

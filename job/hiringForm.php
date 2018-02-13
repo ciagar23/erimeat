@@ -24,7 +24,6 @@ $pt->readList();
                                   <?php } ?>
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <label for="username">Position Type</label>
                                 <select class="form-control">

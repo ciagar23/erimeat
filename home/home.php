@@ -1,1 +1,1 @@
-Inbit Welcome Page!
+Teamire Welcome Page!

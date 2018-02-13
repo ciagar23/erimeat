@@ -1,4 +1,7 @@
 <div class="card-box">
+  <div class="text-center">
+      <h3 class="m-b-30 m-t-20">Search jobs</h3>
+  </div>
   <form method="GET">
   <div class="input-group">
     <input type="hidden" name="view" value="jobList">

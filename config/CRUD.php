@@ -60,9 +60,9 @@ class Profile {
  	 }
 
  	 /* Retrieve one record */
- 	 function readList(){
+ 	 function readList($s){
  		 $items = array();
- 	 		$query = mysql_query("select * from job");
+ 	 		$query = mysql_query("select * from job where position like '%$s%' or jobTitle like '%$s%' ");
  			while($o=mysql_fetch_object($query))
  			{
  			    array_push($items, $o);
