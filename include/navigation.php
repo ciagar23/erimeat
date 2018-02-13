@@ -6,15 +6,15 @@
         <li class="has-submenu">
             <a href="#"><i class="fi-air-play"></i>Employer</a>
             <ul class="submenu">
-                <li><a href="#">Request Talent</a></li>
-                <li><a href="#">Search Candidates</a></li>
+                <li><a href="../job/?view=hiringForm">Request Talent</a></li>
+                <li><a href="">Search Candidates</a></li>
             </ul>
         </li>
 
         <li class="has-submenu">
             <a href="#"><i class="fi-air-play"></i>Job Seeker</a>
             <ul class="submenu">
-                <li><a href="#">Search Job</a></li>
+                <li><a href="../job/?view=searchJob">Search Job</a></li>
                 <li><a href="#">Submit Resume</a></li>
             </ul>
         </li>

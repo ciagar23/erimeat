@@ -11,9 +11,17 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
-	default :
-		$content 	= 'profileForm.php';
+	case 'searchJob' :
+		$content 	= 'searchJob.php';
 		$template	= '../include/template.php';
+		break;
+
+	case 'jobList' :
+		$content 	= 'jobList.php';
+		$template	= '../include/template.php';
+		break;
+
+	default :
 }
 require_once $template;
 
