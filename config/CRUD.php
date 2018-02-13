@@ -18,6 +18,7 @@ class Profile {
 			{
 			    array_push($items, $o);
 			}
+			return $items;
 	 }
 
 	 function createOne($obj){
@@ -66,6 +67,7 @@ class Profile {
  			{
  			    array_push($items, $o);
  			}
+			return $items;
  	 }
 
  	 function createOne($obj){
@@ -77,7 +79,8 @@ class Profile {
  																	workEmail='$obj->workEmail',
  																	jobTitle='$obj->jobTitle',
  																	businessPhone='$obj->businessPhone',
- 																	owner='$obj->owner'
+ 																	owner='$obj->owner',
+ 																	createDate=NOW()
  																	");
  	 }
 
@@ -90,7 +93,8 @@ class Profile {
  																 workEmail='$obj->workEmail',
  																 jobTitle='$obj->jobTitle',
  																 businessPhone='$obj->businessPhone',
- 																 owner='$obj->owner'
+ 																 owner='$obj->owner',
+																 createDate=NOW()
  																 where Id='$obj->Id'
  																 ");
  	 }
@@ -114,6 +118,7 @@ class Profile {
 			 {
 					 array_push($items, $o);
 			 }
+ 			return $items;
 		}
 
 		function createOne($obj){
@@ -121,7 +126,7 @@ class Profile {
 																	 coverLetter='$obj->coverLetter',
 																	 resume='$obj->resume',
 																	 owner='$obj->owner',
-																	 createDate='$obj->createDate'
+  																 createDate=NOW()
 																	 ");
 		}
 
@@ -130,7 +135,7 @@ class Profile {
 																	coverLetter='$obj->coverLetter',
 																	resume='$obj->resume',
 																	owner='$obj->owner',
-																	createDate='$obj->createDate'
+ 																	createDate=NOW()
 																	where Id='$obj->Id'
 																	");
 		}
@@ -154,19 +159,20 @@ class Profile {
  			 {
  					 array_push($items, $o);
  			 }
+ 			return $items;
  		}
 
  		function createOne($obj){
  			mysql_query("insert into employee set jobId='$obj->jobId',
  																	 employee='$obj->employee',
- 																	 createDate='$obj->createDate'
+  																 createDate=NOW()
  																	 ");
  		}
 
  		function updateOne($obj){
  			mysql_query("update employee set jobId='$obj->jobId',
  																	employee='$obj->employee',
- 																	createDate='$obj->createDate'
+ 																	createDate=NOW()
  																	where Id='$obj->Id'
  																	");
  		}
@@ -183,6 +189,7 @@ class Profile {
  			 {
  					 array_push($items, $o);
  			 }
+ 			return $items;
  		}
  	 }
 
@@ -197,6 +204,7 @@ class Profile {
 				 {
 						 array_push($items, $o);
 				 }
+	 			return $items;
 			}
 		 }
 

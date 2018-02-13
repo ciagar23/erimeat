@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.28-MariaDB)
-# Date: 2018-02-13 21:16:10
+# Date: 2018-02-13 22:32:09
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -65,6 +65,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (1,0,0,'dsfds','324323','234','343','3434','343','employee',NULL),(2,1,4,'pppppppppp','cccccccccccc','cccccccccccccccc','wwwwwwwwwwwwwwww','jjjjjjjjjjj','343','dsfdsf',NULL),(3,3,3,'444444444444','33333333333','444444444444','44444444444','66666666666','555555555555','employee',NULL),(4,3,3,'444444444444','33333333333','444444444444','234','66666666666','555555555555','employee',NULL),(5,7,7,'uihiu','jkkjkjh','kjhkjhkjh','kjhkjh','kjhkjh','kjhkjh','employee','0000-00-00 00:00:00'),(6,7,7,'uihyiu','hiuhui','iuhiu','hiuh','iuh','iuhiuh','employee','2018-02-13 22:07:54'),(7,0,0,'kjnlkjKJNLK','LKNLKLKN','LKNKLNLKNLKNLKNL','LKNLKN','LKNLK','NLKNLKN','employee','2018-02-13 22:15:59'),(8,0,0,'Web developer','tekinbox','\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo','dsffds@dsfdsf.com','Developer','454543','employee','2018-02-13 22:19:34');
 
 #
 # Structure for table "job_function"

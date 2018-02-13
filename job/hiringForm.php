@@ -1,3 +1,12 @@
+<?php
+
+$jf = new JobFunction;
+$jf->readList();
+
+$pt = new PositionType;
+$pt->readList();
+
+?>
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
@@ -7,15 +16,22 @@
 
                     <div class="row m-t-20">
                         <div class="col-sm-6">
-
                             <div class="form-group">
                                 <label for="firstname">Job Function</label>
-                                <input type="text" class="form-control" id="firstname" name="jobFunctionId"  placeholder="">
+                                <select class="form-control">
+                                  <?php foreach($jf->readList() as $row) {?>
+                                    <option value="<?=$row-Id;?>"><?=$row->option;?></option>
+                                  <?php } ?>
+                                </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="username">Position Type</label>
-                                <input type="text" class="form-control" id="username" name="positionTypeId" placeholder="">
+                                <select class="form-control">
+                                  <?php foreach($pt->readList() as $row) {?>
+                                    <option value="<?=$row-Id;?>"><?=$row->option;?></option>
+                                  <?php } ?>
+                                </select>
                             </div>
 
                             <div class="form-group">
