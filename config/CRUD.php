@@ -9,6 +9,7 @@ class Profile {
 	 	 	$get = mysql_fetch_object($query);
 			return $get;
 	 }
+
 	 /* Retrieve one record */
 	 function readList(){
 		 $items = array();
@@ -56,6 +57,7 @@ class Profile {
  	 	 	$get = mysql_fetch_object($query);
  			return $get;
  	 }
+
  	 /* Retrieve one record */
  	 function readList(){
  		 $items = array();
@@ -93,5 +95,109 @@ class Profile {
  																 ");
  	 }
   }
+
+
+	class Application {
+
+		/* Retrieve one record */
+		function readOne($val){
+			 $query = mysql_query("select * from application where Id='$val'");
+			 $get = mysql_fetch_object($query);
+			 return $get;
+		}
+
+		/* Retrieve one record */
+		function readList(){
+			$items = array();
+			 $query = mysql_query("select * from application");
+			 while($o=mysql_fetch_object($query))
+			 {
+					 array_push($items, $o);
+			 }
+		}
+
+		function createOne($obj){
+			mysql_query("insert into application set jobId='$obj->jobId',
+																	 coverLetter='$obj->coverLetter',
+																	 resume='$obj->resume',
+																	 owner='$obj->owner',
+																	 createDate='$obj->createDate'
+																	 ");
+		}
+
+		function updateOne($obj){
+			mysql_query("update application set jobId='$obj->jobId',
+																	coverLetter='$obj->coverLetter',
+																	resume='$obj->resume',
+																	owner='$obj->owner',
+																	createDate='$obj->createDate'
+																	where Id='$obj->Id'
+																	");
+		}
+	 }
+
+
+	 class Employee {
+
+ 		/* Retrieve one record */
+ 		function readOne($val){
+ 			 $query = mysql_query("select * from employee where Id='$val'");
+ 			 $get = mysql_fetch_object($query);
+ 			 return $get;
+ 		}
+
+ 		/* Retrieve one record */
+ 		function readList(){
+ 			$items = array();
+ 			 $query = mysql_query("select * from employee");
+ 			 while($o=mysql_fetch_object($query))
+ 			 {
+ 					 array_push($items, $o);
+ 			 }
+ 		}
+
+ 		function createOne($obj){
+ 			mysql_query("insert into employee set jobId='$obj->jobId',
+ 																	 employee='$obj->employee',
+ 																	 createDate='$obj->createDate'
+ 																	 ");
+ 		}
+
+ 		function updateOne($obj){
+ 			mysql_query("update employee set jobId='$obj->jobId',
+ 																	employee='$obj->employee',
+ 																	createDate='$obj->createDate'
+ 																	where Id='$obj->Id'
+ 																	");
+ 		}
+ 	 }
+
+
+	 class JobFunction {
+
+ 		/* Retrieve one record */
+ 		function readList(){
+ 			$items = array();
+ 			 $query = mysql_query("select * from job_function");
+ 			 while($o=mysql_fetch_object($query))
+ 			 {
+ 					 array_push($items, $o);
+ 			 }
+ 		}
+ 	 }
+
+
+	 class PositionType {
+
+			/* Retrieve one record */
+			function readList(){
+				$items = array();
+				 $query = mysql_query("select * from position_type");
+				 while($o=mysql_fetch_object($query))
+				 {
+						 array_push($items, $o);
+				 }
+			}
+		 }
 
 ?>
