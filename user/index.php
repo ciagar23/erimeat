@@ -1,6 +1,6 @@
 <?php
 include_once("../config/database.php");
-include_once("../config/function.php");
+include_once("../config/CRUD.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
@@ -20,8 +20,6 @@ switch ($view) {
 		$content 	= 'login.php';
 		$template	= '../include/template_login.php';
 }
-
-require_once "operation.php";
 require_once $template;
 
 ?>

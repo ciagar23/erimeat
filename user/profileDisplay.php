@@ -1,6 +1,6 @@
 <?php
 $obj = new Profile;
-$obj->readOne($_SESSION['user_session']);
+$user = $obj->readOne($_SESSION['user_session']);
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -13,7 +13,7 @@ $obj->readOne($_SESSION['user_session']);
                 <div class="col-sm-6">
                     <span class="pull-left m-r-15"><img src="../include/assets/images/users/avatar-1.jpg" alt="" class="thumb-lg rounded-circle"></span>
                     <div class="media-body">
-                        <h4 class="m-t-5 m-b-5 font-18 ellipsis"><?=$obj->firstName;?> <?=$obj->lastName;?></h4>
+                        <h4 class="m-t-5 m-b-5 font-18 ellipsis"><?=$user->firstName;?> <?=$user->lastName;?></h4>
                         <p class="font-13"> User Experience Specialist</p>
                         <p class="text-muted m-b-0"><small>California, United States</small></p>
                     </div>
