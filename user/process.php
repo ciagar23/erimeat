@@ -32,6 +32,7 @@ function login()
 
 	$query = mysql_query("select * from user where username = '".$username."' and password = '".$password."'");
 
+
 	if (mysql_num_rows($query) != 0)
 	{
 
