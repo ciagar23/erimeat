@@ -17,26 +17,16 @@ switch ($action) {
 function create()
 {
 	$obj = new Job;
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
-
-	$obj->jobFunctionId = $_POST['username'];
-	$obj->positionTypeId = $_POST['username'];
-	$obj->position = $_POST['username'];
-	$obj->company = $_POST['username'];
-	$obj->comment = $_POST['username'];
-	$obj->workEmail = $_POST['username'];
-	$obj->jobTitle = $_POST['username'];
-	$obj->businessPhone = $_POST['username'];
-	$obj->owner = $_POST['username'];
+	$obj->jobFunctionId = $_POST['jobFunctionId'];
+	$obj->positionTypeId = $_POST['positionTypeId'];
+	$obj->position = $_POST['position'];
+	$obj->company = $_POST['company'];
+	$obj->comment = $_POST['comment'];
+	$obj->workEmail = $_POST['workEmail'];
+	$obj->jobTitle = $_POST['jobTitle'];
+	$obj->businessPhone = $_POST['businessPhone'];
+	$obj->owner = $_POST['owner'];
+	$obj->createOne($obj);
 
 	header('Location: ../user/?view=profileDisplay');
 }
