@@ -1,0 +1,12 @@
+RewriteEngine On
+#RewriteCond %{QUERY_STRING} ^(css=.*)$ [NC]
+RewriteCond $1 !^(images|yoursystem|themes|favicon/.ico|robots\.txt|index.php) [NC]
+
+# user
+RewriteRule ^user/([^/d]+)/?$ user/index.php?view=profileDisplay&user=$1 [L]
+RewriteRule ^user/update/?$ user/index.php?view=profileForm [L]
+RewriteRule ^user/update/([^/d]+)/([^/d]+)/?$ user/process.php?action=$1&Id=$2 [L]
+
+# jobs
+RewriteRule ^job/hiring-request/?$ job/index.php?view=hiringForm [L]
+RewriteRule ^job/search/?$ job/index.php?view=searchJob [L]

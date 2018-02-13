@@ -77,23 +77,5 @@ function update()
 	header('Location: ../user/?view=profileDisplay');
 }
 
-function updateSkype()
-{
-	$obj = new Profile;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
-
-	header('Location: ../user/?view=profileDisplay');
-}
-
 
 ?>

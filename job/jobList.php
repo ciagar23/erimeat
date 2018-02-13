@@ -4,7 +4,6 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $obj = new Job;
 
 ?>
-
 <div class="card-box">
 <?php foreach($obj->readList($s) as $row) {?>
   <h4 class="header-title mt-0 m-b-20"><?=$row->position?></h4>

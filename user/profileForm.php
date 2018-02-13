@@ -7,7 +7,7 @@ $user = $obj->readOne($_SESSION['user_session']);
     <div class="col-md-12">
         <div class="card-box">
 
-            <form id="default-wizard" action="process.php?action=update&Id=<?=$user->username;?>" method="POST">
+            <form id="default-wizard" action="update/update/<?=$user->username;?>" method="POST">
                 <fieldset title="1">
                     <legend>Basic Information</legend>
 

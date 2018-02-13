@@ -17,7 +17,7 @@
                 <div class="col-sm-6">
                     <div class="text-right">
                         <button type="button"
-                            onclick="location.href='?view=profileForm'"
+                            onclick="location.href='../user/update'"
                             class="btn btn-success waves-effect waves-light">
                             <i class="mdi mdi-account-settings-variant m-r-5"></i> Edit Profile
                         </button>
