@@ -7,6 +7,10 @@ $action = $_GET['action'];
 
 switch ($action) {
 
+	case 'addExperience' :
+		addExperience();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -77,20 +81,16 @@ function update()
 	header('Location: ../user/?view=profileDisplay');
 }
 
-function updateSkype()
+function addExperience()
 {
-	$obj = new Profile;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
+	$obj = new Experience;
+	$obj->position = $_POST['position'];
+	$obj->company = $_POST['company'];
+	$obj->start = '2015';
+	$obj->end = '2018';
+	$obj->description = $_POST['description'];
+	$obj->owner = $_SESSION['user_session'];
+	$obj->createOne($obj);
 
 	header('Location: ../user/?view=profileDisplay');
 }

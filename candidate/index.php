@@ -6,24 +6,22 @@ $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
 switch ($view) {
 
-	case 'profileDisplay' :
-		$content 	= 'profileDisplay.php';
+	case 'submitResume' :
+		$content 	= 'submitResume.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'profileForm' :
-		$content 	= 'profileForm.php';
+	case 'searchResume' :
+		$content 	= 'searchResume.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'addExperience' :
-		$content 	= 'addExperience.php';
+	case 'CandidateList' :
+		$content 	= 'CandidateList.php';
 		$template	= '../include/template.php';
 		break;
 
 	default :
-		$content 	= 'login.php';
-		$template	= '../include/template_login.php';
 }
 require_once $template;
 

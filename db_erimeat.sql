@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.28-MariaDB)
-# Date: 2018-02-13 22:32:09
+# Date: 2018-02-14 23:29:09
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -14,14 +14,15 @@ CREATE TABLE `application` (
   `coverLetter` text,
   `resume` varchar(255) DEFAULT NULL,
   `owner` int(11) DEFAULT NULL,
-  `createdDate` datetime DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "application"
 #
 
+INSERT INTO `application` VALUES (1,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622056.docx',0,'2018-02-14 23:27:36'),(2,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622064.xlsx',0,'2018-02-14 23:27:44');
 
 #
 # Structure for table "employee"
@@ -42,6 +43,28 @@ CREATE TABLE `employee` (
 
 
 #
+# Structure for table "experience"
+#
+
+DROP TABLE IF EXISTS `experience`;
+CREATE TABLE `experience` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(100) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `start` varchar(100) DEFAULT NULL,
+  `end` varchar(100) DEFAULT NULL,
+  `description` text,
+  `owner` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "experience"
+#
+
+INSERT INTO `experience` VALUES (1,'Web developer','Tekinbox Corporation','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee'),(2,'System Administrator','Ubiquity Global Services','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee');
+
+#
 # Structure for table "job"
 #
 
@@ -59,13 +82,12 @@ CREATE TABLE `job` (
   `owner` varchar(10) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,0,0,'dsfds','324323','234','343','3434','343','employee',NULL),(2,1,4,'pppppppppp','cccccccccccc','cccccccccccccccc','wwwwwwwwwwwwwwww','jjjjjjjjjjj','343','dsfdsf',NULL),(3,3,3,'444444444444','33333333333','444444444444','44444444444','66666666666','555555555555','employee',NULL),(4,3,3,'444444444444','33333333333','444444444444','234','66666666666','555555555555','employee',NULL),(5,7,7,'uihiu','jkkjkjh','kjhkjhkjh','kjhkjh','kjhkjh','kjhkjh','employee','0000-00-00 00:00:00'),(6,7,7,'uihyiu','hiuhui','iuhiu','hiuh','iuh','iuhiuh','employee','2018-02-13 22:07:54'),(7,0,0,'kjnlkjKJNLK','LKNLKLKN','LKNKLNLKNLKNLKNL','LKNLKN','LKNLK','NLKNLKN','employee','2018-02-13 22:15:59'),(8,0,0,'Web developer','tekinbox','\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolo','dsffds@dsfdsf.com','Developer','454543','employee','2018-02-13 22:19:34');
 
 #
 # Structure for table "job_function"
@@ -76,7 +98,7 @@ CREATE TABLE `job_function` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `option` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job_function"
@@ -93,7 +115,7 @@ CREATE TABLE `position_type` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `option` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "position_type"

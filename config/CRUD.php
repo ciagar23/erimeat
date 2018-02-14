@@ -111,9 +111,9 @@ class Profile {
 		}
 
 		/* Retrieve one record */
-		function readList(){
+		function readList($val){
 			$items = array();
-			 $query = mysql_query("select * from application");
+			 $query = mysql_query("select * from application where coverLetter like '%$val%'");
 			 while($o=mysql_fetch_object($query))
 			 {
 					 array_push($items, $o);
@@ -207,5 +207,55 @@ class Profile {
 	 			return $items;
 			}
 		 }
+
+		class Experience {
+
+
+			/* Retrieve one record */
+			function readList($val){
+				$items = array();
+				 $query = mysql_query("select * from experience where owner='$val'");
+				 while($o=mysql_fetch_object($query))
+				 {
+						 array_push($items, $o);
+				 }
+	 			return $items;
+			}
+
+			function createOne($obj){
+				mysql_query("insert into experience set position='$obj->position',
+																		 company='$obj->company',
+ 																		 start='$obj->start',
+ 																		 end='$obj->end',
+ 																		 description='$obj->description',
+ 																		 owner='$obj->owner'
+																		 ");
+			}
+
+		}
+
+
+
+
+/* =====================================Functions===================================== */
+
+/* Retrieve one record */
+function uploadFile($uploadedFile){
+	// Where the file is going to be placed
+	$target_path = "../media/";
+	/* Add the original filename to our target path.
+	Result is "uploads/filename.extension" */
+	$target_path = $target_path . basename( $uploadedFile['name']);
+	$temp = explode(".", $uploadedFile["name"]);
+	$newfilename = round(microtime(true)) . '.' . end($temp);
+
+	if(move_uploaded_file($uploadedFile['tmp_name'], '../media/' . $newfilename)) {
+			return $newfilename;
+		}
+		else{
+			return 0;
+		}
+
+}
 
 ?>

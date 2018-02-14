@@ -15,7 +15,7 @@
                         <!--Adminox-->
                         <!--</a>-->
                         <!-- Image Logo -->
-                        <a href="index.php" class="logo">
+                        <a href="../home" class="logo">
                           Teamire
                         </a>
                     </div>
