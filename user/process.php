@@ -37,7 +37,6 @@ function login()
 	$result = Profile::login($username, $password);
 
 	if ($result){
-
 		$_SESSION['user_session'] = $username;
 		header('Location: ../home/');
 	}
@@ -51,9 +50,7 @@ function login()
 function logout()
 
 {
-	if (isset($_SESSION['user_session'])) {
-		unset($_SESSION['user_session']);
-	}
+	unset($_SESSION['user_session']);
 	header('Location: index.php');
 	exit;
 }

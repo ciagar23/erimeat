@@ -1,6 +1,6 @@
 <?php
 include_once("../config/database.php");
-include_once("../config/function.php");
+//include_once("../config/function.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 

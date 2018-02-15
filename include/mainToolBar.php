@@ -57,7 +57,7 @@
         <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
             <!-- item-->
             <div class="dropdown-item noti-title">
-                <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                <h5 class="text-overflow"><small>Welcome ! <?=$_SESSION['user_session'];?></small> </h5>
             </div>
 
             <!-- item-->
@@ -76,7 +76,7 @@
             </a>
 
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <a href="../user/process.php?action=logout" class="dropdown-item notify-item">
                 <i class="zmdi zmdi-power"></i> <span>Logout</span>
             </a>
 
