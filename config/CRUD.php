@@ -72,9 +72,12 @@ class Profile {
 
  	 /* Retrieve one record */
  	 function readOne($val){
- 	 		$query = mysql_query("select * from job where Id='$val'");
- 	 	 	$get = mysql_fetch_object($query);
- 			return $get;
+		 $db = Database::connect();
+		 $pdo = $db->prepare("select * from job where Id='$val'");
+		 $pdo->execute();
+		 $result = $pdo->fetch(PDO::FETCH_OBJ);
+		 Database::disconnect();
+		 return $result;
  	 }
 
  	 /* Retrieve one record */
@@ -86,23 +89,11 @@ class Profile {
 		 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		 Database::disconnect();
 		 return $result;
-
-/*
-		 $sql = "select * from job where position like '%$s%' or jobTitle like '%$s%' ";
-
-
-		 while($o=$q->fetch(PDO::FETCH_OBJ))
-		 {
-				 array_push($items, $o);
-		 }
-		 Database::disconnect();
-*/
-
-			return $items;
  	 }
 
  	 function createOne($obj){
- 		 mysql_query("insert into job set jobFunctionId='$obj->jobFunctionId',
+		 $db = Database::connect();
+		 $pdo = $db->prepare("insert into job set jobFunctionId='$obj->jobFunctionId',
  																	positionTypeId='$obj->positionTypeId',
  																	position='$obj->position',
  																	company='$obj->company',
@@ -113,10 +104,13 @@ class Profile {
  																	owner='$obj->owner',
  																	createDate=NOW()
  																	");
+		 $pdo->execute();
+		 Database::disconnect();
  	 }
 
  	 function updateOne($obj){
-		 mysql_query("update job set jobFunctionId='$obj->jobFunctionId',
+		 $db = Database::connect();
+		 $pdo = $db->prepare("update job set jobFunctionId='$obj->jobFunctionId',
  																 positionTypeId='$obj->positionTypeId',
  																 position='$obj->position',
  																 company='$obj->company',
@@ -128,6 +122,8 @@ class Profile {
 																 createDate=NOW()
  																 where Id='$obj->Id'
  																 ");
+		 $pdo->execute();
+		 Database::disconnect();
  	 }
   }
 
@@ -136,39 +132,47 @@ class Profile {
 
 		/* Retrieve one record */
 		function readOne($val){
-			 $query = mysql_query("select * from application where Id='$val'");
-			 $get = mysql_fetch_object($query);
-			 return $get;
+			$db = Database::connect();
+ 		 $pdo = $db->prepare("select * from application where Id='$val'");
+ 		 $pdo->execute();
+ 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
+ 		 Database::disconnect();
+ 		 return $result;
 		}
 
 		/* Retrieve one record */
 		function readList($val){
-			$items = array();
-			 $query = mysql_query("select * from application where coverLetter like '%$val%'");
-			 while($o=mysql_fetch_object($query))
-			 {
-					 array_push($items, $o);
-			 }
- 			return $items;
+			$db = Database::connect();
+			$pdo = $db->prepare("SELECT * FROM application where coverLetter like '%$val%'");
+			$pdo->execute();
+			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
 		}
 
 		function createOne($obj){
-			mysql_query("insert into application set jobId='$obj->jobId',
-																	 coverLetter='$obj->coverLetter',
-																	 resume='$obj->resume',
-																	 owner='$obj->owner',
-  																 createDate=NOW()
-																	 ");
+			$db = Database::connect();
+			$pdo = $db->prepare("insert into application set jobId='$obj->jobId',
+																coverLetter='$obj->coverLetter',
+																resume='$obj->resume',
+																owner='$obj->owner',
+																createDate=NOW()
+																");
+			$pdo->execute();
+			Database::disconnect();
 		}
 
 		function updateOne($obj){
-			mysql_query("update application set jobId='$obj->jobId',
-																	coverLetter='$obj->coverLetter',
-																	resume='$obj->resume',
-																	owner='$obj->owner',
- 																	createDate=NOW()
-																	where Id='$obj->Id'
-																	");
+			$db = Database::connect();
+			$pdo = $db->prepare("update application set jobId='$obj->jobId',
+															 coverLetter='$obj->coverLetter',
+															 resume='$obj->resume',
+															 owner='$obj->owner',
+															 createDate=NOW()
+															 where Id='$obj->Id'
+															 ");
+			$pdo->execute();
+			Database::disconnect();
 		}
 	 }
 
@@ -177,35 +181,43 @@ class Profile {
 
  		/* Retrieve one record */
  		function readOne($val){
- 			 $query = mysql_query("select * from employee where Id='$val'");
- 			 $get = mysql_fetch_object($query);
- 			 return $get;
+			$db = Database::connect();
+			$pdo = $db->prepare("select * from employee where Id='$val'");
+			$pdo->execute();
+			$result = $pdo->fetch(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
  		}
 
  		/* Retrieve one record */
  		function readList(){
- 			$items = array();
- 			 $query = mysql_query("select * from employee");
- 			 while($o=mysql_fetch_object($query))
- 			 {
- 					 array_push($items, $o);
- 			 }
- 			return $items;
+			$db = Database::connect();
+			$pdo = $db->prepare("SELECT * FROM employee");
+			$pdo->execute();
+			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
  		}
 
  		function createOne($obj){
- 			mysql_query("insert into employee set jobId='$obj->jobId',
+			$db = Database::connect();
+			$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
  																	 employee='$obj->employee',
   																 createDate=NOW()
  																	 ");
+			$pdo->execute();
+			Database::disconnect();
  		}
 
  		function updateOne($obj){
- 			mysql_query("update employee set jobId='$obj->jobId',
+			$db = Database::connect();
+			$pdo = $db->prepare("update employee set jobId='$obj->jobId',
  																	employee='$obj->employee',
  																	createDate=NOW()
  																	where Id='$obj->Id'
  																	");
+			$pdo->execute();
+			Database::disconnect();
  		}
  	 }
 
@@ -214,13 +226,12 @@ class Profile {
 
  		/* Retrieve one record */
  		function readList(){
- 			$items = array();
- 			 $query = mysql_query("select * from job_function");
- 			 while($o=mysql_fetch_object($query))
- 			 {
- 					 array_push($items, $o);
- 			 }
- 			return $items;
+			$db = Database::connect();
+			$pdo = $db->prepare("SELECT * FROM job_function");
+			$pdo->execute();
+			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
  		}
  	 }
 
@@ -229,38 +240,38 @@ class Profile {
 
 			/* Retrieve one record */
 			function readList(){
-				$items = array();
-				 $query = mysql_query("select * from position_type");
-				 while($o=mysql_fetch_object($query))
-				 {
-						 array_push($items, $o);
-				 }
-	 			return $items;
+				$db = Database::connect();
+				$pdo = $db->prepare("SELECT * FROM position_type");
+				$pdo->execute();
+				$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+				Database::disconnect();
+				return $result;
 			}
 		 }
 
-		class Experience {
-
+		 class Experience {
 
 			/* Retrieve one record */
 			function readList($val){
-				$items = array();
-				 $query = mysql_query("select * from experience where owner='$val'");
-				 while($o=mysql_fetch_object($query))
-				 {
-						 array_push($items, $o);
-				 }
-	 			return $items;
+				$db = Database::connect();
+				$pdo = $db->prepare("SELECT * FROM experience where owner='$val'");
+				$pdo->execute();
+				$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+				Database::disconnect();
+				return $result;
 			}
 
 			function createOne($obj){
-				mysql_query("insert into experience set position='$obj->position',
+				$db = Database::connect();
+				$pdo = $db->prepare("insert into experience set position='$obj->position',
 																		 company='$obj->company',
  																		 start='$obj->start',
  																		 end='$obj->end',
  																		 description='$obj->description',
  																		 owner='$obj->owner'
 																		 ");
+				$pdo->execute();
+				Database::disconnect();
 			}
 
 		}
