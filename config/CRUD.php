@@ -4,25 +4,38 @@ class Profile {
 	 var $username;
 
 	 /* Retrieve one record */
+	 function login($username, $password){
+		 		$db = Database::connect();
+	 		 	$pdo = $db->prepare("select * from user where username='$username' and password='$password'");
+	 		 	$pdo->execute();
+	 		 	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	 		 	Database::disconnect();
+				return $result;
+	 }
+
+	 /* Retrieve one record */
 	 function readOne($val){
-	 		$query = mysql_query("select * from user where username='$val'");
-	 	 	$get = mysql_fetch_object($query);
-			return $get;
+				$db = Database::connect();
+				$pdo = $db->prepare("select * from user where username='$val'");
+				$pdo->execute();
+				$result = $pdo->fetch(PDO::FETCH_OBJ);
+				Database::disconnect();
+				return $result;
 	 }
 
 	 /* Retrieve one record */
 	 function readList(){
-		 $items = array();
-	 		$query = mysql_query("select * from user");
-			while($o=mysql_fetch_object($query))
-			{
-			    array_push($items, $o);
-			}
-			return $items;
+			 $db = Database::connect();
+			 $pdo = $db->prepare("select * from user");
+			 $pdo->execute();
+			 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			 Database::disconnect();
+			 return $result;
 	 }
 
 	 function createOne($obj){
-		 mysql_query("insert into user set userName='$obj->username',
+		 $db = Database::connect();
+		 $pdo = $db->prepare("insert into user set userName='$obj->username',
 																	firstName='$obj->firstName',
 																	lastName='$obj->lastName',
 																	email='$obj->email',
@@ -32,20 +45,25 @@ class Profile {
 																	linkdin='$obj->linkdin',
 																	skype='$obj->skype'
 																	");
+		 $pdo->execute();
+		 Database::disconnect();
 	 }
 
 	 function updateOne($obj){
-		mysql_query("update user set userName='$obj->username',
-																 firstName='$obj->firstName',
-																 lastName='$obj->lastName',
-																 email='$obj->email',
-																 contact='$obj->contact',
-																 address='$obj->address',
-																 aboutMe='$obj->aboutMe',
-																 linkdin='$obj->linkdin',
-																 skype='$obj->skype'
-																 where userName='$obj->username'
-																 ");
+			 $db = Database::connect();
+			 $pdo = $db->prepare("update user set userName='$obj->username',
+	 																 firstName='$obj->firstName',
+	 																 lastName='$obj->lastName',
+	 																 email='$obj->email',
+	 																 contact='$obj->contact',
+	 																 address='$obj->address',
+	 																 aboutMe='$obj->aboutMe',
+	 																 linkdin='$obj->linkdin',
+	 																 skype='$obj->skype'
+	 																 where userName='$obj->username'
+	 																 ");
+			 $pdo->execute();
+			 Database::disconnect();
 	 }
  }
 
@@ -61,12 +79,25 @@ class Profile {
 
  	 /* Retrieve one record */
  	 function readList($s){
- 		 $items = array();
- 	 		$query = mysql_query("select * from job where position like '%$s%' or jobTitle like '%$s%' ");
- 			while($o=mysql_fetch_object($query))
- 			{
- 			    array_push($items, $o);
- 			}
+
+		 $db = Database::connect();
+		 $pdo = $db->prepare("SELECT * FROM job");
+		 $pdo->execute();
+		 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
+		 Database::disconnect();
+		 return $result;
+
+/*
+		 $sql = "select * from job where position like '%$s%' or jobTitle like '%$s%' ";
+
+
+		 while($o=$q->fetch(PDO::FETCH_OBJ))
+		 {
+				 array_push($items, $o);
+		 }
+		 Database::disconnect();
+*/
+
 			return $items;
  	 }
 

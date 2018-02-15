@@ -7,7 +7,7 @@ $obj = new Job;
 
 <div class="card-box">
 <?php foreach($obj->readList($s) as $row) {?>
-  <h4 class="header-title mt-0 m-b-20"><?=$row->position?></h4>
+  <h4 class="header-title mt-0 m-b-20"><?=$row->position;?></h4>
   <div class="">
       <div class="">
           <h5 class="text-custom m-b-5"><?=$row->JobTitle;?></h5>
