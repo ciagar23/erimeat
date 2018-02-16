@@ -68,82 +68,193 @@ class Profile {
  }
 
 
- class Job {
+class Job {
 
- 	 /* Retrieve one record */
- 	 function readOne($val){
-		 $db = Database::connect();
-		 $pdo = $db->prepare("select * from job where Id='$val'");
+	 /* Retrieve one record */
+	 function readOne($val){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("select * from job where Id='$val'");
+	 $pdo->execute();
+	 $result = $pdo->fetch(PDO::FETCH_OBJ);
+	 Database::disconnect();
+	 return $result;
+	 }
+
+	 /* Retrieve one record */
+	 function readList($s){
+
+	 $db = Database::connect();
+	 $pdo = $db->prepare("SELECT * FROM job");
+	 $pdo->execute();
+	 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
+	 Database::disconnect();
+	 return $result;
+	 }
+
+	 function createOne($obj){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("insert into job set jobFunctionId='$obj->jobFunctionId',
+																	positionTypeId='$obj->positionTypeId',
+																	position='$obj->position',
+																	company='$obj->company',
+																	comment='$obj->comment',
+																	workEmail='$obj->workEmail',
+																	jobTitle='$obj->jobTitle',
+																	businessPhone='$obj->businessPhone',
+																	owner='$obj->owner',
+																	createDate=NOW()
+																	");
+	 $pdo->execute();
+	 Database::disconnect();
+	 }
+
+	 function updateOne($obj){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("update job set jobFunctionId='$obj->jobFunctionId',
+																 positionTypeId='$obj->positionTypeId',
+																 position='$obj->position',
+																 company='$obj->company',
+																 comment='$obj->comment',
+																 workEmail='$obj->workEmail',
+																 jobTitle='$obj->jobTitle',
+																 businessPhone='$obj->businessPhone',
+																 owner='$obj->owner',
+															 createDate=NOW()
+																 where Id='$obj->Id'
+																 ");
+	 $pdo->execute();
+	 Database::disconnect();
+	 }
+}
+
+
+class Application {
+
+	/* Retrieve one record */
+	function readOne($val){
+		$db = Database::connect();
+		 $pdo = $db->prepare("select * from application where Id='$val'");
 		 $pdo->execute();
 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
 		 Database::disconnect();
 		 return $result;
- 	 }
+	}
 
- 	 /* Retrieve one record */
- 	 function readList($s){
+	/* Retrieve one record */
+	function readList($val){
+		$db = Database::connect();
+		$pdo = $db->prepare("SELECT * FROM application where coverLetter like '%$val%'");
+		$pdo->execute();
+		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+		Database::disconnect();
+		return $result;
+	}
 
-		 $db = Database::connect();
-		 $pdo = $db->prepare("SELECT * FROM job");
-		 $pdo->execute();
-		 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
-		 Database::disconnect();
-		 return $result;
- 	 }
+	function createOne($obj){
+		$db = Database::connect();
+		$pdo = $db->prepare("insert into application set jobId='$obj->jobId',
+															coverLetter='$obj->coverLetter',
+															resume='$obj->resume',
+															owner='$obj->owner',
+															createDate=NOW()
+															");
+		$pdo->execute();
+		Database::disconnect();
+	}
 
- 	 function createOne($obj){
-		 $db = Database::connect();
-		 $pdo = $db->prepare("insert into job set jobFunctionId='$obj->jobFunctionId',
- 																	positionTypeId='$obj->positionTypeId',
- 																	position='$obj->position',
- 																	company='$obj->company',
- 																	comment='$obj->comment',
- 																	workEmail='$obj->workEmail',
- 																	jobTitle='$obj->jobTitle',
- 																	businessPhone='$obj->businessPhone',
- 																	owner='$obj->owner',
- 																	createDate=NOW()
- 																	");
-		 $pdo->execute();
-		 Database::disconnect();
- 	 }
-
- 	 function updateOne($obj){
-		 $db = Database::connect();
-		 $pdo = $db->prepare("update job set jobFunctionId='$obj->jobFunctionId',
- 																 positionTypeId='$obj->positionTypeId',
- 																 position='$obj->position',
- 																 company='$obj->company',
- 																 comment='$obj->comment',
- 																 workEmail='$obj->workEmail',
- 																 jobTitle='$obj->jobTitle',
- 																 businessPhone='$obj->businessPhone',
- 																 owner='$obj->owner',
-																 createDate=NOW()
- 																 where Id='$obj->Id'
- 																 ");
-		 $pdo->execute();
-		 Database::disconnect();
- 	 }
-  }
+	function updateOne($obj){
+		$db = Database::connect();
+		$pdo = $db->prepare("update application set jobId='$obj->jobId',
+														 coverLetter='$obj->coverLetter',
+														 resume='$obj->resume',
+														 owner='$obj->owner',
+														 createDate=NOW()
+														 where Id='$obj->Id'
+														 ");
+		$pdo->execute();
+		Database::disconnect();
+	}
+ }
 
 
-	class Application {
+class Employee {
 
-		/* Retrieve one record */
-		function readOne($val){
-			$db = Database::connect();
- 		 $pdo = $db->prepare("select * from application where Id='$val'");
- 		 $pdo->execute();
- 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
- 		 Database::disconnect();
- 		 return $result;
-		}
+	/* Retrieve one record */
+	function readOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from employee where Id='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	/* Retrieve one record */
+	function readList(){
+	$db = Database::connect();
+	$pdo = $db->prepare("SELECT * FROM employee");
+	$pdo->execute();
+	$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	function createOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
+																 employee='$obj->employee',
+															 createDate=NOW()
+																 ");
+	$pdo->execute();
+	Database::disconnect();
+	}
+
+	function updateOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("update employee set jobId='$obj->jobId',
+																employee='$obj->employee',
+																createDate=NOW()
+																where Id='$obj->Id'
+																");
+	$pdo->execute();
+	Database::disconnect();
+	}
+ }
+
+
+class JobFunction {
+
+	/* Retrieve one record */
+	function readList(){
+	$db = Database::connect();
+	$pdo = $db->prepare("SELECT * FROM job_function");
+	$pdo->execute();
+	$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+ }
+
+
+class PositionType {
+
+	/* Retrieve one record */
+	function readList(){
+		$db = Database::connect();
+		$pdo = $db->prepare("SELECT * FROM position_type");
+		$pdo->execute();
+		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+		Database::disconnect();
+		return $result;
+	}
+ }
+
+class Experience {
 
 		/* Retrieve one record */
 		function readList($val){
 			$db = Database::connect();
-			$pdo = $db->prepare("SELECT * FROM application where coverLetter like '%$val%'");
+			$pdo = $db->prepare("SELECT * FROM experience where owner='$val'");
 			$pdo->execute();
 			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 			Database::disconnect();
@@ -152,129 +263,17 @@ class Profile {
 
 		function createOne($obj){
 			$db = Database::connect();
-			$pdo = $db->prepare("insert into application set jobId='$obj->jobId',
-																coverLetter='$obj->coverLetter',
-																resume='$obj->resume',
-																owner='$obj->owner',
-																createDate=NOW()
-																");
+			$pdo = $db->prepare("insert into experience set position='$obj->position',
+																	 company='$obj->company',
+																		 start='$obj->start',
+																		 end='$obj->end',
+																		 description='$obj->description',
+																		 owner='$obj->owner'
+																	 ");
 			$pdo->execute();
 			Database::disconnect();
 		}
-
-		function updateOne($obj){
-			$db = Database::connect();
-			$pdo = $db->prepare("update application set jobId='$obj->jobId',
-															 coverLetter='$obj->coverLetter',
-															 resume='$obj->resume',
-															 owner='$obj->owner',
-															 createDate=NOW()
-															 where Id='$obj->Id'
-															 ");
-			$pdo->execute();
-			Database::disconnect();
-		}
-	 }
-
-
-	 class Employee {
-
- 		/* Retrieve one record */
- 		function readOne($val){
-			$db = Database::connect();
-			$pdo = $db->prepare("select * from employee where Id='$val'");
-			$pdo->execute();
-			$result = $pdo->fetch(PDO::FETCH_OBJ);
-			Database::disconnect();
-			return $result;
- 		}
-
- 		/* Retrieve one record */
- 		function readList(){
-			$db = Database::connect();
-			$pdo = $db->prepare("SELECT * FROM employee");
-			$pdo->execute();
-			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
-			Database::disconnect();
-			return $result;
- 		}
-
- 		function createOne($obj){
-			$db = Database::connect();
-			$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
- 																	 employee='$obj->employee',
-  																 createDate=NOW()
- 																	 ");
-			$pdo->execute();
-			Database::disconnect();
- 		}
-
- 		function updateOne($obj){
-			$db = Database::connect();
-			$pdo = $db->prepare("update employee set jobId='$obj->jobId',
- 																	employee='$obj->employee',
- 																	createDate=NOW()
- 																	where Id='$obj->Id'
- 																	");
-			$pdo->execute();
-			Database::disconnect();
- 		}
- 	 }
-
-
-	 class JobFunction {
-
- 		/* Retrieve one record */
- 		function readList(){
-			$db = Database::connect();
-			$pdo = $db->prepare("SELECT * FROM job_function");
-			$pdo->execute();
-			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
-			Database::disconnect();
-			return $result;
- 		}
- 	 }
-
-
-	 class PositionType {
-
-			/* Retrieve one record */
-			function readList(){
-				$db = Database::connect();
-				$pdo = $db->prepare("SELECT * FROM position_type");
-				$pdo->execute();
-				$result = $pdo->fetchAll(PDO::FETCH_OBJ);
-				Database::disconnect();
-				return $result;
-			}
-		 }
-
-		 class Experience {
-
-			/* Retrieve one record */
-			function readList($val){
-				$db = Database::connect();
-				$pdo = $db->prepare("SELECT * FROM experience where owner='$val'");
-				$pdo->execute();
-				$result = $pdo->fetchAll(PDO::FETCH_OBJ);
-				Database::disconnect();
-				return $result;
-			}
-
-			function createOne($obj){
-				$db = Database::connect();
-				$pdo = $db->prepare("insert into experience set position='$obj->position',
-																		 company='$obj->company',
- 																		 start='$obj->start',
- 																		 end='$obj->end',
- 																		 description='$obj->description',
- 																		 owner='$obj->owner'
-																		 ");
-				$pdo->execute();
-				Database::disconnect();
-			}
-
-		}
+}
 
 
 
@@ -297,7 +296,6 @@ function uploadFile($uploadedFile){
 		else{
 			return 0;
 		}
-
 }
 
 ?>

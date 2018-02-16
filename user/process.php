@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../config/database.php';
 require_once '../config/CRUD.php';
 
@@ -37,21 +37,22 @@ function login()
 	$result = Profile::login($username, $password);
 
 	if ($result){
+		session_start();
 		$_SESSION['user_session'] = $username;
 		header('Location: ../home/');
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
 	}
-
 }
-
 
 function logout()
 
 {
-	unset($_SESSION['user_session']);
-	header('Location: index.php');
+	//logout.php
+session_start();
+session_destroy();
+header('Location: ../user/');
 	exit;
 }
 
