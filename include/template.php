@@ -1,10 +1,14 @@
-<?php session_start();
+<?php
+ session_start();
  if(!isset($_SESSION["user_session"]))
  {
    	header('Location: ../user/');
   }
+  else{
+    $obj = new Profile;
+    $profile = $obj->readOne($_SESSION["user_session"]);
+  }
  ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +41,15 @@
             <!-- end topbar-main -->
             <div class="navbar-custom">
                 <div class="container">
-                    <?php include 'navigation.php';?>
+                    <?php
+                    if ($profile->isAdmin)
+                    {
+                    include 'navigationAdmin.php';
+                  }
+                  else{
+                  include 'navigation.php';
+                  }
+                    ?>
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->
         </header>

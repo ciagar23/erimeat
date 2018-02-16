@@ -20,27 +20,15 @@
         </li>
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>About us</a>
-            <ul class="submenu">
-                <li><a href="#">TODO</a></li>
-                <li><a href="#">TODO</a></li>
-            </ul>
+            <a href="../home/?view=aboutUs"><i class="fi-air-play"></i>About us</a>
         </li>
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>Contact us</a>
-            <ul class="submenu">
-                <li><a href="#">TODO</a></li>
-                <li><a href="#">TODO</a></li>
-            </ul>
+            <a href="../home/?view=contactUs"><i class="fi-air-play"></i>Contact us</a>
         </li>
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>Services</a>
-            <ul class="submenu">
-                <li><a href="#">TODO</a></li>
-                <li><a href="#">TODO</a></li>
-            </ul>
+            <a href="../home/?view=services"><i class="fi-air-play"></i>Services</a>
         </li>
 
         <li class="has-submenu">

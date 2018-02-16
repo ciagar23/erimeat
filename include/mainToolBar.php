@@ -57,7 +57,7 @@
         <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
             <!-- item-->
             <div class="dropdown-item noti-title">
-                <h5 class="text-overflow"><small>Welcome ! <?=$_SESSION['user_session'];?></small> </h5>
+                <h5 class="text-overflow"><small>Welcome ! <?=$profile->firstName;?></small> </h5>
             </div>
 
             <!-- item-->
