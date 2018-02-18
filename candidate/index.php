@@ -23,6 +23,8 @@ switch ($view) {
 
 	default :
 }
+$headScript = 'headScript.php';
+$footScript = 'footScript.php';
 require_once $template;
 
 ?>

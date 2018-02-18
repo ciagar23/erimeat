@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include_once("headScripts.php");?>
+        <?php include_once($headScript);?>
     </head>
     <body>
         <!-- Navigation Bar-->
@@ -74,6 +74,8 @@
             </div>
         </footer>
         <!-- End Footer -->
-        <?php include_once("footScripts.php");?>
+        <?php
+          include_once($footScript);
+        ?>
     </body>
 </html>

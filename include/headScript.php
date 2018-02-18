@@ -5,6 +5,10 @@
 <meta content="Coderthemes" name="author" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="">
+
+<!--calendar css-->
+<link href="../include/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+
 <!-- App css -->
 <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="../include/assets/css/icons.css" rel="stylesheet" type="text/css" />

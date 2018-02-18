@@ -66,20 +66,19 @@
             </a>
 
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                <i class="zmdi zmdi-settings"></i> <span>Settings</span>
+            <a href="../timesheet/" class="dropdown-item notify-item">
+                <i class="zmdi zmdi-lock-open"></i> <span>Timesheets</span>
             </a>
 
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                <i class="zmdi zmdi-lock-open"></i> <span>Lock Screen</span>
+                <i class="zmdi zmdi-settings"></i> <span>Settings</span>
             </a>
 
             <!-- item-->
             <a href="../user/process.php?action=logout" class="dropdown-item notify-item">
                 <i class="zmdi zmdi-power"></i> <span>Logout</span>
             </a>
-
         </div>
     </li>
 

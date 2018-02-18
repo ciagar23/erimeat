@@ -26,6 +26,8 @@ switch ($view) {
 		$content 	= 'login.php';
 		$template	= '../include/template_login.php';
 }
+$headScript = 'headScript.php';
+$footScript = 'footScript.php';
 require_once $template;
 
 ?>

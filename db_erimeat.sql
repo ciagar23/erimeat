@@ -1,5 +1,5 @@
-﻿# Host: localhost  (Version 5.5.5-10.1.28-MariaDB)
-# Date: 2018-02-14 23:29:09
+﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
+# Date: 2018-02-18 15:36:06
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -15,14 +15,15 @@ CREATE TABLE `application` (
   `resume` varchar(255) DEFAULT NULL,
   `owner` int(11) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
+  `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "application"
 #
 
-INSERT INTO `application` VALUES (1,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622056.docx',0,'2018-02-14 23:27:36'),(2,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622064.xlsx',0,'2018-02-14 23:27:44');
+INSERT INTO `application` VALUES (1,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622056.docx',0,'2018-02-14 23:27:36',NULL),(2,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622064.xlsx',0,'2018-02-14 23:27:44',NULL);
 
 #
 # Structure for table "employee"
@@ -56,7 +57,7 @@ CREATE TABLE `experience` (
   `description` text,
   `owner` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "experience"
@@ -81,8 +82,9 @@ CREATE TABLE `job` (
   `businessPhone` varchar(100) DEFAULT NULL,
   `owner` varchar(10) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
+  `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
@@ -124,6 +126,28 @@ CREATE TABLE `position_type` (
 INSERT INTO `position_type` VALUES (1,'Temporary'),(2,'Full-time'),(3,'Project');
 
 #
+# Structure for table "timesheet"
+#
+
+DROP TABLE IF EXISTS `timesheet`;
+CREATE TABLE `timesheet` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) DEFAULT NULL,
+  `owner` varchar(10) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `checkIn` time DEFAULT NULL,
+  `breakOut` time DEFAULT NULL,
+  `breakIn` time DEFAULT NULL,
+  `checkOut` time DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "timesheet"
+#
+
+
+#
 # Structure for table "user"
 #
 
@@ -134,7 +158,7 @@ CREATE TABLE `user` (
   `password` varchar(10) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
-  `level` varchar(10) DEFAULT NULL,
+  `isAdmin` int(1) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `contact` varchar(50) DEFAULT NULL,
   `address` text,
@@ -149,4 +173,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia','employee','fredowinz23@gmail.com','099434597653','Brgy. sincang-airport, Bacolod City','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','fredowinz23','fredowinz23',NULL),(2,'employer','123456','pati ang iban ma islan','username','employer','dsfds@dsfds.com','dsfdsf','','','1212','2323',NULL),(3,'dsfdsf','324324','dfdsf','dgfd','fdgfdg',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia',0,'fredowinz23@gmail.com','099434597653','Brgy. sincang-airport, Bacolod City','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','fredowinz23','fredowinz23',NULL),(2,'employer','123456','pati ang iban ma islan','username',0,'dsfds@dsfds.com','dsfdsf','','','1212','2323',NULL),(3,'admin','admin','dfdsf','dgfd',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
