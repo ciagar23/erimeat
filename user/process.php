@@ -97,20 +97,4 @@ function update()
 
 	header('Location: ../user/?view=profileDisplay');
 }
-
-function addExperience()
-{
-	$obj = new Experience;
-	$obj->position = $_POST['position'];
-	$obj->company = $_POST['company'];
-	$obj->start = '2015';
-	$obj->end = '2018';
-	$obj->description = $_POST['description'];
-	$obj->owner = $_SESSION['user_session'];
-	$obj->createOne($obj);
-
-	header('Location: ../user/?view=profileDisplay');
-}
-
-
 ?>

@@ -20,29 +20,29 @@ $pt->readList();
                                   <label for="firstname">Job Function</label>
                                   <select class="form-control" name="jobFunctionId">
                                     <?php foreach($jf->readList() as $row) {?>
-                                      <option value="<?=$row-Id;?>"><?=$row->option;?></option>
+                                      <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>
                               </div>
 
                               <div class="form-group">
                                   <label for="username">First Name</label>
-                                  <input type="text" class="form-control" id="username" name="firstName" placeholder="">
+                                  <input type="text" class="form-control" name="firstName" placeholder="">
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Last Name</label>
-                                  <input type="text" class="form-control" id="username" name="lastName" placeholder="">
+                                  <input type="text" class="form-control" name="lastName" placeholder="">
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Email</label>
-                                  <input type="text" class="form-control" id="username" name="email" placeholder="">
+                                  <input type="text" class="form-control" name="email" placeholder="">
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Phone Number</label>
-                                  <input type="text" class="form-control" id="username" name="phoneNumber" placeholder="">
+                                  <input type="text" class="form-control" name="phoneNumber" placeholder="">
                               </div>
 
                         </div>
@@ -52,27 +52,27 @@ $pt->readList();
 
                           <div class="form-group">
                               <label for="username">Primary Address</label>
-                              <input type="text" class="form-control" id="username" name="address1" placeholder="">
+                              <input type="text" class="form-control" name="address1" placeholder="">
                           </div>
 
                           <div class="form-group">
                               <label for="username">Secondary Address</label>
-                              <input type="text" class="form-control" id="username" name="address2" placeholder="">
+                              <input type="text" class="form-control" name="address2" placeholder="">
                           </div>
 
                           <div class="form-group">
                               <label for="username">City</label>
-                              <input type="text" class="form-control" id="username" name="city" placeholder="">
+                              <input type="text" class="form-control" name="city" placeholder="">
                           </div>
 
                           <div class="form-group">
                               <label for="username">State</label>
-                              <input type="text" class="form-control" id="username" name="state" placeholder="">
+                              <input type="text" class="form-control" name="state" placeholder="">
                           </div>
 
                           <div class="form-group">
                               <label for="username">zipCode</label>
-                              <input type="text" class="form-control" id="username" name="zipCode" placeholder="">
+                              <input type="text" class="form-control" name="zipCode" placeholder="">
                           </div>
 
                           <div class="form-group">
