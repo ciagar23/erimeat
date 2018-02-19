@@ -42,13 +42,13 @@
             <div class="navbar-custom">
                 <div class="container">
                     <?php
-                    if ($profile->isAdmin)
+                    if ($profile->level=="Admin")
                     {
-                    include 'navigationAdmin.php';
-                  }
-                  else{
-                  include 'navigation.php';
-                  }
+                      include 'navigationAdmin.php';
+                    }
+                    else{
+                      include 'navigation.php';
+                    }
                     ?>
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->

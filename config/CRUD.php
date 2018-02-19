@@ -97,6 +97,8 @@ class Job {
 																	workEmail='$obj->workEmail',
 																	jobTitle='$obj->jobTitle',
 																	businessPhone='$obj->businessPhone',
+																	zipCode='$obj->zipCode',
+																	requiredExperience='$obj->requiredExperience',
 																	owner='$obj->owner',
 																	createDate=NOW()
 																	");
@@ -115,7 +117,7 @@ class Job {
 																 jobTitle='$obj->jobTitle',
 																 businessPhone='$obj->businessPhone',
 																 owner='$obj->owner',
-															 createDate=NOW()
+															   createDate=NOW()
 																 where Id='$obj->Id'
 																 ");
 	 $pdo->execute();
@@ -124,12 +126,12 @@ class Job {
 }
 
 
-class Application {
+class Resume {
 
 	/* Retrieve one record */
 	function readOne($val){
 		$db = Database::connect();
-		 $pdo = $db->prepare("select * from application where Id='$val'");
+		 $pdo = $db->prepare("select * from resume where Id='$val'");
 		 $pdo->execute();
 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
 		 Database::disconnect();
@@ -139,7 +141,7 @@ class Application {
 	/* Retrieve one record */
 	function readList($val){
 		$db = Database::connect();
-		$pdo = $db->prepare("SELECT * FROM application where coverLetter like '%$val%'");
+		$pdo = $db->prepare("SELECT * FROM resume where coverLetter like '%$val%'");
 		$pdo->execute();
 		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		Database::disconnect();
@@ -148,9 +150,18 @@ class Application {
 
 	function createOne($obj){
 		$db = Database::connect();
-		$pdo = $db->prepare("insert into application set jobId='$obj->jobId',
-															coverLetter='$obj->coverLetter',
-															resume='$obj->resume',
+		$pdo = $db->prepare("insert into resume set jobId='$obj->jobId',
+															jobFunctionId='$obj->jobFunctionId',
+															firstName='$obj->firstName',
+															lastName='$obj->lastName',
+															email='$obj->email',
+															phoneNumber='$obj->phoneNumber',
+															address1='$obj->address1',
+															address2='$obj->address2',
+															city='$obj->city',
+															state='$obj->state',
+															zipCode='$obj->zipCode',
+															uploadedResume='$obj->uploadedResume',
 															owner='$obj->owner',
 															createDate=NOW()
 															");
@@ -160,13 +171,22 @@ class Application {
 
 	function updateOne($obj){
 		$db = Database::connect();
-		$pdo = $db->prepare("update application set jobId='$obj->jobId',
-														 coverLetter='$obj->coverLetter',
-														 resume='$obj->resume',
-														 owner='$obj->owner',
-														 createDate=NOW()
-														 where Id='$obj->Id'
-														 ");
+		$pdo = $db->prepare("update resume set jobId='$obj->jobId',
+															jobFunctionId='$obj->jobFunctionId',
+															firstName='$obj->firstName',
+															lastName='$obj->lastName',
+															email='$obj->email',
+															phoneNumber='$obj->phoneNumber',
+															address1='$obj->address1',
+															address2='$obj->address2',
+															city='$obj->city',
+															state='$obj->state',
+															zipCode='$obj->zipCode',
+															uploadedResume='$obj->uploadedResume',
+															owner='$obj->owner',
+														 	createDate=NOW()
+														 	where Id='$obj->Id'
+														 	");
 		$pdo->execute();
 		Database::disconnect();
 	}

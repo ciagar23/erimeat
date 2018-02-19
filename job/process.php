@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../config/database.php';
 require_once '../config/CRUD.php';
 
@@ -25,6 +25,8 @@ function create()
 	$obj->workEmail = $_POST['workEmail'];
 	$obj->jobTitle = $_POST['jobTitle'];
 	$obj->businessPhone = $_POST['businessPhone'];
+	$obj->zipCode = $_POST['zipCode'];
+	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->owner = $_SESSION['user_session'];
 	$obj->createOne($obj);
 
