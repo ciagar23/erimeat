@@ -1,29 +1,47 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-18 15:36:06
+# Date: 2018-02-19 19:51:07
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
 #
-# Structure for table "application"
+# Structure for table "candidate"
 #
 
-DROP TABLE IF EXISTS `application`;
-CREATE TABLE `application` (
+DROP TABLE IF EXISTS `candidate`;
+CREATE TABLE `candidate` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `jobId` int(11) DEFAULT NULL,
-  `coverLetter` text,
-  `resume` varchar(255) DEFAULT NULL,
-  `owner` int(11) DEFAULT NULL,
-  `createDate` datetime DEFAULT NULL,
-  `isApproved` varchar(1) DEFAULT '0',
+  `userId` int(11) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `contactNumber` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
-# Data for table "application"
+# Data for table "candidate"
 #
 
-INSERT INTO `application` VALUES (1,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622056.docx',0,'2018-02-14 23:27:36',NULL),(2,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622064.xlsx',0,'2018-02-14 23:27:44',NULL);
+
+#
+# Structure for table "company"
+#
+
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE `company` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `description` text,
+  `email` varchar(100) DEFAULT NULL,
+  `contactPerson` varchar(100) DEFAULT NULL,
+  `contactNumber` varchar(100) DEFAULT NULL,
+  `address` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "company"
+#
+
 
 #
 # Structure for table "employee"
@@ -33,7 +51,7 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `jobId` int(11) DEFAULT NULL,
-  `employee` int(11) DEFAULT NULL,
+  `userId` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -66,6 +84,25 @@ CREATE TABLE `experience` (
 INSERT INTO `experience` VALUES (1,'Web developer','Tekinbox Corporation','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee'),(2,'System Administrator','Ubiquity Global Services','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee');
 
 #
+# Structure for table "hr"
+#
+
+DROP TABLE IF EXISTS `hr`;
+CREATE TABLE `hr` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `jobFunction` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `contact` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "hr"
+#
+
+
+#
 # Structure for table "job"
 #
 
@@ -75,12 +112,14 @@ CREATE TABLE `job` (
   `jobFunctionId` int(11) DEFAULT NULL,
   `positionTypeId` int(11) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
+  `owner` varchar(10) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `workEmail` varchar(100) DEFAULT NULL,
   `JobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
-  `owner` varchar(10) DEFAULT NULL,
+  `zipCode` varchar(20) DEFAULT NULL,
+  `requiredYearsExperience` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
@@ -126,6 +165,34 @@ CREATE TABLE `position_type` (
 INSERT INTO `position_type` VALUES (1,'Temporary'),(2,'Full-time'),(3,'Project');
 
 #
+# Structure for table "resume"
+#
+
+DROP TABLE IF EXISTS `resume`;
+CREATE TABLE `resume` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) DEFAULT NULL,
+  `jobFunctionId` int(11) DEFAULT NULL,
+  `firstName` varchar(50) DEFAULT NULL,
+  `lastName` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phoneNumber` varchar(100) DEFAULT NULL,
+  `address1` text,
+  `address2` text,
+  `city` varchar(100) DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
+  `zipCode` varchar(20) DEFAULT NULL,
+  `uploadedResume` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "resume"
+#
+
+INSERT INTO `resume` VALUES (1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+#
 # Structure for table "timesheet"
 #
 
@@ -158,14 +225,7 @@ CREATE TABLE `user` (
   `password` varchar(10) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
-  `isAdmin` int(1) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `contact` varchar(50) DEFAULT NULL,
-  `address` text,
-  `aboutMe` text,
-  `linkdin` varchar(255) DEFAULT NULL,
-  `skype` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -173,4 +233,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia',0,'fredowinz23@gmail.com','099434597653','Brgy. sincang-airport, Bacolod City','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','fredowinz23','fredowinz23',NULL),(2,'employer','123456','pati ang iban ma islan','username',0,'dsfds@dsfds.com','dsfdsf','','','1212','2323',NULL),(3,'admin','admin','dfdsf','dgfd',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia',NULL),(2,'employer','123456','pati ang iban ma islan','username',NULL),(3,'admin','admin','dfdsf','dgfd',NULL);
