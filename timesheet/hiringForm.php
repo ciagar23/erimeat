@@ -62,6 +62,16 @@ $pt->readList();
                             </div>
 
                             <div class="form-group">
+                                <label for="username">Zip code</label>
+                                <input type="text" class="form-control" id="username" name="zipCode" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">Required experience</label>
+                                <input type="text" class="form-control" id="username" name="requiredExperience" placeholder="">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="username">Comment</label>
                                 <textarea class="form-control" name="comment"></textarea>
                             </div>

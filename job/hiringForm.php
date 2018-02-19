@@ -43,22 +43,32 @@ $pt->readList();
                                 <input type="text" class="form-control" id="username" name="company" placeholder="">
                             </div>
 
-                        </div>
-                        <div class="col-sm-6">
-
                             <div class="form-group">
                                 <label for="firstname">Work Email</label>
                                 <input type="text" class="form-control" id="firstname" name="workEmail"  placeholder="">
                             </div>
 
-                            <div class="form-group">
-                                <label for="username">Job Title</label>
-                                <input type="text" class="form-control" id="username" name="jobTitle" placeholder="">
-                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                          <div class="form-group">
+                              <label for="username">Job Title</label>
+                              <input type="text" class="form-control" id="username" name="jobTitle" placeholder="">
+                          </div>
 
                             <div class="form-group">
                                 <label for="username">Business Phone</label>
                                 <input type="text" class="form-control" id="username" name="businessPhone" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">Zip code</label>
+                                <input type="text" class="form-control" id="username" name="zipCode" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">Required experience</label>
+                                <input type="text" class="form-control" id="username" name="requiredExperience" placeholder="">
                             </div>
 
                             <div class="form-group">

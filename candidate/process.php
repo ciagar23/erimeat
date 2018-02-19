@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../config/database.php';
 require_once '../config/CRUD.php';
 
@@ -19,10 +19,19 @@ function submitResume()
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
 		{
-			$obj = new Application;
+			$obj = new Resume;
 			$obj->jobId = "0";
-			$obj->coverLetter = $_POST['coverLetter'];
-			$obj->resume = $upload;
+			$obj->jobFunctionId = $_POST["jobFunctionId"];
+			$obj->firstName = $_POST["firstName"];
+			$obj->lastName = $_POST["lastName"];
+			$obj->email = $_POST["email"];
+			$obj->phoneNumber = $_POST["phoneNumber"];
+			$obj->address1 = $_POST["address1"];
+			$obj->address2 = $_POST["address2"];
+			$obj->city = $_POST["city"];
+			$obj->state = $_POST["state"];
+			$obj->zipCode = $_POST["zipCode"];
+			$obj->uploadedResume = $upload;
 			$obj->owner = $_SESSION['user_session'];
 			$obj->createOne($obj);
 			header('Location: ../user/?view=profileDisplay');

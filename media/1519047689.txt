@@ -1,0 +1,15 @@
+Os
+* windows
+* linuxmint
+Software
+* Photoshop
+* Premiere
+* Office
+* gimp
+* inkscape
+Programming
+* php
+* python with django framework
+* javascript with angularjs framework
+* git with github
+* java / kotlin with android studio

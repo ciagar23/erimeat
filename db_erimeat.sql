@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-19 19:51:07
+# Date: 2018-02-19 22:02:53
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -62,35 +62,13 @@ CREATE TABLE `employee` (
 
 
 #
-# Structure for table "experience"
-#
-
-DROP TABLE IF EXISTS `experience`;
-CREATE TABLE `experience` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `position` varchar(100) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `start` varchar(100) DEFAULT NULL,
-  `end` varchar(100) DEFAULT NULL,
-  `description` text,
-  `owner` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-#
-# Data for table "experience"
-#
-
-INSERT INTO `experience` VALUES (1,'Web developer','Tekinbox Corporation','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee'),(2,'System Administrator','Ubiquity Global Services','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee');
-
-#
 # Structure for table "hr"
 #
 
 DROP TABLE IF EXISTS `hr`;
 CREATE TABLE `hr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
+  `userId` int(11) DEFAULT NULL,
   `jobFunction` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `contact` varchar(100) DEFAULT NULL,
@@ -114,21 +92,23 @@ CREATE TABLE `job` (
   `position` varchar(255) DEFAULT NULL,
   `owner` varchar(10) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
-  `comment` varchar(255) DEFAULT NULL,
   `workEmail` varchar(100) DEFAULT NULL,
   `JobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
   `zipCode` varchar(20) DEFAULT NULL,
-  `requiredYearsExperience` varchar(100) DEFAULT NULL,
+  `address` text,
+  `requiredExperience` varchar(100) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (2,0,0,'sample lang','admin','jjjjjjjjjj','jjjjjjjjjjj','jjjjjjjjjjjjjj','jjjjjjjjjjjjj','jjjjjjjjjjjjjjj','sample address','1-2 years','jjjjjjjjjjjj','2018-02-19 20:11:47','0');
 
 #
 # Structure for table "job_function"
@@ -182,7 +162,9 @@ CREATE TABLE `resume` (
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(50) DEFAULT NULL,
   `zipCode` varchar(20) DEFAULT NULL,
+  `owner` varchar(255) DEFAULT NULL,
   `uploadedResume` varchar(100) DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -190,7 +172,6 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 #
 # Structure for table "timesheet"
