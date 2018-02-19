@@ -1,0 +1,58 @@
+Pages
+* Login ?
+* Signup
+* Home ?
+* Jobs ?
+* About Us
+* Contact Us
+* Services
+* Projects
+
+Employers
+* Signup
+* Login ?
+* Post request for talent ?
+* Search talent ?
+* Approve/Review Timesheet
+
+Employee
+* Signup
+* Login ?
+* Create Profile ?
+* Upload Resume ?
+* Search Jobs ?
+* Create/Submit Timesheet
+
+Admin
+* Login
+* Request
+	* Job Request
+	* Resume Request
+* Post Blog "Services"
+* Approve timesheet
+
+--------------------------
+Features
+
+Verification Email for Signup
+Download PDF File
+Electronic Sign for Contract
+Employee Timesheet Process
+	* Employee Create timesheet through teamire website
+	* Employee send timesheet to employer
+	* Employer review time sheet
+		* Approved
+			* Send email to teamire admin and employer payroll with reference number
+			* Teamire admin will also approve and send email back to employer for payout
+			* Employee will also receive an email that timesheet was approved with the reference number
+		* Denied
+			* Send email back to employee that timesheet was not valid
+			* There will be a form wherein employer can put comments why timesheet was denied
+Payout (Link of the 3rd Party site for payment)
+
+
+---------------
+Things we need from teamire:
+* Logo
+* Tagline
+* About Us Content

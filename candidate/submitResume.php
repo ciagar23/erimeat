@@ -76,7 +76,7 @@ $pt->readList();
                           </div>
 
                           <div class="form-group">
-                              <label for="username">Position Hiring For</label>
+                              <label for="username">Upload Resume</label>
                                   <input type="file"  class="form-control" name="upload_file" required/>
                           </div>
 
