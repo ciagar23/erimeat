@@ -35,15 +35,11 @@ class Profile {
 
 	 function createOne($obj){
 		 $db = Database::connect();
-		 $pdo = $db->prepare("insert into user set userName='$obj->username',
+		 $pdo = $db->prepare("insert into user set username='$obj->username',
 																	firstName='$obj->firstName',
 																	lastName='$obj->lastName',
-																	email='$obj->email',
-																	contact='$obj->contact',
-																	address='$obj->address',
-																	aboutMe='$obj->aboutMe',
-																	linkdin='$obj->linkdin',
-																	skype='$obj->skype'
+																	password='$obj->password',
+																	level='$obj->level'
 																	");
 		 $pdo->execute();
 		 Database::disconnect();

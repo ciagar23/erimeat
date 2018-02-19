@@ -43,43 +43,66 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 <span>Teamire</span>
                                             </a>
                                         </h2>
-                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5>
+                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign Up</h5>
                                         <p class="m-b-0">
 																				<?=$error?></p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=login" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=signup" method="POST">
 
                                             <div class="form-group m-b-20 row">
                                                 <div class="col-12">
-                                                    <label for="emailaddress">Username</label>
-                                                    <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
+                                                    <label for="username">Username</label>
+                                                    <input class="form-control" type="text" name="username">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="firstName">First Name</label>
+                                                    <input class="form-control" type="text" name="firstName">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="lastName">Last Name</label>
+                                                    <input class="form-control" type="text" name="lastName">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
-                                                    <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a>
                                                     <label for="password">Password</label>
-                                                    <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
+                                                    <input class="form-control" type="password" name="password">
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                    <label for="password">Confirm Password</label>
+                                                    <input class="form-control" type="password" name="confrimPassword">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="level">Level</label>
+                                                    <select class="form-control select2" name="level">
+                                                        <option>Select</option>
+                                                        <option value="employee">Employee</option>
+                                                        <option value="employer">Employer</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group row text-center m-t-10">
                                                 <div class="col-12">
-                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Sign In</button>
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Sign Up</button>
                                                 </div>
                                             </div>
 
                                         </form>
-
-
-                                        <div class="row m-t-50">
-                                            <div class="col-sm-12 text-center">
-                                                <p class="text-muted">Don't have an account? <a href="../user/?view=signup" class="text-dark m-l-5"><b>Sign Up</b></a></p>
-                                            </div>
-                                        </div>
 
                                     </div>
                                 </div>

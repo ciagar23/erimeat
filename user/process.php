@@ -11,6 +11,10 @@ switch ($action) {
 		addExperience();
 		break;
 
+	case 'signup' :
+		signup();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -26,6 +30,26 @@ switch ($action) {
 	default :
 }
 
+
+function signup()
+{
+	// if we found an error save the error message in this variable
+
+	$obj = new Profile;
+	$obj->username = $_POST['username'];
+	$obj->firstName = $_POST['firstName'];
+	$obj->lastName = $_POST['lastName'];
+	$obj->password = $_POST['password'];
+	$obj->level = $_POST['level'];
+
+	if ($_POST['password']==$_POST['confrimPassword']){
+		$obj->createOne($obj);
+		header('Location: ../home/');
+	}else{
+		header('Location: ../user/?view=signup&error=Password not match!');
+	}
+
+}
 
 function login()
 {
