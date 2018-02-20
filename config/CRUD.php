@@ -141,7 +141,7 @@ class Resume {
 	/* Retrieve one record */
 	function readList($val){
 		$db = Database::connect();
-		$pdo = $db->prepare("SELECT * FROM resume where coverLetter like '%$val%'");
+		$pdo = $db->prepare("SELECT * FROM resume where jobFunctionId like '%$val%'");
 		$pdo->execute();
 		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		Database::disconnect();
