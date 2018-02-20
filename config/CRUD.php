@@ -292,7 +292,36 @@ class Experience {
 }
 
 
+class Candidate {
 
+	 function createOne($obj){
+		 $db = Database::connect();
+		 $pdo = $db->prepare("insert into candidate set username='$obj->username',
+																	email='$obj->email',
+																	contactNumber='$obj->contactNumber'
+																	");
+		 $pdo->execute();
+		 Database::disconnect();
+	 }
+}
+
+
+ class Company {
+
+ 	 function createOne($obj){
+ 		 $db = Database::connect();
+ 		 $pdo = $db->prepare("insert into company set username='$obj->username',
+ 																	name='$obj->name',
+ 																	description='$obj->description',
+ 																	email='$obj->email',
+ 																	contactPerson='$obj->contactPerson',
+ 																	contactNumber='$obj->contactNumber',
+ 																	address='$obj->address'
+ 																	");
+ 		 $pdo->execute();
+ 		 Database::disconnect();
+ 	 }
+ }
 
 /* =====================================Functions===================================== */
 

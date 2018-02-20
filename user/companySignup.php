@@ -43,12 +43,12 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 <span>Teamire</span>
                                             </a>
                                         </h2>
-                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign Up</h5>
+                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign Up as Company</h5>
                                         <p class="m-b-0">
 																				<?=$error?></p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=signup" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=companySignup" method="POST">
 
                                             <div class="form-group m-b-20 row">
                                                 <div class="col-12">
@@ -71,6 +71,48 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
 
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="name">Company Name</label>
+                                                    <input class="form-control" type="text" name="name">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="description">Description</label>
+                                                    <input class="form-control" type="text" name="description">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="email">Email</label>
+                                                    <input class="form-control" type="text" name="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="contactPerson">Contact Person</label>
+                                                    <input class="form-control" type="text" name="contactPerson">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="contactNumber">Contact Number</label>
+                                                    <input class="form-control" type="text" name="contactNumber">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="address">Address</label>
+                                                    <input class="form-control" type="text" name="address">
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row m-b-20">
                                                 <div class="col-12">
                                                     <label for="password">Password</label>
@@ -82,17 +124,6 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 <div class="col-12">
                                                     <label for="password">Confirm Password</label>
                                                     <input class="form-control" type="password" name="confrimPassword">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group m-b-20 row">
-                                                <div class="col-12">
-                                                    <label for="level">Level</label>
-                                                    <select class="form-control select2" name="level">
-                                                        <option>Select</option>
-                                                        <option value="employee">Employee</option>
-                                                        <option value="employer">Employer</option>
-                                                    </select>
                                                 </div>
                                             </div>
 

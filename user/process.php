@@ -11,8 +11,12 @@ switch ($action) {
 		addExperience();
 		break;
 
-	case 'signup' :
-		signup();
+	case 'candidateSignup' :
+		candidateSignup();
+		break;
+
+	case 'companySignup' :
+		companySignup();
 		break;
 
 	case 'login' :
@@ -30,8 +34,7 @@ switch ($action) {
 	default :
 }
 
-
-function signup()
+function candidateSignup()
 {
 	// if we found an error save the error message in this variable
 
@@ -40,10 +43,48 @@ function signup()
 	$obj->firstName = $_POST['firstName'];
 	$obj->lastName = $_POST['lastName'];
 	$obj->password = $_POST['password'];
-	$obj->level = $_POST['level'];
+	$obj->level = 'employee';
 
 	if ($_POST['password']==$_POST['confrimPassword']){
 		$obj->createOne($obj);
+
+		$obj1 = new Candidate;
+		$obj1->username = $_POST['username'];
+		$obj1->email = $_POST['email'];
+		$obj1->contactNumber = $_POST['contactNumber'];
+		$obj1->createOne($obj1);
+
+		header('Location: ../home/');
+	}else{
+		header('Location: ../user/?view=signup&error=Password not match!');
+	}
+
+}
+
+function companySignup()
+{
+	// if we found an error save the error message in this variable
+
+	$obj = new Profile;
+	$obj->username = $_POST['username'];
+	$obj->firstName = $_POST['firstName'];
+	$obj->lastName = $_POST['lastName'];
+	$obj->password = $_POST['password'];
+	$obj->level = 'employer';
+
+	if ($_POST['password']==$_POST['confrimPassword']){
+		$obj->createOne($obj);
+
+		$obj1 = new Company;
+		$obj1->username = $_POST['username'];
+		$obj1->name = $_POST['name'];
+		$obj1->description = $_POST['description'];
+		$obj1->email = $_POST['email'];
+		$obj1->contactPerson = $_POST['contactPerson'];
+		$obj1->contactNumber = $_POST['contactNumber'];
+		$obj1->address = $_POST['address'];
+		$obj1->createOne($obj1);
+
 		header('Location: ../home/');
 	}else{
 		header('Location: ../user/?view=signup&error=Password not match!');
