@@ -42,7 +42,7 @@
             <div class="navbar-custom">
                 <div class="container">
                     <?php
-                    if ($profile->level=="Admin")
+                    if ($profile->level=="company")
                     {
                       include 'navigationAdmin.php';
                     }

@@ -11,14 +11,6 @@ switch ($action) {
 		addExperience();
 		break;
 
-	case 'candidateSignup' :
-		candidateSignup();
-		break;
-
-	case 'companySignup' :
-		companySignup();
-		break;
-
 	case 'login' :
 		login();
 		break;
@@ -31,65 +23,11 @@ switch ($action) {
 		logout();
 		break;
 
+	case 'changepassword' :
+		changepassword();
+		break;
+
 	default :
-}
-
-function candidateSignup()
-{
-	// if we found an error save the error message in this variable
-
-	$obj = new Profile;
-	$obj->username = $_POST['username'];
-	$obj->firstName = $_POST['firstName'];
-	$obj->lastName = $_POST['lastName'];
-	$obj->password = $_POST['password'];
-	$obj->level = 'employee';
-
-	if ($_POST['password']==$_POST['confrimPassword']){
-		$obj->createOne($obj);
-
-		$obj1 = new Candidate;
-		$obj1->username = $_POST['username'];
-		$obj1->email = $_POST['email'];
-		$obj1->contactNumber = $_POST['contactNumber'];
-		$obj1->createOne($obj1);
-
-		header('Location: ../home/');
-	}else{
-		header('Location: ../user/?view=signup&error=Password not match!');
-	}
-
-}
-
-function companySignup()
-{
-	// if we found an error save the error message in this variable
-
-	$obj = new Profile;
-	$obj->username = $_POST['username'];
-	$obj->firstName = $_POST['firstName'];
-	$obj->lastName = $_POST['lastName'];
-	$obj->password = $_POST['password'];
-	$obj->level = 'employer';
-
-	if ($_POST['password']==$_POST['confrimPassword']){
-		$obj->createOne($obj);
-
-		$obj1 = new Company;
-		$obj1->username = $_POST['username'];
-		$obj1->name = $_POST['name'];
-		$obj1->description = $_POST['description'];
-		$obj1->email = $_POST['email'];
-		$obj1->contactPerson = $_POST['contactPerson'];
-		$obj1->contactNumber = $_POST['contactNumber'];
-		$obj1->address = $_POST['address'];
-		$obj1->createOne($obj1);
-
-		header('Location: ../home/');
-	}else{
-		header('Location: ../user/?view=signup&error=Password not match!');
-	}
-
 }
 
 function login()
@@ -104,7 +42,12 @@ function login()
 	if ($result){
 		session_start();
 		$_SESSION['user_session'] = $username;
-		header('Location: ../home/');
+		if ($password == 'temppassword'){
+			header('Location: ../user/?view=changepassword');
+		}
+		else{
+			header('Location: ../home/');
+		}
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
@@ -137,5 +80,28 @@ function update()
 	$obj->updateOne($newObj);
 
 	header('Location: ../user/?view=profileDisplay');
+}
+
+function changepassword()
+{
+	$password = $_POST['password'];
+	$password2 = $_POST['password2'];
+
+	if($password == $password2){
+		if($password != 'temppassword'){
+			$obj = new Profile;
+			$newObj = $obj->readOne($_POST['username']);
+			$newObj->password = $password;
+			$obj->updateOne($newObj);
+
+			header('Location: ../home/');
+		}
+		else{
+			header('Location: index.php?view=changepassword&error=Invalid Password');
+		}
+	}
+	else{
+		header('Location: index.php?view=changepassword&error=Password not matched');
+	}
 }
 ?>

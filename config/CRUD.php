@@ -47,16 +47,12 @@ class Profile {
 
 	 function updateOne($obj){
 			 $db = Database::connect();
-			 $pdo = $db->prepare("update user set userName='$obj->username',
+			 $pdo = $db->prepare("update user set username='$obj->username',
 	 																 firstName='$obj->firstName',
 	 																 lastName='$obj->lastName',
-	 																 email='$obj->email',
-	 																 contact='$obj->contact',
-	 																 address='$obj->address',
-	 																 aboutMe='$obj->aboutMe',
-	 																 linkdin='$obj->linkdin',
-	 																 skype='$obj->skype'
-	 																 where userName='$obj->username'
+	 																 password='$obj->password',
+	 																 level='$obj->level'
+	 																 where username='$obj->username'
 	 																 ");
 			 $pdo->execute();
 			 Database::disconnect();
@@ -290,38 +286,6 @@ class Experience {
 			Database::disconnect();
 		}
 }
-
-
-class Candidate {
-
-	 function createOne($obj){
-		 $db = Database::connect();
-		 $pdo = $db->prepare("insert into candidate set username='$obj->username',
-																	email='$obj->email',
-																	contactNumber='$obj->contactNumber'
-																	");
-		 $pdo->execute();
-		 Database::disconnect();
-	 }
-}
-
-
- class Company {
-
- 	 function createOne($obj){
- 		 $db = Database::connect();
- 		 $pdo = $db->prepare("insert into company set username='$obj->username',
- 																	name='$obj->name',
- 																	description='$obj->description',
- 																	email='$obj->email',
- 																	contactPerson='$obj->contactPerson',
- 																	contactNumber='$obj->contactNumber',
- 																	address='$obj->address'
- 																	");
- 		 $pdo->execute();
- 		 Database::disconnect();
- 	 }
- }
 
 /* =====================================Functions===================================== */
 

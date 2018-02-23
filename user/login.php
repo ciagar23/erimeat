@@ -74,15 +74,6 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
                                         </form>
 
-
-                                        <div class="row m-t-50">
-                                            <div class="col-sm-12 text-center">
-                                                <p class="text-muted">Don't have an account?</br>
-                                                <a href="../user/?view=candidateSignup" class="text-dark m-l-5"><b>Sign Up as Candidate</b></a></p></br>
-                                                <a href="../user/?view=companySignup" class="text-dark m-l-5"><b>Sign Up as Company</b></a></p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
