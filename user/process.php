@@ -46,7 +46,7 @@ function login()
 			header('Location: ../user/?view=changepassword');
 		}
 		else{
-			header('Location: ../home/');
+			header('Location: ../account/');
 		}
 	}
 	else {
@@ -94,7 +94,7 @@ function changepassword()
 			$newObj->password = $password;
 			$obj->updateOne($newObj);
 
-			header('Location: ../home/');
+			header('Location: ../account/');
 		}
 		else{
 			header('Location: index.php?view=changepassword&error=Invalid Password');

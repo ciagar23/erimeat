@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-23 22:08:56
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-02-23 22:59:24
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "application"
@@ -273,16 +274,16 @@ CREATE TABLE `timesheet` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(10) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia','a'),(2,'employer','123456','pati ang iban ma islan','username','a'),(3,'admin','admin','dfdsf','dgfd','admin'),(4,'hr','12345','sam','sedayon','hr'),(5,'honda','12345','honda','city','employee'),(6,'publiq','12345','sam','sedayon','employer'),(7,'babi','12345','ba','bi','employee'),(8,'biba','12345','bi','ba','employee'),(9,'jackDaniel','12345','jack','daniel','employee'),(10,'sanMig','12345','san','mig','employer'),(11,'bibi','12345','bi','refNum','employee'),(12,'baba','12345','ba','ba','employer'),(13,'ehogirl','12345','eho','girl','employee'),(14,'company','12345','com','pany','employer');
+INSERT INTO `user` VALUES (15,'employer','12345','publiq','cafe','company'),(16,'empoyee','12345','dale','torre','employee');

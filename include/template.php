@@ -1,16 +1,3 @@
-<?php
-/*
- session_start();
- if(!isset($_SESSION["user_session"]))
- {
-   	header('Location: ../user/');
-  }
-  else{
-    $obj = new Profile;
-    $profile = $obj->readOne($_SESSION["user_session"]);
-  }
-  */
- ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,9 +20,6 @@
                         </a>
                     </div>
                     <!-- End Logo container-->
-                    <div class="menu-extras topbar-custom">
-                        <?php include_once("mainToolBar.php");?>
-                    </div>
                     <!-- end menu-extras -->
                     <div class="clearfix"></div>
                 </div> <!-- end container -->
@@ -44,12 +28,7 @@
             <div class="navbar-custom">
                 <div class="container">
                     <?php
-                    if ($profile->level=="company")
-                    {
-                      include 'navigationAdmin.php';
-                    }
-                    else{
-                      include 'navigation.php';
+                      include 'navigationVisitor.php';
                     ?>
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->

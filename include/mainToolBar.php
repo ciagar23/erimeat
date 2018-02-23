@@ -70,6 +70,11 @@
                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
             </a>
 
+            <!-- item-->
+            <a href="../user/?view=logout" class="dropdown-item notify-item">
+                <i class="zmdi zmdi-settings"></i> <span>Logout</span>
+            </a>
+
         </div>
     </li>
 
