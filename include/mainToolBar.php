@@ -57,13 +57,8 @@
         <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
             <!-- item-->
             <div class="dropdown-item noti-title">
-                <h5 class="text-overflow"><small>Welcome ! <?=$profile->firstName;?></small> </h5>
+                <h5 class="text-overflow"><small>Select your choice</small> </h5>
             </div>
-
-            <!-- item-->
-            <a href="../user/?view=profileDisplay" class="dropdown-item notify-item">
-                <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
-            </a>
 
             <!-- item-->
             <a href="../timesheet/" class="dropdown-item notify-item">
@@ -75,10 +70,6 @@
                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
             </a>
 
-            <!-- item-->
-            <a href="../user/process.php?action=logout" class="dropdown-item notify-item">
-                <i class="zmdi zmdi-power"></i> <span>Logout</span>
-            </a>
         </div>
     </li>
 

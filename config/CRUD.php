@@ -89,17 +89,20 @@ class Job {
 
 	 function createOne($obj){
 	 $db = Database::connect();
-	 $pdo = $db->prepare("insert into job set jobFunctionId='$obj->jobFunctionId',
+	 $pdo = $db->prepare("insert into job set refNum='$obj->refNum',
+	 																jobFunctionId='$obj->jobFunctionId',
 																	positionTypeId='$obj->positionTypeId',
+																	firstName='$obj->firstName',
+																	lastName='$obj->lastName',
 																	position='$obj->position',
 																	company='$obj->company',
 																	comment='$obj->comment',
+																	address='$obj->address',
 																	workEmail='$obj->workEmail',
 																	jobTitle='$obj->jobTitle',
 																	businessPhone='$obj->businessPhone',
 																	zipCode='$obj->zipCode',
 																	requiredExperience='$obj->requiredExperience',
-																	owner='$obj->owner',
 																	createDate=NOW()
 																	");
 	 $pdo->execute();

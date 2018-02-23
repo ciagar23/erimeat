@@ -1,4 +1,5 @@
 <?php
+/*
  session_start();
  if(!isset($_SESSION["user_session"]))
  {
@@ -8,6 +9,7 @@
     $obj = new Profile;
     $profile = $obj->readOne($_SESSION["user_session"]);
   }
+  */
  ?>
 <!DOCTYPE html>
 <html>
@@ -42,13 +44,7 @@
             <div class="navbar-custom">
                 <div class="container">
                     <?php
-                    if ($profile->level=="Admin")
-                    {
-                      include 'navigationAdmin.php';
-                    }
-                    else{
                       include 'navigation.php';
-                    }
                     ?>
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->
