@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-20 19:23:31
+# Date: 2018-02-23 21:54:05
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -37,13 +37,12 @@ CREATE TABLE `candidate` (
   `email` varchar(100) DEFAULT NULL,
   `contactNumber` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "candidate"
 #
 
-INSERT INTO `candidate` VALUES (1,'1','honda@city.com','098765432112'),(2,'0','ba@bi.com','123456789009'),(3,'jackDaniel','jack@daniel.com','12345678909'),(4,'bibi','bi@bi.com','123456778909'),(5,'ehogirl','eho@girl.com','1234676');
 
 #
 # Structure for table "company"
@@ -60,13 +59,12 @@ CREATE TABLE `company` (
   `contactNumber` varchar(100) DEFAULT NULL,
   `address` text,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (1,'0','publiq','publq','publiq@publiq.com','sam sedayon','09876543112','ramos billboard'),(2,'s','samiguel','samgiel','san@miguel.com','miguel','12345678909','bacolod'),(3,'b','bababol','bababol','ba@ba.com','bababe','1234567890','bacolo'),(4,'company','company','company','com@pany.com','123456','123456','bacolod');
 
 #
 # Structure for table "employee"
@@ -213,13 +211,13 @@ CREATE TABLE `resume` (
   `uploadedResume` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (3,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050194.txt','2018-02-19 22:23:13'),(4,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050322.txt','2018-02-19 22:25:22'),(5,0,4,'u','u','u','u','u','u','u','u','u','sleepnot','1519050333.txt','2018-02-19 22:25:33'),(6,0,1,'dale','torre','dale.torre@tekinbox.com','1235','bacolod','baclod','city','state','6100','admin','1519050672.txt','2018-02-19 22:31:11');
+INSERT INTO `resume` VALUES (3,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050194.txt','2018-02-19 22:23:13'),(4,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050322.txt','2018-02-19 22:25:22'),(5,0,4,'u','u','u','u','u','u','u','u','u','sleepnot','1519050333.txt','2018-02-19 22:25:33'),(6,0,1,'dale','torre','dale.torre@tekinbox.com','1235','bacolod','baclod','city','state','6100','admin','1519050672.txt','2018-02-19 22:31:11'),(7,0,4,'adf','adsf','a@a.com','123123','adsf','asdf','sadf','adsf','123','employer','1519130918.png','2018-02-20 20:48:38');
 
 #
 # Structure for table "timesheet"
@@ -250,16 +248,16 @@ CREATE TABLE `timesheet` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(10) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'employee','123456','Winifredo','Garcia','a'),(2,'employer','123456','pati ang iban ma islan','username','a'),(3,'admin','admin','dfdsf','dgfd','a'),(4,'sam','12345','sam','sedayon','employee'),(5,'honda','12345','honda','city','employee'),(6,'publiq','12345','sam','sedayon','employer'),(7,'babi','12345','ba','bi','employee'),(8,'biba','12345','bi','ba','employee'),(9,'jackDaniel','12345','jack','daniel','employee'),(10,'sanMig','12345','san','mig','employer'),(11,'bibi','12345','bi','bi','employee'),(12,'baba','12345','ba','ba','employer'),(13,'ehogirl','12345','eho','girl','employee'),(14,'company','12345','com','pany','employer');
+INSERT INTO `user` VALUES (15,'publiq_12345','12345','publiq','cafe','company'),(16,'job_12345','temppassword','dale','torre','employee');
