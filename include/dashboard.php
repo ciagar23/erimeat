@@ -2,7 +2,7 @@
  session_start();
  if(!isset($_SESSION["user_session"]))
  {
-   	header('Location: ../user/');
+   	header('Location: ?view=login');
   }
   else{
     $obj = new Profile;
@@ -45,7 +45,7 @@
                      <?php
                      if ($profile->level=="company")
                      {
-                       include 'navigationClient.php';
+                       include 'navigationCompany.php';
                      }
                      else{
                        include 'navigationEmployee.php';
