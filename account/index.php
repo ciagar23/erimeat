@@ -11,31 +11,6 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'availableSkills' :
-		$content 	= 'availableSkills.php';
-		$template	= '../include/dashboard.php';
-		break;
-
-	case 'availablePosition' :
-		$content 	= 'availablePosition.php';
-		$template	= '../include/dashboard.php';
-		break;
-
-	case 'numberEmployee' :
-		$content 	= 'numberEmployee.php';
-		$template	= '../include/dashboard.php';
-		break;
-
-	case 'timekeeping' :
-		$content 	= 'timekeeping.php';
-		$template	= '../include/dashboard.php';
-		break;
-
-	case 'reports' :
-		$content 	= 'reports.php';
-		$template	= '../include/dashboard.php';
-		break;
-
 	case 'addAccount' :
 		$content 	= 'addAccount.php';
 		$template	= '../include/dashboard.php';
