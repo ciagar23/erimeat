@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-24 20:52:35
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-02-24 21:03:13
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -23,6 +24,47 @@ CREATE TABLE `admin` (
 #
 
 INSERT INTO `admin` VALUES (15,'admin','admin','publiq','cafe','admin'),(16,'hr','12345','dale','torre','hr');
+
+#
+# Structure for table "application"
+#
+
+DROP TABLE IF EXISTS `application`;
+CREATE TABLE `application` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) DEFAULT NULL,
+  `coverLetter` text,
+  `resume` varchar(255) DEFAULT NULL,
+  `owner` int(11) DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
+  `isApproved` varchar(1) DEFAULT '0',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "application"
+#
+
+INSERT INTO `application` VALUES (1,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622056.docx',0,'2018-02-14 23:27:36',NULL),(2,0,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','1518622064.xlsx',0,'2018-02-14 23:27:44',NULL);
+
+#
+# Structure for table "candidate"
+#
+
+DROP TABLE IF EXISTS `candidate`;
+CREATE TABLE `candidate` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(11) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `contactNumber` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "candidate"
+#
+
+INSERT INTO `candidate` VALUES (1,'1','honda@city.com','098765432112'),(2,'0','ba@bi.com','123456789009'),(3,'jackDaniel','jack@daniel.com','12345678909'),(4,'bibi','bi@bi.com','123456778909'),(5,'ehogirl','eho@girl.com','1234676');
 
 #
 # Structure for table "company"
@@ -88,6 +130,28 @@ CREATE TABLE `employee` (
 
 
 #
+# Structure for table "experience"
+#
+
+DROP TABLE IF EXISTS `experience`;
+CREATE TABLE `experience` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(100) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `start` varchar(100) DEFAULT NULL,
+  `end` varchar(100) DEFAULT NULL,
+  `description` text,
+  `owner` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "experience"
+#
+
+INSERT INTO `experience` VALUES (1,'Web developer','Tekinbox Corporation','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee'),(2,'System Administrator','Ubiquity Global Services','2015','2018','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','employee');
+
+#
 # Structure for table "hr"
 #
 
@@ -130,7 +194,7 @@ CREATE TABLE `job` (
   `firstName` varchar(100) DEFAULT NULL,
   `lastName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
@@ -201,6 +265,28 @@ CREATE TABLE `resume` (
 #
 
 INSERT INTO `resume` VALUES (3,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050194.txt','2018-02-19 22:23:13'),(4,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050322.txt','2018-02-19 22:25:22'),(5,0,4,'u','u','u','u','u','u','u','u','u','sleepnot','1519050333.txt','2018-02-19 22:25:33'),(6,0,1,'dale','torre','dale.torre@tekinbox.com','1235','bacolod','baclod','city','state','6100','admin','1519050672.txt','2018-02-19 22:31:11');
+
+#
+# Structure for table "timesheet"
+#
+
+DROP TABLE IF EXISTS `timesheet`;
+CREATE TABLE `timesheet` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) DEFAULT NULL,
+  `owner` varchar(10) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `checkIn` time DEFAULT NULL,
+  `breakOut` time DEFAULT NULL,
+  `breakIn` time DEFAULT NULL,
+  `checkOut` time DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "timesheet"
+#
+
 
 #
 # Structure for table "user"
