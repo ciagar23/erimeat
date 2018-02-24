@@ -28,7 +28,7 @@
             <div class="navbar-custom">
                 <div class="container">
                     <?php
-                      include 'navigationVisitor.php';
+                      include 'navVisitor.php';
                     ?>
                 </div> <!-- end container -->
             </div> <!-- end navbar-custom -->
