@@ -7,24 +7,16 @@ $action = $_GET['action'];
 
 switch ($action) {
 
-	case 'addExperience' :
-		addExperience();
+	case 'jobRequest' :
+		jobRequest();
 		break;
 
 	case 'login' :
 		login();
 		break;
 
-	case 'update' :
-		update();
-		break;
-
 	case 'logout' :
 		logout();
-		break;
-
-	case 'changepassword' :
-		changepassword();
 		break;
 
 	default :
@@ -59,44 +51,37 @@ header('Location: index.php');
 	exit;
 }
 
-function update()
+function jobRequest()
 {
-	$obj = new Profile;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
-
-	header('Location: ../user/?view=profileDisplay');
-}
-
-function changepassword()
-{
-	$password = $_POST['password'];
-	$password2 = $_POST['password2'];
-
-	if($password == $password2){
-		if($password != 'temppassword'){
-			$obj = new Profile;
-			$newObj = $obj->readOne($_POST['username']);
-			$newObj->password = $password;
-			$obj->updateOne($newObj);
-
-			header('Location: ../account/');
-		}
-		else{
-			header('Location: index.php?view=changepassword&error=Invalid Password');
-		}
+	if ($_GET['result']=="approve"){
+		$result = 1;
+		__createLogin($_GET['Id']);
 	}
 	else{
-		header('Location: index.php?view=changepassword&error=Password not matched');
+		$result = -1;
 	}
+
+	$obj = new Job;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isApproved = $result;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=talentRequest');
+}
+
+function __createLogin($Id){
+	// Get Detail
+	$job = new Job;
+	$job = $job->readOne($Id);
+
+	// Create account
+	$obj = new Profile;
+	$obj->username = "C" . $job->refNum;
+	$obj->password = "temppassword";
+	$obj->firstName = $job->firstName;
+	$obj->lastName = $job->lastName;
+	$obj->level = "company";
+	$obj->createOne($obj);
+
 }
 ?>

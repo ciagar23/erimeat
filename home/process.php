@@ -31,7 +31,7 @@ substr(round(microtime(true)), -6)
 	*/
 
 	$obj = new Job;
-	$obj->refNum = substr(round(microtime(true)), -6);
+	$obj->refNum = round(microtime(true));
 	$obj->jobFunctionId = $_POST['jobFunctionId'];
 	$obj->positionTypeId = $_POST['positionTypeId'];
 	$obj->firstName = $_POST['firstName'];

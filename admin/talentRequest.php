@@ -7,8 +7,8 @@ $obj = new Job;
 
 <div class="card-box">
 <?php foreach($obj->readList($s) as $row) {
-  if ($row->isApproved==1){
-?>
+  if ($row->isApproved==0){
+  ?>
   <div class="">
       <h4 class="header-title mt-0 m-b-20"><a href="?view=jobDetail&id=<?=$row->Id;?>"><?=$row->position;?></a></h4>
       <div class="">
@@ -25,5 +25,5 @@ $obj = new Job;
       </div>
       <hr>
     </div>
-<?php  } } ?>
+<?php } } ?>
 </div>

@@ -136,7 +136,7 @@ class Job {
 	 function readList($s){
 
 	 $db = Database::connect();
-	 $pdo = $db->prepare("SELECT * FROM job where isApproved=1");
+	 $pdo = $db->prepare("SELECT * FROM job");
 	 $pdo->execute();
 	 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
 	 Database::disconnect();
@@ -175,7 +175,7 @@ class Job {
 																 workEmail='$obj->workEmail',
 																 jobTitle='$obj->jobTitle',
 																 businessPhone='$obj->businessPhone',
-																 owner='$obj->owner',
+																 isApproved='$obj->isApproved',
 															   createDate=NOW()
 																 where Id='$obj->Id'
 																 ");
