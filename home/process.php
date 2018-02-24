@@ -10,6 +10,10 @@ switch ($action) {
 		create();
 		break;
 
+	case 'submitResume' :
+		submitResume();
+		break;
+
 	case 'submitApplication' :
 		submitApplication();
 		break;
@@ -44,6 +48,33 @@ substr(round(microtime(true)), -6)
 	$obj->createOne($obj);
 
 	header('Location: ../home/?view=success');
+}
+
+function submitResume(){
+
+		$upload = uploadFile($_FILES['upload_file']);
+		if ($upload)
+		{
+			$obj = new Resume;
+			$obj->jobId = "0";
+			$obj->jobFunctionId = $_POST["jobFunctionId"];
+			$obj->firstName = $_POST["firstName"];
+			$obj->lastName = $_POST["lastName"];
+			$obj->email = $_POST["email"];
+			$obj->phoneNumber = $_POST["phoneNumber"];
+			$obj->address1 = $_POST["address1"];
+			$obj->address2 = $_POST["address2"];
+			$obj->city = $_POST["city"];
+			$obj->state = $_POST["state"];
+			$obj->zipCode = $_POST["zipCode"];
+			$obj->uploadedResume = $upload;
+			$obj->owner = $_SESSION['user_session'];
+			$obj->createOne($obj);
+			header('Location: ../home/');
+		}
+		else{
+			header('Location: ../home/?error=Not uploaded');
+		}
 }
 
 function submitApplication()
