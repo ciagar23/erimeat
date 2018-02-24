@@ -39,7 +39,7 @@ substr(round(microtime(true)), -6)
 	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->createOne($obj);
 
-	header('Location: ../job/?view=success');
+	header('Location: ../home/?view=success');
 }
 
 ?>

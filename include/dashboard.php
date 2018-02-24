@@ -45,10 +45,10 @@
                      <?php
                      if ($profile->level=="company")
                      {
-                       include 'navigationAdmin.php';
+                       include 'navigationClient.php';
                      }
                      else{
-                       include 'navigation.php';
+                       include 'navigationEmployee.php';
                      }
                      ?>
                  </div> <!-- end container -->

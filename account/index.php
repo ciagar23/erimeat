@@ -36,6 +36,11 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'addAccount' :
+		$content 	= 'addAccount.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	default :
 		$content 	= 'home.php';
 		$template	= '../include/dashboard.php';
