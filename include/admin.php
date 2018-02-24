@@ -2,10 +2,10 @@
  session_start();
  if(!isset($_SESSION["user_session"]))
  {
-   	header('Location: ?view=login');
+   	header('Location: ../user/');
   }
   else{
-    $obj = new Profile;
+    $obj = new Admin;
     $profile = $obj->readOne($_SESSION["user_session"]);
   }
  ?>
@@ -45,10 +45,10 @@
                      <?php
                      if ($profile->level=="company")
                      {
-                       include 'navigationClient.php';
+                       include 'navigationAdmin.php';
                      }
                      else{
-                       include 'navigationEmployee.php';
+                       include 'navigation.php';
                      }
                      ?>
                  </div> <!-- end container -->
