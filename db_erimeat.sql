@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-24 21:03:13
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Date: 2018-02-24 21:04:20
+# Generator: MySQL-Front 6.0  (Build 2.20)
 
 /*!40101 SET NAMES utf8 */;
 
