@@ -1,1 +1,0 @@
-Teamire Welcome Page!
