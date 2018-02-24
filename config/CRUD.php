@@ -4,9 +4,9 @@ class Profile {
 	 var $username;
 
 	 /* Retrieve one record */
-	 function login($username, $password){
+	 function login($username, $password, $level){
 		 		$db = Database::connect();
-	 		 	$pdo = $db->prepare("select * from user where username='$username' and password='$password'");
+	 		 	$pdo = $db->prepare("select * from user where username='$username' and password='$password' and level='$level'");
 	 		 	$pdo->execute();
 	 		 	$result = $pdo->fetch(PDO::FETCH_OBJ);
 	 		 	Database::disconnect();
@@ -58,6 +58,66 @@ class Profile {
 			 Database::disconnect();
 	 }
  }
+
+class Admin {
+ 	 /* Member variables */
+ 	 var $username;
+
+ 	 /* Retrieve one record */
+ 	 function login($username, $password, $level){
+ 		 		$db = Database::connect();
+ 	 		 	$pdo = $db->prepare("select * from admin where username='$username' and password='$password' and level='$level'");
+ 	 		 	$pdo->execute();
+ 	 		 	$result = $pdo->fetch(PDO::FETCH_OBJ);
+ 	 		 	Database::disconnect();
+ 				return $result;
+ 	 }
+
+ 	 /* Retrieve one record */
+ 	 function readOne($val){
+ 				$db = Database::connect();
+ 				$pdo = $db->prepare("select * from admin where username='$val'");
+ 				$pdo->execute();
+ 				$result = $pdo->fetch(PDO::FETCH_OBJ);
+ 				Database::disconnect();
+ 				return $result;
+ 	 }
+
+ 	 /* Retrieve one record */
+ 	 function readList(){
+ 			 $db = Database::connect();
+ 			 $pdo = $db->prepare("select * from admin");
+ 			 $pdo->execute();
+ 			 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
+ 			 Database::disconnect();
+ 			 return $result;
+ 	 }
+
+ 	 function createOne($obj){
+ 		 $db = Database::connect();
+ 		 $pdo = $db->prepare("insert into admin set username='$obj->username',
+ 																	firstName='$obj->firstName',
+ 																	lastName='$obj->lastName',
+ 																	password='$obj->password',
+ 																	level='$obj->level'
+ 																	");
+ 		 $pdo->execute();
+ 		 Database::disconnect();
+ 	 }
+
+ 	 function updateOne($obj){
+ 			 $db = Database::connect();
+ 			 $pdo = $db->prepare("update admin set username='$obj->username',
+ 	 																 firstName='$obj->firstName',
+ 	 																 lastName='$obj->lastName',
+ 	 																 password='$obj->password',
+ 	 																 level='$obj->level'
+ 	 																 where username='$obj->username'
+ 	 																 ");
+ 			 $pdo->execute();
+ 			 Database::disconnect();
+ 	 }
+}
 
 
 class Job {

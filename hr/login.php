@@ -40,7 +40,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                     <div class="account-logo-box">
                                         <h2 class="text-uppercase text-center">
                                             <a href="index.html" class="text-success">
-                                                <span>Company</span>
+                                                <span>Hr login</span>
                                             </a>
                                         </h2>
                                         <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5>

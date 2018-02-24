@@ -5,6 +5,11 @@ include_once("../config/CRUD.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
+if(!isset($_SESSION["company_session"]))
+{
+	 $view = "login";
+ }
+
 switch ($view) {
 
 	case 'login' :
@@ -48,6 +53,7 @@ switch ($view) {
 }
 $headScript = 'headScript.php';
 $footScript = 'footScript.php';
+$navigation = '../include/navCompany.php';
 require_once $template;
 
 ?>

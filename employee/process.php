@@ -29,11 +29,11 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Profile::login($username, $password, 'company');
+	$result = Profile::login($username, $password, 'employee');
 
 	if ($result){
 		session_start();
-		$_SESSION['company_session'] = $username;
+		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
 			header('Location: ?view=changepassword');
 		}
