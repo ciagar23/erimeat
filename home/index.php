@@ -56,6 +56,21 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
+	case 'submitResume' :
+		$content 	= 'submitResume.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'searchResume' :
+		$content 	= 'searchResume.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'candidateList' :
+		$content 	= 'candidateList.php';
+		$template	= '../include/template.php';
+		break;
+
 	default :
 		$content 	= 'home.php';
 		$template	= '../include/template.php';

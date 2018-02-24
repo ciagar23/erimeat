@@ -7,7 +7,7 @@
             <a href="#"><i class="fi-air-play"></i>Employer</a>
             <ul class="submenu">
                 <li><a href="../home/?view=hiringForm">Request Talent</a></li>
-                <li><a href="../candidate/?view=searchResume">Search Candidates</a></li>
+                <li><a href="../home/?view=searchResume">Search Candidates</a></li>
             </ul>
         </li>
 
@@ -15,7 +15,7 @@
             <a href="#"><i class="fi-air-play"></i>Job Seeker</a>
             <ul class="submenu">
                 <li><a href="../home/?view=searchJob">Search Job</a></li>
-                <li><a href="../candidate/?view=submitResume">Submit Resume</a></li>
+                <li><a href="../home/?view=submitResume">Submit Resume</a></li>
             </ul>
         </li>
 
