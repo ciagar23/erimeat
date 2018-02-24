@@ -45,7 +45,7 @@
                      <?php
                      if ($profile->level=="company")
                      {
-                       include 'navigationClient.php';
+                       include 'navigationCompany.php';
                      }
                      else{
                        include 'navigationEmployee.php';
