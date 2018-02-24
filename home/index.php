@@ -46,6 +46,16 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
+	case 'jobDetail' :
+		$content 	= 'jobDetail.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'application' :
+		$content 	= 'application.php';
+		$template	= '../include/template.php';
+		break;
+
 	default :
 		$content 	= 'home.php';
 		$template	= '../include/template.php';
