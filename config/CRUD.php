@@ -76,7 +76,7 @@ class Job {
 	 function readList($s){
 
 	 $db = Database::connect();
-	 $pdo = $db->prepare("SELECT * FROM job");
+	 $pdo = $db->prepare("SELECT * FROM job where isApproved=1");
 	 $pdo->execute();
 	 $result = $pdo->fetchAll(PDO::FETCH_OBJ);
 	 Database::disconnect();
