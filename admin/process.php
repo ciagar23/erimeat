@@ -30,14 +30,21 @@ function addAccount()
 {
 
 	$obj = new Admin;
-	$obj->firstName = $_POST['firstName'];
-	$obj->lastName = $_POST['lastName'];
-	$obj->username = $_POST['username'];
-	$obj->password = $_POST['password'];
-	$obj->level = $_POST['level'];
-	$obj->createOne($obj);
+	$newObj = $obj->readOne($_POST['username']);
 
-	header('Location: ../admin/?view=success');
+	if($newObj->username == 1){
+		header('Location: ../admin/?view=accounts&error=User already exist!');
+	}
+	else{
+		$obj->firstName = $_POST['firstName'];
+		$obj->lastName = $_POST['lastName'];
+		$obj->username = $_POST['username'];
+		$obj->password = $_POST['password'];
+		$obj->level = $_POST['level'];
+		$obj->createOne($obj);
+
+		header('Location: ../admin/?view=success');
+	}
 }
 
 function login()

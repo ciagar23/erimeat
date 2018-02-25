@@ -10,7 +10,7 @@ $obj = new Job;
   if ($row->isApproved==1){
 ?>
   <div class="">
-      <h4 class="header-title mt-0 m-b-20"><a href="?view=jobDetail&id=<?=$row->Id;?>"><?=$row->company;?></a></h4>
+      <h4 class="header-title mt-0 m-b-20"><a href="?view=companyDetail&Id=<?=$row->Id;?>"><?=$row->company;?></a></h4>
       <hr>
     </div>
 <?php

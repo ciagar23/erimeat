@@ -1,10 +1,15 @@
+<?php
+$error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
+?>
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
 
             <form id="default-wizard" action="process.php?action=addAccount" method="POST">
                     <legend>Add Account</legend>
-
+                    <p class="m-b-0">
+											<?=$error?>
+										</p>
                     <div class="row m-t-20">
                         <div class="col-sm-12">
                             <div class="form-group">
