@@ -47,10 +47,10 @@ File: Menu
   position: relative;
   width: 240px;
   z-index: 1;
-  background-color: #29303a;
+  background-color: #378bb5;
 }
 .navbar-default {
-  background-color: #64c5b1;
+  background-color: #fff;
   border-radius: 0;
   border: none;
   margin-bottom: 0;
@@ -73,7 +73,7 @@ File: Menu
   display: none;
 }
 .logo span span {
-  color: #64c5b1;
+  color: #ffffff;
 }
 .user-box a.user-link {
   padding-top: 17px !important;
@@ -110,7 +110,7 @@ File: Menu
 .side-menu {
   width: 240px;
   z-index: 10;
-  background: #343c49;
+  background: #3399cc;
   bottom: 0;
   margin-top: 0;
   padding-bottom: 30px;
@@ -137,7 +137,7 @@ File: Menu
   display: inline-block;
   height: 70px;
   width: 60px;
-  background-color: #64c5b1;
+  background-color: #ffffff;
   font-size: 16px;
 }
 #sidebar-menu > ul > li > a {
@@ -151,7 +151,7 @@ File: Menu
 #sidebar-menu > ul > li > a:active {
   color: #ffffff;
   text-decoration: none;
-  background-color: #2f3642;
+  background-color: #378bb5;
 }
 #sidebar-menu > ul > li > a > span {
   vertical-align: middle;
@@ -207,7 +207,7 @@ File: Menu
 }
 #sidebar-menu > ul > li > a.active {
   color: #ffffff !important;
-  background-color: #2f3642;
+  background-color: #378bb5;
 }
 .nav-second-level.nav li a,
 .nav-thrid-level.nav li a {
@@ -216,11 +216,11 @@ File: Menu
 }
 .nav-second-level.nav li a:focus,
 .nav-thrid-level.nav li a:focus {
-  background-color: #343c49;
+  background-color: #3399cc;
 }
 .nav-second-level.nav li a:hover,
 .nav-thrid-level.nav li a:hover {
-  background-color: #343c49;
+  background-color: #3399cc;
   color: #ffffff;
 }
 .nav-second-level.nav > li > a {
@@ -228,7 +228,8 @@ File: Menu
 }
 .nav-second-level.nav li.active > a {
   color: #ffffff;
-  background-color: #343c49;
+  background-color: #3399cc
+  ;
 }
 .nav-third-level.nav > li > a {
   padding-left: 68px;
@@ -270,7 +271,7 @@ File: Menu
   padding-bottom: 5px;
   padding-top: 5px;
   z-index: 9999;
-  background-color: #343c49;
+  background-color: #3399cc;
 }
 .enlarged #wrapper .left.side-menu {
   width: 70px;
@@ -282,15 +283,15 @@ File: Menu
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:hover {
   color: #ffffff !important;
-  background-color: #2f3642;
+  background-color: #378bb5;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:active {
   color: #ffffff !important;
-  background-color: #2f3642;
+  background-color: #378bb5;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a:focus {
   color: #ffffff !important;
-  background-color: #2f3642;
+  background-color: #378bb5;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu > ul > li > a i {
   font-size: 18px;
@@ -310,9 +311,9 @@ File: Menu
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover > a {
   position: relative;
-  width: 260px;
+  width: 70px;
   color: #ffffff !important;
-  background-color: #2f3642;
+  background-color: transparent;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover > ul {
   display: block;
@@ -374,7 +375,7 @@ File: Menu
 .enlarged #wrapper .topbar .topbar-left .logo i {
   display: block;
   line-height: 70px;
-  color: #64c5b1 !important;
+  color: #ffffff !important;
 }
 .enlarged #wrapper #sidebar-menu > ul > li:hover > a.open :after {
   display: none;
@@ -544,7 +545,7 @@ body.enlarged.bg-transparent {
   display: block;
 }
 .megamenu-list li a:hover {
-  color: #64c5b1;
+  color: #ffffff;
 }
 .megamenu-list li a i {
   width: 20px;

@@ -1,16 +1,13 @@
+<ul class="metisMenu nav" id="side-menu">
+    <li>
+        <a href="index.php">
+            <i class="mdi mdi-home"></i><span> Home </span>
+        </a>
+    </li>
 
-<div id="navigation">
-    <!-- Navigation Menu-->
-    <ul class="navigation-menu">
-
-              <li class="has-submenu">
-                  <a href="index.php"><i class="fi-air-play"></i>Home</a>
-              </li>
-
-              <li class="has-submenu">
-                  <a href="?view=talentRequest"><i class="fi-air-play"></i>Talent Requests</a>
-              </li>
-
-    </ul>
-    <!-- End navigation menu -->
-  </div>
+    <li>
+        <a href="?view=talentRequest">
+            <i class="mdi mdi-comment-account"></i><span> Talent Request </span>
+        </a>
+    </li>
+</ul>

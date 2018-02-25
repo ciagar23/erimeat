@@ -1,16 +1,13 @@
+<ul class="metisMenu nav" id="side-menu">
+    <li>
+        <a href="../account/?view=addAccount">
+            <i class="mdi mdi-home"></i><span> Employee </span>
+        </a>
+    </li>
 
-<div id="navigation">
-    <!-- Navigation Menu-->
-    <ul class="navigation-menu">
-
-        <li class="has-submenu">
-            <a href="../account/?view=addAccount"><i class="fi-air-play"></i>Employee</a>
-        </li>
-
-        <li class="has-submenu">
-            <a href="../account/?view=timekeeping"><i class="fi-air-play"></i>Timekeeping</a>
-        </li>
-
-    </ul>
-    <!-- End navigation menu -->
-  </div>
+    <li>
+        <a href="../account/?view=timekeeping">
+            <i class="mdi mdi-comment-account"></i><span> Timekeeping </span>
+        </a>
+    </li>
+</ul>

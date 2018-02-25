@@ -4,7 +4,8 @@
     <ul class="navigation-menu">
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>Employer</a>
+            <a href="#">Employer
+            <b class=" fa fa-angle-down"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=hiringForm">Request Talent</a></li>
                 <li><a href="../home/?view=searchResume">Search Candidates</a></li>
@@ -12,7 +13,8 @@
         </li>
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>Job Seeker</a>
+            <a href="#">Job Seeker
+            <b class=" fa fa-angle-down"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=searchJob">Search Job</a></li>
                 <li><a href="../home/?view=submitResume">Submit Resume</a></li>
@@ -20,19 +22,23 @@
         </li>
 
         <li class="has-submenu">
-            <a href="../home/?view=aboutUs"><i class="fi-air-play"></i>About us</a>
+            <a href="../home/?view=aboutUs">About us
+            <b class=" fa fa-angle-down"></b></a>
         </li>
 
         <li class="has-submenu">
-            <a href="../home/?view=contactUs"><i class="fi-air-play"></i>Contact us</a>
+            <a href="../home/?view=contactUs">Contact us
+            <b class=" fa fa-angle-down"></b></a>
         </li>
 
         <li class="has-submenu">
-            <a href="../home/?view=services"><i class="fi-air-play"></i>Services</a>
+            <a href="../home/?view=services">Services
+            <b class=" fa fa-angle-down"></b></a>
         </li>
 
         <li class="has-submenu">
-            <a href="#"><i class="fi-air-play"></i>Projects</a>
+            <a href="#">Projects
+            <b class=" fa fa-angle-down"></b></a>
             <ul class="submenu">
                 <li><a href="#">TODO</a></li>
                 <li><a href="#">TODO</a></li>
