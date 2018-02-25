@@ -332,7 +332,6 @@ File: Menu
   color: #ffffff;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover a span {
-  display: inline;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul ul li:hover > ul {
   display: block;

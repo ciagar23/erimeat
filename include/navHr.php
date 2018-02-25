@@ -7,19 +7,19 @@
 
     <li>
         <a href="../hr/?view=applicants">
-            <i class="mdi mdi-comment-account"></i><span> Applicants </span>
+            <i class="mdi mdi-account-star"></i><span> Applicants </span>
         </a>
     </li>
 
     <li>
         <a href="../hr/?view=scheduleInterview">
-            <i class="mdi mdi-comment-account"></i><span> Schedule Interview </span>
+            <i class="mdi mdi-alarm-check"></i><span> Schedule Interview </span>
         </a>
     </li>
 
     <li>
         <a href="../hr/?view=timekeeping">
-            <i class="mdi mdi-comment-account"></i><span> Timekeeping </span>
+            <i class="mdi mdi-clock"></i><span> Timekeeping </span>
         </a>
     </li>
 
