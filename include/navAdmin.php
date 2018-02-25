@@ -12,14 +12,14 @@
     </li>
 
     <li>
-        <a href="?view=accounts">
-            <i class="mdi mdi-comment-account"></i><span> Accounts </span>
+        <a href="index.php">
+            <i class="mdi mdi-account-switch"></i><span> Accounts </span>
         </a>
     </li>
 
     <li>
-        <a href="?view=companies">
-            <i class="mdi mdi-comment-account"></i><span> Companies </span>
+        <a href="index.php">
+            <i class="mdi mdi-city"></i><span> Companies </span>
         </a>
     </li>
 </ul>

@@ -6,7 +6,7 @@
     </li>
 
     <li>
-        <a href="?view=timekeeping">
+        <a href="?view=timesheet">
             <i class="mdi mdi-comment-account"></i><span> Archives </span>
         </a>
     </li>
