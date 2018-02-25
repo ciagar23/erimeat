@@ -1,13 +1,14 @@
 <ul class="metisMenu nav" id="side-menu">
     <li>
-        <a href="../account/?view=addAccount">
-            <i class="mdi mdi-home"></i><span> Employee </span>
+        <a href="index.php">
+            <i class="mdi mdi-home"></i><span> Home </span>
         </a>
     </li>
 
     <li>
-        <a href="../account/?view=timekeeping">
-            <i class="mdi mdi-comment-account"></i><span> Timekeeping </span>
+        <a href="?view=timekeeping">
+            <i class="mdi mdi-comment-account"></i><span> Archives </span>
         </a>
     </li>
+
 </ul>

@@ -10,4 +10,16 @@
             <i class="mdi mdi-comment-account"></i><span> Talent Request </span>
         </a>
     </li>
+
+    <li>
+        <a href="index.php">
+            <i class="mdi mdi-comment-account"></i><span> Accounts </span>
+        </a>
+    </li>
+
+    <li>
+        <a href="index.php">
+            <i class="mdi mdi-comment-account"></i><span> Companies </span>
+        </a>
+    </li>
 </ul>

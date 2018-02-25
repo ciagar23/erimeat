@@ -45,7 +45,7 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo">
+                    <a href="index.php" class="logo">
                         <span>
                             <img src="../include/assets/images/teamire-header.png" alt="" height="60">
                         </span>
