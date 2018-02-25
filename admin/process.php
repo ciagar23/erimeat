@@ -11,6 +11,10 @@ switch ($action) {
 		jobRequest();
 		break;
 
+	case 'addAccount' :
+		addAccount();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -20,6 +24,20 @@ switch ($action) {
 		break;
 
 	default :
+}
+
+function addAccount()
+{
+
+	$obj = new Admin;
+	$obj->firstName = $_POST['firstName'];
+	$obj->lastName = $_POST['lastName'];
+	$obj->username = $_POST['username'];
+	$obj->password = $_POST['password'];
+	$obj->level = $_POST['level'];
+	$obj->createOne($obj);
+
+	header('Location: ../admin/?view=success');
 }
 
 function login()
