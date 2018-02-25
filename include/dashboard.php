@@ -1,37 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <title>Adminox - Responsive Web App Kit</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="../include/assets/images/favicon.ico">
-
-        <!-- App css -->
-        <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/style.css" rel="stylesheet" type="text/css" />
-
-        <script src="../include/assets/js/modernizr.min.js"></script>
-
-
-
-        <!-- App css -->
-        <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="../include/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-
-        <script src="../include/assets/js/modernizr.min.js"></script>
-
+        <?php include $headScript; ?>
     </head>
 
 
@@ -178,7 +148,7 @@
 
                             <li class="dropdown user-box">
                                 <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true">
-                                    <img src="../include/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
+                                    <div class="img-circle user-img"><i class="fa fa-user-circle fa-2x text-center"></i></div>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
@@ -247,39 +217,6 @@
         <!-- END wrapper -->
         <!-- END wrapper -->
 
-
-                <!-- jQuery  -->
-                <script src="../include/assets/js/jquery.min.js"></script>
-                <script src="../include/assets/js/bootstrap.min.js"></script>
-                <script src="../include/assets/js/metisMenu.min.js"></script>
-                <script src="../include/assets/js/waves.js"></script>
-                <script src="../include/assets/js/jquery.slimscroll.js"></script>
-
-                <!-- Counter js  -->
-                <script src="../include/plugins/waypoints/jquery.waypoints.min.js"></script>
-                <script src="../include/plugins/counterup/jquery.counterup.min.js"></script>
-
-                <!-- KNOB JS -->
-                <!--[if IE]>
-                <script type="text/javascript" src="../plugins/jquery-knob/excanvas.js"></script>
-                <![endif]-->
-                <script src="../include/ plugins/jquery-knob/jquery.knob.js"></script>
-
-                <!--Morris Chart-->
-                <script src="../include/plugins/morris/morris.min.js"></script>
-                <script src="../include/plugins/raphael/raphael-min.js"></script>
-
-                <!-- Sparkline charts -->
-                <script src="../include/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-
-                <!-- Dashboard init -->
-                <script src="../include/assets/pages/jquery.dashboard-2.js"></script>
-
-                <!-- App js -->
-                <script src="../include/assets/js/jquery.core.js"></script>
-                <script src="../include/assets/js/jquery.app.js"></script>
-
-
-
+        <?php include $footScript; ?>
     </body>
 </html>

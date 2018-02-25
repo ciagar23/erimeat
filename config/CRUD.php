@@ -221,7 +221,6 @@ class Resume {
 															state='$obj->state',
 															zipCode='$obj->zipCode',
 															uploadedResume='$obj->uploadedResume',
-															owner='$obj->owner',
 															createDate=NOW()
 															");
 		$pdo->execute();
@@ -242,7 +241,7 @@ class Resume {
 															state='$obj->state',
 															zipCode='$obj->zipCode',
 															uploadedResume='$obj->uploadedResume',
-															owner='$obj->owner',
+															isApproved='$obj->isApproved',
 														 	createDate=NOW()
 														 	where Id='$obj->Id'
 														 	");
@@ -300,6 +299,16 @@ class Employee {
 class JobFunction {
 
 	/* Retrieve one record */
+	function readOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from job_function where Id='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	/* Retrieve one record */
 	function readList(){
 	$db = Database::connect();
 	$pdo = $db->prepare("SELECT * FROM job_function");
@@ -347,6 +356,18 @@ class Experience {
 																	 ");
 			$pdo->execute();
 			Database::disconnect();
+		}
+}
+
+class EmployeeTimesheet {
+
+	function readList($val){
+			$db = Database::connect();
+			$pdo = $db->prepare("SELECT * FROM dtr where username='$val'");
+			$pdo->execute();
+			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
 		}
 }
 

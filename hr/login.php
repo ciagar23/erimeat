@@ -54,7 +54,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 <span>Hr login</span>
                                             </a>
                                         </h2>
-                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5>
+                                        <h5 class="text-uppercase font-bold m-b-5 m-t-20">Sign In</h5>
                                         <p class="m-b-0">
 																				<?=$error?></p>
                                     </div>
@@ -68,15 +68,14 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row m-b-20">
+                                            <div class="form-group row m-b-5">
                                                 <div class="col-12">
-                                                    <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a>
                                                     <label for="password">Password</label>
                                                     <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
                                                 </div>
                                             </div>
 
-
+                                            <a href="page-recoverpw.html" class="text-muted pull-right m-b-15"><small>Forgot your password?</small></a>
                                             <div class="form-group row text-center m-t-10">
                                                 <div class="col-12">
                                                     <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Sign In</button>
