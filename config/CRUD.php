@@ -221,7 +221,6 @@ class Resume {
 															state='$obj->state',
 															zipCode='$obj->zipCode',
 															uploadedResume='$obj->uploadedResume',
-															owner='$obj->owner',
 															createDate=NOW()
 															");
 		$pdo->execute();
@@ -298,6 +297,16 @@ class Employee {
 
 
 class JobFunction {
+
+	/* Retrieve one record */
+	function readOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from job_function where Id='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
 
 	/* Retrieve one record */
 	function readList(){

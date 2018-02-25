@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-24 21:19:38
+# Date: 2018-02-25 19:04:49
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -136,7 +136,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'409321',1,1,'kkjh','kjhkjh','kjhkjh','kjhkj','hkjh','kjhkjh','kjhkjh','kjhkjh','kjhkjhk','2018-02-24 02:08:40','0','jkhkjhkjh','kjhkjh'),(2,'469343',1,1,'jk','kjhk','kjhkj','kjhkj','kjhkj','kjhkj','kjhkj','hkjhkj','kjhkjh','2018-02-24 18:49:02','0','jkhjk','kjhkj');
+INSERT INTO `job` VALUES (1,'1519539371',1,1,'Develment','tekinbox','fred@sfdsf.com','','dsfdsfdsf','dfdsfdsf','bacolod','dfdsfds','dfdsf dsfdsfdsf','2018-02-25 18:42:28','1','fred','garcia');
 
 #
 # Structure for table "job_function"
@@ -190,17 +190,16 @@ CREATE TABLE `resume` (
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(50) DEFAULT NULL,
   `zipCode` varchar(20) DEFAULT NULL,
-  `owner` varchar(255) DEFAULT NULL,
   `uploadedResume` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (3,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050194.txt','2018-02-19 22:23:13'),(4,0,0,'u','u','u','u','u','u','u','u','u','sleepnot','1519050322.txt','2018-02-19 22:25:22'),(5,0,4,'u','u','u','u','u','u','u','u','u','sleepnot','1519050333.txt','2018-02-19 22:25:33'),(6,0,1,'dale','torre','dale.torre@tekinbox.com','1235','bacolod','baclod','city','state','6100','admin','1519050672.txt','2018-02-19 22:31:11');
+INSERT INTO `resume` VALUES (1,0,1,'kjhkj','hkjhkj','hkjh','kjhkjhk','kjhkjh','kjhkjh','kjhkj','hkjhkjh','kjhkh','1519555290.PNG','2018-02-25 18:41:29'),(2,1,1,'11','11','11','11','11','11','11','11','11','1519555371.PNG','2018-02-25 18:42:50');
 
 #
 # Structure for table "user"
@@ -215,10 +214,10 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (15,'company','12345','publiq','cafe','company'),(16,'employee','12345','dale','torre','employee');
+INSERT INTO `user` VALUES (15,'company','12345','publiq','cafe','company'),(16,'employee','12345','dale','torre','employee'),(17,'C1519539371','temppassword','fred','garcia','company'),(18,'C1519539371','temppassword','fred','garcia','company');
