@@ -350,6 +350,18 @@ class Experience {
 		}
 }
 
+class EmployeeTimesheet {
+
+	function readList($val){
+			$db = Database::connect();
+			$pdo = $db->prepare("SELECT * FROM dtr where username='$val'");
+			$pdo->execute();
+			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+			Database::disconnect();
+			return $result;
+		}
+}
+
 /* =====================================Functions===================================== */
 
 /* Retrieve one record */
