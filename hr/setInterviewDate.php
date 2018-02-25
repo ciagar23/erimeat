@@ -2,7 +2,6 @@
 $app = resume::readOne($_GET['Id']);
 ?>
 
-
 <div class="row">
     <div class="col-md-12">
         <!-- Personal-Information -->
