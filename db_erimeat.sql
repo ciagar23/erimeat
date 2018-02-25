@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-25 19:04:49
+# Date: 2018-02-25 20:54:00
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -124,19 +124,19 @@ CREATE TABLE `job` (
   `zipCode` varchar(20) DEFAULT NULL,
   `address` text,
   `requiredExperience` varchar(100) DEFAULT NULL,
-  `comment` varchar(255) DEFAULT NULL,
+  `comment` text,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   `firstName` varchar(100) DEFAULT NULL,
   `lastName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1519539371',1,1,'Develment','tekinbox','fred@sfdsf.com','','dsfdsfdsf','dfdsfdsf','bacolod','dfdsfds','dfdsf dsfdsfdsf','2018-02-25 18:42:28','1','fred','garcia');
+INSERT INTO `job` VALUES (1,'1519539371',1,1,'Developement','tekinbox','fred@sfdsf.com','President','32432432434','6100','bacolod','10-20 years','\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-02-25 18:42:28','1','fred','garcia'),(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,' ',NULL,NULL);
 
 #
 # Structure for table "job_function"
@@ -192,14 +192,15 @@ CREATE TABLE `resume` (
   `zipCode` varchar(20) DEFAULT NULL,
   `uploadedResume` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
+  `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (1,0,1,'kjhkj','hkjhkj','hkjh','kjhkjhk','kjhkjh','kjhkjh','kjhkj','hkjhkjh','kjhkh','1519555290.PNG','2018-02-25 18:41:29'),(2,1,1,'11','11','11','11','11','11','11','11','11','1519555371.PNG','2018-02-25 18:42:50');
+INSERT INTO `resume` VALUES (1,0,1,'kjhkj','hkjhkj','hkjh','kjhkjhk','kjhkjh','kjhkjh','kjhkj','hkjhkjh','kjhkh','1519555290.PNG','2018-02-25 18:41:29','0'),(2,1,1,'11','11','11','11','11','11','11','11','11','1519555371.PNG','2018-02-25 20:44:07','-1'),(3,0,1,'kjh','kjkhk','jhkjh','kjhk','jhkjh','kjh','kjh','kjh','kjhkj','1519556791.jpg','2018-02-25 19:06:30','0'),(4,1,1,'yyy','yyy','yy','yyy','yyy','y','yyy','yyy','yy','1519557292.jpg','2018-02-25 20:43:53','-1'),(5,1,1,'qqqqqqq','q','q','q','q','q','q','q','q','1519562119.jpg','2018-02-25 20:43:00','-1');
 
 #
 # Structure for table "user"

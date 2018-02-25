@@ -371,6 +371,19 @@ class EmployeeTimesheet {
 		}
 }
 
+class Company {
+
+	/* Retrieve one record */
+	function readOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from company where Id='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+}
+
 /* =====================================Functions===================================== */
 
 /* Retrieve one record */
