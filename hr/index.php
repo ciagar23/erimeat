@@ -36,6 +36,11 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+		case 'setInterViewDate' :
+			$content 	= 'setInterViewDate.php';
+			$template	= '../include/dashboard.php';
+			break;
+
 	case 'scheduleInterview' :
 		$content 	= 'scheduleInterview.php';
 		$template	= '../include/dashboard.php';

@@ -241,7 +241,6 @@ class Resume {
 															state='$obj->state',
 															zipCode='$obj->zipCode',
 															uploadedResume='$obj->uploadedResume',
-															owner='$obj->owner',
 															isApproved='$obj->isApproved',
 														 	createDate=NOW()
 														 	where Id='$obj->Id'
