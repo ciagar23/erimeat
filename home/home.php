@@ -1,5 +1,18 @@
 <div class="container-fluid">
-  <div style="width: 100%; height: 299px; background-color:grey;">
+  <div style="position:relative;">
+
+    <img src="../include/assets/images/teamire-home-img.png">
+    <div class="homepage-top-text text-center">
+      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+    </div>
+    <div class="col-md-8 m-l-15-p homepage-search">
+        <div class="input-group m-t-5">
+            <input type="text" id="" name="" class="form-control" value="Search Jobs">
+            <span class="input-group-btn">
+                <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+            </span>
+        </div>
+    </div>
   </div>
 <!-- Card Box Content-->
   <div class="card-box">
@@ -82,7 +95,7 @@
                         <h4 class=" m-b-5">New York</h4>
                     </div>
                     <hr/>
-                    <div style="background-color: grey; width: 100%; height: 150px;"></div>
+                    <img src="../include/assets/images/home-img1.png">
                 </div>
             </div><!-- end col -->
 
@@ -92,7 +105,7 @@
                         <h4 class=" m-b-5">New York</h4>
                     </div>
                     <hr/>
-                    <div style="background-color: grey; width: 100%; height: 150px;"></div>
+                    <img src="../include/assets/images/home-img2.png">
                 </div>
             </div><!-- end col -->
 
@@ -102,7 +115,7 @@
                         <h4 class=" m-b-5">New York</h4>
                     </div>
                     <hr/>
-                    <div style="background-color: grey; width: 100%; height: 150px;"></div>
+                    <img src="../include/assets/images/home-img3.png">
                 </div>
             </div><!-- end col -->
 
@@ -112,7 +125,7 @@
                         <h4 class=" m-b-5">New York</h4>
                     </div>
                     <hr/>
-                    <div style="background-color: grey; width: 100%; height: 150px;"></div>
+                    <img src="../include/assets/images/home-img4.png">
                 </div>
             </div><!-- end col -->
         </div>
@@ -121,7 +134,7 @@
 
     <div class="card-box">
       <div class="row">
-          <div class="col-md-8 offset-md-4">
+          <div class="col-md-8 m-l-15-p">
               <div class="input-group m-t-5">
                   <input type="text" id="" name="" class="form-control" value="Search Jobs">
                   <span class="input-group-btn">
@@ -130,5 +143,5 @@
               </div>
           </div>
       </div>
-  </div>
+    </div>
 </div>

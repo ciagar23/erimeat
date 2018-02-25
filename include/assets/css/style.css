@@ -648,6 +648,9 @@ a:focus {
 .m-l-15 {
   margin-left: 15px !important; }
 
+.m-l-15-p {
+  margin-left: 15% !important; }
+
 .m-t-5 {
   margin-top: 5px !important; }
 
@@ -5507,6 +5510,18 @@ ul.sitemap-icon ul li a {
     background-color: #d9d9d9;
     margin: 5px 130px; }
 
-    ul {
-      list-style-type: none;
-    }
+/** homepage floating search bar **/
+  .homepage-search {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 50px; }
+
+/** homepage top text **/
+  .homepage-top-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 24px;
+    color: #ffffff;
+    padding-top: 50px; }

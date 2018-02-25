@@ -55,21 +55,21 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 <span>Admin login</span>
                                             </a>
                                         </h2>
-                                        <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5>
+                                        <h5 class="text-uppercase font-bold m-b-5 m-t-20">Sign In</h5>
                                         <p class="m-b-0">
 																				<?=$error?></p>
                                     </div>
                                     <div class="account-content">
                                         <form class="form-horizontal" action="process.php?action=login" method="POST">
 
-                                            <div class="form-group row mb-b-0">
+                                            <div class="form-group mb-b-0 row">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Username</label>
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row m-b-0">
+                                            <div class="form-group row m-b-5">
                                                 <div class="col-12">
                                                     <label for="password">Password</label>
                                                     <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
