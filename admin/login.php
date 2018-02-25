@@ -36,15 +36,16 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                         <div class="wrapper-page">
 
                             <div class="account-pages">
-                              <div class="login-left-box">
-                                <div class="login-title">Teamire</div>
-                                <div class="login-description">
-                                  Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor
-                                  lorem ipsum
+                                <div class="login-left-box">
+                                  <div class="login-title">Teamire</div>
+                                  <div class="login-description">
+                                    Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor
+                                    lorem ipsum
+                                  </div>
+                                  <button type="button" class="btn btn-warning waves-effect w-md waves-light">Read More</button>
                                 </div>
-                                <button type="button" class="btn btn-warning waves-effect w-md waves-light">Read More</button>
-                              </div>
                                 <div class="account-box">
+
                                     <div class="account-logo-box">
                                       <div class="login-logo">
                                         <img src="../include/assets/images/teamire-logo.png">
@@ -61,21 +62,20 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                     <div class="account-content">
                                         <form class="form-horizontal" action="process.php?action=login" method="POST">
 
-                                            <div class="form-group m-b-20 row">
+                                            <div class="form-group row mb-b-0">
                                                 <div class="col-12">
                                                     <label for="emailaddress">Username</label>
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row m-b-20">
+                                            <div class="form-group row m-b-0">
                                                 <div class="col-12">
-                                                    <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a>
                                                     <label for="password">Password</label>
                                                     <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
                                                 </div>
                                             </div>
-
+                                            <a href="page-recoverpw.html" class="text-muted pull-right m-b-15"><small>Forgot your password?</small></a>
 
                                             <div class="form-group row text-center m-t-10">
                                                 <div class="col-12">

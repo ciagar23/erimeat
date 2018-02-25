@@ -178,7 +178,7 @@
 
                             <li class="dropdown user-box">
                                 <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true">
-                                    <img src="../include/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
+                                    <div class="img-circle user-img"><i class="fa fa-user-circle fa-2x text-center"></i></div>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
