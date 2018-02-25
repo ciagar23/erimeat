@@ -26,28 +26,33 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
-	case 'availableSkills' :
-		$content 	= 'availableSkills.php';
+	case 'hiringForm' :
+		$content 	= 'hiringForm.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'availablePosition' :
-		$content 	= 'availablePosition.php';
+	case 'success' :
+		$content 	= 'success.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'numberEmployee' :
-		$content 	= 'numberEmployee.php';
+	case 'searchJob' :
+		$content 	= 'searchJob.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'timekeeping' :
-		$content 	= 'timekeeping.php';
+	case 'jobList' :
+		$content 	= 'jobList.php';
 		$template	= '../include/template.php';
 		break;
 
-	case 'reports' :
-		$content 	= 'reports.php';
+	case 'jobDetail' :
+		$content 	= 'jobDetail.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'application' :
+		$content 	= 'application.php';
 		$template	= '../include/template.php';
 		break;
 

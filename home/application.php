@@ -11,11 +11,12 @@ $pt->readList();
     <div class="col-md-12">
         <div class="card-box">
 
-            <form id="default-wizard" action="process.php?action=submitResume" method="POST" enctype="multipart/form-data">
-                    <legend>Submit Resume</legend>
+            <form id="default-wizard" action="process.php?action=submitApplication" method="POST" enctype="multipart/form-data">
+                    <legend>Submit Application</legend>
                     <div class="row m-t-20">
                         <div class="col-sm-6">
 
+                              <input type="hidden" name="jobId" value="<?=$_GET['id'];?>">
                               <div class="form-group">
                                   <label for="firstname">Job Function</label>
                                   <select class="form-control" name="jobFunctionId">

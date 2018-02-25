@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+ session_start();
+ if(!isset($_SESSION["user_session"]))
+ {
+   	header('Location: ../user/');
+  }
+  else{
+    $obj = new Admin;
+    $profile = $obj->readOne($_SESSION["user_session"]);
+  }
+ ?>
+ Dashboard
+ <!DOCTYPE html>
  <html>
      <head>
          <?php include_once($headScript);?>
@@ -15,7 +27,7 @@
                          <!--Adminox-->
                          <!--</a>-->
                          <!-- Image Logo -->
-                         <a href="index.php" class="logo">
+                         <a href="../home" class="logo">
                            Teamire
                          </a>
                      </div>
@@ -31,7 +43,13 @@
              <div class="navbar-custom">
                  <div class="container">
                      <?php
-                       include $navigation;
+                     if ($profile->level=="company")
+                     {
+                       include 'navigationAdmin.php';
+                     }
+                     else{
+                       include 'navigation.php';
+                     }
                      ?>
                  </div> <!-- end container -->
              </div> <!-- end navbar-custom -->

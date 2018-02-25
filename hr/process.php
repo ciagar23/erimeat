@@ -37,17 +37,12 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Profile::login($username, $password);
+	$result = Admin::login($username, $password, 'hr');
 
 	if ($result){
 		session_start();
-		$_SESSION['user_session'] = $username;
-		if ($password == 'temppassword'){
-			header('Location: ../user/?view=changepassword');
-		}
-		else{
-			header('Location: ../account/');
-		}
+		$_SESSION['hr_session'] = $username;
+		header('Location: index.php');
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
@@ -60,7 +55,7 @@ function logout()
 	//logout.php
 session_start();
 session_destroy();
-header('Location: ../user/');
+header('Location: index.php');
 	exit;
 }
 

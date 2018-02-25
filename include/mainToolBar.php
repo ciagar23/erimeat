@@ -71,7 +71,7 @@
             </a>
 
             <!-- item-->
-            <a href="../user/?view=logout" class="dropdown-item notify-item">
+            <a href="process.php?action=logout" class="dropdown-item notify-item">
                 <i class="zmdi zmdi-settings"></i> <span>Logout</span>
             </a>
 
