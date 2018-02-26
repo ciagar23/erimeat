@@ -3,12 +3,17 @@ $obj = new Job;
 $job = $obj->readOne($_GET['id']);
 ?>
 
-
 <div class="row">
     <div class="col-md-12">
         <!-- Personal-Information -->
         <div class="card-box">
+          <div class="col-md-10">
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
+          </div>
+          <div class="col-md-1" style="margin-left: 75px;">
+            <button class="btn btn-default stepy-finish"><a href="../home/?view=application&id=<?=$job->Id;?>">Apply Now</a></button>
+          </div>
+          <div class="clearfix"></div>
             <div class="panel-body">
                 <div class="text-left">
                     <p class="text-muted font-13"><strong>Job Position :</strong>
@@ -36,8 +41,6 @@ $job = $obj->readOne($_GET['id']);
             </div>
         </div>
         <!-- Personal-Information -->
-        <div class="card-box">
-          <button class="btn btn-default stepy-finish"><a href="../home/?view=application&id=<?=$job->Id;?>">Apply Now</a></button>
-        </div>
+
     </div>
   </div>

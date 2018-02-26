@@ -16,7 +16,9 @@
                         <!--</a>-->
                         <!-- Image Logo -->
                         <div class="padding-xs">
-                        <img src="../include/assets/images/teamire-logo.png" width=75% height=75%>
+                        <a href="index.php" class="logo">
+                          <img src="../include/assets/images/teamire-logo.png" width=75% height=75%>
+                        </a>
                       </div>
                     </div>
                     <!-- End Logo container-->
