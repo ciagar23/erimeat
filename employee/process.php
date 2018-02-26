@@ -11,6 +11,10 @@ switch ($action) {
 		login();
 		break;
 
+	case 'newCheckIn' :
+		newCheckIn();
+		break;
+
 	case 'logout' :
 		logout();
 		break;
@@ -60,19 +64,24 @@ function login()
 
 		$checkDtr = DTR::readOne($username, date("Y-m-d"));
 		if (!$checkDtr){
-				$dtr = new DTR;
-				$dtr->owner = $username;
-				$dtr->createDate = 'NOW()';
-				$dtr->checkIn = 'NOW()';
-				$dtr->createOne($dtr);
+				newCheckIn();
 			}
-
-		header('Location: index.php');
 		}
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
 	}
+}
+
+function newCheckIn()
+{
+	$dtr = new DTR;
+	$dtr->owner = $_SESSION['employee_session'];
+	$dtr->createDate = 'NOW()';
+	$dtr->checkIn = 'NOW()';
+	$dtr->createOne($dtr);
+
+	header('Location: index.php');
 }
 
 function changepassword()
