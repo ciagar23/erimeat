@@ -31,6 +31,10 @@ switch ($action) {
 		denyResume();
 		break;
 
+	case 'hireApplicant' :
+		hireApplicant();
+		break;
+
 	case 'setInterViewDate' :
 		setInterViewDate();
 		break;
@@ -99,11 +103,11 @@ function setInterviewDate()
 {
 	$email = $_POST['email'];
 
-	$obj1 = new interviewDate;
-	$obj1->resumeId = $_POST['resumeId'];
-	$obj1->date = $_POST['date'];
-	$obj1->time = $_POST['time'];
-	$obj1->createOne($obj);
+	$intObj = new interviewDate;
+	$intObj->resumeId = $_POST['resumeId'];
+	$intObj->date = $_POST['date'];
+	$intObj->time = $_POST['time'];
+	$intObj->createOne($intObj);
 
 	$obj = new Resume;
 	$newObj = $obj->readOne($_POST['resumeId']);
@@ -112,12 +116,56 @@ function setInterviewDate()
 
 	$content = "We have considered your application. Please be available on the schedule below<br>
 							for your interview.<br><br>
-							Date = $obj1->date<br>
-							Time = $obj1->time<br><br>
+							Date = $intObj->date<br>
+							Time = $intObj->time<br><br>
 							Teamire";
 	sendEmail($email, $content);
 
 	header('Location: index.php?view=applicants');
+}
+
+function hireApplicant()
+{
+	if ($_GET['result']=="approve"){
+		$result = 1;
+		__createLogin($_GET['Id']);
+	}
+	else{
+		$result = -1;
+	}
+
+	$obj = new Employee;
+	$obj->jobId = $_GET['jobId'];
+	$obj->userId = $_GET['Id'];
+	$obj->createDate = 'NOW()';
+	$obj->createOne($obj);
+
+	header('Location: index.php?view=scheduleInterview');
+}
+
+function __createLogin($Id){
+	// Get Detail
+	$resume = new Resume;
+	$resume = $resume->readOne($Id);
+
+	// Create account
+	$obj = new Profile;
+	$obj->username = $resume->email;
+	$obj->password = "temppassword";
+	$obj->firstName = $resume->firstName;
+	$obj->lastName = $resume->lastName;
+	$obj->level = "employee";
+	$obj->createOne($obj);
+
+	// Send email
+	$content = "Congratulations!<br><br>
+							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
+							Username: $obj->username <br>
+							Password: $obj->password <br><br>
+							To login to our website. Please click the link below:<br>
+							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
+							Teamire";
+	sendEmail($resume->email, $content);
 }
 
 function changepassword()

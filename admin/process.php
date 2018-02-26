@@ -93,7 +93,7 @@ function jobRequest()
 
 	if ($result==-1){
 		// Send email
-		$content = "We apologized we have denied your requiest as it did not match our requirements.<br><br>
+		$content = "We apologized we have denied your request as it did not match our requirements.<br><br>
 								Teamire";
 		sendEmail($newObj->workEmail, $content);
 

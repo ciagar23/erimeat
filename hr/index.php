@@ -57,6 +57,11 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'hiringApplicant' :
+		$content 	= 'hiringApplicant.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	default :
 		$content 	= 'main.php';
 		$template	= '../include/dashboard.php';
