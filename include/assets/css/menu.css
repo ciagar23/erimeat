@@ -312,7 +312,7 @@ File: Menu
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover > a {
   position: relative;
   width: 70px;
-  color: #ffffff !important;
+  color: transparent;
   background-color: transparent;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover > ul {
@@ -332,7 +332,6 @@ File: Menu
   color: #ffffff;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul > li:hover a span {
-  display: inline;
 }
 .enlarged #wrapper .left.side-menu #sidebar-menu ul ul li:hover > ul {
   display: block;

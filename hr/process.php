@@ -27,6 +27,10 @@ switch ($action) {
 		changepassword();
 		break;
 
+	case 'denyResume' :
+		denyResume();
+		break;
+
 	default :
 }
 
@@ -75,6 +79,16 @@ function update()
 	$obj->updateOne($newObj);
 
 	header('Location: ../user/?view=profileDisplay');
+}
+
+function denyResume()
+{
+	$obj = new Resume;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isApproved = -1;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=applicants');
 }
 
 function changepassword()

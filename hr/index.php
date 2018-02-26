@@ -10,6 +10,10 @@ if(!isset($_SESSION["hr_session"]))
 	 $view = "login";
  }
 
+
+ $headScript = 'headScript.php';
+ $footScript = 'footScript.php';
+
 switch ($view) {
 
 	case 'login' :
@@ -27,6 +31,16 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'applicantDetail' :
+		$content 	= 'applicantDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+		case 'setInterViewDate' :
+			$content 	= 'setInterViewDate.php';
+			$template	= '../include/dashboard.php';
+			break;
+
 	case 'scheduleInterview' :
 		$content 	= 'scheduleInterview.php';
 		$template	= '../include/dashboard.php';
@@ -36,8 +50,6 @@ switch ($view) {
 		$content 	= 'main.php';
 		$template	= '../include/dashboard.php';
 }
-$headScript = 'headScript.php';
-$footScript = 'footScript.php';
 $navigation = '../include/navHr.php';
 require_once $template;
 ?>

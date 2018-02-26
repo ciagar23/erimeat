@@ -68,9 +68,8 @@ function submitResume(){
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->uploadedResume = $upload;
-			$obj->owner = $_SESSION['user_session'];
 			$obj->createOne($obj);
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
@@ -95,10 +94,9 @@ function submitApplication()
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->uploadedResume = $upload;
-			$obj->owner = $_SESSION['user_session'];
 			$obj->createOne($obj);
 
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
