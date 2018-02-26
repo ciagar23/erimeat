@@ -48,7 +48,7 @@ substr(round(microtime(true)), -6)
 	$obj->createOne($obj);
 
 	// Send email
-	$content = "We have accepted your request.<br> We will get back to you";
+	$content = __createJobEmailMessage();
 	sendEmail($obj->workEmail, $content);
 
 	header('Location: ../home/?view=success');
@@ -118,4 +118,20 @@ function submitApplication()
 
 }
 
+
+/* ======================== Email Messages ==============================*/
+
+function __createJobEmailMessage(){
+	return "
+		<style>
+			title{font-color: #3399cc; font-size: 20px;}
+		</style>
+		<title>Teamire</title>
+		We have accepted your request.<br> <br> We will get back to you
+
+
+
+
+	";
+}
 ?>
