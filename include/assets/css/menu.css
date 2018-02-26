@@ -476,6 +476,17 @@ body.enlarged.bg-transparent {
   right: 0;
   left: 240px;
 }
+/* Footer */
+.footer-default {
+  border-top: 1px solid rgba(152, 166, 173, 0.2);
+  bottom: 0;
+  background-color: #ffffff;
+  text-align: left !important;
+  padding: 19px 30px 20px;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
 .notify-list {
   padding: 0 !important;
 }
