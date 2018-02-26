@@ -12,6 +12,12 @@
     </li>
 
     <li>
+        <a href="../hr/?view=candidates">
+            <i class="mdi mdi-account-star"></i><span> Candidates Resume </span>
+        </a>
+    </li>
+
+    <li>
         <a href="../hr/?view=scheduleInterview">
             <i class="mdi mdi-alarm-check"></i><span> Schedule Interview </span>
         </a>

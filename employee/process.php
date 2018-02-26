@@ -11,12 +11,32 @@ switch ($action) {
 		login();
 		break;
 
+	case 'newCheckIn' :
+		newCheckIn();
+		break;
+
 	case 'logout' :
 		logout();
 		break;
 
 	case 'changepassword' :
 		changepassword();
+		break;
+
+	case 'stampBreak' :
+		stampBreak();
+		break;
+
+	case 'stampLunch' :
+		stampLunch();
+		break;
+
+	case 'stampCheckIn' :
+		stampCheckIn();
+		break;
+
+	case 'stampCheckOut' :
+		stampCheckOut();
 		break;
 
 	default :
@@ -35,24 +55,33 @@ function login()
 		session_start();
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
-			header('Location: ?view=changepassword');
+			header('Location: index.php?view=changepassword');
 		}
 		else{
 
-		$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
+			//TODO: Ano ni?!?!
+		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
-		$dtr_date = date('Y-m-d');
-		$checkIn = date('h:i:sa');
-
-		$sql = "INSERT INTO dtr (employee_name, dtr_date, checkIn)
-		VALUES ('$username', '$dtr_date', '$checkIn')";
-		$conn->exec($sql);
-		header('Location: index.php');
+		$checkDtr = DTR::readOne($username, date("Y-m-d"));
+		if (!$checkDtr){
+				newCheckIn();
+			}
 		}
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
 	}
+}
+
+function newCheckIn()
+{
+	$dtr = new DTR;
+	$dtr->owner = $_SESSION['employee_session'];
+	$dtr->createDate = 'NOW()';
+	$dtr->checkIn = 'NOW()';
+	$dtr->createOne($dtr);
+
+	header('Location: index.php');
 }
 
 function changepassword()
@@ -76,6 +105,105 @@ function changepassword()
 	else{
 		header('Location: index.php?view=changepassword&error=Password not matched');
 	}
+}
+
+function stampCheckIn(){
+
+		$obj = new DTR;
+		$dtr = $obj->readOne($_SESSION['employee_session'], date("Y-m-d"));
+
+	if ($dtr->status == 1)
+	{
+		__breakIn();
+	}
+
+	if ($dtr->status == 2)
+	{
+		__lunchIn();
+	}
+
+}
+
+function __breakIn(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakIn=NOW(),
+															status = '0'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+function __lunchIn(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set lunchIn=NOW(),
+															status = '0'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+function stampBreak(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakOut=NOW(),
+															status = '1'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+
+function stampLunch(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set lunchOut=NOW(),
+															status = '2'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+
+function stampCheckOut(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set checkOut=NOW(),
+															status = '3'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
 }
 
 function logout()

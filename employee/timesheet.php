@@ -1,32 +1,30 @@
-<?php $username = $_SESSION['employee_session'];?>
+<?php
+/*$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';*/
+$user = $_SESSION['employee_session'];
+$obj = new DTR;
+?>
 <div class="card-box">
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
-                        <tr>                
-                            <th>Date</th>              
+                        <tr>
+                            <th>Date</th>
                             <th>Check In</th>
-                            <th>Break Out</th>
-                            <th>Break In</th>
+                            <th>Break</th>
+                            <th>Lunch</th>
                             <th>Check Out</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php                       
-                    $conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', ''); 
-                    $result = $conn->prepare("SELECT * FROM dtr WHERE employee_name='$username'");
-                    $result->execute();
-                    for($i=0; $row = $result->fetch(); $i++){
-                    $id=$row['Id'];
-                    ?>
+                     <?php foreach($obj->readList($user) as $row) {?>
                           <tr>
-                            <td> <?php echo $row['dtr_date']?></td>
-                            <td> <?php echo $row['checkIn']?></td>
-                            <td> <?php echo $row['breakOut']?></td>
-                            <td> <?php echo $row['breakIn']?></td>
-                            <td> <?php echo $row['checkOut']?></td>
+                            <td> <?=$row->createDate;?></td>
+                            <td> <?=$row->checkIn;?></td>
+                            <td> <?=$row->breakOut;?> - <?=$row->breakIn;?></td>
+                            <td> <?=$row->lunchOut;?> - <?=$row->lunchIn;?></td>
+                            <td> <?=$row->checkOut;?></td>
                          </tr>
                   <?php } ?>
 
@@ -35,8 +33,6 @@
                                 </div>
                             </div>
 
-                     
+
     </div>  <!-- end row -->
 </div>
-
-

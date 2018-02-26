@@ -47,6 +47,10 @@ substr(round(microtime(true)), -6)
 	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->createOne($obj);
 
+	// Send email
+	$content = "We have accepted your request.<br> We will get back to you";
+	sendEmail($obj->workEmail, $content);
+
 	header('Location: ../home/?view=success');
 }
 
@@ -69,6 +73,11 @@ function submitResume(){
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
+
+			// Send email
+			$content = "We have accepted your resume.<br> We will get back to you";
+			sendEmail($obj->workEmail, $content);
+
 			header('Location: ../home/?view=success');
 		}
 		else{
@@ -96,7 +105,12 @@ function submitApplication()
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
 
+			// Send Email
+			$content = "We have accepted your application.<br> We will get back to you";
+			sendEmail($obj->workEmail, $content);
+
 			header('Location: ../home/?view=success');
+
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
