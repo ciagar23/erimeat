@@ -1,16 +1,31 @@
+<ul class="metisMenu nav" id="side-menu">
+    <li>
+        <a href="../company/?view=availableSkills">
+            <i class="mdi mdi-home"></i><span> Available Skills </span>
+        </a>
+    </li>
 
-<div id="navigation">
-    <!-- Navigation Menu-->
-    <ul class="navigation-menu">
+    <li>
+        <a href="../company/?view=availablePosition">
+            <i class="mdi mdi-comment-account"></i><span> Available Position </span>
+        </a>
+    </li>
 
-        <li class="has-submenu">
-            <a href="../account/?view=addAccount"><i class="fi-air-play"></i>Company</a>
-        </li>
+    <li>
+        <a href="../company/?view=numberEmployee">
+            <i class="mdi mdi-comment-account"></i><span> Number of Employee </span>
+        </a>
+    </li>
 
-        <li class="has-submenu">
-            <a href="../account/?view=timekeeping"><i class="fi-air-play"></i>Timekeeping</a>
-        </li>
+    <li>
+        <a href="../company/?view=timekeeping">
+            <i class="mdi mdi-comment-account"></i><span> Timekeeping </span>
+        </a>
+    </li>
 
-    </ul>
-    <!-- End navigation menu -->
-  </div>
+    <li>
+        <a href="../company/?view=reports">
+            <i class="mdi mdi-comment-account"></i><span> Reports </span>
+        </a>
+    </li>
+</ul>

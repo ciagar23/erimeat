@@ -1,16 +1,26 @@
+<ul class="metisMenu nav" id="side-menu">
+    <li>
+        <a href="../hr/?view=home">
+            <i class="mdi mdi-home"></i><span> Home </span>
+        </a>
+    </li>
 
-<div id="navigation">
-    <!-- Navigation Menu-->
-    <ul class="navigation-menu">
+    <li>
+        <a href="../hr/?view=applicants">
+            <i class="mdi mdi-comment-account"></i><span> Applicants </span>
+        </a>
+    </li>
 
-        <li class="has-submenu">
-            <a href="../account/?view=addAccount"><i class="fi-air-play"></i>Hr</a>
-        </li>
+    <li>
+        <a href="../hr/?view=scheduleInterview">
+            <i class="mdi mdi-comment-account"></i><span> Schedule Interview </span>
+        </a>
+    </li>
 
-        <li class="has-submenu">
-            <a href="../account/?view=timekeeping"><i class="fi-air-play"></i>Timekeeping</a>
-        </li>
+    <li>
+        <a href="../hr/?view=timekeeping">
+            <i class="mdi mdi-comment-account"></i><span> Timekeeping </span>
+        </a>
+    </li>
 
-    </ul>
-    <!-- End navigation menu -->
-  </div>
+</ul>

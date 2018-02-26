@@ -25,6 +25,8 @@
 <link href="../include/assets/css/icons.css" rel="stylesheet" type="text/css" />
 <link href="../include/assets/css/style.css" rel="stylesheet" type="text/css" />
  <link href="../include/assets/css/pages.css" rel="stylesheet" type="text/css" />
-      
+ <link href="../include/assets/css/metismenu.min.css.css" rel="stylesheet" type="text/css" />
+ <link href="../include/assets/css/menu.css" rel="stylesheet" type="text/css" />
+
         <link href="../include/assets/css/responsive.css" rel="stylesheet" type="text/css" />
 <script src="../include/assets/js/modernizr.min.js"></script>

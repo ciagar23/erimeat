@@ -59,12 +59,6 @@
             <div class="dropdown-item noti-title">
                 <h5 class="text-overflow"><small>Select your choice</small> </h5>
             </div>
-
-            <!-- item-->
-            <a href="../timesheet/" class="dropdown-item notify-item">
-                <i class="zmdi zmdi-lock-open"></i> <span>Timesheets</span>
-            </a>
-
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>

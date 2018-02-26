@@ -15,23 +15,25 @@
                         <!--Adminox-->
                         <!--</a>-->
                         <!-- Image Logo -->
-                        <a href="../home" class="logo">
-                          Teamire
-                        </a>
+                        <div class="padding-xs">
+                        <img src="../include/assets/images/teamire-logo.png" width=75% height=75%>
+                      </div>
                     </div>
                     <!-- End Logo container-->
                     <!-- end menu-extras -->
+                    <div class="navbar-top">
+                    <div class="navbar-line"></div>
+                        <div class="container">
+                            <?php
+                              include 'navVisitor.php';
+                            ?>
+                        </div> <!-- end container -->
+                    </div> <!-- end navbar-custom -->
                     <div class="clearfix"></div>
                 </div> <!-- end container -->
             </div>
             <!-- end topbar-main -->
-            <div class="navbar-custom">
-                <div class="container">
-                    <?php
-                      include 'navVisitor.php';
-                    ?>
-                </div> <!-- end container -->
-            </div> <!-- end navbar-custom -->
+
         </header>
         <!-- End Navigation Bar-->
         <div class="wrapper">
