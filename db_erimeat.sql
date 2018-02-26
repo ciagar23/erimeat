@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-25 20:54:00
+# Date: 2018-02-26 16:13:34
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -16,13 +16,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','publiq','cafe','admin'),(16,'hr','12345','dale','torre','hr');
+INSERT INTO `admin` VALUES (15,'admin','admin','publiq','cafe','admin'),(16,'hr','12345','dale','torre','hr'),(17,'hr','123456','dsfkhj','kjhkjhkj','hr');
 
 #
 # Structure for table "company"
@@ -54,12 +54,15 @@ INSERT INTO `company` VALUES (1,'0','publiq','publq','publiq@publiq.com','sam se
 DROP TABLE IF EXISTS `dtr`;
 CREATE TABLE `dtr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `employee_name` varchar(255) DEFAULT NULL,
-  `dtr_date` varchar(255) DEFAULT NULL,
-  `checkIn` varchar(255) DEFAULT NULL,
-  `breakOut` varchar(255) DEFAULT NULL,
-  `breakIn` varchar(255) DEFAULT NULL,
-  `checkOut` varchar(255) DEFAULT NULL,
+  `owner` varchar(10) DEFAULT NULL,
+  `checkIn` time DEFAULT NULL,
+  `checkOut` time DEFAULT NULL,
+  `breakOut` time DEFAULT NULL,
+  `breakIn` time DEFAULT NULL,
+  `lunchIn` time DEFAULT NULL,
+  `lunchOut` time DEFAULT NULL,
+  `createDate` date DEFAULT NULL,
+  `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -67,7 +70,7 @@ CREATE TABLE `dtr` (
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (1,'dfdsf dgfd','2018-02-24','06:49:49am','00-00-00','00-00-00','10:28:37am');
+INSERT INTO `dtr` VALUES (1,'employee','16:08:05','16:12:51','16:08:13','16:11:04','16:12:50','16:12:49','2018-02-26','3');
 
 #
 # Structure for table "employee"
@@ -130,13 +133,13 @@ CREATE TABLE `job` (
   `firstName` varchar(100) DEFAULT NULL,
   `lastName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1519539371',1,1,'Developement','tekinbox','fred@sfdsf.com','President','32432432434','6100','bacolod','10-20 years','\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-02-25 18:42:28','1','fred','garcia'),(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,' ',NULL,NULL);
+INSERT INTO `job` VALUES (1,'1519539371',1,1,'Developement','tekinbox','fred@sfdsf.com','President','32432432434','6100','bacolod','10-20 years','\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-02-25 18:42:28','1','fred','garcia'),(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,' ',NULL,NULL),(3,'1519563451',1,1,'yy','hiuh','iuhu','iuhiu','iuhiu','uihiu','iuhiuhiu','iuhiuh','iuhi','2018-02-25 20:57:31','0','uhiuh','iuhiuh');
 
 #
 # Structure for table "job_function"
@@ -215,7 +218,7 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
