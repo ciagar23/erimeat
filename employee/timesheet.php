@@ -12,10 +12,8 @@ $obj = new DTR;
                         <tr>
                             <th>Date</th>
                             <th>Check In</th>
-                            <th>Break Out</th>
-                            <th>Break In</th>
-                            <th>Lunch Out</th>
-                            <th>Lunch In</th>
+                            <th>Break</th>
+                            <th>Lunch</th>
                             <th>Check Out</th>
                         </tr>
                     </thead>
@@ -24,10 +22,8 @@ $obj = new DTR;
                           <tr>
                             <td> <?=$row->createDate;?></td>
                             <td> <?=$row->checkIn;?></td>
-                            <td> <?=$row->breakOut;?></td>
-                            <td> <?=$row->breakIn;?></td>
-                            <td> <?=$row->lunchOut;?></td>
-                            <td> <?=$row->lunchIn;?></td>
+                            <td> <?=$row->breakOut;?> - <?=$row->breakIn;?></td>
+                            <td> <?=$row->lunchOut;?> - <?=$row->lunchIn;?></td>
                             <td> <?=$row->checkOut;?></td>
                          </tr>
                   <?php } ?>
