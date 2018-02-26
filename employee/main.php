@@ -1,5 +1,7 @@
 <?php
 $app = DTR::readOne($_SESSION['employee_session'], date("Y-m-d"));
+
+if ($app){
 ?>
 
 <div class="card-box">
@@ -7,29 +9,22 @@ $app = DTR::readOne($_SESSION['employee_session'], date("Y-m-d"));
       <div class="col-sm-12">
         <center>
           <?php if ($app->status==1) { ?>
-
-                        <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
-
-                            You are currently On break
-                        </div>
+                  <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
+                      You are currently On break
+                  </div>
             <?php } else if ($app->status==2) { ?>
-
-                          <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
-
-                              You are currently on Lunch
-                          </div>
+                  <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
+                      You are currently on Lunch
+                  </div>
             <?php } else if ($app->status==3) { ?>
-                        <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
-
-                            You have already checked out!
-                        </div>
+                  <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
+                      You have already checked out!
+                  </div>
             <?php } else { ?>
-                        <div class="alert alert-icon alert-success alert-dismissible fade in" role="alert">
-
-                            You have already checked out!
-                        </div>
-          <?php } ?>
-
+                  <div class="alert alert-icon alert-success alert-dismissible fade in" role="alert">
+                      You have are checked in!
+                  </div>
+            <?php } ?>
         <br>
         <?php if ($app->status == 1 || $app->status == 2) {?>
               <a href="process.php?action=stampCheckIn" class="btn btn-primary" name="breakOut"><span class="fa fa-clock-o"></span>Check in</a>
@@ -85,3 +80,20 @@ $app = DTR::readOne($_SESSION['employee_session'], date("Y-m-d"));
 
     </div>  <!-- end row -->
 </div>
+
+<?php } else {?>
+
+  <div class="card-box">
+      <div class="row">
+        <div class="col-sm-12">
+          <center>
+            <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
+                You have not checked in yet.
+            </div>
+                <a href="process.php?action=newCheckIn" class="btn btn-primary" name="breakOut"></span>Click here to check in</a>
+          </center>
+        </div>
+      </div>
+    </div>
+
+<?php } ?>

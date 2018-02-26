@@ -4,7 +4,6 @@
         <?php include $headScript; ?>
     </head>
 
-
     <body>
 
         <!-- Begin page -->
