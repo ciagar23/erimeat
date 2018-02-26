@@ -49,6 +49,7 @@ switch ($view) {
 	case 'setInterViewDate' :
 		$content 	= 'setInterViewDate.php';
 		$template	= '../include/dashboard.php';
+	  $footScript = 'calendarFootScript.php';
 		break;
 
 	case 'scheduleInterview' :

@@ -8,15 +8,15 @@
 
 <!--calendar css-->
    <!-- DataTables -->
-        <link href="../include/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../include/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
-<link href="../include/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+    <link href="../include/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../include/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
 
 <!-- App css -->
 <link href="../include/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />

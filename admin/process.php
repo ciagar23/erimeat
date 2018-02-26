@@ -91,6 +91,13 @@ function jobRequest()
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
 
+	if ($result==-1){
+		// Send email
+		$content = "We appologized we denied your requiest";
+		sendEmail($newObj->workEmail, $content);
+
+	}
+
 	header('Location: index.php?view=talentRequest');
 }
 
@@ -108,5 +115,10 @@ function __createLogin($Id){
 	$obj->level = "company";
 	$obj->createOne($obj);
 
+	// Send email
+	$content = "We have approved your request.<br>
+	Username: $obj->username <br>
+	Password: $obj->password";
+	sendEmail($job->workEmail, $content);
 }
 ?>
