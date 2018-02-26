@@ -16,11 +16,12 @@ switch ($view) {
 		$content 	= 'login.php';
 		$template	= '../include/template_login.php';
 		break;
+
 	case 'timesheet' :
 		$content 	= 'timesheet.php';
 		$template	= '../include/dashboard.php';
 		break;
-	
+
 	case 'changepassword' :
 		$content 	= 'changepassword.php';
 		$template	= '../include/template_login.php';

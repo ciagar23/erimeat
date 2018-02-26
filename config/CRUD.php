@@ -359,16 +359,45 @@ class Experience {
 		}
 }
 
-class EmployeeTimesheet {
+class DTR {
 
-	function readList($val){
-			$db = Database::connect();
-			$pdo = $db->prepare("SELECT * FROM dtr where username='$val'");
-			$pdo->execute();
-			$result = $pdo->fetchAll(PDO::FETCH_OBJ);
-			Database::disconnect();
-			return $result;
+	/*
+	Statuses:
+	1 = break
+	2 = Lunch
+	3 = checkout
+	*/
+
+		/* Retrieve one record */
+		function readOne($owner, $date){
+				 $db = Database::connect();
+				 $pdo = $db->prepare("select * from dtr where owner='$owner' and createDate='$date'");
+				 $pdo->execute();
+				 $result = $pdo->fetch(PDO::FETCH_OBJ);
+				 Database::disconnect();
+				 return $result;
 		}
+
+		/* Retrieve one record */
+		function readList($val){
+				$db = Database::connect();
+				$pdo = $db->prepare("select * from dtr where owner='$val'");
+				$pdo->execute();
+				$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+				Database::disconnect();
+				return $result;
+		}
+
+		function createOne($obj){
+			$db = Database::connect();
+			$pdo = $db->prepare("insert into dtr set owner='$obj->owner',
+																	 createDate=$obj->createDate,
+																	 checkIn=$obj->checkIn
+																	 ");
+			$pdo->execute();
+			Database::disconnect();
+		}
+
 }
 
 class Company {
