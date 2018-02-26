@@ -31,6 +31,10 @@ switch ($action) {
 		denyResume();
 		break;
 
+	case 'setInterViewDate' :
+		setInterViewDate();
+		break;
+
 	default :
 }
 
@@ -86,6 +90,22 @@ function denyResume()
 	$obj = new Resume;
 	$newObj = $obj->readOne($_GET['Id']);
 	$newObj->isApproved = -1;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=applicants');
+}
+
+function setInterviewDate()
+{
+	$obj = new interviewDate;
+	$obj->resumeId = $_POST['resumeId'];
+	$obj->date = $_POST['date'];
+	$obj->time = $_POST['time'];
+	$obj->createOne($obj);
+
+	$obj = new Resume;
+	$newObj = $obj->readOne($_POST['resumeId']);
+	$newObj->isApproved = 1;
 	$obj->updateOne($newObj);
 
 	header('Location: index.php?view=applicants');

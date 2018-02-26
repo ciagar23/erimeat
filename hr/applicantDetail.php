@@ -40,24 +40,25 @@ $app = resume::readOne($_GET['Id']);
                       </a>
                   </h2>
 
-                  <form class="form-horizontal" action="#">
+                  <form class="form-horizontal" action="process.php?action=setInterViewDate" method="post">
 
+                        <input type="hidden" name="resumeId" value="<?=$app->Id;?>">
                                           <div class="form-group account-btn text-center m-t-10">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                        <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" required>
                         <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
                     </div>
                   </div>
 
-                                        <div class="form-group account-btn text-center m-t-10">
+                  <div class="form-group account-btn text-center m-t-10">
                     <div class="input-group">
-                          <input id="timepicker" type="text" class="form-control">
+                          <input id="timepicker" name="time" type="time" class="form-control" required>
                           <span class="input-group-addon"><i class="mdi mdi-clock"></i></span>
                       </div>  </div>
 
                       <div class="form-group account-btn text-center m-t-10">
                           <div class="col-xs-12">
-                              <button class="btn w-lg btn-rounded btn-lg btn-custom waves-effect waves-light" type="submit">Sign In</button>
+                              <button class="btn w-lg btn-rounded btn-lg btn-custom waves-effect waves-light" type="submit">Set</button>
                           </div>
                       </div>
 

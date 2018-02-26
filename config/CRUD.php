@@ -320,6 +320,19 @@ class JobFunction {
  }
 
 
+ class interviewDate {
+
+	 function createOne($obj){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("insert into interview_date set resumeId='$obj->resumeId',
+	 															 											 date='$obj->date',
+																											 time='$obj->time'
+	 															 ");
+		$pdo->execute();
+ 		Database::disconnect();
+	}
+}
+
 class PositionType {
 
 	/* Retrieve one record */
