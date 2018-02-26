@@ -582,6 +582,9 @@ a:focus {
 .container {
   width: 90%; }
 
+.container-dashboard {
+  width: 100%; }
+
 .container-alt {
   margin-left: auto;
   margin-right: auto;
@@ -646,6 +649,9 @@ a:focus {
   margin-left: 10px !important; }
 
 .m-l-15 {
+  margin-left: 15px !important; }
+
+.m-l-25 {
   margin-left: 15px !important; }
 
 .m-l-15-p {
