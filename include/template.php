@@ -48,7 +48,7 @@
         </div>
         <!-- end wrapper -->
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer-default">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
