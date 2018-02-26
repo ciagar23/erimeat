@@ -97,16 +97,25 @@ function denyResume()
 
 function setInterviewDate()
 {
-	$obj = new interviewDate;
-	$obj->resumeId = $_POST['resumeId'];
-	$obj->date = $_POST['date'];
-	$obj->time = $_POST['time'];
-	$obj->createOne($obj);
+	$email = $_POST['email'];
+
+	$obj1 = new interviewDate;
+	$obj1->resumeId = $_POST['resumeId'];
+	$obj1->date = $_POST['date'];
+	$obj1->time = $_POST['time'];
+	$obj1->createOne($obj);
 
 	$obj = new Resume;
 	$newObj = $obj->readOne($_POST['resumeId']);
 	$newObj->isApproved = 1;
 	$obj->updateOne($newObj);
+
+	$content = "We have considered your application. Please be available on the schedule below<br>
+							for your interview.<br><br>
+							Date = $obj1->date<br>
+							Time = $obj1->time<br><br>
+							Teamire";
+	sendEmail($email, $content);
 
 	header('Location: index.php?view=applicants');
 }

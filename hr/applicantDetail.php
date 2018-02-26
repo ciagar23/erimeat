@@ -43,6 +43,7 @@ $app = resume::readOne($_GET['Id']);
                   <form class="form-horizontal" action="process.php?action=setInterViewDate" method="post">
 
                         <input type="hidden" name="resumeId" value="<?=$app->Id;?>">
+                        <input type="hidden" name="email" value="<?=$app->email;?>">
                                           <div class="form-group account-btn text-center m-t-10">
                     <div class="input-group">
                         <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" required>
