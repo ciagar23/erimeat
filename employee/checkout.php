@@ -9,7 +9,12 @@ $checkOut= date('h:i:sa');
 $sql = "UPDATE dtr SET breakOut='00-00-00',breakIn='00-00-00',checkOut ='$checkOut' WHERE Id = '$get_id' ";
 
 $conn->exec($sql);
-echo "<script>alert('Successfully Checkout!'); window.location='index.php'</script>";
+
+	//logout.php
+session_start();
+session_destroy();
+header('Location: index.php');
+	exit;
 
 
 ?>
