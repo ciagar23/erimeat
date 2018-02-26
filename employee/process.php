@@ -38,6 +38,15 @@ function login()
 			header('Location: ?view=changepassword');
 		}
 		else{
+			
+	$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', ''); 
+
+	$dtr_date = date('Y-m-d');
+	$checkIn = date('h:i:sa');
+
+$sql = "INSERT INTO dtr (employee_name, dtr_date, checkIn)
+VALUES ('$username', '$dtr_date', '$checkIn')";
+$conn->exec($sql);
 			header('Location: index.php');
 		}
 	}

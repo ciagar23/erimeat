@@ -1,4 +1,3 @@
-
 <div class="card-box">
     <div class="row">
 
@@ -7,10 +6,11 @@
                             <center>
                             <form method="POST">
                                
-  <button type="submit" class="btn btn-primary" name="checkIn"><span class="fa fa-clock-o"></span> Check In</button>
+ 
 
-   <input type="hidden" name="employee_name" value="John Doe  ">
-  <input type="hidden" name="dtr_date" value="<?php echo date('Y-m-d')?>">
+   <input type="hidden" name="employee_name" value="<?php echo $_SESSION['employee_session'];?>
+">
+  <input type="hidden" name="dtr_date" value="<?php echo date('Y-m-d');?>">
   <input type="hidden" name="checkIn" value="<?php echo date('h:i:sa')?>">
 </form>
 <?php
@@ -60,7 +60,7 @@
                 
              if($row ['checkIn']==TRUE && $row ['breakOut']==FALSE && $row['breakIn']==FALSE){
                   ?>
-                       <a href="checkout.php<?php echo '?id='.$id; ?>" class="btn btn-danger" name="breakOut"><span class="fa fa-clock-o"></span> Check out</a> 
+                       <a href="checkout.php<?php echo '?id='.$id; ?>" class="btn btn-danger" name="breakOut"><span class="fa fa-clock-o"></span> Check out</a> |
                   <?php
                 }
 
@@ -156,19 +156,4 @@
                      
     </div>  <!-- end row -->
 </div>
-
-
-<?php
-     $conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', ''); 
-extract($_POST);
-if (isset($checkIn)) {
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "INSERT INTO dtr (employee_name, dtr_date, checkIn)
-VALUES ('$employee_name', '$dtr_date', '$checkIn')";
-
-$conn->exec($sql);
-echo "<script>alert('successfully added!'); window.location='index.php'</script>";
-}
-
-?>
 
