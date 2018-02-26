@@ -4,6 +4,7 @@ include_once("../config/CRUD.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
+
 switch ($view) {
 
 	case 'hiringForm' :
