@@ -35,7 +35,7 @@ function login()
 		session_start();
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
-			header('Location: ?view=changepassword');
+			header('Location: index.php?view=changepassword');
 		}
 		else{
 
