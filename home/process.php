@@ -69,7 +69,7 @@ function submitResume(){
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
@@ -96,7 +96,7 @@ function submitApplication()
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
 
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');

@@ -68,7 +68,7 @@ $pt->readList();
                           </div>
 
                           <div class="form-group">
-                              <label for="username">zipCode</label>
+                              <label for="username">Zip Code</label>
                               <input type="text" class="form-control" name="zipCode" placeholder="">
                           </div>
 
