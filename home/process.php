@@ -76,7 +76,7 @@ function submitResume(){
 
 			// Send email
 			$content = "We have accepted your resume.<br> We will get back to you";
-			sendEmail($obj->workEmail, $content);
+			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
 		}
@@ -107,7 +107,7 @@ function submitApplication()
 
 			// Send Email
 			$content = "We have accepted your application.<br> We will get back to you";
-			sendEmail($obj->workEmail, $content);
+			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
 
