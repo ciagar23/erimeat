@@ -47,6 +47,29 @@ substr(round(microtime(true)), -6)
 	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->createOne($obj);
 
+	require_once "../email/swift/lib/swift_required.php";
+
+	$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+										->setUsername('samplehr2k18@gmail.com')
+										->setPassword('smpl2k18');
+
+	$mailer = Swift_Mailer::newInstance($transport);
+
+	$message = Swift_Message::newInstance("No Reply")
+										->setFrom(array('samplehr2k18@gmail.com' => 'Teamire'))
+										->setTo(array($obj->workEmail));
+
+	$message->setBody("We have accepted your request. We will get back to you.", 'text/html');
+
+	if(!empty($targetpath)) {
+		 $message->attach(Swift_Attachment::fromPath($targetpath));
+	}
+
+	if (!$mailer->send($message, $errors)) {
+		echo "Error:";
+		print_r($errors);
+	}
+
 	header('Location: ../home/?view=success');
 }
 
@@ -69,7 +92,30 @@ function submitResume(){
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
+
+			require_once "../email/swift/lib/swift_required.php";
+
+			$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+												->setUsername('samplehr2k18@gmail.com')
+												->setPassword('smpl2k18');
+
+			$mailer = Swift_Mailer::newInstance($transport);
+
+			$message = Swift_Message::newInstance("No Reply")
+												->setFrom(array('samplehr2k18@gmail.com' => 'Teamire'))
+												->setTo(array($obj->email));
+
+			$message->setBody("We have accepted your resume. We will get back to you.", 'text/html');
+
+			if(!empty($targetpath)) {
+				 $message->attach(Swift_Attachment::fromPath($targetpath));
+			}
+
+			if (!$mailer->send($message, $errors)) {
+				echo "Error:";
+				print_r($errors);
+			}
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
@@ -96,7 +142,30 @@ function submitApplication()
 			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
 
-			header('Location: ../home/');
+			header('Location: ../home/?view=success');
+
+			require_once "../email/swift/lib/swift_required.php";
+
+			$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+												->setUsername('samplehr2k18@gmail.com')
+												->setPassword('smpl2k18');
+
+			$mailer = Swift_Mailer::newInstance($transport);
+
+			$message = Swift_Message::newInstance("No Reply")
+												->setFrom(array('samplehr2k18@gmail.com' => 'Teamire'))
+												->setTo(array($obj->email));
+
+			$message->setBody("We have accepted your application. We will get back to you.", 'text/html');
+
+			if(!empty($targetpath)) {
+				 $message->attach(Swift_Attachment::fromPath($targetpath));
+			}
+
+			if (!$mailer->send($message, $errors)) {
+				echo "Error:";
+				print_r($errors);
+			}
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');

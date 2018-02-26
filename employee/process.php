@@ -51,9 +51,12 @@ function login()
 		session_start();
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
-			header('Location: ?view=changepassword');
+			header('Location: index.php?view=changepassword');
 		}
 		else{
+
+			//TODO: Ano ni?!?!
+		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
 		$checkDtr = DTR::readOne($username, date("Y-m-d"));
 		if (!$checkDtr){

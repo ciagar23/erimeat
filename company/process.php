@@ -35,7 +35,7 @@ function login()
 		session_start();
 		$_SESSION['company_session'] = $username;
 		if ($password == 'temppassword'){
-			header('Location: ?view=changepassword');
+			header('Location: index.php?view=changepassword');
 		}
 		else{
 			header('Location: index.php');
@@ -52,7 +52,7 @@ function changepassword()
 	$password2 = $_POST['password2'];
 
 	if($password == $password2){
-		if($password != 'temppassword'){
+		if($password != "temppassword"){
 			$obj = new Profile;
 			$newObj = $obj->readOne($_POST['username']);
 			$newObj->password = $password;
