@@ -48,7 +48,10 @@ substr(round(microtime(true)), -6)
 	$obj->createOne($obj);
 
 	// Send email
-	$content = "We have accepted your request.<br> We will get back to you";
+	$content = "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.</br>
+							Please be informed that we are in the midst of processing your request and shall get</br>
+							in touch with you again if your request have meet our condition.</br></br>
+							Teamire"
 	sendEmail($obj->workEmail, $content);
 
 	header('Location: ../home/?view=success');

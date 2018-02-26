@@ -93,7 +93,8 @@ function jobRequest()
 
 	if ($result==-1){
 		// Send email
-		$content = "We appologized we denied your requiest";
+		$content = "We appologized we have denied your requiest as it did not match our requirements.</br></br>
+		Teamire";
 		sendEmail($newObj->workEmail, $content);
 
 	}
@@ -116,9 +117,12 @@ function __createLogin($Id){
 	$obj->createOne($obj);
 
 	// Send email
-	$content = "We have approved your request.<br>
-	Username: $obj->username <br>
-	Password: $obj->password";
+	$content = "We have approved your request. Please use the credentials we have created for you.</br>
+	Username: $obj->username </br>
+	Password: $obj->password </br></br>
+	To login to our website. Please click the link below:</br>
+	<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a></br></br>
+	Teamire";
 	sendEmail($job->workEmail, $content);
 }
 ?>
