@@ -75,7 +75,10 @@ function submitResume(){
 			$obj->createOne($obj);
 
 			// Send email
-			$content = "We have accepted your resume.<br> We will get back to you";
+			$content = "We have recieved your application. Thank you for the interest shown in our company.</br></br>
+								 Please be informed that we are in the midst of processing the applications and shall get</br>
+								 in touch with you again if you are shortlisted for an interview.</br></br>
+								 Teamire"
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
@@ -106,7 +109,13 @@ function submitApplication()
 			$obj->createOne($obj);
 
 			// Send Email
-			$content = "We have accepted your application.<br> We will get back to you";
+			$content = "Thank you for submitting your resume to Teamire. As of now, we are still reviewing your documents.</br>
+								 If we find any of our current opportunities that match your qualifications, we will contact you with the</br>
+								 next steps of your application.
+								 </br></br>
+								 We look forward to assisting you with your job search!
+								 </br></br>
+								 Teamire"
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
