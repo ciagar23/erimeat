@@ -5531,3 +5531,7 @@ ul.sitemap-icon ul li a {
     font-size: 24px;
     color: #ffffff;
     padding-top: 50px; }
+
+/** Primary Text **/
+  .text-primary {
+    color: #3399cc; }
