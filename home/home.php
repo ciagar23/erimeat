@@ -5,12 +5,14 @@
     <div class="homepage-top-text text-center">
       Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
     </div>
-    <div class="col-md-8 m-l-15-p homepage-search">
-        <div class="input-group m-t-5">
-            <input type="text" id="" name="" class="form-control" value="Search Jobs">
-            <span class="input-group-btn">
-                <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-            </span>
+    <div class="row homepage-search">
+        <div class="col-md-8 center-page">
+            <div class="input-group m-t-5">
+                <input type="text" id="" name="" class="form-control" value="Search Jobs">
+                <span class="input-group-btn">
+                    <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                </span>
+            </div>
         </div>
     </div>
   </div>
@@ -134,7 +136,7 @@
 
     <div class="card-box">
       <div class="row">
-          <div class="col-md-8 m-l-15-p">
+          <div class="col-md-8 center-page">
               <div class="input-group m-t-5">
                   <input type="text" id="" name="" class="form-control" value="Search Jobs">
                   <span class="input-group-btn">

@@ -48,10 +48,7 @@ substr(round(microtime(true)), -6)
 	$obj->createOne($obj);
 
 	// Send email
-	$content = "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
-							Please be informed that we are in the midst of processing your request and shall get<br>
-							in touch with you again if your request have meet our condition.<br><br>
-							Teamire";
+	$content = __createJobEmailMessage();
 	sendEmail($obj->workEmail, $content);
 
 	header('Location: ../home/?view=success');
@@ -130,4 +127,19 @@ function submitApplication()
 
 }
 
+
+/* ======================== Email Messages ==============================*/
+
+function __createJobEmailMessage(){
+	return "
+	We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
+								Please be informed that we are in the midst of processing your request and shall get<br>
+								in touch with you again if your request have meet our condition.<br><br>
+								Teamire
+
+
+
+
+	";
+}
 ?>

@@ -6,6 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="">
 
+<!-- App favicon -->
+<link rel="shortcut icon" href="../include/assets/images/favicon.ico">
+
 <!--calendar css-->
    <!-- DataTables -->
     <link href="../include/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>

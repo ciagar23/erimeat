@@ -86,7 +86,7 @@
 
     <div class="card-box">
       <div class="row">
-          <div class="col-md-8 m-l-15-p">
+          <div class="col-md-8 center-page">
               <div class="input-group m-t-5">
                   <input type="text" id="" name="" class="form-control" value="Search Jobs">
                   <span class="input-group-btn">
