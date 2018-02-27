@@ -276,7 +276,7 @@ class Employee {
 	function createOne($obj){
 	$db = Database::connect();
 	$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
-																 employee='$obj->employee',
+																 userId='$obj->userId',
 															 createDate=NOW()
 																 ");
 	$pdo->execute();
@@ -319,6 +319,29 @@ class JobFunction {
 	}
  }
 
+
+ class interviewDate {
+
+	 function createOne($obj){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("insert into interview_date set resumeId='$obj->resumeId',
+	 															 											 date='$obj->date',
+																											 time='$obj->time'
+	 															 ");
+		$pdo->execute();
+ 		Database::disconnect();
+	}
+
+	/* Retrieve one record */
+	function readOne($val){
+			 $db = Database::connect();
+			 $pdo = $db->prepare("select * from interview_date where resumeId='$val'");
+			 $pdo->execute();
+			 $result = $pdo->fetch(PDO::FETCH_OBJ);
+			 Database::disconnect();
+			 return $result;
+	}
+}
 
 class PositionType {
 

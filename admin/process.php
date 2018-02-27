@@ -91,6 +91,14 @@ function jobRequest()
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
 
+	if ($result==-1){
+		// Send email
+		$content = "We apologized we have denied your request as it did not match our requirements.<br><br>
+								Teamire";
+		sendEmail($newObj->workEmail, $content);
+
+	}
+
 	header('Location: index.php?view=talentRequest');
 }
 
@@ -108,5 +116,13 @@ function __createLogin($Id){
 	$obj->level = "company";
 	$obj->createOne($obj);
 
+	// Send email
+	$content = "We have approved your request. Please use the credentials we have created for you.<br>
+							Username: $obj->username <br>
+							Password: $obj->password <br><br>
+							To login to our website. Please click the link below:<br>
+							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
+							Teamire";
+	sendEmail($job->workEmail, $content);
 }
 ?>

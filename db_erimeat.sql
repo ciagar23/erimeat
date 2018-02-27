@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-26 16:13:34
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-02-27 03:07:32
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -22,7 +23,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','publiq','cafe','admin'),(16,'hr','12345','dale','torre','hr'),(17,'hr','123456','dsfkhj','kjhkjhkj','hr');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr');
 
 #
 # Structure for table "company"
@@ -45,7 +46,6 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (1,'0','publiq','publq','publiq@publiq.com','sam sedayon','09876543112','ramos billboard'),(2,'s','samiguel','samgiel','san@miguel.com','miguel','12345678909','bacolod'),(3,'b','bababol','bababol','ba@ba.com','bababe','1234567890','bacolo'),(4,'company','company','company','com@pany.com','123456','123456','bacolod');
 
 #
 # Structure for table "dtr"
@@ -64,13 +64,12 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (1,'employee','16:08:05','16:12:51','16:08:13','16:11:04','16:12:50','16:12:49','2018-02-26','3');
 
 #
 # Structure for table "employee"
@@ -110,6 +109,24 @@ CREATE TABLE `hr` (
 
 
 #
+# Structure for table "interview_date"
+#
+
+DROP TABLE IF EXISTS `interview_date`;
+CREATE TABLE `interview_date` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `resumeId` varchar(10) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "interview_date"
+#
+
+
+#
 # Structure for table "job"
 #
 
@@ -133,13 +150,12 @@ CREATE TABLE `job` (
   `firstName` varchar(100) DEFAULT NULL,
   `lastName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1519539371',1,1,'Developement','tekinbox','fred@sfdsf.com','President','32432432434','6100','bacolod','10-20 years','\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-02-25 18:42:28','1','fred','garcia'),(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,' ',NULL,NULL),(3,'1519563451',1,1,'yy','hiuh','iuhu','iuhiu','iuhiu','uihiu','iuhiuhiu','iuhiuh','iuhi','2018-02-25 20:57:31','0','uhiuh','iuhiuh');
 
 #
 # Structure for table "job_function"
@@ -156,7 +172,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'Administrative and Office Support'),(2,'Finance and Accounting'),(3,'Legal'),(4,'Marketing and Creative'),(5,'technology');
+INSERT INTO `job_function` VALUES (1,'Administrative and Office Support'),(2,'Finance and Accounting'),(3,'Legal'),(4,'Marketing and Creative'),(5,'Technology');
 
 #
 # Structure for table "position_type"
@@ -197,13 +213,12 @@ CREATE TABLE `resume` (
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (1,0,1,'kjhkj','hkjhkj','hkjh','kjhkjhk','kjhkjh','kjhkjh','kjhkj','hkjhkjh','kjhkh','1519555290.PNG','2018-02-25 18:41:29','0'),(2,1,1,'11','11','11','11','11','11','11','11','11','1519555371.PNG','2018-02-25 20:44:07','-1'),(3,0,1,'kjh','kjkhk','jhkjh','kjhk','jhkjh','kjh','kjh','kjh','kjhkj','1519556791.jpg','2018-02-25 19:06:30','0'),(4,1,1,'yyy','yyy','yy','yyy','yyy','y','yyy','yyy','yy','1519557292.jpg','2018-02-25 20:43:53','-1'),(5,1,1,'qqqqqqq','q','q','q','q','q','q','q','q','1519562119.jpg','2018-02-25 20:43:00','-1');
 
 #
 # Structure for table "user"
@@ -212,16 +227,15 @@ INSERT INTO `resume` VALUES (1,0,1,'kjhkj','hkjhkj','hkjh','kjhkjhk','kjhkjh','k
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (15,'company','12345','publiq','cafe','company'),(16,'employee','12345','dale','torre','employee'),(17,'C1519539371','temppassword','fred','garcia','company'),(18,'C1519539371','temppassword','fred','garcia','company');
