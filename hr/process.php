@@ -15,6 +15,10 @@ switch ($action) {
 		jobRequest();
 		break;
 
+	case 'clientRequest' :
+		clientRequest();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -132,7 +136,7 @@ function hireApplicant()
 {
 	if ($_GET['result']=="approve"){
 		$result = 1;
-		__createLogin($_GET['Id']);
+		__createEmployeeLogin($_GET['Id']);
 	}
 	else{
 		$result = -1;
@@ -147,7 +151,7 @@ function hireApplicant()
 	header('Location: index.php?view=scheduleInterview');
 }
 
-function __createLogin($Id){
+function __createEmployeeLogin($Id){
 	// Get Detail
 	$resume = new Resume;
 	$resume = $resume->readOne($Id);
@@ -170,6 +174,49 @@ function __createLogin($Id){
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($resume->email, $content);
+}
+
+function clientRequest()
+{
+	$result = 1;
+	__createClientLogin($_GET['Id']);
+
+	$obj = new Company;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isApproved = $result;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=clientRequest');
+}
+
+function __createClientLogin($Id){
+	// Get Detail
+	$comp = new Company;
+	$comp = $comp->readOne($Id);
+
+	// Create account
+	$obj = new Profile;
+	$obj->username = "C" . $comp->abn;
+	$obj->password = "temppassword";
+	$obj->firstName = $comp->contactPerson;
+	$obj->lastName = $comp->name;
+	$obj->level = "company";
+	$obj->createOne($obj);
+
+	// Update Company
+	$comp = new Company;
+	$newComp = $comp->readOne($Id);
+	$newComp->username = $obj->username;
+	$comp->updateOne($newComp);
+
+	// Send email
+	$content = "We have approved your request. Please use the credentials we have created for you.<br>
+							Username: $obj->username <br>
+							Password: $obj->password <br><br>
+							To login to our website. Please click the link below:<br>
+							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
+							Teamire";
+	sendEmail($newComp->email, $content);
 }
 
 function changepassword()

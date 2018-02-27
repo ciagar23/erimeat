@@ -12,6 +12,12 @@
     </li>
 
     <li>
+        <a href="../hr/?view=clientRequest">
+            <i class="mdi mdi-comment-account"></i><span> Client Request </span>
+        </a>
+    </li>
+
+    <li>
         <a href="../hr/?view=applicants">
             <i class="mdi mdi-account-star"></i><span> Applicants </span>
         </a>
