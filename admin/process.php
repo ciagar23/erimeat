@@ -93,8 +93,7 @@ function jobRequest()
 
 	if ($result==-1){
 		// Send email
-		$content = "We apologized we have denied your request as it did not match our requirements.<br><br>
-								Teamire";
+		$content = __deniedJobRequestEmailMessage();
 		sendEmail($newObj->workEmail, $content);
 
 	}
@@ -124,5 +123,12 @@ function __createLogin($Id){
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($job->workEmail, $content);
+}
+
+/* ======================== Email Messages ==============================*/
+
+function __deniedJobRequestEmailMessage(){
+	return "We apologized we have denied your request as it did not match our requirements.<br><br>
+					Teamire";
 }
 ?>
