@@ -78,7 +78,7 @@ function submitResume(){
 			$content = "We have recieved your application. Thank you for the interest shown in our company.</br></br>
 								 Please be informed that we are in the midst of processing the applications and shall get</br>
 								 in touch with you again if you are shortlisted for an interview.</br></br>
-								 Teamire"
+								 Teamire";
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
@@ -115,7 +115,7 @@ function submitApplication()
 								 </br></br>
 								 We look forward to assisting you with your job search!
 								 </br></br>
-								 Teamire"
+								 Teamire";
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
@@ -132,11 +132,10 @@ function submitApplication()
 
 function __createJobEmailMessage(){
 	return "
-		<style>
-			title{font-color: #3399cc; font-size: 20px;}
-		</style>
-		<title>Teamire</title>
-		We have accepted your request.<br> <br> We will get back to you
+	We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
+								Please be informed that we are in the midst of processing your request and shall get<br>
+								in touch with you again if your request have meet our condition.<br><br>
+								Teamire
 
 
 
