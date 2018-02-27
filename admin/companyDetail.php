@@ -26,8 +26,11 @@ $company = $obj->readOne($_GET['Id']);
                     <p class="text-muted font-13"><strong>Contact Person :</strong>
                       <span class="m-l-15"><?=$company->contactPerson;?></span>
                     </p>
-                    <p class="text-muted font-13"><strong>Contact Number :</strong>
-                      <span class="m-l-15"><?=$company->contactNumber;?></span>
+                    <p class="text-muted font-13"><strong>Phone Number :</strong>
+                      <span class="m-l-15"><?=$company->phoneNumber;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Mobile Number :</strong>
+                      <span class="m-l-15"><?=$company->mobileNumber;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Address :</strong>
                       <span class="m-l-15"><?=$company->address;?></span>

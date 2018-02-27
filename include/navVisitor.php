@@ -14,7 +14,7 @@
 
         <li class="has-submenu">
             <a href="#">Job Seeker
-            <b class="fa fa-chevron-right"></b></a>
+            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=searchJob">Search Job</a></li>
                 <li><a href="../home/?view=submitResume">Submit Resume</a></li>
@@ -23,7 +23,7 @@
 
         <li class="has-submenu">
             <a href="#">Work With Us
-            <b class="fa fa-chevron-right"></b></a>
+            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
               <li><a href="../home/?view=aboutUs">About Us</a></li>
               <li><a href="../home/?view=services">Services</a></li>
@@ -32,7 +32,7 @@
 
         <li class="has-submenu">
             <a href="#">Projects
-            <b class="fa fa-chevron-right"></b></a>
+            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="#">TODO</a></li>
                 <li><a href="#">TODO</a></li>
@@ -41,8 +41,7 @@
 
         <li class="has-submenu">
             <a href="#">Register
-            <b class="fa fa-chevron-right
-            "></b></a>
+            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=clientForm">Client Request</a></li>
             </ul>
