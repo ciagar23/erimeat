@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-27 20:46:40
+# Date: 2018-02-27 23:58:56
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -51,7 +51,7 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (1,'','123','123','123','123','123','123','123','123','123','1','0'),(2,'','123','123','123','123','123','123','123','123','123','1','0'),(3,'','aa','aa','1211qqq','torredale1014@gmail.com','aa','123123','123213','11','aaa','1','0');
+INSERT INTO `company` VALUES (4,'C12345','MAPA','12345','We are an engineering company.','torredale1014@gmail.com','Dale Torre','2345678909','123123213','Bacolod City','Engineering','9','1'),(5,'','Ceres','123123213','We are transporting.','torredale1014@gmail.com','Arnold Yanson','2345678909','12312321','Bacolod City','Domestic Transport','1','0');
 
 #
 # Structure for table "dtr"
@@ -94,6 +94,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (1,7,'3','2018-02-27 23:53:31');
 
 #
 # Structure for table "hr"
@@ -131,6 +132,7 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (1,'3','2018-02-28','01:00:00');
 
 #
 # Structure for table "job"
@@ -147,22 +149,21 @@ CREATE TABLE `job` (
   `workEmail` varchar(100) DEFAULT NULL,
   `JobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
-  `zipCode` varchar(20) DEFAULT NULL,
+  `zipCode` varchar(4) DEFAULT NULL,
   `address` text,
-  `requiredExperience` varchar(100) DEFAULT NULL,
+  `requiredExperience` varchar(250) DEFAULT NULL,
   `comment` text,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
-  `firstName` varchar(100) DEFAULT NULL,
-  `lastName` varchar(100) DEFAULT NULL,
+  `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1519715053',5,3,'Web Developer','Hyndrance','torredale1014@gmail.com','','7082245','6100','Bacolod City','5 years','We are looking for web developer. Apply now!','2018-02-27 15:06:13','1','Dale','Torre'),(2,'1519715129',1,3,'Team Leader','Hyndrance','torredale1014@gmail.com','','7082245','6100','Bacolod City','3 years','We are looking for a team leader. Apply now!','2018-02-27 15:06:58','1','Dale','Torre'),(3,'1519715365',4,2,'Marketing Assistant','Honda','torredale1014@gmail.com','Manager','4452321','6100','Bacolod City','5 years','We are looking for a marketing assistant. Apply now!','2018-02-27 15:09:24','0','Kevin','Sumalde'),(4,'1519734603',1,0,'','','','','','','123','','','2018-02-27 20:30:03','0','',''),(5,'1519734655',1,0,'','','','','','','123','','','2018-02-27 20:30:55','0','',''),(6,'1519735392',1,1,'1321','123','torredale1014@gmail.com','123','123','123','123','123','123','2018-02-27 20:43:11','0','123','123');
+INSERT INTO `job` VALUES (7,'1519744322',1,1,'Driver','Ceres','torredale1014@gmail.com','','123123','6100','Bacolod City','5 years','Hiring','2018-02-27 23:22:44','1','');
 
 #
 # Structure for table "job_function"
@@ -196,7 +197,7 @@ CREATE TABLE `position_type` (
 # Data for table "position_type"
 #
 
-INSERT INTO `position_type` VALUES (1,'Temporary'),(2,'Full-time'),(3,'Project');
+INSERT INTO `position_type` VALUES (1,'Temporary'),(2,'Full-time'),(3,'Project'),(4,'Part-time');
 
 #
 # Structure for table "resume"
@@ -226,7 +227,7 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (1,0,5,'Mark','Mendoza','rgmak12@gmail.com','7084572','Mandalagan','Mandalagan','Bacolod','Negros Occidental','6100','1519715577.pdf','2018-02-27 15:12:56','0'),(2,1,5,'Dale','Torre','torredale1014@gmail.com','7084512','Billboard','Billboard','Bacolod','Negros Occidental','6100','1519715646.pdf','2018-02-27 15:14:05','0');
+INSERT INTO `resume` VALUES (3,7,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1519746496.pdf','2018-02-27 23:53:17','1');
 
 #
 # Structure for table "user"
@@ -241,10 +242,10 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'C1519715053','temppassword','Dale','Torre','company'),(2,'C1519715129','temppassword','Dale','Torre','company');
+INSERT INTO `user` VALUES (1,'C1519715053','temppassword','Dale','Torre','company'),(2,'C1519715129','temppassword','Dale','Torre','company'),(9,'C12345','12345','Dale Torre','MAPA','company'),(10,'torredale1014@gmail.com','temppassword','Dale','Torre','employee');

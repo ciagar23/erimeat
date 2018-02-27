@@ -6,6 +6,12 @@
     </li>
 
     <li>
+        <a href="../hr/?view=talentRequest">
+            <i class="mdi mdi-account-star"></i><span> Talent Request </span>
+        </a>
+    </li>
+
+    <li>
         <a href="../hr/?view=applicants">
             <i class="mdi mdi-account-star"></i><span> Applicants </span>
         </a>

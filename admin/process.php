@@ -11,6 +11,10 @@ switch ($action) {
 		jobRequest();
 		break;
 
+	case 'clientRequest' :
+		clientRequest();
+		break;
+
 	case 'addAccount' :
 		addAccount();
 		break;
@@ -80,10 +84,11 @@ function jobRequest()
 {
 	if ($_GET['result']=="approve"){
 		$result = 1;
-		__createLogin($_GET['Id']);
+		/* internal notification */
 	}
 	else{
 		$result = -1;
+		/* internal notification */
 	}
 
 	$obj = new Job;
@@ -91,29 +96,41 @@ function jobRequest()
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
 
-	if ($result==-1){
-		// Send email
-		$content = __deniedJobRequestEmailMessage();
-		sendEmail($newObj->workEmail, $content);
-
-	}
-
 	header('Location: index.php?view=talentRequest');
+}
+
+function clientRequest()
+{
+	$result = 1;
+	__createLogin($_GET['Id']);
+
+	$obj = new Company;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isApproved = $result;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=clientRequest');
 }
 
 function __createLogin($Id){
 	// Get Detail
-	$job = new Job;
-	$job = $job->readOne($Id);
+	$comp = new Company;
+	$comp = $comp->readOne($Id);
 
 	// Create account
 	$obj = new Profile;
-	$obj->username = "C" . $job->refNum;
+	$obj->username = "C" . $comp->abn;
 	$obj->password = "temppassword";
-	$obj->firstName = $job->firstName;
-	$obj->lastName = $job->lastName;
+	$obj->firstName = $comp->contactPerson;
+	$obj->lastName = $comp->name;
 	$obj->level = "company";
 	$obj->createOne($obj);
+
+	// Update Company
+	$comp = new Company;
+	$newComp = $comp->readOne($Id);
+	$newComp->username = $obj->username;
+	$comp->updateOne($newComp);
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
@@ -122,13 +139,6 @@ function __createLogin($Id){
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($job->workEmail, $content);
-}
-
-/* ======================== Email Messages ==============================*/
-
-function __deniedJobRequestEmailMessage(){
-	return "We apologized we have denied your request as it did not match our requirements.<br><br>
-					Teamire";
+	sendEmail($newComp->email, $content);
 }
 ?>

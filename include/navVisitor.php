@@ -5,7 +5,7 @@
 
         <li class="has-submenu">
             <a href="#">Employer
-            <b class="fa fa-chevron-right"></b></a>
+            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=hiringForm">Request Talent</a></li>
                 <li><a href="../home/?view=searchResume">Search Candidates</a></li>
@@ -22,18 +22,12 @@
         </li>
 
         <li class="has-submenu">
-            <a href="../home/?view=aboutUs">About us
+            <a href="#">Work With Us
             <b class="fa fa-chevron-right"></b></a>
-        </li>
-
-        <li class="has-submenu">
-            <a href="../home/?view=contactUs">Contact us
-            <b class="fa fa-chevron-right"></b></a>
-        </li>
-
-        <li class="has-submenu">
-            <a href="../home/?view=services">Services
-            <b class="fa fa-chevron-right"></b></a>
+            <ul class="submenu">
+              <li><a href="../home/?view=aboutUs">About Us</a></li>
+              <li><a href="../home/?view=services">Services</a></li>
+            </ul>
         </li>
 
         <li class="has-submenu">
@@ -47,10 +41,10 @@
 
         <li class="has-submenu">
             <a href="#">Register
-            <b class="fa fa-chevron-right"></b></a>
+            <b class="fa fa-chevron-right
+            "></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=clientForm">Client Request</a></li>
-                <li><a href="../home/?view=searchResume">Search Candidates</a></li>
             </ul>
         </li>
 
