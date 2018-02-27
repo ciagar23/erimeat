@@ -22,9 +22,30 @@
                       </div>
                     </div>
                     <!-- End Logo container-->
+
+                    <div class="menu-extras topbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+
+                            <li class="menu-item list-inline-item">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+                        </ul>
+                    </div>
                     <!-- end menu-extras -->
-                    <div class="navbar-top">
-                    <div class="navbar-line"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+
+                    <div class="navbar-custom">
                         <div class="container">
                             <?php
                               include 'navVisitor.php';
@@ -52,7 +73,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2018 © Teamire
+                        2018 © Hyndrance - hyndrance.com
                     </div>
                 </div>
             </div>
