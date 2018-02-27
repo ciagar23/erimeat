@@ -50,7 +50,6 @@
             <b class=" fa fa-angle-down"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=clientForm">Client Request</a></li>
-                <li><a href="../home/?view=employeeForm">Employee Request</a></li>
             </ul>
         </li>
 

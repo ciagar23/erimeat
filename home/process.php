@@ -38,8 +38,7 @@ substr(round(microtime(true)), -6)
 	$obj->refNum = round(microtime(true));
 	$obj->jobFunctionId = $_POST['jobFunctionId'];
 	$obj->positionTypeId = $_POST['positionTypeId'];
-	$obj->firstName = $_POST['firstName'];
-	$obj->lastName = $_POST['lastName'];
+	$obj->contactName = $_POST['contactName'];
 	$obj->position = $_POST['position'];
 	$obj->company = $_POST['company'];
 	$obj->comment = $_POST['comment'];
@@ -50,10 +49,6 @@ substr(round(microtime(true)), -6)
 	$obj->zipCode = $_POST['zipCode'];
 	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->createOne($obj);
-
-	// Send email
-	$content = __createJobEmailMessage();
-	sendEmail($obj->workEmail, $content);
 
 	header('Location: ../home/?view=success');
 }
@@ -72,7 +67,7 @@ substr(round(microtime(true)), -6)
 	$obj->jobFunctionId = $_POST['jobFunctionId'];
 	$obj->department = $_POST['department'];
 	$obj->name = $_POST['name'];
-	$obj->abn = $_POST['abn']; 
+	$obj->abn = $_POST['abn'];
 	$obj->contactPerson = $_POST['contactPerson'];
 	$obj->email = $_POST['email'];
 	$obj->address = $_POST['address'];
@@ -154,13 +149,6 @@ function submitApplication()
 
 
 /* ======================== Email Messages ==============================*/
-
-function __createJobEmailMessage(){
-	return "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
-					Please be informed that we are in the midst of processing your request and shall get<br>
-					in touch with you again if your request have meet our condition.<br><br>
-					Teamire";
-}
 
 function __submitResumeEmailMessage(){
 	return "Thank you for submiting your resume to Teamire. As of now, we are still reviewing your documents.<br>

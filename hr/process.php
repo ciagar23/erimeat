@@ -11,6 +11,10 @@ switch ($action) {
 		addExperience();
 		break;
 
+	case 'jobRequest' :
+		jobRequest();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -189,5 +193,24 @@ function changepassword()
 	else{
 		header('Location: index.php?view=changepassword&error=Password not matched');
 	}
+}
+
+function jobRequest()
+{
+	if ($_GET['result']=="approve"){
+		$result = 1;
+		/* internal notification */
+	}
+	else{
+		$result = -1;
+		/* internal notification */
+	}
+
+	$obj = new Job;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isApproved = $result;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=talentRequest');
 }
 ?>

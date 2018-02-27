@@ -84,23 +84,17 @@ function jobRequest()
 {
 	if ($_GET['result']=="approve"){
 		$result = 1;
-		__createLogin($_GET['Id']);
+		/* internal notification */
 	}
 	else{
 		$result = -1;
+		/* internal notification */
 	}
 
 	$obj = new Job;
 	$newObj = $obj->readOne($_GET['Id']);
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
-
-	if ($result==-1){
-		// Send email
-		$content = __deniedJobRequestEmailMessage();
-		sendEmail($newObj->workEmail, $content);
-
-	}
 
 	header('Location: index.php?view=talentRequest');
 }
@@ -146,13 +140,5 @@ function __createLogin($Id){
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($newComp->email, $content);
-}
-
-
-/* ======================== Email Messages ==============================*/
-
-function __deniedJobRequestEmailMessage(){
-	return "We apologized we have denied your request as it did not match our requirements.<br><br>
-					Teamire";
 }
 ?>

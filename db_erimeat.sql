@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-27 23:01:15
+# Date: 2018-02-27 23:58:56
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -94,6 +94,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (1,7,'3','2018-02-27 23:53:31');
 
 #
 # Structure for table "hr"
@@ -131,6 +132,7 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (1,'3','2018-02-28','01:00:00');
 
 #
 # Structure for table "job"
@@ -147,14 +149,13 @@ CREATE TABLE `job` (
   `workEmail` varchar(100) DEFAULT NULL,
   `JobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
-  `zipCode` varchar(20) DEFAULT NULL,
+  `zipCode` varchar(4) DEFAULT NULL,
   `address` text,
-  `requiredExperience` varchar(100) DEFAULT NULL,
+  `requiredExperience` varchar(250) DEFAULT NULL,
   `comment` text,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
-  `firstName` varchar(100) DEFAULT NULL,
-  `lastName` varchar(100) DEFAULT NULL,
+  `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
@@ -162,6 +163,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (7,'1519744322',1,1,'Driver','Ceres','torredale1014@gmail.com','','123123','6100','Bacolod City','5 years','Hiring','2018-02-27 23:22:44','1','');
 
 #
 # Structure for table "job_function"
@@ -225,6 +227,7 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
+INSERT INTO `resume` VALUES (3,7,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1519746496.pdf','2018-02-27 23:53:17','1');
 
 #
 # Structure for table "user"
@@ -245,4 +248,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'C1519715053','temppassword','Dale','Torre','company'),(2,'C1519715129','temppassword','Dale','Torre','company'),(9,'C12345','12345','Dale Torre','MAPA','company');
+INSERT INTO `user` VALUES (1,'C1519715053','temppassword','Dale','Torre','company'),(2,'C1519715129','temppassword','Dale','Torre','company'),(9,'C12345','12345','Dale Torre','MAPA','company'),(10,'torredale1014@gmail.com','temppassword','Dale','Torre','employee');
