@@ -434,6 +434,55 @@ class Company {
 	Database::disconnect();
 	return $result;
 	}
+
+	/* Retrieve one record */
+	function readList($s){
+
+	$db = Database::connect();
+	$pdo = $db->prepare("SELECT * FROM company");
+	$pdo->execute();
+	$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	function createOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("insert into company set username='',
+																 jobFunctionId='$obj->jobFunctionId',
+																 department='$obj->department',
+																 name='$obj->name',
+																 abn='$obj->abn',
+																 description='$obj->description',
+																 email='$obj->email',
+																 contactPerson='$obj->contactPerson',
+																 phoneNumber='$obj->phoneNumber',
+																 mobileNumber='$obj->mobileNumber',
+																 address='$obj->address'
+																 ");
+	$pdo->execute();
+	Database::disconnect();
+	}
+
+	function updateOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("update company set username='$obj->username',
+																 jobFunctionId='$obj->jobFunctionId',
+																 department='$obj->department',
+																 name='$obj->name',
+																 abn='$obj->abn',
+																 description='$obj->description',
+																 email='$obj->email',
+																 contactPerson='$obj->contactPerson',
+																 phoneNumber='$obj->phoneNumber',
+																 mobileNumber='$obj->mobileNumber',
+																 address='$obj->address',
+																 isApproved='$obj->isApproved'
+																 where Id='$obj->Id'
+																");
+	$pdo->execute();
+	Database::disconnect();
+	}
 }
 
 /* =====================================Functions===================================== */

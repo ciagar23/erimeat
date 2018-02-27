@@ -71,6 +71,11 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
+	case 'clientForm' :
+		$content 	= 'clientForm.php';
+		$template	= '../include/template.php';
+		break;
+
 	default :
 		$content 	= 'home.php';
 		$template	= '../include/template.php';

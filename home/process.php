@@ -10,6 +10,10 @@ switch ($action) {
 		create();
 		break;
 
+	case 'clientRequest' :
+		clientRequest();
+		break;
+
 	case 'submitResume' :
 		submitResume();
 		break;
@@ -50,6 +54,36 @@ substr(round(microtime(true)), -6)
 	// Send email
 	$content = __createJobEmailMessage();
 	sendEmail($obj->workEmail, $content);
+
+	header('Location: ../home/?view=success');
+}
+
+function clientRequest()
+{
+
+	// This is if you want to get the last 6 digits
+	/*
+substr(round(microtime(true)), -6)
+
+	*/
+
+	$obj = new Company;
+	$obj->username = '';
+	$obj->jobFunctionId = $_POST['jobFunctionId'];
+	$obj->department = $_POST['department'];
+	$obj->name = $_POST['name'];
+	$obj->abn = $_POST['abn']; 
+	$obj->contactPerson = $_POST['contactPerson'];
+	$obj->email = $_POST['email'];
+	$obj->address = $_POST['address'];
+	$obj->phoneNumber = $_POST['phoneNumber'];
+	$obj->mobileNumber = $_POST['mobileNumber'];
+	$obj->description = $_POST['description'];
+	$obj->createOne($obj);
+
+	// Send email
+	$content = __clientRequestEmailMessage();
+	sendEmail($obj->email, $content);
 
 	header('Location: ../home/?view=success');
 }
@@ -140,6 +174,13 @@ function __submitApplicationEmailMessage(){
 	return "We have recieved your application. Thank you for the interest shown in our company.<br><br>
 					Please be informed that we are in the midst of processing the applications and shall get<br>
 					in touch with you again if you are shortlisted for an interview.<br><br>
+					Teamire";
+}
+
+function __clientRequestEmailMessage(){
+	return "We have recieved your request. Thank you for the interest shown in our company.<br><br>
+					Please be informed that we are in the midst of processing your request and shall get<br>
+					in touch with you again once you've meet our requirements.<br><br>
 					Teamire";
 }
 ?>
