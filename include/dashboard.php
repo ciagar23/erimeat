@@ -201,7 +201,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2017 © Adminox. - Coderthemes.com
+                    2018 © Teamire
                 </footer>
 
             </div>
