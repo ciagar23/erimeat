@@ -12,7 +12,7 @@ $pt->readList();
         <div class="card-box">
 
             <form id="default-wizard" action="process.php?action=create" method="POST">
-                    <legend>Hiring Request Form</legend>
+                    <legend>Talent Request Form</legend>
 
                     <div class="row m-t-20">
                         <div class="col-sm-6">

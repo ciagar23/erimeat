@@ -26,7 +26,7 @@
                           <a class="m-l-5 m-r-15" href="extras-pricing.html">Investor Center</a>
                           <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
                           <a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a>
-                          <a class="m-l-5 m-r-15" href="extras-faq.html">Request Staff</a>
+                          <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a>
                         </li>
                     </div>
                     </div>
