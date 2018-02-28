@@ -16,7 +16,6 @@
         <!-- End Navigation Bar-->
         <div class="wrapper">
 
-
               <?php
                 include $content;
               ?>

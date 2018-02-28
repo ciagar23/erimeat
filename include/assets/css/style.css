@@ -162,7 +162,7 @@ File: Components
     display: block;
     color: #3399cc;
     font-weight: 650;
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 20px;
     padding-left: 25px;
     padding-right: 25px; }
@@ -229,7 +229,7 @@ File: Components
     position: absolute;
     right: 20px;
     top: 8px;
-    font-size: 15.5px; }
+    font-size: 16px; }
   #topnav .navigation-menu > li .submenu > li .submenu {
     left: 100%;
     top: 0;
@@ -246,9 +246,10 @@ File: Components
     padding: 10px 25px;
     clear: both;
     white-space: nowrap;
-    font-size: 15px;
+    font-size: 16px;
     color: #ffffff;
-    font-weight: 650; }
+    font-weight: 650;
+    border-bottom: 2px solid #545e65; }
   #topnav .navigation-menu > li .submenu li a:hover {
     color: #ffffff;
     background-color: #3399cc; }
@@ -516,7 +517,7 @@ File: Components
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-size: 14px; }
+  font-size: 20px; }
 
 /* =============
    Common
@@ -526,7 +527,7 @@ body {
   padding-bottom: 60px;
   overflow-x: hidden;
   color: #797979;
-  font-size: 14px;
+  font-size: 17px;
   background-color: #ffffff;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
 
@@ -539,7 +540,7 @@ html {
   margin: 10px 0; }
 
 h5 {
-  font-size: 15px; }
+  font-size: 16px; }
 
 p {
   line-height: 1.6; }
@@ -2379,7 +2380,7 @@ a:focus {
 .widget-box-two {
   text-align: right; }
   .widget-box-two p {
-    font-size: 14px; }
+    font-size: 17px; }
   .widget-box-two .widget-two-icon {
     position: absolute;
     left: 30px;
