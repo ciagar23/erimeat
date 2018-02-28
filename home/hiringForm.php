@@ -6,7 +6,10 @@ $pt->readList();
 ?>
 <div class="row">
     <div class="col-md-12">
-      <h2 class="text-center m-t-30 m-b-30">Talent Request</h2>
+      <div class="hiring-form-header center-page">
+      <h2 class="text-center m-t-30 m-b-30 text-white">Talent Request</h2>
+      <p class="text-center text-white">We will help you build the workforce you desire – quickly</p>
+    </div>
       <div class="jumbotron center-page" style="width: 1140px;">
             <form id="default-wizard" action="process.php?action=create" method="POST">
                     <div class="row m-t-20">
