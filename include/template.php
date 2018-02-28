@@ -15,12 +15,12 @@
         </header>
         <!-- End Navigation Bar-->
         <div class="wrapper">
-            <div class="container">
-              <br>
+
+
               <?php
                 include $content;
               ?>
-            </div> <!-- end container -->
+
         </div>
         <!-- end wrapper -->
         <!-- Footer -->
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        2018 © Hyndrance - hyndrance.com
+                        2018 © Teamire
                     </div>
                 </div>
             </div>
