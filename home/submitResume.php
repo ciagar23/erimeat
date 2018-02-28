@@ -35,8 +35,6 @@ $pt->readList();
                               </div>
                               </div>
 
-                              <div class="clearfix"></div>
-
                               <div class="form-group">
                                   <label for="username">Email</label>
                                   <input type="text" class="form-control" name="email" placeholder="">
@@ -78,7 +76,7 @@ $pt->readList();
                           <p>Choose one of the following options:</p></div>
                           <div class="col-sm-3">
                             <div class="pull-right text-center form-icon">
-                              <i class="fa fa-file-text-o fa-2x text-white p-t-10"></i>
+                              <i class="fa fa-file-text-o fa-2x text-white p-t-10" name></i>
                             </div>
                           </div>
                           <div class="col-md-8">
