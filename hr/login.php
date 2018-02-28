@@ -5,7 +5,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Teamire - Insert System Name</title>
+        <title>Teamire - Catalyst in Continuous Improvement</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -25,7 +25,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
     </head>
 
 
-   
+
     <body >
     <div style="border-bottom:5px solid #3399cc;">
 <img src="../include/assets/images/branding.jpg" >
@@ -33,17 +33,17 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
       </div>
         <!-- HOME -->
         <section>
-           
+
                 <div class="row">
                     <div class="col-md-12">
 
-                        
+
 
                             <div class="account-pages">
                               <div class="login-left-box" >
                                 <div class="account-box" style="background-color: #3399cc;box-shadow: 5px 10px #888888;border-style: solid;border-color: #3399cc;">
                                     <div class="account-logo-box">
-                                     
+
                                         <h2 class="text-uppercase text-center" >
                                             <a href="index.html" class="login-font">
                                                 <span style="color:#fff;">Enter your login information to access our Time Reporting and Approval System</span>
@@ -69,30 +69,30 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
 
-                                           
+
                                             <div class="form-group row text-center m-t-4">
                                                 <div class="col-2 pull-left">
                                                     <button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
                                                     <br>
-                                                    
+
                                                 </div>
-                                                
+
                                             </div>
                                             <center>
                                              <a href="page-recoverpw.html" class="text-muted" ><small style="color:#fff;">Don't recall your account information?</small></a>
                                              </center>
                                         </form>
 
-                                                    
-                                         
+
+
 
                                     </div>
 
                                 </div>
-                                 
+
                               </div>
-                        
-                     
+
+
                         <!-- end wrapper -->
 
                     </div>
@@ -104,7 +104,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
           </section>
 
-          
+
 
 
 
