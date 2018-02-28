@@ -88,6 +88,9 @@ $pt->readList();
                   <div class="text-center m-t-30">
                       <button type="submit" class="btn btn-primary stepy-finish"> SEND REQUEST </button>
                   </div>
+                  <div class="text-center m-t-30">
+                    <p style="color: #000000;">Or call us at <strong style="color: #4489e4;">+61452 364 793</strong></p>
+                  </div>
             </form>
           </div>
     </div>
