@@ -50,6 +50,10 @@ substr(round(microtime(true)), -6)
 	$obj->requiredExperience = $_POST['requiredExperience'];
 	$obj->createOne($obj);
 
+	// Send email
+	$content = __talentRequestEmailMessage();
+	sendEmail($obj->workEmail, $content);
+
 	header('Location: ../home/?view=success');
 }
 
@@ -78,6 +82,7 @@ substr(round(microtime(true)), -6)
 
 	// Send email
 	$content = __clientRequestEmailMessage();
+	/* should also send email to hr and admin */
 	sendEmail($obj->email, $content);
 
 	header('Location: ../home/?view=success');
@@ -105,6 +110,7 @@ function submitResume(){
 
 			// Send email
 			$content = __submitResumeEmailMessage();
+			/* should also send email to hr and admin */
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
@@ -136,6 +142,7 @@ function submitApplication()
 
 			// Send Email
 			$content = __submitApplicationEmailMessage();
+			/* should also send email to hr and admin */
 			sendEmail($obj->email, $content);
 
 			header('Location: ../home/?view=success');
@@ -149,6 +156,13 @@ function submitApplication()
 
 
 /* ======================== Email Messages ==============================*/
+
+function __talentRequestEmailMessage(){
+	return "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
+					Please be informed that we are in the midst of processing your request and shall get<br>
+					in touch with you again if your request have meet our condition.<br><br>
+					Teamire";
+}
 
 function __submitResumeEmailMessage(){
 	return "Thank you for submiting your resume to Teamire. As of now, we are still reviewing your documents.<br>
