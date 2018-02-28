@@ -55,7 +55,7 @@
 <!-- Card Box Content-->
   <div class="card-box">
     <div class="p-t-5 text-center">
-        <h4 class="text-uppercase font-18 text-primary">Lorem Ipsum</h4>
+        <h4 class="text-uppercase font-18 text-primary">How we do this?</h4>
         <div class="center-page col-md-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -63,7 +63,7 @@
       <div class="clearfix"></div>
       <hr>
 
-        <h4 class="text-uppercase font-18 text-primary">Lorem Ipsum</h4>
+        <h4 class="text-uppercase font-18 text-primary">Our Purpose</h4>
         <div class="center-page col-md-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -71,12 +71,20 @@
       <div class="clearfix"></div>
       <hr>
 
-        <h4 class="text-uppercase font-18 text-primary">Lorem Ipsum</h4>
+        <h4 class="text-uppercase font-18 text-primary">Our Objectives</h4>
         <div class="center-page col-md-8">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
       </div>
       <div class="clearfix"></div>
+      <hr>
+
+      <h4 class="text-uppercase font-18 text-primary">Our Services</h4>
+      <div class="center-page col-md-8">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+      et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    </div>
+    <div class="clearfix"></div>
     </div>
   </div>
   <!-- End Cardbox Content-->

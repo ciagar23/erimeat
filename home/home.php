@@ -3,7 +3,9 @@
 
     <img src="../include/assets/images/teamire-home-img.png">
     <div class="homepage-top-text text-center">
-      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+      Unrivaled Industry Insight. Sophisticated Matching Technology.<br>
+      And a Personalized Approach.<br>
+      It’s Why We’re #1.
     </div>
     <div class="row homepage-search">
         <div class="col-md-8 center-page">
