@@ -15,7 +15,8 @@
         <div class="navigation-menu col-md-6 " style="padding: 40px;">
           <div class="pull-right">
             <li>
-              <a class="m-l-5 m-r-15" href="extras-pricing.html">Investor Center</a>
+              <a class="m-l-5 m-r-15" href="../home/?view=clientForm">Register</a>
+              <a class="m-l-5 m-r-15" href="../hone/?view=projects">Projects</a>
               <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
               <a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a>
               <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a>
@@ -76,23 +77,6 @@
             <ul class="submenu">
               <li><a href="../home/?view=aboutUs">About Us</a></li>
               <li><a href="../home/?view=services">Services</a></li>
-            </ul>
-        </li>
-
-        <li class="has-submenu">
-            <a href="#">Projects
-            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
-            <ul class="submenu">
-                <li><a href="#">TODO</a></li>
-                <li><a href="#">TODO</a></li>
-            </ul>
-        </li>
-
-        <li class="has-submenu">
-            <a href="#">Register
-            <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
-            <ul class="submenu">
-                <li><a href="../home/?view=clientForm">Client Request</a></li>
             </ul>
         </li>
 
