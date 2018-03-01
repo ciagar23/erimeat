@@ -7,7 +7,7 @@ $pt->readList();
 <div class="row">
     <div class="col-md-12">
       <h2 class="text-center m-t-30 m-b-30">Submit Resume</h2>
-      <div class="jumbotron center-page" style="width: 1140px;">
+      <div class="jumbotron center-page jumbotron-w">
             <form id="default-wizard" action="process.php?action=submitResume" method="POST" enctype="multipart/form-data">
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
