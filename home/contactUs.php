@@ -1,3 +1,7 @@
+<?php
+$jf = new JobFunction;
+$jf->readList();
+?>
 
   <h2 class="text-center m-t-30 m-b-30">Contact Us</h2>
   <h3 class="text-center m-t-30 m-b-30">Enter your city or ZIP code to find an office near you.</h3>
@@ -17,17 +21,17 @@
         <div class="col-12 col-lg-4 p-30">
           <h2 class="text-center mt30 mb25">Employers</h2>
           <p class="text-center mb20">Looking for the right candidate?</p>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=hiringForm'" role="button">REQUEST TALENT</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=searchResume'" role="button">SEARCH CANDIDATE</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">EMPLOYERS FAQ</button></div>
         </div>
         <div class="col-lg-2">&nbsp;</div>
         <div class="col-12 col-lg-4 p-30">
-          <h2 class="text-center mt30 mb25">Employers</h2>
-          <p class="text-center mb20">Looking for the right candidate?</p>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">REQUEST TALENT</button></div>
+          <h2 class="text-center mt30 mb25">Job Seekers</h2>
+          <p class="text-center mb20">Looking for a job? We can help.</p>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=submitResume'" role="button">SUBMIT YOUR RESUME</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=searchJob'" role="button">SEARCH JOB</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">JOB SEEKER FAQ</button></div>
         </div>
         <div class="col-lg-1">&nbsp;</div>
       </div>
@@ -41,13 +45,13 @@
         <div class="col-lg-1">&nbsp;</div>
         <div class="col-12 col-lg-5">
           <p class="text-center">For Employers</p>
-          <p class="text-center"><a href="mailto:approval.timereporting@roberthalf.com">Approval.TimeReporting@roberthalf.com</a></p>
-          <p class=" text-center">or <a href="#">1.877.548.6964</a></p>
+          <p class="text-center"><a href="#">hr@teamire.com</a></p>
+          <p class=" text-center">or <a href="#">+61452 364 793</a></p>
         </div>
         <div class="col-12 col-lg-5">
           <p class="text-center">For Job Seekers</p>
-          <p class="text-center"><a href="mailto:pay.timereporting@roberthalf.com">Pay.TimeReporting@roberthalf.com</a></p>
-          <p class=" text-center">or <a href="#">1.888.744.9202</a></p>
+          <p class="text-center"><a href="#">payroll@teamire.com</a></p>
+          <p class=" text-center">or <a href="#">+61452 364 793</a></p>
         </div>
         <div class="col-lg-1">&nbsp;</div>
       </div>
@@ -63,20 +67,21 @@
         <div class="row">
             <!-- Start Dropdown-->
             <div class="pull-left w-50-p p-r-10">
-              <div class="form-group">
-                  <label for="firstname">Job Function</label>
-                  <select class="form-control" name="jobFunctionId">
-                  </select>
-              </div>
+            <div class="form-group">
+                <label for="firstname">Job Category</label>
+                <select class="form-control" name="jobFunctionId">
+                  <?php foreach($jf->readList() as $row) {?>
+                    <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                  <?php } ?>
+                </select>
+            </div>
             </div>
 
-            <div class="pull-left w-50-p p-l-10">
-              <div class="form-group">
-                  <label for="firstname">Job Function</label>
-                  <select class="form-control" name="jobFunctionId">
-
-                  </select>
-              </div>
+            <div class="p-l-10 w-50-p pull-left">
+            <div class="form-group">
+                <label for="username">Job Classification</label>
+                <input type="text" class="form-control" name="position" placeholder="">
+            </div>
             </div>
           </div>
             <!-- End Dropdown -->
@@ -88,7 +93,7 @@
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Full Name</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="firstName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="contactPerson" placeholder="">
               </div>
             </div>
 
@@ -103,14 +108,14 @@
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Email Address</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="firstName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="email" placeholder="">
               </div>
             </div>
 
             <div class="p-l-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Business Phone</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="lastName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="phoneNumber" placeholder="">
               </div>
             </div>
           </div>
