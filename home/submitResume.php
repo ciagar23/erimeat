@@ -8,7 +8,7 @@ $pt->readList();
     <div class="col-md-12">
       <h2 class="text-center m-t-30 m-b-30">Submit Resume</h2>
       <div class="jumbotron center-page jumbotron-w">
-            <form id="default-wizard" action="process.php?action=submitResume" method="POST" enctype="multipart/form-data">
+            <form id="default-wizard" action="process.php?action=submitResume" method="POST" enctype="multipart/form-data" data-parsley-validate="">
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
 
@@ -16,6 +16,7 @@ $pt->readList();
                                   <label for="firstname">Job Function <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required>
                                     <?php foreach($jf->readList() as $row) {?>
+                                      <option>Please Select</option>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>
