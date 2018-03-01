@@ -1,3 +1,7 @@
+<?php
+$jf = new JobFunction;
+$jf->readList();
+?>
 
   <h2 class="text-center m-t-30 m-b-30">Contact Us</h2>
   <h3 class="text-center m-t-30 m-b-30">Enter your city or ZIP code to find an office near you.</h3>
@@ -63,20 +67,21 @@
         <div class="row">
             <!-- Start Dropdown-->
             <div class="pull-left w-50-p p-r-10">
-              <div class="form-group">
-                  <label for="firstname">Job Function</label>
-                  <select class="form-control" name="jobFunctionId">
-                  </select>
-              </div>
+            <div class="form-group">
+                <label for="firstname">Job Category</label>
+                <select class="form-control" name="jobFunctionId">
+                  <?php foreach($jf->readList() as $row) {?>
+                    <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                  <?php } ?>
+                </select>
+            </div>
             </div>
 
-            <div class="pull-left w-50-p p-l-10">
-              <div class="form-group">
-                  <label for="firstname">Job Function</label>
-                  <select class="form-control" name="jobFunctionId">
-
-                  </select>
-              </div>
+            <div class="p-l-10 w-50-p pull-left">
+            <div class="form-group">
+                <label for="username">Job Classification</label>
+                <input type="text" class="form-control" name="position" placeholder="">
+            </div>
             </div>
           </div>
             <!-- End Dropdown -->
@@ -88,7 +93,7 @@
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Full Name</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="firstName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="contactPerson" placeholder="">
               </div>
             </div>
 
@@ -103,14 +108,14 @@
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Email Address</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="firstName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="email" placeholder="">
               </div>
             </div>
 
             <div class="p-l-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Business Phone</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="lastName" placeholder="">
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="phoneNumber" placeholder="">
               </div>
             </div>
           </div>
