@@ -14,8 +14,8 @@ $jf->readList();
                               <div class="form-group">
                                   <label for="firstname">Industry <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required>
+                                    <option>Please Select</option>
                                     <?php foreach($jf->readList() as $row) {?>
-                                      <option>Please Select</option>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

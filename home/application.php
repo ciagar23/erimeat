@@ -12,11 +12,12 @@ $pt->readList();
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
 
+                              <input type="hidden" name="jobId" value=<?=$_GET['id']?>>
                               <div class="form-group">
                                   <label for="firstname">Job Function <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required>
+                                    <option>Please Select</option>
                                     <?php foreach($jf->readList() as $row) {?>
-                                      <option>Please Select</option>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

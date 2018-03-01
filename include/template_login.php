@@ -2,7 +2,7 @@
 include $content;
 ?>
  <style type="text/css">
-           
+
             #sticky_header {
                 border-bottom:5px solid #3399cc;
                 position:relative;
@@ -19,7 +19,7 @@ include $content;
                 border-color: #3399cc;
                 margin-top:-20%;
 
-              
+
             }
             .account-pages a,span,label,small{
                color:#fff;
@@ -34,5 +34,5 @@ include $content;
             	background: linear-gradient(#fff, #3399cc);
 
             }
-          
+
         </style>

@@ -1,7 +1,7 @@
 <ul class="metisMenu nav" id="side-menu">
     <li>
-        <a href="../company/?view=availableSkills">
-            <i class="mdi mdi-settings"></i><span> Available Skills </span>
+        <a href="../company/?view=requestTalent">
+            <i class="mdi mdi-settings"></i><span> Request Talent </span>
         </a>
     </li>
 

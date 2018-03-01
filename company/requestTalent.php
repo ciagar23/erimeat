@@ -1,2 +1,2 @@
 Teamire Welcome Page!</br>
-Available Skills
+Request Talent
