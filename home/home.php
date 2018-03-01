@@ -1,9 +1,11 @@
-<div class="container-fluid">
+<div>
   <div style="position:relative;">
 
-    <img src="../include/assets/images/teamire-home-img.png">
+    <img src="../include/assets/images/teamire-home-img.png" style="width: 100%;">
     <div class="homepage-top-text text-center">
-      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+     <h1 style="color:#fff;">Unrivaled Industry Insight. Sophisticated Matching Technology.
+And a Personalized Approach.
+It’s Why We’re #1.</h1>
     </div>
     <div class="row homepage-search">
         <div class="col-md-8 center-page">
@@ -16,7 +18,9 @@
         </div>
     </div>
   </div>
+  </div>
 <!-- Card Box Content-->
+<div class="container-fluid">
   <div class="card-box">
     <div class="p-t-5">
         <h4 class="text-uppercase font-18 text-center">Our Services</h4>
@@ -164,7 +168,7 @@
         </div>
         <!-- end row -->
   <!-- End Location Panels-->
-
+  </div>
     <div class="card-box">
       <div class="row">
           <div class="col-md-8 center-page">

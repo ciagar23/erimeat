@@ -70,12 +70,12 @@
         </header>
         <!-- End Navigation Bar-->
         <div class="wrapper">
-            <div class="container">
-              <br>
+            
+              
               <?php
                 include $content;
               ?>
-            </div> <!-- end container -->
+            
         </div>
         <!-- end wrapper -->
         <!-- Footer -->
