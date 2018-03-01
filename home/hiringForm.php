@@ -14,7 +14,7 @@ $pt->readList();
     </div>
       <div class="jumbotron center-page" style="width: 1140px;">
 
-                                   
+
                                     <div class="alert alert-warning hidden fade in">
                                         <h4>Oh snap!</h4>
                                         <p>This form seems to be invalid :(</p>
@@ -31,7 +31,7 @@ $pt->readList();
                               <div class="form-group">
                                   <label for="firstname">Job Category <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required="">
-                                   <option></option>
+                                   <option>Please Select</option>
                                     <?php foreach($jf->readList() as $row) {?>
 
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
@@ -43,7 +43,7 @@ $pt->readList();
                               <div class="form-group">
                                   <label for="username">Employment Type <span style="color: red;">*</span></label>
                                   <select class="form-control" name="positionTypeId" required="">
-                                  <option></option>
+                                  <option>Please Select</option>
                                     <?php foreach($pt->readList() as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
@@ -98,7 +98,7 @@ $pt->readList();
 
                               <div class="form-group">
                                   <label for="username">Comments</label>
-                               
+
                                     <textarea id="message" class="form-control" name="comment"
                                                       data-parsley-trigger="keyup" data-parsley-minlength="20"
                                                       data-parsley-maxlength="100"
