@@ -11,7 +11,7 @@
       </div>
       <div class="clearfix"></div>
       <!--Start 2 panels -->
-      <div style="width: 80%;" class="center-page">
+      <div class="container-80 center-page">
       <div class="row">
         <div class="col-lg-1">&nbsp;</div>
         <div class="col-12 col-lg-4 p-30">
