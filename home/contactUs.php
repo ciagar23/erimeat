@@ -41,13 +41,13 @@
         <div class="col-lg-1">&nbsp;</div>
         <div class="col-12 col-lg-5">
           <p class="text-center">For Employers</p>
-          <p class="text-center"><a href="mailto:approval.timereporting@roberthalf.com">Approval.TimeReporting@roberthalf.com</a></p>
-          <p class=" text-center">or <a href="#">1.877.548.6964</a></p>
+          <p class="text-center"><a href="#">hr@teamire.com</a></p>
+          <p class=" text-center">or <a href="#">+61452 364 793</a></p>
         </div>
         <div class="col-12 col-lg-5">
           <p class="text-center">For Job Seekers</p>
-          <p class="text-center"><a href="mailto:pay.timereporting@roberthalf.com">Pay.TimeReporting@roberthalf.com</a></p>
-          <p class=" text-center">or <a href="#">1.888.744.9202</a></p>
+          <p class="text-center"><a href="#">payroll@teamire.com</a></p>
+          <p class=" text-center">or <a href="#">+61452 364 793</a></p>
         </div>
         <div class="col-lg-1">&nbsp;</div>
       </div>
