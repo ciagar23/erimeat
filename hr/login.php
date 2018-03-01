@@ -21,32 +21,34 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <link href="../include/assets/css/style.css" rel="stylesheet" type="text/css" />
 
         <script src="../include/assets/js/modernizr.min.js"></script>
-
+       
     </head>
 
 
 
+   
     <body >
-    <div style="border-bottom:5px solid #3399cc;">
-<img src="../include/assets/images/branding.jpg" >
+    <div id="sticky_header">
+        <a href="../home/index.php"><img src="../include/assets/images/branding.jpg" ></a>
 
       </div>
         <!-- HOME -->
-        <section>
 
+        <section >
+           
                 <div class="row">
                     <div class="col-md-12">
 
-
+                        
 
                             <div class="account-pages">
                               <div class="login-left-box" >
-                                <div class="account-box" style="background-color: #3399cc;box-shadow: 5px 10px #888888;border-style: solid;border-color: #3399cc;">
+                                <div class="account-box" style="">
                                     <div class="account-logo-box">
-
+                                     
                                         <h2 class="text-uppercase text-center" >
                                             <a href="index.html" class="login-font">
-                                                <span style="color:#fff;">Enter your login information to access our Time Reporting and Approval System</span>
+                                                <span >HR Login</span>
                                             </a>
                                         </h2>
                                         <p class="m-b-0">
@@ -57,42 +59,57 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
                                             <div class="form-group m-b-0 row">
                                                 <div class="col-12">
-                                                    <label for="emailaddress" style="color:#fff;">Username</label>
+                                                    <label for="emailaddress">Username</label>
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row m-b-5">
                                                 <div class="col-12">
-                                                    <label for="password" style="color:#fff;">Password</label>
+                                                    <label for="password" >Password</label>
                                                     <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
                                                 </div>
                                             </div>
 
-
+                                           
                                             <div class="form-group row text-center m-t-4">
                                                 <div class="col-2 pull-left">
                                                     <button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
                                                     <br>
-
+                                                    
                                                 </div>
-
+                                                
                                             </div>
                                             <center>
-                                             <a href="page-recoverpw.html" class="text-muted" ><small style="color:#fff;">Don't recall your account information?</small></a>
+                                             <a href="page-recoverpw.html" class="text-muted" ><small>Don't recall your account information?</small></a>
                                              </center>
                                         </form>
 
-
-
+                                                    
+                                         
 
                                     </div>
 
+
                                 </div>
-
+                                 
+                                 
+                                         <footer class="footer-default">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 text-left">
+                                                    <br>
+                                                    <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
+                                                        2018 © Teamire All Rights Reserved
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                 
                               </div>
-
-
+                            
+                        
+                     
                         <!-- end wrapper -->
 
                     </div>
@@ -103,7 +120,10 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
             </div>
 
           </section>
+         
 
+
+          
 
 
 
