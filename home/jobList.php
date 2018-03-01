@@ -1,7 +1,12 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-
 $obj = new Job;
+
+function getPositionName($Id){
+  $obj = new PositionType;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
 
 ?>
 
@@ -67,15 +72,11 @@ $obj = new Job;
                 <button type="button" class="btn btn-success btn-rounded w-md waves-effect waves-light">View</button>
               </a>
             </div>
-              <div class="clearfix"></div>
               <div class="">
-                  <h5 class="text-custom m-b-5"><?=$row->JobTitle;?></h5>
+                  <h5 class="text-custom m-b-5"><?=getPositionName($row->positionTypeId); ?></h5>
                   <p class="m-b-10">
                     <i class="mdi mdi-worker"></i> <?=$row->requiredExperience;?>
                     <i class="mdi mdi-google-maps m-l-15"></i> <?=$row->address;?>
-                  </p>
-                  <p>
-                    <i class="mdi mdi-cellphone m-r-5"></i><b><?=$row->businessPhone;?></b>
                   </p>
                   <hr>
                   <p class="text-muted font-13 m-b-0">
