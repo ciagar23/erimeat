@@ -3,9 +3,11 @@
 
     <img src="../include/assets/images/teamire-home-img.png" style="width: 100%;">
     <div class="homepage-top-text text-center">
+
      <h1 style="color:#fff;">Unrivaled Industry Insight. Sophisticated Matching Technology.
 And a Personalized Approach.
 It’s Why We’re #1.</h1>
+
     </div>
     <div class="row homepage-search">
         <div class="col-md-8 center-page">
