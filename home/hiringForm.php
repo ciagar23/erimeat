@@ -16,8 +16,8 @@ $pt->readList();
                         <div class="col-sm-7 center-page">
 
                               <div class="form-group">
-                                  <label for="firstname">Job Category</label>
-                                  <select class="form-control" name="jobFunctionId">
+                                  <label for="firstname">Job Category <span style="color: red;">*</span></label>
+                                  <select class="form-control" name="jobFunctionId" required>
                                     <?php foreach($jf->readList() as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
@@ -26,8 +26,8 @@ $pt->readList();
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Employment Type</label>
-                                  <select class="form-control" name="positionTypeId">
+                                  <label for="username">Employment Type <span style="color: red;">*</span></label>
+                                  <select class="form-control" name="positionTypeId" required>
                                     <?php foreach($pt->readList() as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
@@ -37,51 +37,51 @@ $pt->readList();
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Job Classification</label>
-                                  <input type="text" class="form-control" name="position" placeholder="">
+                                  <label for="username">Job Classification <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="position" required>
                               </div>
                               </div>
 
                               <div class="form-group">
-                                  <label for="username">Contact Person</label>
-                                  <input type="text" class="form-control" name="contactPerson" placeholder="">
+                                  <label for="username">Contact Person <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="contactPerson" required>
                               </div>
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Client Email</label>
-                                  <input type="text" class="form-control" name="workEmail" placeholder="">
+                                  <label for="username">Client Email <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="workEmail" required>
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Job Title</label>
-                                  <input type="text" class="form-control" name="jobTitle" placeholder="">
+                                  <label for="username">Job Title <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="jobTitle" required>
                               </div>
                               </div>
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Business Phone</label>
-                                  <input type="text" class="form-control" name="businessPhone" placeholder="">
+                                  <label for="username">Business Phone <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="businessPhone" required>
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Postal Code</label>
-                                  <input type="text" class="form-control" name="zipCode" placeholder="">
+                                  <label for="username">Postal Code <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="zipCode" required>
                               </div>
                               </div>
 
                               <div class="form-group">
-                                  <label for="username">Company</label>
-                                  <input type="text" class="form-control" name="name" placeholder="">
+                                  <label for="username">Company <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="name" required>
                               </div>
 
                               <div class="form-group">
-                                  <label for="username">Comment</label>
+                                  <label for="username">Comments</label>
                                   <input type="text" class="form-control" name="comment" placeholder="">
                               </div>
                     </div>
