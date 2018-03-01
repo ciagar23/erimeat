@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-02-28 23:09:53
+# Date: 2018-03-01 17:45:12
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -45,12 +45,13 @@ CREATE TABLE `company` (
   `jobFunctionId` varchar(11) DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
+INSERT INTO `company` VALUES (1,'','TourTran','77281732834','We transport tourist','torredale1014@gmail.com','Dale Torre','7082245','09081273911','Bacolod City','Tourism','1','0');
 
 #
 # Structure for table "dtr"
@@ -87,7 +88,7 @@ CREATE TABLE `employee` (
   `userId` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "employee"
@@ -124,7 +125,7 @@ CREATE TABLE `interview_date` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "interview_date"
@@ -144,7 +145,7 @@ CREATE TABLE `job` (
   `position` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   `workEmail` varchar(100) DEFAULT NULL,
-  `JobTitle` varchar(255) DEFAULT NULL,
+  `jobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
   `zipCode` varchar(4) DEFAULT NULL,
   `address` text,
@@ -154,12 +155,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(1) DEFAULT '0',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (1,'1519892143',1,1,'Driver','Ceres Inc.','ceres@gmail.com','Manager','09085517231','6100','Bacolod City\t','5 years','We are hiring. Apply Now','2018-03-01 16:15:42','1','Dale Torre'),(2,'1519892144',1,1,'','','','','','','','','asdasdasdasdsa','2018-03-01 16:15:43','0',''),(3,'1519892203',1,1,'Dev','Hyndara','a@a.com','Manager','1232131515','6100','Bacolod City\t','5 years','We are hiring. Apply Now','2018-03-01 16:16:43','0','Dale Torre'),(4,'1519896058',1,1,'dev','','torredale1014@gmail.com','manager','2345678909','6100','','','adsfdsf','2018-03-01 17:20:57','0','');
 
 #
 # Structure for table "job_function"
@@ -217,12 +219,13 @@ CREATE TABLE `resume` (
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
+INSERT INTO `resume` VALUES (1,0,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1519894737.pdf','2018-03-01 16:58:56','1');
 
 #
 # Structure for table "user"
@@ -237,7 +240,7 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"

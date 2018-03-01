@@ -13,8 +13,8 @@ $pt->readList();
                         <div class="col-sm-7 center-page">
 
                               <div class="form-group">
-                                  <label for="firstname">Job Function</label>
-                                  <select class="form-control" name="jobFunctionId">
+                                  <label for="firstname">Job Function <span style="color: red;">*</span></label>
+                                  <select class="form-control" name="jobFunctionId" required>
                                     <?php foreach($jf->readList() as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
@@ -23,53 +23,53 @@ $pt->readList();
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">First Name</label>
-                                  <input type="text" class="form-control" name="firstName" placeholder="">
+                                  <label for="username">First Name <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="firstName" required>
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Last Name</label>
-                                  <input type="text" class="form-control" name="lastName" placeholder="">
+                                  <label for="username">Last Name <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="lastName" required>
                               </div>
                               </div>
 
                               <div class="form-group">
-                                  <label for="username">Email</label>
-                                  <input type="text" class="form-control" name="email" placeholder="">
+                                  <label for="username">Email <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="email" required>
                               </div>
 
                               <div class="form-group">
-                                  <label for="username">Phone Number</label>
-                                  <input type="text" class="form-control" name="phoneNumber" placeholder="">
+                                  <label for="username">Phone Number <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="phoneNumber" required>
                               </div>
 
 
                           <div class="form-group">
-                              <label for="username">Primary Address</label>
-                              <input type="text" class="form-control" name="address1" placeholder="">
+                              <label for="username">Primary Address <span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" name="address1" required>
                           </div>
 
                           <div class="form-group">
-                              <label for="username">Secondary Address</label>
-                              <input type="text" class="form-control" name="address2" placeholder="">
+                              <label for="username">Secondary Address </label>
+                              <input type="text" class="form-control" name="address2">
                           </div>
 
                           <div>
                           <div class="form-group w-33-p pull-left p-r-10">
-                              <label for="username">City</label>
-                              <input type="text" class="form-control" name="city" placeholder="">
+                              <label for="username">City <span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" name="city" required>
                           </div>
 
                           <div class="form-group w-33-p pull-left">
-                              <label for="username">State</label>
-                              <input type="text" class="form-control" name="state" placeholder="">
+                              <label for="username">State <span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" name="state" required>
                           </div>
 
                           <div class="form-group w-33-p pull-right">
-                              <label for="username">Postal Code</label>
-                              <input type="text" class="form-control" name="zipCode" placeholder="">
+                              <label for="username">Postal Code <span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" name="zipCode" required>
                           </div>
                           </div>
                           <div class="text-center"><h3>Attach Resume</h3>

@@ -70,7 +70,6 @@ function getJobFunction($Id){
             <div class="">
                 <div class="">
                     <h5 class="text-custom m-b-5"><?=$row->firstName;?>&nbsp;<?=$row->lastName;?></h5>
-                    <p class="m-b-0"><i class="mdi mdi-cellphone m-r-5"></i><?=$row->phoneNumber;?></p>
                     <p class="m-b-0"><i class="mdi mdi-map-marker m-r-5"></i><?=$row->address1;?></p>
                     <p class="m-b-0"><i class="mdi mdi-map-marker m-r-5"></i><?=$row->address2;?></p>
                     <p class="m-b-0"><i class="mdi mdi-google-maps m-r-5"></i><?=$row->city;?>&nbsp;<?=$row->state;?>&nbsp;<?=$row->zipCode;?></p>

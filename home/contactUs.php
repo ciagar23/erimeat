@@ -68,8 +68,8 @@ $jf->readList();
             <!-- Start Dropdown-->
             <div class="pull-left w-50-p p-r-10">
             <div class="form-group">
-                <label for="firstname">Job Category</label>
-                <select class="form-control" name="jobFunctionId">
+                <label for="firstname">Job Category <span style="color: red;">*</span></label>
+                <select class="form-control" name="jobFunctionId" required>
                   <?php foreach($jf->readList() as $row) {?>
                     <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                   <?php } ?>
@@ -79,15 +79,15 @@ $jf->readList();
 
             <div class="p-l-10 w-50-p pull-left">
             <div class="form-group">
-                <label for="username">Job Classification</label>
-                <input type="text" class="form-control" name="position" placeholder="">
+                <label for="username">Job Classification <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" name="position" required>
             </div>
             </div>
           </div>
             <!-- End Dropdown -->
             <div class="row">
-              <label>Brief Description</label>
-              <textarea style="width: 100%;" id="" maxlength="1000" name="description"></textarea>
+              <label>Brief Description <span style="color: red;">*</span></label>
+              <textarea style="width: 100%;" id="" maxlength="1000" name="description" required></textarea>
             </div>
             <div class="row">
             <div class="p-r-10 w-50-p pull-left">
@@ -107,8 +107,8 @@ $jf->readList();
           <div class="row">
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
-                  <label for="username">Email Address</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="email" placeholder="">
+                  <label for="username">Email Address <span style="color: red;">*</span></label>
+                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="email" required>
               </div>
             </div>
 

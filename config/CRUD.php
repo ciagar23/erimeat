@@ -344,6 +344,16 @@ class JobFunction {
 
 class PositionType {
 
+		/* Retrieve one record */
+		function readOne($val){
+		$db = Database::connect();
+		$pdo = $db->prepare("select * from position_type where Id='$val'");
+		$pdo->execute();
+		$result = $pdo->fetch(PDO::FETCH_OBJ);
+		Database::disconnect();
+		return $result;
+	}
+
 	/* Retrieve one record */
 	function readList(){
 		$db = Database::connect();
