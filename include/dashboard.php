@@ -26,7 +26,7 @@
 
                 <!-- Button mobile view to collapse sidebar menu -->
                 <div class="navbar navbar-default" role="navigation">
-                    <div class="container-dashboard">
+                    <div class="container-100">
 
                         <!-- Navbar-left -->
                         <ul class="nav navbar-nav navbar-left nav-menu-left">
