@@ -162,7 +162,7 @@ File: Components
     display: block;
     color: #3399cc;
     font-weight: 650;
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 20px;
     padding-left: 25px;
     padding-right: 25px; }
@@ -229,7 +229,7 @@ File: Components
     position: absolute;
     right: 20px;
     top: 8px;
-    font-size: 15.5px; }
+    font-size: 16px; }
   #topnav .navigation-menu > li .submenu > li .submenu {
     left: 100%;
     top: 0;
@@ -246,9 +246,10 @@ File: Components
     padding: 10px 25px;
     clear: both;
     white-space: nowrap;
-    font-size: 15px;
+    font-size: 16px;
     color: #ffffff;
-    font-weight: 650; }
+    font-weight: 650;
+    border-bottom: 2px solid #545e65; }
   #topnav .navigation-menu > li .submenu li a:hover {
     color: #ffffff;
     background-color: #3399cc; }
@@ -425,7 +426,7 @@ File: Components
       width: 100%;
       overflow: hidden;
       font-size: 13px;
-      font-family: "Nunito Sans", sans-serif; }
+      font-family: "Century Gothic", sans-serif; }
     .user-list .user-list-item .user-desc span.desc {
       color: #98a6ad;
       text-overflow: ellipsis;
@@ -516,7 +517,7 @@ File: Components
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-size: 14px; }
+  font-size: 20px; }
 
 /* =============
    Common
@@ -526,19 +527,20 @@ body {
   padding-bottom: 60px;
   overflow-x: hidden;
   color: #797979;
-  font-size: 14px;
-  background-color: #ffffff; }
+  font-size: 17px;
+  background-color: #ffffff;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
 
 html {
   position: relative;
   min-height: 100%; }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  color: #666f7b;
+  color: #292b2c;
   margin: 10px 0; }
 
 h5 {
-  font-size: 15px; }
+  font-size: 16px; }
 
 p {
   line-height: 1.6; }
@@ -609,6 +611,15 @@ a:focus {
 .p-l-r-10 {
   padding-left: 10px;
   padding-right: 10px; }
+
+.p-l-10 {
+  padding-left: 10px; }
+
+.p-r-10 {
+  padding-right: 10px; }
+
+.pull-left {
+  float:left; }
 
 .m-0 {
   margin: 0 !important; }
@@ -835,7 +846,7 @@ a:focus {
   background-color: #f3f3f3;
   margin-bottom: 18px;
   padding: 12px 20px;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 /* Demo Animation */
 .demo-animation {
@@ -1099,7 +1110,7 @@ a:focus {
   vertical-align: middle;
   border-radius: 10px;
   background-color: #64c5b1;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .badge-xs {
   font-size: 9px; }
@@ -1334,7 +1345,7 @@ a:focus {
 
 /* Tooltips */
 .tooltip {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
   .tooltip .tooltip-inner {
     padding: 4px 10px;
     border-radius: 2px;
@@ -1377,11 +1388,12 @@ a:focus {
    Buttons
 ============= */
 .btn {
-  border-radius: 2px;
-  font-size: 14px;
-  padding: 7px 14px;
+  border-radius: 0.3rem;
+  font-size: 18px;
+  padding: 20px 65px;
   outline: none !important;
-  font-family: "Nunito Sans", sans-serif; }
+  font-weight: bold;
+  font-family: "Century Gothic", sans-serif; }
 
 .btn-md {
   padding: 9px 18px; }
@@ -2250,7 +2262,7 @@ a:focus {
   font-size: 13px;
   line-height: 22px; }
   .jq-toast-single h2 {
-    font-family: "Nunito Sans", sans-serif; }
+    font-family: "Century Gothic", sans-serif; }
   .jq-toast-single a {
     font-size: 14px; }
     .jq-toast-single a:hover {
@@ -2368,7 +2380,7 @@ a:focus {
 .widget-box-two {
   text-align: right; }
   .widget-box-two p {
-    font-size: 14px; }
+    font-size: 17px; }
   .widget-box-two .widget-two-icon {
     position: absolute;
     left: 30px;
@@ -2482,7 +2494,7 @@ a:focus {
     color: #313a46;
     display: block;
     margin: 0;
-    font-family: "Nunito Sans", sans-serif; }
+    font-family: "Century Gothic", sans-serif; }
   .inbox-widget .inbox-item .inbox-item-text {
     display: block;
     font-size: 12px;
@@ -2526,7 +2538,7 @@ a:focus {
   line-height: 32px;
   text-align: center;
   border-radius: 50%;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   font-size: 16px; }
 
 /* Table with Action */
@@ -2579,7 +2591,7 @@ a:focus {
   border: none;
   padding: 8px 16px 8px 46px;
   background: #f3f3f3;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
   .custom-dd-empty .dd-list .dd3-content:hover {
     color: #64c5b1; }
 .custom-dd-empty .dd-list button {
@@ -2639,12 +2651,12 @@ a:focus {
   .fc-toolbar h2 {
     font-size: 18px;
     font-weight: 600;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Century Gothic", sans-serif;
     line-height: 30px;
     text-transform: uppercase; }
 
 .fc-day-grid-event .fc-time {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .fc-day {
   background: #ffffff; }
@@ -2745,11 +2757,11 @@ a:focus {
 .fc-basic-view td.fc-week-number span {
   padding-right: 8px;
   font-weight: 700;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 .fc-basic-view td.fc-day-number {
   padding-right: 8px;
   font-weight: 700;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 .fc-basic-view .fc-content {
   color: #ffffff; }
 
@@ -2761,7 +2773,7 @@ label {
   font-size: 14px;
   color: #313a46;
   letter-spacing: 0.01em;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 select[multiple] option + option, select[size] option + option {
   margin-top: 1px; }
@@ -2774,12 +2786,12 @@ textarea.form-control {
   min-height: 90px; }
 
 .form-control {
-  border: 1px solid #dadada;
+  border: 1px solid #464a4c;
   border-radius: 4px;
   padding: 7px 12px;
-  height: 38px;
+  height: 50px;
   max-width: 100%;
-  font-size: 14px;
+  font-size: 16.5px;
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: all 300ms linear;
@@ -2788,7 +2800,7 @@ textarea.form-control {
   transition: all 300ms linear; }
 
 .form-control:focus {
-  border: 1px solid #afafaf;
+  border: 1px solid #464a4c;
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: 0 !important; }
@@ -3284,7 +3296,7 @@ textarea.form-control {
   background-color: #64c5b1 !important; }
 
 .mce-window-head .mce-title {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .mce-window {
   padding: 20px !important; }
@@ -3319,7 +3331,7 @@ textarea.form-control {
   padding: 7px; }
 
 th {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .table-centered td {
   vertical-align: middle !important; }
@@ -3369,7 +3381,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before
   background-color: #f96a74; }
 
 table.dataTable > tbody > tr.child span.dtr-title {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 /* ColVid Tables */
 div.ColVis {
@@ -3544,7 +3556,7 @@ table.dataTable thead th {
   .tablesaw thead tr:first-child th {
     font-weight: 600;
     border: none;
-    font-family: "Nunito Sans", sans-serif; }
+    font-family: "Century Gothic", sans-serif; }
 .tablesaw td {
   border-top: 1px solid rgba(243, 243, 243, 0.7) !important; }
 
@@ -3790,7 +3802,7 @@ table.dataTable thead th {
 
 .legend tr {
   height: 30px;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .legendLabel {
   padding-left: 5px !important;
@@ -3902,7 +3914,7 @@ table.dataTable thead th {
 .c3-chart-arcs-title {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .c3-tooltip tr {
   border: none !important; }
@@ -3912,14 +3924,14 @@ table.dataTable thead th {
 
 .c3-tooltip .value {
   font-weight: 600;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .c3-line {
   stroke-width: 2px; }
 
 .c3-legend-item {
   font-size: 13px;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 /* Echart chart */
 .echarts-tooltip {
@@ -4038,7 +4050,7 @@ table.dataTable thead th {
     padding: 5px 12px 5px 12px;
     margin-left: -30px;
     margin-bottom: 15px;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Century Gothic", sans-serif;
     -moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     -o-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
@@ -4104,7 +4116,7 @@ table.dataTable thead th {
     .ribbon-box .ribbon-two span {
       font-size: 13px;
       color: #ffffff;
-      font-family: "Nunito Sans", sans-serif;
+      font-family: "Century Gothic", sans-serif;
       text-align: center;
       line-height: 20px;
       transform: rotate(-45deg);
@@ -4338,7 +4350,7 @@ table.dataTable thead th {
       background: #87949b; }
 
 .mail-list a {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   vertical-align: middle;
   color: #797979;
   padding: 10px 15px;
@@ -4420,7 +4432,7 @@ table.dataTable thead th {
   border: none;
   background: #313a46;
   color: white;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   font-size: 14px;
   padding: 5px 8px; }
 
@@ -4438,7 +4450,7 @@ table.dataTable thead th {
   max-width: 200px;
   display: none;
   color: #ffffff;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Century Gothic", sans-serif; }
 
 .mapael .zoomIn, .mapael .zoomOut, .mapael .zoomReset {
   display: inline-block;
@@ -4758,7 +4770,7 @@ h3.timeline-title {
     #count-down .clock-presenter .digit {
       margin-top: 20px;
       font-size: 60px;
-      font-family: "Nunito Sans", sans-serif;
+      font-family: "Century Gothic", sans-serif;
       line-height: 60px;
       font-weight: bold;
       height: 60px;
@@ -4775,7 +4787,7 @@ h3.timeline-title {
       cursor: default;
       font-size: 16px;
       color: #ffffff;
-      font-family: "Nunito Sans", sans-serif;
+      font-family: "Century Gothic", sans-serif;
       text-transform: uppercase; }
 
 @media (max-width: 992px) {
@@ -4824,14 +4836,14 @@ h3.timeline-title {
     border-radius: 5px 5px 0 0; }
   .pricing-column .plan-title {
     font-size: 16px;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Century Gothic", sans-serif;
     margin-bottom: 10px;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px; }
   .pricing-column .plan-price {
     font-size: 48px;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Century Gothic", sans-serif;
     margin-bottom: 10px;
     color: #ffffff; }
   .pricing-column .plan-duration {
@@ -5004,7 +5016,7 @@ h3.timeline-title {
 Lightbox
 ===== */
 .lb-data .lb-caption {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   text-transform: uppercase;
   font-size: 15px;
   line-height: 2em; }
@@ -5497,3 +5509,25 @@ ul.sitemap-icon ul li a {
     font-size: 24px;
     color: #ffffff;
     padding-top: 50px; }
+
+/** width 50% 33% **/
+  .w-50-p {
+    width: 50%; }
+  .w-33-p {
+    width: 33%; }
+
+  .jumbotron-w {
+    width: 1140px; }
+/** Submit resume icon **/
+  .form-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #3399cc;
+    border-radius: 50%; }
+
+/** Hiring Form header **/
+  .hiring-form-header{
+    width: 85%;
+    max-width: 1140px;
+    background-color: #36424a;
+    padding:35px 25px 50px; }
