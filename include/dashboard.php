@@ -32,7 +32,7 @@
                         <ul class="nav navbar-nav navbar-left nav-menu-left">
                             <li>
                                 <button type="button" class="button-menu-mobile open-left waves-effect">
-                                    <i class="dripicons-menu" style="color: #3399cc;"></i>
+                                    <i class="dripicons-menu" style="color: #205e7d;"></i>
                                 </button>
                             </li>
 
