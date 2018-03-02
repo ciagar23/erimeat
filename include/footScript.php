@@ -7,41 +7,55 @@
 <script src="../include/assets/js/jquery.slimscroll.js"></script>
 <script src="../include/assets/js/jquery.scrollTo.min.js"></script>
 
-
-<!-- Jquery-Ui -->
-<script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
+ <!-- Parsley js -->
+<script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>
 
 <!-- SCRIPTS -->
+<script src="../include/plugins/switchery/switchery.min.js"></script>
+<script src="../include/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+<script src="../include/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+<script src="../include/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="../include/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+<script src="../include/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+<script src="../include/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="../include/plugins/autocomplete/jquery.mockjax.js"></script>
+<script type="text/javascript" src="../include/plugins/autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="../include/plugins/autocomplete/countries.js"></script>
+<script type="text/javascript" src="../include/assets/pages/jquery.autocomplete.init.js"></script>
 
+        <!-- Init Js file -->
+<script type="text/javascript" src="../include/assets/pages/jquery.form-advanced.init.js"></script>
 
 <script src="../include/plugins/moment/moment.js"></script>
 <script src='../include/plugins/fullcalendar/js/fullcalendar.min.js'></script>
 <script src="../include/assets/pages/jquery.calendar.js"></script>
+ 
 
+<script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
 
- <script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="../include/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="../include/plugins/datatables/buttons.bootstrap.min.js"></script>
+<script src="../include/plugins/datatables/jszip.min.js"></script>
+<script src="../include/plugins/datatables/pdfmake.min.js"></script>
+<script src="../include/plugins/datatables/vfs_fonts.js"></script>
+<script src="../include/plugins/datatables/buttons.html5.min.js"></script>
+<script src="../include/plugins/datatables/buttons.print.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.keyTable.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="../include/plugins/datatables/responsive.bootstrap.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.scroller.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.colVis.js"></script>
+<script src="../include/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 
-        <script src="../include/plugins/datatables/dataTables.buttons.min.js"></script>
-        <script src="../include/plugins/datatables/buttons.bootstrap.min.js"></script>
-        <script src="../include/plugins/datatables/jszip.min.js"></script>
-        <script src="../include/plugins/datatables/pdfmake.min.js"></script>
-        <script src="../include/plugins/datatables/vfs_fonts.js"></script>
-        <script src="../include/plugins/datatables/buttons.html5.min.js"></script>
-        <script src="../include/plugins/datatables/buttons.print.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.fixedHeader.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.keyTable.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="../include/plugins/datatables/responsive.bootstrap.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.scroller.min.js"></script>
-        <script src="../include/plugins/datatables/dataTables.colVis.js"></script>
-        <script src="../include/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+<!-- Jquery-Ui -->
+<script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-
-             <script src="../include/assets/pages/jquery.datatables.init.js"></script>
-
-             <script type="text/javascript">
+<script src="../include/assets/pages/jquery.datatables.init.js"></script>
+ 
+<script type="text/javascript">
             $(document).ready(function () {
                 $('#datatable').dataTable();
                 $('#datatable-keytable').DataTable({keys: true});
@@ -72,9 +86,23 @@
                 });
             });
             TableManageButtons.init();
-
-        </script>
+</script>
 
 <!-- App js -->
 <script src="../include/assets/js/jquery.core.js"></script>
 <script src="../include/assets/js/jquery.app.js"></script>
+     <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').parsley();
+            });
+            $(function () {
+                $('#demo-form').parsley().on('field:validated', function () {
+                    var ok = $('.parsley-error').length === 0;
+                    $('.alert-info').toggleClass('hidden', !ok);
+                    $('.alert-warning').toggleClass('hidden', ok);
+                })
+                        .on('form:submit', function () {
+                            return false; // Don't submit form for this demo
+                        });
+            });
+        </script>
