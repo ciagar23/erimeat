@@ -2823,8 +2823,14 @@ textarea.form-control {
 
   .form-control-sm{
     height: 30px;
-    border-radius: 1px;
+    border-radius: 2px;
     border: 1px solid #a9a9a9; }
+
+    .form-control-lg{
+      height: 67px;
+      border-radius: 1px;
+      border: 1px solid #727b80; }
+
 .input-lg {
   height: 46px;
   padding: 10px 16px;
@@ -5563,3 +5569,10 @@ ul.sitemap-icon ul li a {
     background-color: #ffffff;
     color: #ffffff;
     border-top:1px solid #ffffff; }
+
+  .services-panel {
+    width: 325px;
+    margin: 7px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+  }
