@@ -131,7 +131,7 @@ It’s Why We’re #1.</h1>
             <div class="col-md-6 col-lg-3">
                 <div class="company-card card-box">
                     <div class="company-detail">
-                        <h4 class=" m-b-5">New York</h4>
+                        <h4 class=" m-b-5">Sydney</h4>
                     </div>
                     <hr/>
                     <img src="../include/assets/images/home-img1.png">
@@ -141,7 +141,7 @@ It’s Why We’re #1.</h1>
             <div class="col-md-6 col-lg-3">
                 <div class="company-card card-box">
                     <div class="company-detail">
-                        <h4 class=" m-b-5">New York</h4>
+                        <h4 class=" m-b-5">Melbourne</h4>
                     </div>
                     <hr/>
                     <img src="../include/assets/images/home-img2.png">
@@ -151,7 +151,7 @@ It’s Why We’re #1.</h1>
             <div class="col-md-6 col-lg-3">
                 <div class="company-card card-box">
                     <div class="company-detail">
-                        <h4 class=" m-b-5">New York</h4>
+                        <h4 class=" m-b-5">Perth</h4>
                     </div>
                     <hr/>
                     <img src="../include/assets/images/home-img3.png">
@@ -161,7 +161,7 @@ It’s Why We’re #1.</h1>
             <div class="col-md-6 col-lg-3">
                 <div class="company-card card-box">
                     <div class="company-detail">
-                        <h4 class=" m-b-5">New York</h4>
+                        <h4 class=" m-b-5">Brisbane</h4>
                     </div>
                     <hr/>
                     <img src="../include/assets/images/home-img4.png">

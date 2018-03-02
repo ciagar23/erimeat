@@ -4,6 +4,8 @@ $jf->readList();
 $pt = new PositionType;
 $pt->readList();
 ?>
+
+
 <div class="row">
     <div class="col-md-12">
       <div class="hiring-form-header center-page">
@@ -11,14 +13,27 @@ $pt->readList();
       <p class="text-center text-white">We will help you build the workforce you desire – quickly</p>
     </div>
       <div class="jumbotron center-page" style="width: 1140px;">
-            <form id="default-wizard" action="process.php?action=create" method="POST">
+
+
+                                    <div class="alert alert-warning hidden fade in">
+                                        <h4>Oh snap!</h4>
+                                        <p>This form seems to be invalid :(</p>
+                                    </div>
+
+                                    <div class="alert alert-info hidden fade in">
+                                        <h4>Yay!</h4>
+                                        <p>Everything seems to be ok :)</p>
+                                    </div>
+            <form  action="process.php?action=create" method="POST" id="demo-form" data-parsley-validate="">
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
 
                               <div class="form-group">
                                   <label for="firstname">Job Category <span style="color: red;">*</span></label>
-                                  <select class="form-control" name="jobFunctionId" required>
+                                  <select class="form-control" name="jobFunctionId" required="">
+                                   <option>Please Select</option>
                                     <?php foreach($jf->readList() as $row) {?>
+
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>
@@ -27,7 +42,8 @@ $pt->readList();
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Employment Type <span style="color: red;">*</span></label>
-                                  <select class="form-control" name="positionTypeId" required>
+                                  <select class="form-control" name="positionTypeId" required="">
+                                  <option>Please Select</option>
                                     <?php foreach($pt->readList() as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
@@ -38,51 +54,56 @@ $pt->readList();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Job Classification <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="position" required>
+                                  <input type="text" class="form-control" name="position" required="">
                               </div>
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Contact Person <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="contactPerson" required>
+                                  <input type="text" class="form-control" name="contactPerson" required="">
                               </div>
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Client Email <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="workEmail" required>
+                                  <input type="email" class="form-control" name="workEmail" data-parsley-trigger="change" required="">
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Job Title <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="jobTitle" required>
+                                  <input type="text" class="form-control" name="jobTitle" required="">
                               </div>
                               </div>
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Business Phone <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="businessPhone" required>
+                                  <input type="text" class="form-control" name="businessPhone" required="">
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Postal Code <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="zipCode" required>
+                                  <input type="text" class="form-control" name="zipCode" required="">
                               </div>
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Company <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="name" required>
+                                  <input type="text" class="form-control" name="name" required="">
                               </div>
 
                               <div class="form-group">
                                   <label for="username">Comments</label>
-                                  <input type="text" class="form-control" name="comment" placeholder="">
+
+                                    <textarea id="message" class="form-control" name="comment"
+                                                      data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                                      data-parsley-maxlength="100"
+                                                      data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                                      data-parsley-validation-threshold="10"></textarea>
                               </div>
                     </div>
                   <div class="text-center m-t-30">
