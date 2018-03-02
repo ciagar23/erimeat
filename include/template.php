@@ -34,8 +34,8 @@
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">RESOURCES</h4>
-                    <p>Our Services</p>
-                    <p>Projects</p>
+                    <p><a style="color: white;" href="../home/?view=services">Our Services</a></p>
+                    <p><a style="color: white;" href="../home/?view=projects">Projects</a></p>
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">LEGAL</h4>

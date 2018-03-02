@@ -16,7 +16,7 @@
           <div class="pull-right">
             <li>
               <a class="m-l-5 m-r-15" href="../home/?view=clientForm">Register</a>
-              <a class="m-l-5 m-r-15" href="../hone/?view=projects">Projects</a>
+              <a class="m-l-5 m-r-15" href="../home/?view=projects">Projects</a>
               <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
               <a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a>
               <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a>
