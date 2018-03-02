@@ -12,7 +12,7 @@ It’s Why We’re #1.</h1>
     <div class="row homepage-search">
         <div class="col-md-8 center-page">
             <div class="input-group m-t-5">
-                <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords">
+                <input type="text" id="" name="" class="form-control form-control-lg" placeholder="Job Title, Skills or Keywords">
                 <span class="input-group-btn">
                     <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                 </span>
@@ -105,7 +105,7 @@ It’s Why We’re #1.</h1>
             <div class="col-sm-4">
                 <div class="about-features-box text-center">
                     <div>
-                        <img src="../include/assets/images/trainingCertification.png">
+                        <img src="../include/assets/images/certificate.png">
                     </div>
                     <h4 class="font-18">Training Certification</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
@@ -175,7 +175,7 @@ It’s Why We’re #1.</h1>
       <div class="row">
           <div class="col-md-8 center-page">
               <div class="input-group m-t-5">
-                  <input type="text" id="" name="" class="form-control" value="Search Jobs">
+                  <input type="text" id="" name="" class="form-control form-control-lg" value="Search Jobs">
                   <span class="input-group-btn">
                       <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                   </span>
