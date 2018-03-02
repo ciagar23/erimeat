@@ -6,6 +6,20 @@
 <script src="../include/assets/js/waves.js"></script>
 <script src="../include/assets/js/jquery.slimscroll.js"></script>
 <script src="../include/assets/js/jquery.scrollTo.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#myBtn1").click(function(){
+        $("#demo1").show();
+         $("#demo").hide();
+         
+    });
+    $("#myBtn2").click(function(){
+        $("#demo1").hide();
+         $("#demo").show();
+          $("#myDIV").hide();
+    });
+});
+</script>
 
  <!-- Parsley js -->
 <script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>

@@ -66,7 +66,7 @@ $pt->readList();
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Client Email <span style="color: red;">*</span></label>
-                                  <input type="email" class="form-control" name="workEmail" data-parsley-trigger="change" required="">
+                                  <input type="email" class="form-control" name="workEmail" data-parsley-trigger="change" required="" >
                               </div>
                               </div>
 

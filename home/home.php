@@ -1,24 +1,50 @@
 <div>
   <div style="position:relative;">
-
     <img src="../include/assets/images/teamire-home-img.png" style="width: 100%;">
     <div class="homepage-top-text text-center">
-
-     <h1 style="color:#fff;">Unrivaled Industry Insight. Sophisticated Matching Technology.
-And a Personalized Approach.
-It’s Why We’re #1.</h1>
-
+     <h1 style="color:#fff;">Unrivaled Industry Insight. Sophisticated Matching Technology. And a Personalized Approach. It’s Why We’re #1.</h1>
     </div>
-    <div class="row homepage-search">
-        <div class="col-md-8 center-page">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <div class="row homepage-search ">
+  <center>
             <div class="input-group m-t-5">
-                <input type="text" id="" name="" class="form-control form-control-lg" placeholder="Job Title, Skills or Keywords">
-                <span class="input-group-btn">
-                    <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                </span>
+               <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
             </div>
-        </div>
+
+            <div id="myDIV">
+                  <form class="form-inline" >
+                    <div class="form-group well" style="background-color: #4489e4;border-color: #4489e4;">
+                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
+                    <select class="form-control" style="height: 67px;width:200px;">
+                        <option>Select City</option>
+                    </select>
+                    <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    </div>
+               </form>
+            </div>
+
+
+           <div id="demo1"></div>
+           <div id="demo"></div>
+            <div id="myP" style="visibility:hidden;"><form class="form-inline" role="form">
+                    <div class="form-group well"  style="background-color: #4489e4;border-color: #4489e4;">
+                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+                     <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
+                       <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                    </div>
+                       </form>
+                    </div>
+            </center>
+
     </div>
+
   </div>
   </div>
 <!-- Card Box Content-->
@@ -184,3 +210,26 @@ It’s Why We’re #1.</h1>
       </div>
     </div>
 </div>
+<script>
+var x = document.getElementById("myBtn1");
+var y = document.getElementById("myBtn2");
+
+x.addEventListener("click", myFirstFunction);
+y.addEventListener("click", mySecondFunction);
+
+
+
+function myFirstFunction() {
+     var x = document.getElementById("myDIV").innerHTML;
+    document.getElementById("demo1").innerHTML = x;
+
+}
+
+function mySecondFunction() {
+       var x = document.getElementById("myP").innerHTML;
+    document.getElementById("demo").innerHTML = x;
+
+}
+
+
+</script>
