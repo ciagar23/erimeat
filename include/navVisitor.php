@@ -75,8 +75,8 @@
             <a href="#">Work With Us
             <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
+              <li><a href="../home/?view=services">Our Services</a></li>
               <li><a href="../home/?view=aboutUs">About Us</a></li>
-              <li><a href="../home/?view=services">Services</a></li>
             </ul>
         </li>
 
