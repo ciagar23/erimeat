@@ -10,85 +10,35 @@ function getPositionName($Id){
 
 ?>
 
-<div class="container-fluid">
-
-  <div class="row">
-      <div class="col-md-4">
-          <div class="card-box">
-              <h4 class="header-title m-t-0 m-b-20">Lorem Ipsum</h4>
-              <p>Lorem Ipsum</p>
-
-              <select class="form-control select2">
-                  <option>Select</option>
-                  <optgroup label="Lorem">
-                      <option value="AK">Lorem</option>
-                      <option value="HI">Lorem</option>
-                  </optgroup>
-                  <optgroup label="Ipsum">
-                      <option value="CA">Ipsum</option>
-                      <option value="NV">Ipsum</option>
-                      <option value="OR">Ipsum</option>
-                  </optgroup>
-                  <optgroup label="Dolor">
-                      <option value="AZ">Dolor</option>
-                      <option value="CO">Dolor</option>
-                      <option value="ID">Dolor</option>
-                  </optgroup>
-              </select>
-
-              <p class="m-t-30">Lorem Ipsum<p>
-                <select class="form-control select2">
-                    <option>Select</option>
-                    <optgroup label="Lorem">
-                        <option value="AK">Lorem</option>
-                        <option value="HI">Lorem</option>
-                    </optgroup>
-                    <optgroup label="Ipsum">
-                        <option value="CA">Ipsum</option>
-                        <option value="NV">Ipsum</option>
-                        <option value="OR">Ipsum</option>
-                    </optgroup>
-                    <optgroup label="Dolor">
-                        <option value="AZ">Dolor</option>
-                        <option value="CO">Dolor</option>
-                        <option value="ID">Dolor</option>
-                    </optgroup>
-                </select>
-          </div>
-      </div>
-
-      <div class="col-md-8">
-
-        <?php foreach($obj->readList($s) as $row) {
-          if ($row->isApproved==1){
-        ?>
-        <div class="card-box">
-
-            <div class="col-md-10">
-              <h4 class="header-title mt-0 m-b-20"><?=$row->position;?></h4>
-            </div>
-            <div class="col-md-2">
-              <a href="?view=jobDetail&id=<?=$row->Id;?>">
-                <button type="button" class="btn btn-success btn-rounded w-md waves-effect waves-light">View</button>
-              </a>
-            </div>
-              <div class="">
-                  <h5 class="text-custom m-b-5"><?=getPositionName($row->positionTypeId); ?></h5>
-                  <p class="m-b-10">
-                    <i class="mdi mdi-worker"></i> <?=$row->requiredExperience;?>
-                    <i class="mdi mdi-google-maps m-l-15"></i> <?=$row->address;?>
-                  </p>
-                  <hr>
-                  <p class="text-muted font-13 m-b-0">
-                    <?=$row->comment;?>
-                  </p>
-              </div>
+  <!-- Start Filter Panel and Results-->
+  <div class="form-container container m-t-30">
+    <?php foreach($obj->readList($s) as $row) {
+      if ($row->isApproved==1){
+    ?>
+    <div class="row center-page job-list-row">
+        <div class="col-lg-4 job-list-summary">
+            <span class="job-list-title"><?=$row->position;?></span>
+            <br>
+            <span class="m-b-5"><?=$row->address;?></span>
+            <br>
+            <span class="">$27 - 32/hr</span>
+            <br>
+            <span class="m-b-5"><?=getPositionName($row->positionTypeId);?></span>
+            <br>
+            <span class="job-list-date">Posted <?=$row->createDate;?></span>
+            <br>
         </div>
-        <?php  } } ?>
 
-      </div> <!-- end col -->
+        <div class="col-lg-8 job-list-desc">
+          <?=$row->comment;?>
+          <br>
+          <span>
+            <a class="job-list-link" href="?view=jobDetail&id=<?=$row->Id;?>">Read More &gt;</a>
+          </span>
+        </div>
+    </div>
+<br>
+<?php  } } ?>
 
-  </div>
-
-
+  </div> <!-- End List Container -->
 </div>

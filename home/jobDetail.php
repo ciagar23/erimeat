@@ -1,6 +1,12 @@
 <?php
 $obj = new Job;
 $job = $obj->readOne($_GET['id']);
+
+function getPositionName($Id){
+  $obj = new PositionType;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
 ?>
 
 <div class="container-fluid m-t-30">
@@ -25,16 +31,20 @@ $job = $obj->readOne($_GET['id']);
       <p class="col-lg-9 col-md-8 col-6">$17 - 22/hr</p>
     </div>
     <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Work Email:</p>
-      <p class="col-lg-9 col-md-8 col-6"><?=$job->workEmail;?></p>
-    </div>
-    <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Business Phone:</p>
-      <p class="col-lg-9 col-md-8 col-6"><?=$job->businessPhone;?></p>
-    </div>
-    <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Address:</p>
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Location:</p>
       <p class="col-lg-9 col-md-8 col-6"><?=$job->address;?></p>
+    </div>
+    <div class="row cleafix">
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Date Posted:</p>
+      <p class="col-lg-9 col-md-8 col-6"><?=$job->createDate;?></p>
+    </div>
+    <div class="row cleafix">
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Employment Type:</p>
+      <p class="col-lg-9 col-md-8 col-6"><?=getPositionName($job->positionTypeId);?></p>
+    </div>
+    <div class="row cleafix">
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Job Reference Number:</p>
+      <p class="col-lg-9 col-md-8 col-6"><?=$job->refNum;?></p>
     </div>
     <div class="row cleafix">
       <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Required Experience:</p>
@@ -42,9 +52,8 @@ $job = $obj->readOne($_GET['id']);
     </div>
     <hr>
     <h2>Description</h2>
-    <p><?=$job->comment;?>
-      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor.
-      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor.
+    <p>
+      <?=$job->comment;?>
     </p>
     <h2>Requirements</h2>
     <p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor.
@@ -64,7 +73,7 @@ $job = $obj->readOne($_GET['id']);
     <a href="../home/?view=application&id=<?=$job->Id;?>"><button class="btn btn-primary" style="width: 50%;">Apply Now</button></a>
     <hr>
     <div class="m-b-30">
-    <h3>Address, Ad</h3>
+    <h3><?=$job->address;?></h3>
     Lorem Ipsum
     <br>
     Lorem Ipsum
