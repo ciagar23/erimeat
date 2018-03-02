@@ -12,12 +12,12 @@
   <div class="col-lg-1">&nbsp;</div>
   <div class="col-12 col-lg-4 p-30">
     <h2 class="text-center mt30 mb25">Client Login</h2>
-    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../company/?view=login'" role="button">APPROVE TIMESHEETS</button></div>
+    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../company/?view=login'" role="button">TIMESHEETS</button></div>
   </div>
   <div class="col-lg-2">&nbsp;</div>
   <div class="col-12 col-lg-4 p-30">
     <h2 class="text-center mt30 mb25">Candidate Login</h2>
-    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../employee/?view=login'" role="button">SUBMIT TIMESHEETS</button></div>
+    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../employee/?view=login'" role="button">TIMESHEETS</button></div>
     <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="#" role="button">MY DASHBOARD</button></div>
     <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">2017 W2 TAX FORM</button></div>
   </div>

@@ -46,12 +46,11 @@
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">FOLLOW US</h4>
-                    <p>Facebook</p>
-                    <p>LinkedIn</p>
-                    <p>Twitter</p>
-                    <p>Youtube</p>
-                    <p>Instagram</p>
-                    <p>Glassdoor</p>
+                    <i class="fa fa-facebook-square fa-2x"></i>&nbsp;&nbsp;<span>Facebook</span><br><br>
+                    <i class="fa fa-linkedin-square fa-2x"></i>&nbsp;&nbsp;<span>LinkedIn</span><br><br>
+                    <i class="fa fa-twitter-square fa-2x"></i>&nbsp;&nbsp;<span>Twitter</span><br><br>
+                    <i class="fa fa-youtube-square fa-2x"></i>&nbsp;&nbsp;<span>Youtube</span><br><br>
+                    <i class="fa fa-instagram fa-2x"></i>&nbsp;&nbsp;<span>Instagram</span>
                   </div>
                 </div>
                 <div class="clearfix"></div>
