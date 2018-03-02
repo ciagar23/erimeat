@@ -27,40 +27,39 @@
             <div class="container-fluid m-b-30 " style="padding: 30px 60px 45px 45px; color: #FFFFFF; background-color: #4a555c; bottom: 0;">
                 <div class="row center-page container">
                   <div class="container-fluid col-12 col-lg-3">
-                    <h4 class="text-white">Title</h4>
+                    <h4 class="text-white">ABOUT US</h4>
+                    <p>How we do this</p>
+                    <p>Our Purpose</p>
+                    <p>Our Objectives</p>
+                  </div>
+                  <div class="container-fluid col-12 col-lg-3">
+                    <h4 class="text-white">RESOURCES</h4>
+                    <p>Our Services</p>
+                    <p>Projects</p>
+                  </div>
+                  <div class="container-fluid col-12 col-lg-3">
+                    <h4 class="text-white">LEGAL</h4>
                     <p>Lorem</p>
                     <p>Lorem</p>
                     <p>Lorem</p>
                     <p>Lorem</p>
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
-                    <h4 class="text-white">Title</h4>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                  </div>
-                  <div class="container-fluid col-12 col-lg-3">
-                    <h4 class="text-white">Title</h4>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                  </div>
-                  <div class="container-fluid col-12 col-lg-3">
-                    <h4 class="text-white">Title</h4>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
+                    <h4 class="text-white">FOLLOW US</h4>
+                    <p>Facebook</p>
+                    <p>LinkedIn</p>
+                    <p>Twitter</p>
+                    <p>Youtube</p>
+                    <p>Instagram</p>
+                    <p>Glassdoor</p>
                   </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
 
             <div style="border: none;" class="container-80 center-page">
-              <div class="col-md-8"><h4 class="text-white">Lorem ipsum dolor sit amet</h4>
-              <p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</p></div>
+              <div class="col-md-8"><h4 class="text-white">+61452 364 793</h4>
+              <p>© 2018 Teamire. Catalyst in Continuous Improvement</p></div>
               <div class="col-md-4 text-center">Lorem ipsum</div>
               <div class="clearfix"></div>
             </div>
