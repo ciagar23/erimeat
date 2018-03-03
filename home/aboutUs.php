@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class="col-md-9">
-      <h4>How we do this</h4>
+      <h4 id="howWeDoThis">How we do this</h4>
       <p>Often, vertical channel conflict (i.e. between layers of supply chain) occurs due to ambiguous roles and
          responsibilities.<br><br>
          With a clear definition of roles and responsibilities, our Synchronization process starts
@@ -68,7 +68,7 @@
       <img src="../include/assets/images/about-us-img2.jpg" style="width: 80%; border-radius: 50%;">
     </div>
     <div class="col-md-9">
-      <h4>Our Purpose</h4>
+      <h4 id="ourPurpose">Our Purpose</h4>
       <p>At Teamire our purpose is to help our client streamline their business processes by synchronizing
          their Production, Inventory and Sales and relisting them as a reliable and competitive source for
          products and services. It is also our goal to become our clients 1st choice every time for resolving
@@ -82,7 +82,7 @@
 
   <div class="row">
     <div class="col-md-9">
-      <h4>Our Objectives</h4>
+      <h4 id="ourObjectives">Our Objectives</h4>
       <p>Is to ensure that we always have a realistic plan in restructuring our client’s strategic business
          framework from effective collaboration to evaluation of roles and functions, our PMO’s and Project
          Specialists chart and develop a model that is effective, easy to drive, is sustainable, provides a

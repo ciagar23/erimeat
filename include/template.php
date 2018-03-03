@@ -28,9 +28,9 @@
                 <div class="row center-page container">
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">ABOUT US</h4>
-                    <p>How we do this</p>
-                    <p>Our Purpose</p>
-                    <p>Our Objectives</p>
+                    <p><a style="color: white;" href="../home/?view=aboutUs#howWeDoThis">How we do this</a></p>
+                    <p><a style="color: white;" href="../home/?view=aboutUs#ourPurpose">Our Purpose</a></p>
+                    <p><a style="color: white;" href="../home/?view=aboutUs#ourObjectives">Our Objectives</a></p>
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">RESOURCES</h4>
