@@ -28,4 +28,10 @@
             <i class="mdi mdi-city"></i><span> Companies </span>
         </a>
     </li>
+
+    <li>
+        <a href="?view=candidates">
+            <i class="mdi mdi-account"></i><span> Candidates </span>
+        </a>
+    </li>
 </ul>

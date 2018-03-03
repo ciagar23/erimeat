@@ -106,7 +106,7 @@ $pt->readList();
                                   <input type="text" placeholder="" data-mask="9999" class="form-control" name="zipCode" required="">
                               </div>
                               </div>
-
+                                
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Required Experience <span style="color: red;">*</span></label>
