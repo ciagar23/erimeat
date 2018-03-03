@@ -16,6 +16,7 @@
 
                <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
 
+
             </div>
             <br>
             <div id="myDIV">
@@ -29,7 +30,7 @@
                     </div>
                </form>
             </div>
-            
+
 
            <div id="demo1"></div>
            <div id="demo"></div>
@@ -42,7 +43,7 @@
                        </form>
                     </div>
             </center>
-               
+
     </div>
 
   </div>
@@ -405,13 +406,13 @@ y.addEventListener("click", mySecondFunction);
 function myFirstFunction() {
      var x = document.getElementById("myDIV").innerHTML;
     document.getElementById("demo1").innerHTML = x;
-     
+
 }
 
 function mySecondFunction() {
        var x = document.getElementById("myP").innerHTML;
     document.getElementById("demo").innerHTML = x;
-   
+
 }
 
 

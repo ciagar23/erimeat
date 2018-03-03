@@ -1,6 +1,6 @@
 <div class="container-fluid m-t-30 m-b-30">
   <div class="container-80 text-center center-page">
-    <h2>Our Specialized Staffing Services</h2>
+    <h2>Our Supply Chain Services</h2>
     <p class="m-t-10 p-30">Teamire's staffing expertise extends to a wide range of industries. Our specialists connect employers
       with highly skilled job seekers. With staffing offices across the country,
       it’s easy to begin your candidate search today.</p>
@@ -14,7 +14,6 @@
                       <img src="../include/assets/images/demandPlanning.png">
                   </div>
                   <h4 class="font-18">Demand Planning</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
               </div>
           </div>
 
@@ -24,7 +23,6 @@
                       <img src="../include/assets/images/supplyPlanning.png">
                   </div>
                   <h4 class="font-18">Supply Planning</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                 </div>
           </div>
 
@@ -34,7 +32,6 @@
                       <img src="../include/assets/images/orderFulfilment.png">
                   </div>
                   <h4 class="font-18">Order Fulfilment</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                 </div>
           </div>
       </div>
@@ -47,7 +44,6 @@
                       <img src="../include/assets/images/logistics.png">
                   </div>
                   <h4 class="font-18">Logistics</h4>
-                  <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
               </div>
           </div>
 
@@ -57,7 +53,6 @@
                       <img src="../include/assets/images/manufacturing.png">
                   </div>
                   <h4 class="font-18">Manufacturing</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                 </div>
           </div>
 
@@ -67,7 +62,6 @@
                       <img src="../include/assets/images/transportation.png">
                   </div>
                   <h4 class="font-18">Transportation</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                 </div>
           </div>
       </div>
@@ -79,7 +73,6 @@
                       <img src="../include/assets/images/procurement.png">
                   </div>
                   <h4 class="font-18">Procurement</h4>
-                  <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
               </div>
           </div>
 
@@ -89,8 +82,7 @@
                       <img src="../include/assets/images/certificate.png">
                   </div>
                   <h4 class="font-18">Training Certification</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
+              </div>
           </div>
 
           <div class="col-sm-4">
@@ -99,8 +91,7 @@
                       <img src="../include/assets/images/warehousing.png">
                   </div>
                   <h4 class="font-18">Warehousing</h4>
-                  <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
+              </div>
           </div>
       </div>
   </div>
@@ -131,7 +122,7 @@
 
     </p>
     <p class="rh-promos-view-block__read-more">
-      <a href="#" target="_self">
+      <a href="../home/?view=aboutUs" target="_self">
                   Read More
               <i class="fa fa-arrow-right"></i></a>
     </p>
@@ -141,7 +132,7 @@
     <img src="../include/assets/images/services-img2.jpg" style="width: 100%;">
     <div>
     <h3>
-      <a href="#" target="_self">
+      <a href="../home/?view=projects" target="_self">
         Projects
       </a>
     </h3>
@@ -150,7 +141,7 @@
 
     </p>
     <p class="rh-promos-view-block__read-more">
-      <a href="#" target="_self">
+      <a href="../home/?view=projects" target="_self">
                   Read More
               <i class="fa fa-arrow-right"></i></a>
     </p>
