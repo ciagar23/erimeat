@@ -22,6 +22,10 @@ switch ($action) {
 		submitApplication();
 		break;
 
+	case 'sendInquiry' :
+		sendInquiry();
+		break;
+
 	default :
 }
 
@@ -153,6 +157,21 @@ function submitApplication()
 			header('Location: ../home/?error=Not uploaded');
 		}
 
+}
+
+function sendInquiry()
+{
+		$obj = new Inquiry;
+		$obj->firstName = $_POST["firstName"];
+		$obj->lastName = $_POST["lastName"];
+		$obj->phoneNumber = $_POST["phoneNumber"];
+		$obj->jobFunctionId = $_POST["jobFunctionId"];
+		$obj->workEmail = $_POST["workEmail"];
+		$obj->zipCode = $_POST["zipCode"];
+		$obj->message = $_POST["message"];
+		$obj->createOne($obj);
+
+		header('Location: ../home/?view=success');
 }
 
 
