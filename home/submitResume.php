@@ -38,7 +38,7 @@ $pt->readList();
 
                               <div class="form-group">
                                   <label for="username">Email <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="email" required>
+                                  <input type="email" class="form-control" name="email" required>
                               </div>
 
                               <div class="form-group">
@@ -72,14 +72,24 @@ $pt->readList();
                               <label for="username">Postal Code <span style="color: red;">*</span></label>
                               <input type="text" class="form-control" data-mask="9999" name="zipCode" required>
                           </div>
+
                           </div>
+                          <div class="form-group">
+                              <label for="username">Speedtest</label>
+                              <input type="text" class="form-control" name="speedtest">
+                          </div>
+                          To access speedtest. Click the link <a href="#">www.speedtest.com</a>
+
+                          <div class="form-group">
+                            <label>Attach Specs</label>
+                            <input type="file" class="filestyle form-control" name="upload_specs"/>
+                          </div>
+                          
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>
                           <div class="col-sm-3">
                          <a id="myBtnShowResume" class="btn btn-danger btn-file btn-circle btn-lg"><i class="fa fa-file-text-o fa-2x text-white p-t-10 "></i> </a>
                          <br><br><br>
-                         
-                            
                           </div>
                           <div class="col-md-8">
                           <h4>Upload Your Resume</h4>

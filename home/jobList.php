@@ -9,7 +9,10 @@ function getPositionName($Id){
 }
 
 ?>
-
+<div align="center" class="m-t-50">
+<button class="btn btn-primary" style="width: 20%;">Call +61452 364 793</button>
+<button class="btn btn-primary" style="width: 20%;" onclick="location.href='../home/?view=inquiryForm'">Send an Email</button>
+</div>
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30">
     <?php foreach($obj->readList($s) as $row) {

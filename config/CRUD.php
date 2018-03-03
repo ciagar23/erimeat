@@ -221,7 +221,9 @@ class Resume {
 															city='$obj->city',
 															state='$obj->state',
 															zipCode='$obj->zipCode',
+															speedtest='$obj->speedtest',
 															uploadedResume='$obj->uploadedResume',
+															uploadedSpecs='$obj->uploadedSpecs',
 															createDate=NOW()
 															");
 		$pdo->execute();
@@ -241,7 +243,9 @@ class Resume {
 															city='$obj->city',
 															state='$obj->state',
 															zipCode='$obj->zipCode',
+															speedtest='$obj->speedtest',
 															uploadedResume='$obj->uploadedResume',
+															uploadedSpecs='$obj->uploadedSpecs',
 															isApproved='$obj->isApproved',
 														 	createDate=NOW()
 														 	where Id='$obj->Id'

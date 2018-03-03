@@ -25,7 +25,7 @@ $pt->readList();
                                         <h4>Yay!</h4>
                                         <p>Everything seems to be ok :)</p>
                                     </div>
-           
+
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
 
@@ -83,7 +83,7 @@ $pt->readList();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Company ABN <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="abn" required="">
+                                  <input type="text" class="form-control" data-mask="99999999999" name="abn" required="">
                               </div>
                               </div>
 
@@ -107,7 +107,7 @@ $pt->readList();
                                   <input type="text" placeholder="" data-mask="9999" class="form-control" name="zipCode" required="">
                               </div>
                               </div>
-                                
+
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Required Experience <span style="color: red;">*</span></label>

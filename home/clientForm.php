@@ -36,7 +36,7 @@ $jf->readList();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                 <label for="username">Company ABN <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control" name="abn" required>
+                                <input type="text" class="form-control" data-mask="99999999999" name="abn" required>
                               </div>
                               </div>
 
@@ -50,7 +50,7 @@ $jf->readList();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                 <label for="username">Company Representative Email <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control" name="email" required>
+                                <input type="email" class="form-control" name="email" required>
                               </div>
                               </div>
 

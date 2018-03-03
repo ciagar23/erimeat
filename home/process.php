@@ -95,8 +95,9 @@ substr(round(microtime(true)), -6)
 
 function submitResume(){
 
-		$upload = uploadFile($_FILES['upload_file']);
-		if ($upload)
+		$uploadResume = uploadFile($_FILES['upload_file']);
+		$uploadSpecs = uploadFile($_FILES['upload_specs']);
+		if ($uploadResume or $uploadSpecs)
 		{
 			$obj = new Resume;
 			$obj->jobId = "0";
@@ -110,7 +111,9 @@ function submitResume(){
 			$obj->city = $_POST["city"];
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
-			$obj->uploadedResume = $upload;
+			$obj->speedtest = $_POST["speedtest"];
+			$obj->uploadedResume = $uploadResume;
+			$obj->uploadedSpecs = $uploadSpecs;
 			$obj->createOne($obj);
 
 			// Send email

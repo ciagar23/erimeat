@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-03 22:46:56
+# Date: 2018-03-04 00:10:17
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -242,16 +242,18 @@ CREATE TABLE `resume` (
   `state` varchar(50) DEFAULT NULL,
   `zipCode` varchar(20) DEFAULT NULL,
   `uploadedResume` varchar(100) DEFAULT NULL,
+  `speedtest` varchar(100) DEFAULT NULL,
+  `uploadedSpecs` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf','2018-03-03 10:16:56','1');
+INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf',NULL,NULL,'2018-03-03 10:16:56','1'),(9,0,1,'sdfsdfdsf','asdfsdfdsf','a@a.com','123213123213','ahehehehe','adhehehe','heheheh','heheheh','1111','1520092668.txt','http://www.speedtest.net/result/7107573632',NULL,'2018-03-03 23:57:48','0'),(10,0,1,'sdfsdfdsafdsaf','asdfsdfds','a@a.com','123123213','sadfsdfdsfds','asdfsdfdsfsdf','asdf','asdf','1211','1520093253.txt','www.speedtest.com',NULL,'2018-03-04 00:07:33','0'),(11,0,2,'sadfsdfdsf','asdfdsfdsf','a@a.com','sdfsdf','asdfsdf','sdafsdf','sadfsdf','asdfdsf','2323','1520093339.txt','http://www.speedtest.net/result/7107573632','1520093339.txt','2018-03-04 00:08:59','0'),(12,0,3,'sadfsdfdsf','asdfdsf','a@a.com','sadfdsf','sadf','asdf','adsf','asdf','2323','1520093388.txt','http://www.speedtest.net/result/7107573632','1520093388.txt','2018-03-04 00:09:48','0');
 
 #
 # Structure for table "user"
