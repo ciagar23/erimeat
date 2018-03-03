@@ -18,18 +18,18 @@ if ($app){
                   </div>
             <?php } else if ($app->status==3) { ?>
                   <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
-                      You have already checked out!
+                      You have already logged out!
                   </div>
             <?php } else { ?>
                   <div class="alert alert-icon alert-success alert-dismissible fade in" role="alert">
-                      You have are checked in!
+                      You have are logged in!
                   </div>
             <?php } ?>
         <br>
         <?php if ($app->status == 1 || $app->status == 2) {?>
-              <a href="process.php?action=stampCheckIn" class="btn btn-primary" name="breakOut"><span class="fa fa-clock-o"></span>Check in</a>
+              <a href="process.php?action=stampCheckIn" class="btn btn-primary" name="breakOut"><span class="fa fa-clock-o"></span>Login</a>
         <?php } else { ?>
-              <button  class="btn btn-default"  disabled><span class="fa fa-clock-o"></span>Check in</button>
+              <button  class="btn btn-default"  disabled><span class="fa fa-clock-o"></span>Login</button>
         <?php } ?>
           |
         <?php if (!$app->breakOut && $app->status == 0) {?>
@@ -45,9 +45,9 @@ if ($app){
         <?php } ?>
           |
         <?php if (!$app->checkOut && $app->status == 0) {?>
-              <a href="process.php?action=stampCheckOut" class="btn btn-danger" name="breakOut"><span class="fa fa-clock-o"></span>Checkout</a>
+              <a href="process.php?action=stampCheckOut" class="btn btn-danger" name="breakOut"><span class="fa fa-clock-o"></span>Logout</a>
         <?php } else { ?>
-              <button  class="btn btn-default"  disabled><span class="fa fa-clock-o"></span>Checkout</button>
+              <button  class="btn btn-default"  disabled><span class="fa fa-clock-o"></span>Logout</button>
         <?php } ?>
 
 </center>

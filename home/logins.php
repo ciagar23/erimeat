@@ -19,7 +19,6 @@
     <h2 class="text-center mt30 mb25">Candidate Login</h2>
     <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../employee/?view=login'" role="button">TIMESHEETS</button></div>
     <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="#" role="button">MY DASHBOARD</button></div>
-    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">2017 W2 TAX FORM</button></div>
   </div>
   <div class="col-lg-1">&nbsp;</div>
 </div>

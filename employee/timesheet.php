@@ -11,10 +11,10 @@ $obj = new DTR;
                     <thead>
                         <tr>
                             <th>Date</th>
-                            <th>Check In</th>
+                            <th>Login</th>
                             <th>Break</th>
                             <th>Lunch</th>
-                            <th>Check Out</th>
+                            <th>Logout</th>
                         </tr>
                     </thead>
                     <tbody>
