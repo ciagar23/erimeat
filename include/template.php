@@ -58,7 +58,7 @@
 
             <div style="border: none;" class="container-80 center-page">
               <div class="col-md-8"><h4 class="text-white">+61452 364 793</h4>
-              <p>© 2018 Teamire. Catalyst in Continuous Improvement</p></div>
+              <p>© 2018 <a style="color:white;" href="../home/">Teamire</a>. Catalyst in Continuous Improvement</p></div>
               <div class="col-md-4 text-center">Lorem ipsum</div>
               <div class="clearfix"></div>
             </div>
