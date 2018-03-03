@@ -24,6 +24,12 @@ $(document).ready(function(){
  <!-- Parsley js -->
 <script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>
 
+ <!--Form Wizard-->
+<script src="../include/plugins/jquery.stepy/jquery.stepy.min.js" type="text/javascript"></script>
+        <!--wizard initialization-->
+<script src="../include/assets/pages/jquery.wizard-init.js" type="text/javascript"></script>
+
+
 <!-- SCRIPTS -->
 <script src="../include/plugins/switchery/switchery.min.js"></script>
 <script src="../include/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>

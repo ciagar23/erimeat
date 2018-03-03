@@ -1,7 +1,7 @@
 <div class="container-fluid m-t-30 m-b-30">
   <div class="container-80 text-center center-page">
     <h2>Our Specialized Staffing Services</h2>
-    <p class="m-t-10 p-30">Robert Half’s staffing expertise extends to a wide range of industries. Our specialists connect employers
+    <p class="m-t-10 p-30">Teamire's staffing expertise extends to a wide range of industries. Our specialists connect employers
       with highly skilled job seekers. With staffing offices across the country,
       it’s easy to begin your candidate search today.</p>
   </div>
@@ -122,7 +122,7 @@
     <img src="../include/assets/images/services-img1.jpg" style="width: 100%;">
     <div>
     <h3>
-      <a href="https://www.roberthalf.com/work-with-us/about-robert-half" target="_self">
+      <a href="../home/?view=aboutUs" target="_self">
         About Us
       </a>
     </h3>
@@ -141,8 +141,8 @@
     <img src="../include/assets/images/services-img2.jpg" style="width: 100%;">
     <div>
     <h3>
-      <a href="https://www.roberthalf.com/work-with-us/about-robert-half" target="_self">
-        About Us
+      <a href="#" target="_self">
+        Projects
       </a>
     </h3>
     <p>
@@ -160,8 +160,8 @@
     <img src="../include/assets/images/services-img3.jpg" style="width:100%;">
     <div>
     <h3>
-      <a href="https://www.roberthalf.com/work-with-us/about-robert-half" target="_self">
-        About Us
+      <a href="#" target="_self">
+        Others
       </a>
     </h3>
     <p>

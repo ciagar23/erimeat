@@ -32,7 +32,7 @@
                         <ul class="nav navbar-nav navbar-left nav-menu-left">
                             <li>
                                 <button type="button" class="button-menu-mobile open-left waves-effect">
-                                    <i class="dripicons-menu" style="color: #3399cc;"></i>
+                                    <i class="dripicons-menu" style="color: #205e7d;"></i>
                                 </button>
                             </li>
 
@@ -42,10 +42,10 @@
                         <!-- Right(Notification) -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                <!-- <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
                                     <i class="dripicons-bell" style="color: #71777f;"></i>
                                     <span class="badge badge-pink">4</span>
-                                </a>
+                                </a> -->
 
                                 <ul class="dropdown-menu dropdown-menu-right dropdown-lg user-list notify-list">
                                     <li class="list-group notification-list m-b-0">
@@ -152,8 +152,6 @@
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
                                     <li><a href="javascript:void(0)">Profile</a></li>
-                                    <li><a href="javascript:void(0)"><span class="badge badge-info pull-right">4</span>Settings</a></li>
-                                    <li><a href="javascript:void(0)">Lock screen</a></li>
                                     <li class="divider"></li>
                                     <li><a href="process.php?action=logout">Logout</a></li>
                                 </ul>

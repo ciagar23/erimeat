@@ -22,8 +22,8 @@ switch ($view) {
 		$template	= '../include/template_login.php';
 		break;
 
-	case 'availableSkills' :
-		$content 	= 'availableSkills.php';
+	case 'requestTalent' :
+		$content 	= 'requestTalent.php';
 		$template	= '../include/dashboard.php';
 		break;
 

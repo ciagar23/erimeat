@@ -87,20 +87,24 @@ $jf->readList();
             <!-- End Dropdown -->
             <div class="row">
               <label>Brief Description <span style="color: red;">*</span></label>
-              <textarea style="width: 100%;" id="" maxlength="1000" name="description" required></textarea>
+              <textarea id="message" class="form-control" name="description"
+                                data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                data-parsley-maxlength="100"
+                                data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                data-parsley-validation-threshold="10"></textarea>
             </div>
             <div class="row">
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Full Name</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="contactPerson" placeholder="">
+                  <input type="text" class="form-control" name="contactPerson" placeholder="">
               </div>
             </div>
 
             <div class="p-l-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Office you work with, if any</label>
-                  <input type="text" class="form-control form-control-sm"name="lastName" placeholder="">
+                  <input type="text" class="form-control" name="lastName" placeholder="">
               </div>
             </div>
           </div>
@@ -108,14 +112,14 @@ $jf->readList();
             <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Email Address <span style="color: red;">*</span></label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="email" required>
+                  <input type="text" class="form-control" name="email" required>
               </div>
             </div>
 
             <div class="p-l-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Business Phone</label>
-                  <input type="text" class="form-control form-control-sm" style="height: 30px;" name="phoneNumber" placeholder="">
+                  <input type="text" class="form-control" name="phoneNumber" placeholder="">
               </div>
             </div>
           </div>
