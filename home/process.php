@@ -41,6 +41,7 @@ substr(round(microtime(true)), -6)
 	$obj->contactName = $_POST['contactName'];
 	$obj->position = $_POST['position'];
 	$obj->company = $_POST['company'];
+	$obj->abn = $_POST['abn'];
 	$obj->comment = $_POST['comment'];
 	$obj->address = $_POST['address'];
 	$obj->workEmail = $_POST['workEmail'];

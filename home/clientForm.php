@@ -42,14 +42,14 @@ $jf->readList();
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="firstname">Client Contact Person <span style="color: red;">*</span></label>
+                                  <label for="firstname">Company Representative <span style="color: red;">*</span></label>
                                   <input type="text" class="form-control" name="contactPerson" required>
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                <label for="username">Client Email <span style="color: red;">*</span></label>
+                                <label for="username">Company Representative Email <span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" name="email" required>
                               </div>
                               </div>
