@@ -2,7 +2,15 @@
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $obj = new Company;
 ?>
-
+     <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Companies</h4>
+                                  
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
 <div class="card-box">
   <div class="row">
     <div class="col-sm-12">

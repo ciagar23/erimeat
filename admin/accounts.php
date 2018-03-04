@@ -3,29 +3,38 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $obj = new Admin;
 ?>
-
-<div class="row">
-  <div class="col-sm-12">
-    <br>
+     <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Accounts</h4>
+                                  
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+<div class="card-box">
+  <div class="row">
+    <div class="col-sm-12">
+     <br>
     <div class="pull-right">
-      <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add New</button>
+      <button type="button" class="btn btn-primary waves-effect waves-light btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add New</button>
 
     </div>
     <br>
-    <div class="card-box table-responsive">
-      <h4 class="m-t-0 header-title"><b>List of Accounts</b></h4>
-      <table id="datatable" class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Name</th>
+      <div class="card-box table-responsive">
+        <h4 class="m-t-0 header-title"><b>List of Accounts</b></h4>
+        <table id="datatable" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
             <th>Username</th>
             <th>Password</th>
             <th>Level</th>
             <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach($obj->readList($s) as $row) {
+            </tr>
+          </thead>
+          <tbody>
+           <?php foreach($obj->readList($s) as $row) {
             if ($row){
               ?>
               <tr>
@@ -41,11 +50,13 @@ $obj = new Admin;
               }
             }
             ?>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- sample modal content -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

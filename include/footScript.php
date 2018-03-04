@@ -41,6 +41,23 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
 <script src="../include/plugins/autoNumeric/autoNumeric.js" type="text/javascript"></script>
 
+ <!-- Counter js  -->
+<script src="../include/plugins/waypoints/jquery.waypoints.min.js"></script>
+<script src="../include/plugins/counterup/jquery.counterup.min.js"></script>
+
+ <!-- KNOB JS -->
+        <!--[if IE]>
+        <script type="text/javascript" src="../plugins/jquery-knob/excanvas.js"></script>
+        <![endif]-->
+<script src="../include/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <!--Morris Chart-->
+<script src="../include/plugins/morris/morris.min.js"></script>
+<script src="../include/plugins/raphael/raphael-min.js"></script>
+
+        <!-- Sparkline charts -->
+<script src="../include/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
 <!-- SCRIPTS -->
 <script src="../include/plugins/switchery/switchery.min.js"></script>
 <script src="../include/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>

@@ -189,12 +189,20 @@
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
-            <div class="content-page">
+          <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
                     <div class="container">
 
-                      <?php include $content;?>
+
+                        <div class="row">
+                               <?php include $content;?>
+                        </div>
+
+
+                      
+
+                    </div> <!-- container -->
 
                 </div> <!-- content -->
 
@@ -203,7 +211,6 @@
                 </footer>
 
             </div>
-
 
             <!-- ============================================================== -->
             <!-- End Right content here -->
