@@ -474,18 +474,6 @@
         <!-- end row -->
   <!-- End Location Panels-->
   </div>
-    <div class="card-box">
-      <div class="row">
-          <div class="col-md-8 center-page">
-              <div class="input-group m-t-5">
-                  <input type="text" id="" name="" class="form-control form-control-lg" placeholder="Search Jobs">
-                  <span class="input-group-btn">
-                      <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                  </span>
-              </div>
-          </div>
-      </div>
-    </div>
 </div>
 <script>
 var x = document.getElementById("myBtn1");
