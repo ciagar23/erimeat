@@ -511,11 +511,11 @@ class Company {
 	}
 }
 
-class Inquiry {
+class Inquiries {
 
 	function createOne($obj){
 	$db = Database::connect();
-	$pdo = $db->prepare("insert into inquiry set firstName='$obj->firstName',
+	$pdo = $db->prepare("insert into inquiries set firstName='$obj->firstName',
 																 lastName='$obj->lastName',
 																 phoneNumber='$obj->phoneNumber',
 																 workEmail='$obj->workEmail',
@@ -551,6 +551,33 @@ function uploadFile($uploadedFile){
 }
 
 /* =====================================Functions===================================== */
+
+/* Send email */
+function sendEmail($email, $content){
+
+	require_once "../email/swift/lib/swift_required.php";
+
+	$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+										->setUsername('samplehr2k18@gmail.com')
+										->setPassword('smpl2k18');
+
+	$mailer = Swift_Mailer::newInstance($transport);
+
+	$message = Swift_Message::newInstance("No Reply")
+										->setFrom(array('samplehr2k18@gmail.com' => 'Teamire'))
+										->setTo(array($email));
+
+	$message->setBody($content, 'text/html');
+
+	if(!empty($targetpath)) {
+		 $message->attach(Swift_Attachment::fromPath($targetpath));
+	}
+
+	if (!$mailer->send($message, $errors)) {
+		echo "Error:";
+		print_r($errors);
+	}
+}
 
 /* Send email */
 function sendEmail($email, $content){

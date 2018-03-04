@@ -164,7 +164,7 @@ function submitApplication()
 
 function sendInquiry()
 {
-		$obj = new Inquiry;
+		$obj = new Inquiries;
 		$obj->firstName = $_POST["firstName"];
 		$obj->lastName = $_POST["lastName"];
 		$obj->phoneNumber = $_POST["phoneNumber"];
@@ -173,6 +173,11 @@ function sendInquiry()
 		$obj->zipCode = $_POST["zipCode"];
 		$obj->message = $_POST["message"];
 		$obj->createOne($obj);
+
+		// Send Email
+		$content = __submitApplicationEmailMessage();
+		/* should also send email to hr and admin */
+		sendEmail($obj->email, $content);
 
 		header('Location: ../home/?view=success');
 }
