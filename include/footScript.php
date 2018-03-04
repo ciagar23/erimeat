@@ -11,7 +11,7 @@ $(document).ready(function(){
     $("#myBtn1").click(function(){
         $("#demo1").show();
          $("#demo").hide();
-         
+
     });
     $("#myBtn2").click(function(){
         $("#demo1").hide();
@@ -54,7 +54,7 @@ $(document).ready(function(){
 <script src="../include/plugins/moment/moment.js"></script>
 <script src='../include/plugins/fullcalendar/js/fullcalendar.min.js'></script>
 <script src="../include/assets/pages/jquery.calendar.js"></script>
- 
+
 
 <script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
@@ -78,7 +78,7 @@ $(document).ready(function(){
 <script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
 
 <script src="../include/assets/pages/jquery.datatables.init.js"></script>
- 
+
 <script type="text/javascript">
             $(document).ready(function () {
                 $('#datatable').dataTable();

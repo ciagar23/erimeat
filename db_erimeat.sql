@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-01 17:45:12
+# Date: 2018-03-02 17:27:24
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -51,7 +51,7 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (1,'','TourTran','77281732834','We transport tourist','torredale1014@gmail.com','Dale Torre','7082245','09081273911','Bacolod City','Tourism','1','0');
+INSERT INTO `company` VALUES (2,'','Ceres Inc','51 824 753 556','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Angela Bucks','(02) 5551 5678','(02) 7010 1111','Bacolod City','Domestic Transport','1','0');
 
 #
 # Structure for table "dtr"
@@ -70,7 +70,7 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
@@ -88,7 +88,7 @@ CREATE TABLE `employee` (
   `userId` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "employee"
@@ -125,7 +125,7 @@ CREATE TABLE `interview_date` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "interview_date"
@@ -155,13 +155,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(1) DEFAULT '0',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1519892143',1,1,'Driver','Ceres Inc.','ceres@gmail.com','Manager','09085517231','6100','Bacolod City\t','5 years','We are hiring. Apply Now','2018-03-01 16:15:42','1','Dale Torre'),(2,'1519892144',1,1,'','','','','','','','','asdasdasdasdsa','2018-03-01 16:15:43','0',''),(3,'1519892203',1,1,'Dev','Hyndara','a@a.com','Manager','1232131515','6100','Bacolod City\t','5 years','We are hiring. Apply Now','2018-03-01 16:16:43','0','Dale Torre'),(4,'1519896058',1,1,'dev','','torredale1014@gmail.com','manager','2345678909','6100','','','adsfdsf','2018-03-01 17:20:57','0','');
+INSERT INTO `job` VALUES (5,'1519982269',1,2,'Bus Driver','','angela.bucks@gmail.com','Operations Manager','(02) 7010 1111','6100','','','We are looking for an experience bus driver. Apply Now!','2018-03-02 17:24:31','1',''),(6,'1519982374',8,4,'Materials Engineer','','borgie.chavez@gmail.com','Head Engineer','(02) 7010 4321','6100','','','We are looking for a material engineer. Apply Now!','2018-03-02 17:24:54','1',''),(7,'1519982822',5,4,'Trainor','','babes.tesda@gmail.com','Head Trainer','(02) 7118 1237','6100','','','We are looking for a trainer.','2018-03-02 17:27:01','0','');
 
 #
 # Structure for table "job_function"
@@ -219,13 +219,13 @@ CREATE TABLE `resume` (
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (1,0,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1519894737.pdf','2018-03-01 16:58:56','1');
+INSERT INTO `resume` VALUES (5,0,1,'Arnold','Auto','arnold.auto@gmail.com','(02) 1239 9928','Araneta St. ','Araneta St.','Bacolod','Negros Occidental','6100','1519982487.pdf','2018-03-02 17:23:15','1'),(6,0,3,'Meme','Vicor','meme.vicor@gmail.com','(02) 5551 5678','Burgos Avenue','Burgos Avenue','Bacolod','Negros Occidental','6100','1519982542.pdf','2018-03-02 17:22:22','0');
 
 #
 # Structure for table "user"
@@ -240,7 +240,7 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"

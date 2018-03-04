@@ -56,11 +56,6 @@ $jf->readList();
         <div class="col-lg-1">&nbsp;</div>
       </div>
       <hr class="h-line m-b-30 m-t-30" width="90%">
-      <div class="col-12 col-lg-6 col-lg-offset-3">
-        <h4 class="text-center m-b-15">Labor law Information</h4>
-        <p class="text-center m-b-30" id="">We've made federal and state labor law posters available for our remote workers, which you can <a href="#">view here.</a></p>
-      </div>
-      <hr class="h-line m-b-30 m-t-30" width="90%">
 
       <h3 class="text-center">Send us an email</h3>
       <div class="col-md-8 center-page">
