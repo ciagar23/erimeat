@@ -257,12 +257,59 @@ class Resume {
  }
 
 
+ class Timesheet {
+
+ 	/* Retrieve one record */
+ 	function readOne($val){
+ 		$db = Database::connect();
+ 		 $pdo = $db->prepare("select * from timesheet where Id='$val'");
+ 		 $pdo->execute();
+ 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
+ 		 Database::disconnect();
+ 		 return $result;
+ 	}
+
+ 	/* Retrieve one record */
+ 	function readList($val){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("SELECT * FROM timesheet where employee='$val'");
+ 		$pdo->execute();
+ 		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+ 		Database::disconnect();
+ 		return $result;
+ 	}
+
+ 	function createOne($obj){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("insert into timesheet set jobId='$obj->jobId',
+ 															employee='$obj->employee',
+ 															name='$obj->name',
+ 															createDate=NOW()
+ 															");
+ 		$pdo->execute();
+ 		Database::disconnect();
+ 	}
+
+ 	function updateOne($obj){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("update resume set timesheet set jobId='$obj->jobId',
+ 															employee='$obj->employee',
+ 															name='$obj->name',
+ 															status='$obj->status',
+ 														 	where Id='$obj->Id'
+ 														 	");
+ 		$pdo->execute();
+ 		Database::disconnect();
+ 	}
+  }
+
+
 class Employee {
 
 	/* Retrieve one record */
 	function readOne($val){
 	$db = Database::connect();
-	$pdo = $db->prepare("select * from employee where Id='$val'");
+	$pdo = $db->prepare("select * from employee where username='$val'");
 	$pdo->execute();
 	$result = $pdo->fetch(PDO::FETCH_OBJ);
 	Database::disconnect();

@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-04 12:09:04
+# Date: 2018-03-04 22:04:59
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -59,6 +59,7 @@ INSERT INTO `company` VALUES (2,'','Ceres Inc','51 824 753 556','Ceres Transport
 DROP TABLE IF EXISTS `dtr`;
 CREATE TABLE `dtr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `timesheetId` int(11) DEFAULT '0',
   `owner` varchar(50) DEFAULT NULL,
   `checkIn` time DEFAULT NULL,
   `checkOut` time DEFAULT NULL,
@@ -71,13 +72,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (5,'torredale','19:56:09','20:13:34','19:56:12','19:56:13',NULL,NULL,'19:56:15','19:56:14','2018-03-02','3'),(6,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','0'),(7,'E1520132026','12:07:26','12:08:36','12:08:31','12:08:32','12:08:33','12:08:34','12:08:36','12:08:35','2018-03-04','4');
+INSERT INTO `dtr` VALUES (5,0,'torredale','19:56:09','20:13:34','19:56:12','19:56:13',NULL,NULL,'19:56:15','19:56:14','2018-03-02','3'),(6,0,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','0'),(7,1,'E1520132026','12:07:26','12:08:36','12:08:31','12:08:32','12:08:33','12:08:34','12:08:36','12:08:35','2018-03-03','4'),(8,1,'E1520132026','12:25:37','12:25:45',NULL,NULL,NULL,NULL,'12:25:44','12:25:43','2018-03-02','4'),(9,1,'E1520132026','12:26:13','12:26:17',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-04','4');
 
 #
 # Structure for table "employee"
@@ -96,7 +97,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (4,21,'8','2018-03-03 10:17:09'),(5,31,'13','2018-03-04 17:54:05'),(6,31,'1520159133','2018-03-04 18:25:32');
+INSERT INTO `employee` VALUES (4,21,'8','2018-03-03 10:17:09'),(5,31,'13','2018-03-04 17:54:05'),(6,31,'E1520132026','2018-03-04 18:25:32');
 
 #
 # Structure for table "hr"
@@ -281,27 +282,25 @@ CREATE TABLE `resume` (
 INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf',NULL,NULL,'2018-03-03 10:16:56','1','0'),(9,0,1,'sdfsdfdsf','asdfsdfdsf','a@a.com','123213123213','ahehehehe','adhehehe','heheheh','heheheh','1111','1520092668.txt','http://www.speedtest.net/result/7107573632',NULL,'2018-03-03 23:57:48','0','0'),(10,0,1,'sdfsdfdsafdsaf','asdfsdfds','a@a.com','123123213','sadfsdfdsfds','asdfsdfdsfsdf','asdf','asdf','1211','1520093253.txt','www.speedtest.com',NULL,'2018-03-04 00:07:33','0','0'),(11,0,2,'sadfsdfdsf','asdfdsfdsf','a@a.com','sdfsdf','asdfsdf','sdafsdf','sadfsdf','asdfdsf','2323','1520093339.txt','http://www.speedtest.net/result/7107573632','1520093339.txt','2018-03-04 00:08:59','0','0'),(12,0,3,'sadfsdfdsf','asdfdsf','a@a.com','sadfdsf','sadf','asdf','adsf','asdf','2323','1520093388.txt','http://www.speedtest.net/result/7107573632','1520093388.txt','2018-03-04 00:09:48','0','0'),(13,31,4,'Fred','Garcia','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520157008.txt','','','2018-03-04 17:52:16','1','0'),(14,31,1,'Sam','Sedayon','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520158768.txt','','','2018-03-04 18:25:37','1','1'),(15,21,2,'asdfsfds','asdfsadf','asdfsdfs@adsfsadf.com','asdfdsfdsf','asdfdsfdsaf','asdfsdafsd','sadfdsaf','adsfdsaf','6100','1520163237.txt','','','2018-03-04 19:33:56','0','0');
 
 #
-# Structure for table "thisinquiry"
+# Structure for table "timesheet"
 #
 
-DROP TABLE IF EXISTS `thisinquiry`;
-CREATE TABLE `thisinquiry` (
+DROP TABLE IF EXISTS `timesheet`;
+CREATE TABLE `timesheet` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) DEFAULT NULL,
-  `lastName` varchar(50) DEFAULT NULL,
-  `phoneNumber` varchar(100) DEFAULT NULL,
-  `workEmail` varchar(100) DEFAULT NULL,
-  `jobFunctionId` varchar(11) DEFAULT NULL,
-  `zipCode` varchar(4) DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
+  `jobId` int(11) DEFAULT NULL,
+  `employee` varchar(15) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `status` varchar(2) DEFAULT '0',
+  `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
-# Data for table "thisinquiry"
+# Data for table "timesheet"
 #
 
-INSERT INTO `thisinquiry` VALUES (1,'sdfsdf','asdfdsf','sdf','asdf','asdf','asdf','asdf'),(2,'khkjh',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `timesheet` VALUES (1,31,'E1520132026','Timesheet as of 2018-03-04 14:49:23','0','2018-03-04 21:49:23');
 
 #
 # Structure for table "user"

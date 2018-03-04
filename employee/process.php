@@ -11,6 +11,10 @@ switch ($action) {
 		login();
 		break;
 
+	case 'submitTimesheet' :
+		submitTimesheet();
+		break;
+
 	case 'newCheckIn' :
 		newCheckIn();
 		break;
@@ -245,6 +249,44 @@ function stampCheckOut(){
 	Database::disconnect();
 
 	header('Location: index.php');
+}
+
+
+function submitTimesheet()
+{
+	$currentUser = $_SESSION['employee_session'];
+	// Get jobId
+	$emp = new Employee;
+	$newEmp = $emp->readOne($currentUser);
+
+	// Create timesheetId
+	$ts = new Timesheet;
+	$ts->jobId = $newEmp->jobId;
+	$ts->employee = $currentUser;
+	$ts->name = 'Timesheet as of ' . date("Y-m-d H:i:s");
+	$ts->createOne($ts);
+
+	// Get latest timesheet Id
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from timesheet where employee='$currentUser' ORDER BY ID DESC LIMIT 1");
+	$pdo->execute();
+	$timesheetData = $pdo->fetch(PDO::FETCH_OBJ);
+
+	$pdo = $db->prepare("update dtr set timesheetId = '$timesheetData->Id'
+													where timesheetId = '0' and owner = '$currentUser'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	// Update all dtr
+	header('Location: index.php?a='.$ts->Id);
+
+// $obj = new DTR;
+// foreach($obj->readList($user) as $row) {
+// 	if ($row->status==4 && !$row->timesheetId){
+//
+// 	}
+
 }
 
 function logout()

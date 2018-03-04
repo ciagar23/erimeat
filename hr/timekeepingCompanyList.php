@@ -1,11 +1,11 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Company;
+$obj = new Job;
 ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title">Select a company to view timekeeping</h4>
+            <h4 class="page-title">Select a job to view timekeeping</h4>
 
             <div class="clearfix"></div>
         </div>
@@ -27,7 +27,7 @@ $obj = new Company;
           if ($row->isApproved==1){
         ?>
         <tr>
-          <td><?=$row->name;?> </td>
+          <td><?=$row->company;?> </td>
           <td>
             <a href="?view=timekeepingCompanyDetail&Id=<?=$row->Id;?>"
               class=" btn btn-success btn-xs tooltips"

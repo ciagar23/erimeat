@@ -1,5 +1,5 @@
 <?php
-/*$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';*/
+$timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
 $user = $_SESSION['employee_session'];
 $obj = new DTR;
 
@@ -16,8 +16,6 @@ function get_time_difference($record)
 }
 
 ?>
-<div class="card-box">
-    <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <table class="table table-striped table-bordered">
@@ -34,6 +32,7 @@ function get_time_difference($record)
                     </thead>
                     <tbody>
                      <?php foreach($obj->readList($user) as $row) {
+                       if ($row->timesheetId==$timesheetId){
                        ?>
                           <tr>
                             <td> <?=$row->createDate;?></td>
@@ -44,13 +43,9 @@ function get_time_difference($record)
                             <td> <?=$row->checkOut;?></td>
                             <td> <?=get_time_difference($row)?></td>
                          </tr>
-                  <?php } ?>
+                  <?php } } ?>
 
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-
-
-    </div>  <!-- end row -->
-</div>
