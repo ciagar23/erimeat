@@ -1,25 +1,43 @@
 <div>
   <div style="position:relative;">
-    <img src="../include/assets/images/teamire-home-img.png" style="width: 100%;">
-    <div class="homepage-top-text text-center">
-     <h1 style="color:#fff;">Unrivaled Industry Insight. Sophisticated Matching Technology. And a Personalized Approach. It’s Why We’re #1.</h1>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+ <!-- START carousel-->
+    <div id="carousel-example-captions" data-ride="carousel" class="carousel slide carousel-fade" data-interval="3000">
 
-  <div class="row homepage-search ">
-  <center>
-            <div class="input-group m-t-5">
+         <ol class="carousel-indicators">
+            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+            <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+         </ol>
+         <div role="listbox" class="carousel-inner">
 
-               <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
-
-
+            <div class="item active">
+                <img src="../include/assets/images/small/img-1.jpg"  style="width: 100%;" alt="First slide image">
+                                                      
             </div>
-            <br>
-            <div id="myDIV">
+                                                    <div class="item">
+                                                        <img src="../include/assets/images/small/img-2.jpg"  style="width: 100%;" alt="Second slide image">
+                                                     
+                                                    </div>
+                                                    <div class="item">
+                                                        <img src="../include/assets/images/small/img-3.jpg" style="width: 100%;"  alt="Third slide image">
+                                                      
+                                                    </div>
+                                                </div>
+                                                <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" ></span> <span class="sr-only">Previous</span> </a>
+                                                <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+                                            </div>
+                                            <!-- END carousel-->
+                                                <div class="main-text hidden-xs">
+                <div class="col-md-12 text-center">
+                    <h1>
+                        Unrivaled Industry Insight. Sophisticated Matching Technology. And a Personalized Approach. It’s Why We’re #1.
+          </h1>
+                    <h3>
+                      
+                            <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
+                    </h3>
+                    <div class="">
+                      <div id="myDIV">
                   <form class="form-inline" >
                     <div class="form-group">
                     <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
@@ -41,116 +59,187 @@
                        <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
                        </form>
-                    </div>
-            </center>
-
+                    </div></div>
+                </div>
+            </div>
     </div>
+  </div>
 
-  </div>
-  </div>
 <!-- Card Box Content-->
-<div class="container-fluid">
-  <div class="card-box">
-    <div class="p-t-5">
+<div class="card-box " >
+     <div class="p-t-5">
         <h4 class="text-uppercase font-18 text-center">Our Services</h4>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
+            <div class="col-sm-4 well card-box company-card" id="box-design">
+                <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
                         <img src="../include/assets/images/demandPlanning.png">
-                    </div>
+                    </center>
                     <h4 class="font-18">Demand Planning</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                  <div class="overlay">
+                             <h2>Demand Planning</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
                 </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/supplyPlanning.png">
-                    </div>
+            <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                          <img src="../include/assets/images/supplyPlanning.png">
+                    </center>
                     <h4 class="font-18">Supply Planning</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
+                  <div class="overlay">
+                             <h2>Supply Planning</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
+                </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/orderFulfilment.png">
-                    </div>
+                <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                          <img src="../include/assets/images/orderFulfilment.png">
+                    </center>
                     <h4 class="font-18">Order Fulfilment</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
+                  <div class="overlay">
+                             <h2>Order Fulfilment</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
         <!-- end row -->
 
         <div class="row">
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/logistics.png">
-                    </div>
+
+         <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                         <img src="../include/assets/images/logistics.png">
+                    </center>
                     <h4 class="font-18">Logistics</h4>
-                    <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                  <div class="overlay">
+                             <h2>Logistics</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
                 </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/manufacturing.png">
-                    </div>
+
+         <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                         <img src="../include/assets/images/logistics.png">
+                    </center>
                     <h4 class="font-18">Manufacturing</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/transportation.png">
+                  <div class="overlay">
+                             <h2>Manufacturing</h2>
+                    <a class="info" href="#">View</a>
                     </div>
-                    <h4 class="font-18">Transportation</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
-            </div>
-        </div>
-        <!-- end row -->
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/procurement.png">
-                    </div>
-                    <h4 class="font-18">Procurement</h4>
-                    <p class="text-muted">We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                </div>
                 </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/certificate.png">
-                    </div>
-                    <h4 class="font-18">Training Certification</h4>
+
+         <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                         <img src="../include/assets/images/logistics.png">
+                    </center>
+                    <h4 class="font-18">Transportation</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
+                  <div class="overlay">
+                             <h2>Transportation</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
+                </div>
             </div>
 
-            <div class="col-sm-4">
-                <div class="about-features-box text-center">
-                    <div>
-                        <img src="../include/assets/images/warehousing.png">
+          
+        </div>
+        <!-- end row -->
+        <div class="row">
+
+
+                <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                        <img src="../include/assets/images/procurement.png">
+                    </center>
+                    <h4 class="font-18">Procurement</h4>
+                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                  <div class="overlay">
+                             <h2>Procurement</h2>
+                    <a class="info" href="#">View</a>
                     </div>
+                </div>
+                </div>
+            </div>
+
+
+    <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                          <img src="../include/assets/images/certificate.png">
+                    </center>
+                    <h4 class="font-18">Training Certification</h4>
+                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                  <div class="overlay">
+                             <h2>Training Certification</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+    <div class="col-sm-4 well card-box company-card" id="box-design">
+              
+                    <div class="about-features-box text-center " >
+                <div class="hovereffect">
+                   <center>
+                      <img src="../include/assets/images/warehousing.png">
+                    </center>
                     <h4 class="font-18">Warehousing</h4>
                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                  </div>
+                  <div class="overlay">
+                             <h2>Warehousing</h2>
+                    <a class="info" href="#">View</a>
+                    </div>
+                </div>
+                </div>
             </div>
+
+
         </div>
     </div>
-  </div>
+
   <!-- End Cardbox Content-->
     <!-- Basic Form Wizard -->
                         <div class="row">

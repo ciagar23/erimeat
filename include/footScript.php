@@ -20,7 +20,9 @@ $(document).ready(function(){
     });
 });
 </script>
-
+<script type="text/javascript">
+    $('#carousel-example-captions').carousel();
+</script>
  <!-- Parsley js -->
 <script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>
 
@@ -29,6 +31,8 @@ $(document).ready(function(){
         <!--wizard initialization-->
 <script src="../include/assets/pages/jquery.wizard-init.js" type="text/javascript"></script>
 
+<script src="../include/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
+<script src="../include/plugins/autoNumeric/autoNumeric.js" type="text/javascript"></script>
 
 <!-- SCRIPTS -->
 <script src="../include/plugins/switchery/switchery.min.js"></script>
@@ -124,5 +128,10 @@ $(document).ready(function(){
                         .on('form:submit', function () {
                             return false; // Don't submit form for this demo
                         });
+            });
+        </script>
+   <script type="text/javascript">
+            jQuery(function($) {
+                $('.autonumber').autoNumeric('init');
             });
         </script>
