@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-04 12:09:04
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-03-04 20:35:26
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -279,29 +280,6 @@ CREATE TABLE `resume` (
 #
 
 INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf',NULL,NULL,'2018-03-03 10:16:56','1','0'),(9,0,1,'sdfsdfdsf','asdfsdfdsf','a@a.com','123213123213','ahehehehe','adhehehe','heheheh','heheheh','1111','1520092668.txt','http://www.speedtest.net/result/7107573632',NULL,'2018-03-03 23:57:48','0','0'),(10,0,1,'sdfsdfdsafdsaf','asdfsdfds','a@a.com','123123213','sadfsdfdsfds','asdfsdfdsfsdf','asdf','asdf','1211','1520093253.txt','www.speedtest.com',NULL,'2018-03-04 00:07:33','0','0'),(11,0,2,'sadfsdfdsf','asdfdsfdsf','a@a.com','sdfsdf','asdfsdf','sdafsdf','sadfsdf','asdfdsf','2323','1520093339.txt','http://www.speedtest.net/result/7107573632','1520093339.txt','2018-03-04 00:08:59','0','0'),(12,0,3,'sadfsdfdsf','asdfdsf','a@a.com','sadfdsf','sadf','asdf','adsf','asdf','2323','1520093388.txt','http://www.speedtest.net/result/7107573632','1520093388.txt','2018-03-04 00:09:48','0','0'),(13,31,4,'Fred','Garcia','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520157008.txt','','','2018-03-04 17:52:16','1','0'),(14,31,1,'Sam','Sedayon','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520158768.txt','','','2018-03-04 18:25:37','1','1'),(15,21,2,'asdfsfds','asdfsadf','asdfsdfs@adsfsadf.com','asdfdsfdsf','asdfdsfdsaf','asdfsdafsd','sadfdsaf','adsfdsaf','6100','1520163237.txt','','','2018-03-04 19:33:56','0','0');
-
-#
-# Structure for table "thisinquiry"
-#
-
-DROP TABLE IF EXISTS `thisinquiry`;
-CREATE TABLE `thisinquiry` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) DEFAULT NULL,
-  `lastName` varchar(50) DEFAULT NULL,
-  `phoneNumber` varchar(100) DEFAULT NULL,
-  `workEmail` varchar(100) DEFAULT NULL,
-  `jobFunctionId` varchar(11) DEFAULT NULL,
-  `zipCode` varchar(4) DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-#
-# Data for table "thisinquiry"
-#
-
-INSERT INTO `thisinquiry` VALUES (1,'sdfsdf','asdfdsf','sdf','asdf','asdf','asdf','asdf'),(2,'khkjh',NULL,NULL,NULL,NULL,NULL,NULL);
 
 #
 # Structure for table "user"
