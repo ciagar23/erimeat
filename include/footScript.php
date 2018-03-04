@@ -23,6 +23,13 @@ $(document).ready(function(){
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
 </script>
+ 
+<script>
+$( "#myBtnShowResume" ).click(function() {
+  $( "#fileInput" ).show( "slow" );
+});
+</script>
+ 
  <!-- Parsley js -->
 <script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>
 

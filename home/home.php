@@ -68,7 +68,7 @@
 <!-- Card Box Content-->
 <div class="card-box " >
      <div class="p-t-5">
-        <h4 class="text-uppercase font-18 text-center">Our Services</h4>
+        <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
         <div class="row">
             <div class="col-sm-4 well card-box company-card" id="box-design">
                 <div class="about-features-box text-center " >
@@ -77,10 +77,10 @@
                         <img src="../include/assets/images/demandPlanning.png">
                     </center>
                     <h4 class="font-18">Demand Planning</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Demand Planning</h2>
-                    <a class="info" href="#">View</a>
+                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -94,10 +94,10 @@
                           <img src="../include/assets/images/supplyPlanning.png">
                     </center>
                     <h4 class="font-18">Supply Planning</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Supply Planning</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -111,10 +111,10 @@
                           <img src="../include/assets/images/orderFulfilment.png">
                     </center>
                     <h4 class="font-18">Order Fulfilment</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Order Fulfilment</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -132,10 +132,10 @@
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Logistics</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Logistics</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -150,10 +150,10 @@
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Manufacturing</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Manufacturing</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -168,10 +168,10 @@
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Transportation</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Transportation</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -191,10 +191,10 @@
                         <img src="../include/assets/images/procurement.png">
                     </center>
                     <h4 class="font-18">Procurement</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Procurement</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -209,10 +209,10 @@
                           <img src="../include/assets/images/certificate.png">
                     </center>
                     <h4 class="font-18">Training Certification</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Training Certification</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>
@@ -227,10 +227,10 @@
                       <img src="../include/assets/images/warehousing.png">
                     </center>
                     <h4 class="font-18">Warehousing</h4>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                   
                   <div class="overlay">
                              <h2>Warehousing</h2>
-                    <a class="info" href="#">View</a>
+                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
                     </div>
                 </div>
                 </div>

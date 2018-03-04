@@ -76,18 +76,20 @@ $pt->readList();
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>
                           <div class="col-sm-3">
-                            <div class="pull-right text-center form-icon">
-                              <i class="fa fa-file-text-o fa-2x text-white p-t-10" name></i>
-                            </div>
+                         <a id="myBtnShowResume" class="btn btn-danger btn-file btn-circle btn-lg"><i class="fa fa-file-text-o fa-2x text-white p-t-10 "></i> </a>
+                         <br><br><br>
+                         
+                            
                           </div>
                           <div class="col-md-8">
                           <h4>Upload Your Resume</h4>
                           <p>Supported File Types: pdf, txt, .doc, .docx</p>
                         </div>
-                          <div class="form-group">
-                              <input type="file"  class="form-control" name="upload_file" required/>
-                          </div>
+                        <div class="form-group">
+                        <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false"></div>
+                     </div>
                     </div>
+                    <br><br><br><br><br><br>
                   <div class="text-center m-t-30">
                       <button type="submit" class="btn btn-primary stepy-finish"> SUBMIT RESUME </button>
                   </div>

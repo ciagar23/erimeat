@@ -149,7 +149,7 @@
 
 .hovereffect:hover .overlay {
   opacity: 1;
-  background-color: #31779a;
+   background: linear-gradient(#fff,#4489e4);
   filter: alpha(opacity=100);
   top: 0px;
   -webkit-transition-delay: 0s;
@@ -186,41 +186,37 @@
   transition-delay: 0.3s;
 }
 
-.hovereffect a.info {
-  display: inline-block;
-  text-decoration: none;
-  padding: 7px 14px;
-  text-transform: uppercase;
-  margin: 50px 0 0 0;
-  background-color: transparent;
-  -webkit-transform: translateY(-200px);
-  -ms-transform: translateY(-200px);
-  transform: translateY(-200px);
-  color: #000;
-  border: 1px solid #000;
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
-}
 
-.hovereffect a.info:hover {
-  box-shadow: 0 0 5px #fff;
-}
-
-.hovereffect:hover a.info {
-  -webkit-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  transform: translateY(0px);
-  box-shadow: 0 0 5px #000;
-  color: #000;
-  border: 1px solid #000;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
 #box-design{
 	  box-shadow: 5px 10px #888888;
                 border-style: solid;
                 border-color: #3399cc;
 
 }
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1%;
+      
 
+
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: center;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+
+
+}
 </style>
