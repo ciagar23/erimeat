@@ -84,7 +84,7 @@ $pt->readList();
                             <label>Attach Specs</label>
                             <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
-                          
+
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>
                           <div class="col-sm-3">
