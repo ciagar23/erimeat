@@ -12,15 +12,15 @@
 
             <div class="item active">
                 <img src="../include/assets/images/small/img-1.jpg"  style="width: 100%;" alt="First slide image">
-                                                      
+
             </div>
                                                     <div class="item">
                                                         <img src="../include/assets/images/small/img-2.jpg"  style="width: 100%;" alt="Second slide image">
-                                                     
+
                                                     </div>
                                                     <div class="item">
                                                         <img src="../include/assets/images/small/img-3.jpg" style="width: 100%;"  alt="Third slide image">
-                                                      
+
                                                     </div>
                                                 </div>
                                                 <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" ></span> <span class="sr-only">Previous</span> </a>
@@ -33,7 +33,7 @@
                         Unrivaled Industry Insight. Sophisticated Matching Technology. And a Personalized Approach. It’s Why We’re #1.
           </h1>
                     <h3>
-                      
+
                             <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
                     </h3>
                     <div class="">
@@ -77,7 +77,7 @@
                         <img src="../include/assets/images/demandPlanning.png">
                     </center>
                     <h4 class="font-18">Demand Planning</h4>
-                   
+
                   <div class="overlay">
                              <h2>Demand Planning</h2>
                     <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
@@ -87,14 +87,14 @@
             </div>
 
             <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                           <img src="../include/assets/images/supplyPlanning.png">
                     </center>
                     <h4 class="font-18">Supply Planning</h4>
-                   
+
                   <div class="overlay">
                              <h2>Supply Planning</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -104,14 +104,14 @@
             </div>
 
                 <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                           <img src="../include/assets/images/orderFulfilment.png">
                     </center>
                     <h4 class="font-18">Order Fulfilment</h4>
-                   
+
                   <div class="overlay">
                              <h2>Order Fulfilment</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -125,14 +125,14 @@
         <div class="row">
 
          <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Logistics</h4>
-                   
+
                   <div class="overlay">
                              <h2>Logistics</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -143,14 +143,14 @@
 
 
          <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Manufacturing</h4>
-                   
+
                   <div class="overlay">
                              <h2>Manufacturing</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -161,14 +161,14 @@
 
 
          <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                          <img src="../include/assets/images/logistics.png">
                     </center>
                     <h4 class="font-18">Transportation</h4>
-                   
+
                   <div class="overlay">
                              <h2>Transportation</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -177,21 +177,21 @@
                 </div>
             </div>
 
-          
+
         </div>
         <!-- end row -->
         <div class="row">
 
 
                 <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                         <img src="../include/assets/images/procurement.png">
                     </center>
                     <h4 class="font-18">Procurement</h4>
-                   
+
                   <div class="overlay">
                              <h2>Procurement</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -202,14 +202,14 @@
 
 
     <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                           <img src="../include/assets/images/certificate.png">
                     </center>
                     <h4 class="font-18">Training Certification</h4>
-                   
+
                   <div class="overlay">
                              <h2>Training Certification</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -220,14 +220,14 @@
 
 
     <div class="col-sm-4 well card-box company-card" id="box-design">
-              
+
                     <div class="about-features-box text-center " >
                 <div class="hovereffect">
                    <center>
                       <img src="../include/assets/images/warehousing.png">
                     </center>
                     <h4 class="font-18">Warehousing</h4>
-                   
+
                   <div class="overlay">
                              <h2>Warehousing</h2>
                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
@@ -245,7 +245,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                  <div class="card-box">
-                                  
+
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
                                         <li class="active" style="background: #eee;">
@@ -260,7 +260,7 @@
                                                 <span class="hidden-xs">How We Help You Find a Job</span>
                                             </a>
                                         </li>
-                                       
+
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane" id="home1">
@@ -332,10 +332,10 @@
                                         <center>
                                             <a href="../home/?view=hiringForm"  class="btn btn-primary">REQUEST TALENT</a>
                                         </center>
-  
+
                                     </form>
 
-                           
+
                             </div>
                         </div>
 
@@ -410,13 +410,13 @@
                                         <center>
                                             <a href="../home/?view=submitResume"  class="btn btn-primary">SUBMIT A RESUME</a>
                                         </center>
-  
+
                                     </form>
 
                                              </div>
                                            </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>

@@ -30,8 +30,20 @@
     </li>
 
     <li>
+        <a href="?view=jobList">
+            <i class="mdi mdi-city"></i><span> Jobs </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=candidates">
             <i class="mdi mdi-account"></i><span> Candidates </span>
+        </a>
+    </li>
+
+    <li>
+        <a href="?view=reports">
+            <i class="mdi mdi-account"></i><span> Reports </span>
         </a>
     </li>
 </ul>

@@ -32,6 +32,11 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'jobList' :
+		$content 	= 'jobList.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	case 'jobDetail' :
 		$content 	= 'jobDetail.php';
 		$template	= '../include/dashboard.php';
@@ -59,6 +64,11 @@ switch ($view) {
 
 	case 'candidatesDetail' :
 		$content 	= 'candidatesDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'reports' :
+		$content 	= 'reports.php';
 		$template	= '../include/dashboard.php';
 		break;
 
