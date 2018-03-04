@@ -12,27 +12,50 @@ $obj = new Company;
 
 ?>
 
+<div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Client Request</h4>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
 <div class="card-box">
-<?php foreach($obj->readList($s) as $row) {
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card-box table-responsive">
+        <h4 class="m-t-0 header-title"><b>List of Talent Request</b></h4>
+        <table id="datatable" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Company Name</th>
+              <th>ABN</th>
+              <th>Company Representative</th>
+              <th>Work Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+           <?php foreach($obj->readList($s) as $row) {
   if ($row->isApproved==0){
   ?>
-  <div class="">
-      <h4 class="header-title mt-0 m-b-20"><a href="?view=clientDetail&id=<?=$row->Id;?>"><?=$row->name;?></a></h4>
-      <div class="">
-          <h5 class="text-custom m-b-5"><?=$row->abn;?></h5>
-          <h5 class="text-custom m-b-5"><?=getJobFunction($row->jobFunctionId); ?></h5>
-          <p><b><?=$row->email;?></b></p>
-          <p><b><?=$row->contactPerson;?></b></p>
-          <p><b><?=$row->phoneNumber;?></b></p>
-          <p><b><?=$row->mobileNumber;?></b></p>
-          <p><b><?=$row->address;?></b></p>
-          <p><b><?=$row->department;?></b></p>
-
-          <p class="text-muted font-13 m-b-0">
-            <?=$row->description;?>
-          </p>
+            <tr>
+              <td><?=$row->name;?> </td>
+              <td><?=$row->abn;?> </td>
+              <td><?=$row->contactPerson;?> </td>
+              <td><?=$row->email;?> </td>
+              <td>
+                <a href="?view=clientDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
+              </td>
+            </tr>
+            <?php
+              }
+            }
+            ?>
+          </tbody>
+        </table>
       </div>
-      <hr>
     </div>
-<?php } } ?>
+  </div>
 </div>

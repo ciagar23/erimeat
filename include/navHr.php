@@ -25,7 +25,7 @@
 
     <li>
         <a href="../hr/?view=candidates">
-            <i class="mdi mdi-account-star"></i><span> Candidates Resume </span>
+            <i class="mdi mdi-account-star"></i><span> Candidates </span>
         </a>
     </li>
 
