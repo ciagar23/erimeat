@@ -1,8 +1,7 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-04 22:53:40
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Date: 2018-03-05 00:07:21
+# Generator: MySQL-Front 6.0  (Build 2.20)
 
-/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -51,7 +50,7 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (2,'','Ceres Inc','51 824 753 556','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Angela Bucks','(02) 5551 5678','(02) 7010 1111','Bacolod City','Domestic Transport','1','1'),(3,'','Villacar Transit','61 223 111 999','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Jack Daniel','(02) 5551 5678','(02) 7010 1111','Bacolod City','Cargo Transport','6','1'),(4,'','Publiq','12 244 123 888','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Coffee Beer','(02) 5551 5678','(02) 7010 1111','Bacolod City','Coffee Shop','2','1'),(5,'','Sleeptnot','12 778 128 091','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','John Doe','(02) 5551 5678','(02) 7010 1111','Bacolod City','Coffee and Beer','3','1'),(6,'C123213123','esutek','34324324233','sample description at least 20 characters','fredowinz23@gmail.com','fred garcia','2345678901','2345678909','bredco, bredco','Sales','3','1'),(7,'C88888888888','Villacar Transit','88888888888','We are a domestic transport company','torredale1014@gmail.com','Dale Tore','7082245','0908224617','Bacolod City','Domestic Transport','1','1'),(8,'C99999999999','Tekinbox','99999999999','We are a web development company','torredale1014@gmail.com','Dale Torre','2345678909','09809090909','Bacolod City','Web Development','4','1');
+INSERT INTO `company` VALUES (1,'C22222222222','jkhjkhkj','22222222222','jkhkjhkjhkj kjhkjfhd kjfhdkj hfkjds','fredowinz23@gmail.com','kjhkjh','kjhkjhkjh','kjhkjhkjh','jkhkjhkjh','kjhk','2','1');
 
 #
 # Structure for table "dtr"
@@ -73,13 +72,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (5,0,'torredale','19:56:09','20:13:34','19:56:12','19:56:13',NULL,NULL,'19:56:15','19:56:14','2018-03-02','3'),(6,0,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','0'),(7,1,'E1520132026','12:07:26','12:08:36','12:08:31','12:08:32','12:08:33','12:08:34','12:08:36','12:08:35','2018-03-03','4'),(8,1,'E1520132026','12:25:37','12:25:45',NULL,NULL,NULL,NULL,'12:25:44','12:25:43','2018-03-02','4'),(9,1,'E1520132026','12:26:13','12:26:17',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-04','4'),(10,0,'1520158820','22:40:26','22:40:34','22:40:28','22:40:29',NULL,NULL,'22:40:32','22:40:31','2018-03-04','4');
+INSERT INTO `dtr` VALUES (1,1,'E1520175205','22:54:21','22:54:38','22:54:33','22:54:34',NULL,NULL,'22:54:37','22:54:36','2018-03-03','4'),(2,1,'E1520175205','22:56:06','22:56:09',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','4'),(3,1,'E1520175205','22:56:55','22:57:00','22:56:56','22:56:56','22:56:57','22:56:58','22:56:59','22:56:58','2018-03-01','4'),(4,4,'E1520175205','22:57:38','22:57:42','22:57:39','22:57:40',NULL,NULL,'22:57:41','22:57:40','2018-02-28','4'),(5,4,'E1520175205','22:58:39','23:00:41','22:58:49','22:58:56',NULL,NULL,'23:00:39','23:00:38','2018-02-27','4'),(6,4,'E1520175205','23:01:19','23:01:23',NULL,NULL,NULL,NULL,'23:01:22','23:01:21','2018-03-04','4');
 
 #
 # Structure for table "employee"
@@ -98,7 +97,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (4,21,'8','2018-03-03 10:17:09'),(5,31,'13','2018-03-04 17:54:05'),(6,31,'E1520132026','2018-03-04 18:25:32');
+INSERT INTO `employee` VALUES (1,1,'E1520175205','2018-03-04 22:53:24');
 
 #
 # Structure for table "hr"
@@ -140,7 +139,6 @@ CREATE TABLE `inquiries` (
 # Data for table "inquiries"
 #
 
-INSERT INTO `inquiries` VALUES (1,'sdfsdf','asdfdsf','sdf','asdf','asdf','asdf','asdf'),(2,'khkjh',NULL,NULL,NULL,NULL,NULL,NULL),(3,'Dale','Torre','2345678909','torredale1014@gmail.com','1','6100','why not coconut bahug bilat');
 
 #
 # Structure for table "interview_date"
@@ -159,7 +157,7 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
-INSERT INTO `interview_date` VALUES (1,'7','2018-03-03','13:00:00'),(2,'8','2018-03-03','13:00:00'),(3,'13','2018-03-05','01:59:00'),(4,'14','2018-03-06','13:00:00');
+INSERT INTO `interview_date` VALUES (1,'1','2018-03-06','12:59:00'),(2,'','0000-00-00','00:00:00');
 
 #
 # Structure for table "job"
@@ -191,7 +189,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (21,'1520040011',1,2,'Truck Driver','hehehe','34324324233','torredale1014@gmail.com','Manager','1234554231','6100','bacolod city','5 years','we are looking for a truck driver to drive the truck.','2018-03-03 10:15:51','1','Dale Torre'),(22,'1520043334',1,1,'Driver','heheheh','34324324233','torredale1014@gmail.com','Manager','123456','6100','Bacolod City','5 years','We are hiring. Driver to drive a truck. Apply Now!','2018-03-03 10:15:34','1','Dale Torre'),(23,'1520135313',2,2,'aaaaa','adsfdf','12321321321','e@e.com','dfasdfsfd','12321312321','1234','sdflsadflkjaslfd','5 years','asfdsflkasdjflasfdsflkasdjflasfdsflkasdjfl','2018-03-04 11:48:32','0','hhehe'),(24,'1520150083',3,2,'Supervisor','esutek','32489324322','fredowinz23@gmail.com','Project Manager','2345678901','6100','bredco, bredco','1-2 years','We would like to have a supervisor','2018-03-04 15:59:33','1','fred garcia'),(25,'1520150108',3,2,'Supervisor','esutek','32489324322','fredowinz23@gmail.com','Project Manager','2345678901','6100','bredco, bredco','1-2 years','We would like to have a supervisor','2018-03-04 15:59:52','-','fred garcia'),(26,'1520151500',5,3,'sadfdsfsdf','sdfdsfsdfdsf','12312321321','a@a.com','sadfsfddsf','adsfsdfdsf','1231','asdfdsafsdf','1231','asdfdsafsdfasdfdsafsdfasdfdsafsdfasdfdsafsdf','2018-03-04 16:18:19','0','sadfsdfdsf'),(27,'1520151522',5,3,'sadfdsfsdf','sdfdsfsdfdsf','12312321321','a@a.com','sadfsfddsf','adsfsdfdsf','1231','asdfdsafsdf','1231','asdfdsafsdfasdfdsafsdfasdfdsafsdfasdfdsafsdf','2018-03-04 16:18:41','0','sadfsdfdsf'),(28,'1520155522',6,4,'Planner','torre','34324324233','torre@gmail.com','plaanner','12321312321','6122','hehehe','5-1','hehehehehehehehehehehehehehehe','2018-03-04 17:25:21','0','Dale Torre'),(29,'1520156238',8,2,'Manufacturer','Warey','34324324233','torre@gmail.com','Mansge','123213213213','6100','asdfdsfdsfdsfdsfds','5-6','asdfdsfdsfdsfdsfdsasdfdsfdsfdsfdsfdsasdfdsfdsfdsfdsfdsasdfdsfdsfdsfdsfds','2018-03-04 17:37:18','0','Dale Tore'),(30,'1520156394',1,4,'Truck Driver','Villacar Transit','88888888888','torredale1014@gmail.com','Manager','7082245','6100','Bacolod City','3-5 years','We are looking for a truck driver.','2018-03-04 17:39:53','0','Dale Torre'),(31,'1520156812',4,2,'Manager','Tekinbox','99999999999','torredale1014@gmail.com','Operations Manager','2345678909','6100','Bacolod City','3-5 years','We are lokking for a manager. Apply Now','2018-03-04 17:48:43','1','Dale Torre');
+INSERT INTO `job` VALUES (1,'1520174781',1,1,'kjhjkj','hjgku','22222222222','fredowinz23@gmail.com','kjhkjh','kjhkjh','2222','kjhkjh','kjhkj','kjhkj skjhds kjhdskjh fhkjfhd fkj fkjs ffds','2018-03-04 22:49:41','1','kjhkjhkjh');
 
 #
 # Structure for table "job_function"
@@ -258,7 +256,7 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf',NULL,NULL,'2018-03-03 10:16:56','1','0'),(9,0,1,'sdfsdfdsf','asdfsdfdsf','a@a.com','123213123213','ahehehehe','adhehehe','heheheh','heheheh','1111','1520092668.txt','http://www.speedtest.net/result/7107573632',NULL,'2018-03-03 23:57:48','0','0'),(10,0,1,'sdfsdfdsafdsaf','asdfsdfds','a@a.com','123123213','sadfsdfdsfds','asdfsdfdsfsdf','asdf','asdf','1211','1520093253.txt','www.speedtest.com',NULL,'2018-03-04 00:07:33','0','0'),(11,0,2,'sadfsdfdsf','asdfdsfdsf','a@a.com','sdfsdf','asdfsdf','sdafsdf','sadfsdf','asdfdsf','2323','1520093339.txt','http://www.speedtest.net/result/7107573632','1520093339.txt','2018-03-04 00:08:59','0','0'),(12,0,3,'sadfsdfdsf','asdfdsf','a@a.com','sadfdsf','sadf','asdf','adsf','asdf','2323','1520093388.txt','http://www.speedtest.net/result/7107573632','1520093388.txt','2018-03-04 00:09:48','0','0'),(13,31,4,'Fred','Garcia','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520157008.txt','','','2018-03-04 17:52:16','1','0'),(14,31,1,'Sam','Sedayon','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520158768.txt','','','2018-03-04 18:25:37','1','1'),(15,21,2,'asdfsfds','asdfsadf','asdfsdfs@adsfsadf.com','asdfdsfdsf','asdfdsfdsaf','asdfsdafsd','sadfdsaf','adsfdsaf','6100','1520163237.txt','','','2018-03-04 19:33:56','0','0');
+INSERT INTO `resume` VALUES (1,1,3,'fred','garcia','fredowinz23@gmail.com','kjhkjh','kjhjkh kjhkj hkjh','kjhkj hkj hkjh','kjhkjkj','hkjh','1212','1520175038.jpg','','','2018-03-04 22:53:29','1','1'),(2,1,0,'kjhkhkj','hjkhkjh','fredowinz23@gmail.com','hjkhkjhk','kjhjk','hkjhkj','hkjh','kjhkj','8978','1520178595.jpg','','','2018-03-04 23:49:54','0','0');
 
 #
 # Structure for table "timesheet"
@@ -279,7 +277,7 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (1,31,'E1520132026','Timesheet as of 2018-03-04 14:49:23','0','2018-03-04 21:49:23');
+INSERT INTO `timesheet` VALUES (1,1,'E1520175205','Timesheet as of 2018-03-04 16:01:47','1','2018-03-04 23:01:47'),(2,1,'E1520175205','Timesheet as of 2018-03-04 16:12:43','0','2018-03-04 23:12:43'),(3,1,'E1520175205','Timesheet as of 2018-03-04 16:14:31','1','2018-03-04 23:14:31'),(4,1,'E1520175205','Timesheet as of 2018-03-04 16:17:13','1','2018-03-04 23:17:13');
 
 #
 # Structure for table "user"
@@ -300,4 +298,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (7,'C88888888888','12345','Dale Tore','Villacar Transit','company'),(8,'C99999999999','temppassword','Dale Torre','Tekinbox','company'),(9,'torredale101','temppassword','Fred','Garcia','employee'),(10,'1520158820','12345','Sam','Sedayon','employee'),(11,'1520158931','temppassword','Sam','Sedayon','employee'),(12,'1520159020','temppassword','Sam','Sedayon','employee'),(13,'1520159133','temppassword','Sam','Sedayon','employee');
+INSERT INTO `user` VALUES (1,'C22222222222','ZXasqw1212','kjhkjh','jkhjkhkj','company'),(2,'E1520175205','ZXasqw1212','fred','garcia','employee');
