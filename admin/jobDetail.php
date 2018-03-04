@@ -11,6 +11,9 @@ $job = $obj->readOne($_GET['id']);
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
             <div class="panel-body">
                 <div class="text-left">
+                    <p class="text-muted font-13"><strong>Job Reference Number :</strong>
+                      <span class="m-l-15"><?=$job->refNum;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Job Position :</strong>
                       <span class="m-l-15"><?=$job->position;?></span>
                     </p>
@@ -37,8 +40,8 @@ $job = $obj->readOne($_GET['id']);
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=approve&Id=<?=$job->Id;?>">Approve</a></button>
-          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>">Deny</a></button>
+          <button>Update</button>
+          <button onclick="location.href='process.php?action=removeJob&Id=<?=$job->Id;?>'">Remove</button>
         </div>
     </div>
   </div>

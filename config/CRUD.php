@@ -183,6 +183,13 @@ class Job {
 	 $pdo->execute();
 	 Database::disconnect();
 	 }
+
+	 function deleteOne($val){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("delete from job where Id='$val'");
+	 $pdo->execute();
+	 Database::disconnect();
+	 }
 }
 
 
@@ -253,6 +260,13 @@ class Resume {
 														 	");
 		$pdo->execute();
 		Database::disconnect();
+	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from resume where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
 	}
  }
 
@@ -553,6 +567,13 @@ class Company {
 																 isApproved='$obj->isApproved'
 																 where Id='$obj->Id'
 																");
+	$pdo->execute();
+	Database::disconnect();
+	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from company where Id='$val'");
 	$pdo->execute();
 	Database::disconnect();
 	}

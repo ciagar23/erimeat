@@ -1,4 +1,5 @@
 <?php
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $obj = new Job;
 
@@ -8,6 +9,7 @@ function getJobFunction($Id){
   echo $job->option;
 }
 ?>
+
      <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
@@ -17,6 +19,9 @@ function getJobFunction($Id){
                                 </div>
                             </div>
                         </div>
+                        <p class="m-b-0">
+                          <?=$message?></p>
+                        </div>
 <div class="card-box">
   <div class="row">
     <div class="col-sm-12">
@@ -25,6 +30,7 @@ function getJobFunction($Id){
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
+              <th>Job Reference Number</th>
               <th>Job Category</th>
               <th>Company Name</th>
               <th>Action</th>
@@ -35,6 +41,7 @@ function getJobFunction($Id){
               if ($row->isApproved==1){
             ?>
             <tr>
+              <td><?=$row->refNum;?></td>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?> </td>
               <td>

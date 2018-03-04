@@ -7,7 +7,7 @@ $obj = new Admin;
                             <div class="col-xs-12">
                                 <div class="page-title-box">
                                     <h4 class="page-title">Accounts</h4>
-                                  
+
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

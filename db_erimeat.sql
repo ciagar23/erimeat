@@ -2,6 +2,7 @@
 # Date: 2018-03-04 22:04:59
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
