@@ -31,8 +31,11 @@ function get_time_difference($record)
                         </tr>
                     </thead>
                     <tbody>
-                     <?php foreach($obj->readList($user) as $row) {
+                     <?php
+                    $count = 0;
+                      foreach($obj->readList($user) as $row) {
                        if ($row->status==4 && !$row->timesheetId){
+                         $count +=1;
                        ?>
                           <tr>
                             <td> <?=$row->createDate;?></td>
@@ -47,6 +50,8 @@ function get_time_difference($record)
 
                                         </tbody>
                                     </table>
+                                    <?php if($count){ ?>
                                     <button type="button" onclick="location.href='process.php?action=submitTimesheet'" class="btn btn-info">Submit timesheet</button>
+                                  <?php } ?>
                                 </div>
                             </div>

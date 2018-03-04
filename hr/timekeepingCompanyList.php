@@ -33,7 +33,7 @@ $obj = new Job;
               class=" btn btn-success btn-xs tooltips"
               title="Click To Edit">
               <span class="fa fa-eye"></span>
-              View Timekeeping
+              View Employees
             </a>
           </td>
         </tr>

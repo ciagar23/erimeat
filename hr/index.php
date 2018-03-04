@@ -87,6 +87,16 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'timesheets' :
+		$content 	= 'timesheets.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timesheetDetail' :
+		$content 	= 'timesheetDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	default :
 		$content 	= 'main.php';
 		$template	= '../include/dashboard.php';

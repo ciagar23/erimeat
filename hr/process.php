@@ -47,6 +47,10 @@ switch ($action) {
 		setInterViewDate();
 		break;
 
+	case 'approveTimesheet' :
+		approveTimesheet();
+		break;
+
 	default :
 }
 
@@ -105,6 +109,16 @@ function denyResume()
 	$obj->updateOne($newObj);
 
 	header('Location: index.php?view=applicants');
+}
+
+function approveTimesheet()
+{
+	$obj = new Timesheet;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->status = 1;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=timekeepingCompanyList');
 }
 
 function setInterviewDate()

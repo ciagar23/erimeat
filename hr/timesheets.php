@@ -1,5 +1,5 @@
 <?php
-$status = (isset($_GET['status']) && $_GET['status'] != '') ? $_GET['status'] : '';
+$user = (isset($_GET['user']) && $_GET['user'] != '') ? $_GET['user'] : '';
 $obj = new Timesheet;
 ?>
 <div class="row">
@@ -24,8 +24,8 @@ $obj = new Timesheet;
         </tr>
       </thead>
       <tbody>
-        <?php foreach($obj->readList($_SESSION['employee_session']) as $row) {
-          if ($row->status == $status || $status=="")
+        <?php foreach($obj->readList($user) as $row) {
+          if ($row->status == 0)
           {
         ?>
         <tr>

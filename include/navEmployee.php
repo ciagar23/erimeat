@@ -33,7 +33,7 @@
 
 
                     <li>
-                        <a href="?view=timesheet">
+                        <a href="?view=timesheets">
                             <i class="mdi mdi-comment-account"></i><span> Archives </span>
                         </a>
                     </li>

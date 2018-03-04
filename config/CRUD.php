@@ -306,10 +306,10 @@ class Resume {
 
  	function updateOne($obj){
  		$db = Database::connect();
- 		$pdo = $db->prepare("update resume set timesheet set jobId='$obj->jobId',
+ 		$pdo = $db->prepare("update timesheet set jobId='$obj->jobId',
  															employee='$obj->employee',
  															name='$obj->name',
- 															status='$obj->status',
+ 															status='$obj->status'
  														 	where Id='$obj->Id'
  														 	");
  		$pdo->execute();
