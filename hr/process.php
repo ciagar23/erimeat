@@ -135,35 +135,40 @@ function setInterviewDate()
 function hireApplicant()
 {
 	if ($_GET['result']=="approve"){
-		$result = 1;
-		__createEmployeeLogin($_GET['Id']);
+		$result = '1';
+		__createEmployeeLogin($_GET['Id'], $_GET['jobId']);
 	}
 	else{
-		$result = -1;
+		$result = '-1';
 	}
 
-	$obj = new Employee;
-	$obj->jobId = $_GET['jobId'];
-	$obj->userId = $_GET['Id'];
-	$obj->createDate = 'NOW()';
-	$obj->createOne($obj);
+	$obj = new Resume;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isHired = $result;
+	$obj->updateOne($newObj);
 
 	header('Location: index.php?view=scheduleInterview');
 }
 
-function __createEmployeeLogin($Id){
-	// Get Detail
+function __createEmployeeLogin($Id, $jobId){
+
 	$resume = new Resume;
 	$resume = $resume->readOne($Id);
 
 	// Create account
 	$obj = new Profile;
-	$obj->username = $resume->email;
+	$obj->username =  "E" . round(microtime(true));
 	$obj->password = "temppassword";
 	$obj->firstName = $resume->firstName;
 	$obj->lastName = $resume->lastName;
 	$obj->level = "employee";
 	$obj->createOne($obj);
+
+	$emp = new Employee;
+	$emp->jobId = $jobId;
+	$emp->username = $obj->username;
+	$emp->createDate = 'NOW()';
+	$emp->createOne($emp);
 
 	// Send email
 	$content = "Congratulations!<br><br>

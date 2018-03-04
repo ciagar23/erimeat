@@ -247,6 +247,7 @@ class Resume {
 															uploadedResume='$obj->uploadedResume',
 															uploadedSpecs='$obj->uploadedSpecs',
 															isApproved='$obj->isApproved',
+															isHired='$obj->isHired',
 														 	createDate=NOW()
 														 	where Id='$obj->Id'
 														 	");
@@ -281,7 +282,7 @@ class Employee {
 	function createOne($obj){
 	$db = Database::connect();
 	$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
-																 userId='$obj->userId',
+																 username='$obj->username',
 															 createDate=NOW()
 																 ");
 	$pdo->execute();
@@ -444,6 +445,16 @@ class Company {
 	function readOne($val){
 	$db = Database::connect();
 	$pdo = $db->prepare("select * from company where Id='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	/* Retrieve one record */
+	function readOneByUsername($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from company where username='$val'");
 	$pdo->execute();
 	$result = $pdo->fetch(PDO::FETCH_OBJ);
 	Database::disconnect();

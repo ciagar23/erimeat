@@ -20,6 +20,7 @@
               <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
               <a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a>
               <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a>
+              <a class="m-l-5 m-r-15" href=""><?=$currentUser;?></a>
             </li>
         </div>
         </div>

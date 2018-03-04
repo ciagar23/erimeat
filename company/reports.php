@@ -1,2 +1,4 @@
 Teamire Welcome Page!</br>
-Reports
+Reports<br>
+  * Total time per Project<br>
+  * Total Expense

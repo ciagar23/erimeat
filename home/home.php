@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <div>
   <div style="position:relative;">
  <!-- START carousel-->

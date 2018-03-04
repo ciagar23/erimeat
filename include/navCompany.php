@@ -6,14 +6,14 @@
     </li>
 
     <li>
-        <a href="../company/?view=availablePosition">
-            <i class="mdi mdi-tie"></i><span> Available Position </span>
+        <a href="../company/?view=postedJobs">
+            <i class="mdi mdi-tie"></i><span> Posted Jobs </span>
         </a>
     </li>
 
     <li>
-        <a href="../company/?view=numberEmployee">
-            <i class="mdi mdi-account-multiple"></i><span> No. of Employee </span>
+        <a href="../company/?view=ongoingProjects">
+            <i class="mdi mdi-account-multiple"></i><span> Ongoing Projects </span>
         </a>
     </li>
 
