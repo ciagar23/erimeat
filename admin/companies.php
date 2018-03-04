@@ -1,4 +1,5 @@
 <?php
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $obj = new Company;
 ?>
@@ -11,6 +12,10 @@ $obj = new Company;
                                 </div>
                             </div>
                         </div>
+
+<p class="m-b-0">
+  <?=$message?></p>
+</div>
 <div class="card-box">
   <div class="row">
     <div class="col-sm-12">

@@ -509,6 +509,13 @@ class Company {
 	$pdo->execute();
 	Database::disconnect();
 	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from company where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
+	}
 }
 
 class Inquiries {

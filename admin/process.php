@@ -27,6 +27,10 @@ switch ($action) {
 		logout();
 		break;
 
+	case 'removeCompany' :
+		removeCompany();
+		break;
+
 	default :
 }
 
@@ -148,6 +152,14 @@ function __createLogin($Id){
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($newComp->email, $content);
+}
+
+function removeCompany()
+{
+	$obj = new Company;
+	$newComp = $obj->deleteOne($_GET['Id']);
+
+	header('Location: ../admin/?view=companies&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/
