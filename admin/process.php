@@ -31,6 +31,14 @@ switch ($action) {
 		removeCompany();
 		break;
 
+	case 'removeJob' :
+		removeJob();
+		break;
+
+	case 'removeCandidate' :
+		removeCandidate();
+		break;
+
 	default :
 }
 
@@ -160,6 +168,22 @@ function removeCompany()
 	$newComp = $obj->deleteOne($_GET['Id']);
 
 	header('Location: ../admin/?view=companies&message=Succesfully Deleted');
+}
+
+function removeJob()
+{
+	$obj = new Job;
+	$newComp = $obj->deleteOne($_GET['Id']);
+
+	header('Location: ../admin/?view=jobList&message=Succesfully Deleted');
+}
+
+function removeCandidate()
+{
+	$obj = new Resume;
+	$newComp = $obj->deleteOne($_GET['Id']);
+
+	header('Location: ../admin/?view=candidates&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

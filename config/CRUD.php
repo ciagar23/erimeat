@@ -183,6 +183,13 @@ class Job {
 	 $pdo->execute();
 	 Database::disconnect();
 	 }
+
+	 function deleteOne($val){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("delete from job where Id='$val'");
+	 $pdo->execute();
+	 Database::disconnect();
+	 }
 }
 
 
@@ -253,6 +260,13 @@ class Resume {
 														 	");
 		$pdo->execute();
 		Database::disconnect();
+	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from resume where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
 	}
  }
 

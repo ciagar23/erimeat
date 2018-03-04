@@ -54,7 +54,7 @@ function getJobFunction($Id){
         <!-- Personal-Information -->
         <div class="card-box">
           <button>Update</button>
-          <button>Remove</button>
+          <button onclick="location.href='process.php?action=removeCandidate&Id=<?=$resume->Id;?>'">Remove</button>
         </div>
     </div>
   </div>
