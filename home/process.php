@@ -181,9 +181,9 @@ function sendInquiry()
 /* ======================== Email Messages ==============================*/
 
 function __talentRequestEmailMessage(){
-	return "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
+	return "We have received your request. Thank you for showing interest in our company in looking for your candidate.<br>
 					Please be informed that we are in the midst of processing your request and shall get<br>
-					in touch with you again if your request have meet our condition.<br><br>
+					in touch with you again if your request has met our condition.<br><br>
 					Teamire";
 }
 
@@ -203,7 +203,7 @@ function __submitApplicationEmailMessage(){
 }
 
 function __clientRequestEmailMessage(){
-	return "We have recieved your request. Thank you for the interest shown in our company.<br><br>
+	return "We have received your request. Thank you for the interest shown in our company.<br><br>
 					Please be informed that we are in the midst of processing your request and shall get<br>
 					in touch with you again once you've meet our requirements.<br><br>
 					Teamire";

@@ -36,7 +36,7 @@
     </li>
 
     <li>
-        <a href="../hr/?view=timekeeping">
+        <a href="../hr/?view=timekeepingCompanyList">
             <i class="mdi mdi-clock"></i><span> Timekeeping </span>
         </a>
     </li>

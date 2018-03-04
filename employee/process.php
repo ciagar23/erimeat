@@ -27,6 +27,10 @@ switch ($action) {
 		stampBreak();
 		break;
 
+	case 'stampBreak2' :
+		stampBreak2();
+		break;
+
 	case 'stampLunch' :
 		stampLunch();
 		break;
@@ -119,6 +123,11 @@ function stampCheckIn(){
 
 	if ($dtr->status == 2)
 	{
+		__breakIn2();
+	}
+
+	if ($dtr->status == 3)
+	{
 		__lunchIn();
 	}
 
@@ -130,6 +139,22 @@ function __breakIn(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set breakIn=NOW(),
+															status = '0'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+function __breakIn2(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakIn2=NOW(),
 															status = '0'
 															where owner='$currentUser'
 															and createDate='$currentDate'
@@ -172,6 +197,22 @@ function stampBreak(){
 	header('Location: index.php');
 }
 
+function stampBreak2(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakOut2=NOW(),
+															status = '2'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
 
 function stampLunch(){
 
@@ -179,7 +220,7 @@ function stampLunch(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set lunchOut=NOW(),
-															status = '2'
+															status = '3'
 															where owner='$currentUser'
 															and createDate='$currentDate'
 															");
@@ -196,7 +237,7 @@ function stampCheckOut(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set checkOut=NOW(),
-															status = '3'
+															status = '4'
 															where owner='$currentUser'
 															and createDate='$currentDate'
 															");

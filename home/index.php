@@ -5,12 +5,6 @@ include_once("../config/CRUD.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
-$currentUser = "&nbsp";
-if(isset($_SESSION["user_session"]))
-{
-	 $currentUser = $_SESSION["user_session"];
- }
-
 switch ($view) {
 
 	case 'home' :
