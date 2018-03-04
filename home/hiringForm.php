@@ -12,6 +12,7 @@ $pt->readList();
       <h2 class="text-center m-t-30 m-b-30 text-white">Talent Request</h2>
       <p class="text-center text-white">We will help you build the workforce you desire – quickly</p>
     </div>
+     <form  action="process.php?action=create" method="POST" id="default-wizard" data-parsley-validate="">
       <div class="jumbotron center-page" style="width: 1140px;">
 
 
@@ -24,7 +25,7 @@ $pt->readList();
                                         <h4>Yay!</h4>
                                         <p>Everything seems to be ok :)</p>
                                     </div>
-            <form  action="process.php?action=create" method="POST" id="demo-form" data-parsley-validate="">
+           
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">
 

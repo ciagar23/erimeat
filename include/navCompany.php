@@ -13,7 +13,7 @@
 
     <li>
         <a href="../company/?view=numberEmployee">
-            <i class="mdi mdi-account-multiple"></i><span> Number of Employee </span>
+            <i class="mdi mdi-account-multiple"></i><span> No. of Employee </span>
         </a>
     </li>
 

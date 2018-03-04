@@ -55,7 +55,7 @@ substr(round(microtime(true)), -6)
 	$content = __talentRequestEmailMessage();
 	sendEmail($obj->workEmail, $content);
 
-	header('Location: ../home/?view=success');
+	header('Location: ../home/?view=request_success');
 }
 
 function clientRequest()
