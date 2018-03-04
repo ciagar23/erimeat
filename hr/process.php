@@ -251,11 +251,9 @@ function jobRequest()
 {
 	if ($_GET['result']=="approve"){
 		$result = 1;
-		/* internal notification */
 	}
 	else{
 		$result = -1;
-		/* internal notification */
 	}
 
 	$obj = new Job;
@@ -263,6 +261,28 @@ function jobRequest()
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
 
+	if ($result==1){
+	// Send email
+	$content = __approvedJobRequestEmailMessage();
+	sendEmail($newObj->workEmail, $content);
+}else{
+	// Send email
+	$content = __deniedJobRequestEmailMessage();
+	sendEmail($newObj->workEmail, $content);
+}
+
 	header('Location: index.php?view=talentRequest');
+}
+
+/* ======================== Email Messages ==============================*/
+
+function __approvedJobRequestEmailMessage(){
+	return "We have approved your request.<br><br>
+					Teamire";
+}
+
+function __deniedJobRequestEmailMessage(){
+	return "We apologized we have denied your request as it did not match our requirements.<br><br>
+					Teamire";
 }
 ?>
