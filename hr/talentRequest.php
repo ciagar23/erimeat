@@ -37,6 +37,7 @@ function getPositionType($Id){
                 <tbody>
 
                 <?php foreach($obj->readList($s) as $row) {
+                  if ($row->isApproved==0){
                 ?>
                 <tr>
                     <td><?=getJobFunction($row->jobFunctionId);?></td>
@@ -49,7 +50,7 @@ function getPositionType($Id){
                     </td>
                 </tr>
 
-              <?php } ?>
+              <?php }} ?>
                 </tbody>
             </table>
         </div>

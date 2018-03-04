@@ -10,7 +10,7 @@ $obj = new Job;
                             <div class="col-xs-12">
                                 <div class="page-title-box">
                                     <h4 class="page-title">Talent Request</h4>
-                                  
+
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ $obj = new Job;
               <td><?=$row->workEmail;?> </td>
               <td><?=$row->jobTitle;?></td>
               <td>
-                <a href="?view=jobDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
+                <a href="?view=talentDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>
             </tr>
             <?php

@@ -22,6 +22,11 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'talentDetail' :
+		$content 	= 'talentDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	case 'clientRequest' :
 		$content 	= 'clientRequest.php';
 		$template	= '../include/dashboard.php';
