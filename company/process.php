@@ -76,7 +76,7 @@ function logout()
 	//logout.php
 session_start();
 session_destroy();
-header('Location: index.php');
+header('Location: ../home/?view=logins');
 	exit;
 }
 
