@@ -38,5 +38,11 @@ $company = $obj->readOne($_GET['Id']);
                 </div>
             </div>
         </div>
+
+        <div class="card-box">
+          <button>Update</button>
+          <button>Remove</button>
+        </div>
+        
     </div>
   </div>

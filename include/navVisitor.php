@@ -7,7 +7,7 @@
             <!--Adminox-->
             <!--</a>-->
             <!-- Image Logo -->
-            <a href="index.php" class="logo m-t-5 m-l-15">
+            <a href="index.php" class="logo m-t-5  m-l-15">
               <img src="../include/assets/images/teamire-logo.png">
             </a>
         </div>

@@ -22,7 +22,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
         <script src="../include/assets/js/modernizr.min.js"></script>
 
-       
+
     </head>
 
 
@@ -34,17 +34,17 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <!-- HOME -->
 
         <section >
-           
+
                 <div class="row">
                     <div class="col-md-12">
 
-                        
+
 
                             <div class="account-pages">
                               <div class="login-left-box" >
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
-                                     
+
                                         <h2 class="text-uppercase text-center" >
                                             <a href="index.html" class="login-font">
                                                 <span >Enter your login information to access our Time Reporting and Approval System</span>
@@ -70,29 +70,29 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
 
-                                           
+
                                             <div class="form-group row text-center m-t-4">
                                                 <div class="col-2 pull-left">
                                                     <button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
                                                     <br>
-                                                    
+
                                                 </div>
-                                                
+
                                             </div>
                                             <center>
-                                             <a href="page-recoverpw.html" class="text-muted" ><small>Don't recall your account information?</small></a>
+                                             <a href="../home/?view=submitResume" class="text-muted" ><small>Employee Registration</small></a>
                                              </center>
                                         </form>
 
-                                                    
-                                         
+
+
 
                                     </div>
 
 
                                 </div>
-                                 
-                                 
+
+
                                          <footer class="footer-default">
                                             <div class="container">
                                                 <div class="row">
@@ -104,11 +104,11 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
                                         </footer>
-                                 
+
                               </div>
-                            
-                        
-                     
+
+
+
                         <!-- end wrapper -->
 
                     </div>
@@ -119,10 +119,10 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
             </div>
 
           </section>
-         
 
 
-          
+
+
 
 
           <!-- END HOME -->
