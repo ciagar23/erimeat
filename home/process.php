@@ -174,11 +174,6 @@ function sendInquiry()
 		$obj->message = $_POST["message"];
 		$obj->createOne($obj);
 
-		// Send Email
-		$content = __submitApplicationEmailMessage();
-		/* should also send email to hr and admin */
-		sendEmail($obj->email, $content);
-
 		header('Location: ../home/?view=success');
 }
 
