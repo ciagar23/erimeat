@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-02 17:27:24
+# Date: 2018-03-03 22:46:56
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -17,13 +17,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(17,'newHR','12345','new','hr','hr');
 
 #
 # Structure for table "company"
@@ -45,13 +45,13 @@ CREATE TABLE `company` (
   `jobFunctionId` varchar(11) DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (2,'','Ceres Inc','51 824 753 556','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Angela Bucks','(02) 5551 5678','(02) 7010 1111','Bacolod City','Domestic Transport','1','0');
+INSERT INTO `company` VALUES (2,'','Ceres Inc','51 824 753 556','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Angela Bucks','(02) 5551 5678','(02) 7010 1111','Bacolod City','Domestic Transport','1','1'),(3,'','Villacar Transit','61 223 111 999','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Jack Daniel','(02) 5551 5678','(02) 7010 1111','Bacolod City','Cargo Transport','6','1'),(4,'','Publiq','12 244 123 888','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','Coffee Beer','(02) 5551 5678','(02) 7010 1111','Bacolod City','Coffee Shop','2','1'),(5,'','Sleeptnot','12 778 128 091','Ceres Transport, Incorporated is a bus company under the umbrella of Sonyan Group.','angela.bucks@ceres.com','John Doe','(02) 5551 5678','(02) 7010 1111','Bacolod City','Coffee and Beer','3','1');
 
 #
 # Structure for table "dtr"
@@ -70,12 +70,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
+INSERT INTO `dtr` VALUES (5,'torredale','19:56:09','20:13:34','19:56:12','19:56:13','19:56:15','19:56:14','2018-03-02','3'),(6,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,'2018-03-02','0');
 
 #
 # Structure for table "employee"
@@ -88,12 +89,13 @@ CREATE TABLE `employee` (
   `userId` varchar(100) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (4,21,'8','2018-03-03 10:17:09');
 
 #
 # Structure for table "hr"
@@ -115,6 +117,28 @@ CREATE TABLE `hr` (
 
 
 #
+# Structure for table "‌inquiry"
+#
+
+DROP TABLE IF EXISTS `‌inquiry`;
+CREATE TABLE `‌inquiry` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(100) DEFAULT NULL,
+  `lastName` varchar(50) DEFAULT NULL,
+  `phoneNumber` varchar(100) DEFAULT NULL,
+  `workEmail` varchar(100) DEFAULT NULL,
+  `jobFunctionId` varchar(11) DEFAULT NULL,
+  `zipCode` varchar(4) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "‌inquiry"
+#
+
+
+#
 # Structure for table "interview_date"
 #
 
@@ -125,12 +149,13 @@ CREATE TABLE `interview_date` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (1,'7','2018-03-03','13:00:00'),(2,'8','2018-03-03','13:00:00');
 
 #
 # Structure for table "job"
@@ -144,6 +169,7 @@ CREATE TABLE `job` (
   `positionTypeId` int(11) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
+  `abn` varchar(50) DEFAULT NULL,
   `workEmail` varchar(100) DEFAULT NULL,
   `jobTitle` varchar(255) DEFAULT NULL,
   `businessPhone` varchar(100) DEFAULT NULL,
@@ -155,13 +181,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(1) DEFAULT '0',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (5,'1519982269',1,2,'Bus Driver','','angela.bucks@gmail.com','Operations Manager','(02) 7010 1111','6100','','','We are looking for an experience bus driver. Apply Now!','2018-03-02 17:24:31','1',''),(6,'1519982374',8,4,'Materials Engineer','','borgie.chavez@gmail.com','Head Engineer','(02) 7010 4321','6100','','','We are looking for a material engineer. Apply Now!','2018-03-02 17:24:54','1',''),(7,'1519982822',5,4,'Trainor','','babes.tesda@gmail.com','Head Trainer','(02) 7118 1237','6100','','','We are looking for a trainer.','2018-03-02 17:27:01','0','');
+INSERT INTO `job` VALUES (21,'1520040011',1,2,'Truck Driver','','12344312','torredale1014@gmail.com','Manager','1234554231','6100','bacolod city','5 years','we are looking for a truck driver to drive the truck.','2018-03-03 10:15:51','1','Dale Torre'),(22,'1520043334',1,1,'Driver','Ceres','123456','torredale1014@gmail.com','Manager','123456','6100','Bacolod City','5 years','We are hiring. Driver to drive a truck. Apply Now!','2018-03-03 10:15:34','0','Dale Torre');
 
 #
 # Structure for table "job_function"
@@ -219,13 +245,13 @@ CREATE TABLE `resume` (
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (5,0,1,'Arnold','Auto','arnold.auto@gmail.com','(02) 1239 9928','Araneta St. ','Araneta St.','Bacolod','Negros Occidental','6100','1519982487.pdf','2018-03-02 17:23:15','1'),(6,0,3,'Meme','Vicor','meme.vicor@gmail.com','(02) 5551 5678','Burgos Avenue','Burgos Avenue','Bacolod','Negros Occidental','6100','1519982542.pdf','2018-03-02 17:22:22','0');
+INSERT INTO `resume` VALUES (8,21,1,'Dale','Torre','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','1520043390.pdf','2018-03-03 10:16:56','1');
 
 #
 # Structure for table "user"
@@ -246,3 +272,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
+INSERT INTO `user` VALUES (4,'torredale1014@gmail.com','temppassword','Dale','Torre','employee');

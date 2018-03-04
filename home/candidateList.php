@@ -10,61 +10,19 @@ function getJobFunction($Id){
 ?>
 
 <div class="container-fluid">
-
+    <div align="center" class="m-t-50">
+    <button class="btn btn-primary" style="width: 20%;">Call +61452 364 793</button>
+    <button class="btn btn-primary" style="width: 20%;" onclick="location.href='../home/?view=inquiryForm'">Send an Email</button>
+    </div>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card-box">
-                <h4 class="header-title m-t-0 m-b-20">Lorem Ipsum</h4>
-                <p>Lorem Ipsum</p>
-
-                <select class="form-control select2">
-                    <option>Select</option>
-                    <optgroup label="Lorem">
-                        <option value="AK">Lorem</option>
-                        <option value="HI">Lorem</option>
-                    </optgroup>
-                    <optgroup label="Ipsum">
-                        <option value="CA">Ipsum</option>
-                        <option value="NV">Ipsum</option>
-                        <option value="OR">Ipsum</option>
-                    </optgroup>
-                    <optgroup label="Dolor">
-                        <option value="AZ">Dolor</option>
-                        <option value="CO">Dolor</option>
-                        <option value="ID">Dolor</option>
-                    </optgroup>
-                </select>
-
-                <p class="m-t-30">Lorem Ipsum<p>
-                  <select class="form-control select2">
-                      <option>Select</option>
-                      <optgroup label="Lorem">
-                          <option value="AK">Lorem</option>
-                          <option value="HI">Lorem</option>
-                      </optgroup>
-                      <optgroup label="Ipsum">
-                          <option value="CA">Ipsum</option>
-                          <option value="NV">Ipsum</option>
-                          <option value="OR">Ipsum</option>
-                      </optgroup>
-                      <optgroup label="Dolor">
-                          <option value="AZ">Dolor</option>
-                          <option value="CO">Dolor</option>
-                          <option value="ID">Dolor</option>
-                      </optgroup>
-                  </select>
-            </div>
-        </div>
-
-        <div class="col-md-8">
-
+        <div class="col-md-12">
           <?php foreach($obj->readList($s) as $row) {?>
           <div class="card-box">
             <div class="col-md-10">
               <h4 class="header-title mt-0 m-b-20"><?=getJobFunction($row->jobFunctionId); ?></h4>
             </div>
             <div class="col-md-2">
-              <button type="button" class="btn btn-success btn-rounded w-md waves-effect waves-light">View</button>
+              <button type="button" class="" onclick="location.href='../home/?view=candidateDetail&Id=<?=$row->Id;?>'">View</button>
             </div>
             <div class="clearfix"></div>
             <div class="">

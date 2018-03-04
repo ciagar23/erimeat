@@ -496,6 +496,25 @@ class Company {
 	}
 }
 
+class Inquiry {
+
+	function createOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("insert into inquiry set firstName='$obj->firstName',
+																 lastName='$obj->lastName',
+																 phoneNumber='$obj->phoneNumber',
+																 workEmail='$obj->workEmail',
+																 jobFunctionId='$obj->jobFunctionId',
+																 zipCode='$obj->zipCode',
+																 message='$obj->message'
+																 ");
+	$pdo->execute();
+	Database::disconnect();
+	}
+}
+
+
+
 /* =====================================Functions===================================== */
 
 /* Retrieve one record */

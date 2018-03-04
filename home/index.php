@@ -86,8 +86,18 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
+	case 'candidateDetail' :
+		$content 	= 'candidateDetail.php';
+		$template	= '../include/template.php';
+		break;
+
 	case 'clientForm' :
 		$content 	= 'clientForm.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'inquiryForm' :
+		$content 	= 'inquiryForm.php';
 		$template	= '../include/template.php';
 		break;
 
