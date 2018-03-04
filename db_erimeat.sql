@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-04 22:04:59
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-03-04 22:53:40
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
 
@@ -73,13 +73,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (5,0,'torredale','19:56:09','20:13:34','19:56:12','19:56:13',NULL,NULL,'19:56:15','19:56:14','2018-03-02','3'),(6,0,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','0'),(7,1,'E1520132026','12:07:26','12:08:36','12:08:31','12:08:32','12:08:33','12:08:34','12:08:36','12:08:35','2018-03-03','4'),(8,1,'E1520132026','12:25:37','12:25:45',NULL,NULL,NULL,NULL,'12:25:44','12:25:43','2018-03-02','4'),(9,1,'E1520132026','12:26:13','12:26:17',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-04','4');
+INSERT INTO `dtr` VALUES (5,0,'torredale','19:56:09','20:13:34','19:56:12','19:56:13',NULL,NULL,'19:56:15','19:56:14','2018-03-02','3'),(6,0,'torredale1014@gmail.com ','20:20:22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-02','0'),(7,1,'E1520132026','12:07:26','12:08:36','12:08:31','12:08:32','12:08:33','12:08:34','12:08:36','12:08:35','2018-03-03','4'),(8,1,'E1520132026','12:25:37','12:25:45',NULL,NULL,NULL,NULL,'12:25:44','12:25:43','2018-03-02','4'),(9,1,'E1520132026','12:26:13','12:26:17',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-04','4'),(10,0,'1520158820','22:40:26','22:40:34','22:40:28','22:40:29',NULL,NULL,'22:40:32','22:40:31','2018-03-04','4');
 
 #
 # Structure for table "employee"
@@ -141,28 +141,6 @@ CREATE TABLE `inquiries` (
 #
 
 INSERT INTO `inquiries` VALUES (1,'sdfsdf','asdfdsf','sdf','asdf','asdf','asdf','asdf'),(2,'khkjh',NULL,NULL,NULL,NULL,NULL,NULL),(3,'Dale','Torre','2345678909','torredale1014@gmail.com','1','6100','why not coconut bahug bilat');
-
-#
-# Structure for table "‌inquiry"
-#
-
-DROP TABLE IF EXISTS `‌inquiry`;
-CREATE TABLE `‌inquiry` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) DEFAULT NULL,
-  `lastName` varchar(50) DEFAULT NULL,
-  `phoneNumber` varchar(100) DEFAULT NULL,
-  `workEmail` varchar(100) DEFAULT NULL,
-  `jobFunctionId` varchar(11) DEFAULT NULL,
-  `zipCode` varchar(4) DEFAULT NULL,
-  `message` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-#
-# Data for table "‌inquiry"
-#
-
 
 #
 # Structure for table "interview_date"
@@ -295,7 +273,7 @@ CREATE TABLE `timesheet` (
   `status` varchar(2) DEFAULT '0',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
