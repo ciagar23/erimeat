@@ -11,6 +11,9 @@ $job = $obj->readOne($_GET['id']);
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
             <div class="panel-body">
                 <div class="text-left">
+                    <p class="text-muted font-13"><strong>Job Reference Number :</strong>
+                      <span class="m-l-15"><?=$job->refNum;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Job Position :</strong>
                       <span class="m-l-15"><?=$job->position;?></span>
                     </p>

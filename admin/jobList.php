@@ -30,6 +30,7 @@ function getJobFunction($Id){
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
+              <th>Job Reference Number</th>
               <th>Job Category</th>
               <th>Company Name</th>
               <th>Action</th>
@@ -40,6 +41,7 @@ function getJobFunction($Id){
               if ($row->isApproved==1){
             ?>
             <tr>
+              <td><?=$row->refNum;?></td>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?> </td>
               <td>
