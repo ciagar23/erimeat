@@ -20,6 +20,12 @@ function getJobFunction($Id){
                     <p class="text-muted font-13"><strong>Candidate Name :</strong>
                       <span class="m-l-15"><?=$resume->firstName;?> <?=$resume->lastName;?></span>
                     </p>
+                    <p class="text-muted font-13"><strong>Candidate ABN :</strong>
+                      <span class="m-l-15"><?=$resume->abn;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Tax File Number :</strong>
+                      <span class="m-l-15"><?=$resume->taxNumber;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Candidate Email :</strong>
                       <span class="m-l-15"><?=$resume->email;?></span>
                     </p>
@@ -43,6 +49,9 @@ function getJobFunction($Id){
                     </p>
                     <p class="text-muted font-13"><strong>Postal Code :</strong>
                       <span class="m-l-15"><?=$resume->zipCode;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Cover Letter :</strong>
+                      <span class="m-l-15"><?=$resume->coverLetter;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Resume :</strong>
                       <span class="m-l-15"><?=$resume->uploadedResume;?></span>

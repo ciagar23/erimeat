@@ -25,6 +25,7 @@ $obj = new Company;
           <thead>
             <tr>
               <th>Company Name</th>
+              <th>Company ABN</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -34,6 +35,7 @@ $obj = new Company;
             ?>
             <tr>
               <td><?=$row->name;?> </td>
+              <td><?=$row->abn;?> </td>
               <td>
                 <a href="?view=companyDetail&Id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>

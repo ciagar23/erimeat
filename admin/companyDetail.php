@@ -1,6 +1,12 @@
 <?php
 $obj = new Company;
 $company = $obj->readOne($_GET['Id']);
+
+function getJobFunction($Id){
+  $obj = new JobFunction;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
 ?>
 
 
@@ -11,14 +17,20 @@ $company = $obj->readOne($_GET['Id']);
             <h4 class="header-title mt-0 m-b-20">Company Detail</h4>
             <div class="panel-body">
                 <div class="text-left">
+                    <p class="text-muted font-13"><strong>Company Username :</strong>
+                      <span class="m-l-15"><?=$company->username;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Company Name :</strong>
                       <span class="m-l-15"><?=$company->name;?></span>
                     </p>
-                    <p class="text-muted font-13"><strong>Username :</strong>
-                      <span class="m-l-15"><?=$company->username;?></span>
+                    <p class="text-muted font-13"><strong>Company ABN :</strong>
+                      <span class="m-l-15"><?=$company->abn;?></span>
                     </p>
-                    <p class="text-muted font-13"><strong>Description :</strong>
-                      <span class="m-l-15"><?=$company->description;?></span>
+                    <p class="text-muted font-13"><strong>Job Category :</strong>
+                      <span class="m-l-15"><?=getJobFunction($company->jobFunctionId);?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Department :</strong>
+                      <span class="m-l-15"><?=$company->department;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Email :</strong>
                       <span class="m-l-15"><?=$company->email;?></span>
@@ -34,6 +46,9 @@ $company = $obj->readOne($_GET['Id']);
                     </p>
                     <p class="text-muted font-13"><strong>Address :</strong>
                       <span class="m-l-15"><?=$company->address;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Description :</strong>
+                      <span class="m-l-15"><?=$company->description;?></span>
                     </p>
                 </div>
             </div>
