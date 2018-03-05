@@ -48,11 +48,6 @@
     width: 96.66666666666666%;
     color: #fff;
 }
-.main-text h1 {
-	  color: #fff;
-	   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-}
 .btn-min-block
 {
     min-width: 170px;
@@ -93,7 +88,7 @@
 
 .carousel-fade .carousel-control {
   z-index: 2;
-} 
+}
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-fade .carousel-inner > .item.next,
     .carousel-fade .carousel-inner > .item.active.right {
@@ -114,7 +109,7 @@
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0);
     }
-} 
+}
 .carousel-caption {
     text-shadow: 0 1px 4px rgba(0,0,0,.9);
   font-size:17px
@@ -197,7 +192,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 1%;
-      
+
 
 
 }

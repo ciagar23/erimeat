@@ -163,7 +163,7 @@ File: Components
     color: #3399cc;
     font-weight: 650;
     font-size: 17px;
-    line-height: 20px;
+    line-height: 0px;
     padding-left: 25px;
     padding-right: 25px; }
     #topnav .navigation-menu > li > a:hover {
@@ -5622,3 +5622,9 @@ ul.sitemap-icon ul li a {
 /** Text Bold **/
   .text-bold {
     font-weight: bold; }
+
+/** Carousel text **/
+
+  .carousel-title {
+    font-size: 40px;
+    font-family: "Century Gothic", sans-serif; }
