@@ -23,7 +23,7 @@ function getPositionName($Id){
       <h2>60</h2>
       <p>Views</p>
     </div>
-    <a href="../home/?view=application&id=<?=$job->Id;?>"><button class="btn btn-primary" style="width: 50%;">Apply Now</button></a>
+    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 50%;">Apply Now</button>
     <hr>
     <!-- Job Information -->
     <div class="row cleafix">
@@ -70,7 +70,7 @@ function getPositionName($Id){
       <p>Views</p>
     </div>
     <div class="clearfix"></div>
-    <a href="../home/?view=application&id=<?=$job->Id;?>"><button class="btn btn-primary" style="width: 50%;">Apply Now</button></a>
+    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 50%;">Apply Now</button>
     <hr>
     <div class="m-b-30">
     <h3><?=$job->address;?></h3>
@@ -96,7 +96,7 @@ function getPositionName($Id){
           <input placeholder="City or Zip" class="job-detail-search-form" type="text" id="edit-keywords"
           name="keywords" value="" size="60" maxlength="128">
         </fieldset>
-        <a href="../home/?view=application&id=<?=$job->Id;?>"><button class="btn btn-primary" style="width: 100%; padding-left: 25%;">Apply Now</button></a>
+        <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 100%; padding-left: 25%;">Apply Now</button>
       </form>
     </div>
   </div>
