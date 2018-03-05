@@ -35,8 +35,8 @@ function getJobFunction($Id){
                 <?php foreach($obj->readList($s) as $row) {
                   if ($row->jobId!=0 && $row->isApproved==0) {?>
                 <tr>
-                    <td><?=getJobName($row->jobId); ?></td>
-                    <td><?=getJobFunction($row->jobFunctionId); ?></td>
+                    <td><?=getJobName($row->jobId);?></td>
+                    <td><?=getJobFunction($row->jobFunctionId);?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=$row->city; ?>, <?=$row->state; ?></td>
                     <td>
