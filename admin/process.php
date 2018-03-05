@@ -98,7 +98,7 @@ function jobRequest()
 		$result = 1;
 	}
 	else{
-		$result = -1;
+		$result = 0;
 	}
 
 	$obj = new Job;
@@ -112,7 +112,7 @@ function jobRequest()
 	sendEmail($newObj->workEmail, $content);
 }else{
 	// Send email
-	$content = __deniedJobRequestEmailMessage();
+	$content = __infoJobRequestEmailMessage();
 	sendEmail($newObj->workEmail, $content);
 }
 
@@ -193,8 +193,9 @@ function __approvedJobRequestEmailMessage(){
 					Teamire";
 }
 
-function __deniedJobRequestEmailMessage(){
-	return "We apologized we have denied your request as it did not match our requirements.<br><br>
+function __infoJobRequestEmailMessage(){
+	return "Hi, we need more information regarding your request. Someone from our team<br>
+					will contact you.<br><br>
 					Teamire";
 }
 ?>
