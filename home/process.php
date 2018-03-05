@@ -104,6 +104,8 @@ function submitResume(){
 			$obj->jobFunctionId = $_POST["jobFunctionId"];
 			$obj->firstName = $_POST["firstName"];
 			$obj->lastName = $_POST["lastName"];
+			$obj->abn = $_POST["abn"];
+			$obj->taxNumber = $_POST["taxNumber"];
 			$obj->email = $_POST["email"];
 			$obj->phoneNumber = $_POST["phoneNumber"];
 			$obj->address1 = $_POST["address1"];
@@ -112,6 +114,7 @@ function submitResume(){
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->speedtest = $_POST["speedtest"];
+			$obj->coverLetter = $_POST["coverLetter"];
 			$obj->uploadedResume = $uploadResume;
 			$obj->uploadedSpecs = $uploadSpecs;
 			$obj->createOne($obj);
@@ -130,14 +133,17 @@ function submitResume(){
 
 function submitApplication()
 {
-		$upload = uploadFile($_FILES['upload_file']);
-		if ($upload)
+		$uploadResume = uploadFile($_FILES['upload_file']);
+		$uploadSpecs = uploadFile($_FILES['upload_specs']);
+		if ($uploadResume or $uploadSpecs)
 		{
 			$obj = new Resume;
 			$obj->jobId = $_POST["jobId"];
 			$obj->jobFunctionId = $_POST["jobFunctionId"];
 			$obj->firstName = $_POST["firstName"];
 			$obj->lastName = $_POST["lastName"];
+			$obj->abn = $_POST["abn"];
+			$obj->taxNumber = $_POST["taxNumber"];
 			$obj->email = $_POST["email"];
 			$obj->phoneNumber = $_POST["phoneNumber"];
 			$obj->address1 = $_POST["address1"];
@@ -145,7 +151,10 @@ function submitApplication()
 			$obj->city = $_POST["city"];
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
-			$obj->uploadedResume = $upload;
+			$obj->speedtest = $_POST["speedtest"];
+			$obj->coverLetter = $_POST["coverLetter"];
+			$obj->uploadedResume = $uploadResume;
+			$obj->uploadedSpecs = $uploadSpecs;
 			$obj->createOne($obj);
 
 			// Send Email

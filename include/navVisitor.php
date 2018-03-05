@@ -15,8 +15,7 @@
         <div class="navigation-menu col-md-6 " style="padding: 40px;">
           <div class="pull-right">
             <li>
-              <a class="m-l-5 m-r-15" href="../home/?view=clientForm">Register</a>
-              <a class="m-l-5 m-r-15" href="../home/?view=projects">Projects</a>
+              <a class="m-l-5 m-r-15" href="../home/?view=projects">Special Projects</a>
               <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
               <a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a>
               <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a>
@@ -55,16 +54,17 @@
     <ul class="navigation-menu">
 
         <li class="has-submenu">
-            <a href="#">Employer
+            <a href="#">Employers
             <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=hiringForm">Request Talent</a></li>
                 <li><a href="../home/?view=searchResume">Search Candidates</a></li>
+                <li><a href="../home/?view=clientForm">Employer Registration</a></li>
             </ul>
         </li>
 
         <li class="has-submenu">
-            <a href="#">Job Seeker
+            <a href="#">Job Seekers
             <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
             <ul class="submenu">
                 <li><a href="../home/?view=searchJob">Search Job</a></li>

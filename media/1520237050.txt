@@ -1,0 +1,70 @@
+* Projects
+	* change to special projects = DONE
+	* tie up to facebook of teamire
+	* pictures, documentation and content
+	* Like blog site -> scroll down only
+	* From teamire Admin - file maintenance for special projects
+
+* Navigation
+	* employer to employers = DONE
+	* job seeker to job seekers = DONE
+
+* Register
+	* Move to employers nav = DONE
+	* Change to employer registration = DONE
+	* Client Request change to Employer Registration Form = DONE
+	* Company Representative -> Employer Representative = DONE
+	* Company ABN -> Employer ABN = DONE
+	* Company Name -> Employer's Name = DONE
+	
+* Download forms
+	* Admin Dashboard for uploading files to downloads
+
+* Login Page button back to home
+
+* Counter if how many logins
+
+* Page for employers faq and job seeker faq
+
+* Remove search bar for office near you
+
+* Candidate Resume
+	* Change description to cover letter
+	* Add field to ABN
+	* employee tax file number nor required -> for australian based only
+
+
+* Employee dashboard
+	* Standard Invoice Template
+	* auto genereate Reference Number for invoice
+	* After submit send to hr and admin email and can see in their dashboard
+	* Salesperson change to employee name
+	* due date -> paid period
+	* quantity -> # of hrs
+	* description -> work position, name client
+	* unit price -> hourly rate
+	* add column -> GST 10%
+	* sales tax -> GST Tax 10%
+	* Remove address
+	* make all checks payable to employee name
+	* Approved Timesheet
+		* Ref # of Employee, employee tax file number, Employee ABN and Company ABN 
+	
+
+* Our Services
+	* Our services extend to all areas of supply chain management
+	
+* Site Map
+	* About Us  Our Purpose change to Our Vision
+	* Our Purpose change to Our Vision
+
+* Legal
+	* Terms of use
+	* Company
+	* Disclaimer
+	* Admin Dashboard for uploading files
+
+
+=============================
+every end of the week
+	* Approve timesheet -> hr -> company -> hr -> notify employee to send invoice

@@ -4,15 +4,6 @@ $jf->readList();
 ?>
 
   <h2 class="text-center m-t-30 m-b-30">Contact Us</h2>
-  <h3 class="text-center m-t-30 m-b-30">Enter your city or ZIP code to find an office near you.</h3>
-      <div class="col-md-9 center-page">
-          <div class="input-group m-t-5">
-              <input type="text" id="" name="" class="form-control" style="height: 70px; border-color: #727B80;" placeholder="Job Title, Skills or Keywords">
-              <span class="input-group-btn">
-                  <button type="button" class="btn stepy-finish waves-light btn-primary"><i class="fa fa-search"></i> SEARCH </button>
-              </span>
-          </div>
-      </div>
       <div class="clearfix"></div>
       <!--Start 2 panels -->
       <div class="container-80 center-page">
