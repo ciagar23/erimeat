@@ -60,7 +60,7 @@ substr(round(microtime(true)), -6)
 	$hrmessage = __hrEmailMessage();
 	$adminmessage = __adminEmailMessage();
 
-	sendEmail($obj->workEmail, $content);
+	sendEmail($job->obj['workEmail'], $content);
 	//for HR
 	sendEmail('rgmak12@gmail.com',$hrmessage);
 	//for admin
@@ -106,29 +106,29 @@ function submitResume(){
 		if ($upload)
 		{
 			$res = resume();
-			$res->['jobId'] = "0";
-			$res->['jobFunctionId'] = $_POST["jobFunctionId"];
-			$res->['firstName'] = $_POST["firstName"];
-			$res->['lastName']= $_POST["lastName"];
-			$res->['abn'] = $_POST["abn"];
-			$res->['taxNumber'] = $_POST["taxNumber"];
-			$res->['email'] = $_POST["email"];
-			$res->['phoneNumber'] = $_POST["phoneNumber"];
-			$res->['address1'] = $_POST["address1"];
-			$res->['address2'] = $_POST["address2"];
-			$res->['city'] = $_POST["city"];
-			$res->['state'] = $_POST["state"];
-			$res->['zipCode'] = $_POST["zipCode"];
-			$res->['speedtest'] = $_POST["speedtest"];
-			$res->['coverLetter'] = $_POST["coverLetter"];
-			$res->['uploadedResume'] = $upload;
-			$res->['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->obj['jobId'] = "0";
+			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['firstName'] = $_POST["firstName"];
+			$res->obj['lastName']= $_POST["lastName"];
+			$res->obj['abn'] = $_POST["abn"];
+			$res->obj['taxNumber'] = $_POST["taxNumber"];
+			$res->obj['email'] = $_POST["email"];
+			$res->obj['phoneNumber'] = $_POST["phoneNumber"];
+			$res->obj['address1'] = $_POST["address1"];
+			$res->obj['address2'] = $_POST["address2"];
+			$res->obj['city'] = $_POST["city"];
+			$res->obj['state'] = $_POST["state"];
+			$res->obj['zipCode'] = $_POST["zipCode"];
+			$res->obj['speedtest'] = $_POST["speedtest"];
+			$res->obj['coverLetter'] = $_POST["coverLetter"];
+			$res->obj['uploadedResume'] = $upload;
+			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
 			$res->create();
 
 			// Send email
 			$content = __submitResumeEmailMessage();
 			/* should also send email to hr and admin */
-			sendEmail($obj->email, $content);
+			sendEmail($res->obj['email'] , $content);
 
 			header('Location: ../home/?view=success');
 		}
@@ -152,20 +152,20 @@ function submitApplication()
 			$res->obj['taxNumber'] = $_POST["taxNumber"];
 			$res->obj['email'] = $_POST["email"];
 			$res->obj['phoneNumber'] = $_POST["phoneNumber"];
-			$res->['address1'] = $_POST["address1"];
-			$res->['address2'] = $_POST["address2"];
-			$res->['city'] = $_POST["city"];
-			$res->['state'] = $_POST["state"];
-			$res->['zipCode'] = $_POST["zipCode"];
-			$res->['speedtest'] = $_POST["speedtest"];
-			$res->['coverLetter'] = $_POST["coverLetter"];
-			$res->['uploadedResume'] = $upload;
-			$res->['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->obj['address1'] = $_POST["address1"];
+			$res->obj['address2'] = $_POST["address2"];
+			$res->obj['city'] = $_POST["city"];
+			$res->obj['state'] = $_POST["state"];
+			$res->obj['zipCode'] = $_POST["zipCode"];
+			$res->obj['speedtest'] = $_POST["speedtest"];
+			$res->obj['coverLetter'] = $_POST["coverLetter"];
+			$res->obj['uploadedResume'] = $upload;
+			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
 			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();
 			/* should also send email to hr and admin */
-			sendEmail($obj->email, $content);
+			sendEmail($res->obj['email'], $content);
 			header('Location: ../home/?view=success');
 		}
 		else{
@@ -181,9 +181,9 @@ function sendInquiry()
 		$inq->obj['phoneNumber'] = $_POST["phoneNumber"];
 		$inq->obj['jobFunctionId'] = $_POST["jobFunctionId"];
 		$inq->obj['workEmail'] = $_POST["workEmail"];
-		$inq->obj['zipCode'] $_POST["zipCode"];
-		$inq->obj['message'] = $_POST["message"];
-		$inq->create());
+		$inq->obj['zipCode'] =  $_POST["zipCode"];
+		$inq->obj['message'] 	 = $_POST["message"];
+		$inq->create();
 
 		header('Location: ../home/?view=success');
 }
