@@ -1,7 +1,7 @@
 <?php
 $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
 $user = $_SESSION['employee_session'];
-$obj = new DTR;
+$dtrList = dtr()->filter("owner='$user'");
 
 function get_time_difference($record)
 {
@@ -31,7 +31,7 @@ function get_time_difference($record)
                         </tr>
                     </thead>
                     <tbody>
-                     <?php foreach($obj->readList($user) as $row) {
+                     <?php foreach($dtrList as $row) {
                        if ($row->timesheetId==$timesheetId){
                        ?>
                           <tr>

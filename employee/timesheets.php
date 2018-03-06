@@ -1,6 +1,7 @@
 <?php
 $status = (isset($_GET['status']) && $_GET['status'] != '') ? $_GET['status'] : '';
-$obj = new Timesheet;
+$user = $_SESSION['employee_session'];
+$timesheets = timesheet()->filter("employee='$user'");
 ?>
 <div class="row">
     <div class="col-xs-12">
@@ -24,7 +25,7 @@ $obj = new Timesheet;
         </tr>
       </thead>
       <tbody>
-        <?php foreach($obj->readList($_SESSION['employee_session']) as $row) {
+        <?php foreach($timesheets as $row) {
           if ($row->status == $status || $status=="")
           {
         ?>
