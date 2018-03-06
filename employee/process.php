@@ -237,27 +237,19 @@ function submitTimesheet()
 {
 	$currentUser = $_SESSION['employee_session'];
 	// Get jobId
-	$emp = new Employee;
-	$newEmp = $emp->readOne($currentUser);
+	$emp = employee()->get("username='$currentUser'");
 
-	// Create timesheetId
-	$ts = new Timesheet;
-	$ts->jobId = $newEmp->jobId;
-	$ts->employee = $currentUser;
-	$ts->name = 'Timesheet as of ' . date("Y-m-d H:i:s");
-	$ts->createOne($ts);
+	$ts = timesheet();
+	$ts->obj['jobId'] = $emp->jobId;
+	$ts->obj['employee'] = $currentUser;
+	$ts->obj['name'] = 'Timesheet as of ' . date("Y-m-d H:i:s");
+	$ts->create();
 
-	// Get latest timesheet Id
-	$db = Database::connect();
-	$pdo = $db->prepare("select * from timesheet where employee='$currentUser' ORDER BY ID DESC LIMIT 1");
-	$pdo->execute();
-	$timesheetData = $pdo->fetch(PDO::FETCH_OBJ);
+	$tsData = timesheet()->get("employee='$currentUser' ORDER BY ID DESC LIMIT 1");
 
-	$pdo = $db->prepare("update dtr set timesheetId = '$timesheetData->Id'
-													where timesheetId = '0' and owner = '$currentUser'
-															");
-	$pdo->execute();
-	Database::disconnect();
+	$dtr = dtr();
+	$dtr->obj['timesheetId'] = $tsData->Id;
+	$dtr->update("timesheetId = '0' and owner = '$currentUser'");
 
 	// Update all dtr
 	header('Location: index.php?a='.$ts->Id);
