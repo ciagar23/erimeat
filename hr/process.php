@@ -80,18 +80,20 @@ header('Location: index.php');
 
 function denyResume()
 {
+	$Id=$_GET['Id'];
 	$resume = resume();
 	$resume->obj['isApproved'] = "-1";
-	$resume->update("$_GET['Id']");
+	$resume->update("Id='$Id'");
 
 	header('Location: index.php?view=applicants');
 }
 
 function approveTimesheet()
 {
+	$Id=$_GET['Id'];
 	$timesheet = timesheet();
-	$timesheet->status = "1";
-	$timesheet->update("$_GET['Id']");
+	$timesheet->obj['status'] = "1";
+	$timesheet->update("Id='$Id'");
 
 	header('Location: index.php?view=timekeepingCompanyList');
 }
@@ -99,21 +101,24 @@ function approveTimesheet()
 function setInterviewDate()
 {
 	$email = $_POST['email'];
+	$Id = $_POST['resumeId'];
+	$date = $_POST['date'];
+	$time = $_POST['time'];
 
 	$intDate = interview_date();
-	$intDate->resumeId = "$_POST['resumeId']";
-	$intDate->date = "$_POST['date']";
-	$intDate->time = "$_POST['time']";
+	$intDate->obj['resumeId'] = "$Id";
+	$intDate->obj['date'] = "$date";
+	$intDate->obj['time'] = "$time";
 	$intDate->create();
 
 	$resume = resume();
-	$resume->isApproved = "1";
-	$resume->update("$_POST['resumeId']");
+	$resume->obj['isApproved'] = "1";
+	$resume->update("Id='$Id'");
 
 	$content = "We have considered your application. Please be available on the schedule below<br>
 							for your interview.<br><br>
-							Date = $intDate->date<br>
-							Time = $intDate->time<br><br>
+							Date = $intDate->obj['date']<br>
+							Time = $intDate->obj['time']<br><br>
 							Teamire";
 	sendEmail($email, $content);
 
