@@ -1,18 +1,16 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
-$obj = new Job;
+$jobList = job()->all();
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
-  echo $job->option;
+  $jobFunc = job_function()->get("Id='$Id'");
+  echo $jobFunc->option;
 }
 
 function getPositionType($Id){
-  $obj = new PositionType;
-  $pos = $obj->readOne($Id);
-  echo $pos->option;
+  $position = position_type()->get("Id='$Id'");
+  echo $position->option;
 }
 
 ?>
@@ -36,7 +34,7 @@ function getPositionType($Id){
                 </thead>
                 <tbody>
 
-                <?php foreach($obj->readList($s) as $row) {
+                <?php foreach($jobList as $row) {
                   if ($row->isApproved==0){
                 ?>
                 <tr>

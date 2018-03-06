@@ -1,6 +1,6 @@
 <?php
 $user = (isset($_GET['user']) && $_GET['user'] != '') ? $_GET['user'] : '';
-$obj = new Timesheet;
+$timeSheet = timesheet()->all();
 ?>
 <div class="row">
     <div class="col-xs-12">
@@ -24,7 +24,7 @@ $obj = new Timesheet;
         </tr>
       </thead>
       <tbody>
-        <?php foreach($obj->readList($user) as $row) {
+        <?php foreach($timeSheet as $row) {
           if ($row->status == 0)
           {
         ?>

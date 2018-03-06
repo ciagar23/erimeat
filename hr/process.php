@@ -1,11 +1,19 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
 switch ($action) {
+
+	case 'login' :
+	login();
+	break;
+
+	case 'logout' :
+	logout();
+	break;
 
 	case 'addExperience' :
 		addExperience();
@@ -17,18 +25,6 @@ switch ($action) {
 
 	case 'clientRequest' :
 		clientRequest();
-		break;
-
-	case 'login' :
-		login();
-		break;
-
-	case 'update' :
-		update();
-		break;
-
-	case 'logout' :
-		logout();
 		break;
 
 	case 'changepassword' :
@@ -61,10 +57,9 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Admin::login($username, $password, 'hr');
+	$result = admin()->get("username='$username' and password = '$password' and level='hr'");
 
 	if ($result){
-		session_start();
 		$_SESSION['hr_session'] = $username;
 		header('Location: index.php');
 	}
@@ -83,40 +78,22 @@ header('Location: index.php');
 	exit;
 }
 
-function update()
-{
-	$obj = new Profile;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
-
-	header('Location: ../user/?view=profileDisplay');
-}
-
 function denyResume()
 {
-	$obj = new Resume;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = -1;
-	$obj->updateOne($newObj);
+	$Id=$_GET['Id'];
+	$resume = resume();
+	$resume->obj['isApproved'] = "-1";
+	$resume->update("Id='$Id'");
 
 	header('Location: index.php?view=applicants');
 }
 
 function approveTimesheet()
 {
-	$obj = new Timesheet;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->status = 1;
-	$obj->updateOne($newObj);
+	$Id=$_GET['Id'];
+	$timesheet = timesheet();
+	$timesheet->obj['status'] = "1";
+	$timesheet->update("Id='$Id'");
 
 	header('Location: index.php?view=timekeepingCompanyList');
 }
@@ -124,22 +101,22 @@ function approveTimesheet()
 function setInterviewDate()
 {
 	$email = $_POST['email'];
+	$Id = $_POST['resumeId'];
 
-	$intObj = new interviewDate;
-	$intObj->resumeId = $_POST['resumeId'];
-	$intObj->date = $_POST['date'];
-	$intObj->time = $_POST['time'];
-	$intObj->createOne($intObj);
+	$intDate = interview_date();
+	$intDate->obj['resumeId'] = $_POST['resumeId'];
+	$intDate->obj['date'] = $_POST['date'];
+	$intDate->obj['time'] = $_POST['time'];
+	$intDate->create();
 
-	$obj = new Resume;
-	$newObj = $obj->readOne($_POST['resumeId']);
-	$newObj->isApproved = 1;
-	$obj->updateOne($newObj);
+	$resume = resume();
+	$resume->obj['isApproved'] = "1";
+	$resume->update("Id='$Id'");
 
 	$content = "We have considered your application. Please be available on the schedule below<br>
 							for your interview.<br><br>
-							Date = $intObj->date<br>
-							Time = $intObj->time<br><br>
+							Date = $intDate->obj['date']<br>
+							Time = $intDate->obj['time']<br><br>
 							Teamire";
 	sendEmail($email, $content);
 
@@ -156,43 +133,42 @@ function hireApplicant()
 		$result = '-1';
 	}
 
-	$obj = new Resume;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isHired = $result;
-	$obj->updateOne($newObj);
+	$Id = $_GET['Id'];
+	$resume = resume();
+	$resume->obj['isHired'] = $result;
+	$resume->update("Id='$Id'");
 
 	header('Location: index.php?view=scheduleInterview');
 }
 
 function __createEmployeeLogin($Id, $jobId){
 
-	$resume = new Resume;
-	$resume = $resume->readOne($Id);
+	$resume = resume()->get("Id='$Id'");
 
 	// Create account
-	$obj = new Profile;
-	$obj->username =  "E" . round(microtime(true));
-	$obj->password = "temppassword";
-	$obj->firstName = $resume->firstName;
-	$obj->lastName = $resume->lastName;
-	$obj->level = "employee";
-	$obj->createOne($obj);
+	$user = user();
+	$user->obj['username'] =  "E" . round(microtime(true));
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $resume->firstName;
+	$user->obj['lastName'] = $resume->lastName;
+	$user->obj['level'] = "employee";
+	$user->create();
 
-	$emp = new Employee;
-	$emp->jobId = $jobId;
-	$emp->username = $obj->username;
-	$emp->createDate = 'NOW()';
-	$emp->createOne($emp);
+	$emp = employee();
+	$emp->obj['jobId'] = $jobId;
+	$emp->obj['username'] = $obj->username;
+	$emp->obj['createDate'] = 'NOW()';
+	$emp->create();
 
 	// Send email
 	$content = "Congratulations!<br><br>
 							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
-							Username: $obj->username <br>
-							Password: $obj->password <br><br>
+							Username: $user->obj['username'] <br>
+							Password: $user->obj['password'] <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($resume->email, $content);
+	sendEmail($resume->obj['email'], $content);
 }
 
 function clientRequest()
@@ -210,45 +186,45 @@ function clientRequest()
 
 function __createClientLogin($Id){
 	// Get Detail
-	$comp = new Company;
-	$comp = $comp->readOne($Id);
+	$comp = company()->get("Id='$Id'");
 
 	// Create account
 	$obj = new Profile;
-	$obj->username = "C" . $comp->abn;
-	$obj->password = "temppassword";
-	$obj->firstName = $comp->contactPerson;
-	$obj->lastName = $comp->name;
-	$obj->level = "company";
-	$obj->createOne($obj);
+	$user = user();
+	$user->obj['username'] = "C" . $comp->abn;
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $comp->contactPerson;
+	$user->obj['lastName'] = $comp->name;
+	$user->obj['level'] = "company";
+	$obj->create();
 
 	// Update Company
-	$comp = new Company;
-	$newComp = $comp->readOne($Id);
-	$newComp->username = $obj->username;
-	$comp->updateOne($newComp);
+	$comp = company();
+	$comp->obj['username'] = $obj->username;
+	$comp->update("Id='$Id'");
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $obj->username <br>
-							Password: $obj->password <br><br>
+							Username: $user->obj['username'] <br>
+							Password: $user->obj['password'] <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($newComp->email, $content);
+	sendEmail($comp->obj['email'], $content);
 }
 
 function changepassword()
 {
+	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
 
 	if($password == $password2){
 		if($password != 'temppassword'){
 			$obj = new Profile;
-			$newObj = $obj->readOne($_POST['username']);
-			$newObj->password = $password;
-			$obj->updateOne($newObj);
+			$user = user();
+			$user->obj['password'] = $password;
+			$user->update("username=$username");
 
 			header('Location: ../account/');
 		}
@@ -270,19 +246,19 @@ function jobRequest()
 		$result = -1;
 	}
 
-	$obj = new Job;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = $result;
-	$obj->updateOne($newObj);
+	$Id = $_GET['Id'];
+	$job = job();
+	$job->obj['isApproved'] = $result;
+	$job->update("Id='$Id'");
 
 	if ($result==1){
 	// Send email
 	$content = __approvedJobRequestEmailMessage();
-	sendEmail($newObj->workEmail, $content);
+	sendEmail($job->obj['workEmail'], $content);
 }else{
 	// Send email
 	$content = __deniedJobRequestEmailMessage();
-	sendEmail($newObj->workEmail, $content);
+	sendEmail($job->obj['workEmail'], $content);
 }
 
 	header('Location: index.php?view=talentRequest');
