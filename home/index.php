@@ -27,10 +27,15 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
-		case 'employerFaq' :
-			$content 	= 'employerFaq.php';
-			$template	= '../include/template.php';
-			break;
+	case 'employerFaq' :
+		$content 	= 'employerFaq.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'jobseekerFaq' :
+		$content 	= 'jobseekerFaq.php';
+		$template	= '../include/template.php';
+		break;
 
 	case 'downloads' :
 		$content 	= 'downloads.php';

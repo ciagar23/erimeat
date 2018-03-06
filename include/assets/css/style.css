@@ -36,9 +36,10 @@ File: Components
     color: #3399cc; }
   #topnav .topbar-main {
     background-color: #ffffff;
-    height: 100px; }
+    height: 130px; }
     #topnav .topbar-main .logo {
-      float: left; }
+      float: left;
+      margin-top: 3px; }
     #topnav .topbar-main .logo-sm {
       display: none; }
     #topnav .topbar-main .badge-topbar {

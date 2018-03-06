@@ -1,8 +1,8 @@
 <?php
 ?>
 
-  <h2 class="text-center m-t-30 m-b-30">Employer FAQs</h2>
-  <p class="text-center mb20">Looking for the right candidate? <a href="../home?view=jobseekerFaq" class="text-primary">See job seekers FAQs.</a></p>
+  <h2 class="text-center m-t-30 m-b-30">Job Seeker FAQs</h2>
+  <p class="text-center mb20">Looking for the right candidate? <a href="../home?view=employerFaq" class="text-primary">See employers FAQs.</a></p>
       <div class="clearfix"></div>
       <!--Start 2 panels -->
       <div class="container-80 center-page">

@@ -22,7 +22,7 @@ $jf->readList();
           <p class="text-center mb20">Looking for a job? We can help.</p>
           <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=submitResume'" role="button">SUBMIT YOUR RESUME</button></div>
           <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home/?view=searchJob'" role="button">SEARCH JOB</button></div>
-          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" href="#" role="button">JOB SEEKER FAQ</button></div>
+          <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../home?view=jobseekerFaq'" role="button">JOB SEEKER FAQ</button></div>
         </div>
         <div class="col-lg-1">&nbsp;</div>
       </div>
