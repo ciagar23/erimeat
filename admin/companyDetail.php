@@ -1,10 +1,9 @@
 <?php
-$obj = new Company;
-$company = $obj->readOne($_GET['Id']);
+$Id = $_GET['Id'];
+$company = company()->get("Id='$Id'");
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+  $job = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 ?>

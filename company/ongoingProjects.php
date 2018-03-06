@@ -1,22 +1,15 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Job;
 
-$com = new Company;
-$company = $com->readOneByUsername($_SESSION['company_session']);
+$jobList = job()->all();
+
+$username = $_SESSION['company_session'];
+$company = company()->get("username='$username'");
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
-  return $job->option;
+  $jf = job_function()->get("Id='$Id'");
+  return $jf->option;
 }
-
-function getCount($Id){
-  $obj = new Employee;
-  $countObj = $obj->countEmployee($Id);
-  return $countObj;
-}
-
 
 ?>
      <div class="row">
@@ -43,8 +36,8 @@ function getCount($Id){
             </tr>
           </thead>
           <tbody>
-            <?php foreach($obj->readList($s) as $row) {
-              if ($row->isApproved==1 && $row->abn == $company->abn && getCount($row->Id)!=0){
+            <?php foreach($jobList as $row) {
+              if ($row->isApproved==1 && $row->abn == $company->abn){
 
             ?>
 

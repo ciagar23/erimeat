@@ -1,6 +1,5 @@
 <?php
-$jf = new JobFunction;
-$jf->readList();
+$jfList = job_function()->all();
 ?>
 
   <h2 class="text-center m-t-30 m-b-30">Contact Us</h2>
@@ -72,7 +71,7 @@ $jf->readList();
                 <label for="firstname">Our Services <span style="color: red;">*</span></label>
                 <select class="form-control" name="jobFunctionId" required>
                   <option>Please Select</option>
-                  <?php foreach($jf->readList() as $row) {?>
+                  <?php foreach($jfList as $row) {?>
                     <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                   <?php } ?>
                 </select>

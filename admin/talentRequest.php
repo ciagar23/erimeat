@@ -1,7 +1,7 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
-$obj = new Job;
+$jobList = job()->all();
 
 ?>
 
@@ -32,7 +32,7 @@ $obj = new Job;
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
+           <?php foreach($jobList as $row) {
   if ($row->isApproved==0){
   ?>
             <tr>

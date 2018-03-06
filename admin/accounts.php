@@ -1,7 +1,7 @@
 <?php
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Admin;
+$adminList = admin()->all();
 ?>
      <div class="row">
                             <div class="col-xs-12">
@@ -34,7 +34,7 @@ $obj = new Admin;
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
+           <?php foreach($adminList as $row) {
             if ($row){
               ?>
               <tr>

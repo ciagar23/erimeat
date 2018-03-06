@@ -1,10 +1,9 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Resume;
+$resumeList = resume()->all();
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+  $jf = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 ?>
@@ -16,7 +15,7 @@ function getJobFunction($Id){
     </div>
     <div class="row">
         <div class="col-md-12">
-          <?php foreach($obj->readList($s) as $row) {?>
+          <?php foreach($resumeList as $row) {?>
           <div class="card-box">
             <div class="col-md-10">
               <h4 class="header-title mt-0 m-b-20"><?=getJobFunction($row->jobFunctionId); ?></h4>
