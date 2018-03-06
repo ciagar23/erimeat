@@ -369,9 +369,11 @@ class Employee {
 
 	function countEmployee($val){
 		$db = Database::connect();
-		$pdo = $db->prepare("select count from Employee where jobId='$val'");
+		$pdo = $db->prepare("select count(*) from employee where jobId='$val'");
 		$pdo->execute();
+		$result = $pdo->fetch(PDO::FETCH_NUM);
 		Database::disconnect();
+		return reset($result);
 	}
 }
 
