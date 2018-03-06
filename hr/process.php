@@ -168,7 +168,7 @@ function __createEmployeeLogin($Id, $jobId){
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($resume->email, $content);
+	sendEmail($resume->obj['email'], $content);
 }
 
 function clientRequest()
@@ -210,7 +210,7 @@ function __createClientLogin($Id){
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($comp->email, $content);
+	sendEmail($comp->obj['email'], $content);
 }
 
 function changepassword()
@@ -251,16 +251,14 @@ function jobRequest()
 	$job->obj['isApproved'] = $result;
 	$job->update("Id='$Id'");
 
-	$job = job()->get("Id='$Id'");
-
 	if ($result==1){
 	// Send email
 	$content = __approvedJobRequestEmailMessage();
-	sendEmail($job->workEmail, $content);
+	sendEmail($job->obj['workEmail'], $content);
 }else{
 	// Send email
 	$content = __deniedJobRequestEmailMessage();
-	sendEmail($job->workEmail, $content);
+	sendEmail($job->obj['workEmail'], $content);
 }
 
 	header('Location: index.php?view=talentRequest');
