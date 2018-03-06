@@ -59,7 +59,7 @@ substr(round(microtime(true)), -6)
 	$content = __talentRequestEmailMessage();
 	sendEmail($obj->workEmail, $content);
 
-	header('Location: ../home/?view=request_success');
+	header('Location: ../company/');
 }
 
 function clientRequest()
@@ -95,8 +95,9 @@ substr(round(microtime(true)), -6)
 
 function submitResume(){
 
-		$upload = uploadFile($_FILES['upload_file']);
-		if ($upload)
+		$uploadResume = uploadFile($_FILES['upload_file']);
+		$uploadSpecs = uploadFile($_FILES['upload_specs']);
+		if ($uploadResume or $uploadSpecs)
 		{
 			$obj = new Resume;
 			$obj->jobId = "0";
@@ -110,7 +111,9 @@ function submitResume(){
 			$obj->city = $_POST["city"];
 			$obj->state = $_POST["state"];
 			$obj->zipCode = $_POST["zipCode"];
-			$obj->uploadedResume = $upload;
+			$obj->speedtest = $_POST["speedtest"];
+			$obj->uploadedResume = $uploadResume;
+			$obj->uploadedSpecs = $uploadSpecs;
 			$obj->createOne($obj);
 
 			// Send email
@@ -161,7 +164,7 @@ function submitApplication()
 
 function sendInquiry()
 {
-		$obj = new Inquiry;
+		$obj = new Inquiries;
 		$obj->firstName = $_POST["firstName"];
 		$obj->lastName = $_POST["lastName"];
 		$obj->phoneNumber = $_POST["phoneNumber"];
@@ -178,9 +181,9 @@ function sendInquiry()
 /* ======================== Email Messages ==============================*/
 
 function __talentRequestEmailMessage(){
-	return "We have receieved your request. Thank you for showing interest in our company in looking for your candidate.<br>
+	return "We have received your request. Thank you for showing interest in our company in looking for your candidate.<br>
 					Please be informed that we are in the midst of processing your request and shall get<br>
-					in touch with you again if your request have meet our condition.<br><br>
+					in touch with you again if your request has met our condition.<br><br>
 					Teamire";
 }
 
@@ -200,7 +203,7 @@ function __submitApplicationEmailMessage(){
 }
 
 function __clientRequestEmailMessage(){
-	return "We have recieved your request. Thank you for the interest shown in our company.<br><br>
+	return "We have received your request. Thank you for the interest shown in our company.<br><br>
 					Please be informed that we are in the midst of processing your request and shall get<br>
 					in touch with you again once you've meet our requirements.<br><br>
 					Teamire";

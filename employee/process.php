@@ -11,6 +11,10 @@ switch ($action) {
 		login();
 		break;
 
+	case 'submitTimesheet' :
+		submitTimesheet();
+		break;
+
 	case 'newCheckIn' :
 		newCheckIn();
 		break;
@@ -25,6 +29,10 @@ switch ($action) {
 
 	case 'stampBreak' :
 		stampBreak();
+		break;
+
+	case 'stampBreak2' :
+		stampBreak2();
 		break;
 
 	case 'stampLunch' :
@@ -119,6 +127,11 @@ function stampCheckIn(){
 
 	if ($dtr->status == 2)
 	{
+		__breakIn2();
+	}
+
+	if ($dtr->status == 3)
+	{
 		__lunchIn();
 	}
 
@@ -130,6 +143,22 @@ function __breakIn(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set breakIn=NOW(),
+															status = '0'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
+function __breakIn2(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakIn2=NOW(),
 															status = '0'
 															where owner='$currentUser'
 															and createDate='$currentDate'
@@ -172,6 +201,22 @@ function stampBreak(){
 	header('Location: index.php');
 }
 
+function stampBreak2(){
+
+	$currentUser = $_SESSION['employee_session'];
+	$currentDate = date("Y-m-d");
+	$db = Database::connect();
+	$pdo = $db->prepare("update dtr set breakOut2=NOW(),
+															status = '2'
+															where owner='$currentUser'
+															and createDate='$currentDate'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	header('Location: index.php');
+}
+
 
 function stampLunch(){
 
@@ -179,7 +224,7 @@ function stampLunch(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set lunchOut=NOW(),
-															status = '2'
+															status = '3'
 															where owner='$currentUser'
 															and createDate='$currentDate'
 															");
@@ -196,7 +241,7 @@ function stampCheckOut(){
 	$currentDate = date("Y-m-d");
 	$db = Database::connect();
 	$pdo = $db->prepare("update dtr set checkOut=NOW(),
-															status = '3'
+															status = '4'
 															where owner='$currentUser'
 															and createDate='$currentDate'
 															");
@@ -206,13 +251,51 @@ function stampCheckOut(){
 	header('Location: index.php');
 }
 
+
+function submitTimesheet()
+{
+	$currentUser = $_SESSION['employee_session'];
+	// Get jobId
+	$emp = new Employee;
+	$newEmp = $emp->readOne($currentUser);
+
+	// Create timesheetId
+	$ts = new Timesheet;
+	$ts->jobId = $newEmp->jobId;
+	$ts->employee = $currentUser;
+	$ts->name = 'Timesheet as of ' . date("Y-m-d H:i:s");
+	$ts->createOne($ts);
+
+	// Get latest timesheet Id
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from timesheet where employee='$currentUser' ORDER BY ID DESC LIMIT 1");
+	$pdo->execute();
+	$timesheetData = $pdo->fetch(PDO::FETCH_OBJ);
+
+	$pdo = $db->prepare("update dtr set timesheetId = '$timesheetData->Id'
+													where timesheetId = '0' and owner = '$currentUser'
+															");
+	$pdo->execute();
+	Database::disconnect();
+
+	// Update all dtr
+	header('Location: index.php?a='.$ts->Id);
+
+// $obj = new DTR;
+// foreach($obj->readList($user) as $row) {
+// 	if ($row->status==4 && !$row->timesheetId){
+//
+// 	}
+
+}
+
 function logout()
 
 {
 	//logout.php
 session_start();
 session_destroy();
-header('Location: index.php');
+header('Location: ../home/?view=logins');
 	exit;
 }
 

@@ -183,6 +183,13 @@ class Job {
 	 $pdo->execute();
 	 Database::disconnect();
 	 }
+
+	 function deleteOne($val){
+	 $db = Database::connect();
+	 $pdo = $db->prepare("delete from job where Id='$val'");
+	 $pdo->execute();
+	 Database::disconnect();
+	 }
 }
 
 
@@ -221,7 +228,9 @@ class Resume {
 															city='$obj->city',
 															state='$obj->state',
 															zipCode='$obj->zipCode',
+															speedtest='$obj->speedtest',
 															uploadedResume='$obj->uploadedResume',
+															uploadedSpecs='$obj->uploadedSpecs',
 															createDate=NOW()
 															");
 		$pdo->execute();
@@ -241,15 +250,72 @@ class Resume {
 															city='$obj->city',
 															state='$obj->state',
 															zipCode='$obj->zipCode',
+															speedtest='$obj->speedtest',
 															uploadedResume='$obj->uploadedResume',
+															uploadedSpecs='$obj->uploadedSpecs',
 															isApproved='$obj->isApproved',
+															isHired='$obj->isHired',
 														 	createDate=NOW()
 														 	where Id='$obj->Id'
 														 	");
 		$pdo->execute();
 		Database::disconnect();
 	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from resume where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
+	}
  }
+
+
+ class Timesheet {
+
+ 	/* Retrieve one record */
+ 	function readOne($val){
+ 		$db = Database::connect();
+ 		 $pdo = $db->prepare("select * from timesheet where Id='$val'");
+ 		 $pdo->execute();
+ 		 $result = $pdo->fetch(PDO::FETCH_OBJ);
+ 		 Database::disconnect();
+ 		 return $result;
+ 	}
+
+ 	/* Retrieve one record */
+ 	function readList($val){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("SELECT * FROM timesheet where employee='$val'");
+ 		$pdo->execute();
+ 		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
+ 		Database::disconnect();
+ 		return $result;
+ 	}
+
+ 	function createOne($obj){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("insert into timesheet set jobId='$obj->jobId',
+ 															employee='$obj->employee',
+ 															name='$obj->name',
+ 															createDate=NOW()
+ 															");
+ 		$pdo->execute();
+ 		Database::disconnect();
+ 	}
+
+ 	function updateOne($obj){
+ 		$db = Database::connect();
+ 		$pdo = $db->prepare("update timesheet set jobId='$obj->jobId',
+ 															employee='$obj->employee',
+ 															name='$obj->name',
+ 															status='$obj->status'
+ 														 	where Id='$obj->Id'
+ 														 	");
+ 		$pdo->execute();
+ 		Database::disconnect();
+ 	}
+  }
 
 
 class Employee {
@@ -257,7 +323,7 @@ class Employee {
 	/* Retrieve one record */
 	function readOne($val){
 	$db = Database::connect();
-	$pdo = $db->prepare("select * from employee where Id='$val'");
+	$pdo = $db->prepare("select * from employee where username='$val'");
 	$pdo->execute();
 	$result = $pdo->fetch(PDO::FETCH_OBJ);
 	Database::disconnect();
@@ -277,7 +343,7 @@ class Employee {
 	function createOne($obj){
 	$db = Database::connect();
 	$pdo = $db->prepare("insert into employee set jobId='$obj->jobId',
-																 userId='$obj->userId',
+																 username='$obj->username',
 															 createDate=NOW()
 																 ");
 	$pdo->execute();
@@ -447,6 +513,16 @@ class Company {
 	}
 
 	/* Retrieve one record */
+	function readOneByUsername($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("select * from company where username='$val'");
+	$pdo->execute();
+	$result = $pdo->fetch(PDO::FETCH_OBJ);
+	Database::disconnect();
+	return $result;
+	}
+
+	/* Retrieve one record */
 	function readList($s){
 
 	$db = Database::connect();
@@ -494,13 +570,20 @@ class Company {
 	$pdo->execute();
 	Database::disconnect();
 	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from company where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
+	}
 }
 
-class Inquiry {
+class Inquiries {
 
 	function createOne($obj){
 	$db = Database::connect();
-	$pdo = $db->prepare("insert into inquiry set firstName='$obj->firstName',
+	$pdo = $db->prepare("insert into inquiries set firstName='$obj->firstName',
 																 lastName='$obj->lastName',
 																 phoneNumber='$obj->phoneNumber',
 																 workEmail='$obj->workEmail',

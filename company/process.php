@@ -34,6 +34,7 @@ function login()
 	if ($result){
 		session_start();
 		$_SESSION['company_session'] = $username;
+		$_SESSION['user_session'] = $username;
 		if ($password == 'temppassword'){
 			header('Location: index.php?view=changepassword');
 		}
@@ -75,7 +76,7 @@ function logout()
 	//logout.php
 session_start();
 session_destroy();
-header('Location: index.php');
+header('Location: ../home/?view=logins');
 	exit;
 }
 

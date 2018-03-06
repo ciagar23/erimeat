@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../config/database.php");
 include_once("../config/CRUD.php");
 
@@ -23,6 +24,11 @@ switch ($view) {
 
 	case 'contactUs' :
 		$content 	= 'contactUs.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'downloads' :
+		$content 	= 'downloads.php';
 		$template	= '../include/template.php';
 		break;
 

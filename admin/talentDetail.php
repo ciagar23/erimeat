@@ -40,8 +40,8 @@ $job = $obj->readOne($_GET['id']);
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button>Update</button>
-          <button onclick="location.href='process.php?action=removeJob&Id=<?=$job->Id;?>'">Remove</button>
+          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=approve&Id=<?=$job->Id;?>">Approve</a></button>
+-          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>">Deny</a></button>
         </div>
     </div>
   </div>

@@ -41,8 +41,13 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'timekeeping' :
-		$content 	= 'timekeeping.php';
+	case 'timekeepingCompanyList' :
+		$content 	= 'timekeepingCompanyList.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timekeepingCompanyDetail' :
+		$content 	= 'timekeepingCompanyDetail.php';
 		$template	= '../include/dashboard.php';
 		break;
 
@@ -79,6 +84,16 @@ switch ($view) {
 
 	case 'hiringApplicant' :
 		$content 	= 'hiringApplicant.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timesheets' :
+		$content 	= 'timesheets.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timesheetDetail' :
+		$content 	= 'timesheetDetail.php';
 		$template	= '../include/dashboard.php';
 		break;
 

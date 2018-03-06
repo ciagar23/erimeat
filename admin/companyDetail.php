@@ -41,8 +41,8 @@ $company = $obj->readOne($_GET['Id']);
 
         <div class="card-box">
           <button>Update</button>
-          <button>Remove</button>
+          <button onclick="location.href='process.php?action=removeCompany&Id=<?=$company->Id;?>'">Remove</button>
         </div>
-        
+
     </div>
   </div>

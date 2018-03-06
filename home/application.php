@@ -73,8 +73,18 @@ $pt->readList();
 
                           <div class="form-group w-33-p pull-right">
                               <label for="username">Postal Code <span style="color: red;">*</span></label>
-                              <input type="text" class="form-control" name="zipCode" required>
+                              <input type="text" class="form-control" data-mask="9999" name="zipCode" required>
                           </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="username">Speedtest</label>
+                              <input type="text" class="form-control" name="speedtest">
+                          </div>
+                          To access speedtest. Click the link <a href="#">www.speedtest.com</a>
+
+                          <div class="form-group">
+                            <label>Attach Specs</label>
+                            <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>

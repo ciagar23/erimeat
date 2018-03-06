@@ -47,6 +47,10 @@ switch ($action) {
 		setInterViewDate();
 		break;
 
+	case 'approveTimesheet' :
+		approveTimesheet();
+		break;
+
 	default :
 }
 
@@ -107,6 +111,16 @@ function denyResume()
 	header('Location: index.php?view=applicants');
 }
 
+function approveTimesheet()
+{
+	$obj = new Timesheet;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->status = 1;
+	$obj->updateOne($newObj);
+
+	header('Location: index.php?view=timekeepingCompanyList');
+}
+
 function setInterviewDate()
 {
 	$email = $_POST['email'];
@@ -135,35 +149,40 @@ function setInterviewDate()
 function hireApplicant()
 {
 	if ($_GET['result']=="approve"){
-		$result = 1;
-		__createEmployeeLogin($_GET['Id']);
+		$result = '1';
+		__createEmployeeLogin($_GET['Id'], $_GET['jobId']);
 	}
 	else{
-		$result = -1;
+		$result = '-1';
 	}
 
-	$obj = new Employee;
-	$obj->jobId = $_GET['jobId'];
-	$obj->userId = $_GET['Id'];
-	$obj->createDate = 'NOW()';
-	$obj->createOne($obj);
+	$obj = new Resume;
+	$newObj = $obj->readOne($_GET['Id']);
+	$newObj->isHired = $result;
+	$obj->updateOne($newObj);
 
 	header('Location: index.php?view=scheduleInterview');
 }
 
-function __createEmployeeLogin($Id){
-	// Get Detail
+function __createEmployeeLogin($Id, $jobId){
+
 	$resume = new Resume;
 	$resume = $resume->readOne($Id);
 
 	// Create account
 	$obj = new Profile;
-	$obj->username = $resume->email;
+	$obj->username =  "E" . round(microtime(true));
 	$obj->password = "temppassword";
 	$obj->firstName = $resume->firstName;
 	$obj->lastName = $resume->lastName;
 	$obj->level = "employee";
 	$obj->createOne($obj);
+
+	$emp = new Employee;
+	$emp->jobId = $jobId;
+	$emp->username = $obj->username;
+	$emp->createDate = 'NOW()';
+	$emp->createOne($emp);
 
 	// Send email
 	$content = "Congratulations!<br><br>
@@ -246,11 +265,9 @@ function jobRequest()
 {
 	if ($_GET['result']=="approve"){
 		$result = 1;
-		/* internal notification */
 	}
 	else{
 		$result = -1;
-		/* internal notification */
 	}
 
 	$obj = new Job;
@@ -258,6 +275,28 @@ function jobRequest()
 	$newObj->isApproved = $result;
 	$obj->updateOne($newObj);
 
+	if ($result==1){
+	// Send email
+	$content = __approvedJobRequestEmailMessage();
+	sendEmail($newObj->workEmail, $content);
+}else{
+	// Send email
+	$content = __deniedJobRequestEmailMessage();
+	sendEmail($newObj->workEmail, $content);
+}
+
 	header('Location: index.php?view=talentRequest');
+}
+
+/* ======================== Email Messages ==============================*/
+
+function __approvedJobRequestEmailMessage(){
+	return "We have approved your request.<br><br>
+					Teamire";
+}
+
+function __deniedJobRequestEmailMessage(){
+	return "We apologized we have denied your request as it did not match our requirements.<br><br>
+					Teamire";
 }
 ?>

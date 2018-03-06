@@ -31,6 +31,8 @@
                     <p><a style="color: white;" href="../home/?view=aboutUs#howWeDoThis">How we do this</a></p>
                     <p><a style="color: white;" href="../home/?view=aboutUs#ourPurpose">Our Purpose</a></p>
                     <p><a style="color: white;" href="../home/?view=aboutUs#ourObjectives">Our Objectives</a></p>
+                    <p><a style="color: white;" href="../home/?view=logins">Timesheets</a></p>
+                    <p><a style="color: white;" href="../home/?view=contactUs">Contact Us</a></p>
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">RESOURCES</h4>

@@ -1,48 +1,51 @@
 <?php
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-
 $obj = new Job;
 
+function getJobFunction($Id){
+  $obj = new JobFunction;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
 ?>
 
-
-<div class="row">
+     <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Talent Request</h4>
+                                    <h4 class="page-title">Jobs</h4>
 
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                         </div>
+                        <p class="m-b-0">
+                          <?=$message?></p>
+                        </div>
 <div class="card-box">
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Talent Request</b></h4>
+        <h4 class="m-t-0 header-title"><b>List of Jobs</b></h4>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
+              <th>Job Reference Number</th>
+              <th>Job Category</th>
               <th>Company Name</th>
-              <th>Position Request</th>
-              <th>Company Representative</th>
-              <th>Work Email</th>
-              <th>Job Title</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
-  if ($row->isApproved==0){
-  ?>
+            <?php foreach($obj->readList($s) as $row) {
+              if ($row->isApproved==1){
+            ?>
             <tr>
+              <td><?=$row->refNum;?></td>
+              <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?> </td>
-              <td><?=$row->position;?> </td>
-              <td><?=$row->contactName;?> </td>
-              <td><?=$row->workEmail;?> </td>
-              <td><?=$row->jobTitle;?></td>
               <td>
-                <a href="?view=talentDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
+                <a href="?view=jobDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>
             </tr>
             <?php

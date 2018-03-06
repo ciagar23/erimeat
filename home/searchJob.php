@@ -1,3 +1,14 @@
+<?php
+$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
+$obj = new Job;
+
+function getPositionName($Id){
+  $obj = new PositionType;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
+?>
+
 <div class="container-fluid">
   <div class="container-80 center-page">
   <div class="col-md-10 center-page p-b-30">
@@ -19,54 +30,30 @@
   <div class="form-container container m-t-30">
 
     <div class="row center-page job-list-row">
+      <?php foreach($obj->readList($s) as $row) {
+        if ($row->isApproved==1){
+      ?>
         <div class="col-lg-4 job-list-summary">
-              <a href="#" class="job-list-title">IT Help Desk Specialist</a>
+              <a href="#" class="job-list-title"><?=$row->position;?></a>
             <br>
-            <span class="m-b-5">Washington, DC</span>
+            <span class="m-b-5"><?=$row->address;?></span>
             <br>
-            <span class="">$27 - 32/hr</span>
+            <span class="m-b-5"><?=getPositionName($row->positionTypeId);?></span>
             <br>
-            <span class="m-b-5">Contract</span>
-            <br>
-            <span class="job-list-date">Posted February 28, 2018</span>
+            <span class="job-list-date"><?=$row->createDate;?></span>
             <br>
         </div>
 
         <div class="col-lg-8 job-list-desc">
-          The IT Help Desk Specialist is responsible for managing the day to day work flow
-          of incidents and service request collected in the Footprints issue tracking system.
-          This responsibility includes monitoring requests and ensuring incidents are...
+          <?=$row->comment;?>
           <br>
           <span>
             <a class="job-list-link" href="#">Read More &gt;</a>
           </span>
         </div>
     </div>
+    <?php  } } ?>
 <br>
-    <div class="row center-page job-list-row">
-        <div class="col-lg-4 job-list-summary">
-              <a href="#" class="job-list-title">IT Help Desk Specialist</a>
-            <br>
-            <span class="m-b-5">Washington, DC</span>
-            <br>
-            <span class="">$27 - 32/hr</span>
-            <br>
-            <span class="m-b-5">Contract</span>
-            <br>
-            <span class="job-list-date">Posted February 28, 2018</span>
-            <br>
-        </div>
-
-        <div class="col-lg-8 job-list-desc">
-          The IT Help Desk Specialist is responsible for managing the day to day work flow
-          of incidents and service request collected in the Footprints issue tracking system.
-          This responsibility includes monitoring requests and ensuring incidents are...
-          <br>
-          <span>
-            <a class="job-list-link" href="#">Read More &gt;</a>
-          </span>
-        </div>
-    </div>
 
   </div> <!-- End List Container -->
 </div>

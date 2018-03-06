@@ -12,7 +12,7 @@ else{
 
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<meta charset="utf-8" />
 		<title>Teamire - Insert System Name</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -30,72 +30,83 @@ else{
 		<link href="../include/assets/css/style.css" rel="stylesheet" type="text/css" />
 
 		<script src="../include/assets/js/modernizr.min.js"></script>
-	</head>
 
-	<body class="bg-accpunt-pages">
-		<!-- HOME -->
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
+</head>
 
-						<div class="wrapper-page">
+<body>
+	<div id="sticky_header">
+		<a href="../home/index.php"><img src="../include/assets/images/branding.jpg" ></a>
+	</div>
+	<section >
+		<div class="row">
+			<div class="col-md-12">
+				<div class="account-pages">
+					<div class="login-left-box" >
+						<div class="account-box" style="">
+							<div class="account-logo-box">
+								<h2 class="text-uppercase text-center" >
+									<a href="#" class="login-font">
+											<span >CHANGE PASSWORD</span>
+									</a>
+								</h2>
 
-							<div class="account-pages">
-								<div class="account-box">
-									<div class="account-logo-box">
-										<h2 class="text-uppercase text-center">
-											<a href="index.html" class="text-success">
-												<span>Change Password</span>
-											</a>
-										</h2>
-										<h5 class="text-uppercase font-bold m-b-5 m-t-50">
-												Hi User.<br>
-												It seems that it is your first time to visit
-												this site. We recommend you to create your own password
-												before entering your home page. Thank you!
-										</h5>
-										<p class="m-b-0">
-											<?=$error?>
-										</p>
-										</div>
-										<div class="account-content">
-											<form class="form-horizontal" action="process.php?action=changepassword" method="POST">
+								<h2 class="text-uppercase text-center" >
+									<a href="index.html" class="login-font">
+										<span >Hi User.<br>
+										It seems that it is your first time to visit
+										this site. We recommend you to create your own password
+										before entering your home page. Thank you!
+										</span>
+									</a>
+								</h2>
+								<p class="m-b-0">
+									<?=$error?></p>
+								</div>
+								<div class="account-content">
+										<form class="form-horizontal" action="process.php?action=changepassword" method="POST">
 												<input type="hidden" name="username" value="<?=$user?>">
-												<div class="form-group row m-b-20">
-													<div class="col-12">
-														<label for="password">New Password</label>
-														<input class="form-control" type="password" required="" id="password" name="password" placeholder="New Password">
-													</div>
+												<div class="form-group m-b-0 row">
+														<div class="col-12">
+															<label for="password">New Password</label>
+															<input class="form-control" type="password" required="" id="password" name="password" placeholder="New Password">
+														</div>
 												</div>
-
-													<div class="form-group row m-b-20">
+												<div class="form-group row m-b-5">
 														<div class="col-12">
 															<label for="password">Confirm Password</label>
 															<input class="form-control" type="password" required="" id="password2" name="password2" placeholder="Confirm Password">
 														</div>
-													</div>
-
-												<div class="form-group row text-center m-t-10">
-													<div class="col-12">
-														<button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Submit</button>
-													</div>
 												</div>
-											</form>
-										</div>
-									</div>
+												<div class="form-group row text-center m-t-4">
+														<div class="col-2 pull-left">
+																<button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Submit</button>
+																<br>
+														</div>
+												</div>
+
+									 </form>
 								</div>
-								<!-- end card-box-->
 							</div>
-							<!-- end wrapper -->
+
+								<footer class="footer-default">
+									 <div class="container">
+											 <div class="row">
+													 <div class="col-12 text-left">
+													 <br>
+													 <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
+															 2018 © Teamire All Rights Reserved
+													 </div>
+											 </div>
+									 </div>
+							 </footer>
+ <!-- end wrapper -->
 						</div>
 					</div>
 				</div>
+			</div>
 		</section>
-		<!-- END HOME -->
-
 		<script>
-		var resizefunc = [];
+			var resizefunc = [];
 		</script>
 
 		<!-- jQuery  -->
@@ -109,6 +120,5 @@ else{
 		<!-- App js -->
 		<script src="../include/assets/js/jquery.core.js"></script>
 		<script src="../include/assets/js/jquery.app.js"></script>
-
 	</body>
 </html>

@@ -27,13 +27,13 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'availablePosition' :
-		$content 	= 'availablePosition.php';
+	case 'postedJobs' :
+		$content 	= 'postedJobs.php';
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'numberEmployee' :
-		$content 	= 'numberEmployee.php';
+	case 'ongoingProjects' :
+		$content 	= 'ongoingProjects.php';
 		$template	= '../include/dashboard.php';
 		break;
 

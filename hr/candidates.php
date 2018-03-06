@@ -31,8 +31,7 @@ function getJobFunction($Id){
                     <td><?=getJobFunction($row->jobFunctionId); ?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=$row->city; ?>, <?=$row->state; ?></td>
-                    <td>
-                        <button onclick="location.href='?view=candidateDetail&Id=<?=$row->Id;?>'" class="btn btn-primary">Review</button>
+                    <td><a href="?view=candidateDetail&Id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> Review</a>
                     </td>
                 </tr>
 

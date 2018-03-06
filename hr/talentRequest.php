@@ -3,28 +3,56 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $obj = new Job;
 
+function getJobFunction($Id){
+  $obj = new JobFunction;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
+
+function getPositionType($Id){
+  $obj = new PositionType;
+  $pos = $obj->readOne($Id);
+  echo $pos->option;
+}
+
 ?>
 
-<div class="card-box">
-<?php foreach($obj->readList($s) as $row) {
-  if ($row->isApproved==0){
-  ?>
-  <div class="">
-      <h4 class="header-title mt-0 m-b-20"><a href="?view=jobDetail&id=<?=$row->Id;?>"><?=$row->position;?></a></h4>
-      <div class="">
-          <h5 class="text-custom m-b-5"><?=$row->jobTitle;?></h5>
-          <p class="m-b-0">
-              <i class="mdi mdi-google-maps"></i> <?=$row->address;?>
-          </p>
-          <p><b><?=$row->businessPhone;?></b></p>
-          <p><b><?=$row->contactName;?></b></p>
-          <p><b><?=$row->workEmail;?></b></p>
+<div class="row">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title"><b>Talent Request</b></h4>
 
-          <p class="text-muted font-13 m-b-0">
-            <?=$row->comment;?>
-          </p>
-      </div>
-      <hr>
+            <table id="datatable" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Job Category</th>
+                    <th>Employment Type</th>
+                    <th>Job Classification</th>
+                    <th>Representative Email</th>
+                    <th>Company Name</th>
+                    <th>Company ABN</th>
+                    <th>Review</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach($obj->readList($s) as $row) {
+                  if ($row->isApproved==0){
+                ?>
+                <tr>
+                    <td><?=getJobFunction($row->jobFunctionId);?></td>
+                    <td><?=getPositionType($row->positionTypeId);?></td>
+                    <td><?=$row->position;?></td>
+                    <td><?=$row->workEmail;?></td>
+                    <td><?=$row->company;?></td>
+                    <td><?=$row->abn;?></td>
+                    <td><a href="?view=jobDetail&Id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> Review</a>
+                    </td>
+                </tr>
+
+              <?php }} ?>
+                </tbody>
+            </table>
+        </div>
     </div>
-<?php } } ?>
-</div>
+</div> <!-- end row -->

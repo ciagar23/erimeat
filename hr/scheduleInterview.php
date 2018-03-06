@@ -39,14 +39,14 @@ function getInterviewTime($Id){
                 <tbody>
 
                 <?php foreach($obj->readList($s) as $row) {
-                  if ($row->jobId!=0 && $row->isApproved==1) {?>
+                  if ($row->jobId!=0 && $row->isApproved==1 && $row->isHired==0) {?>
                 <tr>
                     <td><?=getJobName($row->jobId); ?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=getInterviewDate($row->Id); ?></td>
                     <td><?=getInterviewTime($row->Id); ?></td>
                     <td>
-                        <button onclick="location.href='?view=hiringApplicant&Id=<?=$row->Id;?>&jobId=<?=$row->jobId;?>'" class="btn btn-primary">View Applicant</button>
+                        <a href="?view=hiringApplicant&Id=<?=$row->Id;?>&jobId=<?=$row->jobId;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Applicant </a>
                     </td>
                 </tr>
 

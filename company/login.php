@@ -80,7 +80,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
                                             </div>
                                             <center>
-                                             <a href="../home/?view=clientForm" class="text-muted" ><small>Client Registration</small></a>
+                                              No account yet?<br><a href="../home/?view=clientForm" class="text-muted" ><small>Register here!</small></a>
                                              </center>
                                         </form>
 
