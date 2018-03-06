@@ -366,7 +366,14 @@ class Employee {
 	$pdo->execute();
 	Database::disconnect();
 	}
- }
+
+	function countEmployee($val){
+		$db = Database::connect();
+		$pdo = $db->prepare("select count from Employee where jobId='$val'");
+		$pdo->execute();
+		Database::disconnect();
+	}
+}
 
 
 class JobFunction {

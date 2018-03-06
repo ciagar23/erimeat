@@ -5,12 +5,20 @@ $obj = new Job;
 $com = new Company;
 $company = $com->readOneByUsername($_SESSION['company_session']);
 
+
 function getJobFunction($Id){
   $obj = new JobFunction;
   $job = $obj->readOne($Id);
   echo $job->option;
 }
+
+function getCount($val){
+  $obj = new Employee;
+  $emp = $obj->countEmployee();
+  print_r($emp->fetchAll());
+}
 ?>
+count=<?=getCount($company->Id);?>
      <div class="row">
         <div class="col-xs-12">
             <div class="page-title-box">
@@ -42,11 +50,17 @@ function getJobFunction($Id){
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?> </td>
               <td>
-                <?php if($row->isApproved) {?>
+              <?php
+                if($row->isApproved) {
+              ?>
                 <div class=" btn btn-success btn-xs tooltips" title="Click To Edit">Approved</div>
-              <?php } else {?>
+              <?php }
+                else {
+              ?>
               <div class=" btn btn-warning btn-xs tooltips" title="Click To Edit">Pending</div>
-            <?php }?>
+              <?php
+                }
+              ?>
 
               </td>
               <td>
@@ -55,7 +69,8 @@ function getJobFunction($Id){
             </tr>
             <?php
               }
-            }
+
+          }
             ?>
           </tbody>
         </table>
