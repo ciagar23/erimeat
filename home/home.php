@@ -3,9 +3,9 @@
 ?>
 
 <div>
-  <div style="position:relative;">
+  <div style="position:inherit;">
  <!-- START carousel-->
-    <div id="carousel-example-captions" data-ride="carousel" class="carousel slide carousel-fade" data-interval="3000">
+    <div id="carousel-example-captions" data-ride="carousel" class="carousel slide carousel-fade" data-interval="10000">
 
          <ol class="carousel-indicators">
             <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
@@ -68,183 +68,162 @@
             </div>
     </div>
   </div>
-
-<!-- Card Box Content-->
-<div class="card-box " >
-     <div class="p-t-5">
-        <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
-        <div class="row">
-            <div class="col-sm-4 well card-box company-card" id="box-design">
-                <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                        <img src="../include/assets/images/demandPlanning.png">
-                    </center>
-                    <h4 class="font-18">Demand Planning</h4>
-
-                  <div class="overlay">
-                             <h2>Demand Planning</h2>
-                    <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 well card-box company-card" id="box-design">
-
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                          <img src="../include/assets/images/supplyPlanning.png">
-                    </center>
-                    <h4 class="font-18">Supply Planning</h4>
-
-                  <div class="overlay">
-                             <h2>Supply Planning</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-                <div class="col-sm-4 well card-box company-card" id="box-design">
-
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                          <img src="../include/assets/images/orderFulfilment.png">
-                    </center>
-                    <h4 class="font-18">Order Fulfilment</h4>
-
-                  <div class="overlay">
-                             <h2>Order Fulfilment</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <!-- end row -->
-
-        <div class="row">
-
-         <div class="col-sm-4 well card-box company-card" id="box-design">
-
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                         <img src="../include/assets/images/logistics.png">
-                    </center>
-                    <h4 class="font-18">Logistics</h4>
-
-                  <div class="overlay">
-                             <h2>Logistics</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+  <hr>
+<div class="container">
 
 
-         <div class="col-sm-4 well card-box company-card" id="box-design">
+                         <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
 
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                         <img src="../include/assets/images/logistics.png">
-                    </center>
-                    <h4 class="font-18">Manufacturing</h4>
+                        <div class="row">
+                               <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                       <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;">
+                                          <h4 class="font-18">Demand Planning</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
-                  <div class="overlay">
-                             <h2>Manufacturing</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+                            <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;">
+                                          <h4 class="font-18">Supply Planning</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                             <div class="col-sm-4">
+                                  <div class="card-box" id="box-design"> 
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;">
+                                                 <h4 class="font-18">Order Fulfilment</h4>
 
-
-         <div class="col-sm-4 well card-box company-card" id="box-design">
-
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                         <img src="../include/assets/images/logistics.png">
-                    </center>
-                    <h4 class="font-18">Transportation</h4>
-
-                  <div class="overlay">
-                             <h2>Transportation</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- end row -->
-        <div class="row">
-
-
-                <div class="col-sm-4 well card-box company-card" id="box-design">
-
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                        <img src="../include/assets/images/procurement.png">
-                    </center>
-                    <h4 class="font-18">Procurement</h4>
-
-                  <div class="overlay">
-                             <h2>Procurement</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                        </div>
+                        <!-- end row -->
 
 
-    <div class="col-sm-4 well card-box company-card" id="box-design">
+                        <div class="row">
+                             <div class="col-sm-4">
+                                  <div class="card-box" id="box-design"> 
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;">
+                                            <h4 class="font-18">Logistics</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                          <img src="../include/assets/images/certificate.png">
-                    </center>
-                    <h4 class="font-18">Training Certification</h4>
+                          <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;">
+                                            <h4 class="font-18">Manufacturing</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
-                  <div class="overlay">
-                             <h2>Training Certification</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+                          <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;">
+                                           <h4 class="font-18">Transportation</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                        </div>
+                        <!-- end row -->
 
 
-    <div class="col-sm-4 well card-box company-card" id="box-design">
+                        <div class="row">
+                           <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;">
+                                           <h4 class="font-18">Procurement</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                          <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;">
+                                          <h4 class="font-18">Training Certification</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
 
-                    <div class="about-features-box text-center " >
-                <div class="hovereffect">
-                   <center>
-                      <img src="../include/assets/images/warehousing.png">
-                    </center>
-                    <h4 class="font-18">Warehousing</h4>
+                        <div class="col-sm-4">
+                                  <div class="card-box" id="box-design">
+                                      <div class="cours2" style="overflow:hidden;">
+                                          <center>
+                                         <img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;">
+                                          <h4 class="font-18">Warehousing</h4>
+                                         </center>
+                                        
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                        </div>
+                        <!-- end row -->
 
-                  <div class="overlay">
-                             <h2>Warehousing</h2>
-                   <button class="btn btn-info btn-bordered" onclick="location.href='http://google.com';"><span class="fa fa-eye"></span> View</button>
-                    </div>
-                </div>
-                </div>
-            </div>
 
+                
 
-        </div>
-    </div>
+                    </div> <!-- container -->
 
-  <!-- End Cardbox Content-->
     <!-- Basic Form Wizard -->
                         <div class="row">
                             <div class="col-md-12">
