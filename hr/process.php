@@ -100,21 +100,20 @@ function setInterviewDate()
 {
 	$email = $_POST['email'];
 
-	$intObj = new interviewDate;
-	$intObj->resumeId = $_POST['resumeId'];
-	$intObj->date = $_POST['date'];
-	$intObj->time = $_POST['time'];
-	$intObj->createOne($intObj);
+	$intDate = interview_date();
+	$intDate->resumeId = "$_POST['resumeId']";
+	$intDate->date = "$_POST['date']";
+	$intDate->time = "$_POST['time']";
+	$intDate->create();
 
-	$obj = new Resume;
-	$newObj = $obj->readOne($_POST['resumeId']);
-	$newObj->isApproved = 1;
-	$obj->updateOne($newObj);
+	$resume = resume();
+	$resume->isApproved = "1";
+	$resume->update("$_POST['resumeId']");
 
 	$content = "We have considered your application. Please be available on the schedule below<br>
 							for your interview.<br><br>
-							Date = $intObj->date<br>
-							Time = $intObj->time<br><br>
+							Date = $intDate->date<br>
+							Time = $intDate->time<br><br>
 							Teamire";
 	sendEmail($email, $content);
 
