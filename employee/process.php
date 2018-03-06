@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -57,10 +57,9 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Profile::login($username, $password, 'employee');
+	$result = user()->get("username='$username' and password = '$password'");
 
 	if ($result){
-		session_start();
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
 			header('Location: index.php?view=changepassword');
@@ -70,10 +69,13 @@ function login()
 			//TODO: Ano ni?!?!
 		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
-		$checkDtr = DTR::readOne($username, date("Y-m-d"));
+		$dateNow = date("Y-m-d");
+		$checkDtr = dtr()->get("owner='$username' and createDate='$dateNow'");
 		if (!$checkDtr){
 				newCheckIn();
 			}
+
+				header('Location: index.php');
 		}
 	}
 	else {
@@ -83,13 +85,12 @@ function login()
 
 function newCheckIn()
 {
-	$dtr = new DTR;
-	$dtr->owner = $_SESSION['employee_session'];
-	$dtr->createDate = 'NOW()';
-	$dtr->checkIn = 'NOW()';
-	$dtr->createOne($dtr);
 
-	header('Location: index.php');
+	$dtr = dtr();
+	$dtr->obj['owner'] = $_SESSION['employee_session'];
+	$dtr->obj['createDate'] = "NOW()";
+	$dtr->obj['checkIn'] = "NOW()";
+	$dtr->create();
 }
 
 function changepassword()

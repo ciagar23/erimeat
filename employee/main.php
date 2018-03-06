@@ -1,5 +1,8 @@
 <?php
-$app = DTR::readOne($_SESSION['employee_session'], date("Y-m-d"));
+
+$username = $_SESSION['employee_session'];
+$dateNow = date("Y-m-d");
+$app = dtr()->get("owner='$username' and createDate='$dateNow'");
 
 if ($app){
 
