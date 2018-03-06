@@ -380,6 +380,13 @@ class Employee {
 
 class JobFunction {
 
+	function createOne($obj){
+	$db = Database::connect();
+	$pdo = $db->prepare("insert into job_function set option='$obj->option'");
+	$pdo->execute();
+	Database::disconnect();
+	}
+
 	/* Retrieve one record */
 	function readOne($val){
 	$db = Database::connect();
@@ -398,6 +405,13 @@ class JobFunction {
 	$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 	Database::disconnect();
 	return $result;
+	}
+
+	function deleteOne($val){
+	$db = Database::connect();
+	$pdo = $db->prepare("delete from job_function where Id='$val'");
+	$pdo->execute();
+	Database::disconnect();
 	}
  }
 

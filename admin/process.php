@@ -19,6 +19,14 @@ switch ($action) {
 		addAccount();
 		break;
 
+	case 'addJobFunction' :
+		addJobFunction();
+		break;
+
+	case 'removeJobFunction' :
+		removeJobFunction();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -61,6 +69,16 @@ function addAccount()
 
 		header('Location: ../admin/?view=success');
 	}
+}
+
+function addJobFunction()
+{
+
+	$obj = new JobFunction;
+	$obj->option = $_POST['option'];
+	$obj->createOne($obj);
+
+	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category!');
 }
 
 function login()
@@ -165,7 +183,7 @@ function __createLogin($Id){
 function removeCompany()
 {
 	$obj = new Company;
-	$newComp = $obj->deleteOne($_GET['Id']);
+	$obj->deleteOne($_GET['Id']);
 
 	header('Location: ../admin/?view=companies&message=Succesfully Deleted');
 }
@@ -173,7 +191,7 @@ function removeCompany()
 function removeJob()
 {
 	$obj = new Job;
-	$newComp = $obj->deleteOne($_GET['Id']);
+	$obj->deleteOne($_GET['Id']);
 
 	header('Location: ../admin/?view=jobList&message=Succesfully Deleted');
 }
@@ -181,7 +199,7 @@ function removeJob()
 function removeCandidate()
 {
 	$obj = new Resume;
-	$newComp = $obj->deleteOne($_GET['Id']);
+	$obj->deleteOne($_GET['Id']);
 
 	header('Location: ../admin/?view=candidates&message=Succesfully Deleted');
 }
