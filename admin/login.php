@@ -7,8 +7,8 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <meta charset="utf-8" />
         <title>Teamire - Insert System Name</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
+        <meta content="Catalyst in Continuous Improvement" name="description" />
+        <meta content="Teamire" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
@@ -21,12 +21,12 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <link href="../include/assets/css/style.css" rel="stylesheet" type="text/css" />
 
         <script src="../include/assets/js/modernizr.min.js"></script>
-   
+
     </head>
 
 
-   
-  
+
+
     <body >
     <div id="sticky_header">
   <a href="../home/index.php"><img src="../include/assets/images/branding.jpg" ></a>
@@ -36,17 +36,17 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <!-- HOME -->
 
         <section >
-           
+
                 <div class="row">
                     <div class="col-md-12">
 
-                        
+
 
                             <div class="account-pages">
                               <div class="login-left-box" >
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
-                                     
+
                                         <h2 class="text-uppercase text-center" >
                                             <a href="index.html" class="login-font">
                                                 <span >Admin Login</span>
@@ -72,29 +72,29 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
 
-                                           
+
                                             <div class="form-group row text-center m-t-4">
                                                 <div class="col-2 pull-left">
                                                     <button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
                                                     <br>
-                                                    
+
                                                 </div>
-                                                
+
                                             </div>
                                             <center>
                                              <a href="page-recoverpw.html" class="text-muted" ><small>Don't recall your account information?</small></a>
                                              </center>
                                         </form>
 
-                                                    
-                                         
+
+
 
                                     </div>
 
 
                                 </div>
-                                 
-                                 
+
+
                                          <footer class="footer-default">
                                             <div class="container">
                                                 <div class="row">
@@ -106,11 +106,11 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                 </div>
                                             </div>
                                         </footer>
-                                 
+
                               </div>
-                            
-                        
-                     
+
+
+
                         <!-- end wrapper -->
 
                     </div>
@@ -121,12 +121,12 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
             </div>
 
           </section>
-         
 
 
-          
 
-          
+
+
+
 
 
 
