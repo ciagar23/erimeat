@@ -103,9 +103,8 @@ substr(round(microtime(true)), -6)
 
 function submitResume(){
 
-		$uploadResume = uploadFile($_FILES['upload_file']);
-		$uploadSpecs = uploadFile($_FILES['upload_specs']);
-		if ($uploadResume or $uploadSpecs)
+		$upload = uploadFile($_FILES['upload_file']);
+		if ($upload)
 		{
 			$obj = new Resume;
 			$obj->jobId = "0";
@@ -123,8 +122,8 @@ function submitResume(){
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->speedtest = $_POST["speedtest"];
 			$obj->coverLetter = $_POST["coverLetter"];
-			$obj->uploadedResume = $uploadResume;
-			$obj->uploadedSpecs = $uploadSpecs;
+			$obj->uploadedResume = $upload;
+			$obj->uploadedSpecs = $_POST["upload_specs"];
 			$obj->createOne($obj);
 
 			// Send email
@@ -141,9 +140,8 @@ function submitResume(){
 
 function submitApplication()
 {
-		$uploadResume = uploadFile($_FILES['upload_file']);
-		$uploadSpecs = uploadFile($_FILES['upload_specs']);
-		if ($uploadResume or $uploadSpecs)
+		$upload = uploadFile($_FILES['upload_file']);
+		if ($upload)
 		{
 			$obj = new Resume;
 			$obj->jobId = $_POST["jobId"];
@@ -161,22 +159,18 @@ function submitApplication()
 			$obj->zipCode = $_POST["zipCode"];
 			$obj->speedtest = $_POST["speedtest"];
 			$obj->coverLetter = $_POST["coverLetter"];
-			$obj->uploadedResume = $uploadResume;
-			$obj->uploadedSpecs = $uploadSpecs;
+			$obj->uploadSpecs = $_POST["upload_specs"];
+			$obj->uploadedResume = $upload;
 			$obj->createOne($obj);
-
 			// Send Email
 			$content = __submitApplicationEmailMessage();
 			/* should also send email to hr and admin */
 			sendEmail($obj->email, $content);
-
 			header('Location: ../home/?view=success');
-
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
 		}
-
 }
 
 function sendInquiry()

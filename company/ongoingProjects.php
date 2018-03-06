@@ -8,8 +8,16 @@ $company = $com->readOneByUsername($_SESSION['company_session']);
 function getJobFunction($Id){
   $obj = new JobFunction;
   $job = $obj->readOne($Id);
-  echo $job->option;
+  return $job->option;
 }
+
+function getCount($Id){
+  $obj = new Employee;
+  $countObj = $obj->countEmployee($Id);
+  return $countObj;
+}
+
+
 ?>
      <div class="row">
         <div class="col-xs-12">
@@ -36,17 +44,25 @@ function getJobFunction($Id){
           </thead>
           <tbody>
             <?php foreach($obj->readList($s) as $row) {
-              if ($row->isApproved==1 && $row->abn == $company->abn){
+              if ($row->isApproved==1 && $row->abn == $company->abn && getCount($row->Id)!=0){
+
             ?>
+
             <tr>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?> </td>
               <td>
-                <?php if($row->isApproved) {?>
+              <?php
+                if($row->isApproved) {
+              ?>
                 <div class=" btn btn-success btn-xs tooltips" title="Click To Edit">Approved</div>
-              <?php } else {?>
+              <?php }
+                else {
+              ?>
               <div class=" btn btn-warning btn-xs tooltips" title="Click To Edit">Pending</div>
-            <?php }?>
+              <?php
+                }
+              ?>
 
               </td>
               <td>
@@ -54,8 +70,10 @@ function getJobFunction($Id){
               </td>
             </tr>
             <?php
-              }
+          }
             }
+
+
             ?>
           </tbody>
         </table>

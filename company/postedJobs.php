@@ -8,7 +8,13 @@ $company = $com->readOneByUsername($_SESSION['company_session']);
 function getJobFunction($Id){
   $obj = new JobFunction;
   $job = $obj->readOne($Id);
-  echo $job->option;
+  return $job->option;
+}
+
+function getCount($Id){
+  $obj = new Employee;
+  $countObj = $obj->countEmployee($Id);
+  return $countObj;
 }
 ?>
      <div class="row">
@@ -36,7 +42,7 @@ function getJobFunction($Id){
           </thead>
           <tbody>
             <?php foreach($obj->readList($s) as $row) {
-              if ($row->abn == $company->abn){
+              if ($row->isApproved==0 && $row->abn==$company->abn && getCount($row->Id)==0){
             ?>
             <tr>
               <td><?=getJobFunction($row->jobFunctionId);?></td>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -57,10 +57,9 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Profile::login($username, $password, 'employee');
+	$result = user()->get("username='$username' and password = '$password'");
 
 	if ($result){
-		session_start();
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
 			header('Location: index.php?view=changepassword');
@@ -70,10 +69,13 @@ function login()
 			//TODO: Ano ni?!?!
 		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
-		$checkDtr = DTR::readOne($username, date("Y-m-d"));
+		$dateNow = date("Y-m-d");
+		$checkDtr = dtr()->get("owner='$username' and createDate='$dateNow'");
 		if (!$checkDtr){
 				newCheckIn();
 			}
+
+				header('Location: index.php');
 		}
 	}
 	else {
@@ -83,13 +85,12 @@ function login()
 
 function newCheckIn()
 {
-	$dtr = new DTR;
-	$dtr->owner = $_SESSION['employee_session'];
-	$dtr->createDate = 'NOW()';
-	$dtr->checkIn = 'NOW()';
-	$dtr->createOne($dtr);
 
-	header('Location: index.php');
+	$dtr = dtr();
+	$dtr->obj['owner'] = $_SESSION['employee_session'];
+	$dtr->obj['createDate'] = "NOW()";
+	$dtr->obj['checkIn'] = "NOW()";
+	$dtr->create();
 }
 
 function changepassword()
@@ -99,10 +100,10 @@ function changepassword()
 
 	if($password == $password2){
 		if($password != 'temppassword'){
-			$obj = new Profile;
-			$newObj = $obj->readOne($_POST['username']);
-			$newObj->password = $password;
-			$obj->updateOne($newObj);
+
+			$user = user();
+			$user->obj['password'] = $password;
+			$user->update("username='$username'");
 
 			header('Location: index.php');
 		}
@@ -117,8 +118,9 @@ function changepassword()
 
 function stampCheckIn(){
 
-		$obj = new DTR;
-		$dtr = $obj->readOne($_SESSION['employee_session'], date("Y-m-d"));
+	$username = $_SESSION['employee_session'];
+	$dateNow = date("Y-m-d");
+	$dtr = dtr()->get("owner='$username' and createDate='$dateNow'");
 
 	if ($dtr->status == 1)
 	{
@@ -141,14 +143,11 @@ function __breakIn(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set breakIn=NOW(),
-															status = '0'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['breakIn'] = "NOW()";
+	$dtr->obj['status'] = "0";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -157,14 +156,11 @@ function __breakIn2(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set breakIn2=NOW(),
-															status = '0'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['breakIn2'] = "NOW()";
+	$dtr->obj['status'] = "0";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -173,14 +169,11 @@ function __lunchIn(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set lunchIn=NOW(),
-															status = '0'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['lunchIn'] = "NOW()";
+	$dtr->obj['status'] = "0";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -189,14 +182,11 @@ function stampBreak(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set breakOut=NOW(),
-															status = '1'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['breakOut'] = "NOW()";
+	$dtr->obj['status'] = "1";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -205,14 +195,11 @@ function stampBreak2(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set breakOut2=NOW(),
-															status = '2'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['breakOut2'] = "NOW()";
+	$dtr->obj['status'] = "2";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -222,14 +209,11 @@ function stampLunch(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set lunchOut=NOW(),
-															status = '3'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['lunchOut'] = "NOW()";
+	$dtr->obj['status'] = "3";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -239,14 +223,11 @@ function stampCheckOut(){
 
 	$currentUser = $_SESSION['employee_session'];
 	$currentDate = date("Y-m-d");
-	$db = Database::connect();
-	$pdo = $db->prepare("update dtr set checkOut=NOW(),
-															status = '4'
-															where owner='$currentUser'
-															and createDate='$currentDate'
-															");
-	$pdo->execute();
-	Database::disconnect();
+
+	$dtr = dtr();
+	$dtr->obj['checkOut'] = "NOW()";
+	$dtr->obj['status'] = "4";
+	$dtr->update("owner='$currentUser' and createDate='$currentDate'");
 
 	header('Location: index.php');
 }
@@ -256,27 +237,19 @@ function submitTimesheet()
 {
 	$currentUser = $_SESSION['employee_session'];
 	// Get jobId
-	$emp = new Employee;
-	$newEmp = $emp->readOne($currentUser);
+	$emp = employee()->get("username='$currentUser'");
 
-	// Create timesheetId
-	$ts = new Timesheet;
-	$ts->jobId = $newEmp->jobId;
-	$ts->employee = $currentUser;
-	$ts->name = 'Timesheet as of ' . date("Y-m-d H:i:s");
-	$ts->createOne($ts);
+	$ts = timesheet();
+	$ts->obj['jobId'] = $emp->jobId;
+	$ts->obj['employee'] = $currentUser;
+	$ts->obj['name'] = 'Timesheet as of ' . date("Y-m-d H:i:s");
+	$ts->create();
 
-	// Get latest timesheet Id
-	$db = Database::connect();
-	$pdo = $db->prepare("select * from timesheet where employee='$currentUser' ORDER BY ID DESC LIMIT 1");
-	$pdo->execute();
-	$timesheetData = $pdo->fetch(PDO::FETCH_OBJ);
+	$tsData = timesheet()->get("employee='$currentUser' ORDER BY ID DESC LIMIT 1");
 
-	$pdo = $db->prepare("update dtr set timesheetId = '$timesheetData->Id'
-													where timesheetId = '0' and owner = '$currentUser'
-															");
-	$pdo->execute();
-	Database::disconnect();
+	$dtr = dtr();
+	$dtr->obj['timesheetId'] = $tsData->Id;
+	$dtr->update("timesheetId = '0' and owner = '$currentUser'");
 
 	// Update all dtr
 	header('Location: index.php?a='.$ts->Id);
