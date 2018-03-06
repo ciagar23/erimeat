@@ -42,6 +42,12 @@
     </li>
 
     <li>
+        <a href="?view=jobCategory">
+            <i class="mdi mdi-account"></i><span> Job Category </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=reports">
             <i class="mdi mdi-account"></i><span> Reports </span>
         </a>
