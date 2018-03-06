@@ -2,7 +2,7 @@
 <title>Teamire - Catalyst in Continuous Improvement</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta content="Catalyst in Continuous Improvement" name="description" />
-<meta content="Coderthemes" name="author" />
+<meta content="Teamire" name="author" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="">
 
@@ -118,74 +118,33 @@
   font-size: 30px;
   font-family: 'Lato', sans-serif;
 }
-.hovereffect {
-  width: 100%;
-  height: 100%;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-}
-
-.hovereffect .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  top: -200px;
+.middle {
+  transition: .5s ease;
   opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: all 0.1s ease-out 0.5s;
-  transition: all 0.1s ease-out 0.5s;
-}
-
-.hovereffect:hover .overlay {
-  opacity: 1;
-   background: linear-gradient(#fff,#4489e4);
-  filter: alpha(opacity=100);
-  top: 0px;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-
-.hovereffect img {
-  display: block;
-  position: relative;
-}
-
-.hovereffect h2 {
-  text-transform: uppercase;
-  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   text-align: center;
-  position: relative;
-  font-size: 17px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  -webkit-transform: translateY(-200px);
-  -ms-transform: translateY(-200px);
-  transform: translateY(-200px);
-  -webkit-transition: all ease-in-out 0.1s;
-  transition: all ease-in-out 0.1s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+   background-color: #f8f9fa;
+
+
+
 }
 
-.hovereffect:hover h2 {
-  -webkit-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  transform: translateY(0px);
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+.hovereffect:hover .image {
+  opacity: 0.3;
+
 }
 
+.hovereffect:hover .middle {
+  opacity: 1;
+}
 
 #box-design{
-	  box-shadow: 5px 10px #888888;
-                border-style: solid;
-                border-color: #3399cc;
+background-color:rgba(0,0,0,0.3);
+	
 
 }
 .btn-file {
@@ -213,5 +172,82 @@
     display: block;
 
 
+}
+
+.course{
+  text-align:center;
+  color:green;
+}
+.course1{
+  text-align:center;
+  font-family:Bradley Hand ITC;
+}
+.cours2{
+  margin-top:30px;
+}
+
+.cours2{
+  position:relative;
+  margin-bottom:50px;
+  
+}
+
+
+.cours3{
+  -border:1px solid red;
+  position:absolute;
+  top:-100px;
+  opacity:0;
+  -bottom:100px;
+  -background-color:rgba(142,198,63,.8);
+  background-color:rgba(0,0,0,0.3);
+  color:white;
+  padding:10p;
+}
+.cours2:hover .cours3 {
+  opacity:1;
+  top:0px;
+  transition:1s;
+}
+.cours4{
+  position:absolute;
+  -border:1px solid red;
+  -margin-top:-80px;
+  padding-top:20px;
+  width:100%;
+  height:80px;
+  opacity:0;
+  bottom:-50px;
+  -background-color:rgba(142,198,63,.8);
+  background-color:rgba(0,0,0,0.3);
+}
+.cours2:hover .cours4{
+  opacity:1;
+  bottom:0;
+  transition:1s;
+}
+.cours2:hover .hover{
+  transform:scale(1.3);
+  transition:1s;
+}
+.cours7{
+  border:1px solid rgb(73,183,43);
+  background-color:rgb(73,183,43);
+  color:white;
+  font-size:18px;
+  padding:10px 15px;
+  border-radius:5px 20px;
+}
+.cours7:hover{
+  background-color:transparent;
+  color:rgb(73,183,43);
+  border:1px solid rgb(73,183,43);
+  transition:1s;
+}
+
+.cou:hover{
+  background-color:transparent !important;
+  color:rgb(237,78,110) !important;
+  border:1px solid rgb(237,78,110) !important;
 }
 </style>
