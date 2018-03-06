@@ -27,24 +27,20 @@ function getPositionName($Id){
     <hr>
     <!-- Job Information -->
     <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Salary:</p>
-      <p class="col-lg-9 col-md-8 col-6">$17 - 22/hr</p>
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Job Reference Number:</p>
+      <p class="col-lg-9 col-md-8 col-6"><?=$job->refNum;?></p>
     </div>
     <div class="row cleafix">
       <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Location:</p>
       <p class="col-lg-9 col-md-8 col-6"><?=$job->address;?></p>
     </div>
     <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Date Posted:</p>
-      <p class="col-lg-9 col-md-8 col-6"><?=$job->createDate;?></p>
+      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Postal Code:</p>
+      <p class="col-lg-9 col-md-8 col-6"><?=$job->zipCode;?></p>
     </div>
     <div class="row cleafix">
       <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Employment Type:</p>
       <p class="col-lg-9 col-md-8 col-6"><?=getPositionName($job->positionTypeId);?></p>
-    </div>
-    <div class="row cleafix">
-      <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Job Reference Number:</p>
-      <p class="col-lg-9 col-md-8 col-6"><?=$job->refNum;?></p>
     </div>
     <div class="row cleafix">
       <p class="col-lg-3 col-6 col-md-4 text-bold m-b-20">Required Experience:</p>
@@ -55,12 +51,7 @@ function getPositionName($Id){
     <p>
       <?=$job->comment;?>
     </p>
-    <h2>Requirements</h2>
-    <p>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor.
-      Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor.
-    </p>
 
-    <hr>
     <div class="col-md-2 text-center">
       <h2>2</h2>
       <p>Applicants</p>
@@ -74,11 +65,7 @@ function getPositionName($Id){
     <hr>
     <div class="m-b-30">
     <h3><?=$job->address;?></h3>
-    Lorem Ipsum
-    <br>
-    Lorem Ipsum
-    <br>
-    Lorem Ipsum
+    <?=$job->createDate;?>
   </div>
   </div> <!-- End Job Detail -->
 
