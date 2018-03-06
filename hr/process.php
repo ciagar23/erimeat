@@ -1,11 +1,19 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
 switch ($action) {
+
+	case 'login' :
+	login();
+	break;
+
+	case 'logout' :
+	logout();
+	break;
 
 	case 'addExperience' :
 		addExperience();
@@ -17,18 +25,6 @@ switch ($action) {
 
 	case 'clientRequest' :
 		clientRequest();
-		break;
-
-	case 'login' :
-		login();
-		break;
-
-	case 'update' :
-		update();
-		break;
-
-	case 'logout' :
-		logout();
 		break;
 
 	case 'changepassword' :
@@ -61,10 +57,9 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Admin::login($username, $password, 'hr');
+	$result = admin()->get("username='$username' and password = '$password'");
 
 	if ($result){
-		session_start();
 		$_SESSION['hr_session'] = $username;
 		header('Location: index.php');
 	}
@@ -83,40 +78,20 @@ header('Location: index.php');
 	exit;
 }
 
-function update()
-{
-	$obj = new Profile;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->username = $_POST['username'];
-	$newObj->firstName = $_POST['firstName'];
-	$newObj->lastName = $_POST['lastName'];
-	$newObj->email = $_POST['email'];
-	$newObj->contact = $_POST['contact'];
-	$newObj->address = $_POST['address'];
-	$newObj->aboutMe = $_POST['aboutMe'];
-	$newObj->linkdin = $_POST['linkdin'];
-	$newObj->skype = $_POST['skype'];
-	$obj->updateOne($newObj);
-
-	header('Location: ../user/?view=profileDisplay');
-}
-
 function denyResume()
 {
-	$obj = new Resume;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = -1;
-	$obj->updateOne($newObj);
+	$resume = resume();
+	$resume->obj['isApproved'] = "-1";
+	$resume->update("$_GET['Id']");
 
 	header('Location: index.php?view=applicants');
 }
 
 function approveTimesheet()
 {
-	$obj = new Timesheet;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->status = 1;
-	$obj->updateOne($newObj);
+	$timesheet = timesheet();
+	$timesheet->status = "1";
+	$timesheet->update("$_GET['Id']");
 
 	header('Location: index.php?view=timekeepingCompanyList');
 }
