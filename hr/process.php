@@ -57,7 +57,7 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = admin()->get("username='$username' and password = '$password'");
+	$result = admin()->get("username='$username' and password = '$password' and level='hr'");
 
 	if ($result){
 		$_SESSION['hr_session'] = $username;
