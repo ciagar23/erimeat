@@ -251,6 +251,8 @@ function jobRequest()
 	$job->obj['isApproved'] = $result;
 	$job->update("Id='$Id'");
 
+	$job = job()->get("Id='$Id'");
+
 	if ($result==1){
 	// Send email
 	$content = __approvedJobRequestEmailMessage();
