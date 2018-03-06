@@ -95,7 +95,7 @@ substr(round(microtime(true)), -6)
 	// Send email
 	$content = __clientRequestEmailMessage();
 	/* should also send email to hr and admin */
-	sendEmail($obj->email, $content);
+	sendEmail($com->obj['email'], $content);
 
 	header('Location: ../home/?view=success');
 }

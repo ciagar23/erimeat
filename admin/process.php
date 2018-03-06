@@ -53,10 +53,10 @@ switch ($action) {
 function addAccount()
 {
 
-	$obj = new Admin;
-	$newObj = $obj->readOne($_POST['username']);
+	$username = $_POST['username'];
+	$checkUser = admin()->get("username='$username'");
 
-	if($newObj->username == 1){
+	if($checkUser){
 		header('Location: ../admin/?view=accounts&error=User already exist!');
 	}
 	else{
