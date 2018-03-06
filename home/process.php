@@ -128,7 +128,7 @@ function submitResume(){
 			// Send email
 			$content = __submitResumeEmailMessage();
 			/* should also send email to hr and admin */
-			sendEmail($obj->email, $content);
+			sendEmail($res->obj['email'] , $content);
 
 			header('Location: ../home/?view=success');
 		}
@@ -165,7 +165,7 @@ function submitApplication()
 			// Send Email
 			$content = __submitApplicationEmailMessage();
 			/* should also send email to hr and admin */
-			sendEmail($obj->email, $content);
+			sendEmail($res->obj['email'], $content);
 			header('Location: ../home/?view=success');
 		}
 		else{
