@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -88,7 +88,7 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Admin::login($username, $password, 'admin');
+	$result = admin()->get("username='$username' and password = '$password' and level='admin'");
 
 	if ($result){
 		session_start();

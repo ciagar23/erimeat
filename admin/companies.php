@@ -1,7 +1,7 @@
 <?php
 $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Company;
+$companyList = company()->all();
 ?>
      <div class="row">
                             <div class="col-xs-12">
@@ -30,7 +30,7 @@ $obj = new Company;
             </tr>
           </thead>
           <tbody>
-            <?php foreach($obj->readList($s) as $row) {
+            <?php foreach($companyList as $row) {
               if ($row->isApproved==1){
             ?>
             <tr>

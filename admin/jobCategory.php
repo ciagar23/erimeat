@@ -2,7 +2,7 @@
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new JobFunction;
+$jobList = job_function()->all();
 ?>
      <div class="row">
                             <div class="col-xs-12">
@@ -35,7 +35,7 @@ $obj = new JobFunction;
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
+           <?php foreach($jobList as $row) {
             if ($row){
               ?>
               <tr>

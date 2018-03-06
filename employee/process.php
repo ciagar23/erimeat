@@ -57,7 +57,7 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = user()->get("username='$username' and password = '$password'");
+	$result = user()->get("username='$username' and password = '$password' and level='employee'");
 
 	if ($result){
 		$_SESSION['employee_session'] = $username;
@@ -97,6 +97,7 @@ function changepassword()
 {
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
+	$username = $_POST['username'];
 
 	if($password == $password2){
 		if($password != 'temppassword'){

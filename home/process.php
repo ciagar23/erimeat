@@ -1,6 +1,6 @@
 <?php
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -38,22 +38,22 @@ substr(round(microtime(true)), -6)
 
 	*/
 
-	$obj = new Job;
-	$obj->refNum = round(microtime(true));
-	$obj->jobFunctionId = $_POST['jobFunctionId'];
-	$obj->positionTypeId = $_POST['positionTypeId'];
-	$obj->contactName = $_POST['contactName'];
-	$obj->position = $_POST['position'];
-	$obj->company = $_POST['company'];
-	$obj->abn = $_POST['abn'];
-	$obj->comment = $_POST['comment'];
-	$obj->address = $_POST['address'];
-	$obj->workEmail = $_POST['workEmail'];
-	$obj->jobTitle = $_POST['jobTitle'];
-	$obj->businessPhone = $_POST['businessPhone'];
-	$obj->zipCode = $_POST['zipCode'];
-	$obj->requiredExperience = $_POST['requiredExperience'];
-	$obj->createOne($obj);
+	$job = job();
+	$job->obj['refNum'] = round(microtime(true));
+	$job->obj['jobFunctionId'] = $_POST['jobFunctionId'];
+	$job->obj['positionTypeId'] = $_POST['positionTypeId'];
+	$job->obj['contactName'] = $_POST['contactName'];
+	$job->obj['position'] = $_POST['position'];
+	$job->obj['company'] = $_POST['company'];
+	$job->obj['abn'] = $_POST['abn'];
+	$job->obj['comment'] = $_POST['comment'];
+	$job->obj['address'] = $_POST['address'];
+	$job->obj['workEmail'] = $_POST['workEmail'];
+	$job->obj['jobTitle'] = $_POST['jobTitle'];
+	$job->obj['businessPhone'] = $_POST['businessPhone'];
+	$job->obj['zipCode'] = $_POST['zipCode'];
+	$job->obj['requiredExperience'] = $_POST['requiredExperience'];
+	$job->create();
 
 	// Send email
 	$content = __talentRequestEmailMessage();
@@ -78,20 +78,19 @@ function clientRequest()
 substr(round(microtime(true)), -6)
 
 	*/
-
-	$obj = new Company;
-	$obj->username = '';
-	$obj->jobFunctionId = $_POST['jobFunctionId'];
-	$obj->department = $_POST['department'];
-	$obj->name = $_POST['name'];
-	$obj->abn = $_POST['abn'];
-	$obj->contactPerson = $_POST['contactPerson'];
-	$obj->email = $_POST['email'];
-	$obj->address = $_POST['address'];
-	$obj->phoneNumber = $_POST['phoneNumber'];
-	$obj->mobileNumber = $_POST['mobileNumber'];
-	$obj->description = $_POST['description'];
-	$obj->createOne($obj);
+	$com = company();
+	$com->obj['username'] = '';
+	$com->obj['jobFunctionId'] = $_POST['jobFunctionId'];
+	$com->obj['department'] = $_POST['department'];
+	$com->obj['name'] = $_POST['name'];
+	$com->obj['abn'] = $_POST['abn'];
+	$com->obj['contactPerson'] = $_POST['contactPerson'];
+	$com->obj['email'] = $_POST['email'];
+	$com->obj['address'] = $_POST['address'];
+	$com->obj['phoneNumber'] = $_POST['phoneNumber'];
+	$com->obj['>mobileNumber'] = $_POST['mobileNumber'];
+	$com->obj['description ']= $_POST['description'];
+	$com->create();
 
 	// Send email
 	$content = __clientRequestEmailMessage();
@@ -106,25 +105,25 @@ function submitResume(){
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
 		{
-			$obj = new Resume;
-			$obj->jobId = "0";
-			$obj->jobFunctionId = $_POST["jobFunctionId"];
-			$obj->firstName = $_POST["firstName"];
-			$obj->lastName = $_POST["lastName"];
-			$obj->abn = $_POST["abn"];
-			$obj->taxNumber = $_POST["taxNumber"];
-			$obj->email = $_POST["email"];
-			$obj->phoneNumber = $_POST["phoneNumber"];
-			$obj->address1 = $_POST["address1"];
-			$obj->address2 = $_POST["address2"];
-			$obj->city = $_POST["city"];
-			$obj->state = $_POST["state"];
-			$obj->zipCode = $_POST["zipCode"];
-			$obj->speedtest = $_POST["speedtest"];
-			$obj->coverLetter = $_POST["coverLetter"];
-			$obj->uploadedResume = $upload;
-			$obj->uploadedSpecs = $_POST["upload_specs"];
-			$obj->createOne($obj);
+			$res = resume();
+			$res->['jobId'] = "0";
+			$res->['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->['firstName'] = $_POST["firstName"];
+			$res->['lastName']= $_POST["lastName"];
+			$res->['abn'] = $_POST["abn"];
+			$res->['taxNumber'] = $_POST["taxNumber"];
+			$res->['email'] = $_POST["email"];
+			$res->['phoneNumber'] = $_POST["phoneNumber"];
+			$res->['address1'] = $_POST["address1"];
+			$res->['address2'] = $_POST["address2"];
+			$res->['city'] = $_POST["city"];
+			$res->['state'] = $_POST["state"];
+			$res->['zipCode'] = $_POST["zipCode"];
+			$res->['speedtest'] = $_POST["speedtest"];
+			$res->['coverLetter'] = $_POST["coverLetter"];
+			$res->['uploadedResume'] = $upload;
+			$res->['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->create();
 
 			// Send email
 			$content = __submitResumeEmailMessage();
@@ -144,24 +143,25 @@ function submitApplication()
 		if ($upload)
 		{
 			$obj = new Resume;
-			$obj->jobId = $_POST["jobId"];
-			$obj->jobFunctionId = $_POST["jobFunctionId"];
-			$obj->firstName = $_POST["firstName"];
-			$obj->lastName = $_POST["lastName"];
-			$obj->abn = $_POST["abn"];
-			$obj->taxNumber = $_POST["taxNumber"];
-			$obj->email = $_POST["email"];
-			$obj->phoneNumber = $_POST["phoneNumber"];
-			$obj->address1 = $_POST["address1"];
-			$obj->address2 = $_POST["address2"];
-			$obj->city = $_POST["city"];
-			$obj->state = $_POST["state"];
-			$obj->zipCode = $_POST["zipCode"];
-			$obj->speedtest = $_POST["speedtest"];
-			$obj->coverLetter = $_POST["coverLetter"];
-			$obj->uploadSpecs = $_POST["upload_specs"];
-			$obj->uploadedResume = $upload;
-			$obj->createOne($obj);
+			$res = resume();
+			$res->obj['jobId'] = $_POST["jobId"];
+			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['firstName'] = $_POST["firstName"];
+			$res->obj['lastName']= $_POST["lastName"];
+			$res->obj['abn'] = $_POST["abn"];
+			$res->obj['taxNumber'] = $_POST["taxNumber"];
+			$res->obj['email'] = $_POST["email"];
+			$res->obj['phoneNumber'] = $_POST["phoneNumber"];
+			$res->['address1'] = $_POST["address1"];
+			$res->['address2'] = $_POST["address2"];
+			$res->['city'] = $_POST["city"];
+			$res->['state'] = $_POST["state"];
+			$res->['zipCode'] = $_POST["zipCode"];
+			$res->['speedtest'] = $_POST["speedtest"];
+			$res->['coverLetter'] = $_POST["coverLetter"];
+			$res->['uploadedResume'] = $upload;
+			$res->['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();
 			/* should also send email to hr and admin */
@@ -175,15 +175,15 @@ function submitApplication()
 
 function sendInquiry()
 {
-		$obj = new Inquiries;
-		$obj->firstName = $_POST["firstName"];
-		$obj->lastName = $_POST["lastName"];
-		$obj->phoneNumber = $_POST["phoneNumber"];
-		$obj->jobFunctionId = $_POST["jobFunctionId"];
-		$obj->workEmail = $_POST["workEmail"];
-		$obj->zipCode = $_POST["zipCode"];
-		$obj->message = $_POST["message"];
-		$obj->createOne($obj);
+		$inq = inquiries();
+		$inq->obj['firstName'] = $_POST["firstName"];
+		$inq->obj['lastName'] = $_POST["lastName"];
+		$inq->obj['phoneNumber'] = $_POST["phoneNumber"];
+		$inq->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+		$inq->obj['workEmail'] = $_POST["workEmail"];
+		$inq->obj['zipCode'] $_POST["zipCode"];
+		$inq->obj['message'] = $_POST["message"];
+		$inq->create());
 
 		header('Location: ../home/?view=success');
 }

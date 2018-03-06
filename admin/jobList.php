@@ -1,11 +1,10 @@
 <?php
 $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Job;
+$jobList = job()->all();
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+  $job = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 ?>
@@ -38,7 +37,7 @@ function getJobFunction($Id){
             </tr>
           </thead>
           <tbody>
-            <?php foreach($obj->readList($s) as $row) {
+            <?php foreach($jobList as $row) {
               if ($row->isApproved==1){
             ?>
             <tr>
