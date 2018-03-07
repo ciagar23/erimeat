@@ -89,4 +89,11 @@ function user() {
 	$crud->table = "user";
 	return $crud;
 }
+
+// User Models
+function projects() {
+	$crud = new CRUD;
+	$crud->table = "projects";
+	return $crud;
+}
 ?>

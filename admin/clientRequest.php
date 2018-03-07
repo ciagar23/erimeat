@@ -11,20 +11,10 @@ $compList = company()->all();
 
 ?>
 
-<div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title">Client Request</h4>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-<div class="card-box">
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Talent Request</b></h4>
+        <h4 class="page-title">Client Request</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -57,4 +47,3 @@ $compList = company()->all();
       </div>
     </div>
   </div>
-</div>

@@ -3,24 +3,15 @@ $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $companyList = company()->all();
 ?>
-     <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title">Companies</h4>
 
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
 
 <p class="m-b-0">
   <?=$message?></p>
-</div>
-<div class="card-box">
+
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Companies</b></h4>
+        <h4 class="page-title">Companies</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -49,4 +40,3 @@ $companyList = company()->all();
       </div>
     </div>
   </div>
-</div>
