@@ -1,5 +1,9 @@
+<?php
+
+?>
+
 <div>
-  <div style="position:relative;">
+  <div style="position:inherit;">
  <!-- START carousel-->
     <div id="carousel-example-captions" data-ride="carousel" class="carousel slide carousel-fade" data-interval="10000">
 
@@ -67,6 +71,7 @@
   <hr>
 <div class="container">
 
+
                          <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
 
                         <div class="row">
@@ -116,6 +121,7 @@
                                       </div>
                         </div>
                         <!-- end row -->
+
 
                         <div class="row">
                              <div class="col-sm-4">

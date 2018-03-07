@@ -17,6 +17,15 @@ $job = $obj->readOne($_GET['id']);
                     <p class="text-muted font-13"><strong>Job Position :</strong>
                       <span class="m-l-15"><?=$job->position;?></span>
                     </p>
+                    <p class="text-muted font-13"><strong>Company Name :</strong>
+                      <span class="m-l-15"><?=$job->company;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Company ABN :</strong>
+                      <span class="m-l-15"><?=$job->abn;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Company Representative :</strong>
+                      <span class="m-l-15"><?=$job->contactName;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Work Email :</strong>
                       <span class="m-l-15"><?=$job->workEmail;?></span>
                     </p>
@@ -40,8 +49,8 @@ $job = $obj->readOne($_GET['id']);
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=approve&Id=<?=$job->Id;?>">Approve</a></button>
--          <button class="btn btn-default stepy-finish"><a href="process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>">Deny</a></button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=jobRequest&result=approve&Id=<?=$job->Id;?>'">Approve</button>
+-         <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>'">Deny</button>
         </div>
     </div>
   </div>

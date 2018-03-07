@@ -29,7 +29,7 @@
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">ABOUT US</h4>
                     <p><a style="color: white;" href="../home/?view=aboutUs#howWeDoThis">How we do this</a></p>
-                    <p><a style="color: white;" href="../home/?view=aboutUs#ourPurpose">Our Purpose</a></p>
+                    <p><a style="color: white;" href="../home/?view=aboutUs#ourVision">Our Vision</a></p>
                     <p><a style="color: white;" href="../home/?view=aboutUs#ourObjectives">Our Objectives</a></p>
                     <p><a style="color: white;" href="../home/?view=logins">Timesheets</a></p>
                     <p><a style="color: white;" href="../home/?view=contactUs">Contact Us</a></p>
@@ -41,10 +41,10 @@
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">LEGAL</h4>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
-                    <p>Lorem</p>
+                    <p>Fraud Alert</p>
+                    <p>Privacy Policy</p>
+                    <p>Terms of Use</p>
+                    <p>Government Notice</p>
                   </div>
                   <div class="container-fluid col-12 col-lg-3">
                     <h4 class="text-white">FOLLOW US</h4>

@@ -36,14 +36,33 @@ $pt->readList();
                               </div>
                               </div>
 
+                              <div class="p-r-10 w-50-p pull-left">
+                              <div class="form-group">
+                                  <label for="username">Candidate ABN <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="abn" data-mask="99999999999" required>
+                              </div>
+                              </div>
+
+                              <div class="p-l-10 w-50-p pull-left">
+                              <div class="form-group">
+                                  <label for="username">Tax File Number</label>
+                                  <input type="text" class="form-control" name="taxNumber">
+                                  <span class="help-block"><small>For Australia based only</small></span>
+                              </div>
+                              </div>
+
+                              <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Email <span style="color: red;">*</span></label>
                                   <input type="email" class="form-control" name="email" required>
                               </div>
+                              </div>
 
+                              <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Phone Number <span style="color: red;">*</span></label>
                                   <input type="text" class="form-control" name="phoneNumber" required>
+                              </div>
                               </div>
 
 
@@ -77,8 +96,17 @@ $pt->readList();
                           <div class="form-group">
                               <label for="username">Speedtest</label>
                               <input type="text" class="form-control" name="speedtest">
+                              <span class="help-block"><small>To access speedtest. Click the link <a href="#">www.speedtest.com</a></small></span>
                           </div>
-                          To access speedtest. Click the link <a href="#">www.speedtest.com</a>
+
+                          <div class="form-group">
+                            <label for="username">Cover Letter<span style="color: red;">*</span></label>
+                            <textarea id="message" class="form-control" name="coverLetter"
+                                              data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                              data-parsley-maxlength="100"
+                                              data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                              data-parsley-validation-threshold="10"></textarea>
+                          </div>
 
                           <div class="form-group">
                             <label>Attach Specs</label>
@@ -99,7 +127,7 @@ $pt->readList();
                         <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false"></div>
                      </div>
                     </div>
-                    <br><br><br><br><br><br>
+                    <br><br><br><br>
                   <div class="text-center m-t-30">
                       <button type="submit" class="btn btn-primary stepy-finish"> SUBMIT RESUME </button>
                   </div>

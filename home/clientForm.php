@@ -5,7 +5,7 @@ $jf->readList();
 
 <div class="row">
     <div class="col-md-12">
-      <h2 class="text-center m-t-30 m-b-30">Client Request</h2>
+      <h2 class="text-center m-t-30 m-b-30">Employer Registration Form</h2>
       <div class="jumbotron center-page" style="width: 1140px;">
             <form id="default-wizard" action="process.php?action=clientRequest" method="POST" data-parsley-validate="">
                     <div class="row m-t-20">
@@ -28,21 +28,21 @@ $jf->readList();
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                <label for="username">Company Name <span style="color: red;">*</span></label>
+                                <label for="username">Employer's Name <span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" name="name" required>
                               </div>
                               </div>
 
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
-                                <label for="username">Company ABN <span style="color: red;">*</span></label>
+                                <label for="username">Employer ABN <span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" data-mask="99999999999" name="abn" required>
                               </div>
                               </div>
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="firstname">Company Representative <span style="color: red;">*</span></label>
+                                  <label for="firstname">Employer Representative <span style="color: red;">*</span></label>
                                   <input type="text" class="form-control" name="contactPerson" required>
                               </div>
                               </div>

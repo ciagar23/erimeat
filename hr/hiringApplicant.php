@@ -22,8 +22,8 @@ $jobId = $_GET['jobId'];
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button class="btn btn-default"><a href="process.php?action=hireApplicant&result=approve&Id=<?=$app->Id;?>&jobId=<?=$jobId;?>">Hire</a></button>
-          <button class="btn btn-default"><a href="process.php?action=hireApplicant&result=deny&Id=<?=$app->Id;?>">Deny</a></button>
+          <button class="btn btn-default" onclick="location.href='process.php?action=hireApplicant&result=approve&Id=<?=$app->Id;?>&jobId=<?=$jobId;?>'">Hire</button>
+          <button class="btn btn-default" onclick="location.href='process.php?action=hireApplicant&result=deny&Id=<?=$app->Id;?>'">Deny</button>
         </div>
     </div>
   </div>

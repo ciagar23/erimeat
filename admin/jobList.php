@@ -32,6 +32,7 @@ function getJobFunction($Id){
             <tr>
               <th>Job Reference Number</th>
               <th>Job Category</th>
+              <th>Job Classification</th>
               <th>Company Name</th>
               <th>Action</th>
             </tr>
@@ -43,6 +44,7 @@ function getJobFunction($Id){
             <tr>
               <td><?=$row->refNum;?></td>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
+              <td><?=$row->position;?> </td>
               <td><?=$row->company;?> </td>
               <td>
                 <a href="?view=jobDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>

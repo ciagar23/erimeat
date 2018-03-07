@@ -1,9 +1,10 @@
 <div class="container-fluid m-t-30 m-b-30">
   <div class="container-80 text-center center-page">
-    <h2>Our Supply Chain Services</h2>
-    <p class="m-t-10 p-30">Teamire's staffing expertise extends to a wide range of industries. Our specialists connect employers
-      with highly skilled job seekers. With staffing offices across the country,
-      it’s easy to begin your candidate search today.</p>
+    <h2>
+      Our Services Extend to All Areas<br>
+      of Supply Chain Management
+    </h2>
+    <br>
   </div>
 
   <div class="p-t-5 container-80 center-page">

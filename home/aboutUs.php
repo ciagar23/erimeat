@@ -68,7 +68,7 @@
       <img src="../include/assets/images/about-us-img2.jpg" style="width: 80%; border-radius: 50%;">
     </div>
     <div class="col-md-9">
-      <h4 id="ourPurpose">Our Purpose</h4>
+      <h4 id="ourVision">Our Vision</h4>
       <p>At Teamire our purpose is to help our client streamline their business processes by synchronizing
          their Production, Inventory and Sales and relisting them as a reliable and competitive source for
          products and services. It is also our goal to become our clients 1st choice every time for resolving

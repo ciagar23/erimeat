@@ -17,8 +17,17 @@ $job = $obj->readOne($_GET['id']);
                     <p class="text-muted font-13"><strong>Job Position :</strong>
                       <span class="m-l-15"><?=$job->position;?></span>
                     </p>
+                    <p class="text-muted font-13"><strong>Company Name:</strong>
+                      <span class="m-l-15"><?=$job->company;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Company ABN:</strong>
+                      <span class="m-l-15"><?=$job->abn;?></span>
+                    </p>
                     <p class="text-muted font-13"><strong>Work Email :</strong>
                       <span class="m-l-15"><?=$job->workEmail;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Contact Person:</strong>
+                      <span class="m-l-15"><?=$job->contactName;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Job Title :</strong>
                       <span class="m-l-15"><?=$job->jobTitle;?></span>
