@@ -39,7 +39,7 @@ class CRUD {
 		$pdo->execute();
 		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		Database::disconnect();
-		return reset($result);
+		return $result;
 	}
 
 	function get($args){

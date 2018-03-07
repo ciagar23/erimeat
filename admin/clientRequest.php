@@ -2,12 +2,11 @@
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+  $job = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 
-$obj = new Company;
+$compList = company()->all();
 
 
 ?>
@@ -37,7 +36,7 @@ $obj = new Company;
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
+           <?php foreach($compList as $row) {
   if ($row->isApproved==0){
   ?>
             <tr>

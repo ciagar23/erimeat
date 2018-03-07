@@ -1,6 +1,6 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Job;
+$job = job()->all();
 ?>
 <div class="row">
     <div class="col-xs-12">
@@ -23,7 +23,7 @@ $obj = new Job;
         </tr>
       </thead>
       <tbody>
-        <?php foreach($obj->readList($s) as $row) {
+        <?php foreach($job as $row) {
           if ($row->isApproved==1){
         ?>
         <tr>

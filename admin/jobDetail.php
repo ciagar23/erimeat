@@ -1,6 +1,6 @@
 <?php
-$obj = new Job;
-$job = $obj->readOne($_GET['id']);
+$Id = $_GET['id'];
+$job = job()->get("Id='$Id'");
 ?>
 
 

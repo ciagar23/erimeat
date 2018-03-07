@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -29,10 +29,9 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Profile::login($username, $password, 'company');
+		$result = user()->get("username='$username' and password = '$password' and level='company'");
 
 	if ($result){
-		session_start();
 		$_SESSION['company_session'] = $username;
 		$_SESSION['user_session'] = $username;
 		if ($password == 'temppassword'){
@@ -51,13 +50,14 @@ function changepassword()
 {
 	$password = $_POST['password'];
 	$password2 = $_POST['password2'];
+	$username = $_POST['username'];
 
 	if($password == $password2){
 		if($password != "temppassword"){
-			$obj = new Profile;
-			$newObj = $obj->readOne($_POST['username']);
-			$newObj->password = $password;
-			$obj->updateOne($newObj);
+
+			$user = user();
+			$user->obj['password'] = $password;
+			$user->update("username='$username'");
 
 			header('Location: index.php');
 		}

@@ -1,11 +1,10 @@
 <?php
-$obj = new Company;
-$comp = $obj->readOne($_GET['id']);
+$Id = $_GET['id'];
+$company = company()->get("Id='$Id'");
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
-  echo $job->option;
+  $jobFunc = job_function()->get("Id='$Id'");
+  echo $jobFunc->option;
 }
 ?>
 
@@ -18,38 +17,38 @@ function getJobFunction($Id){
             <div class="panel-body">
                 <div class="text-left">
                     <p class="text-muted font-13"><strong>Company Name :</strong>
-                      <span class="m-l-15"><?=$comp->name;?></span>
+                      <span class="m-l-15"><?=$company->name;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Company ABN :</strong>
-                      <span class="m-l-15"><?=$comp->abn;?></span>
+                      <span class="m-l-15"><?=$company->abn;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Industry :</strong>
-                      <span class="m-l-15"><?=getJobFunction($comp->jobFunctionId);?></span>
+                      <span class="m-l-15"><?=getJobFunction($company->jobFunctionId);?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Department :</strong>
-                      <span class="m-l-15"><?=$comp->department;?></span>
+                      <span class="m-l-15"><?=$company->department;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Contact Person :</strong>
-                      <span class="m-l-15"><?=$comp->contactPerson;?></span>
+                      <span class="m-l-15"><?=$company->contactPerson;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Client Email :</strong>
-                      <span class="m-l-15"><?=$comp->email;?></span>
+                      <span class="m-l-15"><?=$company->email;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Address :</strong>
-                      <span class="m-l-15"><?=$comp->address;?></span>
+                      <span class="m-l-15"><?=$company->address;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Phone Number :</strong>
-                      <span class="m-l-15"><?=$comp->phoneNumber;?></span>
+                      <span class="m-l-15"><?=$company->phoneNumber;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Mobile Number :</strong>
-                      <span class="m-l-15"><?=$comp->mobileNumber;?></span>
+                      <span class="m-l-15"><?=$company->mobileNumber;?></span>
                     </p>
                 </div>
             </div>
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=clientRequest&Id=<?=$comp->Id;?>'">Approve</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=clientRequest&Id=<?=$company->Id;?>'">Approve</button>
         </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <?php
 $jobId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
-$obj = new Employee;
+$employee = employee()->all();
 
 function get_fullname($username){
-  $prf = Profile::readOne($username);
-  return $prf->firstName . " " . $prf->lastName;
+  $user = user()->get("username='$username'");
+  return $user->firstName . " " . $user->lastName;
 }
 
 ?>
@@ -30,7 +30,7 @@ function get_fullname($username){
         </tr>
       </thead>
       <tbody>
-        <?php foreach($obj->readList() as $row) {
+        <?php foreach($employee as $row) {
           if ($row->jobId==$jobId){
         ?>
         <tr>

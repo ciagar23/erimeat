@@ -1,5 +1,6 @@
 <?php
-$app = resume::readOne($_GET['Id']);
+$Id = $_GET['Id'];
+$resume = resume()->get("Id='$Id'");
 ?>
 
 
@@ -11,10 +12,10 @@ $app = resume::readOne($_GET['Id']);
             <div class="panel-body">
                 <div class="text-left">
                     <p class="text-muted font-13"><strong>First Name :</strong>
-                      <span class="m-l-15"><?=$app->firstName;?></span>
+                      <span class="m-l-15"><?=$resume->firstName;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Last Name :</strong>
-                      <span class="m-l-15"><?=$app->lastName;?></span>
+                      <span class="m-l-15"><?=$resume->lastName;?></span>
                     </p>
                 </div>
             </div>
@@ -22,7 +23,7 @@ $app = resume::readOne($_GET['Id']);
         <!-- Personal-Information -->
         <div class="card-box">
         <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target="#schedule-modal">Schedule an Interview</button>
-          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$app->Id;?>'">Deny</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$resume->Id;?>'">Deny</button>
         </div>
     </div>
   </div>
@@ -42,8 +43,8 @@ $app = resume::readOne($_GET['Id']);
 
                   <form class="form-horizontal" action="process.php?action=setInterViewDate" method="post">
 
-                        <input type="hidden" name="resumeId" value="<?=$app->Id;?>">
-                        <input type="hidden" name="email" value="<?=$app->email;?>">
+                        <input type="hidden" name="resumeId" value="<?=$resume->Id;?>">
+                        <input type="hidden" name="email" value="<?=$resume->email;?>">
                                           <div class="form-group account-btn text-center m-t-10">
                     <div class="input-group">
                         <input type="date" name="date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" required>

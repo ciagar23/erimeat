@@ -2,7 +2,7 @@
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
-$accountList = admin()->all();
+$adminList = admin()->all();
 
 ?>
      <div class="row">
@@ -36,7 +36,9 @@ $accountList = admin()->all();
             </tr>
           </thead>
           <tbody>
-           <?php foreach($accountList as $row) {
+
+           <?php foreach($adminList as $row) {
+
             if ($row){
               ?>
               <tr>

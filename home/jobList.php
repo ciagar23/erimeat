@@ -1,16 +1,14 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Job;
+$jobList = job()->all();
 
 function getPositionName($Id){
-  $obj = new PositionType;
-  $job = $obj->readOne($Id);
+  $job = position_type()->get("Id='$Id'");
   echo $job->option;
 }
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+    $job = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 
@@ -21,7 +19,7 @@ function getJobFunction($Id){
 </div>
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30">
-    <?php foreach($obj->readList($s) as $row) {
+    <?php foreach($jobList as $row) {
       if ($row->isApproved==1){
     ?>
     <div class="row center-page job-list-row">
