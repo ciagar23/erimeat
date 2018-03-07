@@ -29,7 +29,7 @@ function getJobFunction($Id){
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Job Reference Number</th>
+              <th>Job Reference #</th>
               <th>Job Category</th>
               <th>Job Classification</th>
               <th>Company Name</th>

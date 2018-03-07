@@ -27,6 +27,7 @@ function getInterviewTime($Id){
                 <thead>
                 <tr>
                     <th>Applying For</th>
+                    <th>Candidate Reference #</th>
                     <th>Full Name</th>
                     <th>Date</th>
                     <th>Time</th>
@@ -39,6 +40,7 @@ function getInterviewTime($Id){
                   if ($row->jobId!=0 && $row->isApproved==1 && $row->isHired==0) {?>
                 <tr>
                     <td><?=getJobName($row->jobId); ?></td>
+                    <td><?=$row->refNum; ?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=getInterviewDate($row->Id); ?></td>
                     <td><?=getInterviewTime($row->Id); ?></td>
