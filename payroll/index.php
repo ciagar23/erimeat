@@ -5,10 +5,14 @@ include_once("../config/CRUD.php");
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
-if(!isset($_SESSION["company_session"]))
+if(!isset($_SESSION["payroll_session"]))
 {
 	 $view = "login";
  }
+
+
+ $headScript = 'headScript.php';
+ $footScript = 'footScript.php';
 
 switch ($view) {
 
@@ -17,38 +21,28 @@ switch ($view) {
 		$template	= '../include/template_login.php';
 		break;
 
-	case 'changepassword' :
-		$content 	= 'changepassword.php';
-		$template	= '../include/template_login.php';
-		break;
-
-	case 'requestTalent' :
-		$content 	= 'requestTalent.php';
+	case 'timekeepingCompanyList' :
+		$content 	= 'timekeepingCompanyList.php';
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'postedJobs' :
-		$content 	= 'postedJobs.php';
+	case 'timekeepingCompanyDetail' :
+		$content 	= 'timekeepingCompanyDetail.php';
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'jobDetail' :
-		$content 	= 'jobDetail.php';
+	case 'timesheets' :
+		$content 	= 'timesheets.php';
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'ongoingProjects' :
-		$content 	= 'ongoingProjects.php';
+	case 'timesheetDetail' :
+		$content 	= 'timesheetDetail.php';
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'timekeeping' :
-		$content 	= 'timekeeping.php';
-		$template	= '../include/dashboard.php';
-		break;
-
-	case 'reports' :
-		$content 	= 'reports.php';
+	case 'archive' :
+		$content 	= 'archive.php';
 		$template	= '../include/dashboard.php';
 		break;
 
@@ -56,9 +50,6 @@ switch ($view) {
 		$content 	= 'main.php';
 		$template	= '../include/dashboard.php';
 }
-$headScript = 'headScript.php';
-$footScript = 'footScript.php';
-$navigation = '../include/navCompany.php';
+$navigation = '../include/navPayroll.php';
 require_once $template;
-
 ?>

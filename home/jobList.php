@@ -8,6 +8,12 @@ function getPositionName($Id){
   echo $job->option;
 }
 
+function getJobFunction($Id){
+  $obj = new JobFunction;
+  $job = $obj->readOne($Id);
+  echo $job->option;
+}
+
 ?>
 <div align="center" class="m-t-50">
 <button class="btn btn-primary" style="width: 20%;">Call +61452 364 793</button>
@@ -22,9 +28,13 @@ function getPositionName($Id){
         <div class="col-lg-4 job-list-summary">
             <span class="job-list-title"><?=$row->position;?></span>
             <br>
+            <span class="m-b-5"><?=getJobFunction($row->jobFunctionId);?></span>
+            <br>
+            <span class="m-b-5"><?=$row->refNum;?></span>
+            <br>
             <span class="m-b-5"><?=$row->address;?></span>
             <br>
-            <span class="">$27 - 32/hr</span>
+            <span class="m-b-5"><?=$row->zipCode;?></span>
             <br>
             <span class="m-b-5"><?=getPositionName($row->positionTypeId);?></span>
             <br>
