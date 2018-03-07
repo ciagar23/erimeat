@@ -108,6 +108,7 @@ function submitResume(){
 			$res = resume();
 			$res->obj['jobId'] = "0";
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
 			$res->obj['abn'] = $_POST["abn"];
@@ -145,6 +146,7 @@ function submitApplication()
 			$res = resume();
 			$res->obj['jobId'] = $_POST["jobId"];
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
 			$res->obj['abn'] = $_POST["abn"];
