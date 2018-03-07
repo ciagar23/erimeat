@@ -206,7 +206,7 @@ function sendInquiry()
 
 		$content = "From: $email<br><br>
 								Message: $message";
-								
+
 		//send email to HR
 		sendEmail('rgmak12@gmail.com', $content);
 		//send email to admin
