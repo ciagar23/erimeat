@@ -92,8 +92,15 @@ function clientRequest()
 
 	// Send email
 	$content = __clientRequestEmailMessage();
-	/* should also send email to hr and admin */
+	$hrmessage = __hrEmailMessage();
+	$adminmessage = __adminEmailMessage();
+
+	//for client
 	sendEmail($comp->obj['email'], $content);
+	//for HR
+	sendEmail('rgmak12@gmail.com',$hrmessage);
+	//for admin
+	sendEmail('torredale1014@gmail.com',$adminmessage);
 
 	header('Location: ../home/?view=success');
 }
