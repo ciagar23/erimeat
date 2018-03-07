@@ -11,10 +11,10 @@ class CRUD {
 	    foreach( $query as $key => $key_value ){
 				// This is for datetime
 				if ($key_value=="NOW()"){
-	        $query_array[] = urlencode( $key ) . "=$key_value";
+	        $query_array[] = "$key=$key_value";
 				}
 				else{
-		        $query_array[] = urlencode( $key ) . "='$key_value'";
+		        $query_array[] = "$key='$key_value'";
 				}
 	    }
 	    return implode( ', ', $query_array );
@@ -37,7 +37,6 @@ class CRUD {
 		Database::disconnect();
 		return $result;
 	}
-
 
 	function count($query){
 		$db = Database::connect();

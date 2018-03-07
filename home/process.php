@@ -72,30 +72,28 @@ substr(round(microtime(true)), -6)
 
 function clientRequest()
 {
-
 	// This is if you want to get the last 6 digits
 	/*
-substr(round(microtime(true)), -6)
-
+	substr(round(microtime(true)), -6)
 	*/
-	$com = company();
-	$com->obj['username'] = '';
-	$com->obj['jobFunctionId'] = $_POST['jobFunctionId'];
-	$com->obj['department'] = $_POST['department'];
-	$com->obj['name'] = $_POST['name'];
-	$com->obj['abn'] = $_POST['abn'];
-	$com->obj['contactPerson'] = $_POST['contactPerson'];
-	$com->obj['email'] = $_POST['email'];
-	$com->obj['address'] = $_POST['address'];
-	$com->obj['phoneNumber'] = $_POST['phoneNumber'];
-	$com->obj['mobileNumber'] = $_POST['mobileNumber'];
-	$com->obj['description ']= $_POST['description'];
-	$com->create();
+	$comp = company();
+	$comp->obj['username'] = 'a';
+	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
+	$comp->obj['department'] = $_POST['department'];
+	$comp->obj['name'] = $_POST['name'];
+	$comp->obj['abn'] = $_POST['abn'];
+	$comp->obj['contactPerson'] = $_POST['contactPerson'];
+	$comp->obj['email'] = $_POST['email'];
+	$comp->obj['address'] = $_POST['address'];
+	$comp->obj['phoneNumber'] = $_POST['phoneNumber'];
+	$comp->obj['mobileNumber'] = $_POST['mobileNumber'];
+	$comp->obj['description '] = $_POST['description'];
+	$comp->create();
 
 	// Send email
 	$content = __clientRequestEmailMessage();
 	/* should also send email to hr and admin */
-	sendEmail($com->obj['email'], $content);
+	sendEmail($comp->obj['email'], $content);
 
 	header('Location: ../home/?view=success');
 }
