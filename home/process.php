@@ -128,8 +128,15 @@ function submitResume(){
 
 			// Send email
 			$content = __submitResumeEmailMessage();
-			/* should also send email to hr and admin */
+			$hrmessage = __hrEmailMessage();
+			$adminmessage = __adminEmailMessage();
+
+			//for candidate
 			sendEmail($res->obj['email'] , $content);
+			//for HR
+			sendEmail('rgmak12@gmail.com',$hrmessage);
+			//for admin
+			sendEmail('torredale1014@gmail.com',$adminmessage);
 
 			header('Location: ../home/?view=success');
 		}
@@ -165,8 +172,16 @@ function submitApplication()
 			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();
-			/* should also send email to hr and admin */
+			$hrmessage = __hrEmailMessage();
+			$adminmessage = __adminEmailMessage();
+
+			//for candidate
 			sendEmail($res->obj['email'], $content);
+			//for HR
+			sendEmail('rgmak12@gmail.com',$hrmessage);
+			//for admin
+			sendEmail('torredale1014@gmail.com',$adminmessage);
+
 			header('Location: ../home/?view=success');
 		}
 		else{
@@ -191,6 +206,7 @@ function sendInquiry()
 
 		$content = "From: $email<br><br>
 								Message: $message";
+								
 		//send email to HR
 		sendEmail('rgmak12@gmail.com', $content);
 		//send email to admin
