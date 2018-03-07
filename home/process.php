@@ -77,7 +77,6 @@ function clientRequest()
 	substr(round(microtime(true)), -6)
 	*/
 	$comp = company();
-	$comp->obj['username'] = 'a';
 	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 	$comp->obj['department'] = $_POST['department'];
 	$comp->obj['name'] = $_POST['name'];
