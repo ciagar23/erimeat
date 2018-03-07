@@ -174,6 +174,9 @@ function submitApplication()
 
 function sendInquiry()
 {
+		$message = $_POST['message'];
+		$email = $_POST['workEmail'];
+
 		$inq = inquiries();
 		$inq->obj['firstName'] = $_POST["firstName"];
 		$inq->obj['lastName'] = $_POST["lastName"];
@@ -181,8 +184,15 @@ function sendInquiry()
 		$inq->obj['jobFunctionId'] = $_POST["jobFunctionId"];
 		$inq->obj['workEmail'] = $_POST["workEmail"];
 		$inq->obj['zipCode'] =  $_POST["zipCode"];
-		$inq->obj['message'] 	 = $_POST["message"];
+		$inq->obj['message'] 	 = $message;
 		$inq->create();
+
+		$content = "From: $email<br><br>
+								Message: $message";
+		//send email to HR
+		sendEmail('rgmak12@gmail.com', $content);
+		//send email to admin
+		sendEmail('torredale1014@gmail.com', $content);
 
 		header('Location: ../home/?view=success');
 }
