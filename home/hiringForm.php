@@ -1,5 +1,5 @@
 <?php
-$jfList = job_function()->all();
+$jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
 ?>
 
@@ -31,8 +31,9 @@ $ptList = position_type()->all();
                                   <label for="firstname">Job Category <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required="">
                                    <option>Please Select</option>
-                                    <?php foreach($jfList as $row) {?>
-
+                                    <?php
+                                      foreach($jfList as $row) {
+                                    ?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

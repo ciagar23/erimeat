@@ -1,5 +1,5 @@
 <?php
-$jfList = job_function()->all();
+$jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
 ?>
 <div class="row">
