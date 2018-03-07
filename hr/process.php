@@ -253,14 +253,16 @@ function jobRequest()
 	$job->obj['isApproved'] = $result;
 	$job->update("Id='$Id'");
 
+	$job = job()->get("$Id='$Id'");
+
 	if ($result==1){
 	// Send email
 	$content = __approvedJobRequestEmailMessage();
-	sendEmail($job->obj['workEmail'], $content);
+	sendEmail($job->workEmail, $content);
 }else{
 	// Send email
 	$content = __deniedJobRequestEmailMessage();
-	sendEmail($job->obj['workEmail'], $content);
+	sendEmail($job->workEmail, $content);
 }
 
 	header('Location: index.php?view=talentRequest');
