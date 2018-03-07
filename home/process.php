@@ -57,7 +57,15 @@ substr(round(microtime(true)), -6)
 
 	// Send email
 	$content = __talentRequestEmailMessage();
+	$hrmessage = __hrEmailMessage();
+	$adminmessage = __adminEmailMessage();
+
 	sendEmail($obj->workEmail, $content);
+	//for HR
+	sendEmail('rgmak12@gmail.com',$hrmessage);
+	//for admin
+	sendEmail('torredale1014@gmail.com',$adminmessage);
+
 
 	header('Location: ../company/');
 }
@@ -216,5 +224,11 @@ function __clientRequestEmailMessage(){
 					Please be informed that we are in the midst of processing your request and shall get<br>
 					in touch with you again once you've meet our requirements.<br><br>
 					Teamire";
+}
+function __hrEmailMessage(){
+	return "hr ni";
+}
+function __adminEmailMessage(){
+	return "admin ni";
 }
 ?>

@@ -70,9 +70,6 @@
 
 
 <style>
-
-
-
 body {
    
     line-height: 32px;
@@ -141,7 +138,6 @@ nav a {
     display:block;
     padding:14px 20px;  
     color:#3399cc;
-    font-size:17px;
     text-decoration:none;
 }
 
