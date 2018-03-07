@@ -1,7 +1,7 @@
 <?php
 $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Resume;
+$resumeList = resume()->all();
 ?>
 
 
@@ -31,7 +31,7 @@ $obj = new Resume;
             </tr>
           </thead>
           <tbody>
-            <?php foreach($obj->readList($s) as $row) {
+            <?php foreach($resumeList as $row) {
               if ($row->isApproved==1){
             ?>
             <tr>

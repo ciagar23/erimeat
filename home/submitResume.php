@@ -1,8 +1,6 @@
 <?php
-$jf = new JobFunction;
-$jf->readList();
-$pt = new PositionType;
-$pt->readList();
+$jfList = job_function()->all();
+$ptList = position_type()->all();
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -16,7 +14,7 @@ $pt->readList();
                                   <label for="firstname">Job Function <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required>
                                     <option>Please Select</option>
-                                    <?php foreach($jf->readList() as $row) {?>
+                                    <?php foreach($jfList as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

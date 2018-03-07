@@ -1,10 +1,9 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Job;
+$jobList = job()->all();
 
 function getPositionName($Id){
-  $obj = new PositionType;
-  $job = $obj->readOne($Id);
+  $job = position_type()->get("Id='$Id'");
   echo $job->option;
 }
 ?>
@@ -28,9 +27,35 @@ function getPositionName($Id){
 
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30">
-
+    <h4>Filters: </h4>
+    <div class="form-inline m-b-30" style="padding: 0; margin: 0; width: 100%;">
+    <select class="form-control" style="height: 50px; width:199px; border-right: none; ">
+        <option>Select City</option>
+    </select>
+    <select class="form-control" style="height: 50px;width:199px; border-right: none; border-radius: 0px; margin-left: -6px;">
+        <option>Select City</option>
+    </select>
+    <select class="form-control" style="height: 50px;width:199px; border-right: none; border-radius: 0px; margin-left: -5px;">
+        <option>Select City</option>
+    </select>
+    <select class="form-control" style="height: 50px;width:199px; border-right: none; border-radius: 0px; margin-left: -5px;">
+        <option>Select City</option>
+    </select>
+    <select class="form-control" style="height: 50px;width:199px; border-radius: 0px; margin-left: -3px;">
+        <option>Select City</option>
+    </select>
+    <select class="form-control" style="height: 50px;width:199px; border-left:none; margin-left: -5px;">
+        <option>Select City</option>
+    </select>
+    </div>
+    <h4>Sort by: </h4>
+    <div class="form-inline m-b-30" style="">
+    <select class="form-control" style="height: 50px; width:199px;">
+        <option>Select City</option>
+    </select>
+  </div>
     <div class="row center-page job-list-row">
-      <?php foreach($obj->readList($s) as $row) {
+      <?php foreach($jobList as $row) {
         if ($row->isApproved==1){
       ?>
         <div class="col-lg-4 job-list-summary">

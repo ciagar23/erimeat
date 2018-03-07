@@ -1,13 +1,30 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$obj = new Resume;
+$resumeList = resume()->all();
 
 function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
+  $jf = job_function()->get("Id='$Id'");
   echo $job->option;
 }
 ?>
+
+<h2 class="text-center m-t-30 m-b-30">Candidate Search</h2>
+<h2 class="text-center m-t-30 m-b-30">Find candidates for your open role or assignment.</h2>
+    <div class="clearfix"></div>
+    <!--Start 2 panels -->
+    <div class="container-80 center-page">
+    <div class="row">
+      <form class="form-inline" >
+        <div class="form-group center-page">
+        <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
+        <select class="form-control" style="height: 67px;width:200px;">
+            <option>Select City</option>
+        </select>
+        <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
+        </div>
+   </form>
+    </div>
+  </div>
 
 <div class="container-fluid">
     <div align="center" class="m-t-50">
@@ -16,7 +33,7 @@ function getJobFunction($Id){
     </div>
     <div class="row">
         <div class="col-md-12">
-          <?php foreach($obj->readList($s) as $row) {?>
+          <?php foreach($resumeList as $row) {?>
           <div class="card-box">
             <div class="col-md-10">
               <h4 class="header-title mt-0 m-b-20"><?=getJobFunction($row->jobFunctionId); ?></h4>
@@ -38,4 +55,5 @@ function getJobFunction($Id){
           </div>
         <?php } ?>
         </div>
+</div>
 </div>

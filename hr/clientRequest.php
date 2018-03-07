@@ -1,15 +1,7 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
-function getJobFunction($Id){
-  $obj = new JobFunction;
-  $job = $obj->readOne($Id);
-  echo $job->option;
-}
-
-$obj = new Company;
-
-
+$company = company()->all();
 ?>
 
 <div class="row">
@@ -37,7 +29,7 @@ $obj = new Company;
             </tr>
           </thead>
           <tbody>
-           <?php foreach($obj->readList($s) as $row) {
+           <?php foreach($company as $row) {
   if ($row->isApproved==0){
   ?>
             <tr>

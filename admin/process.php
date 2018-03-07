@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/database.php';
-require_once '../config/CRUD.php';
+require_once '../config/Models.php';
 
 $action = $_GET['action'];
 
@@ -53,19 +53,20 @@ switch ($action) {
 function addAccount()
 {
 
-	$obj = new Admin;
-	$newObj = $obj->readOne($_POST['username']);
+	$username = $_POST['username'];
+	$checkUser = admin()->get("username='$username'");
 
-	if($newObj->username == 1){
+	if($checkUser){
 		header('Location: ../admin/?view=accounts&error=User already exist!');
 	}
 	else{
-		$obj->firstName = $_POST['firstName'];
-		$obj->lastName = $_POST['lastName'];
-		$obj->username = $_POST['username'];
-		$obj->password = $_POST['password'];
-		$obj->level = $_POST['level'];
-		$obj->createOne($obj);
+		$admin = admin();
+		$admin->obj['firstName'] = $_POST['firstName'];
+		$admin->obj['lastName'] = $_POST['lastName'];
+		$admin->obj['username'] = $_POST['username'];
+		$admin->obj['password'] = $_POST['password'];
+		$admin->obj['level'] = $_POST['level'];
+		$admin->create();
 
 		header('Location: ../admin/?view=success');
 	}
@@ -73,10 +74,9 @@ function addAccount()
 
 function addJobFunction()
 {
-
-	$obj = new JobFunction;
-	$obj->option = $_POST['option'];
-	$obj->createOne($obj);
+	$jf = job_function();
+	$jf->obj['option'] = $_POST['option'];
+	$jf->create();
 
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category!');
 }
@@ -88,7 +88,7 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$result = Admin::login($username, $password, 'admin');
+	$result = admin()->get("username='$username' and password = '$password' and level='admin'");
 
 	if ($result){
 		session_start();
@@ -119,20 +119,21 @@ function jobRequest()
 		$result = 0;
 	}
 
-	$obj = new Job;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = $result;
-	$obj->updateOne($newObj);
+	$Id = $_GET['Id'];
+	$job = job();
+	$job->obj['isApproved'] = $result;
+	$job->update("Id='$Id'");
 
+	$job = job()->get("Id='$Id'");
 	if ($result==1){
 	// Send email
 	$content = __approvedJobRequestEmailMessage();
-	sendEmail($newObj->workEmail, $content);
-}else{
-	// Send email
-	$content = __infoJobRequestEmailMessage();
-	sendEmail($newObj->workEmail, $content);
-}
+	sendEmail($job->workEmail, $content);
+	}else{
+		// Send email
+		$content = __infoJobRequestEmailMessage();
+		sendEmail($job->workEmail, $content);
+	}
 
 	header('Location: index.php?view=talentRequest');
 }
@@ -142,64 +143,63 @@ function clientRequest()
 	$result = 1;
 	__createLogin($_GET['Id']);
 
-	$obj = new Company;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = $result;
-	$obj->updateOne($newObj);
+	$Id = $_GET['Id'];
+	$com = company();
+	$com->obj['isApproved'] = $result;
+	$com->update("Id='$Id'");
 
 	header('Location: index.php?view=clientRequest');
 }
 
 function __createLogin($Id){
 	// Get Detail
-	$comp = new Company;
-	$comp = $comp->readOne($Id);
+	$com = company()->get("Id='$Id'");
 
 	// Create account
-	$obj = new Profile;
-	$obj->username = "C" . $comp->abn;
-	$obj->password = "temppassword";
-	$obj->firstName = $comp->contactPerson;
-	$obj->lastName = $comp->name;
-	$obj->level = "company";
-	$obj->createOne($obj);
+	$user = user();
+	$user->obj['username'] = "C" . $com->abn;
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $com->contactPerson;
+	$user->obj['lastName'] = $com->name;
+	$user->obj['level'] = "company";
+	$user->create();
 
 	// Update Company
-	$comp = new Company;
-	$newComp = $comp->readOne($Id);
-	$newComp->username = $obj->username;
-	$comp->updateOne($newComp);
+	$newCom = company();
+	$newCom->obj['username'] = $user->obj['username'];
+	$newCom->update("Id='$Id'");
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $obj->username <br>
-							Password: $obj->password <br><br>
+							Username: $user->obj['username'] <br>
+							Password: $user->obj['password'] <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($newComp->email, $content);
+	sendEmail($com->email, $content);
 }
 
 function removeCompany()
 {
-	$obj = new Company;
-	$obj->deleteOne($_GET['Id']);
+	$Id = $_GET['Id'];
+	company()->delete("Id='$Id'");
 
 	header('Location: ../admin/?view=companies&message=Succesfully Deleted');
 }
 
 function removeJob()
 {
-	$obj = new Job;
-	$obj->deleteOne($_GET['Id']);
+	$Id = $_GET['Id'];
+	job()->delete("Id='$Id'");
 
 	header('Location: ../admin/?view=jobList&message=Succesfully Deleted');
 }
 
 function removeCandidate()
 {
-	$obj = new Resume;
-	$obj->deleteOne($_GET['Id']);
+
+	$Id = $_GET['Id'];
+	resume()->delete("Id='$Id'");
 
 	header('Location: ../admin/?view=candidates&message=Succesfully Deleted');
 }

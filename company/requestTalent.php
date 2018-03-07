@@ -1,6 +1,5 @@
  <?php
-$jf = new JobFunction;
-$jf->readList();
+$jfList = job_function()->all();
 ?>
 
 
@@ -9,7 +8,7 @@ $jf->readList();
                             <div class="col-xs-12">
                                 <div class="page-title-box">
                                     <h4 class="page-title">Request Talent</h4>
-                                  
+
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -37,7 +36,7 @@ $jf->readList();
             </tr>
           </thead>
           <tbody>
-        
+
           </tbody>
         </table>
       </div>
@@ -57,7 +56,7 @@ $jf->readList();
       <div class="modal-body">
         <form id="default-wizard" action="process.php?action=addAccount" method="POST">
           <p class="m-b-0">
-           
+
           </p>
           <div class="row m-t-20">
             <div class="col-sm-12">
@@ -65,7 +64,7 @@ $jf->readList();
                                   <label for="firstname">Industry <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required>
                                     <option>Please Select</option>
-                                    <?php foreach($jf->readList() as $row) {?>
+                                    <?php foreach($jfList as $row) {?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

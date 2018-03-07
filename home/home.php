@@ -81,7 +81,7 @@
                                          <img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Demand Planning</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -96,7 +96,7 @@
                                          <img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Supply Planning</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -104,14 +104,14 @@
                                         </div>
                                       </div>
                              <div class="col-sm-4">
-                                  <div class="card-box" id="box-design"> 
+                                  <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
                                          <img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;">
                                                  <h4 class="font-18">Order Fulfilment</h4>
 
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -124,13 +124,13 @@
 
                         <div class="row">
                              <div class="col-sm-4">
-                                  <div class="card-box" id="box-design"> 
+                                  <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
                                          <img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;">
                                             <h4 class="font-18">Logistics</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -145,7 +145,7 @@
                                          <img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;">
                                             <h4 class="font-18">Manufacturing</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -160,7 +160,7 @@
                                          <img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;">
                                            <h4 class="font-18">Transportation</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -179,7 +179,7 @@
                                          <img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;">
                                            <h4 class="font-18">Procurement</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -193,7 +193,7 @@
                                          <img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Training Certification</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -208,7 +208,7 @@
                                          <img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Warehousing</h4>
                                          </center>
-                                        
+
                                           <div class="cours4 text-center">
                                             <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
                                             </div>
@@ -219,7 +219,7 @@
                         <!-- end row -->
 
 
-                
+
 
                     </div> <!-- container -->
 

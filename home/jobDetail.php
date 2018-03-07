@@ -1,10 +1,9 @@
 <?php
-$obj = new Job;
-$job = $obj->readOne($_GET['id']);
+$Id = $_GET['id'];
+$job = job()->get("Id='$Id'");
 
 function getPositionName($Id){
-  $obj = new PositionType;
-  $job = $obj->readOne($Id);
+  $job = position_type()->get("Id='$Id'");
   echo $job->option;
 }
 ?>
