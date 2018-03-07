@@ -74,7 +74,7 @@ function getJobClassification($Id){
          <?php foreach($resumeList as $row) {
          ?>
          <tr>
-           <td>TODO: Employee Ref #</td>
+           <td><?=$row->refNum;?></td>
            <td><?=getJobClassification($row->jobId);?></td>
            <td><?=$row->firstName;?> <?=$row->lastName;?></td>
            <td>
