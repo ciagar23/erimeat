@@ -74,6 +74,9 @@ function login()
 		if (!$checkDtr){
 				newCheckIn();
 			}
+			else{
+				header('Location: index.php');
+			}
 		}
 	}
 	else {

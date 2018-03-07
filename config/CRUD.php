@@ -41,11 +41,10 @@ class CRUD {
 
 	function count($query){
 		$db = Database::connect();
-		$pdo = $db->prepare("select COUNT(*) from $this->table where $query");
+		$pdo = $db->prepare("select * from $this->table where $query");
 		$pdo->execute();
-		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		Database::disconnect();
-		return $result;
+		return $pdo->rowCount();
 	}
 
 	function get($args){

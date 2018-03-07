@@ -26,7 +26,7 @@ function getPositionName($Id){
   <div class="clearfix"></div>
 
   <!-- Start Filter Panel and Results-->
-  <div class="form-container container m-t-30">
+  <div class="form-container container m-t-30 m-b-30">
     <h4>Filters: </h4>
     <div class="form-inline m-b-30" style="padding: 0; margin: 0; width: 100%;">
     <select class="form-control" style="height: 50px; width:199px; border-right: none; ">
@@ -69,16 +69,16 @@ function getPositionName($Id){
             <br>
         </div>
 
-        <div class="col-lg-8 job-list-desc">
+        <div class="col-lg-8 job-list-desc m-b-10">
           <?=$row->comment;?>
           <br>
           <span>
             <a class="job-list-link" href="#">Read More &gt;</a>
           </span>
         </div>
+        <?php  } } ?>
     </div>
-    <?php  } } ?>
-<br>
+    <br>
 
   </div> <!-- End List Container -->
 </div>

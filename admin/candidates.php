@@ -25,6 +25,7 @@ $resumeList = resume()->all();
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
+              <th>Candidate Reference #</th>
               <th>Candidate Name</th>
               <th>Candidate Email</th>
               <th>Action</th>
@@ -35,6 +36,7 @@ $resumeList = resume()->all();
               if ($row->isApproved==1){
             ?>
             <tr>
+              <td><?=$row->refNum;?></td>
               <td><?=$row->firstName;?> <?=$row->lastName;?></td>
               <td><?=$row->email;?></td>
               <td>
