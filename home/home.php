@@ -12,33 +12,31 @@
             <li data-target="#carousel-example-captions" data-slide-to="1"></li>
             <li data-target="#carousel-example-captions" data-slide-to="2"></li>
          </ol>
-         <div role="listbox" class="carousel-inner">
 
+         <div role="listbox" class="carousel-inner">
             <div class="item active">
                 <img src="../include/assets/images/small/img-1.jpg"  style="width: 100%;" alt="First slide image">
 
             </div>
-                                                    <div class="item">
-                                                        <img src="../include/assets/images/small/img-2.jpg"  style="width: 100%;" alt="Second slide image">
+            <div class="item">
+                <img src="../include/assets/images/small/img-2.jpg"  style="width: 100%;" alt="Second slide image">
 
-                                                    </div>
-                                                    <div class="item">
-                                                        <img src="../include/assets/images/small/img-3.jpg" style="width: 100%;"  alt="Third slide image">
+            </div>
+            <div class="item">
+                <img src="../include/assets/images/small/img-3.jpg" style="width: 100%;"  alt="Third slide image">
 
-                                                    </div>
-                                                </div>
-                                                <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" ></span> <span class="sr-only">Previous</span> </a>
-                                                <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-                                            </div>
-                                            <!-- END carousel-->
-                                                <div class="main-text hidden-xs">
+            </div>
+        </div>
+        <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" ></span> <span class="sr-only">Previous</span> </a>
+        <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+    </div><!-- END carousel-->
+
+        <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <h1>
-                        Unrivaled Industry Insight. Sophisticated Matching Technology. And a Personalized Approach. It’s Why We’re #1.
-          </h1>
+                    <p class="carousel-title">Unrivaled Industry Insight. Sophisticated Matching Technology.
+                      And a Personalized Approach. It’s Why We’re #1.</h1>
                     <h3>
-
-                            <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
                     </h3>
                     <div class="">
                       <div id="myDIV">
@@ -57,7 +55,7 @@
            <div id="demo1"></div>
            <div id="demo"></div>
             <div id="myP" style="visibility:hidden;"><form class="form-inline" role="form">
-                    <div class="form-group" ">
+                    <div class="form-group">
                     <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
                      <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
                        <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
@@ -65,6 +63,7 @@
                        </form>
                     </div></div>
                 </div>
+                <div class="clearfix"></div>
             </div>
     </div>
   </div>
@@ -84,6 +83,10 @@
                                          <img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Demand Planning</h4>
                                          </center>
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -95,21 +98,25 @@
                                          <img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Supply Planning</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
                              <div class="col-sm-4">
-                                  <div class="card-box" id="box-design"> 
+                                  <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
                                          <img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;">
                                                  <h4 class="font-18">Order Fulfilment</h4>
 
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -119,14 +126,16 @@
 
                         <div class="row">
                              <div class="col-sm-4">
-                                  <div class="card-box" id="box-design"> 
+                                  <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
                                          <img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;">
                                             <h4 class="font-18">Logistics</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -138,8 +147,10 @@
                                          <img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;">
                                             <h4 class="font-18">Manufacturing</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -151,8 +162,10 @@
                                          <img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;">
                                            <h4 class="font-18">Transportation</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -168,8 +181,10 @@
                                          <img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;">
                                            <h4 class="font-18">Procurement</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -180,8 +195,10 @@
                                          <img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Training Certification</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -193,8 +210,10 @@
                                          <img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;">
                                           <h4 class="font-18">Warehousing</h4>
                                          </center>
-                                        
-                                          
+
+                                          <div class="cours4 text-center">
+                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -202,7 +221,7 @@
                         <!-- end row -->
 
 
-                
+
 
                     </div> <!-- container -->
 

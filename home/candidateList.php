@@ -8,6 +8,24 @@ function getJobFunction($Id){
 }
 ?>
 
+<h2 class="text-center m-t-30 m-b-30">Candidate Search</h2>
+<h2 class="text-center m-t-30 m-b-30">Find candidates for your open role or assignment.</h2>
+    <div class="clearfix"></div>
+    <!--Start 2 panels -->
+    <div class="container-80 center-page">
+    <div class="row">
+      <form class="form-inline" >
+        <div class="form-group center-page">
+        <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
+        <select class="form-control" style="height: 67px;width:200px;">
+            <option>Select City</option>
+        </select>
+        <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
+        </div>
+   </form>
+    </div>
+  </div>
+
 <div class="container-fluid">
     <div align="center" class="m-t-50">
     <button class="btn btn-primary" style="width: 20%;">Call +61452 364 793</button>
@@ -37,4 +55,5 @@ function getJobFunction($Id){
           </div>
         <?php } ?>
         </div>
+</div>
 </div>
