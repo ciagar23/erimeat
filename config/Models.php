@@ -37,9 +37,9 @@ function hr() {
 }
 
 // User Models
-function inqueries() {
+function inquiries() {
 	$crud = new CRUD;
-	$crud->table = "inqueries";
+	$crud->table = "inquiries";
 	return $crud;
 }
 
