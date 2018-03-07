@@ -11,6 +11,11 @@ function getJobFunction($Id){
   return $jf->option;
 }
 
+function getCount($Id){
+  $employee = employee()->filter("jobId='$Id'");
+  return $employee;
+}
+
 ?>
      <div class="row">
         <div class="col-xs-12">
@@ -37,7 +42,7 @@ function getJobFunction($Id){
           </thead>
           <tbody>
             <?php foreach($jobList as $row) {
-              if ($row->isApproved==1 && $row->abn == $company->abn){
+              if ($row->isApproved==1 && $row->abn == $company->abn && getCount($row->Id)!=0){
 
             ?>
 

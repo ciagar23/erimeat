@@ -88,7 +88,7 @@ substr(round(microtime(true)), -6)
 	$com->obj['email'] = $_POST['email'];
 	$com->obj['address'] = $_POST['address'];
 	$com->obj['phoneNumber'] = $_POST['phoneNumber'];
-	$com->obj['>mobileNumber'] = $_POST['mobileNumber'];
+	$com->obj['mobileNumber'] = $_POST['mobileNumber'];
 	$com->obj['description ']= $_POST['description'];
 	$com->create();
 
