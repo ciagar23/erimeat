@@ -8,13 +8,13 @@ function getJobName($Id){
 }
 
 function getInterviewDate($Id){
-  $interviewDate = interview_date()->get("Id='$Id'");
-  echo $interviewDate->date;
+  $interviewDate = interview_date()->get("resumeId='$Id'");
+  return $interviewDate->date;
 }
 
 function getInterviewTime($Id){
-  $interviewDate = interview_date()->get("Id='$Id'");
-  echo $interviewDate->time;
+  $interviewDate = interview_date()->get("resumeId='$Id'");
+  return $interviewDate->time;
 }
 ?>
 
