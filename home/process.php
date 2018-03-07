@@ -77,7 +77,6 @@ function clientRequest()
 	substr(round(microtime(true)), -6)
 	*/
 	$comp = company();
-	$comp->obj['username'] = 'a';
 	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 	$comp->obj['department'] = $_POST['department'];
 	$comp->obj['name'] = $_POST['name'];
@@ -204,7 +203,7 @@ function sendInquiry()
 
 		$content = "From: $email<br><br>
 								Message: $message";
-								
+
 		//send email to HR
 		sendEmail('rgmak12@gmail.com', $content);
 		//send email to admin
