@@ -69,15 +69,6 @@ function login()
 	}
 }
 
-function logout()
-
-{
-	//logout.php
-session_start();
-session_destroy();
-header('Location: index.php');
-	exit;
-}
 
 
 
@@ -85,19 +76,23 @@ header('Location: index.php');
 function addAccount()
 {
 
-	$obj = new Admin;
-	$newObj = $obj->readOne($_POST['username']);
 
-	if($newObj->username == 1){
+	$username = $_POST['username'];
+	$admin = admin()->get("username='$username'");
+
+	if($admin){
 		header('Location: ../admin/?view=accounts&error=User already exist!');
 	}
 	else{
-		$obj->firstName = $_POST['firstName'];
-		$obj->lastName = $_POST['lastName'];
-		$obj->username = $_POST['username'];
-		$obj->password = $_POST['password'];
-		$obj->level = $_POST['level'];
-		$obj->createOne($obj);
+		
+
+		$newAdmin = admin();
+		$newAdmin->obj['firstName'] = $_POST['firstName'];
+		$newAdmin->obj['lastName'] = $_POST['lastName'];
+		$newAdmin->obj['username'] = $_POST['username'];
+		$newAdmin->obj['password'] = $_POST['password'];
+		$newAdmin->obj['level'] = $_POST['level'];
+		$newAdmin->create();
 
 		header('Location: ../admin/?view=success');
 	}
@@ -209,6 +204,16 @@ function removeCandidate()
 
 	header('Location: ../admin/?view=candidates&message=Succesfully Deleted');
 }
+function logout()
+
+{
+	//logout.php
+session_start();
+session_destroy();
+header('Location: index.php');
+	exit;
+}
+
 
 /* ======================== Email Messages ==============================*/
 
