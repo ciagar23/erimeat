@@ -48,7 +48,7 @@ function getCount($Id){
 
             <tr>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
-              <td><?=$row->company;?> </td>
+              <td><?=$row->company;?></td>
               <td>
               <?php
                 if($row->isApproved) {

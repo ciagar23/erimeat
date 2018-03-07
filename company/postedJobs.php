@@ -12,10 +12,9 @@ function getJobFunction($Id){
 }
 
 function getCount($Id){
-  $employee = employee()->filter("jobId='$Id'");
+  $employee = employee()->count("jobId='$Id'");
   return $employee;
 }
-
 ?>
      <div class="row">
         <div class="col-xs-12">
