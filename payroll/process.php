@@ -28,7 +28,6 @@ function login()
 	$result = admin()->get("username='$username' and password = '$password' and level='payroll'");
 
 	if ($result){
-		session_start();
 		$_SESSION['payroll_session'] = $username;
 		header('Location: index.php');
 	}

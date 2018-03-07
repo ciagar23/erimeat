@@ -94,7 +94,6 @@ function login()
 	$password = $_POST['password'];
 	$result = admin()->get("username='$username' and password = '$password' and level='admin'");
 	if ($result){
-		session_start();
 		$_SESSION['admin_session'] = $username;
 		header('Location: index.php');
 	}
