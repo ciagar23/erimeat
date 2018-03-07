@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-05 16:11:09
+# Date: 2018-03-07 18:24:33
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -22,7 +23,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(17,'newHR','12345','new','hr','hr'),(18,NULL,NULL,'khkjh',NULL,NULL),(19,NULL,NULL,'khkjh',NULL,NULL);
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll');
 
 #
 # Structure for table "company"
@@ -44,13 +45,12 @@ CREATE TABLE `company` (
   `jobFunctionId` varchar(11) DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (1,'C22222222222','jkhjkhkj','22222222222','jkhkjhkjhkj kjhkjfhd kjfhdkj hfkjds','fredowinz23@gmail.com','kjhkjh','kjhkjhkjh','kjhkjhkjh','jkhkjhkjh','kjhk','2','1');
 
 #
 # Structure for table "dtr"
@@ -97,7 +97,6 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (1,1,'E1520175205','2018-03-04 22:53:24');
 
 #
 # Structure for table "hr"
@@ -133,7 +132,7 @@ CREATE TABLE `inquiries` (
   `zipCode` varchar(4) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "inquiries"
@@ -151,7 +150,7 @@ CREATE TABLE `interview_date` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "interview_date"
@@ -183,13 +182,12 @@ CREATE TABLE `job` (
   `isApproved` varchar(1) DEFAULT '0',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (1,'1520174781',1,1,'Bus Driver','Villacar Transit','57293841275','ceres@villacar.com','Operation Manager','+61 8928 123','3200','Bacolod City Negros Occidental','3 - 5 years','We are looking for a professional bus driver with an experience in this field for more than 3 years. Apply now!','2018-03-04 22:49:41','1','James Dean');
 
 #
 # Structure for table "job_function"
@@ -199,6 +197,7 @@ DROP TABLE IF EXISTS `job_function`;
 CREATE TABLE `job_function` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `option` varchar(255) DEFAULT NULL,
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
@@ -206,7 +205,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'Transportation'),(2,'Procurement'),(3,'Supply Planning'),(4,'Logistics'),(5,'Training Certification'),(6,'Demand Planning'),(7,'Order Fulfilment'),(8,'Manufacturing'),(9,'Warehousing');
+INSERT INTO `job_function` VALUES (1,'Transportation','0'),(2,'Procurement','0'),(3,'Supply Planning','0'),(4,'Logistics','0'),(5,'Training Certification','0'),(6,'Demand Planning','0'),(7,'Order Fulfilment','0'),(8,'Manufacturing','0'),(9,'Warehousing','0');
 
 #
 # Structure for table "position_type"
@@ -252,13 +251,13 @@ CREATE TABLE `resume` (
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   `isHired` varchar(2) DEFAULT '0',
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
-INSERT INTO `resume` VALUES (1,1,3,'fred','garcia',NULL,NULL,'fredowinz23@gmail.com','kjhkjh','kjhjkh kjhkj hkjh','kjhkj hkj hkjh','kjhkjkj','hkjh','1212',NULL,'1520175038.jpg','','','2018-03-04 22:53:29','1','1'),(2,1,0,'kjhkhkj','hjkhkjh',NULL,NULL,'fredowinz23@gmail.com','hjkhkjhk','kjhjk','hkjhkj','hkjh','kjhkj','8978',NULL,'1520178595.jpg','','','2018-03-04 23:49:54','0','0'),(5,0,1,'Kevin','sumalde','44332211123','12312321','a@a.com','123132213','dsafadskfjsdfj','sadfsdfsdfdsfads','sadfjldsljfk','sadf','1232','sadfsdfsdfdsfadssadfsdfsdfdsfadssadfsdfsdfdsfadssadfsdfsdfdsfads','1520237353.txt','sadfsdfsdfdsfads','1520237353.txt','2018-03-05 16:09:13','0','0'),(6,1,1,'arnold','sumalde','32432423423','123213213','a@a.com','123213','sadfsdfsdfdsfads','sadfsdfsdfdsfads','sadfsdfsdfdsfads','sadfsdfsdfdsfads','1231','sadfsdfsdfdsfadssadfsdfsdfdsfadssadfsdfsdfdsfads','1520237425.txt','sadfsdfsdfdsfads','1520237425.txt','2018-03-05 16:10:24','0','0');
 
 
 #
@@ -280,7 +279,6 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (1,1,'E1520175205','Timesheet as of 2018-03-04 16:01:47','1','2018-03-04 23:01:47'),(2,1,'E1520175205','Timesheet as of 2018-03-04 16:12:43','0','2018-03-04 23:12:43'),(3,1,'E1520175205','Timesheet as of 2018-03-04 16:14:31','1','2018-03-04 23:14:31'),(4,1,'E1520175205','Timesheet as of 2018-03-04 16:17:13','1','2018-03-04 23:17:13');
 
 #
 # Structure for table "user"
@@ -295,10 +293,9 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'C22222222222','ZXasqw1212','kjhkjh','jkhjkhkj','company'),(2,'E1520175205','ZXasqw1212','fred','garcia','employee'),(3,'E8529123903','12345','dale','torre','employee');
