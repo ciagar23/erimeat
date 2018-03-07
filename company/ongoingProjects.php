@@ -12,7 +12,7 @@ function getJobFunction($Id){
 }
 
 function getCount($Id){
-  $employee = employee()->filter("jobId='$Id'");
+  $employee = employee()->count("jobId='$Id'");
   return $employee;
 }
 

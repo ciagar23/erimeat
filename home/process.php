@@ -142,7 +142,6 @@ function submitApplication()
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
 		{
-			$obj = new Resume;
 			$res = resume();
 			$res->obj['jobId'] = $_POST["jobId"];
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];

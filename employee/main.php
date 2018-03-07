@@ -76,11 +76,11 @@ $logout = 4;
                     <thead>
                       <tr>
                         <th>Date</th>
-                        <th>Check In</th>
+                        <th>Login</th>
                         <th>First Break</th>
                         <th>Second Break</th>
                         <th>Lunch</th>
-                        <th>Check Out</th>
+                        <th>Logout</th>
                       </tr>
                     </thead>
               <tbody>
