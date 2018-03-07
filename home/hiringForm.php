@@ -1,5 +1,5 @@
 <?php
-$jfList = job_function()->all();
+$jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
 ?>
 
@@ -11,7 +11,7 @@ $ptList = position_type()->all();
       <p class="text-center text-white">We will help you build the workforce you desire – quickly</p>
     </div>
      <form  action="process.php?action=create" method="POST" id="default-wizard" data-parsley-validate="">
-      <div class="jumbotron center-page" style="width: 1140px;">
+      <div class="jumbotron center-page container" style="width: 84.5%;">
 
 
                                     <div class="alert alert-warning hidden fade in">
@@ -31,8 +31,9 @@ $ptList = position_type()->all();
                                   <label for="firstname">Job Category <span style="color: red;">*</span></label>
                                   <select class="form-control" name="jobFunctionId" required="">
                                    <option>Please Select</option>
-                                    <?php foreach($jfList as $row) {?>
-
+                                    <?php
+                                      foreach($jfList as $row) {
+                                    ?>
                                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                                     <?php } ?>
                                   </select>

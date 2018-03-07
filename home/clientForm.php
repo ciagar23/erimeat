@@ -5,7 +5,7 @@ $jfList = job_function()->all();
 <div class="row">
     <div class="col-md-12">
       <h2 class="text-center m-t-30 m-b-30">Employer Registration Form</h2>
-      <div class="jumbotron center-page" style="width: 1140px;">
+      <div class="jumbotron center-page container" style="width: 84.5%;">
             <form id="default-wizard" action="process.php?action=clientRequest" method="POST" data-parsley-validate="">
                     <div class="row m-t-20">
                         <div class="col-sm-7 center-page">

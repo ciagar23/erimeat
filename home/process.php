@@ -88,7 +88,7 @@ substr(round(microtime(true)), -6)
 	$com->obj['email'] = $_POST['email'];
 	$com->obj['address'] = $_POST['address'];
 	$com->obj['phoneNumber'] = $_POST['phoneNumber'];
-	$com->obj['>mobileNumber'] = $_POST['mobileNumber'];
+	$com->obj['mobileNumber'] = $_POST['mobileNumber'];
 	$com->obj['description ']= $_POST['description'];
 	$com->create();
 
@@ -142,7 +142,6 @@ function submitApplication()
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
 		{
-			$obj = new Resume;
 			$res = resume();
 			$res->obj['jobId'] = $_POST["jobId"];
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
@@ -175,6 +174,9 @@ function submitApplication()
 
 function sendInquiry()
 {
+		$message = $_POST['message'];
+		$email = $_POST['workEmail'];
+
 		$inq = inquiries();
 		$inq->obj['firstName'] = $_POST["firstName"];
 		$inq->obj['lastName'] = $_POST["lastName"];
@@ -182,8 +184,15 @@ function sendInquiry()
 		$inq->obj['jobFunctionId'] = $_POST["jobFunctionId"];
 		$inq->obj['workEmail'] = $_POST["workEmail"];
 		$inq->obj['zipCode'] =  $_POST["zipCode"];
-		$inq->obj['message'] 	 = $_POST["message"];
+		$inq->obj['message'] 	 = $message;
 		$inq->create();
+
+		$content = "From: $email<br><br>
+								Message: $message";
+		//send email to HR
+		sendEmail('rgmak12@gmail.com', $content);
+		//send email to admin
+		sendEmail('torredale1014@gmail.com', $content);
 
 		header('Location: ../home/?view=success');
 }

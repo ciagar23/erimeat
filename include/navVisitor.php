@@ -142,11 +142,14 @@ nav a {
 }
 
 
-nav ul li ul li:hover { background: #000000; }
+nav ul li ul li:hover { background: #4489e4; 
+
+}
 
 /* Background color change on Hover */
 nav a:hover { 
-    background-color: #000000; 
+    background-color: #4489e4; 
+    color: #fff;
 }
 
 /* Hide Dropdowns by Default
@@ -161,6 +164,8 @@ nav ul ul {
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
     display:block;
+      z-index: 100;
+
 }
     
 /* Fisrt Tier Dropdown */
@@ -169,6 +174,12 @@ nav ul ul li {
     float:none;
     display:list-item;
     position: relative;
+    background-color: #36424a;
+    color: #fff;
+}
+nav ul ul li a{
+   
+    color: #fff;
 }
 
 /* Second, Third and more Tiers 
@@ -250,13 +261,14 @@ li > a:only-child:after { content: ''; }
     nav a:hover,
     nav ul ul ul a {
         background-color: #000000;
+        color: #fff;
     }
   
     nav ul li ul li .toggle,
     nav ul ul a,
   nav ul ul ul a{
         padding:14px 20px;  
-        color:#3399cc;
+        color:#fff;
         font-size:17px; 
     }
   
@@ -264,13 +276,14 @@ li > a:only-child:after { content: ''; }
     nav ul li ul li .toggle,
     nav ul ul a {
         background-color: #212121; 
+        color: #fff;
     }
 
     /* Hide Dropdowns by Default */
     nav ul ul {
         float: none;
         position:static;
-        color: #3399ccfff;
+        color: #fff;
         /* has to be the same number as the "line-height" of "nav a" */
     }
         
@@ -278,6 +291,7 @@ li > a:only-child:after { content: ''; }
     nav ul ul li:hover > ul,
     nav ul li:hover > ul {
         display: none;
+            color: #fff;
     }
         
     /* Fisrt Tier Dropdown */

@@ -50,8 +50,13 @@ switch ($action) {
 	default :
 }
 
+
+
+
+
 function addAccount()
 {
+
 
 	$username = $_POST['username'];
 	$checkUser = admin()->get("username='$username'");
@@ -67,6 +72,7 @@ function addAccount()
 		$admin->obj['password'] = $_POST['password'];
 		$admin->obj['level'] = $_POST['level'];
 		$admin->create();
+
 
 		header('Location: ../admin/?view=success');
 	}
@@ -84,14 +90,10 @@ function addJobFunction()
 function login()
 {
 	// if we found an error save the error message in this variable
-
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
 	$result = admin()->get("username='$username' and password = '$password' and level='admin'");
-
 	if ($result){
-		session_start();
 		$_SESSION['admin_session'] = $username;
 		header('Location: index.php');
 	}
@@ -100,15 +102,6 @@ function login()
 	}
 }
 
-function logout()
-
-{
-	//logout.php
-session_start();
-session_destroy();
-header('Location: index.php');
-	exit;
-}
 
 function jobRequest()
 {
@@ -202,6 +195,26 @@ function removeCandidate()
 	resume()->delete("Id='$Id'");
 
 	header('Location: ../admin/?view=candidates&message=Succesfully Deleted');
+}
+function logout()
+
+{
+	//logout.php
+session_start();
+session_destroy();
+header('Location: index.php');
+	exit;
+}
+
+
+function removeJobFunction()
+{
+	$Id = $_GET['Id'];
+	$jobFunc = job_function();
+	$jobFunc->obj['isDeleted'] = "1";
+	$jobFunc->update("Id='$Id'");
+
+	header('Location: ../admin/?view=jobCategory&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

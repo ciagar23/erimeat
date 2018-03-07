@@ -143,7 +143,8 @@
 }
 
 #box-design{
-background-color:rgba(0,0,0,0.3);
+background-color:#fff;
+
 	
 
 }

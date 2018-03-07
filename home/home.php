@@ -68,12 +68,14 @@
     </div>
   </div>
   <hr>
-<div class="container">
+  <div style="background-color: rgba(0,0,0,0.3);">
+<div class="container" >
 
 
-                         <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
+                         <h4 class="text-uppercase font-18 text-center" style="color: #fff;">Our Supply Chain Services</h4>
 
                         <div class="row">
+
                                <div class="col-sm-4">
                                   <div class="card-box" id="box-design">
                                        <div class="cours2" style="overflow:hidden;">
@@ -402,6 +404,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- End row -->

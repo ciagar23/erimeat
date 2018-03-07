@@ -74,8 +74,6 @@ function login()
 		if (!$checkDtr){
 				newCheckIn();
 			}
-
-				header('Location: index.php');
 		}
 	}
 	else {
@@ -91,6 +89,8 @@ function newCheckIn()
 	$dtr->obj['createDate'] = "NOW()";
 	$dtr->obj['checkIn'] = "NOW()";
 	$dtr->create();
+
+	header('Location: index.php');
 }
 
 function changepassword()

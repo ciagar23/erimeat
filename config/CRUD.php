@@ -9,7 +9,13 @@ class CRUD {
 	function arrayToQuery($query){
 	    $query_array = array();
 	    foreach( $query as $key => $key_value ){
-	        $query_array[] = urlencode( $key ) . "='" . urlencode( $key_value ) . "'";
+				// This is for datetime
+				if ($key_value=="NOW()"){
+	        $query_array[] = urlencode( $key ) . "=$key_value";
+				}
+				else{
+		        $query_array[] = urlencode( $key ) . "='$key_value'";
+				}
 	    }
 	    return implode( ', ', $query_array );
 	}
