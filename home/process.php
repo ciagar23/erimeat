@@ -173,7 +173,7 @@ function submitApplication()
 			$res->obj['speedtest'] = $_POST["speedtest"];
 			$res->obj['coverLetter'] = $_POST["coverLetter"];
 			$res->obj['uploadedResume'] = $upload;
-			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->obj['uploadedSpecs'] = uploadFile($_FILES["upload_specs"]);
 			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();

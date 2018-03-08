@@ -165,8 +165,8 @@ function __createEmployeeLogin($Id, $jobId){
 	// Send email
 	$content = "Congratulations!<br><br>
 							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
-							Username: $user->obj['username'] <br>
-							Password: $user->obj['password'] <br><br>
+							Username: " . $user->obj['username'] . "<br>
+							Password: " . $user->obj['password'] . "<br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
