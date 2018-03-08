@@ -12,11 +12,16 @@ function getJobName($Id){
   return $job->position;
 }
 
+function getEmpRefNum($Id){
+  $resume = resume()->get("jobId='$Id'");
+  return $resume->refNum;
+}
+
 ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title">Timekeeping for: <?=getJobName($jobId);?></h4>
+            <h4 class="page-title">Timekeeping for <?=getJobName($jobId);?></h4>
 
             <div class="clearfix"></div>
         </div>
@@ -29,6 +34,7 @@ function getJobName($Id){
     <table id="datatable" class="table table-striped table-bordered">
       <thead>
         <tr>
+          <th>Employee Reference #</th>
           <th>Username</th>
           <th>Name</th>
           <th width="10%">Action</th>
@@ -39,6 +45,7 @@ function getJobName($Id){
           if ($row->jobId==$jobId){
         ?>
         <tr>
+          <td><?=getEmpRefNum($jobId);?></td>
           <td><?=$row->username;?> </td>
           <td><?=get_fullname($row->username);?> </td>
           <td>
