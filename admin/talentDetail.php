@@ -1,5 +1,5 @@
 <?php
-$Id = $_GET['id'];
+$Id = $_GET['Id'];
 $job = job()->get("Id='$Id'");
 ?>
 
@@ -11,7 +11,7 @@ $job = job()->get("Id='$Id'");
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
             <div class="panel-body">
                 <div class="text-left">
-                    <p class="text-muted font-13"><strong>Job Reference Number :</strong>
+                    <p class="text-muted font-13"><strong>Job Reference # :</strong>
                       <span class="m-l-15"><?=$job->refNum;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Job Position :</strong>
@@ -23,14 +23,14 @@ $job = job()->get("Id='$Id'");
                     <p class="text-muted font-13"><strong>Company ABN :</strong>
                       <span class="m-l-15"><?=$job->abn;?></span>
                     </p>
-                    <p class="text-muted font-13"><strong>Company Representative :</strong>
-                      <span class="m-l-15"><?=$job->contactName;?></span>
-                    </p>
                     <p class="text-muted font-13"><strong>Work Email :</strong>
                       <span class="m-l-15"><?=$job->workEmail;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Job Title :</strong>
                       <span class="m-l-15"><?=$job->jobTitle;?></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Contact Person :</strong>
+                      <span class="m-l-15"><?=$job->contactName;?></span>
                     </p>
                     <p class="text-muted font-13"><strong>Business Phone :</strong>
                       <span class="m-l-15"><?=$job->businessPhone;?></span>
@@ -50,7 +50,7 @@ $job = job()->get("Id='$Id'");
         <!-- Personal-Information -->
         <div class="card-box">
           <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=jobRequest&result=approve&Id=<?=$job->Id;?>'">Approve</button>
--         <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>'">Request for more Info</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=jobRequest&result=deny&Id=<?=$job->Id;?>'">More Info</button>
         </div>
     </div>
   </div>
