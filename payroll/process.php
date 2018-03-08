@@ -7,6 +7,10 @@ $action = $_GET['action'];
 
 switch ($action) {
 
+	case 'approveTimesheet' :
+		approveTimesheet();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -18,10 +22,18 @@ switch ($action) {
 	default :
 }
 
+function approveTimesheet()
+{
+	$Id = $_GET['Id'];
+	$ts = timesheet();
+	$ts->obj['status'] = 1;
+	$ts->update("Id='$Id'");
+	header('Location: index.php');
+}
+
 function login()
 {
 	// if we found an error save the error message in this variable
-
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
