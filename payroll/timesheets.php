@@ -1,11 +1,17 @@
 <?php
 $user = (isset($_GET['user']) && $_GET['user'] != '') ? $_GET['user'] : '';
 $timesheet = timesheet()->all();
+
+function get_fullname($username){
+  $user = user()->get("username='$username'");
+  return $user->firstName . " " . $user->lastName;
+}
 ?>
+
 <div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title">Timekeeping for:</h4>
+            <h4 class="page-title">Timekeeping of: <?=get_fullname($user)?></h4>
 
             <div class="clearfix"></div>
         </div>
@@ -14,7 +20,7 @@ $timesheet = timesheet()->all();
 
 <div class="col-sm-12">
   <div class="card-box table-responsive">
-    <h4 class="m-t-0 header-title"><b>List of Companies</b></h4>
+    <h4 class="m-t-0 header-title"><b>List of Timesheets</b></h4>
     <table id="datatable" class="table table-striped table-bordered">
       <thead>
         <tr>
