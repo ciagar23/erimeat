@@ -150,7 +150,7 @@ function jobRequest()
 		$result = 1;
 	}
 	else{
-		$result = 0;
+		$result = -1;
 	}
 
 	$Id = $_GET['Id'];
@@ -158,14 +158,15 @@ function jobRequest()
 	$job->obj['isApproved'] = $result;
 	$job->update("Id='$Id'");
 
-	$job = job()->get("Id='$Id'");
+	$job = job()->get("$Id='$Id'");
+
 	if ($result==1){
-	// Send email
-	$content = __approvedJobRequestEmailMessage();
-	sendEmail($job->workEmail, $content);
+		// Send email
+		$content = __approvedJobRequestEmailMessage();
+		sendEmail($job->workEmail, $content);
 	}else{
 		// Send email
-		$content = __infoJobRequestEmailMessage();
+		$content = __moreInfoEmailMessage();
 		sendEmail($job->workEmail, $content);
 	}
 
@@ -174,46 +175,56 @@ function jobRequest()
 
 function clientRequest()
 {
-	$result = 1;
-	__createLogin($_GET['Id']);
+	if ($_GET['result']=="approve"){
+		$result = 1;
+		__createClientLogin($_GET['Id']);
+	}else{
+		$result = -1;
+	}
 
 	$Id = $_GET['Id'];
-	$com = company();
-	$com->obj['isApproved'] = $result;
-	$com->update("Id='$Id'");
+	$company = company();
+	$company->obj['isApproved'] = $result;
+	$company->update("Id='$Id'");
+
+	$comp = company()->get("Id='$Id'");
+
+	if ($result!=1){
+		// Send email
+		$content = __moreInfoEmailMessage();
+		sendEmail($comp->email, $content);
+}
 
 	header('Location: index.php?view=clientRequest');
 }
 
-function __createLogin($Id){
+function __createClientLogin($Id){
 	// Get Detail
-	$com = company()->get("Id='$Id'");
-
-	$newUsername = "C" . $com->abn;
-	$newPassword = "temppassword";
+	$comp = company()->get("Id='$Id'");
 
 	// Create account
+	$obj = new Profile;
 	$user = user();
-	$user->obj['username'] = $newUsername;
-	$user->obj['password'] = $newPassword;
-	$user->obj['firstName'] = $com->contactPerson;
-	$user->obj['lastName'] = $com->name;
+	$user->obj['username'] = "C" . $comp->abn;
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $comp->contactPerson;
+	$user->obj['lastName'] = $comp->name;
 	$user->obj['level'] = "company";
-	$user->create();
+	$obj->create();
 
 	// Update Company
-	$newCom = company();
-	$newCom->obj['username'] = $user->obj['username'];
-	$newCom->update("Id='$Id'");
+	$comp = company();
+	$comp->obj['username'] = $obj->username;
+	$comp->update("Id='$Id'");
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $newUsername <br>
-							Password: $newPassword <br><br>
+							Username: $user->obj['username'] <br>
+							Password: $user->obj['password'] <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($com->email, $content);
+	sendEmail($comp->obj['email'], $content);
 }
 
 function removeCompany()
@@ -271,6 +282,12 @@ function __approvedJobRequestEmailMessage(){
 function __infoJobRequestEmailMessage(){
 	return "Hi, we need more information regarding your request. Someone from our team<br>
 					will contact you.<br><br>
+					Teamire";
+}
+
+function __moreInfoEmailMessage(){
+	return "Hi, we have received and reviewed your request but we still haven't approved it yet as it did not<br><br>
+					meet our requirements. Someone from our team will contact you through your contact number you provided.<br><br>
 					Teamire";
 }
 ?>
