@@ -34,22 +34,18 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
         <!-- HOME -->
 
         <section >
-
+          <div class="p-l-20 m-t-30">
+            <a href="../home/index.php"><i class="mdi mdi-home"></i> Go To Homepage</a>
+          </div>
                 <div class="row">
                     <div class="col-md-12">
-
-
-
-                            <div class="account-pages">
+                      <div class="account-pages">
                               <div class="login-left-box" >
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
-
-                                        <h2 class="text-uppercase text-center" >
-                                            <a href="index.html" class="login-font">
-                                                <span >Enter your login information to access our Time Reporting and Approval System</span>
-                                            </a>
-                                        </h2>
+                                      <h5 class="text-uppercase text-center text-white">
+                                            Enter your login information to access our Time Reporting and Approval System
+                                      </h5>
                                         <p class="m-b-0">
                                                                                 <?=$error?></p>
                                     </div>
@@ -57,7 +53,7 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                         <form class="form-horizontal" action="process.php?action=login" method="POST">
 
                                             <div class="form-group m-b-0 row">
-                                                <div class="col-12">
+                                                <div class="col-12 m-b-15">
                                                     <label for="emailaddress">Username</label>
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
@@ -69,41 +65,28 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                     <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
                                                 </div>
                                             </div>
-
-
-                                            <div class="form-group row text-center m-t-4">
-                                                <div class="col-2 pull-left">
-                                                    <button class="btn btn-sm btn-block btn-info waves-effect waves-light" type="submit">Sign In</button>
-                                                    <br>
-
-                                                </div>
-
-                                            </div>
-                                            <center>
-                                             <a href="../home/?view=submitResume" class="text-muted" ><small>Employee Registration</small></a>
-                                             </center>
+                                             <div class="form-group row m-t-20 clearfix">
+                                               <div class="col-md-8">
+                                                 <small><a href="../home/?view=submitResume"><b><u>Employee Registration</u></b></a></small>
+                                               </div>
+                                               <div class="col-md-4 pull-right">
+                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SIGN IN</button>
+                                               </div>
+                                             </div>
                                         </form>
-
-
-
-
                                     </div>
-
-
                                 </div>
-
-
-                                         <footer class="footer-default">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12 text-left">
-                                                    <br>
-                                                    <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
-                                                        2018 © Teamire All Rights Reserved
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </footer>
+                         <footer class="footer-default">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-left">
+                                    <br>
+                                    <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
+                                        2018 © Teamire All Rights Reserved
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
 
                               </div>
 

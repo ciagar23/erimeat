@@ -96,4 +96,10 @@ function projects() {
 	$crud->table = "projects";
 	return $crud;
 }
+// Download Models
+function downloads() {
+	$crud = new CRUD;
+	$crud->table = "downloads";
+	return $crud;
+}
 ?>

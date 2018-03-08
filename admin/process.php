@@ -23,6 +23,10 @@ switch ($action) {
 		addJobFunction();
 		break;
 
+	case 'addFileFunction' :
+		addFileFunction();
+		break;
+
 	case 'removeJobFunction' :
 		removeJobFunction();
 		break;
@@ -86,7 +90,21 @@ function addJobFunction()
 
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category!');
 }
+function addFileFunction(){
 
+		$upload = uploadFile($_FILES['upload_file']);
+		if ($upload)
+		{
+			$res = downloads();
+			$res->obj['fileName'] = $_POST["fileName"];
+			$res->obj['uploadedFile'] = $upload;
+			$res->create();
+			header('Location: ../admin/?view=success');
+		}
+		else{
+			header('Location: ../admin/?error=Not uploaded');
+		}
+}
 function login()
 {
 	// if we found an error save the error message in this variable
