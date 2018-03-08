@@ -26,6 +26,7 @@ function getCount($Id){
             <tr>
               <th>Job Category</th>
               <th>Company Name</th>
+              <th>Job Reference #</th>
               <th>Job Classification</th>
               <th>Status</th>
               <th>Action</th>
@@ -40,6 +41,7 @@ function getCount($Id){
             <tr>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?></td>
+              <td><?=$row->refNum;?></td>
               <td><?=$row->position;?></td>
               <td>
               <?php
