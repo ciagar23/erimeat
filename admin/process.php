@@ -19,6 +19,10 @@ switch ($action) {
 		addAccount();
 		break;
 
+	case 'addProject' :
+		addProject();
+		break;
+
 	case 'addJobFunction' :
 		addJobFunction();
 		break;
@@ -82,6 +86,24 @@ function addAccount()
 	}
 }
 
+function addProject()
+{
+	$upload = uploadFile($_FILES['upload_file']);
+	if ($upload)
+	{
+		$projects = projects();
+		$projects->obj['title'] = $_POST['title'];
+		$projects->obj['content'] = $_POST['content'];
+		$projects->obj['uploadedImage'] = $upload;
+		$projects->obj['createDate'] = "NOW()";
+		$projects->create();
+
+		header('Location: ../admin/?view=success');
+	}else{
+		header('Location: ../admin/?error=Not uploaded');
+	}
+}
+
 function addJobFunction()
 {
 	$jf = job_function();
@@ -90,6 +112,7 @@ function addJobFunction()
 
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category!');
 }
+
 function addFileFunction(){
 
 		$upload = uploadFile($_FILES['upload_file']);
