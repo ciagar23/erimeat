@@ -26,10 +26,15 @@
       <div class="row form-container container-80 center-page">
           <div class="col-md-12 center-page">
               <div class="input-group m-t-5">
-                  <input type="text" id="" class="form-control form-lg" style="height: 67px;" value="Search Jobs">
-                  <span class="input-group-btn">
-                      <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                  </span>
+                <form method="GET">
+                <div class="input-group">
+                  <input type="hidden" name="view" value="jobList">
+                  <input type="text" id="example-input2-group2" name="s" class="form-control" style="width:560px; height:67px;" placeholder="Job Title, Skills or Keywords">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+                      </span>
+                </div>
+              </form>
               </div>
           </div>
       </div>
