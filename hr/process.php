@@ -8,12 +8,12 @@ $action = $_GET['action'];
 switch ($action) {
 
 	case 'login' :
-	login();
-	break;
+		login();
+		break;
 
 	case 'logout' :
-	logout();
-	break;
+		logout();
+		break;
 
 	case 'addExperience' :
 		addExperience();
@@ -175,13 +175,27 @@ function __createEmployeeLogin($Id, $jobId){
 
 function clientRequest()
 {
-	$result = 1;
-	__createClientLogin($_GET['Id']);
+	if ($_GET['result']=="approve"){
+		$result = 1;
+		__createClientLogin($_GET['Id']);
+	}else{
+		$result = -1;
+	}
 
-	$obj = new Company;
-	$newObj = $obj->readOne($_GET['Id']);
-	$newObj->isApproved = $result;
-	$obj->updateOne($newObj);
+	$Id = $_GET['Id'];
+	$company = company();
+	$company->obj['isApproved'] = $result;
+	$company->update("Id='$Id'");
+
+	$comp = company()->get("Id='$Id'");
+
+	if ($result!=1){
+		// Send email
+		$content = __moreInfoEmailMessage();
+		sendEmail($comp->email, $content);
+}
+
+
 
 	header('Location: index.php?view=clientRequest');
 }
@@ -277,6 +291,12 @@ function __approvedJobRequestEmailMessage(){
 
 function __deniedJobRequestEmailMessage(){
 	return "We apologized we have denied your request as it did not match our requirements.<br><br>
+					Teamire";
+}
+
+function __moreInfoEmailMessage(){
+	return "Hi, we have received and reviewed your request but we still haven't approved it yet as it did not<br><br>
+					meet our requirements. Someone from our team will contact you through your contact number you provided.<br><br>
 					Teamire";
 }
 ?>
