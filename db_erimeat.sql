@@ -1,6 +1,7 @@
-﻿# Host: localhost  (Version: 5.6.16)
+# Host: localhost  (Version: 5.6.16)
 # Date: 2018-03-08 14:13:58
 # Generator: MySQL-Front 5.3  (Build 4.122)
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -279,11 +280,13 @@ CREATE TABLE `resume` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
+
 #
 # Data for table "resume"
 #
 
 INSERT INTO `resume` VALUES (7,2,1,'2832381273','Dale','Torre','12312312312','123213','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros+Occidental','6100','fadfdsafdsfdsfsdfsdfsadfsdfsdfsdfdsfdsfdsf','1520420366.txt','www.speedtest.com','',NULL,NULL,'1','1','0'),(8,2,1,'1520436853','Dale','Torre','12345671234','123123','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','lsjdfjsdflfdsfwerowuer13213123123','1520436853.txt','www.speedtest.com','',NULL,NULL,'0','0','0'),(9,0,1,NULL,'sampe','asd','11111111111','fdsf','rgmak12%40gmail.com','asd','dfdsk','ad','asd','asd','1111','asdkkasdaasdaaaaaaaaaaaaaaaaaaaaa','1520543500.jpg','asd','','',NULL,'0','0','0');
+
 
 #
 # Structure for table "timesheet"

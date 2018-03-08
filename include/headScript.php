@@ -59,11 +59,6 @@
     width: 96.66666666666666%;
     color: #fff;
 }
-.main-text h1 {
-	  color: #fff;
-	   -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-}
 .btn-min-block
 {
     min-width: 170px;

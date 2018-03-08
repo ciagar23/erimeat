@@ -9,27 +9,17 @@ function getJobFunction($Id){
 }
 ?>
 
-     <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title">Jobs</h4>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="m-b-0">
-                          <?=$message?></p>
-                        </div>
-<div class="card-box">
+<p class="m-b-0">
+  <?=$message?></p>
+</div>
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Jobs</b></h4>
+        <h4 class="page-title">Jobs</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Job Reference Number</th>
+              <th>Job Reference #</th>
               <th>Job Category</th>
               <th>Job Classification</th>
               <th>Company Name</th>
@@ -58,4 +48,3 @@ function getJobFunction($Id){
       </div>
     </div>
   </div>
-</div>

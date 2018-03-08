@@ -36,9 +36,10 @@ File: Components
     color: #3399cc; }
   #topnav .topbar-main {
     background-color: #ffffff;
-    height: 100px; }
+    height: 130px; }
     #topnav .topbar-main .logo {
-      float: left; }
+      float: left;
+      margin-top: 3px; }
     #topnav .topbar-main .logo-sm {
       display: none; }
     #topnav .topbar-main .badge-topbar {
@@ -163,7 +164,7 @@ File: Components
     color: #3399cc;
     font-weight: 650;
     font-size: 17px;
-    line-height: 20px;
+    line-height: 0px;
     padding-left: 25px;
     padding-right: 25px; }
     #topnav .navigation-menu > li > a:hover {
@@ -5622,3 +5623,9 @@ ul.sitemap-icon ul li a {
 /** Text Bold **/
   .text-bold {
     font-weight: bold; }
+
+/** Carousel text **/
+
+  .carousel-title {
+    font-size: 40px;
+    font-family: "Century Gothic", sans-serif; }

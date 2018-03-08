@@ -37,9 +37,9 @@ function hr() {
 }
 
 // User Models
-function inqueries() {
+function inquiries() {
 	$crud = new CRUD;
-	$crud->table = "inqueries";
+	$crud->table = "inquiries";
 	return $crud;
 }
 
@@ -87,6 +87,13 @@ function timesheet() {
 function user() {
 	$crud = new CRUD;
 	$crud->table = "user";
+	return $crud;
+}
+
+// User Models
+function projects() {
+	$crud = new CRUD;
+	$crud->table = "projects";
 	return $crud;
 }
 ?>

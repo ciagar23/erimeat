@@ -9,7 +9,13 @@ class CRUD {
 	function arrayToQuery($query){
 	    $query_array = array();
 	    foreach( $query as $key => $key_value ){
-	        $query_array[] = urlencode( $key ) . "='" . urlencode( $key_value ) . "'";
+				// This is for datetime
+				if ($key_value=="NOW()"){
+	        $query_array[] = "$key=$key_value";
+				}
+				else{
+		        $query_array[] = "$key='$key_value'";
+				}
 	    }
 	    return implode( ', ', $query_array );
 	}
@@ -32,14 +38,12 @@ class CRUD {
 		return $result;
 	}
 
-
 	function count($query){
 		$db = Database::connect();
-		$pdo = $db->prepare("select COUNT(*) from $this->table where $query");
+		$pdo = $db->prepare("select * from $this->table where $query");
 		$pdo->execute();
-		$result = $pdo->fetchAll(PDO::FETCH_OBJ);
 		Database::disconnect();
-		return $result;
+		return $pdo->rowCount();
 	}
 
 	function get($args){

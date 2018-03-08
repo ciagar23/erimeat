@@ -4,16 +4,7 @@ $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $jobList = job_function()->all();
 ?>
-     <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title">Accounts</h4>
 
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-<div class="card-box">
   <div class="row">
     <div class="col-sm-12">
      <br>
@@ -26,7 +17,7 @@ $jobList = job_function()->all();
     </p>
     <br>
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Job Functions</b></h4>
+          <h4 class="page-title">Job Functions</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -85,4 +76,3 @@ $jobList = job_function()->all();
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-</div><!-- End row -->

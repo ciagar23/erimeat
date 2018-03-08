@@ -48,6 +48,12 @@
     </li>
 
     <li>
+        <a href="?view=projects">
+            <i class="mdi mdi-account"></i><span> Special Projects </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=reports">
             <i class="mdi mdi-account"></i><span> Reports </span>
         </a>

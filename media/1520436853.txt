@@ -17,6 +17,8 @@
 
 * Remove search bar for office near you = DONE
 
+* File maintenace for admin job category = DONE
+
 * Our Services
 	* Our services extend to all areas of supply chain management = DONE
 	
@@ -98,4 +100,43 @@ ASK FOR EMAIL
 	* payroll email
 	* hr email
 
+
+* request talent send email
+	* client - DONE but change email and content
+	* hr - DONE but change email and content
+	* admin - DONE but change email and content
+
+* approve talent request
+	* client
+
+* submit resume send email
+	* candidate - DONE but change email and content
+	* hr - DONE but change email and content
+	* admin - DONE but change email and content
+
+* approve resume send email
+	* employee
+
+* submit application send email
+	* candidate  - DONE but change email and content
+	* hr  - DONE but change email and content
+	* admin  - DONE but change email and content
+
+* approve application send email
+	* employee
+
+* set interview
+	* employee
+
+* hire
+	* employee
+
+* time sheet approval
+	* employee submit timesheet -> send email to hr and payroll
+	* payroll verify to client -> send email to client
+	* client approve/dispute -> send email to payroll
+	* payroll approve timesheet -> send email to employee
+
+
+* generate employee ref num once approved = DONE
 

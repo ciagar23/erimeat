@@ -72,30 +72,34 @@ substr(round(microtime(true)), -6)
 
 function clientRequest()
 {
-
 	// This is if you want to get the last 6 digits
 	/*
-substr(round(microtime(true)), -6)
-
+	substr(round(microtime(true)), -6)
 	*/
-	$com = company();
-	$com->obj['username'] = '';
-	$com->obj['jobFunctionId'] = $_POST['jobFunctionId'];
-	$com->obj['department'] = $_POST['department'];
-	$com->obj['name'] = $_POST['name'];
-	$com->obj['abn'] = $_POST['abn'];
-	$com->obj['contactPerson'] = $_POST['contactPerson'];
-	$com->obj['email'] = $_POST['email'];
-	$com->obj['address'] = $_POST['address'];
-	$com->obj['phoneNumber'] = $_POST['phoneNumber'];
-	$com->obj['mobileNumber'] = $_POST['mobileNumber'];
-	$com->obj['description ']= $_POST['description'];
-	$com->create();
+	$comp = company();
+	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
+	$comp->obj['department'] = $_POST['department'];
+	$comp->obj['name'] = $_POST['name'];
+	$comp->obj['abn'] = $_POST['abn'];
+	$comp->obj['contactPerson'] = $_POST['contactPerson'];
+	$comp->obj['email'] = $_POST['email'];
+	$comp->obj['address'] = $_POST['address'];
+	$comp->obj['phoneNumber'] = $_POST['phoneNumber'];
+	$comp->obj['mobileNumber'] = $_POST['mobileNumber'];
+	$comp->obj['description '] = $_POST['description'];
+	$comp->create();
 
 	// Send email
 	$content = __clientRequestEmailMessage();
-	/* should also send email to hr and admin */
-	sendEmail($com->obj['email'], $content);
+	$hrmessage = __hrEmailMessage();
+	$adminmessage = __adminEmailMessage();
+
+	//for client
+	sendEmail($comp->obj['email'], $content);
+	//for HR
+	sendEmail('rgmak12@gmail.com',$hrmessage);
+	//for admin
+	sendEmail('torredale1014@gmail.com',$adminmessage);
 
 	header('Location: ../home/?view=success');
 }
@@ -108,6 +112,7 @@ function submitResume(){
 			$res = resume();
 			$res->obj['jobId'] = "0";
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
 			$res->obj['abn'] = $_POST["abn"];
@@ -128,8 +133,15 @@ function submitResume(){
 
 			// Send email
 			$content = __submitResumeEmailMessage();
-			/* should also send email to hr and admin */
+			$hrmessage = __hrEmailMessage();
+			$adminmessage = __adminEmailMessage();
+
+			//for candidate
 			sendEmail($res->obj['email'] , $content);
+			//for HR
+			sendEmail('rgmak12@gmail.com',$hrmessage);
+			//for admin
+			sendEmail('torredale1014@gmail.com',$adminmessage);
 
 			header('Location: ../home/?view=success');
 		}
@@ -146,6 +158,7 @@ function submitApplication()
 			$res = resume();
 			$res->obj['jobId'] = $_POST["jobId"];
 			$res->obj['jobFunctionId'] = $_POST["jobFunctionId"];
+			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
 			$res->obj['abn'] = $_POST["abn"];
@@ -164,8 +177,16 @@ function submitApplication()
 			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();
-			/* should also send email to hr and admin */
+			$hrmessage = __hrEmailMessage();
+			$adminmessage = __adminEmailMessage();
+
+			//for candidate
 			sendEmail($res->obj['email'], $content);
+			//for HR
+			sendEmail('rgmak12@gmail.com',$hrmessage);
+			//for admin
+			sendEmail('torredale1014@gmail.com',$adminmessage);
+
 			header('Location: ../home/?view=success');
 		}
 		else{
@@ -175,6 +196,9 @@ function submitApplication()
 
 function sendInquiry()
 {
+		$message = $_POST['message'];
+		$email = $_POST['workEmail'];
+
 		$inq = inquiries();
 		$inq->obj['firstName'] = $_POST["firstName"];
 		$inq->obj['lastName'] = $_POST["lastName"];
@@ -182,8 +206,16 @@ function sendInquiry()
 		$inq->obj['jobFunctionId'] = $_POST["jobFunctionId"];
 		$inq->obj['workEmail'] = $_POST["workEmail"];
 		$inq->obj['zipCode'] =  $_POST["zipCode"];
-		$inq->obj['message'] 	 = $_POST["message"];
+		$inq->obj['message'] 	 = $message;
 		$inq->create();
+
+		$content = "From: $email<br><br>
+								Message: $message";
+
+		//send email to HR
+		sendEmail('rgmak12@gmail.com', $content);
+		//send email to admin
+		sendEmail('torredale1014@gmail.com', $content);
 
 		header('Location: ../home/?view=success');
 }

@@ -94,7 +94,6 @@ function login()
 	$password = $_POST['password'];
 	$result = admin()->get("username='$username' and password = '$password' and level='admin'");
 	if ($result){
-		session_start();
 		$_SESSION['admin_session'] = $username;
 		header('Location: index.php');
 	}
@@ -149,10 +148,13 @@ function __createLogin($Id){
 	// Get Detail
 	$com = company()->get("Id='$Id'");
 
+	$newUsername = "C" . $com->abn;
+	$newPassword = "temppassword";
+
 	// Create account
 	$user = user();
-	$user->obj['username'] = "C" . $com->abn;
-	$user->obj['password'] = "temppassword";
+	$user->obj['username'] = $newUsername;
+	$user->obj['password'] = $newPassword;
 	$user->obj['firstName'] = $com->contactPerson;
 	$user->obj['lastName'] = $com->name;
 	$user->obj['level'] = "company";
@@ -165,8 +167,8 @@ function __createLogin($Id){
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $user->obj['username'] <br>
-							Password: $user->obj['password'] <br><br>
+							Username: $newUsername <br>
+							Password: $newPassword <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";

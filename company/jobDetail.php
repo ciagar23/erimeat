@@ -1,6 +1,17 @@
 <?php
 $Id = $_GET['id'];
 $job = job()->get("Id='$Id'");
+$resumeList = resume()->filter("jobId='$Id'");
+
+function getJobClassification($Id){
+  $job = job()->get("Id='$Id'");
+  return $job->position;
+}
+
+function getCount($Id){
+  $employee = employee()->count("jobId='$Id'");
+  return $employee;
+}
 ?>
 
 
@@ -50,3 +61,42 @@ $job = job()->get("Id='$Id'");
         <!-- Personal-Information -->
     </div>
   </div>
+
+<?php
+if (getCount($Id)){
+?>
+<div class="row">
+ <div class="col-sm-12">
+   <div class="card-box table-responsive">
+     <h4 class="m-t-0 header-title"><b>List of Employees</b></h4>
+     <table id="datatable" class="table table-striped table-bordered">
+       <thead>
+         <tr>
+           <th>Employee Reference #</th>
+           <th>Job Classification</th>
+           <th>Full Name</th>
+           <th>Action</th>
+         </tr>
+       </thead>
+       <tbody>
+         <?php foreach($resumeList as $row) {
+         ?>
+         <tr>
+           <td><?=$row->refNum;?></td>
+           <td><?=getJobClassification($row->jobId);?></td>
+           <td><?=$row->firstName;?> <?=$row->lastName;?></td>
+           <td>
+             <!--TODO:-->
+             <a href="?view=timesheetDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Timesheet</a>
+           </td>
+         </tr>
+         <?php
+
+         }
+         ?>
+       </tbody>
+     </table>
+   </div>
+ </div>
+</div>
+<?php } ?>

@@ -23,6 +23,7 @@ function getJobFunction($Id){
                 <tr>
                     <th>Applying For</th>
                     <th>Job Function</th>
+                    <th>Candidate Reference #</th>
                     <th>Full Name</th>
                     <th>City, State</th>
                     <th>Review</th>
@@ -35,6 +36,7 @@ function getJobFunction($Id){
                 <tr>
                     <td><?=getJobName($row->jobId);?></td>
                     <td><?=getJobFunction($row->jobFunctionId);?></td>
+                    <td><?=$row->refNum;?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=$row->city; ?>, <?=$row->state; ?></td>
                     <td>
