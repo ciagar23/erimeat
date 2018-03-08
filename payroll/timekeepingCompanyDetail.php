@@ -12,6 +12,11 @@ function getJobName($Id){
   return $job->position;
 }
 
+function getReferenceNumber($Id){
+  $resume = resume()->get("jobId='$Id'");
+  return $resume->refNum;
+}
+
 ?>
 <div class="row">
     <div class="col-xs-12">
@@ -30,6 +35,7 @@ function getJobName($Id){
       <thead>
         <tr>
           <th>Username</th>
+          <th>Employee Reference #</th>
           <th>Name</th>
           <th width="10%">Action</th>
         </tr>
@@ -39,8 +45,9 @@ function getJobName($Id){
           if ($row->jobId==$jobId){
         ?>
         <tr>
-          <td><?=$row->username;?> </td>
-          <td><?=get_fullname($row->username);?> </td>
+          <td><?=$row->username;?></td>
+          <td><?=getReferenceNumber($row->jobId);?></td>
+          <td><?=get_fullname($row->username);?></td>
           <td>
             <a href="?view=timesheets&user=<?=$row->username;?>"
               class=" btn btn-success btn-xs tooltips"
