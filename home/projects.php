@@ -15,7 +15,7 @@
     <div class="col-md-9">
       <h4><?=$row->title;?></h4>
       <p><?=$row->content;?></p>
-      <p><a href="#" class="text-primary">Read More</a></p>
+      <p><a href="../home/?view=projectDetail&Id=<?=$row->Id;?>" class="text-primary">Read More</a></p><p>Posted last <?=$row->createDate;?></p>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
       <div class="row form-container container-80 center-page">
           <div class="col-md-12 center-page">
               <div class="input-group m-t-5">
-                  <input type="text" id="" class="form-control" value="Search Jobs">
+                  <input type="text" id="" class="form-control form-lg" style="height: 67px;" value="Search Jobs">
                   <span class="input-group-btn">
                       <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                   </span>
