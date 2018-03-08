@@ -43,10 +43,12 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                               <div class="login-left-box" >
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
-
-                                        <h5 class="text-uppercase text-center text-white">
-                                              Enter your login information to access our Time Reporting and Approval System
-                                        </h5>
+                                      <h5 class="text-uppercase text-center text-white">
+                                            Enter your login information to access our Time Reporting and Approval System<br><br>
+                                            <div class="center-page login-label">
+                                            Company Login
+                                            </div>
+                                      </h5>
                                         <p class="m-b-0">
                                                                                 <?=$error?></p>
                                     </div>
