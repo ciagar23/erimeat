@@ -19,7 +19,7 @@ function getCount($Id){
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="page-title">Jobs</h4><br>
+        <h4 class="page-title">Posted Jobs</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>

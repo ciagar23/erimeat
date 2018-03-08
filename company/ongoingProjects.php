@@ -17,20 +17,10 @@ function getCount($Id){
 }
 
 ?>
-     <div class="row">
-        <div class="col-xs-12">
-            <div class="page-title-box">
-                <h4 class="page-title">Jobs</h4>
-
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-<div class="card-box">
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Jobs</b></h4>
+          <h4 class="page-title">Ongoing Projects</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -80,4 +70,3 @@ function getCount($Id){
       </div>
     </div>
   </div>
-</div>
