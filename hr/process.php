@@ -195,8 +195,6 @@ function clientRequest()
 		sendEmail($comp->email, $content);
 }
 
-
-
 	header('Location: index.php?view=clientRequest');
 }
 
@@ -270,14 +268,14 @@ function jobRequest()
 	$job = job()->get("$Id='$Id'");
 
 	if ($result==1){
-	// Send email
-	$content = __approvedJobRequestEmailMessage();
-	sendEmail($job->workEmail, $content);
-}else{
-	// Send email
-	$content = __deniedJobRequestEmailMessage();
-	sendEmail($job->workEmail, $content);
-}
+		// Send email
+		$content = __approvedJobRequestEmailMessage();
+		sendEmail($job->workEmail, $content);
+	}else{
+		// Send email
+		$content = __moreInfoEmailMessage();
+		sendEmail($job->workEmail, $content);
+	}
 
 	header('Location: index.php?view=talentRequest');
 }
@@ -286,11 +284,6 @@ function jobRequest()
 
 function __approvedJobRequestEmailMessage(){
 	return "We have approved your request.<br><br>
-					Teamire";
-}
-
-function __deniedJobRequestEmailMessage(){
-	return "We apologized we have denied your request as it did not match our requirements.<br><br>
 					Teamire";
 }
 

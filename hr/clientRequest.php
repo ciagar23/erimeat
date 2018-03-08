@@ -31,8 +31,8 @@ $company = company()->all();
           </thead>
           <tbody>
            <?php foreach($company as $row) {
-  if ($row->isApproved!=1){
-  ?>
+              if ($row->isApproved!=1){
+           ?>
             <tr>
               <td><?=$row->name;?> </td>
               <td><?=$row->abn;?> </td>
