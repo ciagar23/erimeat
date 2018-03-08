@@ -71,7 +71,7 @@
   </div>
   <hr>
   <div>
-<div class="container" >
+<div class="container">
 
 
                          <h4 class="text-uppercase font-18 text-center" style="color: #fff;">Our Supply Chain Services</h4>
@@ -396,48 +396,25 @@
 
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
-        <div class="row">
+        <div class="row m-t-30">
             <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Sydney</h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img1.png">
-                </div>
             </div><!-- end col -->
 
             <div class="col-md-6 col-md-3">
-                <div class="">
-                    <div class="">
-                        <h4 class=" m-b-5"></h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img2.png">
-                </div>
             </div><!-- end col -->
 
             <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Perth</h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img3.png">
-                </div>
             </div><!-- end col -->
 
             <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Brisbane</h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img4.png">
-                </div>
             </div><!-- end col -->
         </div>
       </div>
+      <div class="clearfix m-b-30"></div>
         <!-- end row -->
   <!-- End Location Panels-->
   </div>

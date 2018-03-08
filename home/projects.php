@@ -1,4 +1,4 @@
-<div class="m-t-30 container-80 container-fluid m-b-30">
+<div class="m-t-30 container-fluid m-b-30">
 
   <!-- Start About Us Content -->
   <div class="center-page container-80">
