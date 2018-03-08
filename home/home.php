@@ -84,9 +84,7 @@
                                           <h4 class="font-18">Demand Planning</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                        
                                           </div>
                                         </div>
                                       </div>
@@ -99,9 +97,6 @@
                                           <h4 class="font-18">Supply Planning</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -114,9 +109,7 @@
 
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                     
                                           </div>
                                         </div>
                                       </div>
@@ -133,9 +126,7 @@
                                             <h4 class="font-18">Logistics</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                        
                                           </div>
                                         </div>
                                       </div>
@@ -148,9 +139,7 @@
                                             <h4 class="font-18">Manufacturing</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                        
                                           </div>
                                         </div>
                                       </div>
@@ -163,9 +152,7 @@
                                            <h4 class="font-18">Transportation</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                         
                                           </div>
                                         </div>
                                       </div>
@@ -182,9 +169,7 @@
                                            <h4 class="font-18">Procurement</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                         
                                           </div>
                                         </div>
                                       </div>
@@ -196,9 +181,7 @@
                                           <h4 class="font-18">Training Certification</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                          
                                           </div>
                                         </div>
                                       </div>
@@ -211,9 +194,7 @@
                                           <h4 class="font-18">Warehousing</h4>
                                          </center>
 
-                                          <div class="cours4 text-center">
-                                            <button class="btn btn-info btn-sm" onclick="location.href='http://google.com';"  ><span class="fa fa-eye"></span> View</button>
-                                            </div>
+                                      
                                           </div>
                                         </div>
                                       </div>
