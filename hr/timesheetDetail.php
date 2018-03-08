@@ -1,6 +1,5 @@
 <?php
 $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
-$user = $_SESSION['employee_session'];
 $dtr = dtr()->all();
 
 function get_time_difference($record)

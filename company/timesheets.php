@@ -1,20 +1,14 @@
 <?php
-$user = (isset($_GET['user']) && $_GET['user'] != '') ? $_GET['user'] : '';
-$timeSheet = timesheet()->all();
+/*$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';*/
+$status = (isset($_GET['status']) && $_GET['status'] != '') ? $_GET['status'] : '';
+$jobId = $_GET['jobId'];
+$emp = employee()->get("jobId='$jobId'");
+
+$timesheets = timesheet()->filter("employee='$emp->username'");
 ?>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="page-title-box">
-            <h4 class="page-title">Timekeeping of <?=$user;?></h4>
-
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
-
 <div class="col-sm-12">
   <div class="card-box table-responsive">
-    <h4 class="m-t-0 header-title"><b>List of Timesheets</b></h4>
+    <h4 class="page-title">Timekeeping of <?=$emp->username;?></h4><br>
     <table id="datatable" class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -24,8 +18,8 @@ $timeSheet = timesheet()->all();
         </tr>
       </thead>
       <tbody>
-        <?php foreach($timeSheet as $row) {
-          if ($row->status == 0)
+        <?php foreach($timesheets as $row) {
+          if ($row->status == $status || $status=="")
           {
         ?>
         <tr>
@@ -51,7 +45,7 @@ $timeSheet = timesheet()->all();
 
           </td>
           <td>
-            <a href="?view=timesheetDetail&Id=<?=$row->Id;?>"
+            <a href="?view=timesheetDetail&Id=<?=$row->Id;?>&user=<?=$emp->username;?>"
               class=" btn btn-success btn-xs tooltips"
               title="Click To Edit">
               <span class="fa fa-eye"></span>
