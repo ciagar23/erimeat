@@ -102,11 +102,13 @@ function setInterviewDate()
 {
 	$email = $_POST['email'];
 	$Id = $_POST['resumeId'];
+	$date = $_POST['date'];
+	$time = $_POST['time'];
 
 	$intDate = interview_date();
-	$intDate->obj['resumeId'] = $_POST['resumeId'];
-	$intDate->obj['date'] = $_POST['date'];
-	$intDate->obj['time'] = $_POST['time'];
+	$intDate->obj['resumeId'] = $Id;
+	$intDate->obj['date'] = $date;
+	$intDate->obj['time'] = $time;
 	$intDate->create();
 
 	$resume = resume();
@@ -115,8 +117,8 @@ function setInterviewDate()
 
 	$content = "We have considered your application. Please be available on the schedule below<br>
 							for your interview.<br><br>
-							Date = $intDate->obj['date']<br>
-							Time = $intDate->obj['time']<br><br>
+							Date = $date<br>
+							Time = $time<br><br>
 							Teamire";
 	sendEmail($email, $content);
 
@@ -156,7 +158,7 @@ function __createEmployeeLogin($Id, $jobId){
 
 	$emp = employee();
 	$emp->obj['jobId'] = $jobId;
-	$emp->obj['username'] = $obj->username;
+	$emp->obj['username'] = $user->obj['username'];
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
@@ -168,7 +170,7 @@ function __createEmployeeLogin($Id, $jobId){
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($resume->obj['email'], $content);
+	sendEmail($resume->email, $content);
 }
 
 function clientRequest()

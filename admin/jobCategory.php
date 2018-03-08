@@ -36,12 +36,12 @@ $jobList = job_function()->all();
           </thead>
           <tbody>
            <?php foreach($jobList as $row) {
-            if ($row){
+            if ($row->isDeleted==0){
               ?>
               <tr>
                 <td><?=$row->option;?></td>
                 <td>
-                  <a href="#"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
+                  <a href="process.php?action=removeJobFunction&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
                 </td>
               </tr>
           <?php

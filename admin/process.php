@@ -208,6 +208,16 @@ header('Location: index.php');
 }
 
 
+function removeJobFunction()
+{
+	$Id = $_GET['Id'];
+	$jobFunc = job_function();
+	$jobFunc->obj['isDeleted'] = "1";
+	$jobFunc->update("Id='$Id'");
+
+	header('Location: ../admin/?view=jobCategory&message=Succesfully Deleted');
+}
+
 /* ======================== Email Messages ==============================*/
 
 function __approvedJobRequestEmailMessage(){
