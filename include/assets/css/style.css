@@ -1207,8 +1207,8 @@ a:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus,
 .page-item.active .page-link {
-  background-color: #64c5b1;
-  border-color: #64c5b1; }
+  background-color: #3399cc;
+  border-color: #3399cc; }
 
 .pager li > a, .pager li > span {
   -moz-border-radius: 3px;
@@ -5630,6 +5630,13 @@ ul.sitemap-icon ul li a {
   .job-detail-search-container {
     background-color: #eeeeee;
     padding: 50px 30px; }
+
+/** Candidate Contact Button **/
+  .btn-candidate-contact {
+    width: 150px;
+    height: 100px;
+    border-radius: 5px; }
+
 /** Text Bold **/
   .text-bold {
     font-weight: bold; }
@@ -5642,3 +5649,33 @@ ul.sitemap-icon ul li a {
     margin-bottom: 8%;
     padding-left: 4%;
     padding-right: 4%; }
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-family: "Century Gothic", sans-serif;}
+
+.accordion:hover {
+    background-color: #e2e2e2; }
+
+.accordion-panel {
+    display: none;
+    background-color: transparent; }
+
+  .accordion:after {
+    content: 		'\002B';
+    font-size: 22px;
+    font-weight: 600;
+    color: #777;
+    float: right;
+    margin-left: 5px; }
+
+  .accordion.active:after {
+    content: "\2212";}
