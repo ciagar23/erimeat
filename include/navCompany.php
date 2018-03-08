@@ -1,11 +1,5 @@
 <ul class="metisMenu nav" id="side-menu">
     <li>
-        <a href="../company/?view=requestTalent">
-            <i class="mdi mdi-settings"></i><span> Request Talent </span>
-        </a>
-    </li>
-
-    <li>
         <a href="../company/?view=postedJobs">
             <i class="mdi mdi-tie"></i><span> Posted Jobs </span>
         </a>

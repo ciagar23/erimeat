@@ -5,16 +5,6 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $adminList = admin()->all();
 
 ?>
-     <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title">Accounts</h4>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-<div class="card-box">
   <div class="row">
     <div class="col-sm-12">
      <br>
@@ -24,7 +14,7 @@ $adminList = admin()->all();
     </div>
     <br>
       <div class="card-box table-responsive">
-        <h4 class="m-t-0 header-title"><b>List of Accounts</b></h4>
+        <h4 class="page-title">Accounts</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -115,4 +105,3 @@ $adminList = admin()->all();
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-</div><!-- End row -->

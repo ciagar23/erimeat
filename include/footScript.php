@@ -6,6 +6,12 @@
 <script src="../include/assets/js/waves.js"></script>
 <script src="../include/assets/js/jquery.slimscroll.js"></script>
 <script src="../include/assets/js/jquery.scrollTo.min.js"></script>
+
+  <!-- Jquery filer js -->
+<script src="../include/plugins/jquery.filer/js/jquery.filer.min.js"></script>
+
+        <!-- Bootstrap fileupload js -->
+<script src="../include/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script>
 $(document).ready(function(){
     $("#myBtn1").click(function(){
@@ -41,6 +47,9 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
 <script src="../include/plugins/autoNumeric/autoNumeric.js" type="text/javascript"></script>
 
+
+      
+
  <!-- Counter js  -->
 <script src="../include/plugins/waypoints/jquery.waypoints.min.js"></script>
 <script src="../include/plugins/counterup/jquery.counterup.min.js"></script>
@@ -73,7 +82,10 @@ $( "#myBtnShowResume" ).click(function() {
 <script type="text/javascript" src="../include/assets/pages/jquery.autocomplete.init.js"></script>
 
         <!-- Init Js file -->
+ 
 <script type="text/javascript" src="../include/assets/pages/jquery.form-advanced.init.js"></script>
+
+
 
 <script src="../include/plugins/moment/moment.js"></script>
 <script src='../include/plugins/fullcalendar/js/fullcalendar.min.js'></script>
@@ -82,6 +94,9 @@ $( "#myBtnShowResume" ).click(function() {
 
 <script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
+
+
+
 
 <script src="../include/plugins/datatables/dataTables.buttons.min.js"></script>
 <script src="../include/plugins/datatables/buttons.bootstrap.min.js"></script>
@@ -100,6 +115,8 @@ $( "#myBtnShowResume" ).click(function() {
 
 <!-- Jquery-Ui -->
 <script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
+ <!-- page specific js -->
+<script src="../include/assets/pages/jquery.fileuploads.init.js"></script>
 
 <script src="../include/assets/pages/jquery.datatables.init.js"></script>
 
@@ -135,6 +152,8 @@ $( "#myBtnShowResume" ).click(function() {
             });
             TableManageButtons.init();
 </script>
+
+
 
 <!-- App js -->
 <script src="../include/assets/js/jquery.core.js"></script>

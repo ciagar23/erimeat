@@ -77,7 +77,6 @@ function clientRequest()
 	substr(round(microtime(true)), -6)
 	*/
 	$comp = company();
-	$comp->obj['username'] = 'a';
 	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 	$comp->obj['department'] = $_POST['department'];
 	$comp->obj['name'] = $_POST['name'];
@@ -92,8 +91,15 @@ function clientRequest()
 
 	// Send email
 	$content = __clientRequestEmailMessage();
-	/* should also send email to hr and admin */
+	$hrmessage = __hrEmailMessage();
+	$adminmessage = __adminEmailMessage();
+
+	//for client
 	sendEmail($comp->obj['email'], $content);
+	//for HR
+	sendEmail('rgmak12@gmail.com',$hrmessage);
+	//for admin
+	sendEmail('torredale1014@gmail.com',$adminmessage);
 
 	header('Location: ../home/?view=success');
 }
@@ -122,6 +128,7 @@ function submitResume(){
 			$res->obj['coverLetter'] = $_POST["coverLetter"];
 			$res->obj['uploadedResume'] = $upload;
 			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->obj['uploadedCerts'] = $_POST["upload_certs"];
 			$res->create();
 
 			// Send email
@@ -204,7 +211,7 @@ function sendInquiry()
 
 		$content = "From: $email<br><br>
 								Message: $message";
-								
+
 		//send email to HR
 		sendEmail('rgmak12@gmail.com', $content);
 		//send email to admin

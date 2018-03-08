@@ -1,6 +1,7 @@
-﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-07 22:01:33
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Host: localhost  (Version: 5.6.16)
+# Date: 2018-03-08 14:13:58
+# Generator: MySQL-Front 5.3  (Build 4.122)
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -45,13 +46,13 @@ CREATE TABLE `company` (
   `jobFunctionId` varchar(11) DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (2,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1');
+INSERT INTO `company` VALUES (5,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1');
 
 #
 # Structure for table "dtr"
@@ -185,13 +186,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(1) DEFAULT '0',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre');
+INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'0','dale torre');
 
 #
 # Structure for table "job_function"
@@ -229,6 +230,24 @@ CREATE TABLE `position_type` (
 INSERT INTO `position_type` VALUES (1,'Temporary'),(2,'Full-time'),(3,'Project'),(4,'Part-time');
 
 #
+# Structure for table "projects"
+#
+
+DROP TABLE IF EXISTS `projects`;
+CREATE TABLE `projects` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `content` text,
+  `uploadedImage` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "projects"
+#
+
+
+#
 # Structure for table "resume"
 #
 
@@ -253,18 +272,21 @@ CREATE TABLE `resume` (
   `uploadedResume` varchar(100) DEFAULT NULL,
   `speedtest` varchar(100) DEFAULT NULL,
   `uploadedSpecs` varchar(100) DEFAULT NULL,
+  `uploadedCerts` varchar(255) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   `isApproved` varchar(2) DEFAULT '0',
   `isHired` varchar(2) DEFAULT '0',
   `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (7,2,1,'2832381273','Dale','Torre','12312312312','123213','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros+Occidental','6100','fadfdsafdsfdsfsdfsdfsadfsdfsdfsdfdsfdsfdsf','1520420366.txt','www.speedtest.com','',NULL,'1','1','0');
+INSERT INTO `resume` VALUES (7,2,1,'2832381273','Dale','Torre','12312312312','123213','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros+Occidental','6100','fadfdsafdsfdsfsdfsdfsadfsdfsdfsdfdsfdsfdsf','1520420366.txt','www.speedtest.com','',NULL,NULL,'1','1','0'),(8,2,1,'1520436853','Dale','Torre','12345671234','123123','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','lsjdfjsdflfdsfwerowuer13213123123','1520436853.txt','www.speedtest.com','',NULL,NULL,'0','0','0'),(9,0,1,NULL,'sampe','asd','11111111111','fdsf','rgmak12%40gmail.com','asd','dfdsk','ad','asd','asd','1111','asdkkasdaasdaaaaaaaaaaaaaaaaaaaaa','1520543500.jpg','asd','','',NULL,'0','0','0');
+
 
 #
 # Structure for table "timesheet"
