@@ -45,7 +45,6 @@
 {
     position: absolute;
     top: 200px;
-    width: 96.66666666666666%;
     color: #fff;
 }
 .btn-min-block
@@ -145,7 +144,7 @@
 #box-design{
 background-color:#fff;
 
-	
+
 
 }
 .btn-file {
@@ -190,7 +189,7 @@ background-color:#fff;
 .cours2{
   position:relative;
   margin-bottom:50px;
-  
+
 }
 
 

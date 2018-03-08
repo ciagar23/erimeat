@@ -1,33 +1,24 @@
-  
-  
-                    <div class="container" >
-                         <a href="index.php" class="logo m-t-5  m-l-15 pull-left">
-              <img src="../include/assets/images/teamire-logo.png">
-            </a> 
-            <br>
-             
-  <div class="form-inline pull-right" id="above-nav" style="padding: 20px;">
-  <ul class="nav navbar-nav navbar-right nav-menu-right">
-      <li> <a class="m-l-5 m-r-15" href="../home/?view=projects">Special Projects</a></li>
-      <li> <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a>
-             </li>
-      <li><a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a></li>
-      <li> <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a></li>
-      <li> <a class="m-l-5 m-r-15" href="../home/?view=downloads">Downloads</a></li>
+<div class="container" >
+  <a href="index.php" class="logo m-t-5  m-l-15 pull-left">
+    <img src="../include/assets/images/teamire-logo.png">
+  </a>
+  <br>
 
-  </ul>
-               
-               </div>
-              
-              
-             
-             
+    <div class="form-inline pull-right" id="above-nav" style="padding: 20px;">
+      <ul class="nav navbar-nav navbar-right nav-menu-right">
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=projects">Special Projects</a></li>
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a></li>
+        <li><a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a></li>
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a></li>
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=downloads">Downloads</a></li>
+      </ul>
+    </div>
   </div>
-        <nav>
+        <nav style="padding-left: 2%;">
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
             <ul class="menu">
-            
+
                 <li>
                     <!-- First Tier Drop Down -->
                     <label for="drop-1" class="toggle">Employers <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></label>
@@ -37,7 +28,7 @@
                         <li><a href="../home/?view=hiringForm">Request Talent</a></li>
                     <li><a href="../home/?view=searchResume">Search Candidates</a></li>
                         <li><a href="../home/?view=clientForm">Employer Registration</a></li>
-                    </ul> 
+                    </ul>
 
                 </li>
                 <li>
@@ -49,7 +40,7 @@
                 <ul>
                      <li><a href="../home/?view=searchJob">Search Job</a></li>
                 <li><a href="../home/?view=submitResume">Submit Resume</a></li>
-             
+
                 </ul>
                 </li>
                      <li>
@@ -60,10 +51,10 @@
                     <ul>
                         <li><a href="../home/?view=services">Our Services</a></li>
               <li><a href="../home/?view=aboutUs">About Us</a></li>
-                    </ul> 
+                    </ul>
 
                 </li>
-               
+
             </ul>
         </nav>
 
@@ -71,12 +62,12 @@
 
 <style>
 body {
-   
+
     line-height: 32px;
-   
+
     margin: 0;
     padding: 0;
-    
+
     }
 
 #container {
@@ -92,7 +83,7 @@ body {
 }
 
 /* Giving a background-color to the nav container. */
-nav { 
+nav {
     margin:0;
     padding: 0;
     background-color: #eee;
@@ -124,7 +115,7 @@ nav ul {
     list-style: none;
     position: relative;
     }
-    
+
 /* Positioning the navigation items inline */
 nav ul li {
     margin: 0px;
@@ -136,19 +127,21 @@ nav ul li {
 /* Styling the links */
 nav a {
     display:block;
-    padding:14px 20px;  
+    padding:14px 20px;
     color:#3399cc;
+    font-weight: 500;
     text-decoration:none;
+    font-size: 17px;
 }
 
 
-nav ul li ul li:hover { background: #4489e4; 
+nav ul li ul li:hover { background: #4489e4;
 
 }
 
 /* Background color change on Hover */
-nav a:hover { 
-    background-color: #4489e4; 
+nav a:hover {
+    background-color: #4489e4;
     color: #fff;
 }
 
@@ -156,18 +149,18 @@ nav a:hover {
  * and giving it a position of absolute */
 nav ul ul {
     display: none;
-    position: absolute; 
+    position: absolute;
     /* has to be the same number as the "line-height" of "nav a" */
-    top: 60px; 
+    top: 60px;
 }
-    
+
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
     display:block;
       z-index: 100;
 
 }
-    
+
 /* Fisrt Tier Dropdown */
 nav ul ul li {
     width:170px;
@@ -178,22 +171,22 @@ nav ul ul li {
     color: #fff;
 }
 nav ul ul li a{
-   
+
     color: #fff;
 }
 
-/* Second, Third and more Tiers 
+/* Second, Third and more Tiers
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
 nav ul ul ul li {
     position: relative;
     top:-60px;
-    /* has to be the same number as the "width" of "nav ul ul li" */ 
-    left:170px; 
+    /* has to be the same number as the "width" of "nav ul ul li" */
+    left:170px;
 }
 
-    
+
 /* Change ' +' in order to change the Dropdown symbol */
 li > a:after { content:  ''; }
 li > a:only-child:after { content: ''; }
@@ -227,7 +220,7 @@ li > a:only-child:after { content: ''; }
     .toggle {
         display: block;
         background-color: #eee;
-        padding:14px 20px;  
+        padding:14px 20px;
         color:#3399cc;
         font-size:17px;
         text-decoration:none;
@@ -263,19 +256,19 @@ li > a:only-child:after { content: ''; }
         background-color: #000000;
         color: #fff;
     }
-  
+
     nav ul li ul li .toggle,
     nav ul ul a,
   nav ul ul ul a{
-        padding:14px 20px;  
+        padding:14px 20px;
         color:#fff;
-        font-size:17px; 
+        font-size:17px;
     }
-  
-  
+
+
     nav ul li ul li .toggle,
     nav ul ul a {
-        background-color: #212121; 
+        background-color: #212121;
         color: #fff;
     }
 
@@ -286,14 +279,14 @@ li > a:only-child:after { content: ''; }
         color: #fff;
         /* has to be the same number as the "line-height" of "nav a" */
     }
-        
+
     /* Hide menus on hover */
     nav ul ul li:hover > ul,
     nav ul li:hover > ul {
         display: none;
             color: #fff;
     }
-        
+
     /* Fisrt Tier Dropdown */
     nav ul ul li {
         display: block;
@@ -302,7 +295,7 @@ li > a:only-child:after { content: ''; }
 
     nav ul ul ul li {
         position: static;
-        /* has to be the same number as the "width" of "nav ul ul li" */ 
+        /* has to be the same number as the "width" of "nav ul ul li" */
 
     }
 

@@ -33,11 +33,13 @@
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title">Unrivaled Industry Insight. Sophisticated Matching Technology.
+                    <p class="carousel-title m-t-10">Unrivaled Industry Insight. Sophisticated Matching Technology.
                       And a Personalized Approach. It’s Why We’re #1.</h1>
-                    <h3>
-                      <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button> <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
-                    </h3>
+                      <div class="row m-b-20 m-t-50">
+                      <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
+                    </div>
+
                     <div class="">
                       <div id="myDIV">
                   <form class="form-inline" >
@@ -68,7 +70,7 @@
     </div>
   </div>
   <hr>
-  <div style="background-color: rgba(0,0,0,0.3);">
+  <div>
 <div class="container" >
 
 
@@ -226,9 +228,10 @@
                     </div> <!-- container -->
 
     <!-- Basic Form Wizard -->
+    <div class="container-80 center-page">
                         <div class="row">
                             <div class="col-md-12">
-                                 <div class="card-box">
+                                 <div>
 
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
@@ -406,11 +409,12 @@
                             </div>
                         </div>
                         </div>
-
+                      </div>
                         <!-- End row -->
 
 
   <!-- Start Location Panels-->
+      <div class="container-80 center-page">
         <div class="row">
             <div class="col-md-6 col-lg-3">
                 <div class="company-card card-box">
@@ -422,10 +426,10 @@
                 </div>
             </div><!-- end col -->
 
-            <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Melbourne</h4>
+            <div class="col-md-6 col-md-3">
+                <div class="">
+                    <div class="">
+                        <h4 class=" m-b-5"></h4>
                     </div>
                     <hr/>
                     <img src="../include/assets/images/home-img2.png">
@@ -452,6 +456,7 @@
                 </div>
             </div><!-- end col -->
         </div>
+      </div>
         <!-- end row -->
   <!-- End Location Panels-->
   </div>
