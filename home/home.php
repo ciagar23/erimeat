@@ -86,7 +86,7 @@
                                           <h4 class="font-18">Demand Planning</h4>
                                          </center>
 
-                                        
+
                                           </div>
                                         </div>
                                       </div>
@@ -111,7 +111,7 @@
 
                                          </center>
 
-                                     
+
                                           </div>
                                         </div>
                                       </div>
@@ -128,7 +128,7 @@
                                             <h4 class="font-18">Logistics</h4>
                                          </center>
 
-                                        
+
                                           </div>
                                         </div>
                                       </div>
@@ -141,7 +141,7 @@
                                             <h4 class="font-18">Manufacturing</h4>
                                          </center>
 
-                                        
+
                                           </div>
                                         </div>
                                       </div>
@@ -154,7 +154,7 @@
                                            <h4 class="font-18">Transportation</h4>
                                          </center>
 
-                                         
+
                                           </div>
                                         </div>
                                       </div>
@@ -171,7 +171,7 @@
                                            <h4 class="font-18">Procurement</h4>
                                          </center>
 
-                                         
+
                                           </div>
                                         </div>
                                       </div>
@@ -183,7 +183,7 @@
                                           <h4 class="font-18">Training Certification</h4>
                                          </center>
 
-                                          
+
                                           </div>
                                         </div>
                                       </div>
@@ -196,7 +196,7 @@
                                           <h4 class="font-18">Warehousing</h4>
                                          </center>
 
-                                      
+
                                           </div>
                                         </div>
                                       </div>
