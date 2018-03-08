@@ -1,7 +1,6 @@
-# Host: localhost  (Version: 5.6.16)
-# Date: 2018-03-08 14:13:58
+﻿# Host: localhost  (Version: 5.6.16)
+# Date: 2018-03-08 15:45:26
 # Generator: MySQL-Front 5.3  (Build 4.122)
-
 
 /*!40101 SET NAMES utf8 */;
 
@@ -53,6 +52,24 @@ CREATE TABLE `company` (
 #
 
 INSERT INTO `company` VALUES (5,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1');
+
+#
+# Structure for table "downloads"
+#
+
+DROP TABLE IF EXISTS `downloads`;
+CREATE TABLE `downloads` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(255) DEFAULT NULL,
+  `uploadedFile` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "downloads"
+#
+
+INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf'),(2,'Client Contract','1520552679.pdf');
 
 #
 # Structure for table "dtr"
@@ -278,15 +295,13 @@ CREATE TABLE `resume` (
   `isHired` varchar(2) DEFAULT '0',
   `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
 INSERT INTO `resume` VALUES (7,2,1,'2832381273','Dale','Torre','12312312312','123213','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros+Occidental','6100','fadfdsafdsfdsfsdfsdfsadfsdfsdfsdfdsfdsfdsf','1520420366.txt','www.speedtest.com','',NULL,NULL,'1','1','0'),(8,2,1,'1520436853','Dale','Torre','12345671234','123123','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','lsjdfjsdflfdsfwerowuer13213123123','1520436853.txt','www.speedtest.com','',NULL,NULL,'0','0','0'),(9,0,1,NULL,'sampe','asd','11111111111','fdsf','rgmak12%40gmail.com','asd','dfdsk','ad','asd','asd','1111','asdkkasdaasdaaaaaaaaaaaaaaaaaaaaa','1520543500.jpg','asd','','',NULL,'0','0','0');
-
 
 #
 # Structure for table "timesheet"
