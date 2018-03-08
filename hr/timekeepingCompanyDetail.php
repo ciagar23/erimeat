@@ -7,11 +7,16 @@ function get_fullname($username){
   return $user->firstName . " " . $user->lastName;
 }
 
+function getJobName($Id){
+  $job = job()->get("Id='$Id'");
+  return $job->position;
+}
+
 ?>
 <div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title">Timekeeping for: <?=$jobId;?></h4>
+            <h4 class="page-title">Timekeeping for: <?=getJobName($jobId);?></h4>
 
             <div class="clearfix"></div>
         </div>

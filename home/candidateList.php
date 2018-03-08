@@ -4,7 +4,7 @@ $resumeList = resume()->all();
 
 function getJobFunction($Id){
   $jf = job_function()->get("Id='$Id'");
-  echo $job->option;
+  echo $jf->option;
 }
 ?>
 
@@ -97,68 +97,47 @@ function getJobFunction($Id){
       </div>
     </div>
     <div class="clearfix"></div>
+
+    <h4>Search Results: 1 - 10 of 100</h4>
     <div class="row m-t-10">
+    <?php foreach($resumeList as $row) {?>
       <div style="width: 100%; padding: 10px; padding-left: 25px;">
-        <h4>Search Results: 1 - 10 of 100</h4>
         <!-- Start Job List -->
         <div class="row">
           <div class="col-md-10">
           <span style="font-size: 25px; font-weight: bold;" class="text-primary">
-            <u>Job position</u>
+            <a href="../home/?view=candidateDetail&Id=<?=$row->Id;?>'">
+              <u><?=getJobFunction($row->jobFunctionId); ?></u>
+            </a>
           </span>
           </div>
           <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div>
         </div>
-        </br>
         <!-- Reference -->
         <span>Reference: 123123123</span>
         <div class="clearfix"></div>
         <!-- Location -->
         <div class="col-md-4">
-          <i class="fa fa-map-marker"></i> Location
+          <i class="fa fa-map-marker"></i> <?=$row->address1;?>
         </div>
         <!-- College -->
         <div class="col-md-4">
-          <i class="fa fa-graduation-cap"></i> College
+          <i class="fa fa-map-o"></i> <?=$row->address2;?>
         </div>
         <!-- Experience -->
         <div class="col-md-4 m-b-10">
-          <i class="fa fa-certificate"></i> Experience
+          <i class="fa fa-globe"></i> <?=$row->city;?>&nbsp;<?=$row->state;?>&nbsp;<?=$row->zipCode;?>
         </div>
 
         <span >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.</span>
       </div>
+      <hr>
+    <?php } ?>
     </div>
-    <hr> <!-- End Job List -->
+     <!-- End Job List -->
 
-    <!-- Start Candidate List -->
-    <div class="row">
-        <div class="col-md-12">
-          <?php foreach($resumeList as $row) {?>
-          <div class="">
-            <div class="col-md-10">
-              <h4 class="header-title mt-0 m-b-20"><?=getJobFunction($row->jobFunctionId); ?></h4>
-            </div>
-            <div class="col-md-2">
-              <button type="button" class="" onclick="location.href='../home/?view=candidateDetail&Id=<?=$row->Id;?>'">View</button>
-            </div>
-            <div class="clearfix"></div>
-            <div class="">
-                <div class="">
-                    <h5 class="text-custom m-b-5"><?=$row->firstName;?>&nbsp;<?=$row->lastName;?></h5>
-                    <p class="m-b-0"><i class="mdi mdi-map-marker m-r-5"></i><?=$row->address1;?></p>
-                    <p class="m-b-0"><i class="mdi mdi-map-marker m-r-5"></i><?=$row->address2;?></p>
-                    <p class="m-b-0"><i class="mdi mdi-google-maps m-r-5"></i><?=$row->city;?>&nbsp;<?=$row->state;?>&nbsp;<?=$row->zipCode;?></p>
-
-                    <hr>
-                </div>
-              </div>
-          </div>
-        <?php } ?>
-        </div>
-      </div> <!-- End Candidate List -->
       <!-- Start Pages -->
       <ul class="pull-left pagination pagination-split">
         <li class="disabled">
