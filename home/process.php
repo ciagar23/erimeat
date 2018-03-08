@@ -123,6 +123,7 @@ function submitResume(){
 			$res->obj['coverLetter'] = $_POST["coverLetter"];
 			$res->obj['uploadedResume'] = $upload;
 			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
+			$res->obj['uploadedCerts'] = $_POST["upload_certs"];
 			$res->create();
 
 			// Send email

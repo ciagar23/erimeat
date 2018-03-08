@@ -94,7 +94,7 @@ $ptList = position_type()->all();
                           <div class="form-group">
                               <label for="username">Speedtest</label>
                               <input type="text" class="form-control" name="speedtest">
-                              <span class="help-block"><small>To access speedtest. Click the link <a href="#">www.speedtest.com</a></small></span>
+                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.speedtest.net/" target="blank_">www.speedtest.com</a></small></span>
                           </div>
 
                           <div class="form-group">
@@ -111,6 +111,13 @@ $ptList = position_type()->all();
                             <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
 
+                          <div class="form-group">
+                            <label>Certificates</label>
+                            <input type="file" name="upload_certs[]" id="filer_input2"
+                                                       multiple="multiple" class="form-control">
+                          </div>
+
+
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>
                           <div class="col-sm-3">
@@ -124,6 +131,7 @@ $ptList = position_type()->all();
                         <div class="form-group">
                         <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false"></div>
                      </div>
+                   
                     </div>
                     <br><br><br><br>
                   <div class="text-center m-t-30">
