@@ -5,7 +5,7 @@ $timeSheet = timesheet()->all();
 <div class="row">
     <div class="col-xs-12">
         <div class="page-title-box">
-            <h4 class="page-title">Timekeeping for:</h4>
+            <h4 class="page-title">Timekeeping of <?=$user;?></h4>
 
             <div class="clearfix"></div>
         </div>
@@ -14,7 +14,7 @@ $timeSheet = timesheet()->all();
 
 <div class="col-sm-12">
   <div class="card-box table-responsive">
-    <h4 class="m-t-0 header-title"><b>List of Companies</b></h4>
+    <h4 class="m-t-0 header-title"><b>List of Timesheets</b></h4>
     <table id="datatable" class="table table-striped table-bordered">
       <thead>
         <tr>
