@@ -61,7 +61,7 @@ function getPositionName($Id){
         if ($row->isApproved==1){
       ?>
         <div class="col-lg-4 job-list-summary">
-              <a href="#" class="job-list-title"><?=$row->position;?></a>
+            <a href="?view=jobDetail&id=<?=$row->Id;?>" class="job-list-title"><?=$row->position;?></a>
             <br>
             <span class="m-b-5"><?=$row->address;?></span>
             <br>
@@ -75,7 +75,7 @@ function getPositionName($Id){
           <?=$row->comment;?>
           <br>
           <span>
-            <a class="job-list-link" href="#">Read More &gt;</a>
+            <a class="job-list-link" href="?view=jobDetail&id=<?=$row->Id;?>">Read More &gt;</a>
           </span>
         </div>
         <?php  } } ?>
