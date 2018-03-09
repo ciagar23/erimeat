@@ -25,15 +25,20 @@ $timesheets = timesheet()->filter("employee='$emp->username'");
         <tr>
         <td><?=$row->name;?> </td>
           <td>
-            <?php if ($row->status==1){?>
+            <?php if ($row->status==3){?>
               <div
                 class=" btn btn-success btn-xs tooltips">
                 Approved
               </div>
-            <?php } else if ($row->status==-1){?>
+            <?php } else if ($row->status==2){?>
               <div
                 class=" btn btn-danger btn-xs tooltips">
-                Denied
+                Disputed
+              </div>
+            <?php } else if ($row->status==1){?>
+              <div
+                class=" btn btn-primary btn-xs tooltips">
+                Verified
               </div>
             <?php } else { ?>
               <div
