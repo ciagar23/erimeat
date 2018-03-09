@@ -1,6 +1,6 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$jobList = job()->all();
+$jobList = job()->filter("position like '%$s%'");
 
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");

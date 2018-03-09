@@ -103,7 +103,7 @@
           <input type="hidden" name="view" value="jobList">
           <input type="text" id="example-input2-group2" name="s" class="form-control" style="width:560px; height:67px;" placeholder="Job Title, Skills or Keywords">
               <span class="input-group-btn">
-              <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+              <button type="submit" class="btn waves-effect waves-light btn-primary">Search Job</button>
               </span>
         </div>
       </form>
