@@ -2,11 +2,11 @@
 </br>
 <div>
   <p class="text-center m-b-30">
-    Follow the links below to access the online timesheet system or candidate My Dashboard. To sign in, enter the login details that were</br>
-    supplied to you by Robert Half. If you need assistance with either system, please contact your staffing manager.
+    Follow the links below to access the online timesheet system. To sign in, enter the login details that were</br>
+    provided to you by Teamire. If you need assistance, please contact us.
   </p>
 </div>
-</br></br>
+</br>
 <div class="container-80 center-page">
 <div class="row">
   <div class="col-lg-1">&nbsp;</div>
@@ -18,8 +18,8 @@
   <div class="col-12 col-lg-4 p-30">
     <h2 class="text-center mt30 mb25">Candidate Login</h2>
     <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="location.href='../employee/?view=login'" role="button">TIMESHEETS</button></div>
-    <div class="text-center m-b-10"><button class="btn-small btn-primary container-100" onclick="#" role="button">MY DASHBOARD</button></div>
   </div>
   <div class="col-lg-1">&nbsp;</div>
 </div>
 </div>
+<br><br>
