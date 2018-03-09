@@ -247,6 +247,7 @@ function submitTimesheet()
 	$ts->obj['jobId'] = $emp->jobId;
 	$ts->obj['employee'] = $currentUser;
 	$ts->obj['name'] = 'Timesheet as of ' . date("Y-m-d H:i:s");
+	$ts->obj['createDate'] = 'NOW()';
 	$ts->create();
 
 	$tsData = timesheet()->get("employee='$currentUser' ORDER BY ID DESC LIMIT 1");

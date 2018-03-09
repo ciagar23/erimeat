@@ -19,15 +19,15 @@
         </li>
 
             <li>
-                <a href="?view=timesheets&status=1">
+                <a href="?view=timesheets&status=3">
                     <i class="mdi mdi-comment-account"></i><span> Approved </span>
                 </a>
             </li>
 
 
                 <li>
-                    <a href="?view=timesheets&status=-1">
-                        <i class="mdi mdi-comment-account"></i><span> Denied </span>
+                    <a href="?view=timesheets&status=2">
+                        <i class="mdi mdi-comment-account"></i><span> Disputes </span>
                     </a>
                 </li>
 

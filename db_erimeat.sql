@@ -1,8 +1,7 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-08 19:26:26
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Date: 2018-03-09 22:04:10
+# Generator: MySQL-Front 6.0  (Build 2.20)
 
-/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -89,15 +88,15 @@ CREATE TABLE `dtr` (
   `lunchIn` time DEFAULT NULL,
   `lunchOut` time DEFAULT NULL,
   `createDate` date DEFAULT NULL,
-  `status` varchar(1) DEFAULT '0',
+  `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (67,1,'E1520420680','21:48:23','21:48:33','21:48:26','21:48:28','21:48:31','21:48:32','21:48:30','21:48:29','2018-03-07','4'),(68,1,'E1520420680','17:39:54','18:31:06','17:45:26','18:29:35','18:30:17','18:31:03','18:31:05','18:31:04','2018-03-06','4'),(69,2,'E1520420680','18:31:52','18:31:59','18:31:56','18:31:57',NULL,NULL,'18:31:59','18:31:58','2018-03-05','4'),(70,2,'E1520420680','18:32:42','18:32:45','18:32:43','18:32:44',NULL,NULL,NULL,NULL,'2018-03-04','4'),(71,2,'E1520420680','18:32:58','18:33:00',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-08','4');
+INSERT INTO `dtr` VALUES (67,3,'E1520420680','21:48:23','21:48:33','21:48:26','21:48:28','21:48:31','21:48:32','21:48:30','21:48:29','2018-03-07','4'),(68,3,'E1520420680','17:39:54','18:31:06','17:45:26','18:29:35','18:30:17','18:31:03','18:31:05','18:31:04','2018-03-06','4'),(69,3,'E1520420680','18:31:52','18:31:59','18:31:56','18:31:57',NULL,NULL,'18:31:59','18:31:58','2018-03-05','4'),(70,3,'E1520420680','18:32:42','18:32:45','18:32:43','18:32:44',NULL,NULL,NULL,NULL,'2018-03-04','4'),(71,3,'E1520420680','18:32:58','18:33:00',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-08','4'),(72,4,'E1520420680','21:11:53','21:12:51',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-09','4');
 
 #
 # Structure for table "employee"
@@ -200,7 +199,7 @@ CREATE TABLE `job` (
   `requiredExperience` varchar(100) DEFAULT NULL,
   `comment` text,
   `createDate` datetime DEFAULT NULL,
-  `isApproved` varchar(1) DEFAULT '0',
+  `isApproved` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:approved, -1:denied',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
@@ -219,7 +218,7 @@ DROP TABLE IF EXISTS `job_function`;
 CREATE TABLE `job_function` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `option` varchar(255) DEFAULT NULL,
-  `isDeleted` varchar(1) DEFAULT '0',
+  `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
@@ -258,7 +257,7 @@ CREATE TABLE `projects` (
   `uploadedImage` varchar(50) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "projects"
@@ -293,9 +292,9 @@ CREATE TABLE `resume` (
   `uploadedSpecs` varchar(100) DEFAULT NULL,
   `uploadedCerts` varchar(255) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
-  `isApproved` varchar(2) DEFAULT '0',
-  `isHired` varchar(2) DEFAULT '0',
-  `isDeleted` varchar(1) DEFAULT '0',
+  `isApproved` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:approved, -1:denied',
+  `isHired` varchar(2) DEFAULT '0' COMMENT '0:no, 1:yes',
+  `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
@@ -315,16 +314,16 @@ CREATE TABLE `timesheet` (
   `jobId` int(11) DEFAULT NULL,
   `employee` varchar(15) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
-  `status` varchar(2) DEFAULT '0',
+  `status` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:verified, 2:dispute, 3:approved',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (1,2,'E1520420680','Timesheet as of 2018-03-08 11:30:38','0',NULL),(2,2,'E1520420680','Timesheet as of 2018-03-08 11:33:02','0',NULL);
+INSERT INTO `timesheet` VALUES (1,2,'E1520420680','Timesheet as of 2018-03-08 11:30:38','0',NULL),(2,2,'E1520420680','Timesheet as of 2018-03-08 11:33:02','0',NULL),(3,2,'E1520420680','Timesheet as of 2018-03-09 14:12:00','2','2018-03-09 21:12:00'),(4,2,'E1520420680','Timesheet as of 2018-03-09 14:13:30','3','2018-03-09 21:13:30');
 
 #
 # Structure for table "user"
