@@ -42,13 +42,11 @@
 
                     <div class="">
                       <div id="myDIV">
-                  <form class="form-inline" >
+                  <form class="form-inline" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
-                    <select class="form-control" style="height: 67px;width:200px;">
-                        <option>Select City</option>
-                    </select>
-                    <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <input type="hidden" name="view" value="candidateList">
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;" >
+                    <button type="submit" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -56,13 +54,14 @@
 
            <div id="demo1"></div>
            <div id="demo"></div>
-            <div id="myP" style="visibility:hidden;"><form class="form-inline" role="form">
+            <div id="myP" style="visibility:hidden;">
+                  <form class="form-inline" role="form" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-                     <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
-                       <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                    <input type="hidden" name="view" value="jobList">
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;">
+                       <button type="submit" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
-                       </form>
+                  </form>
                     </div></div>
                 </div>
                 <div class="clearfix"></div>
@@ -212,7 +211,7 @@
     <div class="container-80 center-page">
                         <div class="row">
                             <div class="col-md-12">
-                                
+
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
                                         <li class="active">
@@ -227,7 +226,7 @@
                                                 <span class="hidden-xs">How We Help You Find a Job</span>
                                             </a>
                                         </li>
-                                        
+
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane" id="home1">
@@ -373,10 +372,10 @@
                                             <a href="../home/?view=submitResume"  class="btn btn-primary">SUBMIT A RESUME</a>
                                         </center>
                                         </div>
-                                       
-                                       
+
+
                                     </div>
-                                
+
                            </div>
                         </div>
                       </div>
