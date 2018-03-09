@@ -16,13 +16,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'kevsu','12345','Kevin','Sumalde','hr'),(24,'asdfsdfdsf','123123213','fred','garcia','hr'),(25,'lkjlsadjflsdjf','lkjsaldfjlsjfd','asdkfjlsjdf','ljasldfjlkdsflkj','hr'),(26,'123213','123123','1321321','123123','hr');
 
 #
 # Structure for table "company"
@@ -42,15 +42,15 @@ CREATE TABLE `company` (
   `address` text,
   `department` varchar(100) DEFAULT NULL,
   `jobFunctionId` varchar(11) DEFAULT NULL,
-  `isApproved` varchar(1) DEFAULT '0',
+  `isApproved` varchar(2) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (5,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1');
+INSERT INTO `company` VALUES (5,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1'),(6,'','Ceres Bus','12345678902','heheheh','torredale1014@gmail.com','Kevin Sumalde','12312312','123213123','bacolod city negros occ','domestic transport','1','-1'),(7,'','Publiq','12345678903','heheheh','torredale1014@gmail.com','Mark Mendoza','12312312','123213123','bacolod city negros occ','domestic transport','2','0');
 
 #
 # Structure for table "downloads"
@@ -124,17 +124,17 @@ INSERT INTO `employee` VALUES (2,2,'E1520420680','0000-00-00 00:00:00');
 DROP TABLE IF EXISTS `hr`;
 CREATE TABLE `hr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `userId` int(11) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
   `jobFunction` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `contact` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "hr"
 #
 
+INSERT INTO `hr` VALUES (1,'123213','1','a@a.com');
 
 #
 # Structure for table "inquiries"
@@ -202,13 +202,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:approved, -1:denied',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'0','dale torre');
+INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'-1','dale torre'),(6,'1520431441',3,2,'Waiter','Publiq','12312321313','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf','1899-12-29 00:00:00','0','mark mendoza'),(7,'1520578834',3,2,'sdfsfsfsadf','asjdlfsfdj','45435435345','a@a.com','sjlfsdjfdj','123123','6767','lkjadsljdsflk','1-3','oiusadofuowuerlkjsfdoijwoijekfjsadf',NULL,'0','dsalkdlfsfj'),(8,'1520596571',8,1,'Engineer','Double Dragon','43543511233','torredale1014@gmail.com','Manager','2345678909','6100','Billboard, Billboard','1-3','we are looking for an enineeradfsdfdsfdsfdsf',NULL,'0','Dale Torre'),(9,'1520596884',4,3,'heheheheh','lsafjdskfdsjf','12873682163','torredale1014@gmail.com','lsakfdsfjdsflj','2345678909','6100','Billboard, Billboard','123','sajfsidufwejflkoijdsofhlkdsahfkdsahfhdsfdsf',NULL,'0','hehahlfhdsfhdsfkhdsf');
 
 #
 # Structure for table "job_function"
@@ -263,7 +263,7 @@ CREATE TABLE `projects` (
 # Data for table "projects"
 #
 
-INSERT INTO `projects` VALUES (1,'sample project','sample lng mn ah','1520508331.txt','2018-03-08 19:25:31');
+INSERT INTO `projects` VALUES (1,'sample project','sample lng mn ah','1520508331.txt','2018-03-08 19:25:31'),(2,'sample with image','hehehe','1520515534.png','2018-03-08 21:25:33');
 
 #
 # Structure for table "resume"

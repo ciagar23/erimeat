@@ -25,17 +25,27 @@ $(document).ready(function(){
           $("#myDIV").hide();
     });
 });
+$(function() {
+    $('#hr').hide();
+    $('#level').change(function(){
+        if($('#level').val() == 'hr') {
+            $('#hr').show();
+        } else {
+            $('#hr').hide();
+        }
+    });
+});
 </script>
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
 </script>
- 
+
 <script>
 $( "#myBtnShowResume" ).click(function() {
   $( "#fileInput" ).show( "slow" );
 });
 </script>
- 
+
  <!-- Parsley js -->
 <script type="text/javascript" src="../include/plugins/parsleyjs/parsley.min.js"></script>
 
@@ -48,7 +58,7 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/plugins/autoNumeric/autoNumeric.js" type="text/javascript"></script>
 
 
-      
+
 
  <!-- Counter js  -->
 <script src="../include/plugins/waypoints/jquery.waypoints.min.js"></script>
@@ -82,7 +92,7 @@ $( "#myBtnShowResume" ).click(function() {
 <script type="text/javascript" src="../include/assets/pages/jquery.autocomplete.init.js"></script>
 
         <!-- Init Js file -->
- 
+
 <script type="text/javascript" src="../include/assets/pages/jquery.form-advanced.init.js"></script>
 
 
