@@ -20,7 +20,7 @@ function get_time_difference($record)
 ?>
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-                <h4 class="page-title"><?=$ts->name;?> by <?=$user;?></h4><br>
+                <h4 class="page-title"><?=$ts->name;?> by <?=$ts->employee;?></h4><br>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -68,11 +68,11 @@ function get_time_difference($record)
                                                       </a>
                                                   </h2>
 
-                                                  <form class="form-horizontal" action="" method="post">
+                                                  <form class="form-horizontal" action="process.php?action=timesheetDispute&Id=<?=$timesheetId;?>" method="post">
                                                     <div class="form-group">
                                                         <label>Reason to despute</label>
                                                         <div>
-                                                            <textarea required="" class="form-control"></textarea>
+                                                            <textarea required="" name="reason" class="form-control"></textarea>
                                                         </div>
                                                     </div>
 

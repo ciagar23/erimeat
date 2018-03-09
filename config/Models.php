@@ -96,10 +96,18 @@ function projects() {
 	$crud->table = "projects";
 	return $crud;
 }
+
 // Download Models
 function downloads() {
 	$crud = new CRUD;
 	$crud->table = "downloads";
+	return $crud;
+}
+
+// Download timesheet_dispute
+function timesheet_dispute() {
+	$crud = new CRUD;
+	$crud->table = "timesheet_dispute";
 	return $crud;
 }
 ?>

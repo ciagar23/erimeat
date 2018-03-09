@@ -19,6 +19,14 @@ switch ($action) {
 		changepassword();
 		break;
 
+	case 'verifyTimesheet' :
+		verifyTimesheet();
+		break;
+
+	case 'timesheetDispute' :
+		timesheetDispute();
+		break;
+
 	default :
 }
 
@@ -68,6 +76,31 @@ function changepassword()
 	else{
 		header('Location: index.php?view=changepassword&error=Password not matched');
 	}
+}
+
+function verifyTimesheet()
+{
+	$Id = $_GET["Id"];
+	$ts = timesheet();
+	$ts->obj['status'] = "1";
+	$ts->update("Id=$Id");
+
+	header('Location: index.php');
+}
+
+function timesheetDispute()
+{
+	$Id = $_GET['Id'];
+	$tsd = timesheet_dispute();
+	$tsd->obj['timesheetId'] = $Id;
+	$tsd->obj['reason'] = $_POST['reason'];
+	$tsd->create();
+
+	$ts = timesheet();
+	$ts->obj['status'] = "2";
+	$ts->update("Id='$Id'");
+
+	header('Location: index.php');
 }
 
 function logout()
