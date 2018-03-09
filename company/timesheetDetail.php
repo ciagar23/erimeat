@@ -1,7 +1,9 @@
 <?php
 $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
-$user = (isset($_GET['user']) && $_GET['user'] != '') ? $_GET['user'] : '';
-$dtrList = dtr()->filter("owner='$user'");
+$dtrList = dtr()->filter("timesheetId='$timesheetId'");
+
+// Get timesheet record
+$ts = timesheet()->get("Id='$timesheetId'");
 
 function get_time_difference($record)
 {
@@ -18,7 +20,7 @@ function get_time_difference($record)
 ?>
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-                <h4 class="page-title">Timekeeping record of <?=$user;?></h4><br>
+                <h4 class="page-title"><?=$ts->name;?> by <?=$user;?></h4><br>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>

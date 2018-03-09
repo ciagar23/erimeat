@@ -50,7 +50,7 @@ $timesheets = timesheet()->filter("employee='$emp->username'");
 
           </td>
           <td>
-            <a href="?view=timesheetDetail&Id=<?=$row->Id;?>&user=<?=$emp->username;?>"
+            <a href="?view=timesheetDetail&Id=<?=$row->Id;?>"
               class=" btn btn-success btn-xs tooltips"
               title="Click To Edit">
               <span class="fa fa-eye"></span>

@@ -64,8 +64,6 @@ function getCount($Id){
             <?php
           }
             }
-
-
             ?>
           </tbody>
         </table>

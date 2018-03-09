@@ -87,7 +87,7 @@ if (getCount($Id)){
            <td><?=$row->firstName;?> <?=$row->lastName;?></td>
            <td>
              <!--TODO:-->
-             <a href="?view=timesheets&id=<?=$row->Id;?>&jobId=<?=$row->jobId;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Timesheet</a>
+             <a href="?view=timesheets&jobId=<?=$row->jobId;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Timesheet</a>
            </td>
          </tr>
          <?php
