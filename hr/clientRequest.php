@@ -25,18 +25,30 @@ $company = company()->all();
               <th>ABN</th>
               <th>Company Representative</th>
               <th>Work Email</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
            <?php foreach($company as $row) {
-  if ($row->isApproved==0){
-  ?>
+              if ($row->isApproved!=1){
+           ?>
             <tr>
               <td><?=$row->name;?> </td>
               <td><?=$row->abn;?> </td>
               <td><?=$row->contactPerson;?> </td>
               <td><?=$row->email;?> </td>
+              <td>
+              <?php if($row->isApproved==0){ ?>
+              <div class=" btn btn-success btn-xs tooltips">
+                Pending
+              </div>
+              <?php }else{ ?>
+              <div class=" btn btn-warning btn-xs tooltips">
+                Waiting for Info
+              </div>
+              <?php } ?>
+              </td>
               <td>
                 <a href="?view=clientDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>
