@@ -7,11 +7,6 @@ function getJobClassification($Id){
   $job = job()->get("Id='$Id'");
   return $job->position;
 }
-
-function getCount($Id){
-  $employee = employee()->count("jobId='$Id'");
-  return $employee;
-}
 ?>
 
 
@@ -62,9 +57,6 @@ function getCount($Id){
     </div>
   </div>
 
-<?php
-if (getCount($Id)){
-?>
 <div class="row">
  <div class="col-sm-12">
    <div class="card-box table-responsive">
@@ -99,4 +91,3 @@ if (getCount($Id)){
    </div>
  </div>
 </div>
-<?php } ?>
