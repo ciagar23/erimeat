@@ -207,34 +207,31 @@
 
 
                     </div> <!-- container -->
-
+<hr>
     <!-- Basic Form Wizard -->
     <div class="container-80 center-page">
                         <div class="row">
                             <div class="col-md-12">
-                                 <div>
-
+                                
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
-                                        <li class="active" style="background: #eee;">
+                                        <li class="active">
                                             <a href="#home1" data-toggle="tab" aria-expanded="false">
                                                 <span class="visible-xs"><i class="fa fa-home"></i></span>
-                                                <span class="hidden-xs" >Four Simple Steps to Hire</span>
+                                                <span class="hidden-xs">Four Simple Steps to Hire</span>
                                             </a>
                                         </li>
-                                        <li  style="background: #eee;">
+                                        <li class="">
                                             <a href="#profile1" data-toggle="tab" aria-expanded="true">
                                                 <span class="visible-xs"><i class="fa fa-user"></i></span>
                                                 <span class="hidden-xs">How We Help You Find a Job</span>
                                             </a>
                                         </li>
-
+                                        
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane" id="home1">
-                                       <div class="row">
-                            <div class="col-md-12">
-                                    <form id="wizard-clickable">
+                                            <form id="wizard-clickable">
                                         <fieldset title="1">
                                             <legend>Tell us about your hiring needs</legend>
                                             <div class="row">
@@ -303,18 +300,11 @@
 
                                     </form>
 
-
-                            </div>
-                        </div>
-
-
                                         </div>
                                         <div class="tab-pane active" id="profile1">
-                                           <div class="row">
-                                             <div class="col-md-12">
-                                                 <form id="default-wizard">
+                                          <form id="default-wizard">
                                         <fieldset title="1">
-                                            <legend>Search for jobs and apply</legend>
+                                               <legend>Search for jobs and apply</legend>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <img src="../include/assets/images/services-img1.jpg" style="width: 30%;height:30%;" class="img-circle img-thumbnail">
@@ -326,6 +316,7 @@
                                                     </p>
                                                 </div>
                                             </div>
+
 
                                         </fieldset>
 
@@ -360,10 +351,9 @@
                                                 </div>
                                             </div>
                                         </fieldset>
-                                                 <fieldset title="4">
+                                        <fieldset title="4">
                                             <legend>While we find the right fit</legend>
-
-                                          <div class="row">
+                                               <div class="row">
                                                 <div class="col-md-4">
                                                     <img src="../include/assets/images/about-us-img6.jpg" style="width: 30%;height:30%;" class="img-circle img-thumbnail">
                                                 </div>
@@ -374,26 +364,25 @@
                                                     </p>
                                                 </div>
                                             </div>
+
                                         </fieldset>
-                                        <center>
+
+                                        <button style="display: none;" type="submit" class="btn btn-primary btn-sm stepy-finish">Submit</button>
+                                    </form>
+                                      <center>
                                             <a href="../home/?view=submitResume"  class="btn btn-primary">SUBMIT A RESUME</a>
                                         </center>
-
-                                    </form>
-
-                                             </div>
-                                           </div>
                                         </div>
-
+                                       
+                                       
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                
+                           </div>
                         </div>
                       </div>
                         <!-- End row -->
 
-
+<hr>
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
         <div class="row">
