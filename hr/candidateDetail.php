@@ -16,9 +16,6 @@ function getJobName($Id){
             <h4 class="header-title mt-0 m-b-20">Resume Detail</h4>
             <div class="panel-body">
               <div class="text-left">
-                  <p class="text-muted font-13"><strong>Applying For :</strong>
-                    <span class="m-l-15"><?=getJobName($resume->jobId);?></span>
-                  </p>
                   <p class="text-muted font-13"><strong>Candidate Reference # :</strong>
                     <span class="m-l-15"><?=$resume->refNum;?></span>
                   </p>
