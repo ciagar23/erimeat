@@ -30,7 +30,7 @@ $downloadList = downloads()->all();
       ?>
        
           <?php
-echo '<a href="download.php?file=' . urlencode($file) . '" class="btn-small btn-primary container-100"><span class="fa fa-download"></span> Download</a>';
+echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-small btn-primary container-100"><span class="fa fa-download"></span> Download</a>';
 ?>
      
            <?php

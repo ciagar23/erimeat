@@ -130,12 +130,14 @@
 </div>
       <div class="row form-container container-80 center-page">
           <div class="col-md-12 center-page">
-            <h3 class="text-center m-b-30">Enter your city or ZIP code to find an office near you</h3>
               <div class="input-group m-t-5">
-                  <input type="text" id="" name="" class="form-control" value="Search Jobs">
+                <form method="GET">
+                  <input type="hidden" name="view" value="jobList">
+                  <input type="text" id="" name="s" class="form-control" style="width:700px; height:67px;" value="Search Jobs">
                   <span class="input-group-btn">
-                      <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                      <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                   </span>
+                </form>
               </div>
           </div>
       </div>

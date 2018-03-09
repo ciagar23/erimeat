@@ -42,13 +42,11 @@
 
                     <div class="">
                       <div id="myDIV">
-                  <form class="form-inline" >
+                  <form class="form-inline" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
-                    <select class="form-control" style="height: 67px;width:200px;">
-                        <option>Select City</option>
-                    </select>
-                    <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <input type="hidden" name="view" value="candidateList">
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;" >
+                    <button type="submit" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -56,13 +54,14 @@
 
            <div id="demo1"></div>
            <div id="demo"></div>
-            <div id="myP" style="visibility:hidden;"><form class="form-inline" role="form">
+            <div id="myP" style="visibility:hidden;">
+                  <form class="form-inline" role="form" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-                     <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
-                       <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                    <input type="hidden" name="view" value="jobList">
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;">
+                       <button type="submit" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
-                       </form>
+                  </form>
                     </div></div>
                 </div>
                 <div class="clearfix"></div>
@@ -71,7 +70,7 @@
   </div>
   <hr>
   <div>
-<div class="container" >
+<div class="container">
 
 
                          <h4 class="text-uppercase font-18 text-center" style="color: #fff;">Our Supply Chain Services</h4>
@@ -207,22 +206,21 @@
 
 
                     </div> <!-- container -->
-
+<hr>
     <!-- Basic Form Wizard -->
     <div class="container-80 center-page">
                         <div class="row">
                             <div class="col-md-12">
-                                 <div>
 
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
-                                        <li class="active" style="background: #eee;">
+                                        <li class="active">
                                             <a href="#home1" data-toggle="tab" aria-expanded="false">
                                                 <span class="visible-xs"><i class="fa fa-home"></i></span>
-                                                <span class="hidden-xs" >Four Simple Steps to Hire</span>
+                                                <span class="hidden-xs">Four Simple Steps to Hire</span>
                                             </a>
                                         </li>
-                                        <li  style="background: #eee;">
+                                        <li class="">
                                             <a href="#profile1" data-toggle="tab" aria-expanded="true">
                                                 <span class="visible-xs"><i class="fa fa-user"></i></span>
                                                 <span class="hidden-xs">How We Help You Find a Job</span>
@@ -232,9 +230,7 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane" id="home1">
-                                       <div class="row">
-                            <div class="col-md-12">
-                                    <form id="wizard-clickable">
+                                            <form id="wizard-clickable">
                                         <fieldset title="1">
                                             <legend>Tell us about your hiring needs</legend>
                                             <div class="row">
@@ -303,18 +299,11 @@
 
                                     </form>
 
-
-                            </div>
-                        </div>
-
-
                                         </div>
                                         <div class="tab-pane active" id="profile1">
-                                           <div class="row">
-                                             <div class="col-md-12">
-                                                 <form id="default-wizard">
+                                          <form id="default-wizard">
                                         <fieldset title="1">
-                                            <legend>Search for jobs and apply</legend>
+                                               <legend>Search for jobs and apply</legend>
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <img src="../include/assets/images/services-img1.jpg" style="width: 30%;height:30%;" class="img-circle img-thumbnail">
@@ -326,6 +315,7 @@
                                                     </p>
                                                 </div>
                                             </div>
+
 
                                         </fieldset>
 
@@ -360,10 +350,9 @@
                                                 </div>
                                             </div>
                                         </fieldset>
-                                                 <fieldset title="4">
+                                        <fieldset title="4">
                                             <legend>While we find the right fit</legend>
-
-                                          <div class="row">
+                                               <div class="row">
                                                 <div class="col-md-4">
                                                     <img src="../include/assets/images/about-us-img6.jpg" style="width: 30%;height:30%;" class="img-circle img-thumbnail">
                                                 </div>
@@ -374,70 +363,46 @@
                                                     </p>
                                                 </div>
                                             </div>
+
                                         </fieldset>
-                                        <center>
+
+                                        <button style="display: none;" type="submit" class="btn btn-primary btn-sm stepy-finish">Submit</button>
+                                    </form>
+                                      <center>
                                             <a href="../home/?view=submitResume"  class="btn btn-primary">SUBMIT A RESUME</a>
                                         </center>
-
-                                    </form>
-
-                                             </div>
-                                           </div>
                                         </div>
 
+
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+
+                           </div>
                         </div>
                       </div>
                         <!-- End row -->
 
-
+<hr>
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
-        <div class="row">
-            <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Sydney</h4>
-                    </div>
-                    <hr/>
+        <div class="row m-t-30">
+            <!-- <div class="col-md-6 col-lg-3">
                     <img src="../include/assets/images/home-img1.png">
-                </div>
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-md-3">
-                <div class="">
-                    <div class="">
-                        <h4 class=" m-b-5"></h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img2.png">
-                </div>
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Perth</h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img3.png">
-                </div>
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="company-card card-box">
-                    <div class="company-detail">
-                        <h4 class=" m-b-5">Brisbane</h4>
-                    </div>
-                    <hr/>
                     <img src="../include/assets/images/home-img4.png">
-                </div>
-            </div><!-- end col -->
+            </div> -->
         </div>
       </div>
+      <div class="clearfix m-b-30"></div>
         <!-- end row -->
   <!-- End Location Panels-->
   </div>

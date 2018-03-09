@@ -19,6 +19,7 @@ function getJobFunction($Id){
                     <th>Job Function</th>
                     <th>Full Name</th>
                     <th>City, State</th>
+                    <th>Status</th>
                     <th>Review</th>
                 </tr>
                 </thead>
@@ -30,6 +31,17 @@ function getJobFunction($Id){
                     <td><?=getJobFunction($row->jobFunctionId); ?></td>
                     <td><?=$row->firstName; ?> <?=$row->lastName; ?></td>
                     <td><?=$row->city; ?>, <?=$row->state; ?></td>
+                    <td>
+                      <?php if($row->isHired==0){ ?>
+                      <div class=" btn btn-warning btn-xs tooltips">
+                        Pending
+                      </div>
+                      <?php }else{ ?>
+                      <div class=" btn btn-success btn-xs tooltips">
+                        Hired
+                      </div>
+                      <?php } ?>
+                    </td>
                     <td><a href="?view=candidateDetail&Id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> Review</a>
                     </td>
                 </tr>

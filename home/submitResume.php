@@ -131,7 +131,7 @@ $ptList = position_type()->all();
                         <div class="form-group">
                         <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false"></div>
                      </div>
-                   
+
                     </div>
                     <br><br><br><br>
                   <div class="text-center m-t-30">

@@ -1,6 +1,11 @@
 <?php
 $Id = $_GET['Id'];
 $resume = resume()->get("Id='$Id'");
+
+function getJobName($Id){
+  $job = job()->get("Id='$Id'");
+  return $job->position;
+}
 ?>
 
 
@@ -10,20 +15,52 @@ $resume = resume()->get("Id='$Id'");
         <div class="card-box">
             <h4 class="header-title mt-0 m-b-20">Resume Detail</h4>
             <div class="panel-body">
-                <div class="text-left">
-                    <p class="text-muted font-13"><strong>First Name :</strong>
-                      <span class="m-l-15"><?=$resume->firstName;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Last Name :</strong>
-                      <span class="m-l-15"><?=$resume->lastName;?></span>
-                    </p>
-                </div>
+              <div class="text-left">
+                  <p class="text-muted font-13"><strong>Candidate Reference # :</strong>
+                    <span class="m-l-15"><?=$resume->refNum;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Candidate ABN :</strong>
+                    <span class="m-l-15"><?=$resume->abn;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>First Name :</strong>
+                    <span class="m-l-15"><?=$resume->firstName;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Last Name :</strong>
+                    <span class="m-l-15"><?=$resume->lastName;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Email :</strong>
+                    <span class="m-l-15"><?=$resume->email;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Phone Number :</strong>
+                    <span class="m-l-15"><?=$resume->phoneNumber;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Address :</strong>
+                    <span class="m-l-15"><?=$resume->address1;?> <?=$resume->city;?> <?=$resume->state;?> <?=$resume->zipCode;?></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Speedtest :</strong>
+                    <span class="m-l-15"><?=$resume->speedtest;?></span>
+                  </p>
+                  <br>
+                  <p class="text-muted font-13"><strong>Cover Letter :</strong>
+                    <span class="m-l-15"><?=$resume->coverLetter;?></span>
+                  </p>
+                  <br><br>
+                  <p class="text-muted font-13"><strong>Click to view specs :</strong>
+                    <span class="m-l-15"><a href="../media/<?=$resume->uploadedSpecs;?>"></a></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Click to view resume :</strong>
+                    <span class="m-l-15"><a href="../media/<?=$resume->uploadedResume;?>"></a></span>
+                  </p>
+                  <p class="text-muted font-13"><strong>Click to view certificates :</strong>
+                    <span class="m-l-15"><a href="../media/<?=$resume->uploadedCerts;?>"></a></span>
+                  </p>
+              </div>
             </div>
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
         <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target="#schedule-modal">Schedule an Interview</button>
-          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$resume->Id;?>'">Deny</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$resume->Id;?>'">More Info</button>
         </div>
     </div>
   </div>

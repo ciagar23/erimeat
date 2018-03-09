@@ -27,9 +27,10 @@ function getPositionName($Id){
 
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30 m-b-30">
-    <h4>Filters: </h4>
+    <!-- TODO: Filters -->
+    <!-- <h4>Filters: </h4> -->
     <div class="form-inline m-b-30" style="padding: 0; margin: 0; width: 100%;">
-    <select class="form-control" style="height: 50px; width:199px; border-right: none; ">
+    <!-- <select class="form-control" style="height: 50px; width:199px; border-right: none; ">
         <option>Select City</option>
     </select>
     <select class="form-control" style="height: 50px;width:199px; border-right: none; border-radius: 0px; margin-left: -6px;">
@@ -46,20 +47,21 @@ function getPositionName($Id){
     </select>
     <select class="form-control" style="height: 50px;width:199px; border-left:none; margin-left: -5px;">
         <option>Select City</option>
-    </select>
+    </select> -->
     </div>
-    <h4>Sort by: </h4>
+    <!-- TODO: Filters -->
+    <!-- <h4>Sort by: </h4> -->
     <div class="form-inline m-b-30" style="">
-    <select class="form-control" style="height: 50px; width:199px;">
+    <!-- <select class="form-control" style="height: 50px; width:199px;">
         <option>Select City</option>
-    </select>
+    </select> -->
   </div>
     <div class="row center-page job-list-row">
       <?php foreach($jobList as $row) {
         if ($row->isApproved==1){
       ?>
         <div class="col-lg-4 job-list-summary">
-              <a href="#" class="job-list-title"><?=$row->position;?></a>
+            <a href="?view=jobDetail&id=<?=$row->Id;?>" class="job-list-title"><?=$row->position;?></a>
             <br>
             <span class="m-b-5"><?=$row->address;?></span>
             <br>
@@ -73,7 +75,7 @@ function getPositionName($Id){
           <?=$row->comment;?>
           <br>
           <span>
-            <a class="job-list-link" href="#">Read More &gt;</a>
+            <a class="job-list-link" href="?view=jobDetail&id=<?=$row->Id;?>">Read More &gt;</a>
           </span>
         </div>
         <?php  } } ?>

@@ -1,6 +1,6 @@
 <?php
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$jobList = job()->all();
+$jobList = job()->filter("position like '%$s%'");
 
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");
@@ -13,9 +13,18 @@ function getJobFunction($Id){
 }
 
 ?>
-<div align="center" class="m-t-50">
-<button class="btn btn-primary" style="width: 20%;">Call +61452 364 793</button>
-<button class="btn btn-primary" style="width: 20%;" onclick="location.href='../home/?view=inquiryForm'">Send an Email</button>
+<div align="center" class="m-t-30">
+  <div>
+    <button class="btn-primary btn-candidate-contact">
+      <i class="fa fa-phone fa-3x"></i><br>
+      <span class="text-center font-13">Call +61452 364 793</span>
+    </button>
+
+    <button class="btn-primary btn-candidate-contact" onclick="location.href='../home/?view=inquiryForm'">
+      <i class="fa fa-envelope-o fa-3x"></i><br>
+      <span class="text-center font-13">Send an Email</span>
+    </button>
+  </div>
 </div>
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30">
@@ -24,7 +33,7 @@ function getJobFunction($Id){
     ?>
     <div class="row center-page job-list-row">
         <div class="col-lg-4 job-list-summary">
-            <span class="job-list-title"><?=$row->position;?></span>
+            <a href="?view=jobDetail&id=<?=$row->Id;?>" class="job-list-title"><?=$row->position;?></a>
             <br>
             <span class="m-b-5"><?=getJobFunction($row->jobFunctionId);?></span>
             <br>

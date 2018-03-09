@@ -1,63 +1,49 @@
+<?php
+  $projectList = projects()->all();
+?>
 <div class="m-t-30 container-80 container-fluid m-b-30">
 
   <!-- Start About Us Content -->
   <div class="center-page container-80">
+  <?php
+    foreach($projectList as $row){
+  ?>
   <div class="row">
-    <div class="col-md-3">
-      <img src="../include/assets/images/about-us-img2.jpg" style="width: 80%;">
+    <div class="col-lg-12">
+      <h3 class="text-primary">Title lorem</h3>
+      <p class="font-13" style="margin-top: -">Posted last <?=$row->createDate;?></p>
     </div>
-    <div class="col-md-9">
-      <h4>Lorem Ipsum</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      </p>
-      <p><a href="#" class="text-primary">Read More</a></p>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <img class="img-thumbnail" src=../media/<?=$row->uploadedImage;?>>
+    </div>
+    <div class="col-lg-9" style="height: 150px;">
+      <p><?=$row->content;?></p>
+    <button onclick="location.href='../home/?view=projectDetail&Id=<?=$row->Id;?>'" style="width: 20%; bottom: 0; position: absolute;"
+    class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">READ MORE</button>
     </div>
   </div>
 
   <hr class="m-b-30 m-t-30" width="100%">
+  <?php }?>
 
-  <div class="row">
-    <div class="col-md-3">
-      <img src="../include/assets/images/about-us-img2.jpg" style="width: 80%;">
-    </div>
-    <div class="col-md-9">
-      <h4>Lorem Ipsum</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      </p>
-      <p><a href="#" class="text-primary">Read More</a></p>
-    </div>
-  </div>
-
-  <hr class="m-b-30 m-t-30" width="100%">
-
-
-  <div class="row">
-    <div class="col-md-3">
-      <img src="../include/assets/images/about-us-img2.jpg" style="width: 80%;">
-    </div>
-    <div class="col-md-9">
-      <h4>Lorem Ipsum</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      </p>
-      <p><a href="#" class="text-primary">Read More</a></p>
-    </div>
-  </div>
-
-  <hr class="m-b-30 m-t-30" width="100%">
 
 
 </div>
-      <div class="row form-container container-80 center-page">
-          <div class="col-md-12 center-page">
-            <h3 class="text-center m-b-30">Enter your city or ZIP code to find an office near you</h3>
+
+      <div class="row form-container">
+          <div class="col-md-9 center-page">
               <div class="input-group m-t-5">
-                  <input type="text" id="" name="" class="form-control" value="Search Jobs">
-                  <span class="input-group-btn">
-                      <button type="button" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                  </span>
+                <form method="GET">
+                <div class="input-group">
+                  <input type="hidden" name="view" value="jobList">
+                  <input type="text" id="example-input2-group2" name="s" class="form-control" style="width:560px; height:67px;" placeholder="Job Title, Skills or Keywords">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+                      </span>
+                </div>
+              </form>
               </div>
           </div>
       </div>
