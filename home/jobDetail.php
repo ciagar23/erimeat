@@ -11,7 +11,7 @@ function getPositionName($Id){
 <div class="container-fluid m-t-30">
   <div class="row center-page container-80">
   <!-- Start Job Detail -->
-  <div class="col-md-9">
+  <div class="col-md-12">
     <h1><?=$job->position;?></h1>
     <div class="col-md-8"></div>
     <div class="col-md-2 text-center">
@@ -22,7 +22,7 @@ function getPositionName($Id){
       <h2>60</h2>
       <p>Views</p>
     </div>
-    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 50%;">Apply Now</button>
+    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 25%;">Apply Now</button>
     <hr>
     <!-- Job Information -->
     <div class="row cleafix">
@@ -60,7 +60,7 @@ function getPositionName($Id){
       <p>Views</p>
     </div>
     <div class="clearfix"></div>
-    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 50%;">Apply Now</button>
+    <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 25%;">Apply Now</button>
     <hr>
     <div class="m-b-30">
     <h3><?=$job->address;?></h3>
@@ -69,7 +69,7 @@ function getPositionName($Id){
   </div> <!-- End Job Detail -->
 
 
-  <div class="col-md-3 job-detail-search-container">
+  <!-- <div class="col-md-3 job-detail-search-container">
     <h3>Search Jobs</h3>
     <hr style="border-top: 1px solid #c2c2c2;">
     <div>
@@ -85,7 +85,7 @@ function getPositionName($Id){
         <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 100%; padding-left: 25%;">Apply Now</button>
       </form>
     </div>
-  </div>
+  </div> -->
   <div class="clearfix"></div>
 </div>
 </div>

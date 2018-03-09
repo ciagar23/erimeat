@@ -33,7 +33,7 @@
 </div>
 
       <div class="row form-container">
-          <div class="col-md-12 center-page">
+          <div class="col-md-9 center-page">
               <div class="input-group m-t-5">
                 <form method="GET">
                 <div class="input-group">

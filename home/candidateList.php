@@ -17,22 +17,22 @@ function getJobFunction($Id){
     <div class="row">
       <form class="form-inline center-page">
         <div class="form-group center-page">
-        <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px; margin-left: 5px;" >
-        <select class="form-control" style="height: 67px;width:250px;">
+        <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:700px; margin-left: 5px;" >
+        <!-- <select class="form-control" style="height: 67px;width:250px;">
             <option>Select City</option>
-        </select>
+        </select> -->
         <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
         </div>
    </form>
     </div>
     <div class="row m-b-30 m-t-30">
       <div class="text-center">
-        <span>Click on a related keyword to enhance your results.</span>
+        <!-- <span>Click on a related keyword to enhance your results.</span> -->
       </div>
     </div>
   </div>
 
-  <div class="col-md-3">
+  <!-- <div class="col-md-3">
     <h3>Refine Results</h3>
     <div style="width: 100%; height: 100%;">
       <div style="padding: 8px;background-color: #eee; border-top: 4px solid #3399cc;" class="m-b-10">
@@ -79,9 +79,9 @@ function getJobFunction($Id){
           </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="col-md-9 clearfix">
+  <div class="col-md-12 clearfix">
     <div align="center" class="m-t-30">
       <button class="accordion pull-right" style="width: 15%;">Contact Us</button>
       <div class="accordion-panel">
@@ -111,10 +111,10 @@ function getJobFunction($Id){
             </a>
           </span>
           </div>
-          <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div>
+          <!-- <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div> -->
         </div>
         <!-- Reference -->
-        <span>Reference: 123123123</span>
+        <span>Candidate Reference #: <?=$row->refNum;?></span>
         <div class="clearfix"></div>
         <!-- Location -->
         <div class="col-md-4">
@@ -129,9 +129,7 @@ function getJobFunction($Id){
           <i class="fa fa-globe"></i> <?=$row->city;?>&nbsp;<?=$row->state;?>&nbsp;<?=$row->zipCode;?>
         </div>
 
-        <span >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-           labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.</span>
+        <span ><?=$row->coverLetter;?></span>
       </div>
       <hr>
     <?php } ?>
