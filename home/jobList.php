@@ -33,7 +33,7 @@ function getJobFunction($Id){
     ?>
     <div class="row center-page job-list-row">
         <div class="col-lg-4 job-list-summary">
-            <span class="job-list-title"><?=$row->position;?></span>
+            <a href="?view=jobDetail&id=<?=$row->Id;?>" class="job-list-title"><?=$row->position;?></a>
             <br>
             <span class="m-b-5"><?=getJobFunction($row->jobFunctionId);?></span>
             <br>
