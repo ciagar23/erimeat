@@ -27,7 +27,7 @@ function get_time_difference($record)
                             <th>Second Break</th>
                             <th>Lunch</th>
                             <th>Logout</th>
-                            <th>Total</th>
+                            <th>Total Hrs</th>
                         </tr>
                     </thead>
                     <tbody>

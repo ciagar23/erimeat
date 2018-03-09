@@ -4,6 +4,20 @@ $username = $_SESSION['employee_session'];
 $dateNow = date("Y-m-d");
 $app = dtr()->get("owner='$username' and createDate='$dateNow'");
 
+// Get to total hours rendered
+function get_time_difference($record)
+{
+    $workTime = (strtotime("1/1/1980 $record->checkOut") - strtotime("1/1/1980 $record->checkIn")) / 3600;
+    $firstBreak = (strtotime("1/1/1980 $record->breakIn") - strtotime("1/1/1980 $record->breakOut")) / 3600;
+    $secondBreak = (strtotime("1/1/1980 $record->breakIn2") - strtotime("1/1/1980 $record->breakOut2")) / 3600;
+    $lunch = (strtotime("1/1/1980 $record->lunchIn") - strtotime("1/1/1980 $record->lunchOut")) / 3600;
+
+    $totalTime = $workTime - ($firstBreak + $secondBreak + $lunch);
+
+    return number_format((float)$totalTime, 2, '.', '');
+}
+
+
 if ($app){
 
 $login = 0;
@@ -21,14 +35,20 @@ $logout = 4;
           <?php if ($app->status==$break) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on first break
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$break2) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on second break
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$lunch) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on Lunch
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$logout) { ?>
                   <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
@@ -81,6 +101,7 @@ $logout = 4;
                         <th>Second Break</th>
                         <th>Lunch</th>
                         <th>Logout</th>
+                        <th>Total Hrs</th>
                       </tr>
                     </thead>
               <tbody>
@@ -91,6 +112,11 @@ $logout = 4;
                 <td><?=$app->breakOut2;?> - <?=$app->breakIn2;?></td>
                 <td><?=$app->lunchOut;?> - <?=$app->lunchIn;?></td>
                 <td><?=$app->checkOut;?></td>
+                <td><?php
+                if ($app->status==4){
+                echo get_time_difference($app);
+              }
+                ?></td>
               </tr>
 
                                         </tbody>
@@ -100,6 +126,67 @@ $logout = 4;
 
     </div>  <!-- end row -->
 </div>
+
+
+<!-- Start of time script -->
+<?php
+$currentTime = "00:00:00";
+$condition = "h>0";
+if ($app->status==$break){
+  $currentTime = $app->breakOut;
+  $condition = "s<5";
+}
+if ($app->status==$break2){
+  $currentTime = $app->breakOut2;
+  $condition = "s<5";
+}
+if ($app->status==$lunch){
+  $currentTime = $app->lunchOut;
+  $condition = "s<10";
+}
+$splitTimeStamp = explode(":", $currentTime);
+$hour = $splitTimeStamp[0];
+$minute = $splitTimeStamp[1];
+$second = $splitTimeStamp[2];
+?>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    h = hour(h);
+    m = minute(m);
+    s = second(s);
+
+    // For breaks
+    if (<?=$condition;?>){
+      document.getElementById('breakTimer').innerHTML = h + ":" + m + ":" + s;
+      document.getElementById('breakTimerAlert').innerHTML = "";
+    }
+    else{
+      document.getElementById('breakTimer').innerHTML = "";
+      document.getElementById('breakTimerAlert').innerHTML = h + ":" + m + ":" + s;
+    }
+    timer();
+
+}
+function hour(h){
+  return Math.abs(h - <?=$hour;?>);
+}
+function minute(m){
+  return Math.abs(m - <?=$minute;?>);
+}
+function second(s){
+  return Math.abs(s - <?=$second;?>);
+}
+function timer(){
+  setTimeout(startTime, 500);
+}
+timer();
+</script>
+
+<!-- End of time script -->
 
 <?php } else {?>
 
