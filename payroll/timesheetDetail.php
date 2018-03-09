@@ -1,6 +1,5 @@
 <?php
 $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
-$user = $_SESSION['employee_session'];
 $dtr = dtr()->all();
 
 function get_time_difference($record)
@@ -13,6 +12,12 @@ function get_time_difference($record)
     $totalTime = $workTime - ($firstBreak + $secondBreak + $lunch);
 
     return number_format((float)$totalTime, 2, '.', '');
+}
+
+// Get time difference of break and lunch
+function time_rendered($timeIn, $timeOut){
+  $result = (strtotime("1/1/1980 $timeIn") - strtotime("1/1/1980 $timeOut")) / 3600;
+  return number_format((float)$result, 2, '.', '');
 }
 
 ?>
@@ -37,9 +42,15 @@ function get_time_difference($record)
                           <tr>
                             <td> <?=$row->createDate;?></td>
                             <td> <?=$row->checkIn;?></td>
-                            <td> <?=$row->breakOut;?> - <?=$row->breakIn;?></td>
-                            <td> <?=$row->breakOut2;?> - <?=$row->breakIn2;?></td>
-                            <td> <?=$row->lunchOut;?> - <?=$row->lunchIn;?></td>
+                            <td> <?=$row->breakOut;?> - <?=$row->breakIn;?><br>
+                                  Duration: <b><?=time_rendered($row->breakIn, $row->breakOut);?></b>
+                            </td>
+                            <td> <?=$row->breakOut2;?> - <?=$row->breakIn2;?><br>
+                                  Duration: <b><?=time_rendered($row->breakIn2, $row->breakOut2);?></b>
+                            </td>
+                            <td> <?=$row->lunchOut;?> - <?=$row->lunchIn;?><br>
+                                  Duration: <b><?=time_rendered($row->lunchOut, $row->lunchIn);?></b>
+                            </td>
                             <td> <?=$row->checkOut;?></td>
                             <td> <?=get_time_difference($row)?></td>
                          </tr>

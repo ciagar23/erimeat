@@ -42,6 +42,11 @@ $timesheets = timesheet()->filter("employee='$user'");
                 class=" btn btn-danger btn-xs tooltips">
                 Disputed
               </div>
+            <?php } else if ($row->status==1){?>
+              <div
+                class=" btn btn-primary btn-xs tooltips">
+                Verified
+              </div>
             <?php } else { ?>
               <div
                 class=" btn btn-warning btn-xs tooltips">
