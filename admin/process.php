@@ -67,6 +67,7 @@ function addAccount()
 
 
 	$username = $_POST['username'];
+	$level = $_POST['level'];
 	$checkUser = admin()->get("username='$username'");
 
 	if($checkUser){
@@ -76,13 +77,18 @@ function addAccount()
 		$admin = admin();
 		$admin->obj['firstName'] = $_POST['firstName'];
 		$admin->obj['lastName'] = $_POST['lastName'];
-		$admin->obj['email'] = $_POST['email'];
 		$admin->obj['username'] = $_POST['username'];
 		$admin->obj['password'] = $_POST['password'];
 		$admin->obj['level'] = $_POST['level'];
-		$admin->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 		$admin->create();
 
+		if($level=='hr'){
+			$hr = hr();
+			$hr->obj['username'] = $_POST['username'];
+			$hr->obj['email'] = $_POST['email'];
+			$hr->obj['jobFunction'] = $_POST['jobFunctionId'];
+			$hr->create();
+		}
 
 		header('Location: ../admin/?view=success');
 	}
