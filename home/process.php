@@ -252,12 +252,12 @@ function __clientRequestEmailMessage(){
 					Teamire";
 }
 function __hrEmailMessage(){
-	return "A new talent request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/hr'>www.teamire.com</a><br>
+	return "A new request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/hr'>www.teamire.com</a><br>
 					and check the new request.<br><br>
 					Teamire";
 }
 function __adminEmailMessage(){
-	return "A new talent request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/admin'>www.teamire.com</a><br>
+	return "A new request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/admin'>www.teamire.com</a><br>
 					and check the new request.<br><br>
 					Teamire";
 }
