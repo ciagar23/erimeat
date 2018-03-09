@@ -35,20 +35,20 @@ $logout = 4;
           <?php if ($app->status==$break) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on first break
-                              <h1><div id="breakTimer"></div></h1>
-                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1>
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$break2) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on second break
-                              <h1><div id="breakTimer"></div></h1>
-                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1>
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$lunch) { ?>
                   <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                       You are currently on Lunch
-                              <h1><div id="breakTimer"></div></h1>
-                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1>
+                              <!-- <h1><div id="breakTimer"></div></h1>
+                              <h1 style="color:red;"><div id="breakTimerAlert"></div></h1> -->
                   </div>
             <?php } else if ($app->status==$logout) { ?>
                   <div class="alert alert-icon alert-danger alert-dismissible fade in" role="alert">
