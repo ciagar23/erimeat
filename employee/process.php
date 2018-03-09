@@ -253,7 +253,7 @@ function submitTimesheet()
 
 	$dtr = dtr();
 	$dtr->obj['timesheetId'] = $tsData->Id;
-	$dtr->update("timesheetId = '0' and owner = '$currentUser'");
+	$dtr->update("timesheetId='0' and owner='$currentUser' and status='4' ");
 
 	// Update all dtr
 	header('Location: index.php?a='.$ts->Id);

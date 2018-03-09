@@ -5,7 +5,7 @@ $dateNow = date("Y-m-d");
 $app = dtr()->get("owner='$username' and createDate='$dateNow'");
 
 // Get to total hours rendered
-function get_time_difference($record)
+function total_time_rendered($record)
 {
     $workTime = (strtotime("1/1/1980 $record->checkOut") - strtotime("1/1/1980 $record->checkIn")) / 3600;
     $firstBreak = (strtotime("1/1/1980 $record->breakIn") - strtotime("1/1/1980 $record->breakOut")) / 3600;
@@ -13,8 +13,13 @@ function get_time_difference($record)
     $lunch = (strtotime("1/1/1980 $record->lunchIn") - strtotime("1/1/1980 $record->lunchOut")) / 3600;
 
     $totalTime = $workTime - ($firstBreak + $secondBreak + $lunch);
-
     return number_format((float)$totalTime, 2, '.', '');
+}
+
+// Get time difference of break and lunch
+function time_rendered($timeIn, $timeOut){
+  $result = (strtotime("1/1/1980 $timeIn") - strtotime("1/1/1980 $timeOut")) / 3600;
+  return number_format((float)$result, 2, '.', '');
 }
 
 
@@ -108,21 +113,33 @@ $logout = 4;
               <tr>
                 <td><?=$app->createDate;?></td>
                 <td><?=$app->checkIn;?></td>
-                <td><?=$app->breakOut;?> - <?=$app->breakIn;?></td>
-                <td><?=$app->breakOut2;?> - <?=$app->breakIn2;?></td>
-                <td><?=$app->lunchOut;?> - <?=$app->lunchIn;?></td>
+                <td><?=$app->breakOut;?> - <?=$app->breakIn;?> <br>
+                  <?php if ($app->breakIn) {?>
+                    Duration: <b><?=time_rendered($app->breakIn, $app->breakOut);?></b>
+                  <?php } ?>
+                </td>
+                <td><?=$app->breakOut2;?> - <?=$app->breakIn2;?> <br>
+                  <?php if ($app->breakIn2) {?>
+                    Duration: <b><?=time_rendered($app->breakIn2, $app->breakOut2);?></b>
+                  <?php } ?>
+                </td>
+                <td><?=$app->lunchOut;?> - <?=$app->lunchIn;?> <br>
+                  <?php if ($app->lunchIn) {?>
+                    Duration: <b><?=time_rendered($app->lunchIn, $app->lunchOut);?></b>
+                  <?php } ?>
+                </td>
                 <td><?=$app->checkOut;?></td>
-                <td><?php
+                <td><b><?php
                 if ($app->status==4){
-                echo get_time_difference($app);
+                echo total_time_rendered($app);
               }
-                ?></td>
+                ?></b></td>
               </tr>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+              </tbody>
+          </table>
+      </div>
+  </div>
 
     </div>  <!-- end row -->
 </div>
