@@ -22,23 +22,23 @@ $downloadList = downloads()->all();
               ?>
         <div class="col-12 col-lg-4 p-30">
           <h4 class="text-center m-t-30 m-b-20">Download <?=$row->fileName;?></h4>
- 
+
           <div class="text-center m-b-10">
          <?php
                  foreach($files as $file){
 
       ?>
-       
+
           <?php
 echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-small btn-primary container-100"><span class="fa fa-download"></span> Download</a>';
 ?>
-     
+
            <?php
 
     }
     ?>
           </div>
-   
+
         </div>
         <?php
               }
