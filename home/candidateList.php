@@ -17,11 +17,14 @@ function getJobFunction($Id){
     <div class="row">
       <form class="form-inline center-page">
         <div class="form-group center-page">
-        <input type="text" id="" name="" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:700px; margin-left: 5px;" >
-        <!-- <select class="form-control" style="height: 67px;width:250px;">
-            <option>Select City</option>
-        </select> -->
-        <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
+        <form method="GET">
+          <input type="hidden" name="view" value="candidateList">
+          <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:700px; margin-left: 5px;" >
+          <!-- <select class="form-control" style="height: 67px;width:250px;">
+              <option>Select City</option>
+          </select> -->
+          <button type="submit" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
+        </form>
         </div>
    </form>
     </div>
