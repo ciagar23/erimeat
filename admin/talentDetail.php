@@ -41,6 +41,17 @@ $job = job()->get("Id='$Id'");
                     <p class="text-muted font-13"><strong>Required Experience :</strong>
                       <span class="m-l-15"><?=$job->requiredExperience;?></span>
                     </p>
+                    <p class="text-muted font-13"><strong>Status :</strong>
+                        <?php if($job ->isApproved==0){ ?>
+                        <span class=" btn btn-success btn-xs tooltips">
+                          Pending
+                        </span>
+                        <?php }else{ ?>
+                        <span class=" btn btn-warning btn-xs tooltips">
+                          Waiting for Info
+                        </span>
+                        <?php } ?>
+                    </p>
                     <p class="text-muted font-13"><strong>Comment :</strong>
                       <span class="m-l-15"><?=$job->comment;?></span>
                     </p>

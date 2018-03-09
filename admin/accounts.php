@@ -3,6 +3,12 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $adminList = admin()->all();
+$jfList = job_function()->filter("isDeleted='0'");
+
+function getJobFunction($Id){
+  $jobFunc = job_function()->get("Id='$Id'");
+  echo $jobFunc->option;
+}
 
 ?>
   <div class="row">
@@ -19,10 +25,12 @@ $adminList = admin()->all();
           <thead>
             <tr>
               <th>Name</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Level</th>
-            <th>Action</th>
+              <th>Job Category</th>
+              <th>Email</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Level</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -33,6 +41,14 @@ $adminList = admin()->all();
               ?>
               <tr>
                 <td><?=$row->firstName;?> <?=$row->lastName;?> </td>
+                <td>
+                  <?php if ($row->jobFunctionId == null){ ?>
+                    N/A
+                  <?php }else{?>
+                    <?=getJobFunction($row->jobFunctionId);?>
+                  <?php }?>
+                </td>
+                <td><?=$row->email;?></td>
                 <td><?=$row->username;?></td>
                 <td><?=$row->password;?></td>
                 <td><?=$row->level;?></td>
@@ -78,6 +94,11 @@ $adminList = admin()->all();
               </div>
 
               <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email"  placeholder="">
+              </div>
+
+              <div class="form-group">
                 <label>Username</label>
                 <input type="text" class="form-control" name="username"  placeholder="">
               </div>
@@ -93,7 +114,21 @@ $adminList = admin()->all();
                   <option>Select Position</option>
                   <option value="admin">Admin</option>
                   <option value="hr">HR</option>
+                  <option value="payroll">Payroll</option>
                 </select>
+              </div>
+
+              <div class="form-group">
+                <label>Job Category</label>
+                <select class="form-control" name="jobFunctionId" required="">
+                 <option>Please Select</option>
+                  <?php
+                    foreach($jfList as $row) {
+                  ?>
+                    <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                  <?php } ?>
+                </select>
+                <span class="help-block"><small>For HR personnel only.</small></span>
               </div>
             </div>
           </div>

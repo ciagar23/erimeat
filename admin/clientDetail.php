@@ -43,6 +43,17 @@ function getJobFunction($Id){
                     <p class="text-muted font-13"><strong>Mobile Number :</strong>
                       <span class="m-l-15"><?=$company->mobileNumber;?></span>
                     </p>
+                    <p class="text-muted font-13"><strong>Status :</strong>
+                        <?php if($company ->isApproved==0){ ?>
+                        <span class=" btn btn-success btn-xs tooltips">
+                          Pending
+                        </span>
+                        <?php }else{ ?>
+                        <span class=" btn btn-warning btn-xs tooltips">
+                          Waiting for Info
+                        </span>
+                        <?php } ?>
+                    </p>
                 </div>
             </div>
         </div>

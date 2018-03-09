@@ -76,9 +76,11 @@ function addAccount()
 		$admin = admin();
 		$admin->obj['firstName'] = $_POST['firstName'];
 		$admin->obj['lastName'] = $_POST['lastName'];
+		$admin->obj['email'] = $_POST['email'];
 		$admin->obj['username'] = $_POST['username'];
 		$admin->obj['password'] = $_POST['password'];
 		$admin->obj['level'] = $_POST['level'];
+		$admin->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 		$admin->create();
 
 
