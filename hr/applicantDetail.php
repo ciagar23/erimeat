@@ -51,11 +51,11 @@ function getJobName($Id){
                     <p class="text-muted font-13"><strong>Click to view specs :</strong>
                       <span class="m-l-15"><a href="../media/<?=$resume->uploadedSpecs;?>"></a></span>
                     </p>
-                    <p class="text-muted font-13"><strong>Click to view certificate :</strong>
-                      <span class="m-l-15"><a href="../media/<?=$resume->uploadedCerts;?>"></a></span>
-                    </p>
                     <p class="text-muted font-13"><strong>Click to view resume :</strong>
                       <span class="m-l-15"><a href="../media/<?=$resume->uploadedResume;?>"></a></span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Click to view certificates :</strong>
+                      <span class="m-l-15"><a href="../media/<?=$resume->uploadedCerts;?>"></a></span>
                     </p>
                 </div>
             </div>
@@ -63,7 +63,7 @@ function getJobName($Id){
         <!-- Personal-Information -->
         <div class="card-box">
         <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target="#schedule-modal">Schedule an Interview</button>
-          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$resume->Id;?>'">Deny</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=denyResume&Id=<?=$resume->Id;?>'">More Info</button>
         </div>
     </div>
   </div>

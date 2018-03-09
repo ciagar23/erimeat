@@ -85,6 +85,12 @@ function denyResume()
 	$resume->obj['isApproved'] = "-1";
 	$resume->update("Id='$Id'");
 
+	$resume = resume()->get("Id='$Id'");
+
+	// Send email
+	$content = __moreInfoEmailMessage();
+	sendEmail($resume->email, $content);
+
 	header('Location: index.php?view=applicants');
 }
 
