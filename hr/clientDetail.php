@@ -48,7 +48,8 @@ function getJobFunction($Id){
         </div>
         <!-- Personal-Information -->
         <div class="card-box">
-          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=clientRequest&Id=<?=$company->Id;?>'">Approve</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=clientRequest&result=approve&Id=<?=$company->Id;?>'">Approve</button>
+          <button class="btn btn-default stepy-finish" onclick="location.href='process.php?action=clientRequest&result=deny&Id=<?=$company->Id;?>'">More Info</button>
         </div>
     </div>
   </div>

@@ -24,7 +24,7 @@ $downloadList = downloads()->all();
             </tr>
           </thead>
           <tbody>
-         
+
            <?php foreach($downloadList as $row) {
 
             if ($row){
