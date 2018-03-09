@@ -385,21 +385,21 @@
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
         <div class="row m-t-30">
-            <div class="col-md-6 col-lg-3">
+            <!-- <div class="col-md-6 col-lg-3">
                     <img src="../include/assets/images/home-img1.png">
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-md-3">
                     <img src="../include/assets/images/home-img2.png">
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-lg-3">
                     <img src="../include/assets/images/home-img3.png">
-            </div><!-- end col -->
+            </div>
 
             <div class="col-md-6 col-lg-3">
                     <img src="../include/assets/images/home-img4.png">
-            </div><!-- end col -->
+            </div> -->
         </div>
       </div>
       <div class="clearfix m-b-30"></div>
