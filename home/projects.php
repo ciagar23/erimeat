@@ -10,7 +10,7 @@
   ?>
   <div class="row">
     <div class="col-lg-12">
-      <h3 class="text-primary">Title lorem</h3>
+      <h3 class="text-primary"><?=$row->title?></h3>
       <p class="font-13" style="margin-top: -">Posted last <?=$row->createDate;?></p>
     </div>
   </div>
