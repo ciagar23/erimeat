@@ -76,6 +76,9 @@ function clientRequest()
 	/*
 	substr(round(microtime(true)), -6)
 	*/
+
+	$abn = $_POST['abn'];
+
 	$comp = company();
 	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 	$comp->obj['department'] = $_POST['department'];
@@ -89,6 +92,8 @@ function clientRequest()
 	$comp->obj['description '] = $_POST['description'];
 	$comp->create();
 
+	$company = company()->get("abn='$abn'");
+
 	// Send email
 	$content = __clientRequestEmailMessage();
 	$hrmessage = __hrEmailMessage();
@@ -101,10 +106,12 @@ function clientRequest()
 	//for admin
 	sendEmail('torredale1014@gmail.com',$adminmessage);
 
-	header('Location: ../home/?view=clientSuccess');
+	header('Location: ../home/?view=success&Id='.$company->Id);
 }
 
 function submitResume(){
+
+		$abn = $_POST["abn"];
 
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
@@ -131,6 +138,8 @@ function submitResume(){
 			$res->obj['uploadedCerts'] = uploadFile($_FILES["upload_certs"]);
 			$res->create();
 
+			$resume = resume()->get("abn='$abn'");
+
 			// Send email
 			$content = __submitResumeEmailMessage();
 			$hrmessage = __hrEmailMessage();
@@ -143,7 +152,7 @@ function submitResume(){
 			//for admin
 			sendEmail('torredale1014@gmail.com',$adminmessage);
 
-			header('Location: ../home/?view=success');
+			header('Location: ../home/?view=success&Id='.$resume->Id);
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
@@ -152,6 +161,8 @@ function submitResume(){
 
 function submitApplication()
 {
+		$abn = $_POST["abn"];
+
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
 		{
@@ -176,6 +187,9 @@ function submitApplication()
 			$res->obj['uploadedSpecs'] = uploadFile($_FILES["upload_specs"]);
 			$res->obj['uploadedCerts'] = uploadFile($_FILES["upload_certs"]);
 			$res->create();
+
+			$resume = resume()->get("abn='$abn'");
+
 			// Send Email
 			$content = __submitApplicationEmailMessage();
 			$hrmessage = __hrEmailMessage();
@@ -188,7 +202,7 @@ function submitApplication()
 			//for admin
 			sendEmail('torredale1014@gmail.com',$adminmessage);
 
-			header('Location: ../home/?view=success');
+			header('Location: ../home/?view=success&Id='.$resume->Id);
 		}
 		else{
 			header('Location: ../home/?error=Not uploaded');
