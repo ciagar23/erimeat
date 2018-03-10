@@ -6,6 +6,11 @@ function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");
   echo $job->option;
 }
+
+function getApplicantCount($Id){
+  $applicantList = resume()->count("jobId='$Id' and isApproved='0'");
+  return $applicantList;
+}
 ?>
 
 <div class="container-fluid m-t-30">
@@ -15,11 +20,11 @@ function getPositionName($Id){
     <h1><?=$job->position;?></h1>
     <div class="col-md-8"></div>
     <div class="col-md-2 text-center">
-      <h2>2</h2>
+      <h2><?=getApplicantCount($Id);?></h2>
       <p>Applicants</p>
     </div>
     <div class="col-md-2 text-center">
-      <h2>60</h2>
+      <h2>0</h2>
       <p>Views</p>
     </div>
     <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 25%;">Apply Now</button>
