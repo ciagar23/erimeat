@@ -49,7 +49,10 @@ else{
 										It seems that it is your first time to visit
 										this site. We recommend you to create your own password
 										before entering your home page. Thank you!
-										</span>
+										</span><br><br>
+										<div class="center-page login-label">
+										Change Password
+										</div>
 								</h5>
 								<p class="m-b-0">
 									<?=$error?></p>
