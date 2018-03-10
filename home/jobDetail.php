@@ -24,7 +24,7 @@ function getApplicantCount($Id){
       <p>Applicants</p>
     </div>
     <div class="col-md-2 text-center">
-      <h2>0</h2>
+      <h2>60</h2>
       <p>Views</p>
     </div>
     <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 25%;">Apply Now</button>
@@ -57,7 +57,7 @@ function getApplicantCount($Id){
     </p>
 
     <div class="col-md-2 text-center">
-      <h2>2</h2>
+      <h2><?=getApplicantCount($Id);?></h2>
       <p>Applicants</p>
     </div>
     <div class="col-md-2 text-center m-b-30">
@@ -87,7 +87,7 @@ function getApplicantCount($Id){
           <input placeholder="City or Zip" class="job-detail-search-form" type="text" id="edit-keywords"
           name="keywords" value="" size="60" maxlength="128">
         </fieldset>
-        <button onclick="location.href='../home/?view=application&id=<?=$job->Id;?>'" class="btn btn-primary" style="width: 100%; padding-left: 25%;">Apply Now</button>
+        <button onclick="location.href='../home/?view=application&id='" class="btn btn-primary" style="width: 100%; padding-left: 25%;">Apply Now</button>
       </form>
     </div>
   </div> -->
