@@ -1,5 +1,6 @@
 <?php
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $downloadList = downloads()->all();
@@ -13,6 +14,16 @@ $downloadList = downloads()->all();
 
     </div>
     <br>
+    <br>
+    <?php if($message){?>
+      <div class="alert alert-success alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert"
+                  aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <?=$message;?>
+      </div>
+    <?php }?>
       <div class="card-box table-responsive">
         <h4 class="m-t-0 header-title"><b>List of Files</b></h4>
         <table id="datatable" class="table table-striped table-bordered">

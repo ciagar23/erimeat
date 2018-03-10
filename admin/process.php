@@ -86,7 +86,7 @@ function addAccount()
 			$hr->create();
 		}
 
-		header('Location: ../admin/?view=success');
+		header('Location: ../admin/?view=accounts&message=You have successfully created an account.');
 	}
 }
 
@@ -102,7 +102,7 @@ function addProject()
 		$projects->obj['createDate'] = "NOW()";
 		$projects->create();
 
-		header('Location: ../admin/?view=success');
+		header('Location: ../admin/?view=projects&message=You have successfully added a new project.');
 	}else{
 		header('Location: ../admin/?error=Not uploaded');
 	}
@@ -114,7 +114,7 @@ function addJobFunction()
 	$jf->obj['option'] = $_POST['option'];
 	$jf->create();
 
-	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category!');
+	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category.');
 }
 
 function addFileFunction(){
@@ -126,7 +126,7 @@ function addFileFunction(){
 			$res->obj['fileName'] = $_POST["fileName"];
 			$res->obj['uploadedFile'] = $upload;
 			$res->create();
-			header('Location: ../admin/?view=success');
+			header('Location: ../admin/?view=downloads&message=You have succesfully added a new file.');
 		}
 		else{
 			header('Location: ../admin/?error=Not uploaded');

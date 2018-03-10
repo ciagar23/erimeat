@@ -1,5 +1,6 @@
 <?php
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $projectsList = projects()->all();
@@ -13,6 +14,16 @@ $projectsList = projects()->all();
 
     </div>
     <br>
+    <br>
+    <?php if($message){?>
+        <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <?=$message;?>
+        </div>
+      <?php }?>
       <div class="card-box table-responsive">
         <h4 class="page-title">Special Projects</h4><br>
         <table id="datatable" class="table table-striped table-bordered">

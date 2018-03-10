@@ -12,10 +12,17 @@ $jobList = job_function()->all();
       <button type="button" class="btn btn-primary waves-effect waves-light btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add New</button>
 
     </div>
-    <p class="m-b-0">
-      <?=$message?>
-    </p>
     <br>
+    <br>
+        <?php if($message){?>
+        <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <?=$message;?>
+        </div>
+      <?php }?>
       <div class="card-box table-responsive">
           <h4 class="page-title">Job Functions</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
