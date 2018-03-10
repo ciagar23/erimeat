@@ -14,7 +14,8 @@
                   <div>
                       <img src="../include/assets/images/demandPlanning.png">
                   </div>
-                  <h4 class="font-18">Demand Planning</h4>
+                  <button  onclick="location.href='../home?view=demandPlanning'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Demand Planning</button>
               </div>
           </div>
 
