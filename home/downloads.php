@@ -6,15 +6,14 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $downloadList = downloads()->all();
 
 ?>
-<h2 class="text-center m-t-30 m-b-30">Downloads</h2>
 
-
+  <h2 class="text-center m-t-30 m-b-30">Downloads</h2>
       <div class="clearfix"></div>
       <!--Start 2 panels -->
-      <center>
-      <div class="container">
+      <div class="container-80 center-page">
       <div class="row">
         <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-1">&nbsp;</div>
          <?php foreach($downloadList as $row) {
 
             if ($row){
@@ -47,5 +46,8 @@ echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-s
         <div class="col-lg-2">&nbsp;</div>
 
       </div>
+        <div class="col-lg-1">&nbsp;</div>
+      </div>
     </div>
-</center>
+
+  </div> <!-- End Form Container -->
