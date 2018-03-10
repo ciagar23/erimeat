@@ -58,10 +58,6 @@ switch ($action) {
 	default :
 }
 
-
-
-
-
 function addAccount()
 {
 
@@ -212,7 +208,7 @@ function __createClientLogin($Id){
 
 	// Create account
 	$user = user();
-	$user->obj['username'] = "C" . $company->abn;
+	$user->obj['username'] = "C" . round(microtime(true));
 	$user->obj['password'] = "temppassword";
 	$user->obj['firstName'] = $company->contactPerson;
 	$user->obj['lastName'] = $company->name;
