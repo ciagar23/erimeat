@@ -88,7 +88,7 @@ $jfList = job_function()->all();
             <div class="p-r-10 w-50-p pull-left">
             <div class="form-group">
               <label for="username">Business Phone <span style="color: red;">*</span></label>
-              <input type="text" class="form-control" name="phoneNumber" required>
+              <input type="text" class="form-control" name="phoneNumber"  data-mask="(02) 9999-9999" required>
             </div>
             </div>
 

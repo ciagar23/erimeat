@@ -15,6 +15,7 @@
 <script>
 $(document).ready(function(){
     $("#myBtn1").click(function(){
+        
         $("#demo1").show();
          $("#demo").hide();
 
