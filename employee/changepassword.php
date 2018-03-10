@@ -14,10 +14,10 @@ else{
 <html>
 <head>
 		<meta charset="utf-8" />
-		<title>Teamire - Insert System Name</title>
+		<title>Teamire - Catalyst in Continuous Improvement</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-		<meta content="Coderthemes" name="author" />
+		<meta content="Catalyst in Continuous Improvement" name="description" />
+		<meta content="Teamire" name="author" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 		<!-- App favicon -->
@@ -44,21 +44,14 @@ else{
 					<div class="login-left-box" >
 						<div class="account-box" style="">
 							<div class="account-logo-box">
-								<h2 class="text-uppercase text-center" >
-									<a href="#" class="login-font">
-											<span >CHANGE PASSWORD</span>
-									</a>
-								</h2>
 
-								<h2 class="text-uppercase text-center" >
-									<a href="index.html" class="login-font">
-										<span >Hi User.<br>
+								<h5 class="text-uppercase text-center text-white">
+										<span>Hi User.<br>
 										It seems that it is your first time to visit
 										this site. We recommend you to create your own password
 										before entering your home page. Thank you!
 										</span>
-									</a>
-								</h2>
+								</h5>
 								<p class="m-b-0">
 									<?=$error?></p>
 								</div>
