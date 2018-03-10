@@ -134,6 +134,7 @@ $ptList = position_type()->all();
 
                     </div>
                     <br><br><br><br>
+                  </div>
                   <div class="text-center m-t-30">
                       <button type="submit" class="btn btn-primary stepy-finish"> SUBMIT RESUME </button>
                   </div>

@@ -127,8 +127,8 @@ function submitResume(){
 			$res->obj['speedtest'] = $_POST["speedtest"];
 			$res->obj['coverLetter'] = $_POST["coverLetter"];
 			$res->obj['uploadedResume'] = $upload;
-			$res->obj['uploadedSpecs'] = $_POST["upload_specs"];
-			$res->obj['uploadedCerts'] = $_POST["upload_certs"];
+			$res->obj['uploadedSpecs'] = uploadFile($_FILES["upload_specs"]);
+			$res->obj['uploadedCerts'] = uploadFile($_FILES["upload_certs"]);
 			$res->create();
 
 			// Send email
@@ -174,6 +174,7 @@ function submitApplication()
 			$res->obj['coverLetter'] = $_POST["coverLetter"];
 			$res->obj['uploadedResume'] = $upload;
 			$res->obj['uploadedSpecs'] = uploadFile($_FILES["upload_specs"]);
+			$res->obj['uploadedCerts'] = uploadFile($_FILES["upload_certs"]);
 			$res->create();
 			// Send Email
 			$content = __submitApplicationEmailMessage();

@@ -107,10 +107,17 @@ $ptList = position_type()->all();
                             <label>Attach Specs</label>
                             <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
+
+                          <div class="form-group">
+                            <label>Certificates</label>
+                            <input type="file" name="upload_certs[]" id="filer_input2"
+                                                       multiple="multiple" class="form-control">
+                          </div>
+
                           <div class="text-center"><h3>Attach Resume</h3>
                           <p>Choose one of the following options:</p></div>
-                          <div class="col-sm-3">
-                         <a id="myBtnShowResume" class="btn btn-danger btn-file btn-circle btn-lg"><i class="fa fa-file-text-o fa-2x text-white p-t-10 "></i> </a>
+                          <div class="col-sm-4">
+                         <a id="myBtnShowResume" style="border-radius: 50%;height: 90px;width: 90px;" class="btn btn-danger btn-file btn-circle btn-lg pull-right"><i class="fa fa-file-text-o fa-2x text-white p-t-10 "></i> </a>
                          <br><br><br>
                           </div>
                           <div class="col-md-8">
