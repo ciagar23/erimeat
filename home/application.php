@@ -92,8 +92,7 @@ $ptList = position_type()->all();
                           <div class="form-group">
                               <label for="username">Speedtest</label>
                               <input type="text" class="form-control" name="speedtest">
-                              <span class="help-block"><small>To access speedtest. Click the link <a href="#">www.speedtest.com</a></small></span>
-                          </div>
+                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.speedtest.net/" target="blank_">www.speedtest.net</a></small></span>
 
                           <div class="form-group">
                             <label for="username">Cover Letter<span style="color: red;">*</span></label>

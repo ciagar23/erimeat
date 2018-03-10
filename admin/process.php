@@ -208,31 +208,30 @@ function clientRequest()
 
 function __createClientLogin($Id){
 	// Get Detail
-	$comp = company()->get("Id='$Id'");
+	$company = company()->get("Id='$Id'");
 
 	// Create account
-	$obj = new Profile;
 	$user = user();
-	$user->obj['username'] = "C" . $comp->abn;
+	$user->obj['username'] = "C" . $company->abn;
 	$user->obj['password'] = "temppassword";
-	$user->obj['firstName'] = $comp->contactPerson;
-	$user->obj['lastName'] = $comp->name;
+	$user->obj['firstName'] = $company->contactPerson;
+	$user->obj['lastName'] = $company->name;
 	$user->obj['level'] = "company";
-	$obj->create();
+	$user->create();
 
 	// Update Company
 	$comp = company();
-	$comp->obj['username'] = $obj->username;
+	$comp->obj['username'] = $user->obj['username'];
 	$comp->update("Id='$Id'");
 
 	// Send email
 	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $user->obj['username'] <br>
-							Password: $user->obj['password'] <br><br>
+							Username: " . $user->obj['username'] . " <br>
+							Password: " . $user->obj['password'] . " <br><br>
 							To login to our website. Please click the link below:<br>
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
-	sendEmail($comp->obj['email'], $content);
+	sendEmail($company->email, $content);
 }
 
 function removeCompany()
