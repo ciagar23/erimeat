@@ -101,7 +101,7 @@ function clientRequest()
 	//for admin
 	sendEmail('torredale1014@gmail.com',$adminmessage);
 
-	header('Location: ../home/?view=success');
+	header('Location: ../home/?view=clientSuccess');
 }
 
 function submitResume(){
