@@ -4,32 +4,10 @@
 
 <div>
   <div style="position:inherit;">
- <!-- START carousel-->
-    <div id="carousel-example-captions" data-ride="carousel" class="carousel slide carousel-fade" data-interval="10000">
 
-         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-captions" data-slide-to="1"></li>
-            <li data-target="#carousel-example-captions" data-slide-to="2"></li>
-         </ol>
-
-         <div role="listbox" class="carousel-inner">
-            <div class="item active">
-                <img src="../include/assets/images/small/img-1.jpg"  style="width: 100%;" alt="First slide image">
-
-            </div>
-            <div class="item">
-                <img src="../include/assets/images/small/img-2.jpg"  style="width: 100%;" alt="Second slide image">
-
-            </div>
-            <div class="item">
-                <img src="../include/assets/images/small/img-3.jpg" style="width: 100%;"  alt="Third slide image">
-
-            </div>
-        </div>
-        <a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" ></span> <span class="sr-only">Previous</span> </a>
-        <a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-    </div><!-- END carousel-->
+    <div>
+      <img src="../include/assets/images/worldMap.png"  style="width: 100%;">
+    </div><
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
