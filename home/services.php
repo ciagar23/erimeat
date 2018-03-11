@@ -24,7 +24,8 @@
                   <div>
                       <img src="../include/assets/images/supplyPlanning.png">
                   </div>
-                  <h4 class="font-18">Supply Planning</h4>
+                  <button  onclick="location.href='../home?view=supplyPlanning'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Supply Planning</button>
                 </div>
           </div>
 
@@ -33,7 +34,8 @@
                   <div>
                       <img src="../include/assets/images/orderFulfilment.png">
                   </div>
-                  <h4 class="font-18">Order Fulfilment</h4>
+                  <button  onclick="location.href='../home?view=orderFulfillment'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Order Fulfillment</button>
                 </div>
           </div>
       </div>
@@ -45,7 +47,8 @@
                   <div>
                       <img src="../include/assets/images/logistics.png">
                   </div>
-                  <h4 class="font-18">Logistics</h4>
+                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Logistics</button>
               </div>
           </div>
 
@@ -54,7 +57,8 @@
                   <div>
                       <img src="../include/assets/images/manufacturing.png">
                   </div>
-                  <h4 class="font-18">Manufacturing</h4>
+                  <button  onclick="location.href='../home?view=manufacturing'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Manufacturing</button>
                 </div>
           </div>
 
@@ -63,7 +67,8 @@
                   <div>
                       <img src="../include/assets/images/transportation.png">
                   </div>
-                  <h4 class="font-18">Transportation</h4>
+                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
                 </div>
           </div>
       </div>
@@ -74,7 +79,8 @@
                   <div>
                       <img src="../include/assets/images/procurement.png">
                   </div>
-                  <h4 class="font-18">Procurement</h4>
+                  <button  onclick="location.href='../home?view=procurement'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Procurement</button>
               </div>
           </div>
 
@@ -83,7 +89,8 @@
                   <div>
                       <img src="../include/assets/images/certificate.png">
                   </div>
-                  <h4 class="font-18">Training Certification</h4>
+                  <button  onclick="location.href='../home?view=trainingCertification'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Training Certification</button>
               </div>
           </div>
 
@@ -92,7 +99,8 @@
                   <div>
                       <img src="../include/assets/images/warehousing.png">
                   </div>
-                  <h4 class="font-18">Warehousing</h4>
+                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Warehousing</button>
               </div>
           </div>
       </div>

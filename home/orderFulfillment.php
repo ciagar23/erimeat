@@ -1,7 +1,7 @@
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
-    <h2 class="text-white">Demand Planning</h2>
+    <h2 class="text-white">Order Fulfillment</h2>
   </div>
 </div>
 <div class="container-fluid m-b-30">
@@ -9,12 +9,10 @@
   <!-- Start About Us Content -->
   <div class="center-page container-80">
 
-    <h3 class="text-center m-b-30">Simplify your search for top demand planning talent</h3>
+    <h3 class="text-center m-b-30">Simplify your search for top order fulmillment talent</h3>
     <p class="text-center m-b-30" style="font-size: 17px;">
-      A multi-step operational supply chain management (SCM) process used to create reliable
-      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align
-      inventory levels with peaks and troughs in demands, and help enhance profitability for a
-      given channel or product.
+      We facilitate customer orders through the order fulfillment cycle. In internal advocacy and
+      voice for sales and customer needs
     </p>
 
     <div class="form-container m-b-30 m-t-30">
