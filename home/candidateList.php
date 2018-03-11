@@ -35,7 +35,7 @@ function getJobFunction($Id){
     </div>
   </div>
 
-  <div class="col-md-3">
+  <!-- <div class="col-md-3">
     <h3>Refine Results</h3>
     <div style="width: 100%; height: 100%;">
       <div style="padding: 8px;background-color: #eee; border-top: 4px solid #3399cc;" class="m-b-10">
@@ -82,9 +82,9 @@ function getJobFunction($Id){
           </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="col-md-9 clearfix">
+  <div class="col-md-12 clearfix">
     <div align="center" class="m-t-30">
       <button class="accordion pull-right" style="width: 15%;">Contact Us</button>
       <div class="accordion-panel">
