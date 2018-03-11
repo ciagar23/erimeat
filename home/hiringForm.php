@@ -117,7 +117,7 @@ $ptList = position_type()->all();
                                     <option value="3-5 Years">3-5 Years</option>
                                     <option value="5-7 Years">5-7 Years</option>
                                     <option value="7-10 Years">7-10 Years</option>
-                                    <option value="10+ Years Years">10+ Years</option> 
+                                    <option value="10+ Years Years">10+ Years</option>
                                   </select>
                               </div>
                               </div>
