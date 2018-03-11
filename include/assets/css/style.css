@@ -5678,4 +5678,7 @@ ul.sitemap-icon ul li a {
     margin-left: 5px; }
 
   .accordion.active:after {
-    content: "\2212";}
+    content: "\2212"; }
+
+  .display-none {
+    display: none; }

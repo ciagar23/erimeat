@@ -41,10 +41,10 @@
                     <li>
                         <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Lorem </span> <span class="menu-arrow"></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li style="list-style-type: none;" class="p-t-5"><a class="text-white" href="#">Typography</a></li>
+                            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="#">Typography</a></li>
                         </ul>
                         <ul class="nav-second-level" aria-expanded="false">
-                            <li style="list-style-type: none;" class="p-t-5"><a class="text-white" href="#">Typography</a></li>
+                            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="#">Typography</a></li>
                         </ul>
                     </li>
 
