@@ -6,7 +6,7 @@
     </li>
 
     <li>
-        <a href="../payroll/?view=timekeepingCompanyList">
+        <a href="../payroll/?view=timekeeping">
             <i class="mdi mdi-account-star"></i><span> Timekeeping </span>
         </a>
     </li>
