@@ -11,8 +11,11 @@
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10">Unrivaled Industry Insight. Sophisticated Matching Technology.
-                      And a Personalized Approach. It’s Why We’re #1.</h1>
+                    <p class="carousel-title m-t-10"><strong>
+                      Ask Us How To Go Remote And Hire The Most Qualified Supply
+                      Chain Team Member For Your Business In Unpredicted Ways
+                    </strong>
+                    </p>
                       <div class="row m-b-20 m-t-50">
                       <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button>
                       <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
@@ -365,21 +368,46 @@
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
         <div class="row m-t-30">
-            <!-- <div class="col-md-6 col-lg-3">
+
+            <div class="col-md-6 col-lg-3">
+               <div class="card-box">
+                  <div class="company-detail">
+                    <h4 class="m-b-5">Manila</h4>
+                    <hr>
                     <img src="../include/assets/images/home-img1.png">
+                  </div>
+                </div>
             </div>
 
-            <div class="col-md-6 col-md-3">
+            <div class="col-md-6 col-lg-3">
+               <div class="card-box">
+                  <div class="company-detail">
+                    <h4 class="m-b-5">Delhi</h4>
+                    <hr>
                     <img src="../include/assets/images/home-img2.png">
+                  </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
+               <div class="card-box">
+                  <div class="company-detail">
+                    <h4 class="m-b-5">Bangalore</h4>
+                    <hr>
                     <img src="../include/assets/images/home-img3.png">
+                  </div>
+                </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
+               <div class="card-box">
+                  <div class="company-detail">
+                    <h4 class="m-b-5">Sydney HQ</h4>
+                    <hr>
                     <img src="../include/assets/images/home-img4.png">
-            </div> -->
+                  </div>
+                </div>
+            </div>
         </div>
       </div>
       <div class="clearfix m-b-30"></div>
