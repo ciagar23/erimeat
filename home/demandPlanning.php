@@ -32,7 +32,7 @@
                     <?php } ?>
                   </select>
               </div>
-
+              <div class="display-none">
               <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Employment Type <span style="color: red;">*</span></label>
@@ -129,7 +129,6 @@
                                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                       data-parsley-validation-threshold="10"></textarea>
               </div>
-            </div>
             <div class="text-center m-t-30">
                 <button type="submit" class="btn btn-primary stepy-finish"> SEND REQUEST </button>
             </div>
@@ -137,6 +136,9 @@
               <p style="color: #000000;">Or call us at <strong style="color: #4489e4;">+61452 364 793</strong></p>
             </div>
           </form>
+
+          </div>
+        </div>
       </div>
     </div>
 </div>
