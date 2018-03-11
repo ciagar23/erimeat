@@ -15,7 +15,7 @@
 <script>
 $(document).ready(function(){
     $("#myBtn1").click(function(){
-        
+
         $("#demo1").show();
          $("#demo").hide();
 
@@ -24,6 +24,12 @@ $(document).ready(function(){
         $("#demo1").hide();
          $("#demo").show();
           $("#myDIV").hide();
+    });
+});
+$(document).ready(function(){
+    $("#requestBtn").click(function(){
+        $("#hire").show();
+        $("#requestBtn").hide();
     });
 });
 $(function() {
