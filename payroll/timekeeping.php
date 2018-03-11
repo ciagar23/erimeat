@@ -35,9 +35,7 @@ function getCount($Id){
           <tbody>
             <?php foreach($jobList as $row) {
               if ($row->isApproved==1 && getCount($row->Id)!=0){
-
             ?>
-
             <tr>
               <td><?=getJobFunction($row->jobFunctionId);?></td>
               <td><?=$row->company;?></td>
@@ -58,7 +56,7 @@ function getCount($Id){
 
               </td>
               <td>
-                <a href="?view=timesheets&jobId=<?=$row->Id;?>&status=0"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
+                <a href="?view=timesheets&jobId=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>
             </tr>
             <?php
