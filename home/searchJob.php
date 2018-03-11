@@ -2,6 +2,9 @@
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $jobList = job()->all();
 
+
+$cities = city_option()->all();
+
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");
   echo $job->option;
@@ -16,8 +19,11 @@ function getPositionName($Id){
     <div class="form-group">
       <input type="hidden" name="view" value="jobList">
       <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-      <select class="form-control" style="height: 67px; width:200px;">
-        <option>Select City</option>
+      <select name="city" class="form-control" style="height: 67px; width:200px;">
+        <option value="">Select City</option>
+        <?php foreach($cities as $row){ ?>
+          <option><?=$row->city;?></option>
+        <?php } ?>
       </select>
           <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
 

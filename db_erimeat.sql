@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-11 20:11:40
+# Date: 2018-03-11 20:20:21
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -39,6 +39,7 @@ CREATE TABLE `city_option` (
 # Data for table "city_option"
 #
 
+INSERT INTO `city_option` VALUES (1,'bacolod'),(2,'bago'),(3,'sipalay'),(4,'talisay'),(5,'silay'),(6,'manapla'),(7,'victorias');
 
 #
 # Structure for table "company"
