@@ -96,7 +96,7 @@ $ptList = position_type()->all();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Business Phone <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="businessPhone" required="">
+                                  <input type="text" placeholder="" data-mask="(+61) 999-999-999" class="form-control" name="businessPhone" required="">
                               </div>
                               </div>
 
@@ -110,7 +110,15 @@ $ptList = position_type()->all();
                               <div class="p-l-10 w-50-p pull-left">
                               <div class="form-group">
                                   <label for="username">Required Experience <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="requiredExperience" required="">
+                                  <select class="form-control" name="requiredExperience" required="">
+                                    <option>Please Select</option>
+                                    <option value="0-1 Year">0-1 Year</option>
+                                    <option value="1-3 Years">1-3 Years</option>
+                                    <option value="3-5 Years">3-5 Years</option>
+                                    <option value="5-7 Years">5-7 Years</option>
+                                    <option value="7-10 Years">7-10 Years</option>
+                                    <option value="10+ Years Years">10+ Years</option> 
+                                  </select>
                               </div>
                               </div>
 
