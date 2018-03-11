@@ -3,6 +3,10 @@ $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
 $user = $_SESSION['employee_session'];
 $dtrList = dtr()->filter("owner='$user'");
 
+// Get timesheet record
+$ts = timesheet()->get("Id='$timesheetId'");
+$dispute = timesheet_dispute()->get("timesheetId='$timesheetId'");
+
 function get_time_difference($record)
 {
     $workTime = (strtotime("1/1/1980 $record->checkOut") - strtotime("1/1/1980 $record->checkIn")) / 3600;
@@ -62,8 +66,40 @@ function time_rendered($timeIn, $timeOut){
                             <td> <?=get_time_difference($row)?></td>
                          </tr>
                   <?php } } ?>
-
                                         </tbody>
                                     </table>
+
+                                    <?php if($ts->status=="2"){?>
+                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#dispute-message-modal">View Dispute message</button>
+                                  <?php } ?>
                                 </div>
                             </div>
+
+
+                            <!-- dispute modal content -->
+                            <div id="dispute-message-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                                        <div class="modal-body">
+                                            <h2 class="text-uppercase text-center m-b-30">
+                                                <a href="index.html" class="text-success">
+                                                    <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
+                                                </a>
+                                            </h2>
+
+                                            <form class="form-horizontal" action="" method="post">
+                                              <div class="form-group">
+                                                  <label>Reason of dispute</label>
+                                                  <div>
+                                                      <textarea required="" name="reason" class="form-control" disabled><?=$dispute->reason;?></textarea>
+                                                  </div>
+                                              </div>
+
+                                            </form>
+
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
