@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-10 02:09:37
+# Date: 2018-03-11 20:11:40
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -23,6 +23,22 @@ CREATE TABLE `admin` (
 #
 
 INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll');
+
+#
+# Structure for table "city_option"
+#
+
+DROP TABLE IF EXISTS `city_option`;
+CREATE TABLE `city_option` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "city_option"
+#
+
 
 #
 # Structure for table "company"
@@ -90,13 +106,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (67,3,'E1520420680','21:48:23','21:48:33','21:48:26','21:48:28','21:48:31','21:48:32','21:48:30','21:48:29','2018-03-07','4'),(68,3,'E1520420680','17:39:54','18:31:06','17:45:26','18:29:35','18:30:17','18:31:03','18:31:05','18:31:04','2018-03-06','4'),(69,3,'E1520420680','18:31:52','18:31:59','18:31:56','18:31:57',NULL,NULL,'18:31:59','18:31:58','2018-03-05','4'),(70,3,'E1520420680','18:32:42','18:32:45','18:32:43','18:32:44',NULL,NULL,NULL,NULL,'2018-03-04','4'),(71,3,'E1520420680','18:32:58','18:33:00',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-08','4'),(72,4,'E1520420680','21:11:53','21:12:51',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-09','4');
+INSERT INTO `dtr` VALUES (67,3,'E1520420680','21:48:23','21:48:33','21:48:26','21:48:28','21:48:31','21:48:32','21:48:30','21:48:29','2018-03-07','4'),(68,3,'E1520420680','17:39:54','18:31:06','17:45:26','18:29:35','18:30:17','18:31:03','18:31:05','18:31:04','2018-03-06','4'),(69,3,'E1520420680','18:31:52','18:31:59','18:31:56','18:31:57',NULL,NULL,'18:31:59','18:31:58','2018-03-05','4'),(70,3,'E1520420680','18:32:42','18:32:45','18:32:43','18:32:44',NULL,NULL,NULL,NULL,'2018-03-04','4'),(71,3,'E1520420680','18:32:58','18:33:00',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-08','4'),(72,4,'E1520420680','21:11:53','21:12:51',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-09','4'),(73,5,'E1520420680','15:45:52','15:45:55','15:45:53','15:45:54',NULL,NULL,NULL,NULL,'2018-03-11','4');
 
 #
 # Structure for table "employee"
@@ -207,7 +223,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Villacar+Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'0','dale torre');
+INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Ceres','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'0','dale torre');
 
 #
 # Structure for table "job_function"
@@ -316,13 +332,13 @@ CREATE TABLE `timesheet` (
   `status` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:verified, 2:dispute, 3:approved',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (1,2,'E1520420680','Timesheet as of 2018-03-08 11:30:38','2',NULL),(2,2,'E1520420680','Timesheet as of 2018-03-08 11:33:02','2',NULL),(3,2,'E1520420680','Timesheet as of 2018-03-09 14:12:00','0','2018-03-09 21:12:00'),(4,2,'E1520420680','Timesheet as of 2018-03-09 14:13:30','0','2018-03-09 21:13:30');
+INSERT INTO `timesheet` VALUES (1,2,'E1520420680','Timesheet as of 2018-03-08 11:30:38','2',NULL),(2,2,'E1520420680','Timesheet as of 2018-03-08 11:33:02','3',NULL),(3,2,'E1520420680','Timesheet as of 2018-03-09 14:12:00','0','2018-03-09 21:12:00'),(4,2,'E1520420680','Timesheet as of 2018-03-09 14:13:30','0','2018-03-09 21:13:30'),(5,2,'E1520420680','Timesheet as of 2018-03-11 08:48:15','0','2018-03-11 15:48:15');
 
 #
 # Structure for table "timesheet_dispute"
@@ -334,13 +350,13 @@ CREATE TABLE `timesheet_dispute` (
   `timesheetId` int(11) DEFAULT NULL,
   `reason` text,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet_dispute"
 #
 
-INSERT INTO `timesheet_dispute` VALUES (1,NULL,'dslkjfdlfjds'),(2,1,'sample lang ni ha'),(3,1,'dlkfhslf'),(4,2,'jheehlkjehrlkjea');
+INSERT INTO `timesheet_dispute` VALUES (1,1,'lkjfglkdsfds lkdsfjds lkj flk jlkjdsthis is disputed');
 
 #
 # Structure for table "user"
