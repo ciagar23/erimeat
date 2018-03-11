@@ -26,7 +26,7 @@ function approveTimesheet()
 {
 	$Id = $_GET['Id'];
 	$ts = timesheet();
-	$ts->obj['status'] = 1;
+	$ts->obj['status'] = 3;
 	$ts->update("Id='$Id'");
 	header('Location: index.php');
 }

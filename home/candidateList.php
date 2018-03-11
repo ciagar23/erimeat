@@ -19,10 +19,10 @@ function getJobFunction($Id){
         <div class="form-group center-page">
         <form method="GET">
           <input type="hidden" name="view" value="candidateList">
-          <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:700px; margin-left: 5px;" >
-          <!-- <select class="form-control" style="height: 67px;width:250px;">
+          <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px; width: 450px; margin-left: 5px;" >
+          <select class="form-control" style="height: 67px;width:250px;">
               <option>Select City</option>
-          </select> -->
+          </select>
           <button type="submit" class="btn waves-effect waves-light btn-success"><i class="fa fa-search "></i> Find Candidates</button>
         </form>
         </div>
@@ -35,7 +35,7 @@ function getJobFunction($Id){
     </div>
   </div>
 
-  <!-- <div class="col-md-3">
+  <div class="col-md-3">
     <h3>Refine Results</h3>
     <div style="width: 100%; height: 100%;">
       <div style="padding: 8px;background-color: #eee; border-top: 4px solid #3399cc;" class="m-b-10">
@@ -82,9 +82,9 @@ function getJobFunction($Id){
           </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
-  <div class="col-md-12 clearfix">
+  <div class="col-md-9 clearfix">
     <div align="center" class="m-t-30">
       <button class="accordion pull-right" style="width: 15%;">Contact Us</button>
       <div class="accordion-panel">
@@ -114,7 +114,7 @@ function getJobFunction($Id){
             </a>
           </span>
           </div>
-          <!-- <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div> -->
+          <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div>
         </div>
         <!-- Reference -->
         <span>Candidate Reference #: <?=$row->refNum;?></span>

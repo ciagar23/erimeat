@@ -1,3 +1,8 @@
+<?php
+$jfList = job_function()->filter("isDeleted='0'");
+$ptList = position_type()->all();
+?>
+
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
@@ -33,6 +38,7 @@
                   </select>
               </div>
 
+              <div id="hire" class="display-none">
               <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
                   <label for="username">Employment Type <span style="color: red;">*</span></label>
@@ -129,7 +135,7 @@
                                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                       data-parsley-validation-threshold="10"></textarea>
               </div>
-            </div>
+
             <div class="text-center m-t-30">
                 <button type="submit" class="btn btn-primary stepy-finish"> SEND REQUEST </button>
             </div>
@@ -137,6 +143,11 @@
               <p style="color: #000000;">Or call us at <strong style="color: #4489e4;">+61452 364 793</strong></p>
             </div>
           </form>
+        </div>
+        </div>
+        <div class="text-center m-t-30">
+          <button type="button" id="requestBtn" class="btn btn-primary stepy-finish">REQUEST TALENT</button>
+        </div>
       </div>
     </div>
 </div>
