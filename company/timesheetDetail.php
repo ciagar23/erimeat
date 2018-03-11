@@ -4,6 +4,7 @@ $dtrList = dtr()->filter("timesheetId='$timesheetId'");
 
 // Get timesheet record
 $ts = timesheet()->get("Id='$timesheetId'");
+$dispute = timesheet_dispute()->get("timesheetId='$timesheetId'");
 
 function get_time_difference($record)
 {
@@ -48,43 +49,80 @@ function get_time_difference($record)
                          </tr>
                   <?php } } ?>
 
-                                        </tbody>
-                                    </table>
-                                    <button class="btn btn-primary stepy-finish" onclick="location.href='process.php?action=verifyTimesheet&Id=<?=$timesheetId;?>'">Verify</button>
-                                    <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#dispute-modal">Despute</button>
-                                      </div>
-                                  </div>
+                            </tbody>
+                        </table>
+                        <?php if($ts->status=="0"){?>
+                        <button class="btn btn-primary stepy-finish" onclick="location.href='process.php?action=verifyTimesheet&Id=<?=$timesheetId;?>'">Verify</button>
+                        <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#dispute-modal">Despute</button>
+                      <?php } ?>
 
-                                  <!-- Signup modal content -->
-                                  <div id="dispute-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
-                                      <div class="modal-dialog">
-                                          <div class="modal-content">
-                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <?php if($ts->status=="2"){?>
+                      <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#dispute-message-modal">View Dispute message</button>
+                    <?php } ?>
+                          </div>
+                      </div>
 
-                                              <div class="modal-body">
-                                                  <h2 class="text-uppercase text-center m-b-30">
-                                                      <a href="index.html" class="text-success">
-                                                          <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
-                                                      </a>
-                                                  </h2>
+                      <!-- dispute modal content -->
+                      <div id="dispute-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
-                                                  <form class="form-horizontal" action="process.php?action=timesheetDispute&Id=<?=$timesheetId;?>" method="post">
-                                                    <div class="form-group">
-                                                        <label>Reason to despute</label>
-                                                        <div>
-                                                            <textarea required="" name="reason" class="form-control"></textarea>
-                                                        </div>
-                                                    </div>
+                                  <div class="modal-body">
+                                      <h2 class="text-uppercase text-center m-b-30">
+                                          <a href="index.html" class="text-success">
+                                              <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
+                                          </a>
+                                      </h2>
 
-                                                      <div class="form-group account-btn text-center m-t-10">
-                                                          <div class="col-xs-12">
-                                                              <button class="btn w-lg btn-rounded btn-lg btn-custom waves-effect waves-light" type="submit">Submit</button>
-                                                          </div>
-                                                      </div>
+                                      <form class="form-horizontal" action="process.php?action=timesheetDispute&Id=<?=$timesheetId;?>" method="post">
+                                        <div class="form-group">
+                                            <label>Reason to despute</label>
+                                            <div>
+                                                <textarea required="" name="reason" class="form-control"></textarea>
+                                            </div>
+                                        </div>
 
-                                                  </form>
-
+                                          <div class="form-group account-btn text-center m-t-10">
+                                              <div class="col-xs-12">
+                                                  <button class="btn w-lg btn-rounded btn-lg btn-custom waves-effect waves-light" type="submit">Submit</button>
                                               </div>
-                                          </div><!-- /.modal-content -->
-                                      </div><!-- /.modal-dialog -->
-                                  </div><!-- /.modal -->
+                                          </div>
+
+                                      </form>
+
+                                  </div>
+                              </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                      </div><!-- /.modal -->
+
+
+                      <!-- dispute modal content -->
+                      <div id="dispute-message-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                                  <div class="modal-body">
+                                      <h2 class="text-uppercase text-center m-b-30">
+                                          <a href="index.html" class="text-success">
+                                              <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
+                                          </a>
+                                      </h2>
+
+                                      <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group">
+                                            <label>Reason of dispute</label>
+                                            <div>
+                                                <textarea required="" name="reason" class="form-control" disabled>
+                                                    <?=$dispute->reason;?>
+                                                </textarea>
+                                            </div>
+                                        </div>
+
+                                      </form>
+
+                                  </div>
+                              </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                      </div><!-- /.modal -->
