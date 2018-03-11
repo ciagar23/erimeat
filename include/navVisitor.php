@@ -6,7 +6,7 @@
 
     <div class="form-inline pull-right" id="above-nav" style="padding: 20px;">
       <ul class="nav navbar-nav navbar-right nav-menu-right">
-        <li> <a class="m-l-5 m-r-15" href="../home/?view=projects">Special Projects</a></li>
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=projects">Supply Chain Projects</a></li>
         <li> <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a></li>
         <li><a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a></li>
         <li> <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a></li>
