@@ -44,9 +44,11 @@
                       <div id="myDIV">
                   <form class="form-inline" method="GET">
                     <div class="form-group">
-                    <input type="hidden" name="view" value="candidateList">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;" >
-                    <button type="submit" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
+                    <select class="form-control" style="height: 67px;width:200px;">
+                        <option>Select City</option>
+                    </select>
+                    <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -57,9 +59,9 @@
             <div id="myP" style="visibility:hidden;">
                   <form class="form-inline" role="form" method="GET">
                     <div class="form-group">
-                    <input type="hidden" name="view" value="jobList">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:600px;">
-                       <button type="submit" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+                     <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
+                       <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
                   </form>
                     </div></div>
