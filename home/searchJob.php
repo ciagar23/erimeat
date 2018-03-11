@@ -12,13 +12,15 @@ function getPositionName($Id){
   <div class="container-80 center-page">
   <div class="col-md-10 center-page p-b-30">
     <h2 class="m-b-30 m-t-20 text-center">Search Jobs</h2>
-    <form method="GET">
-    <div class="input-group">
+    <form class="form-inline" method="GET">
+    <div class="form-group">
       <input type="hidden" name="view" value="jobList">
-      <input type="text" id="example-input2-group2" name="s" class="form-control form-control-lg" placeholder="Job Title, Skills or Keywords">
-          <span class="input-group-btn">
+      <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+      <select class="form-control" style="height: 67px; width:200px;">
+        <option>Select City</option>
+      </select>
           <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
-          </span>
+
     </div>
   </form>
   </div>
@@ -28,7 +30,7 @@ function getPositionName($Id){
   <!-- Start Filter Panel and Results-->
   <div class="form-container container m-t-30 m-b-30">
     <!-- TODO: Filters -->
-    <h4>Filters: </h4>
+    <!-- <h4>Filters: </h4>
     <div class="form-inline m-b-30" style="padding: 0; margin: 0; width: 100%;">
     <select class="form-control" style="height: 50px; width:199px; border-right: none; ">
         <option>Select City</option>
@@ -48,13 +50,13 @@ function getPositionName($Id){
     <select class="form-control" style="height: 50px;width:199px; border-left:none; margin-left: -5px;">
         <option>Select City</option>
     </select>
-    </div>
+    </div> -->
     <!-- TODO: Filters -->
-    <h4>Sort by: </h4>
+    <!-- <h4>Sort by: </h4> -->
     <div class="form-inline m-b-30" style="">
-    <select class="form-control" style="height: 50px; width:199px;">
+    <!-- <select class="form-control" style="height: 50px; width:199px;">
         <option>Select City</option>
-    </select>
+    </select> -->
   </div>
     <div class="row center-page job-list-row">
       <?php foreach($jobList as $row) {
