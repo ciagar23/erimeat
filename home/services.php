@@ -47,7 +47,7 @@
                   <div>
                       <img src="../include/assets/images/logistics.png">
                   </div>
-                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=logistics'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Logistics</button>
               </div>
           </div>
@@ -67,7 +67,7 @@
                   <div>
                       <img src="../include/assets/images/transportation.png">
                   </div>
-                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=transportation'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
                 </div>
           </div>
@@ -99,7 +99,7 @@
                   <div>
                       <img src="../include/assets/images/warehousing.png">
                   </div>
-                  <button  onclick="location.href='#'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=warehousing'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Warehousing</button>
               </div>
           </div>
