@@ -62,6 +62,21 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
+	case 'transportation' :
+		$content 	= 'transportation.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'warehousing' :
+		$content 	= 'warehousing.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'logistics' :
+		$content 	= 'logistics.php';
+		$template	= '../include/template.php';
+		break;
+
 	case 'procurement' :
 		$content 	= 'procurement.php';
 		$template	= '../include/template.php';
