@@ -39,6 +39,18 @@ switch ($action) {
 		removeJobFunction();
 		break;
 
+	case 'setInterViewDate' :
+		setInterViewDate();
+		break;
+
+	case 'hireApplicant' :
+		hireApplicant();
+		break;
+
+	case 'denyResume' :
+		denyResume();
+		break;
+
 	case 'login' :
 		login();
 		break;
@@ -243,6 +255,97 @@ function __createClientLogin($Id){
 							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($company->email, $content);
+}
+
+function setInterviewDate()
+{
+	$email = $_POST['email'];
+	$Id = $_POST['resumeId'];
+	$date = $_POST['date'];
+	$time = $_POST['time'];
+
+	$intDate = interview_date();
+	$intDate->obj['resumeId'] = $Id;
+	$intDate->obj['date'] = $date;
+	$intDate->obj['time'] = $time;
+	$intDate->create();
+
+	$resume = resume();
+	$resume->obj['isApproved'] = "1";
+	$resume->update("Id='$Id'");
+
+	$content = "We have considered your application. Please be available on the schedule below<br>
+							for your interview.<br><br>
+							Date = $date<br>
+							Time = $time<br><br>
+							Teamire";
+	sendEmail($email, $content);
+
+	header('Location: index.php?view=applicants');
+}
+
+function hireApplicant()
+{
+	if ($_GET['result']=="approve"){
+		$result = '1';
+		__createEmployeeLogin($_GET['Id'], $_GET['jobId']);
+	}
+	else{
+		$result = '-1';
+	}
+
+	$Id = $_GET['Id'];
+	$resume = resume();
+	$resume->obj['isHired'] = $result;
+	$resume->update("Id='$Id'");
+
+	header('Location: index.php?view=scheduleInterview');
+}
+
+function __createEmployeeLogin($Id, $jobId){
+
+	$resume = resume()->get("Id='$Id'");
+
+	// Create account
+	$user = user();
+	$user->obj['username'] =  "E" . round(microtime(true));
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $resume->firstName;
+	$user->obj['lastName'] = $resume->lastName;
+	$user->obj['level'] = "employee";
+	$user->create();
+
+	$emp = employee();
+	$emp->obj['jobId'] = $jobId;
+	$emp->obj['username'] = $user->obj['username'];
+	$emp->obj['createDate'] = 'NOW()';
+	$emp->create();
+
+	// Send email
+	$content = "Congratulations!<br><br>
+							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
+							Username: " . $user->obj['username'] . "<br>
+							Password: " . $user->obj['password'] . "<br><br>
+							To login to our website. Please click the link below:<br>
+							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
+							Teamire";
+	sendEmail($resume->email, $content);
+}
+
+function denyResume()
+{
+	$Id=$_GET['Id'];
+	$resume = resume();
+	$resume->obj['isApproved'] = "-1";
+	$resume->update("Id='$Id'");
+
+	$resume = resume()->get("Id='$Id'");
+
+	// Send email
+	$content = __moreInfoEmailMessage();
+	sendEmail($resume->email, $content);
+
+	header('Location: index.php?view=applicants');
 }
 
 function removeCompany()
