@@ -368,45 +368,41 @@
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
         <div class="row m-t-30">
+          <h2 class="text-center text-primary m-b-30">Business Partners</h2>
+          <div class="col-md-6 col-lg-3">
+            <div class="hvrbox">
+            	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">
+            	<div class="hvrbox-layer_top">
+            		<div class="hvrbox-text">MANILA</div>
+            	</div>
+            </div>
+          </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Manila</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img1.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img2.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">DELHI</div>
+              	</div>
+              </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Delhi</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img2.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img3.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">BANGALORE</div>
+              	</div>
+              </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Bangalore</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img3.png">
-                  </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Sydney HQ</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img4.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img4.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">SYDNEY HQ</div>
+              	</div>
+              </div>
             </div>
         </div>
       </div>
