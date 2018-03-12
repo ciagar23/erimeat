@@ -40,61 +40,45 @@ function getCountJobListApproved($Id){
 <div class="row">
     <div class="col-lg-3 col-md-6">
       <div class="card-box widget-box-two widget-two-custom">
-       <?php foreach($jobList as $row) {
-            ?>
-          <i class="mdi mdi-clipboard-text widget-two-icon"></i>
+       <i class="mdi mdi-clipboard-text widget-two-icon"></i>
           <div class="wigdet-two-content">
-              <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup"><?=getCount($row->Id) ;?></span></h2>
-             
+          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <?php foreach($jobList as $row) {
+            ?><span data-plugin="counterup"><?=getCount($row->Id) ;?></span><?php  }?></h2> 
               <p class="m-0">Talent Request</p>
           </div>
-           <?php  
-              }
-          ?>
+          
       </div>
     </div><!-- end col -->
 
     <div class="col-lg-3 col-md-6">
       <div class="card-box widget-box-two widget-two-custom">
-      <?php foreach($company as $row) {
-            ?>
-          <i class="mdi mdi-account-network widget-two-icon"></i>
+       <i class="mdi mdi-account-network widget-two-icon"></i>
           <div class="wigdet-two-content">
-              <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup"><?=getCountCompany($row->Id) ;?></span></h2>
+              <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <?php foreach($company as $row) {
+            ?><span data-plugin="counterup"><?=getCountCompany($row->Id) ;?></span><?php }?></h2>
               <p class="m-0">Company</p>
           </div>
-          <?php  
-              }
-          ?>
       </div>
     </div><!-- end col -->
 <div class="col-lg-3 col-md-6">
   <div class="card-box widget-box-two widget-two-custom">
-   <?php foreach($adminList as $row) {
-            ?>
-      <i class="mdi mdi-account widget-two-icon"></i>
+   <i class="mdi mdi-account widget-two-icon"></i>
       <div class="wigdet-two-content">
-          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup"><?=getCountAccount($row->Id) ;?></span></h2>
+          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <?php foreach($adminList as $row) {
+            ?><span data-plugin="counterup"><?=getCountAccount($row->Id) ;?></span> <?php }?></h2>
           <p class="m-0">Accounts</p>
       </div>
-      <?php  
-              }
-          ?>
   </div>
 </div><!-- end col -->
 
 <div class="col-lg-3 col-md-6">
   <div class="card-box widget-box-two widget-two-custom">
-  <?php foreach($projectsList as $row) {
-            ?>
-      <i class="mdi mdi-clipboard-check widget-two-icon"></i>
-      <div class="wigdet-two-content">
-          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup"><?=getCountProject($row->Id) ;?></span></h2>
+    <i class="mdi mdi-clipboard-check widget-two-icon"></i>
+       <div class="wigdet-two-content">
+          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span>  <?php foreach($projectsList as $row) {
+            ?><span data-plugin="counterup"><?=getCountProject($row->Id) ;?></span> <?php  }?></h2>
           <p class="m-0">Projects</p>
-      </div>
-       <?php  
-              }
-          ?>
+      </div>     
   </div>
 </div><!-- end col -->
 
@@ -111,16 +95,17 @@ function getCountJobListApproved($Id){
                                                         <div class="m-t-20 m-b-20">
                                                             <?php foreach($clientRequest as $row) {?>
                                                             <h4 class="m-b-10"><?=getCountClientRequest($row->Id) ;?></h4>
-                                                            <p class="text-uppercase m-b-5 font-13 font-600">Client Request</p>
                                                              <?php  } ?>
+                                                              <p class="text-uppercase m-b-5 font-13 font-600">Client Request</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-6">
                                                         <div class="m-t-20 m-b-20">
                                                             <?php foreach($clientRequest as $row) {?>
                                                             <h4 class="m-b-10"><?=getCountClientRequest($row->Id) ;?></h4>
-                                                            <p class="text-uppercase m-b-5 font-13 font-600">Jobs Approved</p>
                                                              <?php  } ?>
+                                                            <p class="text-uppercase m-b-5 font-13 font-600">Jobs Approved</p>
+
                                                         </div>
                                                     </div>
                                                     
@@ -137,4 +122,3 @@ function getCountJobListApproved($Id){
                                 <!-- end row -->
 
 
-                              
