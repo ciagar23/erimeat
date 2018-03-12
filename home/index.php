@@ -42,56 +42,6 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
-	case 'servicesDetail' :
-		$content 	= 'servicesDetail.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'demandPlanning' :
-		$content 	= 'demandPlanning.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'supplyPlanning' :
-		$content 	= 'supplyPlanning.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'orderFulfillment' :
-		$content 	= 'orderFulfillment.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'manufacturing' :
-		$content 	= 'manufacturing.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'transportation' :
-		$content 	= 'transportation.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'warehousing' :
-		$content 	= 'warehousing.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'logistics' :
-		$content 	= 'logistics.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'procurement' :
-		$content 	= 'procurement.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'trainingCertification' :
-		$content 	= 'trainingCertification.php';
-		$template	= '../include/template.php';
-		break;
-
 	case 'projects' :
 		$content 	= 'projects.php';
 		$template	= '../include/template.php';
@@ -104,6 +54,11 @@ switch ($view) {
 
 	case 'services' :
 		$content 	= 'services.php';
+		$template	= '../include/template.php';
+		break;
+
+	case 'servicesDetail' :
+		$content 	= 'servicesDetail.php';
 		$template	= '../include/template.php';
 		break;
 

@@ -1,12 +1,15 @@
 <?php
+$code = (isset($_GET['code']) && $_GET['code'] != '') ? $_GET['code'] : '';
 $jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
+
+$jobFunc = job_function()->get("code='$code'");
 ?>
 
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
-    <h2 class="text-white">Training Certification</h2>
+    <h2 class="text-white"><?=$jobFunc->option;?></h2>
   </div>
 </div>
 <div class="container-fluid m-b-30">
@@ -14,11 +17,9 @@ $ptList = position_type()->all();
   <!-- Start About Us Content -->
   <div class="center-page container-80">
 
-    <h3 class="text-center m-b-30">Simplify your search for top training certification talent</h3>
+    <h3 class="text-center m-b-30"><?=$jobFunc->title;?></h3>
     <p class="text-center m-b-30" style="font-size: 17px;">
-      Gain a practical, how-to overview of the entire training function. Through modeling of the best
-      practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment,
-      Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.
+      <?=$jobFunc->description;?>
     </p>
 
     <div class="form-container m-b-30 m-t-30">
@@ -36,7 +37,6 @@ $ptList = position_type()->all();
                     <?php } ?>
                   </select>
               </div>
-
               <div id="hire" class="display-none">
               <div class="p-r-10 w-50-p pull-left">
               <div class="form-group">
@@ -134,7 +134,6 @@ $ptList = position_type()->all();
                                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                       data-parsley-validation-threshold="10"></textarea>
               </div>
-
             <div class="text-center m-t-30">
                 <button type="submit" class="btn btn-primary stepy-finish"> SEND REQUEST </button>
             </div>
@@ -142,10 +141,12 @@ $ptList = position_type()->all();
               <p style="color: #000000;">Or call us at <strong style="color: #4489e4;">+61452 364 793</strong></p>
             </div>
           </form>
-        </div>
-        </div>
-        <div class="text-center m-t-30">
-          <button type="button" id="requestBtn" class="btn btn-primary stepy-finish">REQUEST TALENT</button>
+
+          </div>
+          <div class="text-center m-t-30">
+            <button type="button" id="requestBtn" class="btn btn-primary stepy-finish">REQUEST TALENT</button>
+          </div>
+
         </div>
       </div>
     </div>
