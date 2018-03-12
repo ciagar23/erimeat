@@ -17,8 +17,8 @@
                     </strong>
                     </p>
                       <div class="row m-b-20 m-t-50">
-                      <button id="myBtn1" class="btn btn-primary" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn btn-primary" style="width:530px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn btn-success" style="width:530px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn btn-danger" style="width:530px;">LOOKING FOR A JOB?</button>
                     </div>
 
                     <div class="">
