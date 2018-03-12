@@ -14,8 +14,11 @@
 <script src="../include/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script>
 $(document).ready(function(){
-    $("#myBtn1").click(function(){
+     $("#demo1").show(function(){
+        $("#myBtn1").attr('disabled','disabled').css("cursor", "pointer").fadeTo(500,100);;
 
+    });
+    $("#myBtn1").click(function(){
         $("#demo1").show();
          $("#demo").hide();
 
@@ -24,6 +27,8 @@ $(document).ready(function(){
         $("#demo1").hide();
          $("#demo").show();
           $("#myDIV").hide();
+                  $("#myBtn1").removeAttr('disabled');
+
     });
 });
 $(document).ready(function(){
