@@ -110,10 +110,16 @@ function timesheet_dispute() {
 	$crud->table = "timesheet_dispute";
 	return $crud;
 }
-// Download timesheet_dispute
+
 function city_option() {
 	$crud = new CRUD;
 	$crud->table = "city_option";
+	return $crud;
+}
+
+function faq() {
+	$crud = new CRUD;
+	$crud->table = "faq";
 	return $crud;
 }
 ?>
