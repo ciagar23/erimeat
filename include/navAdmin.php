@@ -52,6 +52,13 @@
             <i class="mdi mdi-account"></i><span> Special Projects </span>
         </a>
     </li>
+
+    <li>
+        <a href="?view=faq">
+            <i class="mdi mdi-account"></i><span> FAQ </span>
+        </a>
+    </li>
+
     <li>
         <a href="?view=downloads">
             <i class="mdi mdi-account"></i><span> Download Files </span>

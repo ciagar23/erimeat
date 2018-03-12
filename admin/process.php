@@ -23,6 +23,10 @@ switch ($action) {
 		addProject();
 		break;
 
+	case 'addFAQ' :
+		addFAQ();
+		break;
+
 	case 'addJobFunction' :
 		addJobFunction();
 		break;
@@ -88,6 +92,17 @@ function addAccount()
 
 		header('Location: ../admin/?view=accounts&message=You have successfully created an account.');
 	}
+}
+
+function addFAQ()
+{
+	$faq = faq();
+	$faq->obj['question'] = $_POST['question'];
+	$faq->obj['answer'] = $_POST['answer'];
+	$faq->obj['level'] = $_POST['level'];
+	$faq->create();
+
+	header('Location: ../admin/?view=faq&message=You have successfully added a FAQ.');
 }
 
 function addProject()
