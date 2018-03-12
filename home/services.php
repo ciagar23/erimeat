@@ -12,9 +12,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=demandPlanning"><img src="../include/assets/images/demandPlanning.png"></a>
+                      <a href="../home?view=servicesDetail&code=dem"><img src="../include/assets/images/demandPlanning.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=demandPlanning'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=dem'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Demand Planning</button>
               </div>
           </div>
@@ -22,9 +22,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=supplyPlanning"><img src="../include/assets/images/supplyPlanning.png"></a>
+                      <a href="../home?view=servicesDetail&code=sup"><img src="../include/assets/images/supplyPlanning.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=supplyPlanning'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=sup'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Supply Planning</button>
                 </div>
           </div>
@@ -32,9 +32,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=orderFulfilment"><img src="../include/assets/images/orderFulfilment.png"></a>
+                      <a href="../home?view=servicesDetail&code=ord"><img src="../include/assets/images/orderFulfilment.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=orderFulfillment'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=ord'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Order Fulfillment</button>
                 </div>
           </div>
@@ -45,9 +45,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=logistics"><img src="../include/assets/images/logistics.png"></a>
+                      <a href="../home?view=servicesDetail&code=log"><img src="../include/assets/images/logistics.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=logistics'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=log'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Logistics</button>
               </div>
           </div>
@@ -55,9 +55,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=manufacturing"><img src="../include/assets/images/manufacturing.png"></a>
+                      <a href="../home?view=servicesDetail&code=man"><img src="../include/assets/images/manufacturing.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=manufacturing'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=man'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Manufacturing</button>
                 </div>
           </div>
@@ -65,9 +65,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=transportation"><img src="../include/assets/images/transportation.png"></a>
+                      <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/transportation.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=transportation'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=tra'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
                 </div>
           </div>
@@ -77,9 +77,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=procurement"><img src="../include/assets/images/procurement.png"></a>
+                      <a href="../home?view=servicesDetail&code=pro"><img src="../include/assets/images/procurement.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=procurement'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=pro'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Procurement</button>
               </div>
           </div>
@@ -87,9 +87,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=certificate"><img src="../include/assets/images/certificate.png"></a>
+                      <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/certificate.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=trainingCertification'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=tra'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Training Certification</button>
               </div>
           </div>
@@ -97,9 +97,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=warehousing"><img src="../include/assets/images/warehousing.png"></a>
+                      <a href="../home?view=servicesDetail&code=war"><img src="../include/assets/images/warehousing.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=warehousing'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=war'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Warehousing</button>
               </div>
           </div>
