@@ -65,9 +65,9 @@
           <div class="col-sm-4">
               <div class="about-features-box text-center">
                   <div>
-                      <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/transportation.png"></a>
+                      <a href="../home?view=servicesDetail&code=tran"><img src="../include/assets/images/transportation.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=tra'"  style="width: 50%;"
+                  <button  onclick="location.href='../home?view=servicesDetail&code=tran'"  style="width: 50%;"
                   class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
                 </div>
           </div>
