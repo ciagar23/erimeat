@@ -3,7 +3,7 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $jobList = job()->all();
 
-$username = $_SESSION['payroll_session'];
+$username = $_SESSION['admin_session'];
 $company = company()->get("username='$username'");
 
 function getJobFunction($Id){

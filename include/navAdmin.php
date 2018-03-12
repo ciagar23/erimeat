@@ -30,6 +30,12 @@
     </li>
 
     <li>
+        <a href="?view=timekeeping">
+            <i class="mdi mdi-account-star"></i><span> Timekeeping </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=accounts">
             <i class="mdi mdi-account-switch"></i><span> Accounts </span>
         </a>
