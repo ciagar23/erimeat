@@ -31,6 +31,10 @@ switch ($action) {
 		addJobFunction();
 		break;
 
+	case 'updateServices' :
+		updateServices();
+		break;
+
 	case 'addFileFunction' :
 		addFileFunction();
 		break;
@@ -142,6 +146,19 @@ function addJobFunction()
 	$jf->create();
 
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category.');
+}
+
+function updateServices()
+{
+	$Id = 
+	$jf = job_function();
+	$jf->obj['option'] = $_POST['option'];
+	$jf->obj['title'] = $_POST['title'];
+	$jf->obj['header'] = $_POST['header'];
+	$jf->obj['description'] = $_POST['description'];
+	$jf->update("Id='$Id'");
+
+	header('Location: ../admin/?view=services&message=You have succesfully added a new Service.');
 }
 
 function addFileFunction(){

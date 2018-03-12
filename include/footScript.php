@@ -37,6 +37,14 @@ $(document).ready(function(){
         $("#requestBtn").hide();
     });
 });
+
+$(document).ready(function() {
+  $('#myModal').on('show.bs.modal', function(e) {
+    var id = $(e.relatedTarget).data('id');
+    alert(id);
+  });
+});
+
 $(function() {
     $('#hr').hide();
     $('#level').change(function(){

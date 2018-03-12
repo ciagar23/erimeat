@@ -2,17 +2,11 @@
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$jobFunc = job_function()->all();
+$jobFunc = job_function()->filter("code!='null'");
 ?>
 
   <div class="row">
     <div class="col-sm-12">
-     <br>
-    <div class="pull-right">
-      <button type="button" class="btn btn-primary waves-effect waves-light btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Add New</button>
-
-    </div>
-    <br>
     <br>
         <?php if($message){?>
         <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -24,11 +18,14 @@ $jobFunc = job_function()->all();
         </div>
       <?php }?>
       <div class="card-box table-responsive">
-          <h4 class="page-title">Job Functions</h4><br>
+          <h4 class="page-title">Services</h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Job Function</th>
+              <th>Services</th>
+              <th>Title</th>
+              <th>Header</th>
+              <th>Description</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -38,8 +35,11 @@ $jobFunc = job_function()->all();
               ?>
               <tr>
                 <td><?=$row->option;?></td>
+                <td><?=$row->title;?></td>
+                <td><?=$row->header;?></td>
+                <td><?=$row->description;?></td>
                 <td>
-                  <a href="process.php?action=removeJobFunction&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
+                  <button type="button" class="btn btn-primary waves-effect waves-light btn-sm" data-toggle="modal" data-id="<?=$row->Id;?>" data-target="#myModal"><i class="fa fa-pencil"></i> Edit</button>
                 </td>
               </tr>
           <?php
@@ -60,18 +60,39 @@ $jobFunc = job_function()->all();
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">Add New Job Function</h4>
+        <h4 class="modal-title" id="myModalLabel">Add New Services</h4>
       </div>
       <div class="modal-body">
-        <form id="default-wizard" action="process.php?action=addJobFunction" method="POST">
+        <form id="default-wizard" action="process.php?action=updateServices" method="POST">
           <p class="m-b-0">
             <?=$error?>
           </p>
           <div class="row m-t-20">
             <div class="col-sm-12">
               <div class="form-group">
-                <label>Job Function</label>
+                <label>Services</label>
                 <input type="text" class="form-control" name="option" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label>Header</label>
+                <textarea id="message" class="form-control" name="header"
+                                    data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                    data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                    data-parsley-validation-threshold="10"></textarea>
+              </div>
+
+              <div class="form-group">
+                  <label>Description</label>
+                  <textarea id="message" class="form-control" name="description"
+                                      data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                      data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                      data-parsley-validation-threshold="10"></textarea>
               </div>
             </div>
           </div>

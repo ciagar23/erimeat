@@ -9,7 +9,7 @@ $jobFunc = job_function()->get("code='$code'");
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
-    <h2 class="text-white"><?=$jobFunc->option;?></h2>
+    <h2 class="text-white"><?=$jobFunc->title;?></h2>
   </div>
 </div>
 <div class="container-fluid m-b-30">
@@ -17,7 +17,7 @@ $jobFunc = job_function()->get("code='$code'");
   <!-- Start About Us Content -->
   <div class="center-page container-80">
 
-    <h3 class="text-center m-b-30"><?=$jobFunc->title;?></h3>
+    <h3 class="text-center m-b-30"><?=$jobFunc->header;?></h3>
     <p class="text-center m-b-30" style="font-size: 17px;">
       <?=$jobFunc->description;?>
     </p>

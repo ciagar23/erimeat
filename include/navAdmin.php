@@ -66,6 +66,12 @@
     </li>
 
     <li>
+        <a href="?view=services">
+            <i class="mdi mdi-account"></i><span> Services </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=projects">
             <i class="mdi mdi-account"></i><span> Special Projects </span>
         </a>
