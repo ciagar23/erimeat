@@ -56,7 +56,7 @@
 <div class="container">
 
 
-                         <h4 class="text-uppercase font-18 text-center" style="color: #fff;">Our Supply Chain Services</h4>
+                         <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
 
                         <div class="row">
 
