@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include_once($headScript);?>
+        <?php
+          include_once($headScript);
+          $jfList = job_function()->filter("isDeleted='0'");
+        ?>
     </head>
     <body>
         <!-- Navigation Bar-->
@@ -110,7 +113,6 @@
                           <label for="username"><span class="text-white">Message </span><span style="color: red;">*</span></label>
                           <textarea id="message" class="form-control font-13" name="message"
                                             data-parsley-trigger="keyup" data-parsley-minlength="20"
-                                            data-parsley-maxlength="100"
                                             data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                             data-parsley-validation-threshold="10"></textarea>
                         </div>
