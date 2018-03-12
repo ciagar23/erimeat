@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-11 20:20:21
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-03-12 17:56:54
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -33,7 +34,7 @@ CREATE TABLE `city_option` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `city` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "city_option"
@@ -67,7 +68,6 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
-INSERT INTO `company` VALUES (5,'C12345678901','Villacar Transit','12345678901','heheheh','torredale1014@gmail.com','Dale Torre','12312312','123213123','bacolod city negros occ','domestic transport','1','1');
 
 #
 # Structure for table "downloads"
@@ -113,7 +113,6 @@ CREATE TABLE `dtr` (
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (67,3,'E1520420680','21:48:23','21:48:33','21:48:26','21:48:28','21:48:31','21:48:32','21:48:30','21:48:29','2018-03-07','4'),(68,3,'E1520420680','17:39:54','18:31:06','17:45:26','18:29:35','18:30:17','18:31:03','18:31:05','18:31:04','2018-03-06','4'),(69,3,'E1520420680','18:31:52','18:31:59','18:31:56','18:31:57',NULL,NULL,'18:31:59','18:31:58','2018-03-05','4'),(70,3,'E1520420680','18:32:42','18:32:45','18:32:43','18:32:44',NULL,NULL,NULL,NULL,'2018-03-04','4'),(71,3,'E1520420680','18:32:58','18:33:00',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-08','4'),(72,4,'E1520420680','21:11:53','21:12:51',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-09','4'),(73,5,'E1520420680','15:45:52','15:45:55','15:45:53','15:45:54',NULL,NULL,NULL,NULL,'2018-03-11','4');
 
 #
 # Structure for table "employee"
@@ -132,7 +131,25 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (2,2,'E1520420680','0000-00-00 00:00:00');
+
+#
+# Structure for table "faq"
+#
+
+DROP TABLE IF EXISTS `faq`;
+CREATE TABLE `faq` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` text,
+  `answer` text,
+  `level` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "faq"
+#
+
+INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee');
 
 #
 # Structure for table "hr"
@@ -173,7 +190,7 @@ CREATE TABLE `inquiries` (
 # Data for table "inquiries"
 #
 
-INSERT INTO `inquiries` VALUES (1,'dale','torre','2345678909','torredale1014%40gmail.com','1','6100','asdljflsdfjkdsflkdsjfdsfdsfsdf'),(2,'kevin','arnol','123213123','ako%40gmail.com','1','1231','asdjfsjdlfjiqwieoruweoiruwoejfajsdlfjlsajdf%3Bjsadf'),(3,'fred','garcia','123123213123123','fred.garcia%40tekinbox.com','1','1234','heheheh+hello+therelasjdlfjldsfldsjf123213123213+kope');
+INSERT INTO `inquiries` VALUES (4,'Dale','Torre','(02) 3456-7890','torredale1014@gmail.com','1','6100','Hello! how are you today.');
 
 #
 # Structure for table "interview_date"
@@ -192,7 +209,6 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
-INSERT INTO `interview_date` VALUES (1,'1','2018-03-06','12:59:00'),(2,'','0000-00-00','00:00:00'),(3,'7','2018-03-08','00:00:12'),(4,'7','2018-12-01','00:00:12');
 
 #
 # Structure for table "job"
@@ -224,7 +240,6 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
-INSERT INTO `job` VALUES (2,'1520419183',1,2,'Bus+Driver','Villacar Transit','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf',NULL,'1','Dale+Torre'),(3,'1520419182',1,2,'Truck Driver','Ceres','12345678901','torredale1014@gmail.com','Operations+Manager','2345678909','6100','asfsfdsf','1-3+years','jljsdljflksjdlkfjlsdfljowqeurioueworiuasjdlfjdsfdsf','1899-12-29 00:00:00','1','Dale+Torre'),(4,'1520431443',2,1,'curer','cure me','12312321312','torredale1014@gmail.com','manager','123123213','1122','bacolod city','1-3','lksadfljskfljdsfdsflkdsjflkjdslfjdsklf',NULL,'0','dale torre');
 
 #
 # Structure for table "job_function"
@@ -279,7 +294,6 @@ CREATE TABLE `projects` (
 # Data for table "projects"
 #
 
-INSERT INTO `projects` VALUES (1,'sample project','sample lng mn ah','1520508331.txt','2018-03-08 19:25:31');
 
 #
 # Structure for table "resume"
@@ -318,7 +332,6 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (7,2,1,'2832381273','Dale','Torre','12312312312','123213','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros+Occidental','6100','fadfdsafdsfdsfsdfsdfsadfsdfsdfsdfdsfdsfdsf','1520420366.txt','www.speedtest.com','',NULL,NULL,'1','1','0'),(8,2,1,'1520436853','Dale','Torre','12345671234','123123','torredale1014@gmail.com','2345678909','Billboard','Billboard','Bacolod','Negros Occidental','6100','lsjdfjsdflfdsfwerowuer13213123123','1520436853.txt','www.speedtest.com','',NULL,NULL,'0','0','0'),(9,0,1,NULL,'sampe','asd','11111111111','fdsf','rgmak12%40gmail.com','asd','dfdsk','ad','asd','asd','1111','asdkkasdaasdaaaaaaaaaaaaaaaaaaaaa','1520543500.jpg','asd','','',NULL,'0','0','0');
 
 #
 # Structure for table "timesheet"
@@ -339,7 +352,6 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (1,2,'E1520420680','Timesheet as of 2018-03-08 11:30:38','2',NULL),(2,2,'E1520420680','Timesheet as of 2018-03-08 11:33:02','3',NULL),(3,2,'E1520420680','Timesheet as of 2018-03-09 14:12:00','0','2018-03-09 21:12:00'),(4,2,'E1520420680','Timesheet as of 2018-03-09 14:13:30','0','2018-03-09 21:13:30'),(5,2,'E1520420680','Timesheet as of 2018-03-11 08:48:15','0','2018-03-11 15:48:15');
 
 #
 # Structure for table "timesheet_dispute"
@@ -357,7 +369,6 @@ CREATE TABLE `timesheet_dispute` (
 # Data for table "timesheet_dispute"
 #
 
-INSERT INTO `timesheet_dispute` VALUES (1,1,'lkjfglkdsfds lkdsfjds lkj flk jlkjdsthis is disputed');
 
 #
 # Structure for table "user"
@@ -378,4 +389,3 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (4,'C12345678901','12345','Dale+Torre','Villacar+Transit','company'),(5,'E1520420680','12345','Dale','Torre','employee');
