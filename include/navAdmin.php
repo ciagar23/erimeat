@@ -18,6 +18,18 @@
     </li>
 
     <li>
+        <a href="?view=applicants">
+            <i class="mdi mdi-comment-account"></i><span> Applicants </span>
+        </a>
+    </li>
+
+    <li>
+        <a href="?view=scheduleInterview">
+            <i class="mdi mdi-alarm-check"></i><span> Schedule Interview </span>
+        </a>
+    </li>
+
+    <li>
         <a href="?view=accounts">
             <i class="mdi mdi-account-switch"></i><span> Accounts </span>
         </a>
