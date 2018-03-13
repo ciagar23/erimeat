@@ -20,17 +20,22 @@ $ptList = position_type()->all();
                                   </select>
                               </div>
 
-                              <div class="p-r-10 w-50-p pull-left">
-                              <div class="form-group">
+                              <div>
+                              <div class="form-group w-33-p pull-left p-r-10">
                                   <label for="username">First Name <span style="color: red;">*</span></label>
                                   <input type="text" class="form-control" name="firstName" required>
                               </div>
-                              </div>
 
-                              <div class="p-l-10 w-50-p pull-left">
-                              <div class="form-group">
+
+                              <div class="form-group w-33-p pull-left">
                                   <label for="username">Last Name <span style="color: red;">*</span></label>
                                   <input type="text" class="form-control" name="lastName" required>
+                              </div>
+
+
+                            <div class="form-group w-33-p pull-right">
+                                  <label for="username">Birthdate <span style="color: red;">*</span></label>
+                                  <input type="text" class="form-control" name="birthdate" required>
                               </div>
                               </div>
 
@@ -94,7 +99,7 @@ $ptList = position_type()->all();
                           <div class="form-group">
                               <label for="username">Speedtest</label>
                               <input type="text" class="form-control" name="speedtest">
-                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.bandwidth.net/" target="blank_">www.bandwidth.net</a></small></span>
+                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.bandwidthplace.com/" target="blank_">www.bandwidthplace.com</a></small></span>
                           </div>
 
                           <div class="form-group">
@@ -106,15 +111,19 @@ $ptList = position_type()->all();
                                               data-parsley-validation-threshold="10"></textarea>
                           </div>
 
+                          <div class="p-r-10 w-50-p pull-left">
                           <div class="form-group">
                             <label>Attach Computer Specification</label>
                             <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
+                          </div>
 
+                          <div class="p-l-10 w-50-p pull-left">
                           <div class="form-group">
                             <label>Attach Other Files</label>
                             <input type="file" name="upload_certs[]" id="filer_input2"
                                                        multiple="multiple" class="form-control">
+                          </div>
                           </div>
 
 
@@ -133,7 +142,6 @@ $ptList = position_type()->all();
                      </div>
 
                     </div>
-                    <br><br><br><br>
                   </div>
                   <div class="text-center m-t-30">
                       <button type="submit" class="btn btn-primary stepy-finish"> SUBMIT RESUME </button>

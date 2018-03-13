@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-12 17:56:54
+# Date: 2018-03-13 15:39:08
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -62,12 +62,13 @@ CREATE TABLE `company` (
   `jobFunctionId` varchar(11) DEFAULT NULL,
   `isApproved` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "company"
 #
 
+INSERT INTO `company` VALUES (6,'C1520851525','Ceres Transport','12345678901','We are a domestic transport company','torredale1014@gmail.com','Dale Torre','(02) 3456-7890','(+61) 331-123-141','Billboard, Billboard','Domestic Transport','1','1');
 
 #
 # Structure for table "downloads"
@@ -107,12 +108,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
+INSERT INTO `dtr` VALUES (74,6,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,6,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4');
 
 #
 # Structure for table "employee"
@@ -125,12 +127,13 @@ CREATE TABLE `employee` (
   `username` varchar(12) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (3,5,'E1520853098','2018-03-12 19:11:37');
 
 #
 # Structure for table "faq"
@@ -143,7 +146,7 @@ CREATE TABLE `faq` (
   `answer` text,
   `level` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "faq"
@@ -184,7 +187,7 @@ CREATE TABLE `inquiries` (
   `zipCode` varchar(4) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "inquiries"
@@ -203,12 +206,13 @@ CREATE TABLE `interview_date` (
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (5,'10','2018-03-14','13:00:00');
 
 #
 # Structure for table "job"
@@ -234,12 +238,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:approved, -1:denied',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (5,'1520851350',1,2,'Bus Driver','Ceres Transport','12345678901','torredale1014@gmail.com','Manager','(+61) 234-567-890','6100','Billboard, Billboard','0-1 Year','we are looking for a bus driver',NULL,'1','Dale Torre');
 
 #
 # Structure for table "job_function"
@@ -248,7 +253,11 @@ CREATE TABLE `job` (
 DROP TABLE IF EXISTS `job_function`;
 CREATE TABLE `job_function` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(10) DEFAULT NULL,
   `option` varchar(255) DEFAULT NULL,
+  `title` text,
+  `header` text,
+  `description` text,
   `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
@@ -257,7 +266,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'Transportation','0'),(2,'Procurement','0'),(3,'Supply Planning','0'),(4,'Logistics','0'),(5,'Training Certification','0'),(6,'Demand Planning','0'),(7,'Order Fulfilment','0'),(8,'Manufacturing','0'),(9,'Warehousing','0');
+INSERT INTO `job_function` VALUES (1,'tran','Simplify your search for top demand planning talent',NULL,'Simplify your search for top transportation talent','Enter description here...\n','0'),(2,'pro','Procurement',NULL,'Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\n','0'),(3,'sup','Supply Planning',NULL,'Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\n','0'),(4,'log','Logistics',NULL,'Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification',NULL,'Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning',NULL,'Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment',NULL,'Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing',NULL,'Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing',NULL,'Simplify your search for top warehousing talent','Enter description here...\n','0');
 
 #
 # Structure for table "position_type"
@@ -288,7 +297,7 @@ CREATE TABLE `projects` (
   `uploadedImage` varchar(50) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "projects"
@@ -307,6 +316,7 @@ CREATE TABLE `resume` (
   `refNum` varchar(25) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
+  `birthdate` varchar(10) DEFAULT NULL,
   `abn` varchar(11) DEFAULT NULL,
   `taxNumber` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
@@ -326,12 +336,13 @@ CREATE TABLE `resume` (
   `isHired` varchar(2) DEFAULT '0' COMMENT '0:no, 1:yes',
   `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
+INSERT INTO `resume` VALUES (10,5,1,'1520851638','Kevin','Sumalde',NULL,'09876543210','12344421','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','hahahahah bakit nga ba mahal kita','1520851638.pdf','www.speedtest.com/123213213','1520851638.pdf','0',NULL,'1','1','0'),(11,0,2,'1520926692','Dale','Torre','10-14-1993','12313213232','123123213','a@a.com','(+61) 213-213-213','heheheheh','heheheheh','heheheheh','heheheheh','6100','hehehehehhehehehehhehehehehheheheheh','1520926692.txt','heheheheh','1520926692.txt','0',NULL,'0','0','0');
 
 #
 # Structure for table "timesheet"
@@ -346,12 +357,13 @@ CREATE TABLE `timesheet` (
   `status` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:verified, 2:dispute, 3:approved',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
 #
 
+INSERT INTO `timesheet` VALUES (6,5,'E1520853098','Timesheet as of 2018-03-12 12:31:48','3','2018-03-12 19:31:48');
 
 #
 # Structure for table "timesheet_dispute"
@@ -363,7 +375,7 @@ CREATE TABLE `timesheet_dispute` (
   `timesheetId` int(11) DEFAULT NULL,
   `reason` text,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet_dispute"
@@ -383,9 +395,10 @@ CREATE TABLE `user` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
+INSERT INTO `user` VALUES (6,'C1520851525','12345','Dale Torre','Ceres Transport','company'),(7,'E1520853098','12345','Kevin','Sumalde','employee');

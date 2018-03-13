@@ -122,6 +122,7 @@ function submitResume(){
 			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
+			$res->obj['birthdate'] = $_POST["birthdate"];
 			$res->obj['abn'] = $_POST["abn"];
 			$res->obj['taxNumber'] = $_POST["taxNumber"];
 			$res->obj['email'] = $_POST["email"];
@@ -172,6 +173,7 @@ function submitApplication()
 			$res->obj['refNum'] = round(microtime(true));
 			$res->obj['firstName'] = $_POST["firstName"];
 			$res->obj['lastName']= $_POST["lastName"];
+			$res->obj['birthdate'] = $_POST["birthdate"];
 			$res->obj['abn'] = $_POST["abn"];
 			$res->obj['taxNumber'] = $_POST["taxNumber"];
 			$res->obj['email'] = $_POST["email"];
