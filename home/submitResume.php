@@ -2,13 +2,15 @@
 $jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
 ?>
+<br>
 <div class="row">
     <div class="col-md-12">
       <h2 class="text-center m-t-30 m-b-30">Submit Resume</h2>
+      <br>
       <div class="jumbotron center-page jumbotron-w container" style="width: 84.5%;">
             <form id="default-wizard" action="process.php?action=submitResume" method="POST" enctype="multipart/form-data" data-parsley-validate="">
                     <div class="row m-t-20">
-                        <div class="col-sm-7 center-page container" style="width: 84.5%;">
+                        <div class="col-sm-7 center-page container" style="width: 60%;">
 
                               <div class="form-group">
                                   <label for="firstname">Job Function <span style="color: red;">*</span></label>
@@ -148,6 +150,7 @@ $ptList = position_type()->all();
                   </div>
             </form>
           </div>
+          <br>
     </div>
 </div>
 
