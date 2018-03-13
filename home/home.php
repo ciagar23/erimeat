@@ -16,8 +16,8 @@
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
                       <div class="row m-b-20 m-t-50">
-                      <button id="myBtn1" class="btn btn-success" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn btn-danger" style="width:530px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
                     </div>
 
                     <div class="">
@@ -28,7 +28,7 @@
                     <select class="form-control" style="height: 67px;width:200px;">
                         <option>Select City</option>
                     </select>
-                    <button type="button" class="btn waves-effect waves-light btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="button" class="btn  btn-info"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                     <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
                      <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
-                       <button type="button" class="btn waves-effect waves-light btn-danger"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                       <button type="button" class="btn btn-info"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
                   </form>
                     </div></div>
