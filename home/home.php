@@ -7,7 +7,7 @@
 
     <div>
       <img src="../include/assets/images/worldMap.png"  style="width: 100%;">
-    </div><
+    </div>
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">

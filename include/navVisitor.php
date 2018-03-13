@@ -8,9 +8,9 @@
       <ul class="nav navbar-nav navbar-right nav-menu-right">
         <li> <a class="m-l-5 m-r-15" href="../home/?view=projects">Supply Chain Projects</a></li>
         <li> <a class="m-l-5 m-r-15" href="../home/?view=logins">Timesheets</a></li>
-        <li><a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a></li>
-        <li> <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a></li>
         <li> <a class="m-l-5 m-r-15" href="../home/?view=downloads">Downloads</a></li>
+        <li> <a class="m-l-5 m-r-15" href="../home/?view=hiringForm">Request Staff</a></li>
+        <li><a class="m-l-5 m-r-15" href="../home/?view=contactUs">Contact Us</a></li>
       </ul>
     </div>
   </div>
