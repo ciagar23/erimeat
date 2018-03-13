@@ -10,8 +10,8 @@
 <link rel="shortcut icon" href="../include/assets/images/favicon.ico">
 
 
+<link rel="stylesheet" href="../include/plugins/morris/morris.css">
 
-<!--calendar css-->
    <!-- DataTables -->
 <link href="../include/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../include/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -22,6 +22,7 @@
 <link href="../include/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="../include/plugins/datatables/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../include/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+
 
 
 

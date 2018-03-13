@@ -11,43 +11,47 @@ $downloadList = downloads()->all();
       <div class="clearfix"></div>
       <!--Start 2 panels -->
       <div class="container-80 center-page">
-      <div class="row">
-        <div class="col-lg-1">&nbsp;</div>
-                <div class="col-lg-1">&nbsp;</div>
-         <?php foreach($downloadList as $row) {
+        <div class="row">
+        <table class="table table-striped table-bordered table-colored table-primary">
+        <thead>
+          <th>File Name</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          
+    
+                <?php foreach($downloadList as $row) {
 
             if ($row){
                $files = array($row->uploadedFile);
               ?>
-        <div class="col-12 col-lg-4 p-30">
-          <h4 class="text-center m-t-30 m-b-20">Download <?=$row->fileName;?></h4>
+                 <tr>
+                <td><?=$row->fileName;?></td>
 
-          <div class="text-center m-b-10">
          <?php
                  foreach($files as $file){
 
       ?>
 
+          <td>
           <?php
-echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-small btn-primary container-100"><span class="fa fa-download"></span> Download</a>';
+echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-sm btn-warning container-100"><span class="fa fa-download"></span> Download</a>';
 ?>
-
+</td>
+ </tr>
            <?php
 
     }
     ?>
-          </div>
-
-        </div>
-        <?php
+      <?php
               }
             }
             ?>
-        <div class="col-lg-2">&nbsp;</div>
+         
+        </tbody>
+          
+        </table>
 
+         </div>
       </div>
-        <div class="col-lg-1">&nbsp;</div>
-      </div>
-    </div>
-
   </div> <!-- End Form Container -->
