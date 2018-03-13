@@ -53,9 +53,12 @@ $jobFunc = job_function()->filter("code!='null'");
   </div>
 </div>
 
-
 <!-- sample modal content -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <?php
+    $Id = getId;
+    $ser = job_function()->get("Id='$Id'");
+  ?>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -71,7 +74,7 @@ $jobFunc = job_function()->filter("code!='null'");
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Services</label>
-                <input type="text" class="form-control" name="option" placeholder="" id="getId">
+                <input type="text" class="form-control" name="option" placeholder="" value="<?=$ser->option;?>">
               </div>
 
               <div class="form-group">

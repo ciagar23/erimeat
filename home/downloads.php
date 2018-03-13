@@ -18,8 +18,8 @@ $downloadList = downloads()->all();
           <th>Action</th>
         </thead>
         <tbody>
-          
-    
+
+
                 <?php foreach($downloadList as $row) {
 
             if ($row){
@@ -47,11 +47,12 @@ echo '<a href="forceDownloadFunc.php?file=' . urlencode($file) . '" class="btn-s
               }
             }
             ?>
-         
+
         </tbody>
-          
+
         </table>
 
          </div>
       </div>
   </div> <!-- End Form Container -->
+  <br>

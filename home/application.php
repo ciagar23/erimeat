@@ -143,6 +143,7 @@ $ptList = position_type()->all();
                   </div>
             </form>
           </div>
+          <br>
     </div>
 </div>
 
