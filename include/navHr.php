@@ -7,7 +7,7 @@
 
     <li>
         <a href="../hr/?view=talentRequest">
-            <i class="mdi mdi-account-star"></i><span> Talent Request </span>
+            <i class="mdi mdi-comment-account"></i><span> Talent Request </span>
         </a>
     </li>
 
@@ -19,13 +19,13 @@
 
     <li>
         <a href="../hr/?view=applicants">
-            <i class="mdi mdi-account-star"></i><span> Applicants </span>
+            <i class="mdi mdi-comment-account"></i><span> Applicants </span>
         </a>
     </li>
 
     <li>
         <a href="../hr/?view=candidates">
-            <i class="mdi mdi-account-star"></i><span> Candidates </span>
+            <i class="mdi mdi-comment-account"></i><span> Candidates </span>
         </a>
     </li>
 
