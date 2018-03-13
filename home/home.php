@@ -54,158 +54,131 @@
   <div>
 <div class="container">
 
+<div class="container-fluid m-t-30 m-b-30">
+  <div class="container-80 text-center center-page">
+    <h2>
+      Our Services Extend to All Areas<br>
+      of Supply Chain Management
+    </h2>
+    <br>
+  </div>
 
-                         <h4 class="text-uppercase font-18 text-center">Our Supply Chain Services</h4>
+  <div class="p-t-5 container-80 center-page">
+      <div class="row">
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=dem"><img src="../include/assets/images/demandPlanning.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=dem'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Demand Planning</button>
+              </div>
+          </div>
 
-                        <div class="row">
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=sup"><img src="../include/assets/images/supplyPlanning.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=sup'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Supply Planning</button>
+                </div>
+          </div>
 
-                               <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                       <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=dem"><img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;"></a>
-                                          <h4 class="font-18">Demand Planning</h4>
-                                         </center>
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=ord"><img src="../include/assets/images/orderFulfilment.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=ord'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Order Fulfillment</button>
+                </div>
+          </div>
+      </div>
+      <!-- end row -->
 
+      <div class="row">
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=log"><img src="../include/assets/images/logistics.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=log'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Logistics</button>
+              </div>
+          </div>
 
-                                          </div>
-                                        </div>
-                                      </div>
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=man"><img src="../include/assets/images/manufacturing.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=man'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Manufacturing</button>
+                </div>
+          </div>
 
-                            <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=sup"><img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;"></a>
-                                          <h4 class="font-18">Supply Planning</h4>
-                                         </center>
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=tran"><img src="../include/assets/images/transportation.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=tran'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
+                </div>
+          </div>
+      </div>
+      <!-- end row -->
+      <div class="row">
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=pro"><img src="../include/assets/images/procurement.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=pro'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Procurement</button>
+              </div>
+          </div>
 
-                                          </div>
-                                        </div>
-                                      </div>
-                             <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                         <a href="../home?view=servicesDetail&code=ord"><img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;"></a>
-                                         <h4 class="font-18">Order Fulfillment</h4>
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/certificate.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=tra'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Training Certification</button>
+              </div>
+          </div>
 
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-                        </div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-                             <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=log"><img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;"></a>
-                                            <h4 class="font-18">Logistics</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-
-                          <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=man"><img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;"></a>
-                                            <h4 class="font-18">Manufacturing</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-
-                          <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=tran"><img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;"></a>
-                                           <h4 class="font-18">Transportation</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-                        </div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-                           <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=pro"><img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;"></a>
-                                           <h4 class="font-18">Procurement</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-                          <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=tra"><img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;"></a>
-                                          <h4 class="font-18">Training Certification</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-
-                        <div class="col-sm-4">
-                                  <div class="card-box" id="box-design">
-                                      <div class="cours2" style="overflow:hidden;">
-                                          <center>
-                                            <a href="../home?view=servicesDetail&code=war"><img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;"></a>
-                                          <h4 class="font-18">Warehousing</h4>
-                                         </center>
-
-
-                                          </div>
-                                        </div>
-                                      </div>
-                        </div>
-                        <!-- end row -->
-
-
-
+          <div class="col-sm-4">
+              <div class="about-features-box text-center">
+                  <div>
+                      <a href="../home?view=servicesDetail&code=war"><img src="../include/assets/images/warehousing.png"></a>
+                  </div>
+                  <button  onclick="location.href='../home?view=servicesDetail&code=war'"  style="width: 50%;"
+                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Warehousing</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
                     </div> <!-- container -->
 <hr>
     <!-- Basic Form Wizard -->
     <div class="container-80 center-page">
-                        <div class="row">
-                            <div class="col-md-12">
-
+                      
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
                                         <li class="active">
                                             <a href="#home1" data-toggle="tab" aria-expanded="false">
                                                 <span class="visible-xs"><i class="fa fa-home"></i></span>
-                                                <span class="hidden-xs">Four Simple Steps to Hire</span>
+                                                <h3 class="hidden-xs">Four Simple Steps to Hire</h3>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a href="#profile1" data-toggle="tab" aria-expanded="true">
                                                 <span class="visible-xs"><i class="fa fa-user"></i></span>
-                                                <span class="hidden-xs">How We Help You Find a Job</span>
+                                                <h3 class="hidden-xs">How We Help You Find a Job</h3>
                                             </a>
                                         </li>
 
@@ -278,7 +251,7 @@
                                         <center>
                                             <a href="../home/?view=hiringForm"  class="btn btn-primary">REQUEST TALENT</a>
                                         </center>
-
+                                           <button style="display: none;" type="submit" class="btn btn-success btn-sm stepy-finish">Submit</button>
                                     </form>
 
                                         </div>
@@ -358,8 +331,7 @@
 
                                     </div>
 
-                           </div>
-                        </div>
+                         
                       </div>
                         <!-- End row -->
 
