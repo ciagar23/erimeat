@@ -64,7 +64,7 @@
                                   <div class="card-box" id="box-design">
                                        <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=demandPlanning"><img class="hover" src="../include/assets/images/demandPlanning.png" style="border:1px solid transparent;transition:1s;"></a>
                                           <h4 class="font-18">Demand Planning</h4>
                                          </center>
 
@@ -77,7 +77,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=supplyPlanning"><img class="hover" src="../include/assets/images/supplyPlanning.png" style="border:1px solid transparent;transition:1s;"></a>
                                           <h4 class="font-18">Supply Planning</h4>
                                          </center>
 
@@ -88,8 +88,8 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;">
-                                                 <h4 class="font-18">Order Fulfilment</h4>
+                                         <a href="../home?view=orderFulfillment"><img class="hover" src="../include/assets/images/orderFulfilment.png" style="border:1px solid transparent;transition:1s;"></a>
+                                         <h4 class="font-18">Order Fulfillment</h4>
 
                                          </center>
 
@@ -106,7 +106,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=logistics"><img class="hover" src="../include/assets/images/logistics.png" style="border:1px solid transparent;transition:1s;"></a>
                                             <h4 class="font-18">Logistics</h4>
                                          </center>
 
@@ -119,7 +119,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=manufacturing"><img class="hover" src="../include/assets/images/manufacturing.png" style="border:1px solid transparent;transition:1s;"></a>
                                             <h4 class="font-18">Manufacturing</h4>
                                          </center>
 
@@ -132,7 +132,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=transportation"><img class="hover" src="../include/assets/images/transportation.png" style="border:1px solid transparent;transition:1s;"></a>
                                            <h4 class="font-18">Transportation</h4>
                                          </center>
 
@@ -149,7 +149,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=procurement"><img class="hover" src="../include/assets/images/procurement.png" style="border:1px solid transparent;transition:1s;"></a>
                                            <h4 class="font-18">Procurement</h4>
                                          </center>
 
@@ -161,7 +161,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=trainingCertification"><img class="hover" src="../include/assets/images/certificate.png" style="border:1px solid transparent;transition:1s;"></a>
                                           <h4 class="font-18">Training Certification</h4>
                                          </center>
 
@@ -174,7 +174,7 @@
                                   <div class="card-box" id="box-design">
                                       <div class="cours2" style="overflow:hidden;">
                                           <center>
-                                         <img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;">
+                                            <a href="../home?view=warehousing"><img class="hover" src="../include/assets/images/warehousing.png" style="border:1px solid transparent;transition:1s;"></a>
                                           <h4 class="font-18">Warehousing</h4>
                                          </center>
 
@@ -368,45 +368,41 @@
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
         <div class="row m-t-30">
+          <h2 class="text-center text-primary m-b-30">Business Partners</h2>
+          <div class="col-md-6 col-lg-3">
+            <div class="hvrbox">
+            	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">
+            	<div class="hvrbox-layer_top">
+            		<div class="hvrbox-text">MANILA</div>
+            	</div>
+            </div>
+          </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Manila</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img1.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img2.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">DELHI</div>
+              	</div>
+              </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Delhi</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img2.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img3.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">BANGALORE</div>
+              	</div>
+              </div>
             </div>
 
             <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Bangalore</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img3.png">
-                  </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-               <div class="card-box">
-                  <div class="company-detail">
-                    <h4 class="m-b-5">Sydney HQ</h4>
-                    <hr>
-                    <img src="../include/assets/images/home-img4.png">
-                  </div>
-                </div>
+              <div class="hvrbox">
+              	<img src="../include/assets/images/home-img4.png" class="hvrbox-layer_bottom">
+              	<div class="hvrbox-layer_top">
+              		<div class="hvrbox-text">SYDNEY HQ</div>
+              	</div>
+              </div>
             </div>
         </div>
       </div>
