@@ -16,6 +16,7 @@ $resumeList = resume()->all();
               <th>Candidate Reference #</th>
               <th>Candidate Name</th>
               <th>Candidate Email</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -27,6 +28,17 @@ $resumeList = resume()->all();
               <td><?=$row->refNum;?></td>
               <td><?=$row->firstName;?> <?=$row->lastName;?></td>
               <td><?=$row->email;?></td>
+              <td>
+                <?php if($row->isHired==0){ ?>
+                <div class=" btn btn-warning btn-xs tooltips">
+                  Pending
+                </div>
+                <?php }else{ ?>
+                <div class=" btn btn-success btn-xs tooltips">
+                  Hired
+                </div>
+                <?php } ?>
+              </td>
               <td>
                 <a href="?view=candidatesDetail&Id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
               </td>

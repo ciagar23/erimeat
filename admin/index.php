@@ -37,6 +37,41 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'applicants' :
+		$content 	= 'applicants.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'applicantDetail' :
+		$content 	= 'applicantDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'scheduleInterview' :
+		$content 	= 'scheduleInterview.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timekeeping' :
+		$content 	= 'timekeeping.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timesheets' :
+		$content 	= 'timesheets.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'timesheetDetail' :
+		$content 	= 'timesheetDetail.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'hiringApplicant' :
+		$content 	= 'hiringApplicant.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	case 'jobList' :
 		$content 	= 'jobList.php';
 		$template	= '../include/dashboard.php';
@@ -91,7 +126,7 @@ switch ($view) {
 		$content 	= 'downloads.php';
 		$template	= '../include/dashboard.php';
 		break;
-		
+
 	case 'reports' :
 		$content 	= 'reports.php';
 		$template	= '../include/dashboard.php';
