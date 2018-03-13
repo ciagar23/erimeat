@@ -53,29 +53,28 @@ $jfList = job_function()->all();
                               </div>
 
                             <div class="form-group">
-                                <label for="username">Address <span style="color: red;">*</span></label>
+                                <label for="username">Business Address <span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" name="address" required>
                             </div>
 
                             <div class="p-r-10 w-50-p pull-left">
                             <div class="form-group">
-                              <label for="username">Phone Number <span style="color: red;">*</span></label>
-                              <input type="text" class="form-control" name="phoneNumber"  data-mask="(02) 9999-9999" required>
+                              <label for="username">Business Phone Registration <span style="color: red;">*</span></label>
+                              <input type="text" class="form-control" name="phoneNumber"  data-mask="(+61) 999-999-999" required>
                             </div>
                             </div>
 
                             <div class="p-l-10 w-50-p pull-left">
                             <div class="form-group">
-                              <label for="username">Mobile Number <span style="color: red;">*</span></label>
+                              <label for="username">Business Mobile Number <span style="color: red;">*</span></label>
                               <input type="text" class="form-control" name="mobileNumber" placeholder=""  data-mask="(+61) 999-999-999" required="">
                             </div>
                             </div>
 
                             <div class="form-group">
-                              <label for="username">Description <span style="color: red;">*</span></label>
+                              <label for="username">Please provide a brief description of your company <span style="color: red;">*</span></label>
                               <textarea id="message" class="form-control" name="description"
                                                 data-parsley-trigger="keyup" data-parsley-minlength="20"
-                                                data-parsley-maxlength="100"
                                                 data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                                 data-parsley-validation-threshold="10"></textarea>
                             </div>

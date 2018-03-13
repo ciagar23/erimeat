@@ -36,8 +36,8 @@ $ptList = position_type()->all();
 
                               <div class="p-r-10 w-50-p pull-left">
                               <div class="form-group">
-                                  <label for="username">Candidate ABN <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="abn" data-mask="99999999999" required>
+                                  <label for="username">Contractor ABN</label>
+                                  <input type="text" class="form-control" name="abn" data-mask="99999999999">
                               </div>
                               </div>
 
@@ -94,7 +94,7 @@ $ptList = position_type()->all();
                           <div class="form-group">
                               <label for="username">Speedtest</label>
                               <input type="text" class="form-control" name="speedtest">
-                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.speedtest.net/" target="blank_">www.speedtest.net</a></small></span>
+                              <span class="help-block"><small>To access speedtest. Click the link <a href="http://www.bandwidth.net/" target="blank_">www.bandwidth.net</a></small></span>
                           </div>
 
                           <div class="form-group">
@@ -107,12 +107,12 @@ $ptList = position_type()->all();
                           </div>
 
                           <div class="form-group">
-                            <label>Attach Specs</label>
+                            <label>Attach Computer Specification</label>
                             <input type="file" class="filestyle form-control" name="upload_specs"/>
                           </div>
 
                           <div class="form-group">
-                            <label>Certificates</label>
+                            <label>Attach Other Files</label>
                             <input type="file" name="upload_certs[]" id="filer_input2"
                                                        multiple="multiple" class="form-control">
                           </div>
