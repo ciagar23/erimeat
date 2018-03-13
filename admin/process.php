@@ -150,7 +150,7 @@ function addJobFunction()
 
 function updateServices()
 {
-	$Id = 
+	$Id = $_POST['Id'];
 	$jf = job_function();
 	$jf->obj['option'] = $_POST['option'];
 	$jf->obj['title'] = $_POST['title'];

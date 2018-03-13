@@ -71,20 +71,21 @@ function getdata(id){
         keyboard: true,
         backdrop: 'static'
       });
-      
+
       $.ajax({
         type: "POST",
         data: datastring,
         url: url,
         dataType: 'json',
         success:function (data){
-        
+
+          $('#getId').val(data.Id);
           $('#getOption').val(data.option);
           $('#getTitle').val(data.title);
           $('#getHeader').html(data.header);
           $('#getDescription').html(data.description);
 
-       
+
         }
       });
       console.log(datastring+url);

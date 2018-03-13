@@ -40,8 +40,8 @@ $jobFunc = job_function()->filter("code!='null'");
                 <td><?=$row->header;?></td>
                 <td><?=$row->description;?></td>
                 <td>
-                  
-                  <?php echo  '<a href="#" onclick="getdata('.$id.')" class=" btn btn-info btn-xs tooltips" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-eye"></span> View</a>';
+
+                  <?php echo  '<a href="#" onclick="getdata('.$id.')" class=" btn btn-info btn-xs" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-pencil"></span> Edit</a>';
       ?>
                 </td>
               </tr>
@@ -71,6 +71,7 @@ $jobFunc = job_function()->filter("code!='null'");
             <?=$error?>
           </p>
           <div class="row m-t-20">
+            <input type="hidden" name="Id" id="getId">
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Services</label>

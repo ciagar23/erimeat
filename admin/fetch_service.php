@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("../config/database.php");
 include_once("../config/Models.php");
 $action = $_POST['action'];
@@ -8,7 +8,7 @@ switch($action){
 	$jobFunc = job_function()->filter("Id=".$id);
 foreach($jobFunc as $row) {
 ?>
-<?php $data = array('option'=>$row->option,'title'=>$row->title,'header'=>$row->header,'description'=>$row->description);?>
+<?php $data = array('Id'=>$row->Id,'option'=>$row->option,'title'=>$row->title,'header'=>$row->header,'description'=>$row->description);?>
 <?php
  }
     echo json_encode($data);
