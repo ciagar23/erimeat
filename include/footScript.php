@@ -126,6 +126,32 @@ function getFaq(id){
     });
     console.log(datastring+url);
   }
+
+function getProjects(id){
+    var datastring = 'action=getProjects&'+'id='+id;
+    var url = 'fetch_projects.php';
+    $('#myModal1').modal({
+      keyboard: true,
+      backdrop: 'static'
+    });
+
+    $.ajax({
+      type: "POST",
+      data: datastring,
+      url: url,
+      dataType: 'json',
+      success:function (data){
+
+        $('#getId').val(data.Id);
+        $('#getTitle').val(data.title);
+        $('#getContent').html(data.content);
+        $('#getImage').val(data.uploadedImage);
+
+
+      }
+    });
+    console.log(datastring+url);
+  }
 </script>
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
