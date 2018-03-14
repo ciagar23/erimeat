@@ -19,7 +19,7 @@ function getPositionName($Id){
     <div class="form-group">
       <input type="hidden" name="view" value="jobList">
       <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-      <select name="city" class="form-control" style="height: 67px; width:200px;">
+      <select name="c" class="form-control" style="height: 67px; width:200px;">
         <option value="">Select City</option>
         <?php foreach($cities as $row){ ?>
           <option><?=$row->city;?></option>

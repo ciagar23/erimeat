@@ -5,6 +5,11 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $projectsList = projects()->all();
 
+function formatDate($val){
+  $date = date_create($val);
+  return date_format($date, "F d, Y g:i A");
+}
+
 ?>
   <div class="row">
     <div class="col-sm-12">
@@ -41,13 +46,16 @@ $projectsList = projects()->all();
            <?php foreach($projectsList as $row) {
 
             if ($row->isDeleted==0){
+              $id = $row->Id;
               ?>
               <tr>
                 <td><?=$row->title;?></td>
                 <td><?=$row->content;?></td>
-                <td><?=$row->createDate;?></td>
+                <td><?=formatDate($row->createDate);?></td>
                 <td>
-                  <a href="edit_ay.php?ay_Id='.$id.'"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
+                  <?php
+                    echo  '<a href="#" onclick="getProjects('.$id.')" class=" btn btn-info btn-xs" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-pencil"></span> Edit</a>';
+                  ?>
                 </td>
                 <td>
                   <a href="process.php?action=removeProjects&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
@@ -103,4 +111,50 @@ $projectsList = projects()->all();
         </form>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+
+  <div id="myModal1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="myLargeModalLabel">Update Projects</h4>
+              </div>
+              <div class="modal-body">
+                <form id="default-wizard" action="process.php?action=updateProjects" method="POST">
+                   <p class="m-b-0">
+                      <?=$error?>
+                  </p>
+                  <input type="hidden" name="Id" id="getId">
+                  <div class="row m-t-20">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="title" id="getTitle">
+                      </div>
+
+                      <div class="form-group">
+                      <label>Content</label>
+                      <textarea  class="form-control" name="content" id="getContent"
+                                        data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                        data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                        data-parsley-validation-threshold="10"></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <label>Upload Image</label>
+                        
+                        <input type="file" class="form-control" name="upload_file" id="getImage">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect btn-sm" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary stepy-finish btn-sm">Update Projects</button>
+                  </div>
+                </form>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->

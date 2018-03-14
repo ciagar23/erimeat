@@ -39,6 +39,10 @@ switch ($action) {
 		updateFaq();
 		break;
 
+	case 'updateProjects' :
+		updateProjects();
+		break;
+
 	case 'addFileFunction' :
 		addFileFunction();
 		break;
@@ -187,6 +191,24 @@ function updateFaq()
 	$faq->update("Id='$Id'");
 
 	header('Location: ../admin/?view=faq&message=You have succesfully updated a FAQ.');
+}
+
+function updateProjects()
+{
+	$upload = uploadFile($_FILES['upload_file']);
+	if ($upload)
+	{
+		$Id = $_POST['Id'];
+		$projects = projects();
+		$projects->obj['title'] = $_POST['title'];
+		$projects->obj['content'] = $_POST['content'];
+		$projects->obj['uploadedImage'] = $upload;
+		$projects->update("Id='$Id'");
+
+		header('Location: ../admin/?view=projects&message=You have succesfully updated a Projects.');
+	}else{
+		header('Location: ../admin/?view=projects&error=File not uploaded.');
+	}
 }
 
 function addFileFunction(){
