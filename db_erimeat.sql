@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-14 15:56:17
+# Date: 2018-03-14 16:03:28
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -79,6 +79,7 @@ CREATE TABLE `downloads` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `fileName` varchar(255) DEFAULT NULL,
   `uploadedFile` varchar(255) DEFAULT NULL,
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -86,7 +87,7 @@ CREATE TABLE `downloads` (
 # Data for table "downloads"
 #
 
-INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf'),(2,'Client Contract','1520552679.pdf');
+INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf','0'),(2,'Client Contract','1520552679.pdf','1');
 
 #
 # Structure for table "dtr"

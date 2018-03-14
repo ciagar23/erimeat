@@ -51,6 +51,10 @@ switch ($action) {
 		removeProjects();
 		break;
 
+	case 'removeDownloads' :
+		removeDownloads();
+		break;
+
 	case 'setInterViewDate' :
 		setInterViewDate();
 		break;
@@ -435,7 +439,16 @@ function removeProjects()
 	$projects->update("Id='$Id'");
 
 	header('Location: ../admin/?view=projects&message=Succesfully Deleted');
-}ader('Location: ../admin/?view=projects&message=Succesfully Deleted');
+}
+
+function removeDownloads()
+{
+	$Id = $_GET['Id'];
+	$downloads = downloads();
+	$downloads->obj['isDeleted'] = "1";
+	$downloads->update("Id='$Id'");
+
+	header('Location: ../admin/?view=downloads&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

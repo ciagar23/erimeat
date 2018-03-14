@@ -22,7 +22,7 @@ $downloadList = downloads()->all();
 
                 <?php foreach($downloadList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
                $files = array($row->uploadedFile);
               ?>
                  <tr>
