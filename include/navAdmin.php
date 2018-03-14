@@ -31,13 +31,13 @@
 
     <li>
         <a href="?view=timekeeping">
-            <i class="mdi mdi-account-star"></i><span> Timekeeping </span>
+            <i class="mdi mdi-clock"></i><span> Timekeeping </span>
         </a>
     </li>
 
     <li>
         <a href="?view=accounts">
-            <i class="mdi mdi-account-switch"></i><span> Accounts </span>
+            <i class="mdi mdi-account-plus"></i><span> Accounts </span>
         </a>
     </li>
 
@@ -49,13 +49,13 @@
 
     <li>
         <a href="?view=jobList">
-            <i class="mdi mdi-city"></i><span> Jobs </span>
+            <i class="mdi mdi-tie"></i><span> Jobs </span>
         </a>
     </li>
 
     <li>
         <a href="?view=candidates">
-            <i class="mdi mdi-account"></i><span> Candidates </span>
+            <i class="mdi mdi-account-multiple"></i><span> Candidates </span>
         </a>
     </li>
 
@@ -79,19 +79,19 @@
 
     <li>
         <a href="?view=faq">
-            <i class="mdi mdi-account"></i><span> FAQ </span>
+            <i class="mdi mdi-comment-question-outline"></i><span> FAQ </span>
         </a>
     </li>
 
     <li>
         <a href="?view=downloads">
-            <i class="mdi mdi-account"></i><span> Download Files </span>
+            <i class="mdi mdi-download"></i><span> Download Files </span>
         </a>
     </li>
 
     <li>
         <a href="?view=reports">
-            <i class="mdi mdi-account"></i><span> Reports </span>
+            <i class="mdi mdi-file-multiple"></i><span> Reports </span>
         </a>
     </li>
 </ul>

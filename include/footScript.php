@@ -43,6 +43,7 @@ $(document).ready(function() {
     var id = $(e.relatedTarget).data('id'); 
      $('#getId').val(id);
      return (id);
+
   });
 });
 
