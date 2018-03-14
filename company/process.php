@@ -11,6 +11,14 @@ switch ($action) {
 		login();
 		break;
 
+	case 'forgotPassword' :
+		forgotPassword();
+		break;
+
+	case 'checkCode' :
+		checkCode();
+		break;
+
 	case 'logout' :
 		logout();
 		break;
@@ -51,6 +59,39 @@ function login()
 	}
 	else {
 			header('Location: index.php?error=User not found in the Database');
+	}
+}
+
+function forgotPassword()
+{
+	$username = $_POST['username'];
+	$code = round(microtime(true));
+
+	$company = company()->get("username='$username'");
+
+	if ($company){
+		$_SESSION['temp_session'] = $username;
+		$_SESSION['code_session'] = $code;
+		// Send email
+		$content = "We have received your request. Please use this code to reset your password.<br>
+								Code: " . $_SESSION['code_session'] . " <br><br>
+								Teamire";
+		sendEmail($company->email, $content);
+
+		header('Location: ../company/?view=enterCode');
+	}else{
+		header('Location: index.php?error=User not found in the Database');
+	}
+}
+
+function checkCode()
+{
+	$code = $_POST['code'];
+
+	if ($code == $_SESSION['code_session']){
+		header('Location: ../company/?view=changepassword');
+	}else{
+		header('Location: ../company/?view=enterCode&error=Invalid Code');
 	}
 }
 

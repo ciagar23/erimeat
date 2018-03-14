@@ -22,18 +22,18 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
         <script src="../include/assets/js/modernizr.min.js"></script>
 
+
     </head>
 
 
-
-    <body>
+    <body >
     <div id="sticky_header">
-        <a href="../home/index.php"><img src="../include/assets/images/branding.jpg" ></a>
+       <a href="../home/index.php"><img src="../include/assets/images/branding.jpg" ></a>
 
       </div>
         <!-- HOME -->
 
-        <section>
+        <section >
           <div class="p-l-20 m-t-30">
             <a href="../home/index.php"><i class="mdi mdi-home"></i> Go To Homepage</a>
           </div>
@@ -44,16 +44,17 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
                                       <h5 class="text-uppercase text-center text-white">
-                                            Enter your login information to access our Time Reporting and Approval System<br><br>
+                                            Enter your username. We'll email instructions on how to reset your password.<br><br>
                                             <div class="center-page login-label">
-                                            Company Login
+                                            Forgot Password
                                             </div>
                                       </h5>
                                         <p class="m-b-0">
-                                                                                <?=$error?></p>
+                                          <?=$error?>
+                                        </p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=login" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=forgotPassword" method="POST">
 
                                             <div class="form-group m-b-0 row">
                                                 <div class="col-12 m-b-15">
@@ -61,40 +62,25 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
                                             </div>
-
-                                            <div class="form-group row m-b-5">
-                                                <div class="col-12">
-                                                    <label for="password" >Password</label>
-                                                    <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group row m-t-20 clearfix">
-                                              <div class="col-md-8">
-                                                <small><a href="?view=forgotPassword"><u>Forgot Password?</u></a></small>
-                                                <br>
-                                                <small><span>No account yet? </span><a href="../home/?view=clientForm"><b><u>Register here!</u></b></a></small>
-                                              </div>
-                                              <div class="col-md-4 pull-right">
-                                                <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SIGN IN</button>
-                                              </div>
-                                            </div>
+                                             <div class="form-group row m-t-20 clearfix">
+                                               <div class="col-md-4 pull-right">
+                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SUBMIT</button>
+                                               </div>
+                                             </div>
                                         </form>
                                     </div>
                                 </div>
-
-                                         <footer class="footer-default">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-12 text-left">
-                                                    <br>
-                                                    <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
-                                                        2018 © Teamire All Rights Reserved
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </footer>
+                         <footer class="footer-default">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-left">
+                                    <br>
+                                    <a href="">Terms of user</a> | <a href="">Privacy Policy</a> | <a href=""> Customer Service</a> <br>
+                                        2018 © Teamire All Rights Reserved
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
 
                               </div>
 
@@ -113,6 +99,10 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
 
 
+
+
+
+          <!-- END HOME -->
 
 
 
