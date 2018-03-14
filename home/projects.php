@@ -20,9 +20,9 @@
       <img class="img-thumbnail" src=../media/<?=$row->uploadedImage;?>>
     </div>
     <div class="col-lg-9" style="height: 150px;">
-      <div style=" width: 100%; height: 100px; background-color: red;">
-      <p><?=$row->content;?></p>
-    </div>
+      <div class="truncate">
+        <p><?=$row->content;?></p>
+      </div>
     <button onclick="location.href='../home/?view=projectDetail&Id=<?=$row->Id;?>'" style="width: 20%; bottom: 0; position: absolute;"
     class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">READ MORE</button>
     </div>
