@@ -37,7 +37,7 @@ $ptList = position_type()->all();
 
                             <div class="form-group w-33-p pull-right">
                                   <label for="username">Birthdate <span style="color: red;">*</span></label>
-                                  <input type="text" class="form-control" name="birthdate" required>
+                                  <input type="text" class="form-control" data-mask="99-99-9999" name="birthdate" required>
                               </div>
                               </div>
 

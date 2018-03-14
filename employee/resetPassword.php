@@ -44,27 +44,33 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
                                       <h5 class="text-uppercase text-center text-white">
-                                            Enter your username. We'll email instructions on how to reset your password.<br><br>
+                                            Enter your new password<br><br>
                                             <div class="center-page login-label">
-                                            Forgot Password
+                                            Reset Password
                                             </div>
                                       </h5>
                                         <p class="m-b-0">
-                                          <?=$error?>
-                                        </p>
+                                                                                <?=$error?></p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=forgotPassword" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=resetPassword" method="POST">
 
                                             <div class="form-group m-b-0 row">
                                                 <div class="col-12 m-b-15">
-                                                    <label for="emailaddress">Username</label>
-                                                    <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
+                                                    <label for="emailaddress">Password</label>
+                                                    <input class="form-control" type="text" name="password" required="" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-5">
+                                                <div class="col-12">
+                                                    <label for="password" >Confirm Password</label>
+                                                    <input class="form-control" type="text" required="" id="password" name="confirmPassword" placeholder="">
                                                 </div>
                                             </div>
                                              <div class="form-group row m-t-20 clearfix">
                                                <div class="col-md-4 pull-right">
-                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SUBMIT</button>
+                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">RESET PASSWORD</button>
                                                </div>
                                              </div>
                                         </form>
