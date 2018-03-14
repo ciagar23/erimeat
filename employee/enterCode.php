@@ -44,22 +44,19 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
                                       <h5 class="text-uppercase text-center text-white">
-                                            Enter your username. We'll email instructions on how to reset your password.<br><br>
-                                            <div class="center-page login-label">
-                                            Forgot Password
-                                            </div>
+                                            Enter the code that was provided through your email.<br><br>
                                       </h5>
                                         <p class="m-b-0">
                                           <?=$error?>
                                         </p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=forgotPassword" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=checkCode" method="POST">
 
                                             <div class="form-group m-b-0 row">
                                                 <div class="col-12 m-b-15">
-                                                    <label for="emailaddress">Username</label>
-                                                    <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
+                                                    <label for="emailaddress">Code</label>
+                                                    <input class="form-control" type="text" id="emailaddress" name="code" required="" placeholder="">
                                                 </div>
                                             </div>
                                              <div class="form-group row m-t-20 clearfix">

@@ -388,6 +388,9 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
+	$resume->['username'] = $user->obj['username'];
+	$resume->update("Id='$Id'");
+
 	// Send email
 	$content = "Congratulations!<br><br>
 							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
