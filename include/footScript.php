@@ -40,9 +40,9 @@ $(document).ready(function(){
 
 $(document).ready(function() {
   $('#myModal').on('show.bs.modal', function(e) {
-    var id = $(e.relatedTarget).data('id');
-    alert (id);
-    return (id);
+    var id = $(e.relatedTarget).data('id'); 
+     $('#getId').val(id);
+     return (id);
   });
 });
 

@@ -71,7 +71,7 @@ $jobFunc = job_function()->filter("code!='null'");
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Services</label>
-                <input type="text" class="form-control" name="option" placeholder="">
+                <input type="text" class="form-control" name="option" placeholder="" id="getId">
               </div>
 
               <div class="form-group">
