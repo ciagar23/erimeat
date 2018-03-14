@@ -262,4 +262,6 @@ background-color:#fff;
   color:rgb(237,78,110) !important;
   border:1px solid rgb(237,78,110) !important;
 }
+
+
 </style>

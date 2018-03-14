@@ -15,12 +15,17 @@
 <script>
 $(document).ready(function(){
      $("#demo1").show(function(){
-        $("#myBtn1").attr('disabled','disabled').css("cursor", "pointer").fadeTo(500,100);;
+        $("#myBtn1").attr('disabled','disabled').css("cursor", "pointer").fadeTo(500,100).css("background-color","#fff").css("color","#000");
+           $("#myBtn2").css("background-color","#727B80").css("color","#fff");
+
 
     });
     $("#myBtn1").click(function(){
         $("#demo1").show();
          $("#demo").hide();
+          $("#myBtn1").css("background-color","#fff").css("color","#000");
+                  $("#myBtn2").css("background-color","#727B80").css("color","#000");
+
 
     });
     $("#myBtn2").click(function(){
@@ -28,6 +33,8 @@ $(document).ready(function(){
          $("#demo").show();
           $("#myDIV").hide();
                   $("#myBtn1").removeAttr('disabled');
+                     $("#myBtn1").css("background-color","#727B80").css("color","#fff");
+                  $("#myBtn2").css("background-color","#fff").css("color","#000");
 
     });
 });
