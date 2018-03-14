@@ -144,11 +144,11 @@ function newCheckIn()
 
 	$dtr = dtr();
 	$dtr->obj['owner'] = $_SESSION['employee_session'];
-	$dtr->obj['createDate'] = "NOW()";
+	$dtr->obj['createDate'] = date("Y-m-d");
 	$dtr->obj['checkIn'] = "NOW()";
 	$dtr->create();
 
-	header('Location: index.php');
+	header('Location: index.php?');
 }
 
 function changepassword()
