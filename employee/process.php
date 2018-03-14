@@ -11,18 +11,13 @@ switch ($action) {
 		login();
 		break;
 
-	// TODO: by dale
-	// case 'forgotPassword' :
-	// 	forgotPassword();
-	// 	break;
-	//
-	// case 'checkCode' :
-	// 	checkCode();
-	// 	break;
-	//
-	// case 'resetPassword' :
-	// 	resetPassword();
-	// 	break;
+	case 'forgotPassword' :
+		forgotPassword();
+		break;
+
+	case 'checkCode' :
+		checkCode();
+		break;
 
 	case 'submitTimesheet' :
 		submitTimesheet();
@@ -73,12 +68,10 @@ function login()
 	if ($result){
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
+			$_SESSION['temp_session'] = $username;
 			header('Location: index.php?view=changepassword');
 		}
 		else{
-
-			//TODO: Ano ni?!?!
-		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
 		$dateNow = date("Y-m-d");
 		$checkDtr = dtr()->get("owner='$username' and createDate='$dateNow'");
@@ -95,49 +88,38 @@ function login()
 	}
 }
 
-// TODO: by dale
-// function forgotPassword()
-// {
-// 	// if we found an error save the error message in this variable
-// 	$username = $_POST['username'];
-// 	$code = round(microtime(true));
-//
-// 	$user = user()->get("username='$username'");
-//
-//
-// 	if ($resume){
-// 		$_SESSION['code_session'] = $code;
-// 		// Send email
-// 		$content = __resetPasswordEmailMessage();
-// 		sendEmail($resume->email, $content);
-//
-// 		header('Location: ../employee/?view=enterCode');
-// 	}else{
-// 		header('Location: index.php?error=User not found in the Database');
-// 	}
-// }
-//
-// function checkCode()
-// {
-// 	$code = $_POST['code'];
-//
-// 	if ($code == $_SESSION['code_session']){
-// 		header('Location: ../employee/?view=resetPassword');
-// 	}else{
-// 		header('Location: ../employee/?view=enterCode&error=Invalid Code');
-// 	}
-// }
-//
-// function resetPassword()
-// {
-// 	$code = $_POST['code'];
-//
-// 	if ($code == $_SESSION['code_session']){
-// 		header('Location: ../employee/?view=resetPassword');
-// 	}else{
-// 		header('Location: ../employee/?view=enterCode&error=Invalid Code');
-// 	}
-// }
+function forgotPassword()
+{
+	$username = $_POST['username'];
+	$code = round(microtime(true));
+
+	$resume = resume()->get("username='$username'");
+
+	if ($resume){
+		$_SESSION['temp_session'] = $username;
+		$_SESSION['code_session'] = $code;
+		// Send email
+		$content = "We have received your request. Please use this code to reset your password.<br>
+								Code: " . $_SESSION['code_session'] . " <br><br>
+								Teamire";
+		sendEmail($resume->email, $content);
+
+		header('Location: ../employee/?view=enterCode');
+	}else{
+		header('Location: index.php?error=User not found in the Database');
+	}
+}
+
+function checkCode()
+{
+	$code = $_POST['code'];
+
+	if ($code == $_SESSION['code_session']){
+		header('Location: ../employee/?view=changepassword');
+	}else{
+		header('Location: ../employee/?view=enterCode&error=Invalid Code');
+	}
+}
 
 function newCheckIn()
 {
