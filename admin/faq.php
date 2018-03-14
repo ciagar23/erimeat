@@ -76,7 +76,7 @@ $faqList = faq()->all();
         <h4 class="modal-title" id="myModalLabel">Add New FAQ</h4>
       </div>
       <div class="modal-body">
-        <form id="default-wizard" action="process.php?action=addFAQ" method="POST" method="POST">
+        <form id="default-wizard" action="process.php?action=addFAQ" method="POST">
            <p class="m-b-0">
               <?=$error?>
           </p>
@@ -96,8 +96,8 @@ $faqList = faq()->all();
               </div>
 
               <div class="form-group">
-                <select class="form-control" name="level" required="">
-                 <option>Please Select</option>
+                <label>Level</label>
+                <select class="form-control" name="level" required="">on>
                    <option value="employer">Employer</option>
                    <option value="employee">Job Seeker</option>
                 </select>
@@ -119,13 +119,14 @@ $faqList = faq()->all();
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+                <h4 class="modal-title" id="myLargeModalLabel">Update FAQ</h4>
             </div>
             <div class="modal-body">
               <form id="default-wizard" action="process.php?action=updateFaq" method="POST">
                  <p class="m-b-0">
                     <?=$error?>
                 </p>
+                <input type="hidden" name="Id" id="getId">
                 <div class="row m-t-20">
                   <div class="col-sm-12">
                     <div class="form-group">
@@ -142,6 +143,7 @@ $faqList = faq()->all();
                     </div>
 
                     <div class="form-group">
+                      <label>Level</label>
                       <select class="form-control" name="level" id="getLevel">
                        <option>Please Select</option>
                          <option value="employer">Employer</option>
@@ -152,7 +154,7 @@ $faqList = faq()->all();
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default waves-effect btn-sm" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary stepy-finish btn-sm">Add FAQ</button>
+                  <button type="submit" class="btn btn-primary stepy-finish btn-sm">Update FAQ</button>
                 </div>
               </form>
             </div>
