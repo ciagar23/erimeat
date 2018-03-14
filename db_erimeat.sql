@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-13 15:39:08
+# Date: 2018-03-14 15:41:53
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -17,13 +17,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'1','1','1','1','admin');
 
 #
 # Structure for table "city_option"
@@ -108,13 +108,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (74,6,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,6,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4');
+INSERT INTO `dtr` VALUES (74,6,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,6,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4'),(76,0,'E1520853098','17:27:34','17:27:42',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-13','4');
 
 #
 # Structure for table "employee"
@@ -145,6 +145,7 @@ CREATE TABLE `faq` (
   `question` text,
   `answer` text,
   `level` varchar(50) DEFAULT NULL,
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -152,7 +153,7 @@ CREATE TABLE `faq` (
 # Data for table "faq"
 #
 
-INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee');
+INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer','0'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer','0'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer','0'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee','0');
 
 #
 # Structure for table "hr"
@@ -266,7 +267,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'tran','Simplify your search for top demand planning talent',NULL,'Simplify your search for top transportation talent','Enter description here...\n','0'),(2,'pro','Procurement',NULL,'Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\n','0'),(3,'sup','Supply Planning',NULL,'Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\n','0'),(4,'log','Logistics',NULL,'Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification',NULL,'Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning',NULL,'Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment',NULL,'Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing',NULL,'Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing',NULL,'Simplify your search for top warehousing talent','Enter description here...\n','0');
+INSERT INTO `job_function` VALUES (1,'tran','Transportation1','tae','Simplify your search for top transportation talent','Enter description here...\r\n','0'),(2,'pro','Procurement','tae','Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\r\n','0'),(3,'sup','Supply Planning','kris','Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\r\n','0'),(4,'log','Logistics','hello world','Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification','hello world','Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning','hello world','Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment','hello world','Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing','hello world','Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing','hello world','Simplify your search for top warehousing talent','Enter description here...\n','0');
 
 #
 # Structure for table "position_type"
@@ -296,13 +297,15 @@ CREATE TABLE `projects` (
   `content` text,
   `uploadedImage` varchar(50) DEFAULT NULL,
   `createDate` datetime DEFAULT NULL,
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "projects"
 #
 
+INSERT INTO `projects` VALUES (1,'The Teamire Projects','The Teamire projects is your one-stop destination for tips, advice and insight you can use to hire engaged and productive workers or land a challenging and fulfilling job. We also offer new research about the workplace and the latest insights into the employment market. Learn from Robert Halfâ€™s expert recruiters so you can build a talented team of employees or advance your career.','1520937470.png','2018-03-13 18:37:50','0'),(2,'asdsadsad','asdasdasdasdsadsad','1521013289.txt','2018-03-14 15:41:29','1');
 
 #
 # Structure for table "resume"
@@ -336,13 +339,13 @@ CREATE TABLE `resume` (
   `isHired` varchar(2) DEFAULT '0' COMMENT '0:no, 1:yes',
   `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (10,5,1,'1520851638','Kevin','Sumalde',NULL,'09876543210','12344421','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','hahahahah bakit nga ba mahal kita','1520851638.pdf','www.speedtest.com/123213213','1520851638.pdf','0',NULL,'1','1','0'),(11,0,2,'1520926692','Dale','Torre','10-14-1993','12313213232','123123213','a@a.com','(+61) 213-213-213','heheheheh','heheheheh','heheheheh','heheheheh','6100','hehehehehhehehehehhehehehehheheheheh','1520926692.txt','heheheheh','1520926692.txt','0',NULL,'0','0','0');
+INSERT INTO `resume` VALUES (10,5,1,'1520851638','Kevin','Sumalde',NULL,'09876543210','12344421','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','hahahahah bakit nga ba mahal kita','1520851638.pdf','www.speedtest.com/123213213','1520851638.pdf','0',NULL,'1','1','0'),(11,0,2,'1520926692','Dale','Torre','10-14-1993','12313213232','123123213','a@a.com','(+61) 213-213-213','heheheheh','heheheheh','heheheheh','heheheheh','6100','hehehehehhehehehehhehehehehheheheheh','1520926692.txt','heheheheh','1520926692.txt','0',NULL,'0','0','0'),(12,0,0,'1520944113','Sleep','not','11/12/1233','12312321321','123213213','a@a.com','(+61) 123-213-123','sadfsdfsdfdsfsdf','asdfdsfsdfsdf','asdffds','asdfdsfdsf','1232','sadfsdfdsfsfsdfdsfsdfdsfsadfsadf','1520944113.txt','asdfsdfdsf','1520944113.txt','0',NULL,'0','0','0'),(13,0,4,'1520944228','sdfdsfsdfdsf','asdfdsfdsf','12312321','12312312312','123123123','a@a.com','(+61) 213-123-123','dasdasdasdasdsadasda','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','1232','adsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsd','1520944228.txt','adsfsdfsdfsdfsdfsd','1520944228.txt','0',NULL,'0','0','0');
 
 #
 # Structure for table "timesheet"

@@ -47,6 +47,10 @@ switch ($action) {
 		removeFaq();
 		break;
 
+	case 'removeProjects' :
+		removeProjects();
+		break;
+
 	case 'setInterViewDate' :
 		setInterViewDate();
 		break;
@@ -421,6 +425,16 @@ function removeFaq()
 	$faq->update("Id='$Id'");
 
 	header('Location: ../admin/?view=faq&message=Succesfully Deleted');
+}
+
+function removeProjects()
+{
+	$Id = $_GET['Id'];
+	$projects = projects();
+	$projects->obj['isDeleted'] = "1";
+	$projects->update("Id='$Id'");
+
+	header('Location: ../admin/?view=projects&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

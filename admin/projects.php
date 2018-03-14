@@ -32,14 +32,15 @@ $projectsList = projects()->all();
               <th>Project Name</th>
               <th>Content</th>
               <th>Posted Date</th>
-              <th>Action</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
 
            <?php foreach($projectsList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
               ?>
               <tr>
                 <td><?=$row->title;?></td>
@@ -47,6 +48,9 @@ $projectsList = projects()->all();
                 <td><?=$row->createDate;?></td>
                 <td>
                   <a href="edit_ay.php?ay_Id='.$id.'"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
+                </td>
+                <td>
+                  <a href="process.php?action=removeProjects&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
                 </td>
               </tr>
           <?php
