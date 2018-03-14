@@ -166,21 +166,19 @@
 <hr>
     <!-- Basic Form Wizard -->
     <div class="container-80 center-page">
-                        <div class="row">
-                            <div class="col-md-12">
-
+                      
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
                                         <li class="active">
                                             <a href="#home1" data-toggle="tab" aria-expanded="false">
                                                 <span class="visible-xs"><i class="fa fa-home"></i></span>
-                                                <span class="hidden-xs">Four Simple Steps to Hire</span>
+                                                <h3 class="hidden-xs">Four Simple Steps to Hire</h3>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a href="#profile1" data-toggle="tab" aria-expanded="true">
                                                 <span class="visible-xs"><i class="fa fa-user"></i></span>
-                                                <span class="hidden-xs">How We Help You Find a Job</span>
+                                                <h3 class="hidden-xs">How We Help You Find a Job</h3>
                                             </a>
                                         </li>
 
@@ -333,8 +331,7 @@
 
                                     </div>
 
-                           </div>
-                        </div>
+                         
                       </div>
                         <!-- End row -->
 
