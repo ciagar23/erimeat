@@ -435,6 +435,7 @@ function removeProjects()
 	$projects->update("Id='$Id'");
 
 	header('Location: ../admin/?view=projects&message=Succesfully Deleted');
+}ader('Location: ../admin/?view=projects&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

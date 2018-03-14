@@ -7,6 +7,7 @@
   <div class="center-page container-80">
   <?php
     foreach($projectList as $row){
+      if($row->isDeleted==0){
   ?>
   <div class="row">
     <div class="col-lg-12">
@@ -26,7 +27,7 @@
   </div>
 
   <hr class="m-b-30 m-t-30" width="100%">
-  <?php }?>
+<?php }}?>
 
 
 
