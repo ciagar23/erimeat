@@ -22,11 +22,6 @@ switch ($view) {
 		$template	= '../include/template_login.php';
 		break;
 
-	case 'resetPassword' :
-		$content 	= 'resetPassword.php';
-		$template	= '../include/template_login.php';
-		break;
-
 	case 'dtr' :
 		$currentSession = isset($_SESSION["employee_session"]);
 		$content 	= 'dtr.php';
@@ -46,7 +41,6 @@ switch ($view) {
 		break;
 
 	case 'changepassword' :
-		$currentSession = isset($_SESSION["employee_session"]);
 		$content 	= 'changepassword.php';
 		$template	= '../include/template_login.php';
 		break;

@@ -70,12 +70,10 @@ function login()
 	if ($result){
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
+			$_SESSION['temp_session'] = $username;
 			header('Location: index.php?view=changepassword');
 		}
 		else{
-
-			//TODO: Ano ni?!?!
-		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
 		$dateNow = date("Y-m-d");
 		$checkDtr = dtr()->get("owner='$username' and createDate='$dateNow'");
@@ -99,8 +97,8 @@ function forgotPassword()
 
 	$resume = resume()->get("username='$username'");
 
-
 	if ($resume){
+		$_SESSION['temp_session'] = $username;
 		$_SESSION['code_session'] = $code;
 		// Send email
 		$content = "We have received your request. Please use this code to reset your password.<br>
