@@ -32,14 +32,15 @@ $faqList = faq()->all();
             <th>Answer</th>
             <th>Question</th>
             <th>Level</th>
-            <th>Action</th>
+            <th></th>
+            <th></th>
             </tr>
           </thead>
           <tbody>
 
            <?php foreach($faqList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
               ?>
               <tr>
                 <td><?=$row->question;?></td>
@@ -47,6 +48,9 @@ $faqList = faq()->all();
                 <td><?=$row->level;?></td>
                 <td>
                   <a href="#"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
+                </td>
+                <td>
+                  <a href="process.php?action=removeFaq&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
                 </td>
               </tr>
           <?php

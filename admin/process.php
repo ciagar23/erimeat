@@ -43,6 +43,10 @@ switch ($action) {
 		removeJobFunction();
 		break;
 
+	case 'removeFaq' :
+		removeFaq();
+		break;
+
 	case 'setInterViewDate' :
 		setInterViewDate();
 		break;
@@ -399,7 +403,6 @@ header('Location: index.php');
 	exit;
 }
 
-
 function removeJobFunction()
 {
 	$Id = $_GET['Id'];
@@ -408,6 +411,16 @@ function removeJobFunction()
 	$jobFunc->update("Id='$Id'");
 
 	header('Location: ../admin/?view=jobCategory&message=Succesfully Deleted');
+}
+
+function removeFaq()
+{
+	$Id = $_GET['Id'];
+	$faq = faq();
+	$faq->obj['isDeleted'] = "1";
+	$faq->update("Id='$Id'");
+
+	header('Location: ../admin/?view=faq&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/
