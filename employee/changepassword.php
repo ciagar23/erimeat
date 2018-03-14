@@ -47,8 +47,7 @@ else{
 
 								<h5 class="text-uppercase text-center text-white">
 										<span>Hi User.<br>
-										It seems that it is your first time to visit
-										this site. We recommend you to create your own password
+										We recommend you to create your new password
 										before entering your home page. Thank you!
 										</span><br><br>
 										<div class="center-page login-label">
