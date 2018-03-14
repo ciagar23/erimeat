@@ -35,6 +35,10 @@ switch ($action) {
 		updateServices();
 		break;
 
+	case 'updateFaq' :
+		updateFaq();
+		break;
+
 	case 'addFileFunction' :
 		addFileFunction();
 		break;
@@ -49,6 +53,10 @@ switch ($action) {
 
 	case 'removeProjects' :
 		removeProjects();
+		break;
+
+	case 'removeDownloads' :
+		removeDownloads();
 		break;
 
 	case 'setInterViewDate' :
@@ -166,7 +174,19 @@ function updateServices()
 	$jf->obj['description'] = $_POST['description'];
 	$jf->update("Id='$Id'");
 
-	header('Location: ../admin/?view=services&message=You have succesfully added a new Service.');
+	header('Location: ../admin/?view=services&message=You have succesfully updated a Service.');
+}
+
+function updateFaq()
+{
+	$Id = $_POST['Id'];
+	$faq = faq();
+	$faq->obj['question'] = $_POST['question'];
+	$faq->obj['answer'] = $_POST['answer'];
+	$faq->obj['level'] = $_POST['level'];
+	$faq->update("Id='$Id'");
+
+	header('Location: ../admin/?view=faq&message=You have succesfully updated a FAQ.');
 }
 
 function addFileFunction(){
@@ -435,6 +455,16 @@ function removeProjects()
 	$projects->update("Id='$Id'");
 
 	header('Location: ../admin/?view=projects&message=Succesfully Deleted');
+}
+
+function removeDownloads()
+{
+	$Id = $_GET['Id'];
+	$downloads = downloads();
+	$downloads->obj['isDeleted'] = "1";
+	$downloads->update("Id='$Id'");
+
+	header('Location: ../admin/?view=downloads&message=Succesfully Deleted');
 }
 
 /* ======================== Email Messages ==============================*/

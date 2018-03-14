@@ -9,6 +9,7 @@ $faqList = faq()->filter("level='employer'");
     <!-- Start Form Container -->
     <?php
       foreach($faqList as $row){
+        if($row->isDeleted==0){
     ?>
     <div class="container-80 center-page">
       <h3 class="form-container">Q: <?=$row->question;?></h3>
@@ -18,4 +19,4 @@ $faqList = faq()->filter("level='employer'");
         </p>
       </div>
       </div> <!-- End Form Container -->
-    <?php }?>
+    <?php }}?>

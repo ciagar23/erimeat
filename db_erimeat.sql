@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-14 15:41:53
+# Date: 2018-03-14 16:03:28
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -79,6 +79,7 @@ CREATE TABLE `downloads` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `fileName` varchar(255) DEFAULT NULL,
   `uploadedFile` varchar(255) DEFAULT NULL,
+  `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -86,7 +87,7 @@ CREATE TABLE `downloads` (
 # Data for table "downloads"
 #
 
-INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf'),(2,'Client Contract','1520552679.pdf');
+INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf','0'),(2,'Client Contract','1520552679.pdf','1');
 
 #
 # Structure for table "dtr"
@@ -153,7 +154,7 @@ CREATE TABLE `faq` (
 # Data for table "faq"
 #
 
-INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer','0'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer','0'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer','0'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee','0');
+INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer','1'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer','0'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer','0'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee','0');
 
 #
 # Structure for table "hr"

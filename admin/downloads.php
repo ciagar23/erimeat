@@ -31,14 +31,15 @@ $downloadList = downloads()->all();
             <tr>
             <th>File Name</th>
             <th>File</th>
-            <th>Action</th>
+            <th></th>
+            <th></th>
             </tr>
           </thead>
           <tbody>
 
            <?php foreach($downloadList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
               ?>
               <tr>
                 <td><?=$row->fileName;?></td>
@@ -46,6 +47,9 @@ $downloadList = downloads()->all();
                 <td>
                   <a href=""  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
                 </td>
+              <td>
+                <a href="process.php?action=removeDownloads&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
+              </td>
               </tr>
           <?php
               }
