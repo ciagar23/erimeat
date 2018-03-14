@@ -1,8 +1,7 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-14 23:53:13
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Date: 2018-03-15 00:06:00
+# Generator: MySQL-Front 6.0  (Build 2.20)
 
-/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -17,13 +16,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'1','1','1','1','admin');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'1','1','1','1','admin'),(22,'ann','12345','ann','denajeba','hr');
 
 #
 # Structure for table "city_option"
@@ -109,13 +108,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (74,6,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,6,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4'),(76,0,'E1520853098','17:27:34','17:27:42',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-13','4');
+INSERT INTO `dtr` VALUES (74,8,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,8,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4'),(76,8,'E1520853098','17:27:34','17:27:42',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-13','4'),(77,8,'E1520853098','21:52:21','22:48:02','22:47:58','22:47:58','22:48:00','22:48:01','22:48:00','22:47:59','2018-03-14','4');
 
 #
 # Structure for table "employee"
@@ -163,16 +162,17 @@ INSERT INTO `faq` VALUES (5,'How are you?','I\'m fine thank you','employee','1')
 DROP TABLE IF EXISTS `hr`;
 CREATE TABLE `hr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(12) DEFAULT NULL,
-  `jobFunction` varchar(100) DEFAULT NULL,
+  `username` varchar(15) DEFAULT NULL,
+  `jobFunctionId` char(11) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "hr"
 #
 
+INSERT INTO `hr` VALUES (1,'0','1','fredowinz23@gmail.com');
 
 #
 # Structure for table "inquiries"
@@ -300,7 +300,7 @@ CREATE TABLE `projects` (
   `createDate` datetime DEFAULT NULL,
   `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "projects"
@@ -362,13 +362,13 @@ CREATE TABLE `timesheet` (
   `status` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:verified, 2:dispute, 3:approved',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (6,5,'E1520853098','Timesheet as of 2018-03-12 12:31:48','3','2018-03-12 19:31:48');
+INSERT INTO `timesheet` VALUES (6,5,'E1520853098','Timesheet as of 2018-03-12 12:31:48','3','2018-03-12 19:31:48'),(7,5,'E1520853098','Timesheet as of 2018-03-14 15:51:06','3','2018-03-14 22:51:06'),(8,5,'E1520853098','Timesheet as of 2018-03-14 17:04:19','0','2018-03-15 00:04:19');
 
 #
 # Structure for table "timesheet_dispute"
@@ -406,4 +406,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (6,'C1520851525','12345','Dale Torre','Ceres Transport','company'),(7,'E1520853098','12345','Kevin','Sumalde','employee'),(8,'E1521042697','temppassword','sdfsjdfjlsdf','jalsdflsjdfl','employee'),(9,'E1521042742','temppassword','sdfsjdfjlsdf','jalsdflsjdfl','employee');
+INSERT INTO `user` VALUES (6,'C1520851525','12345','Dale Torre','Ceres Transport','company'),(7,'E1520853098','ZXasqw1212','Kevin','Sumalde','employee');

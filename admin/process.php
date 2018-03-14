@@ -122,7 +122,7 @@ function addAccount()
 			$hr = hr();
 			$hr->obj['username'] = $_POST['username'];
 			$hr->obj['email'] = $_POST['email'];
-			$hr->obj['jobFunction'] = $_POST['jobFunctionId'];
+			$hr->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 			$hr->create();
 		}
 

@@ -60,8 +60,6 @@ switch ($action) {
 
 function login()
 {
-	// if we found an error save the error message in this variable
-
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -282,6 +280,7 @@ function submitTimesheet()
 	// Get jobId
 	$emp = employee()->get("username='$currentUser'");
 
+	// Create Timesheet
 	$ts = timesheet();
 	$ts->obj['jobId'] = $emp->jobId;
 	$ts->obj['employee'] = $currentUser;
@@ -289,20 +288,25 @@ function submitTimesheet()
 	$ts->obj['createDate'] = 'NOW()';
 	$ts->create();
 
+	// Get the latest timesheet
 	$tsData = timesheet()->get("employee='$currentUser' ORDER BY ID DESC LIMIT 1");
 
+	// Update all DTR with the new timesheet
 	$dtr = dtr();
 	$dtr->obj['timesheetId'] = $tsData->Id;
 	$dtr->update("timesheetId='0' and owner='$currentUser' and status='4' ");
 
-	// Update all dtr
-	header('Location: index.php?a='.$ts->Id);
+	// Get job functionId
+	$job = job()->get("Id=$emp->jobId");
+	// Get Hr email by jobFunctionId
+	$hr = hr()->get("jobFunctionId=$job->jobFunctionId");
 
-// $obj = new DTR;
-// foreach($obj->readList($user) as $row) {
-// 	if ($row->status==4 && !$row->timesheetId){
-//
-// 	}
+	// Send email to HR
+	$emailContent = "A new timesheet has been sent. Please check your teamire account";
+	sendEmail($hr->email, $emailContent);
+
+	// Update all dtr
+	header('Location: index.php');
 
 }
 
