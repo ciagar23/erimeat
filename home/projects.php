@@ -1,5 +1,10 @@
 <?php
   $projectList = projects()->all();
+
+function formatDate($val){
+  $date = date_create($val);
+  return date_format($date, "F d, Y g:i A");
+}
 ?>
 <div class="m-t-30 container-80 container-fluid m-b-30">
 
@@ -12,7 +17,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h3 class="text-primary"><?=$row->title?></h3>
-      <p class="font-13" style="margin-top: -">Posted last <?=$row->createDate;?></p>
+      <p class="font-13" style="margin-top: -">Posted last <?=formatDate($row->createDate);?></p>
     </div>
   </div>
   <div class="row">

@@ -5,6 +5,11 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
 $projectsList = projects()->all();
 
+function formatDate($val){
+  $date = date_create($val);
+  return date_format($date, "F d, Y g:i A");
+}
+
 ?>
   <div class="row">
     <div class="col-sm-12">
@@ -45,7 +50,7 @@ $projectsList = projects()->all();
               <tr>
                 <td><?=$row->title;?></td>
                 <td><?=$row->content;?></td>
-                <td><?=$row->createDate;?></td>
+                <td><?=formatDate($row->createDate);?></td>
                 <td>
                   <a href="edit_ay.php?ay_Id='.$id.'"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
                 </td>
