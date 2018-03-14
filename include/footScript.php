@@ -54,6 +54,15 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('#myModal1').on('show.bs.modal', function(e) {
+    var id = $(e.relatedTarget).data('id');
+     $('#getId').val(id);
+     return (id);
+
+  });
+});
+
 $(function() {
     $('#hr').hide();
     $('#level').change(function(){
@@ -64,6 +73,7 @@ $(function() {
         }
     });
 });
+
 function getdata(id){
       var datastring = 'action=getdata&'+'id='+id;
       var url = 'fetch_service.php';
@@ -90,6 +100,32 @@ function getdata(id){
       });
       console.log(datastring+url);
     }
+
+function getFaq(id){
+    var datastring = 'action=getFaq&'+'id='+id;
+    var url = 'fetch_faq.php';
+    $('#myModal1').modal({
+      keyboard: true,
+      backdrop: 'static'
+    });
+
+    $.ajax({
+      type: "POST",
+      data: datastring,
+      url: url,
+      dataType: 'json',
+      success:function (data){
+
+        $('#getId').val(data.Id);
+        $('#getQuestion').val(data.question);
+        $('#getAnswer').val(data.answer);
+        $('#getLevel').html(data.level);
+
+
+      }
+    });
+    console.log(datastring+url);
+  }
 </script>
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
