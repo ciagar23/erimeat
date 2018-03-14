@@ -24,7 +24,7 @@ $(document).ready(function(){
         $("#demo1").show();
          $("#demo").hide();
           $("#myBtn1").css("background-color","#fff").css("color","#000");
-                  $("#myBtn2").css("background-color","#727B80").css("color","#000");
+                  $("#myBtn2").css("background-color","#727B80").css("color","#fff");
 
 
     });
