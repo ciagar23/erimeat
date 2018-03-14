@@ -12,21 +12,15 @@ switch ($view) {
 		$template	= '../include/template_login.php';
 		break;
 
-	// TODO: by dale
-	// case 'forgotPassword' :
-	// 	$content 	= 'forgotPassword.php';
-	// 	$template	= '../include/template_login.php';
-	// 	break;
-	//
-	// case 'enterCode' :
-	// 	$content 	= 'enterCode.php';
-	// 	$template	= '../include/template_login.php';
-	// 	break;
-	//
-	// case 'resetPassword' :
-	// 	$content 	= 'resetPassword.php';
-	// 	$template	= '../include/template_login.php';
-	// 	break;
+	case 'forgotPassword' :
+		$content 	= 'forgotPassword.php';
+		$template	= '../include/template_login.php';
+		break;
+
+	case 'enterCode' :
+		$content 	= 'enterCode.php';
+		$template	= '../include/template_login.php';
+		break;
 
 	case 'dtr' :
 		$currentSession = isset($_SESSION["employee_session"]);
@@ -47,7 +41,6 @@ switch ($view) {
 		break;
 
 	case 'changepassword' :
-		$currentSession = isset($_SESSION["employee_session"]);
 		$content 	= 'changepassword.php';
 		$template	= '../include/template_login.php';
 		break;
