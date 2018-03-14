@@ -9,7 +9,7 @@ function formatDate($val){
 ?>
 
 <div class="container-fluid">
-  <div class="container-80 center-page">
+  <div class="p-t-10 container-80 center-page">
     <div class="col-md-10 center-page p-b-30">
       <img class="img-thumbnail" width="100%" src="../media/<?=$projects->uploadedImage;?>">
       <h2 class="m-b-30 m-t-20 text-center"><?=$projects->title;?></h2>

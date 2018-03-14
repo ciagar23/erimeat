@@ -1,8 +1,7 @@
 <div class="container" >
   <a href="index.php" class="logo m-t-5  m-l-15 pull-left">
-    <img src="../include/assets/images/teamire-logo.png">
+    <img src="../include/assets/images/teamire-logo.png" width="80%">
   </a>
-  <br>
 
     <div class="form-inline pull-right" id="above-nav" style="padding: 20px;">
       <ul class="nav navbar-nav navbar-right nav-menu-right">
@@ -86,7 +85,7 @@ body {
 nav {
     margin:0;
     padding: 0;
-    background-color: #eee;
+    background-color: #205e7d;
 }
 
 #logo {
@@ -121,27 +120,27 @@ nav ul li {
     margin: 0px;
     display:inline-block;
     float: left;
-    background-color: #eee;
+    background-color: #205e7d;
     }
 
 /* Styling the links */
 nav a {
     display:block;
     padding: 10px 25px;
-    color:#3399cc;
+    color:#fff;
     font-weight: 500;
     text-decoration:none;
     font-size: 17px;
 }
 
 
-nav ul li ul li:hover { background: #4489e4;
+nav ul li ul li:hover { background-color: #232d33;
 
 }
 
 /* Background color change on Hover */
 nav a:hover {
-    background-color: #4489e4;
+    background-color: #194f6a;
     color: #fff;
 }
 
@@ -167,7 +166,7 @@ nav ul ul li {
     float:none;
     display:list-item;
     position: relative;
-    background-color: #36424a;
+    background-color: #232d33;
     color: #fff;
     border-bottom: 2px solid #545e65;
 }
