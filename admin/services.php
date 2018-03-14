@@ -32,6 +32,7 @@ $jobFunc = job_function()->filter("code!='null'");
           <tbody>
            <?php foreach($jobFunc as $row) {
             if ($row->isDeleted==0){
+              $id = $row->Id;
               ?>
               <tr>
                 <td><?=$row->option;?></td>
@@ -39,7 +40,9 @@ $jobFunc = job_function()->filter("code!='null'");
                 <td><?=$row->header;?></td>
                 <td><?=$row->description;?></td>
                 <td>
-                  <button type="button" class="btn btn-primary waves-effect waves-light btn-sm" data-toggle="modal" data-id="<?=$row->Id;?>" data-target="#myModal"><i class="fa fa-pencil"></i> Edit</button>
+                  
+                  <?php echo  '<a href="#" onclick="getdata('.$id.')" class=" btn btn-info btn-xs tooltips" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-eye"></span> View</a>';
+      ?>
                 </td>
               </tr>
           <?php
@@ -71,34 +74,35 @@ $jobFunc = job_function()->filter("code!='null'");
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Services</label>
-                <input type="text" class="form-control" name="option" placeholder="" id="getId">
+
+                <input type="text" class="form-control" name="option" placeholder="" id="getOption">
               </div>
 
               <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="title" placeholder="">
+                <input type="text" class="form-control" name="title" placeholder="" id="getTitle">
               </div>
 
               <div class="form-group">
                 <label>Header</label>
-                <textarea id="message" class="form-control" name="header"
+                <textarea class="form-control" name="header"
                                     data-parsley-trigger="keyup" data-parsley-minlength="20"
                                     data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
-                                    data-parsley-validation-threshold="10"></textarea>
+                                    data-parsley-validation-threshold="10" id="getHeader"></textarea>
               </div>
 
               <div class="form-group">
                   <label>Description</label>
-                  <textarea id="message" class="form-control" name="description"
+                  <textarea  class="form-control" name="description"
                                       data-parsley-trigger="keyup" data-parsley-minlength="20"
                                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
-                                      data-parsley-validation-threshold="10"></textarea>
+                                      data-parsley-validation-threshold="10" id="getDescription"></textarea>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary stepy-finish">Add</button>
+            <button type="submit" class="btn btn-primary stepy-finish">Update</button>
           </div>
         </form>
       </div><!-- /.modal-content -->

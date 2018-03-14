@@ -136,6 +136,10 @@ switch ($view) {
 		$content 	= 'reports.php';
 		$template	= '../include/dashboard.php';
 		break;
+	case 'fetch_service' :
+		$content 	= 'fetch_service.php';
+		$template	= '../include/dashboard.php';
+		break;
 
 	default :
 		$content 	= 'main.php';

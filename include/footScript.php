@@ -64,6 +64,31 @@ $(function() {
         }
     });
 });
+function getdata(id){
+      var datastring = 'action=getdata&'+'id='+id;
+      var url = 'fetch_service.php';
+      $('#myModal').modal({
+        keyboard: true,
+        backdrop: 'static'
+      });
+      
+      $.ajax({
+        type: "POST",
+        data: datastring,
+        url: url,
+        dataType: 'json',
+        success:function (data){
+        
+          $('#getOption').val(data.option);
+          $('#getTitle').val(data.title);
+          $('#getHeader').html(data.header);
+          $('#getDescription').html(data.description);
+
+       
+        }
+      });
+      console.log(datastring+url);
+    }
 </script>
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
