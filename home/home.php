@@ -57,8 +57,7 @@
 <div class="container-fluid m-t-30 m-b-30">
   <div class="container-80 text-center center-page">
     <h2>
-      Our Services Extend to All Areas<br>
-      of Supply Chain Management
+      Our Supply Chain Services
     </h2>
     <br>
   </div>
@@ -166,7 +165,7 @@
 <hr>
     <!-- Basic Form Wizard -->
     <div class="container-80 center-page">
-                      
+
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
                                         <li class="active">
@@ -331,7 +330,7 @@
 
                                     </div>
 
-                         
+
                       </div>
                         <!-- End row -->
 
