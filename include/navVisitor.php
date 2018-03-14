@@ -127,7 +127,7 @@ nav ul li {
 /* Styling the links */
 nav a {
     display:block;
-    padding:14px 20px;
+    padding: 10px 25px;
     color:#3399cc;
     font-weight: 500;
     text-decoration:none;
@@ -151,7 +151,7 @@ nav ul ul {
     display: none;
     position: absolute;
     /* has to be the same number as the "line-height" of "nav a" */
-    top: 60px;
+    top: 50px;
 }
 
 /* Display Dropdowns on Hover */
@@ -163,12 +163,13 @@ nav ul li:hover > ul {
 
 /* Fisrt Tier Dropdown */
 nav ul ul li {
-    width:170px;
+    width:250px;
     float:none;
     display:list-item;
     position: relative;
     background-color: #36424a;
     color: #fff;
+    border-bottom: 2px solid #545e65;
 }
 nav ul ul li a{
 
