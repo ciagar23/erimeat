@@ -1,3 +1,9 @@
+<?php
+if(!$currentSession)
+{
+		header('Location: index.php?view=login');
+ }
+?>
 <!DOCTYPE html>
 <html>
     <head>

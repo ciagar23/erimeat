@@ -71,8 +71,6 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                              <div class="form-group row m-t-20 clearfix">
                                                <div class="col-md-8">
                                                  <small><a href="../home/?view=submitResume"><b><u>Employee Registration</u></b></a></small>
-
-                                                   <small><a href="?view=forgotPassword"><b><u>Forgot Password</u></b></a></small>
                                                </div>
                                                <div class="col-md-4 pull-right">
                                                  <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SIGN IN</button>
