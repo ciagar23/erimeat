@@ -6,86 +6,63 @@
     </li>
 
     <li>
-        <a href="?view=talentRequest">
-            <i class="mdi mdi-comment-account"></i><span> Talent Request </span>
-        </a>
+        <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Application </span> <span class="menu-arrow"></span></a>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=applicants">Applicants</a></li>
+        </ul>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=scheduleInterview">Schedule Interview</a></li>
+        </ul>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=candidates">Candidates</a></li>
+        </ul>
     </li>
 
     <li>
-        <a href="?view=applicants">
-            <i class="mdi mdi-comment-account"></i><span> Applicants </span>
-        </a>
+        <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Clients </span> <span class="menu-arrow"></span></a>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=talentRequest">Talent Requests</a></li>
+        </ul>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=companies">Companies</a></li>
+        </ul>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=jobList">Jobs</a></li>
+        </ul>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=timekeeping">Timekeeping</a></li>
+        </ul>
     </li>
 
-    <li>
-        <a href="?view=scheduleInterview">
-            <i class="mdi mdi-alarm-check"></i><span> Schedule Interview </span>
-        </a>
-    </li>
 
-    <li>
-        <a href="?view=timekeeping">
-            <i class="mdi mdi-clock"></i><span> Timekeeping </span>
-        </a>
-    </li>
+      <li>
+          <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
+          <ul class="nav-second-level" aria-expanded="false">
+              <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=jobCategory">Job Category</a></li>
+          </ul>
+          <ul class="nav-second-level" aria-expanded="false">
+              <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=services">Services</a></li>
+          </ul>
+          <ul class="nav-second-level" aria-expanded="false">
+              <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=projects">Special Projects</a></li>
+          </ul>
+          <ul class="nav-second-level" aria-expanded="false">
+              <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=faq">FAQ</a></li>
+          </ul>
+          <ul class="nav-second-level" aria-expanded="false">
+              <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=downloads">Download Files</a></li>
+          </ul>
+      </li>
 
-    <li>
-        <a href="?view=accounts">
-            <i class="mdi mdi-account-plus"></i><span> Accounts </span>
-        </a>
-    </li>
+      <li>
+          <a href="?view=accounts">
+              <i class="mdi mdi-account-plus"></i><span> Accounts </span>
+          </a>
+      </li>
 
-    <li>
-        <a href="?view=companies">
-            <i class="mdi mdi-city"></i><span> Companies </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=jobList">
-            <i class="mdi mdi-tie"></i><span> Jobs </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=candidates">
-            <i class="mdi mdi-account-multiple"></i><span> Candidates </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=jobCategory">
-            <i class="mdi mdi-account"></i><span> Job Category </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=services">
-            <i class="mdi mdi-account"></i><span> Services </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=projects">
-            <i class="mdi mdi-account"></i><span> Special Projects </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=faq">
-            <i class="mdi mdi-comment-question-outline"></i><span> FAQ </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=downloads">
-            <i class="mdi mdi-download"></i><span> Download Files </span>
-        </a>
-    </li>
-
-    <li>
-        <a href="?view=reports">
-            <i class="mdi mdi-file-multiple"></i><span> Reports </span>
-        </a>
-    </li>
+      <li>
+          <a href="?view=reports">
+              <i class="mdi mdi-file-multiple"></i><span> Reports </span>
+          </a>
+      </li>
 </ul>
