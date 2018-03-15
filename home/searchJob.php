@@ -48,7 +48,7 @@ function getPositionName($Id){
     </div>
   </div>
   <!-- Start Filter Panel and Results-->
-  <div class="form-container container m-t-30 m-b-30">
+
     <!-- TODO: Filters -->
     <!-- <h4>Filters: </h4>
     <div class="form-inline m-b-30" style="padding: 0; margin: 0; width: 100%;">
@@ -73,11 +73,14 @@ function getPositionName($Id){
     </div> -->
     <!-- TODO: Filters -->
     <!-- <h4>Sort by: </h4> -->
-    <div class="form-inline m-b-30" style="">
+    <!-- <div class="form-inline m-b-30" style=""> -->
     <!-- <select class="form-control" style="height: 50px; width:199px;">
         <option>Select City</option>
     </select> -->
-  </div>
+    <!-- </div> -->
+
+<?php if($jobList==""){?>
+  <div class="form-container container m-t-30 m-b-30">
     <div class="row center-page job-list-row">
       <?php foreach($jobList as $row) {
         if ($row->isApproved==1){
@@ -105,4 +108,6 @@ function getPositionName($Id){
     <br>
 
   </div> <!-- End List Container -->
+<?php }?>
 </div>
+<br>
