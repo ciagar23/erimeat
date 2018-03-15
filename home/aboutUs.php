@@ -1,3 +1,12 @@
+<?php
+$jobFunctionList = job_function()->filter("isDeleted=0");
+
+function getPositionName($Id){
+  $job = position_type()->get("Id='$Id'");
+  echo $job->option;
+}
+?>
+
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
@@ -141,7 +150,7 @@
                       <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                     <?php } ?>
                   </select>
-                      <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+                      <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search</button>
 
                 </div>
               </form>

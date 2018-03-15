@@ -127,7 +127,7 @@ function getPositionName($Id){
               <option value="<?=$row->Id;?>"><?=$row->option;?></option>
             <?php } ?>
           </select>
-              <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+              <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search</button>
 
         </div>
       </form>
