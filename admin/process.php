@@ -122,7 +122,7 @@ function addAccount()
 			$hr = hr();
 			$hr->obj['username'] = $_POST['username'];
 			$hr->obj['email'] = $_POST['email'];
-			$hr->obj['jobFunction'] = $_POST['jobFunctionId'];
+			$hr->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 			$hr->create();
 		}
 
@@ -387,6 +387,9 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['username'] = $user->obj['username'];
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
+
+	$resume->['username'] = $user->obj['username'];
+	$resume->update("Id='$Id'");
 
 	// Send email
 	$content = "Congratulations!<br><br>

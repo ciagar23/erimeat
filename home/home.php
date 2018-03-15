@@ -15,7 +15,7 @@
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
-                      <div class="row m-b-20 m-t-50">
+                    <div class="row m-b-20 m-t-50">
                       <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
                       <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
                     </div>
@@ -25,10 +25,10 @@
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
-                    <select class="form-control" style="height: 67px;width:200px;">
+                    <select class="form-control" style="height: 67px; width:200px;">
                         <option>Select City</option>
                     </select>
-                    <button type="button" class="btn  btn-info"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                     <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
                      <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
-                       <button type="button" class="btn btn-info"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
+                       <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
                     </div>
                   </form>
                     </div></div>
@@ -50,7 +50,6 @@
             </div>
     </div>
   </div>
-  <hr>
   <div>
 <div class="container">
 
@@ -59,38 +58,36 @@
     <h2>
       Our Supply Chain Services
     </h2>
+    <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
     <br>
   </div>
 
   <div class="p-t-5 container-80 center-page">
       <div class="row">
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
-                      <a href="../home?view=servicesDetail&code=dem"><img src="../include/assets/images/demandPlanning.png"></a>
+                    <a href="../home?view=servicesDetail&code=dem"><img src="../include/assets/images/demandPlanning.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=dem'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Demand Planning</button>
+                  <a  href="../home?view=servicesDetail&code=dem"><h5 class="text-darkgrey">Demand Planning</h5></a>
               </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
-                      <a href="../home?view=servicesDetail&code=sup"><img src="../include/assets/images/supplyPlanning.png"></a>
+                    <a href="../home?view=servicesDetail&code=sup"><img src="../include/assets/images/supplyPlanning.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=sup'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Supply Planning</button>
+                    <a href="../home?view=servicesDetail&code=sup"><h5 class="text-primary"><h5 class="text-darkgrey">Supply Planning</h5></a>
                 </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=ord"><img src="../include/assets/images/orderFulfilment.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=ord'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Order Fulfillment</button>
+                  <a href="../home?view=servicesDetail&code=ord"><h5 class="text-darkgrey">Order Fulfillment</h5></a>
                 </div>
           </div>
       </div>
@@ -98,64 +95,58 @@
 
       <div class="row">
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=log"><img src="../include/assets/images/logistics.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=log'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Logistics</button>
+                  <a href="../home?view=servicesDetail&code=log"><h5 class="text-darkgrey">Logistics</h5></a>
               </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=man"><img src="../include/assets/images/manufacturing.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=man'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Manufacturing</button>
+                  <a  href="../home?view=servicesDetail&code=man"><h5 class="text-darkgrey">Manufacturing</h5></a>
                 </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=tran"><img src="../include/assets/images/transportation.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=tran'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Transportation</button>
+                  <a  href="../home?view=servicesDetail&code=tran"><h5 class="text-darkgrey">Transportation</h5></a>
                 </div>
           </div>
       </div>
       <!-- end row -->
       <div class="row">
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=pro"><img src="../include/assets/images/procurement.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=pro'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Procurement</button>
+                  <a  href="../home?view=servicesDetail&code=pro"><h5 class="text-darkgrey">Procurement</h5></a>
               </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/certificate.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=tra'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Training Certification</button>
+                  <a  href="../home?view=servicesDetail&code=tra"><h5 class="text-darkgrey">Training Certification</h5></a>
               </div>
           </div>
 
           <div class="col-sm-4">
-              <div class="about-features-box text-center">
+              <div class="about-features-box text-center fade">
                   <div>
                       <a href="../home?view=servicesDetail&code=war"><img src="../include/assets/images/warehousing.png"></a>
                   </div>
-                  <button  onclick="location.href='../home?view=servicesDetail&code=war'"  style="width: 50%;"
-                  class="btn btn-sm btn-block btn-default m-t-10 waves-effect waves-light " type="submit">Warehousing</button>
+                  <a  href="../home?view=servicesDetail&code=war"><h5 class="text-darkgrey">Warehousing</h5></a>
               </div>
           </div>
       </div>
@@ -168,13 +159,13 @@
 
 
                                     <ul class="nav nav-tabs navtab-bg nav-justified">
-                                        <li class="active">
+                                        <li class="active" style="background-color:#f2f2f2; border-radius: 5px; color: #fff;">
                                             <a href="#home1" data-toggle="tab" aria-expanded="false">
                                                 <span class="visible-xs"><i class="fa fa-home"></i></span>
                                                 <h3 class="hidden-xs">Four Simple Steps to Hire</h3>
                                             </a>
                                         </li>
-                                        <li class="">
+                                        <li class="" style="background-color: #f2f2f2; border-radius:5px;">
                                             <a href="#profile1" data-toggle="tab" aria-expanded="true">
                                                 <span class="visible-xs"><i class="fa fa-user"></i></span>
                                                 <h3 class="hidden-xs">How We Help You Find a Job</h3>
@@ -333,12 +324,12 @@
 
                       </div>
                         <!-- End row -->
-
 <hr>
   <!-- Start Location Panels-->
       <div class="container-80 center-page">
+        <h2 class="text-center">Business Partners</h2>
+        <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
         <div class="row m-t-30">
-          <h2 class="text-center text-primary m-b-30">Business Partners</h2>
           <div class="col-md-6 col-lg-3">
             <div class="hvrbox">
             	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">

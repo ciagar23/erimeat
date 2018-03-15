@@ -214,7 +214,7 @@ timer();
             <div class="alert alert-icon alert-warning alert-dismissible fade in" role="alert">
                 You have not logged in yet.
             </div>
-                <a href="process.php?action=newCheckIn" class="btn btn-primary" name="breakOut"></span>Click here to log in</a>
+                <a href="process.php?action=newCheckIn" class="btn btn-primary"></span>Click here to log in</a>
           </center>
         </div>
       </div>

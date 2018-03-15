@@ -1,8 +1,7 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-14 16:03:28
-# Generator: MySQL-Front 5.4  (Build 1.40)
+# Date: 2018-03-15 00:06:00
+# Generator: MySQL-Front 6.0  (Build 2.20)
 
-/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -17,13 +16,13 @@ CREATE TABLE `admin` (
   `lastName` varchar(50) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'1','1','1','1','admin');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin'),(16,'hr','hr','hr','hr','hr'),(20,'payroll','payroll','payroll','payroll','payroll'),(21,'1','1','1','1','admin'),(22,'ann','12345','ann','denajeba','hr');
 
 #
 # Structure for table "city_option"
@@ -87,7 +86,7 @@ CREATE TABLE `downloads` (
 # Data for table "downloads"
 #
 
-INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf','0'),(2,'Client Contract','1520552679.pdf','1');
+INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf','0'),(2,'Client Contract','1520552679.pdf','0');
 
 #
 # Structure for table "dtr"
@@ -109,13 +108,13 @@ CREATE TABLE `dtr` (
   `createDate` date DEFAULT NULL,
   `status` varchar(1) DEFAULT '0' COMMENT '0:login, 1:break, 2:break2, 3:lunch, 4:logout',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "dtr"
 #
 
-INSERT INTO `dtr` VALUES (74,6,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,6,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4'),(76,0,'E1520853098','17:27:34','17:27:42',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-13','4');
+INSERT INTO `dtr` VALUES (74,8,'E1520853098','19:31:21','19:31:24',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-11','4'),(75,8,'E1520853098','19:31:34','19:31:44','19:31:35','19:31:37','19:31:40','19:31:41','19:31:43','19:31:42','2018-03-12','4'),(76,8,'E1520853098','17:27:34','17:27:42',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-13','4'),(77,8,'E1520853098','21:52:21','22:48:02','22:47:58','22:47:58','22:48:00','22:48:01','22:48:00','22:47:59','2018-03-14','4');
 
 #
 # Structure for table "employee"
@@ -134,7 +133,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (3,5,'E1520853098','2018-03-12 19:11:37');
+INSERT INTO `employee` VALUES (3,5,'E1520853098','2018-03-12 19:11:37'),(4,5,'E1521042697','2018-03-14 23:51:37'),(5,5,'E1521042742','2018-03-14 23:52:22');
 
 #
 # Structure for table "faq"
@@ -154,7 +153,7 @@ CREATE TABLE `faq` (
 # Data for table "faq"
 #
 
-INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it work?\0','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.\0','employer','1'),(2,'I’ve never used a staffing agency. How does it work?','Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.','employer','0'),(3,'heloo ','hsdflsdfjlsdjfdsfj','employer','0'),(4,'for job seeker','kjsdfdslfdsfsfjweruwruewrueworu','employee','0');
+INSERT INTO `faq` VALUES (5,'How are you?','I\'m fine thank you','employee','1'),(6,'How old are you?123123213','30 years of age213213213231213213','employee','0');
 
 #
 # Structure for table "hr"
@@ -163,16 +162,17 @@ INSERT INTO `faq` VALUES (1,'I’ve never used a staffing agency. How does it wo
 DROP TABLE IF EXISTS `hr`;
 CREATE TABLE `hr` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` int(11) DEFAULT NULL,
-  `jobFunction` varchar(100) DEFAULT NULL,
+  `username` varchar(15) DEFAULT NULL,
+  `jobFunctionId` char(11) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "hr"
 #
 
+INSERT INTO `hr` VALUES (1,'0','1','fredowinz23@gmail.com');
 
 #
 # Structure for table "inquiries"
@@ -214,7 +214,7 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
-INSERT INTO `interview_date` VALUES (5,'10','2018-03-14','13:00:00');
+INSERT INTO `interview_date` VALUES (5,'10','2018-03-14','13:00:00'),(6,'15','2018-03-16','13:00:00');
 
 #
 # Structure for table "job"
@@ -268,7 +268,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'tran','Transportation1','tae','Simplify your search for top transportation talent','Enter description here...\r\n','0'),(2,'pro','Procurement','tae','Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\r\n','0'),(3,'sup','Supply Planning','kris','Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\r\n','0'),(4,'log','Logistics','hello world','Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification','hello world','Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning','hello world','Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment','hello world','Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing','hello world','Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing','hello world','Simplify your search for top warehousing talent','Enter description here...\n','0');
+INSERT INTO `job_function` VALUES (1,'tran','Transportation1','tae','Simplify your search for top transportation talent','Enter description here...\r\n123','0'),(2,'pro','Procurement','tae','Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\r\n','0'),(3,'sup','Supply Planning','kris','Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\r\n','0'),(4,'log','Logistics','hello world','Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification','hello world','Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning','hello world','Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment','hello world','Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing','hello world','Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing','hello world','Simplify your search for top warehousing talent','Enter description here...\n','0');
 
 #
 # Structure for table "position_type"
@@ -300,7 +300,7 @@ CREATE TABLE `projects` (
   `createDate` datetime DEFAULT NULL,
   `isDeleted` varchar(1) DEFAULT '0',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "projects"
@@ -317,6 +317,7 @@ CREATE TABLE `resume` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `jobId` int(11) DEFAULT NULL,
   `jobFunctionId` int(11) DEFAULT NULL,
+  `username` varchar(12) DEFAULT NULL,
   `refNum` varchar(25) DEFAULT NULL,
   `firstName` varchar(50) DEFAULT NULL,
   `lastName` varchar(50) DEFAULT NULL,
@@ -340,13 +341,13 @@ CREATE TABLE `resume` (
   `isHired` varchar(2) DEFAULT '0' COMMENT '0:no, 1:yes',
   `isDeleted` varchar(1) DEFAULT '0' COMMENT '0:no, 1:yes',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "resume"
 #
 
-INSERT INTO `resume` VALUES (10,5,1,'1520851638','Kevin','Sumalde',NULL,'09876543210','12344421','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','hahahahah bakit nga ba mahal kita','1520851638.pdf','www.speedtest.com/123213213','1520851638.pdf','0',NULL,'1','1','0'),(11,0,2,'1520926692','Dale','Torre','10-14-1993','12313213232','123123213','a@a.com','(+61) 213-213-213','heheheheh','heheheheh','heheheheh','heheheheh','6100','hehehehehhehehehehhehehehehheheheheh','1520926692.txt','heheheheh','1520926692.txt','0',NULL,'0','0','0'),(12,0,0,'1520944113','Sleep','not','11/12/1233','12312321321','123213213','a@a.com','(+61) 123-213-123','sadfsdfsdfdsfsdf','asdfdsfsdfsdf','asdffds','asdfdsfdsf','1232','sadfsdfdsfsfsdfdsfsdfdsfsadfsadf','1520944113.txt','asdfsdfdsf','1520944113.txt','0',NULL,'0','0','0'),(13,0,4,'1520944228','sdfdsfsdfdsf','asdfdsfdsf','12312321','12312312312','123123123','a@a.com','(+61) 213-123-123','dasdasdasdasdsadasda','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','1232','adsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsd','1520944228.txt','adsfsdfsdfsdfsdfsd','1520944228.txt','0',NULL,'0','0','0');
+INSERT INTO `resume` VALUES (10,5,1,NULL,'1520851638','Kevin','Sumalde',NULL,'09876543210','12344421','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','hahahahah bakit nga ba mahal kita','1520851638.pdf','www.speedtest.com/123213213','1520851638.pdf','0',NULL,'1','1','0'),(11,0,2,NULL,'1520926692','Dale','Torre','10-14-1993','12313213232','123123213','a@a.com','(+61) 213-213-213','heheheheh','heheheheh','heheheheh','heheheheh','6100','hehehehehhehehehehhehehehehheheheheh','1520926692.txt','heheheheh','1520926692.txt','0',NULL,'0','0','0'),(12,0,0,NULL,'1520944113','Sleep','not','11/12/1233','12312321321','123213213','a@a.com','(+61) 123-213-123','sadfsdfsdfdsfsdf','asdfdsfsdfsdf','asdffds','asdfdsfdsf','1232','sadfsdfdsfsfsdfdsfsdfdsfsadfsadf','1520944113.txt','asdfsdfdsf','1520944113.txt','0',NULL,'0','0','0'),(13,0,4,NULL,'1520944228','sdfdsfsdfdsf','asdfdsfdsf','12312321','12312312312','123123123','a@a.com','(+61) 213-123-123','dasdasdasdasdsadasda','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','adsfsdfsdfsdfsdfsd','1232','adsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsdadsfsdfsdfsdfsdfsd','1520944228.txt','adsfsdfsdfsdfsdfsd','1520944228.txt','0',NULL,'0','0','0'),(14,0,2,NULL,'1521035730','qeqwewqe','qwewqeqwewqe','12-31-2312','12321312321','123213123','a@a.com','(+61) 123-123-123','sadfsadfsdfsdfsdf','asdfsdfsdfsdfsdf','sdfsfsdfsdf','sdfsfsdfsdf','1231','sdfsfsdfsdfsdfsfsdfsdfsdfsfsdfsdfsdfsfsdfsdfsdfsfsdfsdf','1521035730.txt','sdfsfsdfsdf','1521035730.txt','0',NULL,'0','0','0'),(15,5,6,'E1521042742','1521042568','sdfsjdfjlsdf','jalsdflsjdfl','11-11-1111','11111111111','123213','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','adsfsdfdsfsdfadsfsdfdsfsdfadsfsdfdsfsdfadsfsdfdsfsdf','1521042568.txt','asdfdf','1521042568.txt','0',NULL,'1','1','0');
 
 #
 # Structure for table "timesheet"
@@ -361,13 +362,13 @@ CREATE TABLE `timesheet` (
   `status` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:verified, 2:dispute, 3:approved',
   `createDate` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (6,5,'E1520853098','Timesheet as of 2018-03-12 12:31:48','3','2018-03-12 19:31:48');
+INSERT INTO `timesheet` VALUES (6,5,'E1520853098','Timesheet as of 2018-03-12 12:31:48','3','2018-03-12 19:31:48'),(7,5,'E1520853098','Timesheet as of 2018-03-14 15:51:06','3','2018-03-14 22:51:06'),(8,5,'E1520853098','Timesheet as of 2018-03-14 17:04:19','0','2018-03-15 00:04:19');
 
 #
 # Structure for table "timesheet_dispute"
@@ -405,4 +406,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (6,'C1520851525','12345','Dale Torre','Ceres Transport','company'),(7,'E1520853098','12345','Kevin','Sumalde','employee');
+INSERT INTO `user` VALUES (6,'C1520851525','12345','Dale Torre','Ceres Transport','company'),(7,'E1520853098','ZXasqw1212','Kevin','Sumalde','employee');

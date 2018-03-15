@@ -66,7 +66,6 @@ substr(round(microtime(true)), -6)
 	//for admin
 	sendEmail('torredale1014@gmail.com',$adminmessage);
 
-
 	header('Location: ../company/');
 }
 

@@ -44,16 +44,17 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                 <div class="account-box" style="">
                                     <div class="account-logo-box">
                                       <h5 class="text-uppercase text-center text-white">
-                                            Enter your login information to access our Time Reporting and Approval System<br><br>
+                                            Enter your username. We'll email instructions on how to reset your password.<br><br>
                                             <div class="center-page login-label">
-                                            Employee Login
+                                            Forgot Password
                                             </div>
                                       </h5>
                                         <p class="m-b-0">
-                                                                                <?=$error?></p>
+                                          <?=$error?>
+                                        </p>
                                     </div>
                                     <div class="account-content">
-                                        <form class="form-horizontal" action="process.php?action=login" method="POST">
+                                        <form class="form-horizontal" action="process.php?action=forgotPassword" method="POST">
 
                                             <div class="form-group m-b-0 row">
                                                 <div class="col-12 m-b-15">
@@ -61,21 +62,9 @@ $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
                                                     <input class="form-control" type="text" id="emailaddress" name="username" required="" placeholder="">
                                                 </div>
                                             </div>
-
-                                            <div class="form-group row m-b-5">
-                                                <div class="col-12">
-                                                    <label for="password" >Password</label>
-                                                    <input class="form-control" type="password" required="" id="password" name="password" placeholder="">
-                                                </div>
-                                            </div>
                                              <div class="form-group row m-t-20 clearfix">
-                                               <div class="col-md-8">
-                                                 <small><a href="?view=forgotPassword"><u>Forgot Password?</u></a></small>
-                                                 <br>
-                                                 <small><a href="../home/?view=submitResume"><b><u>Employee Registration</u></b></a></small>
-                                               </div>
                                                <div class="col-md-4 pull-right">
-                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SIGN IN</button>
+                                                 <button class="btn btn-sm btn-block btn-warning waves-effect waves-light" type="submit">SUBMIT</button>
                                                </div>
                                              </div>
                                         </form>
