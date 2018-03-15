@@ -15,6 +15,10 @@ switch ($action) {
 		logout();
 		break;
 
+	case 'updateRequest' :
+		updateRequest();
+		break;
+
 	case 'addExperience' :
 		addExperience();
 		break;
@@ -72,6 +76,16 @@ session_start();
 session_destroy();
 header('Location: index.php');
 	exit;
+}
+
+function updateRequest()
+{
+	$Id = $_POST['Id'];
+	$job = job();
+	$job->obj['comment'] = $_POST['comment'];
+	$job->update("Id='$Id'");
+
+	header('Location: ../hr/?view=jobDetail&Id='. $Id . '&message=You have successfully updated a Request');
 }
 
 function denyResume()
