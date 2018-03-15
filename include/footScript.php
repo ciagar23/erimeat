@@ -141,12 +141,11 @@ function getProjects(id){
       url: url,
       dataType: 'json',
       success:function (data){
-
+     
         $('#getId').val(data.Id);
         $('#getTitle').val(data.title);
         $('#getContent').html(data.content);
-        $('#getImage').val(data.uploadedImage);
-
+        $('#getImage').html(data.uploadedImage);
 
       }
     });
