@@ -112,7 +112,7 @@ function formatDate($val){
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-
+</div>
 
   <div id="myModal1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog modal-lg">
@@ -144,6 +144,7 @@ function formatDate($val){
 
                       <div class="form-group">
                         <label>Upload Image</label>
+                        
                         <input type="file" class="form-control" name="upload_file" id="getImage">
                       </div>
                     </div>
