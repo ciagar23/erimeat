@@ -1,6 +1,8 @@
 <?php
+$error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $Id = $_GET['Id'];
 $job = job()->get("Id='$Id'");
+$id = $Id;
 ?>
 
 
@@ -9,6 +11,9 @@ $job = job()->get("Id='$Id'");
         <!-- Personal-Information -->
         <div class="card-box">
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
+            <?php
+              echo  '<a href="#" onclick="getRequest('.$id.')" class=" btn btn-info btn-xs" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-pencil"></span> Edit</a>';
+            ?>
             <div class="panel-body">
                 <div class="text-left">
                     <p class="text-muted font-13"><strong>Job Reference # :</strong>
@@ -65,3 +70,45 @@ $job = job()->get("Id='$Id'");
         </div>
     </div>
   </div>
+
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">Update Request</h4>
+        </div>
+        <div class="modal-body">
+          <form id="default-wizard" action="process.php?action=updateRequest" method="POST">
+            <p class="m-b-0">
+              <?=$error?>
+            </p>
+            <div class="row m-t-20">
+              <input type="text" name="Id" id="getId">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Job Position</label>
+
+                  <input type="text" class="form-control" name="position" placeholder="" id="getPosition">
+                </div>
+
+                <div class="form-group">
+                  <label>Company Name</label>
+                  <input type="text" class="form-control" name="name" placeholder="" id="getName">
+                </div>
+
+                <div class="form-group">
+                  <label>Company ABN</label>
+                  <input type="text" class="form-control" name="abn" placeholder="" id="getAbn">
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary stepy-finish">Update</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
