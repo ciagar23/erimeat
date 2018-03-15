@@ -1,9 +1,10 @@
 <?php
-$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
+$j = (isset($_GET['j']) && $_GET['j'] != '') ? $_GET['j'] : '';
 $c = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : '';
 
-$resumeList = resume()->all();
 $cityList = city_option()->all();
+$resumeList = resume()->filter("jobFunctionId=$j and city=$c");
+$jobFunctionList = job_function()->filter("isDeleted=0");
 
 function getJobFunction($Id){
   $jf = job_function()->get("Id='$Id'");
@@ -19,11 +20,16 @@ function getJobFunction($Id){
     <form class="form-inline" method="GET">
     <div class="form-group">
       <input type="hidden" name="view" value="searchResume">
-      <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
       <select name="c" class="form-control" style="height: 67px; width:200px;">
         <option>Select City</option>
         <?php foreach($cityList as $row){ ?>
           <option value="<?=$row->Id;?>"><?=$row->city;?></option>
+        <?php } ?>
+      </select>
+      <select name="j" class="form-control" style="height: 67px; width:200px;" required>
+        <option value="">Select Category</option>
+        <?php foreach($jobFunctionList as $row){ ?>
+          <option value="<?=$row->Id;?>"><?=$row->option;?></option>
         <?php } ?>
       </select>
       <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
@@ -33,9 +39,9 @@ function getJobFunction($Id){
 </div>
 
 <div class="col-md-12 clearfix">
+  <!-- Display contact and email buttons -->
   <div align="center" class="m-t-30">
-    <button class="accordion pull-right" style="width: 15%;">Contact Us</button>
-    <div class="accordion-panel">
+    <div>
       <button class="btn-primary btn-candidate-contact">
         <i class="fa fa-phone fa-3x"></i><br>
         <span class="text-center font-13">Call +61452 364 793</span>
@@ -47,8 +53,11 @@ function getJobFunction($Id){
       </button>
     </div>
   </div>
+  <br>
   <div class="clearfix"></div>
 
+  <?php if($resumeList==""){?>
+  <div class="form-container container m-t-30 m-b-30">
   <h4>Search Results: 1 - 10 of 100</h4>
   <div class="row m-t-10">
   <?php foreach($resumeList as $row) {?>
@@ -62,7 +71,6 @@ function getJobFunction($Id){
           </a>
         </span>
         </div>
-        <div class="col-md-2" style="text-align: right;"><a href="#" class="text-primary font-13">+ Add to Short List</a></div>
       </div>
       <!-- Reference -->
       <span>Candidate Reference #: <?=$row->refNum;?></span>
@@ -112,6 +120,7 @@ function getJobFunction($Id){
       </li>
     </ul>
 </div>
+<?php }?>
 </div>
 </div>
 
