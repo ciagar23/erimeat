@@ -74,32 +74,6 @@ $(function() {
     });
 });
 
-function getRequest(id){
-      var datastring = 'action=getRequest&'+'id='+id;
-      var url = 'fetch_request.php';
-      $('#myModal').modal({
-        keyboard: true,
-        backdrop: 'static'
-      });
-
-      $.ajax({
-        type: "POST",
-        data: datastring,
-        url: url,
-        dataType: 'json',
-        success:function (data){
-
-          $('#getId').val(data.Id);
-          $('#getPosition').val(data.position);
-          $('#getName').val(data.name);
-          $('#getAbn').val(data.abn);
-
-
-        }
-      });
-      console.log(datastring+url);
-    }
-
 function getdata(id){
       var datastring = 'action=getdata&'+'id='+id;
       var url = 'fetch_service.php';

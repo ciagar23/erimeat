@@ -1,19 +1,28 @@
 <?php
+$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $Id = $_GET['Id'];
 $job = job()->get("Id='$Id'");
-$id = $Id;
 ?>
 
 
 <div class="row">
     <div class="col-md-12">
+      <br>
+      <?php if($message){?>
+      <div class="alert alert-success alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert"
+                  aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <?=$message;?>
+      </div>
+    <?php }?>
         <!-- Personal-Information -->
         <div class="card-box">
             <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
-            <?php
-              echo  '<a href="#" onclick="getRequest('.$id.')" class=" btn btn-info btn-xs" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-pencil"></span> Edit</a>';
-            ?>
+            <button type="button" class="btn btn-primary waves-effect waves-light btn-sm pull-right" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i> Update Request</button>
+
             <div class="panel-body">
                 <div class="text-left">
                     <p class="text-muted font-13"><strong>Job Reference # :</strong>
@@ -57,7 +66,7 @@ $id = $Id;
                         </span>
                         <?php } ?>
                     </p>
-                    <p class="text-muted font-13"><strong>Comment :</strong>
+                    <p class="text-muted font-13"><strong>Hiring Needs :</strong>
                       <span class="m-l-15"><?=$job->comment;?></span>
                     </p>
                 </div>
@@ -84,22 +93,14 @@ $id = $Id;
               <?=$error?>
             </p>
             <div class="row m-t-20">
-              <input type="text" name="Id" id="getId">
+              <input type="hidden" name="Id" value="<?=$job->Id;?>">
               <div class="col-sm-12">
                 <div class="form-group">
-                  <label>Job Position</label>
-
-                  <input type="text" class="form-control" name="position" placeholder="" id="getPosition">
-                </div>
-
-                <div class="form-group">
-                  <label>Company Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="" id="getName">
-                </div>
-
-                <div class="form-group">
-                  <label>Company ABN</label>
-                  <input type="text" class="form-control" name="abn" placeholder="" id="getAbn">
+                    <label>Hiring Needs</label>
+                    <textarea  class="form-control" name="comment"
+                                        data-parsley-trigger="keyup" data-parsley-minlength="20"
+                                        data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                                        data-parsley-validation-threshold="10"><?=$job->comment;?></textarea>
                 </div>
 
               </div>
