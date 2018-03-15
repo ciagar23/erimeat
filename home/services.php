@@ -114,6 +114,7 @@ function getPositionName($Id){
           </div>
       </div>
   </div>
+  <div class="row center-page">
   <div class="container-80 center-page"><br>
       <div class="col-md-10 center-page p-b-30">
         <form class="form-inline" method="GET">
@@ -132,6 +133,7 @@ function getPositionName($Id){
       </form>
       </div>
   </div>
+</div>
   <hr class="m-b-30 m-t-30" width="75%">
   <div class="col-md-8 center-page text-center">
   <h3 class="m-b-30 m-t-30">More from Teamire</h3>
