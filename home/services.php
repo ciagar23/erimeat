@@ -1,3 +1,12 @@
+<?php
+$jobFunctionList = job_function()->filter("isDeleted=0");
+
+function getPositionName($Id){
+  $job = position_type()->get("Id='$Id'");
+  echo $job->option;
+}
+?>
+
 <div class="container-fluid m-t-30 m-b-30">
   <div class="container-80 text-center center-page">
     <h2>
@@ -105,15 +114,20 @@
           </div>
       </div>
   </div>
-  <div class="col-md-7 center-page text-center"><br>
-      <div class="input-group m-t-5">
-        <form method="GET">
-        <div class="input-group">
-          <input type="hidden" name="view" value="jobList">
-          <input type="text" id="example-input2-group2" name="s" class="form-control" style="width:560px; height:67px;" placeholder="Job Title, Skills or Keywords">
-              <span class="input-group-btn">
-              <button type="submit" class="btn waves-effect waves-light btn-primary">Search Job</button>
-              </span>
+  <div class="container-80 center-page"><br>
+      <div class="col-md-10 center-page p-b-30">
+        <form class="form-inline" method="GET">
+        <div class="form-group">
+          <input type="hidden" name="view" value="searchJob">
+          <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+          <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+            <option value="">Select Category</option>
+            <?php foreach($jobFunctionList as $row){ ?>
+              <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+            <?php } ?>
+          </select>
+              <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+
         </div>
       </form>
       </div>
