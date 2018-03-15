@@ -31,12 +31,17 @@ function getPositionName($Id){
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="hidden" name="view" value="searchResume">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
                     <select name="c" class="form-control" style="height: 67px; width:200px;">
                         <option>Select City</option>
                         <?php foreach($cityList as $row){ ?>
                           <option value="<?=$row->Id;?>"><?=$row->city;?></option>
                         <?php } ?>
+                    </select>
+                    <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                      <option value="">Select Category</option>
+                      <?php foreach($jobFunctionList as $row){ ?>
+                        <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                      <?php } ?>
                     </select>
                     <button type="submit" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
