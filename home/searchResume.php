@@ -56,11 +56,10 @@ function getJobFunction($Id){
   <br>
   <div class="clearfix"></div>
 
-  <?php if($resumeList==""){?>
+<?php foreach($resumeList as $row) {?>
   <div class="form-container container m-t-30 m-b-30">
   <h4>Search Results: 1 - 10 of 100</h4>
   <div class="row m-t-10">
-  <?php foreach($resumeList as $row) {?>
     <div style="width: 100%; padding: 10px; padding-left: 25px;">
       <!-- Start Job List -->
       <div class="row">
@@ -91,7 +90,6 @@ function getJobFunction($Id){
       <span ><?=$row->coverLetter;?></span>
     </div>
     <hr>
-  <?php } ?>
   </div>
    <!-- End Job List -->
 
@@ -120,7 +118,7 @@ function getJobFunction($Id){
       </li>
     </ul>
 </div>
-<?php }?>
+<?php } ?>
 </div>
 </div>
 

@@ -79,12 +79,11 @@ function getPositionName($Id){
     </select> -->
     <!-- </div> -->
 
-<?php if($jobList==""){?>
+<?php foreach($jobList as $row) {
+  if ($row->isApproved==1){
+?>
   <div class="form-container container m-t-30 m-b-30">
     <div class="row center-page job-list-row">
-      <?php foreach($jobList as $row) {
-        if ($row->isApproved==1){
-      ?>
         <div class="col-lg-4 job-list-summary">
             <a href="?view=jobDetail&id=<?=$row->Id;?>" class="job-list-title"><?=$row->position;?></a>
             <br>
@@ -103,7 +102,7 @@ function getPositionName($Id){
             <a class="job-list-link" href="?view=jobDetail&id=<?=$row->Id;?>">Read More &gt;</a>
           </span>
         </div>
-        <?php  } } ?>
+        <?php } ?>
     </div>
     <br>
 
