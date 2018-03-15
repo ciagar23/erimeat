@@ -1,5 +1,6 @@
 <?php
 $jobFunctionList = job_function()->filter("isDeleted=0");
+$cityList = city_option()->all();
 
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");
@@ -29,11 +30,15 @@ function getPositionName($Id){
                       <div id="myDIV">
                   <form class="form-inline" method="GET">
                     <div class="form-group">
+                    <input type="hidden" name="view" value="searchResume">
                     <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
-                    <select class="form-control" style="height: 67px; width:200px;">
+                    <select name="c" class="form-control" style="height: 67px; width:200px;">
                         <option>Select City</option>
+                        <?php foreach($cityList as $row){ ?>
+                          <option value="<?=$row->Id;?>"><?=$row->city;?></option>
+                        <?php } ?>
                     </select>
-                    <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
