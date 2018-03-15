@@ -118,8 +118,8 @@ function getFaq(id){
 
         $('#getId').val(data.Id);
         $('#getQuestion').val(data.question);
-        $('#getAnswer').val(data.answer);
-        $('#getLevel').html(data.level);
+        $('#getAnswer').html(data.answer);
+        $('#getLevel').val(data.level);
 
 
       }

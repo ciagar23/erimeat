@@ -122,7 +122,7 @@ $faqList = faq()->all();
                 <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
             </div>
             <div class="modal-body">
-              <form id="default-wizard" action="process.php?action=updateFaq" method="POST" method="POST">
+              <form id="default-wizard" action="process.php?action=updateFaq" method="POST">
                  <p class="m-b-0">
                     <?=$error?>
                 </p>
@@ -135,7 +135,7 @@ $faqList = faq()->all();
 
                     <div class="form-group">
                     <label>Answer</label>
-                    <textarea id="message" class="form-control" name="answer" id="getAnswer"
+                    <textarea  class="form-control" name="answer" id="getAnswer"
                                       data-parsley-trigger="keyup" data-parsley-minlength="20"
                                       data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
                                       data-parsley-validation-threshold="10"></textarea>
