@@ -11,24 +11,24 @@
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 30px; width: 80%;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
-                    <div class="row m-b-20 m-t-50">
-                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
+                    <div class="row m-b-20" style="margin-top: 200px;">
+                      <button id="myBtn1" class="btn" style="width:400px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:400px;">LOOKING FOR A JOB?</button>
                     </div>
 
                     <div class="">
                       <div id="myDIV">
                   <form class="form-inline" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
+                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:350px;" >
                     <select class="form-control" style="height: 67px; width:200px;">
                         <option>Select City</option>
                     </select>
-                    <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="button" class="btn-small btn-success pull-right m-l-5"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
