@@ -43,6 +43,10 @@ switch ($action) {
 		updateProjects();
 		break;
 
+	case 'updateDownloads' :
+		updateDownloads();
+		break;
+
 	case 'addFileFunction' :
 		addFileFunction();
 		break;
@@ -218,6 +222,23 @@ function updateProjects()
 		header('Location: ../admin/?view=projects&message=You have succesfully updated a Projects.');
 	}else{
 		header('Location: ../admin/?view=projects&error=File not uploaded.');
+	}
+}
+
+function updateDownloads()
+{
+	$upload = uploadFile($_FILES['upload_file']);
+	if ($upload)
+	{
+		$Id = $_POST['Id'];
+		$downloads = downloads();
+		$downloads->obj['fileName'] = $_POST['fileName'];
+		$downloads->obj['uploadedFile'] = $upload;
+		$downloads->update("Id='$Id'");
+
+		header('Location: ../admin/?view=downloads&message=You have succesfully updated a Downloads.');
+	}else{
+		header('Location: ../admin/?view=downloads&error=File not uploaded.');
 	}
 }
 
