@@ -126,6 +126,33 @@ function getDownload(id){
       console.log(datastring+url);
     }
 
+function getAccount(id){
+    var datastring = 'action=getAccount&'+'id='+id;
+    var url = 'fetch_accounts.php';
+    $('#myModal1').modal({
+      keyboard: true,
+      backdrop: 'static'
+    });
+
+    $.ajax({
+      type: "POST",
+      data: datastring,
+      url: url,
+      dataType: 'json',
+      success:function (data){
+
+        $('#getId').val(data.Id);
+        $('#getUsername').val(data.username);
+        $('#getFirstName').val(data.firstName);
+        $('#getLastName').val(data.lastName);
+        $('#getLevel').val(data.level);
+
+
+      }
+    });
+    console.log(datastring+url);
+  }
+
 function getFaq(id){
     var datastring = 'action=getFaq&'+'id='+id;
     var url = 'fetch_faq.php';
