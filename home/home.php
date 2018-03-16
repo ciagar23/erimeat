@@ -22,8 +22,8 @@ function getPositionName($Id){
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
                     <div class="row m-b-20" style="margin-top: 100px;">
-                      <button id="myBtn1" class="btn" style="width:400px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:400px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
                     </div>
 
                     <div class="">
@@ -31,13 +31,13 @@ function getPositionName($Id){
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="hidden" name="view" value="searchResume">
-                    <select name="c" class="form-control" style="height: 67px; width:275px;">
+                    <select name="c" class="form-control" style="height: 67px; width:350px;">
                         <option>Select City</option>
                         <?php foreach($cityList as $row){ ?>
                           <option value="<?=$row->Id;?>"><?=$row->city;?></option>
                         <?php } ?>
                     </select>
-                    <select name="c" class="form-control" style="height: 67px; width:275px;" required>
+                    <select name="c" class="form-control" style="height: 67px; width:350px;" required>
                       <option value="">Select Category</option>
                       <?php foreach($jobFunctionList as $row){ ?>
                         <option value="<?=$row->Id;?>"><?=$row->option;?></option>
