@@ -112,13 +112,12 @@ $ptList = position_type()->all();
 
                           <div class="form-group">
                             <label>Attach Computer Specification</label>
-                            <input type="file" class="filestyle form-control" name="upload_specs"/>
+                            <input type="file" class="filestyle form-control" name="upload_specs" accept=".png, .jpg, .jpeg"/>
                           </div>
 
                           <div class="form-group">
                             <label>Attach Other Files</label>
-                            <input type="file" name="upload_certs[]" id="filer_input2"
-                                                       multiple="multiple" class="form-control">
+                            <input type="file" name="upload_certs[]" id="filer_input2" multiple="multiple" class="form-control" accept=".pdf, .doc, .docx, .png, .jpg, .jpeg">
                           </div>
 
                           <div class="text-center"><h3>Attach Resume</h3>
@@ -129,10 +128,10 @@ $ptList = position_type()->all();
                           </div>
                           <div class="col-md-8">
                           <h4>Upload Your Resume</h4>
-                          <p>Supported File Types: pdf, txt, .doc, .docx</p>
+                          <p>Supported File Types: .pdf, .doc, .docx</p>
                         </div>
                         <div class="form-group">
-                        <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false"></div>
+                        <div id="fileInput" style="display: none;"><input type="file" name="upload_file" class="filestyle form-control" data-input="false" accept=".pdf, .doc, .docx, .txt"></div>
                      </div>
                     </div>
                     <br><br><br><br>
