@@ -387,8 +387,9 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
-	$resume->obj['username'] = $user->obj['username'];
-	$resume->update("Id='$Id'");
+	$res = resume();
+	$res->obj['username'] = $user->obj['username'];
+	$res->update("Id='$Id'");
 
 	// Send email
 	$content = "Congratulations!<br><br>
