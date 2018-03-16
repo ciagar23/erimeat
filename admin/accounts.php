@@ -7,6 +7,7 @@ $adminList = admin()->all();
 $jfList = job_function()->filter("isDeleted='0'");
 
 ?>
+
   <div class="row">
     <div class="col-sm-12">
     <br>
