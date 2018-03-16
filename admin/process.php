@@ -27,6 +27,10 @@ switch ($action) {
 		addJobFunction();
 		break;
 
+	case 'updateAccounts' :
+		updateAccounts();
+		break;
+
 	case 'updateRequest' :
 		updateRequest();
 		break;
@@ -170,6 +174,19 @@ function addJobFunction()
 	$jf->create();
 
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category.');
+}
+
+function updateAccounts()
+{
+	$Id = $_POST['Id'];
+	$admin = admin();
+	$admin->obj['username'] = $_POST['username'];
+	$admin->obj['firstName'] = $_POST['firstName'];
+	$admin->obj['lastName'] = $_POST['lastName'];
+	$admin->obj['level'] = $_POST['level'];
+	$admin->update("Id='$Id'");
+
+	header('Location: ../admin/?view=accounts&message=You have successfully updated a Request');
 }
 
 function updateRequest()
