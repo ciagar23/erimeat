@@ -348,11 +348,12 @@ function getPositionName($Id){
                         <!-- End row -->
 <hr>
   <!-- Start Location Panels-->
-      <div class="container-80 center-page">
+      <div class="container center-page">
         <h2 class="text-center">Business Partners</h2>
         <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
         <div class="row m-t-30">
-          <div class="col-md-6 col-lg-3">
+          <div class="col-lg-1"></div>
+          <div class="col-md-6 col-lg-2">
             <div class="hvrbox">
             	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">
             	<div class="hvrbox-layer_top">
@@ -361,7 +362,7 @@ function getPositionName($Id){
             </div>
           </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img2.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -370,7 +371,7 @@ function getPositionName($Id){
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img3.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -379,7 +380,7 @@ function getPositionName($Id){
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img4.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -387,6 +388,16 @@ function getPositionName($Id){
               	</div>
               </div>
             </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="hvrbox">
+                <img src="../include/assets/images/home-img5.png" class="hvrbox-layer_bottom">
+                <div class="hvrbox-layer_top">
+                  <div class="hvrbox-text">RHODE ISLAND</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-1"></div>
         </div>
       </div>
       <div class="clearfix m-b-30"></div>
