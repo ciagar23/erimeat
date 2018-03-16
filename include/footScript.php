@@ -6,6 +6,67 @@
 <script src="../include/assets/js/waves.js"></script>
 <script src="../include/assets/js/jquery.slimscroll.js"></script>
 <script src="../include/assets/js/jquery.scrollTo.min.js"></script>
+<script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
+
+
+
+
+<script src="../include/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="../include/plugins/datatables/buttons.bootstrap.min.js"></script>
+<script src="../include/plugins/datatables/jszip.min.js"></script>
+<script src="../include/plugins/datatables/pdfmake.min.js"></script>
+<script src="../include/plugins/datatables/vfs_fonts.js"></script>
+<script src="../include/plugins/datatables/buttons.html5.min.js"></script>
+<script src="../include/plugins/datatables/buttons.print.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.keyTable.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="../include/plugins/datatables/responsive.bootstrap.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.scroller.min.js"></script>
+<script src="../include/plugins/datatables/dataTables.colVis.js"></script>
+<script src="../include/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+
+<!-- Jquery-Ui -->
+<script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
+ <!-- page specific js -->
+<script src="../include/assets/pages/jquery.fileuploads.init.js"></script>
+
+<script src="../include/assets/pages/jquery.datatables.init.js"></script>
+
+<script type="text/javascript">
+            $(document).ready(function () {
+                $('#datatable').dataTable();
+                $('#datatable-keytable').DataTable({keys: true});
+                $('#datatable-responsive').DataTable();
+                $('#datatable-colvid').DataTable({
+                    "dom": 'C<"clear">lfrtip',
+                    "colVis": {
+                        "buttonText": "Change columns"
+                    }
+                });
+                $('#datatable-scroller').DataTable({
+                    ajax: "../plugins/datatables/json/scroller-demo.json",
+                    deferRender: true,
+                    scrollY: 380,
+                    scrollCollapse: true,
+                    scroller: true
+                });
+                var table = $('#datatable-fixed-header').DataTable({fixedHeader: true});
+                var table = $('#datatable-fixed-col').DataTable({
+                    scrollY: "300px",
+                    scrollX: true,
+                    scrollCollapse: true,
+                    paging: false,
+                    fixedColumns: {
+                        leftColumns: 1,
+                        rightColumns: 1
+                    }
+                });
+            });
+            TableManageButtons.init();
+</script>
+
 
   <!-- Jquery filer js -->
 <script src="../include/plugins/jquery.filer/js/jquery.filer.min.js"></script>
@@ -101,6 +162,58 @@ function getdata(id){
       console.log(datastring+url);
     }
 
+function getDownload(id){
+      var datastring = 'action=getDownload&'+'id='+id;
+      var url = 'fetch_downloads.php';
+      $('#myModal1').modal({
+        keyboard: true,
+        backdrop: 'static'
+      });
+
+      $.ajax({
+        type: "POST",
+        data: datastring,
+        url: url,
+        dataType: 'json',
+        success:function (data){
+
+          $('#getId').val(data.Id);
+          $('#getFileName').val(data.fileName);
+          $('#getFileUpload').val(data.uploadedFile);
+
+
+        }
+      });
+      console.log(datastring+url);
+    }
+
+function getAccount(id){
+    var datastring = 'action=getAccount&'+'id='+id;
+    var url = 'fetch_accounts.php';
+    $('#myModal1').modal({
+      keyboard: true,
+      backdrop: 'static'
+    });
+
+    $.ajax({
+      type: "POST",
+      data: datastring,
+      url: url,
+      dataType: 'json',
+      success:function (data){
+
+        $('#getId').val(data.Id);
+        $('#getUsername').val(data.username);
+        $('#getFirstName').val(data.firstName);
+        $('#getLastName').val(data.lastName);
+        $('#getLevel').val(data.level);
+
+
+      }
+    });
+    console.log(datastring+url);
+  }
+
 function getFaq(id){
     var datastring = 'action=getFaq&'+'id='+id;
     var url = 'fetch_faq.php';
@@ -141,18 +254,18 @@ function getProjects(id){
       url: url,
       dataType: 'json',
       success:function (data){
-
+     
         $('#getId').val(data.Id);
         $('#getTitle').val(data.title);
         $('#getContent').html(data.content);
-        $('#getImage').val(data.uploadedImage);
-
+        $('#getImage').html(data.uploadedImage);
 
       }
     });
     console.log(datastring+url);
   }
 </script>
+
 <script type="text/javascript">
     $('#carousel-example-captions').carousel();
 </script>
@@ -191,8 +304,6 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/plugins/morris/morris.min.js"></script>
 <script src="../include/plugins/raphael/raphael-min.js"></script>
 
-        <script src="../include/assets/pages/jquery.dashboard-2.js"></script>
-
 
         <!-- Sparkline charts -->
 <script src="../include/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
@@ -222,68 +333,8 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/assets/pages/jquery.calendar.js"></script>
 
 
-<script src="../include/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.bootstrap.js"></script>
 
-
-
-
-<script src="../include/plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="../include/plugins/datatables/buttons.bootstrap.min.js"></script>
-<script src="../include/plugins/datatables/jszip.min.js"></script>
-<script src="../include/plugins/datatables/pdfmake.min.js"></script>
-<script src="../include/plugins/datatables/vfs_fonts.js"></script>
-<script src="../include/plugins/datatables/buttons.html5.min.js"></script>
-<script src="../include/plugins/datatables/buttons.print.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.fixedHeader.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.keyTable.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.responsive.min.js"></script>
-<script src="../include/plugins/datatables/responsive.bootstrap.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.scroller.min.js"></script>
-<script src="../include/plugins/datatables/dataTables.colVis.js"></script>
-<script src="../include/plugins/datatables/dataTables.fixedColumns.min.js"></script>
-
-<!-- Jquery-Ui -->
-<script src="../include/plugins/jquery-ui/jquery-ui.min.js"></script>
- <!-- page specific js -->
-<script src="../include/assets/pages/jquery.fileuploads.init.js"></script>
-
-<script src="../include/assets/pages/jquery.datatables.init.js"></script>
-
-<script type="text/javascript">
-            $(document).ready(function () {
-                $('#datatable').dataTable();
-                $('#datatable-keytable').DataTable({keys: true});
-                $('#datatable-responsive').DataTable();
-                $('#datatable-colvid').DataTable({
-                    "dom": 'C<"clear">lfrtip',
-                    "colVis": {
-                        "buttonText": "Change columns"
-                    }
-                });
-                $('#datatable-scroller').DataTable({
-                    ajax: "../plugins/datatables/json/scroller-demo.json",
-                    deferRender: true,
-                    scrollY: 380,
-                    scrollCollapse: true,
-                    scroller: true
-                });
-                var table = $('#datatable-fixed-header').DataTable({fixedHeader: true});
-                var table = $('#datatable-fixed-col').DataTable({
-                    scrollY: "300px",
-                    scrollX: true,
-                    scrollCollapse: true,
-                    paging: false,
-                    fixedColumns: {
-                        leftColumns: 1,
-                        rightColumns: 1
-                    }
-                });
-            });
-            TableManageButtons.init();
-</script>
-
-
+    <script src="../include/assets/pages/jquery.dashboard-2.js"></script>
 
 <!-- App js -->
 <script src="../include/assets/js/jquery.core.js"></script>

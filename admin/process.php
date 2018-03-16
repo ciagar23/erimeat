@@ -27,6 +27,10 @@ switch ($action) {
 		addJobFunction();
 		break;
 
+	case 'updateAccounts' :
+		updateAccounts();
+		break;
+
 	case 'updateRequest' :
 		updateRequest();
 		break;
@@ -43,8 +47,16 @@ switch ($action) {
 		updateProjects();
 		break;
 
+	case 'updateDownloads' :
+		updateDownloads();
+		break;
+
 	case 'addFileFunction' :
 		addFileFunction();
+		break;
+
+	case 'removeAccounts' :
+		removeAccounts();
 		break;
 
 	case 'removeJobFunction' :
@@ -168,6 +180,19 @@ function addJobFunction()
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category.');
 }
 
+function updateAccounts()
+{
+	$Id = $_POST['Id'];
+	$admin = admin();
+	$admin->obj['username'] = $_POST['username'];
+	$admin->obj['firstName'] = $_POST['firstName'];
+	$admin->obj['lastName'] = $_POST['lastName'];
+	$admin->obj['level'] = $_POST['level'];
+	$admin->update("Id='$Id'");
+
+	header('Location: ../admin/?view=accounts&message=You have successfully updated a Request');
+}
+
 function updateRequest()
 {
 	$Id = $_POST['Id'];
@@ -218,6 +243,23 @@ function updateProjects()
 		header('Location: ../admin/?view=projects&message=You have succesfully updated a Projects.');
 	}else{
 		header('Location: ../admin/?view=projects&error=File not uploaded.');
+	}
+}
+
+function updateDownloads()
+{
+	$upload = uploadFile($_FILES['upload_file']);
+	if ($upload)
+	{
+		$Id = $_POST['Id'];
+		$downloads = downloads();
+		$downloads->obj['fileName'] = $_POST['fileName'];
+		$downloads->obj['uploadedFile'] = $upload;
+		$downloads->update("Id='$Id'");
+
+		header('Location: ../admin/?view=downloads&message=You have succesfully updated a Downloads.');
+	}else{
+		header('Location: ../admin/?view=downloads&error=File not uploaded.');
 	}
 }
 
@@ -345,8 +387,9 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
-	$resume->obj['username'] = $user->obj['username'];
-	$resume->update("Id='$Id'");
+	$res = resume();
+	$res->obj['username'] = $user->obj['username'];
+	$res->update("Id='$Id'");
 
 	// Send email
 	$content = "Congratulations!<br><br>
@@ -407,6 +450,29 @@ session_start();
 session_destroy();
 header('Location: index.php');
 	exit;
+}
+
+function removeAccounts()
+{
+	$Id = $_GET['Id'];
+	$admin = admin();
+	$admin->obj['isDeleted'] = "1";
+	$admin->update("Id='$Id'");
+
+	$admin = admin()->get("Id='$Id'");
+	$admin->username;
+	$admin->level;
+
+	if($admin->level == "hr"){
+		$hr = hr()->get("username='$admin->username'");
+		$id = $hr->Id;
+
+		$hr = hr();
+		$hr->obj['isDeleted'] = "1";
+		$hr->update("Id='$id'");
+	}
+
+	header('Location: ../admin/?view=accounts&message=Succesfully Deleted');
 }
 
 function removeJobFunction()

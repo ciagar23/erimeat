@@ -114,25 +114,26 @@ function getPositionName($Id){
           </div>
       </div>
   </div>
-  <div class="row center-page">
+  <div class="row">
   <div class="container-80 center-page"><br>
       <div class="col-md-10 center-page p-b-30">
         <form class="form-inline" method="GET">
         <div class="form-group">
           <input type="hidden" name="view" value="searchJob">
-          <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-          <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+          <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:400px;">
+          <select name="c" class="form-control" style="height: 67px; width:249px;" required>
             <option value="">Select Category</option>
             <?php foreach($jobFunctionList as $row){ ?>
               <option value="<?=$row->Id;?>"><?=$row->option;?></option>
             <?php } ?>
           </select>
-              <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search</button>
+              <button type="submit" class="btn waves-effect waves-light btn-primary" style="margin-top: -1px;"><i class="fa fa-search m-r-5"></i>Search</button>
 
         </div>
       </form>
       </div>
   </div>
+</div>
 </div>
   <hr class="m-b-30 m-t-30" width="75%">
   <div class="col-md-8 center-page text-center">

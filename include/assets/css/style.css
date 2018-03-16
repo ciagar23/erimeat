@@ -1415,7 +1415,8 @@ a:focus {
 .btn-small {
     border-radius: 0.3rem;
     font-size: 16px;
-    padding: 15px 45px;
+    padding: 15.5px 45px;
+    margin-top: 1px;
     outline: none !important;
     font-weight: bold;
     font-family: "Century Gothic", sans-serif; }
@@ -1440,7 +1441,7 @@ a:focus {
   box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.1) inset; }
 
 .btn-custom, .btn-primary, .btn-success, .btn-info, .btn-warning,
-.btn-danger, .btn-inverse, .btn-purple, .btn-pink {
+.btn-danger, .btn-inverse, .btn-purple, .btn-pink, .btn-blue {
   color: #ffffff !important; }
 
 .btn-custom {
@@ -1529,6 +1530,14 @@ a:focus {
 .btn-pink:hover, .btn-pink:focus, .btn-pink:active {
   background-color: #e95084 !important;
   border-color: #e95084 !important; }
+
+.btn-blue {
+  background-color: #0b7dc4 !important;
+  border: 1px solid #0b7dc4 !important; }
+
+.btn-blue:hover, .btn-blue:focus, .btn-blue:active {
+  background-color: #0d70ae !important;
+  border-color: #0d70ae !important; }
 
 .btn-bordered {
   background-color: transparent !important; }
