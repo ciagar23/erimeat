@@ -101,6 +101,31 @@ function getdata(id){
       console.log(datastring+url);
     }
 
+function getDownload(id){
+      var datastring = 'action=getDownload&'+'id='+id;
+      var url = 'fetch_downloads.php';
+      $('#myModal1').modal({
+        keyboard: true,
+        backdrop: 'static'
+      });
+
+      $.ajax({
+        type: "POST",
+        data: datastring,
+        url: url,
+        dataType: 'json',
+        success:function (data){
+
+          $('#getId').val(data.Id);
+          $('#getFileName').val(data.fileName);
+          $('#getFileUpload').val(data.uploadedFile);
+
+
+        }
+      });
+      console.log(datastring+url);
+    }
+
 function getFaq(id){
     var datastring = 'action=getFaq&'+'id='+id;
     var url = 'fetch_faq.php';
