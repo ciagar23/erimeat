@@ -43,7 +43,7 @@ $jfList = job_function()->filter("isDeleted='0'");
 
            <?php foreach($adminList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
               $id = $row->Id;
               ?>
               <tr>
@@ -57,7 +57,8 @@ $jfList = job_function()->filter("isDeleted='0'");
                   ?>
                 </td>
                 <td>
-                  delete
+                  <a href="process.php?action=removeAccounts&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
+                </td>
               </tr>
           <?php
               }
