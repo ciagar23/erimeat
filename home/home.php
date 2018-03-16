@@ -17,11 +17,11 @@ function getPositionName($Id){
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10 center-page" style="font-size: 30px; width: 80%;">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
-                    <div class="row m-b-20" style="margin-top: 200px;">
+                    <div class="row m-b-20" style="margin-top: 100px;">
                       <button id="myBtn1" class="btn" style="width:400px;">NEED TO HIRE?</button>
                       <button id="myBtn2" class="btn" style="width:400px;">LOOKING FOR A JOB?</button>
                     </div>

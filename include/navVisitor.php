@@ -10,17 +10,17 @@
         <li> <a class="m-l-3 m-r-3" href="../home/?view=downloads" style="font-size:15px;">Downloads</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=hiringForm" style="font-size:15px;">Request Staff</a></li>
         <li><a class="m-l-3 m-r-3" href="../home/?view=contactUs" style="font-size:15px;">Contact Us</a></li>
-      
+
       </ul>
     </div>
   </div>
 
         <nav style="padding-left: 2%;">
-      
+
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
 
-            <ul class="menu">   
+            <ul class="menu">
 
                 <li>
                     <!-- First Tier Drop Down -->
@@ -313,10 +313,10 @@ li > a:only-child:after { content: ''; }
 #above-nav li {
     display: inline-block;
     padding-right: -20px;
-    
+
 }
 #above-nav a:hover, a:focus, a:active {
-    
+
     text-decoration: none;
     background-color: #fff;
 
@@ -326,7 +326,7 @@ li > a:only-child:after { content: ''; }
     color: #337ab7;
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
-       
+
 }
 #above-nav a {
     position: relative;
@@ -345,7 +345,7 @@ li > a:only-child:after { content: ''; }
     left: 0;
     height: 3px;
     width: 100%;
-   
+
     transform-origin: right top;
     transform: scale(0, 0);
     border-bottom: 0.5px solid #337ab7;
@@ -362,15 +362,15 @@ li > a:only-child:after { content: ''; }
 @media all and (max-width : 768px) {
 #above-nav ul {
     list-style: none;
- 
+
 }
 #above-nav li {
     display: block;
 
-    
+
 }
 #above-nav a:hover, a:focus, a:active {
-    
+
     text-decoration: none;
     background-color: #fff;
 
@@ -385,7 +385,7 @@ li > a:only-child:after { content: ''; }
 #above-nav a {
     position: relative;
     display: block;
-   
+
     line-height: 16px;
     color: #337ab7;
 }
@@ -400,7 +400,7 @@ li > a:only-child:after { content: ''; }
     background-color: #337ab7;
     transform-origin: right top;
     transform: scale(0, 0);
-    
+
 }
 #above-nav a:active::before {
     background-color: #337ab7;
