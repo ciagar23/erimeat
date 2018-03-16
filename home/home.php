@@ -1,5 +1,11 @@
 <?php
+$jobFunctionList = job_function()->filter("isDeleted=0");
+$cityList = city_option()->all();
 
+function getPositionName($Id){
+  $job = position_type()->get("Id='$Id'");
+  echo $job->option;
+}
 ?>
 
 <div>
@@ -24,11 +30,20 @@
                       <div id="myDIV">
                   <form class="form-inline" method="GET">
                     <div class="form-group">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;" >
-                    <select class="form-control" style="height: 67px; width:200px;">
+                    <input type="hidden" name="view" value="searchResume">
+                    <select name="c" class="form-control" style="height: 67px; width:200px;">
                         <option>Select City</option>
+                        <?php foreach($cityList as $row){ ?>
+                          <option value="<?=$row->Id;?>"><?=$row->city;?></option>
+                        <?php } ?>
                     </select>
-                    <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                      <option value="">Select Category</option>
+                      <?php foreach($jobFunctionList as $row){ ?>
+                        <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                      <?php } ?>
+                    </select>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -37,13 +52,20 @@
            <div id="demo1"></div>
            <div id="demo"></div>
             <div id="myP" style="visibility:hidden;">
-                  <form class="form-inline" role="form" method="GET">
-                    <div class="form-group">
-                    <input type="text" id="" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
-                     <input type="text" id="" name="" class="form-control" placeholder="City or ZIP" style="height: 67px;width:200px;">
-                       <button type="button" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                    </div>
-                  </form>
+              <form class="form-inline" method="GET">
+              <div class="form-group">
+                <input type="hidden" name="view" value="searchJob">
+                <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+                <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                  <option value="">Select Category</option>
+                  <?php foreach($jobFunctionList as $row){ ?>
+                    <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                  <?php } ?>
+                </select>
+                    <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search Job</button>
+
+              </div>
+            </form>
                     </div></div>
                 </div>
                 <div class="clearfix"></div>

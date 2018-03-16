@@ -1,3 +1,12 @@
+<?php
+$jobFunctionList = job_function()->filter("isDeleted=0");
+
+function getPositionName($Id){
+  $job = position_type()->get("Id='$Id'");
+  echo $job->option;
+}
+?>
+
 <div class="m-b-30" style="position:relative;">
   <img src="../include/assets/images/teamire-aboutus-img.png" style="width: 100%;">
   <div class="homepage-top-text text-center m-t-50 container-fluid">
@@ -128,16 +137,23 @@
   <hr class="m-b-30 m-t-30" width="100%">
 
 </div>
-      <div class="row form-container container-80 center-page">
-          <div class="col-md-12 center-page">
-              <div class="input-group m-t-5">
-                <form method="GET">
-                  <input type="hidden" name="view" value="jobList">
-                  <input type="text" id="" name="s" class="form-control" style="width:700px; height:67px;" value="Search Jobs">
-                  <span class="input-group-btn">
-                      <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                  </span>
-                </form>
+      <div class="row center-page">
+          <div class="container-80 center-page">
+              <div class="col-md-10 center-page p-b-30">
+                <form class="form-inline" method="GET">
+                <div class="form-group">
+                  <input type="hidden" name="view" value="searchJob">
+                  <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+                  <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                    <option value="">Select Category</option>
+                    <?php foreach($jobFunctionList as $row){ ?>
+                      <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                    <?php } ?>
+                  </select>
+                      <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search</button>
+
+                </div>
+              </form>
               </div>
           </div>
       </div>

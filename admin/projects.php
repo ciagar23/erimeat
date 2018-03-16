@@ -144,7 +144,11 @@ function formatDate($val){
 
                       <div class="form-group">
                         <label>Upload Image</label>
+<<<<<<< HEAD
                         <img src="../media/" id="getImage">
+=======
+
+>>>>>>> bb55b513617e72b786fdaa47bef7d230e3cbd5d1
                         <input type="file" class="form-control" name="upload_file" id="getImage">
                       </div>
                     </div>

@@ -7,7 +7,7 @@ function formatDate($val){
   return date_format($date, "F d, Y g:i A");
 }
 ?>
-
+<br>
 <div class="container-fluid">
   <div class="p-t-10 container-80 center-page">
     <div class="col-md-10 center-page p-b-30">
@@ -18,3 +18,4 @@ function formatDate($val){
     </div>
   </div>
 </div>
+<br>

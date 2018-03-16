@@ -38,9 +38,13 @@ class CRUD {
 		return $result;
 	}
 
-	function count($query){
+	function count($query=""){
+		if ($query){
+			$query = "where " . $query;
+		}
+
 		$db = Database::connect();
-		$pdo = $db->prepare("select * from $this->table where $query");
+		$pdo = $db->prepare("select * from $this->table $query");
 		$pdo->execute();
 		Database::disconnect();
 		return $pdo->rowCount();

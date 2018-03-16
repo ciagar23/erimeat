@@ -11,10 +11,6 @@ switch ($action) {
 		jobRequest();
 		break;
 
-	case 'clientRequest' :
-		clientRequest();
-		break;
-
 	case 'addAccount' :
 		addAccount();
 		break;
@@ -29,6 +25,10 @@ switch ($action) {
 
 	case 'addJobFunction' :
 		addJobFunction();
+		break;
+
+	case 'updateRequest' :
+		updateRequest();
 		break;
 
 	case 'updateServices' :
@@ -168,6 +168,16 @@ function addJobFunction()
 	header('Location: ../admin/?view=jobCategory&message=You have succesfully added a new Job Category.');
 }
 
+function updateRequest()
+{
+	$Id = $_POST['Id'];
+	$job = job();
+	$job->obj['comment'] = $_POST['comment'];
+	$job->update("Id='$Id'");
+
+	header('Location: ../admin/?view=talentDetail&Id='. $Id . '&message=You have successfully updated a Request');
+}
+
 function updateServices()
 {
 	$Id = $_POST['Id'];
@@ -271,59 +281,6 @@ function jobRequest()
 	header('Location: index.php?view=talentRequest');
 }
 
-function clientRequest()
-{
-	if ($_GET['result']=="approve"){
-		$result = 1;
-		__createClientLogin($_GET['Id']);
-	}else{
-		$result = -1;
-	}
-
-	$Id = $_GET['Id'];
-	$company = company();
-	$company->obj['isApproved'] = $result;
-	$company->update("Id='$Id'");
-
-	$comp = company()->get("Id='$Id'");
-
-	if ($result!=1){
-		// Send email
-		$content = __moreInfoEmailMessage();
-		sendEmail($comp->email, $content);
-}
-
-	header('Location: index.php?view=clientRequest');
-}
-
-function __createClientLogin($Id){
-	// Get Detail
-	$company = company()->get("Id='$Id'");
-
-	// Create account
-	$user = user();
-	$user->obj['username'] = "C" . round(microtime(true));
-	$user->obj['password'] = "temppassword";
-	$user->obj['firstName'] = $company->contactPerson;
-	$user->obj['lastName'] = $company->name;
-	$user->obj['level'] = "company";
-	$user->create();
-
-	// Update Company
-	$comp = company();
-	$comp->obj['username'] = $user->obj['username'];
-	$comp->update("Id='$Id'");
-
-	// Send email
-	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: " . $user->obj['username'] . " <br>
-							Password: " . $user->obj['password'] . " <br><br>
-							To login to our website. Please click the link below:<br>
-							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
-							Teamire";
-	sendEmail($company->email, $content);
-}
-
 function setInterviewDate()
 {
 	$email = $_POST['email'];
@@ -388,7 +345,7 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
-	$resume->['username'] = $user->obj['username'];
+	$resume->obj['username'] = $user->obj['username'];
 	$resume->update("Id='$Id'");
 
 	// Send email
