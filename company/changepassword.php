@@ -1,12 +1,12 @@
 <?php
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 
-if (!$_SESSION['company_session'])
+if (!$_SESSION['temp_session'])
 	{
-		header("Location: changepassword.php");
+		header("Location: ../company/");
 	}
 else{
-	$user = $_SESSION['company_session'];
+	$user = $_SESSION['temp_session'];
 }
 ?>
 

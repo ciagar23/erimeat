@@ -66,7 +66,6 @@ substr(round(microtime(true)), -6)
 	//for admin
 	sendEmail('torredale1014@gmail.com',$adminmessage);
 
-
 	header('Location: ../company/');
 }
 
@@ -90,23 +89,52 @@ function clientRequest()
 	$comp->obj['phoneNumber'] = $_POST['phoneNumber'];
 	$comp->obj['mobileNumber'] = $_POST['mobileNumber'];
 	$comp->obj['description '] = $_POST['description'];
+	$comp->obj['isApproved '] = "1";
 	$comp->create();
 
 	$company = company()->get("abn='$abn'");
 
+	__createClientLogin($company->Id);
+
 	// Send email
-	$content = __clientRequestEmailMessage();
 	$hrmessage = __hrEmailMessage();
 	$adminmessage = __adminEmailMessage();
 
-	//for client
-	sendEmail($comp->obj['email'], $content);
 	//for HR
 	sendEmail('rgmak12@gmail.com',$hrmessage);
 	//for admin
 	sendEmail('torredale1014@gmail.com',$adminmessage);
 
 	header('Location: ../home/?view=success&Id='.$company->Id);
+}
+
+function __createClientLogin($Id){
+	// Get Detail
+	$company = company()->get("Id='$Id'");
+
+	// Create account
+	$user = user();
+	$user->obj['username'] = "C" . round(microtime(true));
+	$user->obj['password'] = "temppassword";
+	$user->obj['firstName'] = $company->contactPerson;
+	$user->obj['lastName'] = $company->name;
+	$user->obj['level'] = "company";
+	$user->create();
+
+	// Update Company
+	$comp = company();
+	$comp->obj['username'] = $user->obj['username'];
+	$comp->update("Id='$Id'");
+
+	// Send email
+	$content = "We have approved your request. Please use the credentials we have created for you.<br>
+							Username: " . $user->obj['username'] . " <br>
+							Password: " . $user->obj['password'] . " <br><br>
+							To login to our website. Please click the link below:<br>
+							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
+							Teamire";
+
+	sendEmail($company->email, $content);
 }
 
 function submitResume(){
@@ -262,17 +290,12 @@ function __submitApplicationEmailMessage(){
 					Teamire";
 }
 
-function __clientRequestEmailMessage(){
-	return "We have received your request. Thank you for the interest shown in our company.<br><br>
-					Please be informed that we are in the midst of processing your request and shall get<br>
-					in touch with you again once you've meet our requirements.<br><br>
-					Teamire";
-}
 function __hrEmailMessage(){
 	return "A new request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/hr'>www.teamire.com</a><br>
 					and check the new request.<br><br>
 					Teamire";
 }
+
 function __adminEmailMessage(){
 	return "A new request has been created. Please login to <a href='www.bandbajabaraath.kovasaf.com/admin'>www.teamire.com</a><br>
 					and check the new request.<br><br>

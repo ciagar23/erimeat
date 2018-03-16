@@ -11,6 +11,14 @@ switch ($action) {
 		login();
 		break;
 
+	case 'forgotPassword' :
+		forgotPassword();
+		break;
+
+	case 'checkCode' :
+		checkCode();
+		break;
+
 	case 'submitTimesheet' :
 		submitTimesheet();
 		break;
@@ -52,8 +60,6 @@ switch ($action) {
 
 function login()
 {
-	// if we found an error save the error message in this variable
-
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
@@ -62,12 +68,10 @@ function login()
 	if ($result){
 		$_SESSION['employee_session'] = $username;
 		if ($password == 'temppassword'){
+			$_SESSION['temp_session'] = $username;
 			header('Location: index.php?view=changepassword');
 		}
 		else{
-
-			//TODO: Ano ni?!?!
-		//$conn = new PDO('mysql:host=localhost; dbname=db_erimeat','root', '');
 
 		$dateNow = date("Y-m-d");
 		$checkDtr = dtr()->get("owner='$username' and createDate='$dateNow'");
@@ -84,16 +88,49 @@ function login()
 	}
 }
 
+function forgotPassword()
+{
+	$username = $_POST['username'];
+	$code = round(microtime(true));
+
+	$resume = resume()->get("username='$username'");
+
+	if ($resume){
+		$_SESSION['temp_session'] = $username;
+		$_SESSION['code_session'] = $code;
+		// Send email
+		$content = "We have received your request. Please use this code to reset your password.<br>
+								Code: " . $_SESSION['code_session'] . " <br><br>
+								Teamire";
+		sendEmail($resume->email, $content);
+
+		header('Location: ../employee/?view=enterCode');
+	}else{
+		header('Location: index.php?error=User not found in the Database');
+	}
+}
+
+function checkCode()
+{
+	$code = $_POST['code'];
+
+	if ($code == $_SESSION['code_session']){
+		header('Location: ../employee/?view=changepassword');
+	}else{
+		header('Location: ../employee/?view=enterCode&error=Invalid Code');
+	}
+}
+
 function newCheckIn()
 {
 
 	$dtr = dtr();
 	$dtr->obj['owner'] = $_SESSION['employee_session'];
-	$dtr->obj['createDate'] = "NOW()";
+	$dtr->obj['createDate'] = date("Y-m-d");
 	$dtr->obj['checkIn'] = "NOW()";
 	$dtr->create();
 
-	header('Location: index.php');
+	header('Location: index.php?');
 }
 
 function changepassword()
@@ -243,6 +280,7 @@ function submitTimesheet()
 	// Get jobId
 	$emp = employee()->get("username='$currentUser'");
 
+	// Create Timesheet
 	$ts = timesheet();
 	$ts->obj['jobId'] = $emp->jobId;
 	$ts->obj['employee'] = $currentUser;
@@ -250,20 +288,25 @@ function submitTimesheet()
 	$ts->obj['createDate'] = 'NOW()';
 	$ts->create();
 
+	// Get the latest timesheet
 	$tsData = timesheet()->get("employee='$currentUser' ORDER BY ID DESC LIMIT 1");
 
+	// Update all DTR with the new timesheet
 	$dtr = dtr();
 	$dtr->obj['timesheetId'] = $tsData->Id;
 	$dtr->update("timesheetId='0' and owner='$currentUser' and status='4' ");
 
-	// Update all dtr
-	header('Location: index.php?a='.$ts->Id);
+	// Get job functionId
+	$job = job()->get("Id=$emp->jobId");
+	// Get Hr email by jobFunctionId
+	$hr = hr()->get("jobFunctionId=$job->jobFunctionId");
 
-// $obj = new DTR;
-// foreach($obj->readList($user) as $row) {
-// 	if ($row->status==4 && !$row->timesheetId){
-//
-// 	}
+	// Send email to HR
+	$emailContent = "A new timesheet has been sent. Please check your teamire account";
+	sendEmail($hr->email, $emailContent);
+
+	// Update all dtr
+	header('Location: index.php');
 
 }
 

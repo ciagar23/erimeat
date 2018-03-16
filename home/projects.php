@@ -1,5 +1,11 @@
 <?php
-  $projectList = projects()->all();
+$jobFunctionList = job_function()->filter("isDeleted=0");
+$projectList = projects()->all();
+
+function getPositionName($Id){
+  $job = position_type()->get("Id='$Id'");
+  echo $job->option;
+}
 
 function formatDate($val){
   $date = date_create($val);
@@ -39,17 +45,24 @@ function formatDate($val){
 
 
 </div>
+</div>
 
-      <div class="row form-container">
-          <div class="col-md-9 center-page">
-              <div class="input-group m-t-5">
-                <form method="GET">
-                <div class="input-group">
-                  <input type="hidden" name="view" value="jobList">
-                  <input type="text" id="example-input2-group2" name="s" class="form-control" style="width:560px; height:67px;" placeholder="Job Title, Skills or Keywords">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
-                      </span>
+<div class="container-fluid m-b-30">
+<div class="row">
+    <div class="container-80 center-page">
+        <div class="col-md-10 center-page p-b-30">
+                <form class="form-inline" method="GET">
+                <div class="form-group">
+                  <input type="hidden" name="view" value="searchJob">
+                  <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:400px;">
+                  <select name="c" class="form-control" style="height: 67px; width:249px;" required>
+                    <option value="">Select Category</option>
+                    <?php foreach($jobFunctionList as $row){ ?>
+                      <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                    <?php } ?>
+                  </select>
+                      <button type="submit" class="btn waves-effect waves-light btn-primary" style="margin-top: -1px;"><i class="fa fa-search m-r-5"></i>Search</button>
+
                 </div>
               </form>
               </div>

@@ -77,11 +77,6 @@ switch ($view) {
 		$template	= '../include/template.php';
 		break;
 
-	case 'jobList' :
-		$content 	= 'jobList.php';
-		$template	= '../include/template.php';
-		break;
-
 	case 'jobDetail' :
 		$content 	= 'jobDetail.php';
 		$template	= '../include/template.php';
@@ -99,11 +94,6 @@ switch ($view) {
 
 	case 'searchResume' :
 		$content 	= 'searchResume.php';
-		$template	= '../include/template.php';
-		break;
-
-	case 'candidateList' :
-		$content 	= 'candidateList.php';
 		$template	= '../include/template.php';
 		break;
 

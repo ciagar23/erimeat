@@ -15,16 +15,16 @@ switch ($action) {
 		logout();
 		break;
 
+	case 'updateRequest' :
+		updateRequest();
+		break;
+
 	case 'addExperience' :
 		addExperience();
 		break;
 
 	case 'jobRequest' :
 		jobRequest();
-		break;
-
-	case 'clientRequest' :
-		clientRequest();
 		break;
 
 	case 'changepassword' :
@@ -76,6 +76,16 @@ session_start();
 session_destroy();
 header('Location: index.php');
 	exit;
+}
+
+function updateRequest()
+{
+	$Id = $_POST['Id'];
+	$job = job();
+	$job->obj['comment'] = $_POST['comment'];
+	$job->update("Id='$Id'");
+
+	header('Location: ../hr/?view=jobDetail&Id='. $Id . '&message=You have successfully updated a Request');
 }
 
 function denyResume()
@@ -168,6 +178,10 @@ function __createEmployeeLogin($Id, $jobId){
 	$emp->obj['createDate'] = 'NOW()';
 	$emp->create();
 
+	$res = resume();
+	$res->obj['username'] = $user->obj['username'];
+	$res->update("Id='$Id'");
+
 	// Send email
 	$content = "Congratulations!<br><br>
 							You are hired. We have approved your application. Please use the credentials we have created for you.<br>
@@ -177,60 +191,6 @@ function __createEmployeeLogin($Id, $jobId){
 							<a href='www.bandbajabaraath.kovasaf.com/employee/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
 							Teamire";
 	sendEmail($resume->email, $content);
-}
-
-function clientRequest()
-{
-	if ($_GET['result']=="approve"){
-		$result = 1;
-		__createClientLogin($_GET['Id']);
-	}else{
-		$result = -1;
-	}
-
-	$Id = $_GET['Id'];
-	$company = company();
-	$company->obj['isApproved'] = $result;
-	$company->update("Id='$Id'");
-
-	$comp = company()->get("Id='$Id'");
-
-	if ($result!=1){
-		// Send email
-		$content = __moreInfoEmailMessage();
-		sendEmail($comp->email, $content);
-}
-
-	header('Location: index.php?view=clientRequest');
-}
-
-function __createClientLogin($Id){
-	// Get Detail
-	$comp = company()->get("Id='$Id'");
-
-	// Create account
-	$obj = new Profile;
-	$user = user();
-	$user->obj['username'] = "C" . $comp->abn;
-	$user->obj['password'] = "temppassword";
-	$user->obj['firstName'] = $comp->contactPerson;
-	$user->obj['lastName'] = $comp->name;
-	$user->obj['level'] = "company";
-	$obj->create();
-
-	// Update Company
-	$comp = company();
-	$comp->obj['username'] = $obj->username;
-	$comp->update("Id='$Id'");
-
-	// Send email
-	$content = "We have approved your request. Please use the credentials we have created for you.<br>
-							Username: $user->obj['username'] <br>
-							Password: $user->obj['password'] <br><br>
-							To login to our website. Please click the link below:<br>
-							<a href='www.bandbajabaraath.kovasaf.com/company/index.php?view=changepassword'>www.bandbajabaraath.kovasaf.com</a><br><br>
-							Teamire";
-	sendEmail($comp->obj['email'], $content);
 }
 
 function changepassword()

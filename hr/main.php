@@ -1,47 +1,38 @@
 <div class="row">
     <div class="col-lg-3 col-md-6">
-        <div class="card-box widget-box-two widget-two-custom">
-            <i class="mdi mdi-currency-usd widget-two-icon"></i>
-            <div class="wigdet-two-content">
-                <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Lorem Ipsum</p>
-                <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">1234</span></h2>
-                <p class="m-0">Jan - Dec 2018</p>
-            </div>
-        </div>
+      <div class="card-box widget-box-two widget-two-custom">
+       <i class="mdi mdi-clipboard-text widget-two-icon"></i>
+          <div class="wigdet-two-content">
+          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span>
+            <span data-plugin="counterup"><?=job()->count("isApproved=0");?></span></h2>
+              <p class="m-0">Talent Requests</p>
+          </div>
+
+      </div>
     </div><!-- end col -->
 
     <div class="col-lg-3 col-md-6">
       <div class="card-box widget-box-two widget-two-custom">
-          <i class="mdi mdi-currency-usd widget-two-icon"></i>
+       <i class="mdi mdi-account widget-two-icon"></i>
           <div class="wigdet-two-content">
-              <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Lorem Ipsum</p>
-              <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">1234</span></h2>
-              <p class="m-0">Jan - Dec 2018</p>
+          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span>
+            <span data-plugin="counterup"><?=resume()->count("isApproved=0");?></span></h2>
+              <p class="m-0">Applicants</p>
           </div>
+
       </div>
     </div><!-- end col -->
 <div class="col-lg-3 col-md-6">
-  <div class="card-box widget-box-two widget-two-custom">
-      <i class="mdi mdi-currency-usd widget-two-icon"></i>
-      <div class="wigdet-two-content">
-          <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Lorem Ipsum</p>
-          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">1234</span></h2>
-          <p class="m-0">Jan - Dec 2018</p>
-      </div>
-  </div>
-</div><!-- end col -->
+    <div class="card-box widget-box-two widget-two-custom">
+     <i class="mdi mdi-account widget-two-icon"></i>
+        <div class="wigdet-two-content">
+        <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span>
+          <span data-plugin="counterup"><?=resume()->count();?></span></h2>
+            <p class="m-0">Candidate</p>
+        </div>
 
-<div class="col-lg-3 col-md-6">
-  <div class="card-box widget-box-two widget-two-custom">
-      <i class="mdi mdi-currency-usd widget-two-icon"></i>
-      <div class="wigdet-two-content">
-          <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Lorem Ipsum</p>
-          <h2 class="font-600"><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">1234</span></h2>
-          <p class="m-0">Jan - Dec 2018</p>
-      </div>
-  </div>
+    </div>
 </div><!-- end col -->
-
 </div>
 
 <div class="row">
