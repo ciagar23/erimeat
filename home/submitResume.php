@@ -123,7 +123,7 @@ $ptList = position_type()->all();
                           <div class="p-l-10 w-50-p pull-left">
                           <div class="form-group">
                             <label>Attach Other Files</label>
-                            <input type="file" name="upload_certs[]" id="filer_input2" multiple="multiple" class="form-control" accept=".pdf, .doc, .docx, .png, .jpg, .jpeg">
+                            <input type="file" name="upload_certs[]" multiple="multiple" class="form-control" accept=".pdf, .doc, .docx, .png, .jpg, .jpeg">
                             <span class="help-block"><small>Supported File: .pdf, .doc, .docx, .png, .jpg, .jpeg</small></span>
                           </div>
                           </div>

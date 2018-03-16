@@ -100,7 +100,8 @@ function formatDate($val){
 
               <div class="form-group">
                 <label>Upload Image</label>
-                <input type="file" class="form-control" name="upload_file" placeholder="">
+                <input type="file" class="form-control" name="upload_file" placeholder="" accept=".png, .jpg, .jpeg">
+                <span class="help-block"><small>Supported File: .png, .jpg, .jpeg</small></span>
               </div>
             </div>
           </div>
@@ -144,8 +145,8 @@ function formatDate($val){
 
                       <div class="form-group">
                         <label>Upload Image</label>
-
-                        <input type="file" class="form-control" name="upload_file" id="getImage">
+                        <input type="file" class="form-control" name="upload_file" id="getImage" accept=".png, .jpg, .jpeg">
+                        <span class="help-block"><small>Supported File: .png, .jpg, .jpeg</small></span>
                       </div>
                     </div>
                   </div>

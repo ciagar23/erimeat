@@ -87,7 +87,8 @@ $downloadList = downloads()->all();
 
               <div class="form-group">
                 <label>Upload</label>
-                <input type="file" class="form-control" name="upload_file" placeholder="">
+                <input type="file" class="form-control" name="upload_file" placeholder="" accept=".pdf">
+                <span class="help-block"><small>Supported File: .pdf</small></span>
               </div>
             </div>
           </div>
@@ -125,7 +126,8 @@ $downloadList = downloads()->all();
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label>File Upload</label>
-                      <input type="file" class="form-control" name="upload_file" id="getFileUpload">
+                      <input type="file" class="form-control" name="upload_file" id="getFileUpload" accept=".pdf">
+                      <span class="help-block"><small>Supported File: .pdf</small></span>
                     </div>
                   </div>
                 </div>
