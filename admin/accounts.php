@@ -6,6 +6,14 @@ $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 $adminList = admin()->list();
 $jfList = job_function()->list("isDeleted='0'");
 
+function getJobFunction($Id){
+  if($Id=='0'){
+    echo 'N/A';
+  }else{
+    $job = job_function()->get("Id='$Id'");
+    echo $job->option;
+  }
+}
 ?>
 
   <div class="row">
@@ -51,7 +59,7 @@ $jfList = job_function()->list("isDeleted='0'");
               <tr>
                 <td><?=$row->firstName;?> <?=$row->lastName;?> </td>
                 <td><?=$row->username;?></td>
-                <td><?=$row->jobFunctionId;?></td>
+                <td><?=getJobFunction($row->jobFunctionId);?></td>
                 <td><?=$row->email;?></td>
                 <td><?=$row->level;?></td>
                 <td>
@@ -191,7 +199,12 @@ $jfList = job_function()->list("isDeleted='0'");
 
                       <div class="form-group">
                         <label>Level</label>
-                        <input type="text" class="form-control" name="level" id="getLevel">
+                        <select id="getLevel" class="form-control select2" name="level">
+                          <option>Select Position</option>
+                          <option value="admin">Admin</option>
+                          <option value="hr">HR</option>
+                          <option value="payroll">Payroll</option>
+                        </select>
                       </div>
                     </div>
                   </div>
