@@ -49,8 +49,8 @@ function login()
 
 	if ($result){
 		$_SESSION['company_session'] = $username;
-		$_SESSION['user_session'] = $username;
 		if ($password == 'temppassword'){
+			$_SESSION['temp_session'] = $username;
 			header('Location: index.php?view=changepassword');
 		}
 		else{

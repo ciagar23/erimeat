@@ -304,7 +304,6 @@ $( "#myBtnShowResume" ).click(function() {
 <script src="../include/plugins/morris/morris.min.js"></script>
 <script src="../include/plugins/raphael/raphael-min.js"></script>
 
-    
 
         <!-- Sparkline charts -->
 <script src="../include/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
