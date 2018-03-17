@@ -1,11 +1,16 @@
-<div class="container " >
+<img style="position: absolute; top:0; left:0;" src="../include/assets/images/teamire-header-image.png">
+<div class="container">
   <div class="row">
-    <a href="index.php" class="logo m-t-5  m-l-15 pull-left">
-      <img src="../include/assets/images/teamire-logo.png" style="width: 237px; height: 80px;">
-    </a>
-    <div style="height: 55px; width: 1px; background-color: #9aebff;" class="pull-left m-t-15 m-l-5"></div>
+
+      <a href="index.php" class="logo m-t-5 pull-left">
+        <img src="../include/assets/images/teamire-logo.png" style="width: 237px; height: 80px;">
+      </a>
+
+    <div style="height: 55px; width: 1px; background-color: #9aebff;" class="header-slogan pull-left m-t-15 m-l-5"></div>
     <div class="pull-left" style="width: 265px;height: 40px;">
-      <p class="text-lightblue m-l-15 m-t-20 font-13"><b>It is our business to identify your needs, interests and concerns</b></p>
+      <p class="text-lightblue m-l-15 m-t-20 font-13 header-slogan">
+        <b>It is our business to identify your needs, interests and concerns</b>
+      </p>
     </div>
 
     <div class="form-inline pull-right"  style="padding: 30px;" id="myTopnav">
@@ -15,13 +20,12 @@
         <li> <a class="m-l-3 m-r-3" href="../home/?view=downloads" style="font-size:15px;">Downloads</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=hiringForm" style="font-size:15px;">Request Staff</a></li>
         <li><a class="m-l-3 m-r-3" href="../home/?view=contactUs" style="font-size:15px;">Contact Us</a></li>
-
       </ul>
     </div>
 
-</div>
   </div>
-
+</div>
+<div class="row">
         <nav style="padding-left: 2%;">
 
         <label for="drop" class="toggle">Menu</label>
@@ -66,8 +70,16 @@
                 </li>
 
             </ul>
-        </nav>
 
+      <div class="pull-right m-t-10" style="padding-right: 4%;">
+        <span class="text-white">+61 452-364-793 | </span>
+        <img src="../include/assets/images/facebook.png">
+        <img src="../include/assets/images/twitter.png">
+        <img src="../include/assets/images/linkedin.png">
+        <img src="../include/assets/images/google.png">
+      </div>
+        </nav>
+</div>
 
 
 <style>

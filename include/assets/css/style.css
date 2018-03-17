@@ -642,7 +642,7 @@ a:focus {
   margin-right: 15px !important; }
 
 .m-r-25 {
-    margin-right: 15px !important; }
+    margin-right: 25px !important; }
 
 .m-l-5 {
   margin-left: 5px !important; }
@@ -5785,3 +5785,14 @@ ul.sitemap-icon ul li a {
 
   .bg-darkgrey {
     background-color: #262626; }
+
+  @media screen and (max-width: 600px) {
+    .header-slogan {
+      visibility: hidden;
+      clear: both;
+      float: left;
+      margin: 10px auto 5px 20px;
+      width: 28%;
+      display: none;
+    }
+  }

@@ -18,7 +18,7 @@ function getPositionName($Id){
         <div>
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%;">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%; text-shadow: 2px 2px 5px #000000;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
@@ -74,6 +74,8 @@ function getPositionName($Id){
     </div>
   </div>
   <div>
+<div style="position: relative;">
+  <img style="position: absolute; top:0; right:0;" src="../include/assets/images/homepage-bg-1.png">
 <div class="container">
 
 <div class="container-fluid m-t-30 m-b-30">
@@ -174,9 +176,13 @@ function getPositionName($Id){
   <div class="col-lg-1"></div>
 </div>
 
-                    </div> <!-- container -->
-<hr>
+</div> <!-- container -->
+</div>
     <!-- Basic Form Wizard -->
+<div style="position: relative;">
+  <hr>
+  <img style="position: absolute; top:0; left:0;" src="../include/assets/images/homepage-bg-2.png">
+  <br>
     <div class="container-80 center-page">
 
 
@@ -346,8 +352,11 @@ function getPositionName($Id){
 
                       </div>
                         <!-- End row -->
-<hr>
+</div>
   <!-- Start Location Panels-->
+  <div style="position: relative;">
+    <hr>
+    <img style="position: absolute; top:0; right:0;" src="../include/assets/images/homepage-bg-3.png">
       <div class="container center-page">
         <h2 class="text-center">Business Partners</h2>
         <div class="center-page" style="height: 2px; width: 20%; background-color: #3a3a3a;"></div>
@@ -404,6 +413,8 @@ function getPositionName($Id){
         <!-- end row -->
   <!-- End Location Panels-->
   </div>
+  <br>
+</div>
 </div>
 <script>
 var x = document.getElementById("myBtn1");
