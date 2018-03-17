@@ -1,93 +1,86 @@
 <?php
-$Id = $_GET['id'];
-$job = job()->get("Id='$Id'");
-$resumeList = resume()->list("jobId='$Id'");
-
-function getJobClassification($Id){
-  $job = job()->get("Id='$Id'");
-  return $job->position;
-}
+$Id = $_GET['Id'];
+$job = job()->get("Id=$Id");
 ?>
-
-
 <div class="row">
-    <div class="col-md-12">
-        <!-- Personal-Information -->
-        <div class="card-box">
-            <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
-            <div class="panel-body">
-                <div class="text-left">
-                    <p class="text-muted font-13"><strong>Job Reference Number :</strong>
-                      <span class="m-l-15"><?=$job->refNum;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Job Position :</strong>
-                      <span class="m-l-15"><?=$job->position;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Company Name:</strong>
-                      <span class="m-l-15"><?=$job->company;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Company ABN:</strong>
-                      <span class="m-l-15"><?=$job->abn;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Work Email :</strong>
-                      <span class="m-l-15"><?=$job->workEmail;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Contact Person:</strong>
-                      <span class="m-l-15"><?=$job->contactName;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Job Title :</strong>
-                      <span class="m-l-15"><?=$job->jobTitle;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Business Phone :</strong>
-                      <span class="m-l-15"><?=$job->businessPhone;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Address :</strong>
-                      <span class="m-l-15"><?=$job->address;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Required Experience :</strong>
-                      <span class="m-l-15"><?=$job->requiredExperience;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Comment :</strong>
-                      <span class="m-l-15"><?=$job->comment;?></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Personal-Information -->
-    </div>
+  <div class="col-md-7">
+      <div class="text-center card-box">
+          <div class="clearfix"></div>
+          <div class="member-card">
+
+              <?php
+              foreach ($job as $key => $value) {
+                echo $key . ": " . $value . "<br>";
+              }
+              ?>
+              <br>
+          </div>
+      </div>
+  </div> <!-- end col -->
+
+  <div class="col-md-5">
+      <div class="text-center card-box">
+
+        <!--  This button only shows if job is approved -->
+        <?php if($job->isApproved==0) {?>
+          <button type="button" onclick="location.href='process.php?action=jobRequest&result=approve&Id=<?=$job->Id?>'">Approve</button>
+          <button type="button" onclick="location.href='process.php?action=jobRequest&result=moreInfo&Id=<?=$job->Id?>'">Ask for more info</button>
+          <button type="button" data-toggle="modal" data-target="#update-information-modal">Update Info</button>
+        <?php } ?>
+        <?php if($job->isApproved==-1) {?>
+          <button type="button">Waiting for the updated info</button>
+        <?php } ?>
+        <br>
+
+        <?php if($job->isApproved==1) {?>
+          <h4>Detail</h4>
+          <button onclick="location.href='?view=employeeList&jobId=<?=$job->Id?>&status=1'">
+              View <?=employee()->count("jobId=$job->Id and status=1");?> employees
+          </button> <br>
+          <button onclick="location.href='?view=timesheetList&jobId=<?=$job->Id?>'">
+              View <?=timesheet()->count("jobId=$job->Id");?> timesheets
+          </button> <br>
+          <button onclick="location.href='?view=resumeList&jobId=<?=$job->Id?>&isApproved=0'">
+              View <?=resume()->count("jobId=$job->Id and isApproved=0");?> applicants
+          </button>
+        <?php } ?>
+      </div>
   </div>
-
-<div class="row">
- <div class="col-sm-12">
-   <div class="card-box table-responsive">
-     <h4 class="m-t-0 header-title"><b>List of Employees</b></h4>
-     <table id="datatable" class="table table-striped table-bordered">
-       <thead>
-         <tr>
-           <th>Employee Reference #</th>
-           <th>Job Classification</th>
-           <th>Full Name</th>
-           <th>Action</th>
-         </tr>
-       </thead>
-       <tbody>
-         <?php foreach($resumeList as $row) {
-         ?>
-         <tr>
-           <td><?=$row->refNum;?></td>
-           <td><?=getJobClassification($row->jobId);?></td>
-           <td><?=$row->firstName;?> <?=$row->lastName;?></td>
-           <td>
-             <!--TODO:-->
-             <a href="?view=timesheets&jobId=<?=$row->jobId;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Timesheet</a>
-           </td>
-         </tr>
-         <?php
-
-         }
-         ?>
-       </tbody>
-     </table>
-   </div>
- </div>
 </div>
+
+
+<!-- all modals will be here -->
+
+<!-- dispute modal content -->
+<div id="update-information-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            <div class="modal-body">
+                <h2 class="text-uppercase text-center m-b-30">
+                    <a href="index.html" class="text-success">
+                        <span><img src="assets/images/logo_dark.png" alt="" height="30"></span>
+                    </a>
+                </h2>
+
+                <form class="form-horizontal" action="process.php?action=updateInformation&Id=<?=$Id;?>" method="post">
+                  <div class="form-group">
+                      <label></label>
+                      <div>
+                          <textarea required="" name="comment" class="form-control"><?=$job->comment;?></textarea>
+                      </div>
+                  </div>
+
+                    <div class="form-group account-btn text-center m-t-10">
+                        <div class="col-xs-12">
+                            <button class="btn w-lg btn-rounded btn-lg btn-custom waves-effect waves-light" type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
