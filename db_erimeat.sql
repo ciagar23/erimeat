@@ -1,7 +1,8 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-16 23:46:37
-# Generator: MySQL-Front 6.0  (Build 2.20)
+# Date: 2018-03-17 17:44:03
+# Generator: MySQL-Front 5.4  (Build 1.40)
 
+/*!40101 SET NAMES utf8 */;
 
 #
 # Structure for table "admin"
@@ -23,7 +24,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin','0'),(16,'hr','hr','hr','hr','hr','0'),(20,'payroll','payroll','payroll','payroll','payroll','0'),(21,'1','1','1','1','admin','0'),(22,'ann','12345','ann','denajeba','hr','0');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin','0'),(20,'payroll','payroll','payroll','payroll','payroll','0'),(23,'hr','hr','hr','hr','hr','0');
 
 #
 # Structure for table "city_option"
@@ -40,7 +41,7 @@ CREATE TABLE `city_option` (
 # Data for table "city_option"
 #
 
-INSERT INTO `city_option` VALUES (1,'bacolod'),(2,'bago'),(3,'sipalay'),(4,'talisay'),(5,'silay'),(6,'manapla'),(7,'victorias');
+INSERT INTO `city_option` VALUES (1,'Bacolod'),(2,'Bago'),(3,'Sipalay'),(4,'Talisay'),(5,'Silay'),(6,'Manapla'),(7,'Victorias');
 
 #
 # Structure for table "company"
@@ -68,6 +69,7 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
+INSERT INTO `company` VALUES (7,'C1521274882','Villacar Transit','12345678901','We are a domestic transport company that existed for more than a decade.','torredale1014@gmail.com','Dale Torre','(+61) 234-567-890','(+61) 123-213-131','Billboard, Billboard','Domestic Transport','1','1');
 
 #
 # Structure for table "downloads"
@@ -86,7 +88,6 @@ CREATE TABLE `downloads` (
 # Data for table "downloads"
 #
 
-INSERT INTO `downloads` VALUES (1,'Employee Contract','1520552649.pdf','0'),(2,'Client Contract','1520552679.pdf','0');
 
 #
 # Structure for table "dtr"
@@ -114,6 +115,7 @@ CREATE TABLE `dtr` (
 # Data for table "dtr"
 #
 
+INSERT INTO `dtr` VALUES (83,10,'E1521275321','16:33:24','16:33:27','16:33:25','16:33:25','16:33:26','16:33:26','16:33:27','16:33:27','2018-03-16','4'),(84,10,'E1521275321','16:33:40','16:33:43','16:33:40','16:33:41','16:33:41','16:33:42','16:33:43','16:33:42','2018-03-15','4'),(85,0,'E1521275321','16:51:34','16:51:36',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-17','4');
 
 #
 # Structure for table "employee"
@@ -133,6 +135,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (6,7,'E1521275321','2018-03-17 16:28:41','1');
 
 #
 # Structure for table "faq"
@@ -152,7 +155,6 @@ CREATE TABLE `faq` (
 # Data for table "faq"
 #
 
-INSERT INTO `faq` VALUES (5,'How are you?','I\'m fine thank you','employee','1'),(6,'How old are you?123123213','30 years of age213213213231213213','employee','0');
 
 #
 # Structure for table "hr"
@@ -172,6 +174,7 @@ CREATE TABLE `hr` (
 # Data for table "hr"
 #
 
+INSERT INTO `hr` VALUES (1,'hr','1','torredale1014@gmail.com','0');
 
 #
 # Structure for table "inquiries"
@@ -194,7 +197,6 @@ CREATE TABLE `inquiries` (
 # Data for table "inquiries"
 #
 
-INSERT INTO `inquiries` VALUES (4,'Dale','Torre','(02) 3456-7890','torredale1014@gmail.com','1','6100','Hello! how are you today.');
 
 #
 # Structure for table "interview_date"
@@ -213,6 +215,25 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (7,'17','2018-03-17','13:00:00');
+
+#
+# Structure for table "invoice"
+#
+
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE `invoice` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `refNum` varchar(25) DEFAULT NULL,
+  `owner` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "invoice"
+#
+
+INSERT INTO `invoice` VALUES (3,'1521279029','E1521275321');
 
 #
 # Structure for table "job"
@@ -238,12 +259,13 @@ CREATE TABLE `job` (
   `isApproved` varchar(2) DEFAULT '0' COMMENT '0:pending, 1:approved, -1:denied',
   `contactName` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (7,'1521274799',1,2,'Bus Driver','Villacar Transit','12345678901','torredale1014@gmail.com','Manager','(+61) 234-567-890','6100','Billboard, Billboard','0-1 Year','We are looking for an experience bus driver.',NULL,'1','Dale Torre');
 
 #
 # Structure for table "job_function"
@@ -265,7 +287,7 @@ CREATE TABLE `job_function` (
 # Data for table "job_function"
 #
 
-INSERT INTO `job_function` VALUES (1,'tran','Transportation1','tae','Simplify your search for top transportation talent','Enter description here...\r\n123','0'),(2,'pro','Procurement','tae','Simplify your search for top procurement talent','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found\r\n','0'),(3,'sup','Supply Planning','kris','Simplify your search for top supply planning talent','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.\r\n','0'),(4,'log','Logistics','hello world','Simplify your search for top logistics talent','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(5,'tra','Training Certification','hello world','Simplify your search for top training certification talent','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.\n','0'),(6,'dem','Demand Planning','hello world','Simplify your search for top demand planning talent','A multi-step operational supply chain management (SCM) process used to create reliable\n      forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align\n      inventory levels with peaks and troughs in demands, and help enhance profitability for a\n      given channel or product.','0'),(7,'ord','Order Fulfilment','hello world','Simplify your search for top order fulfillment talent','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs\n','0'),(8,'man','Manufacturing','hello world','Simplify your search for top manufacturing talent','Enter description here...','0'),(9,'war','Warehousing','hello world','Simplify your search for top warehousing talent','Enter description here...\n','0');
+INSERT INTO `job_function` VALUES (1,'tran','Transportation','Transporation','Transportation expert hiring made easy','Enter description here..','0'),(2,'pro','Procurement','Procurement','Procurement expert hiring made easy','Involves the process of selecting vendors, establishing payment terms, strategic vetting, selection, the negotiation of contracts and actual purchasing of goods. We are concerned with acquiring (procuring) all of the goods, services, and work that is vital to an organization. Procurement is, essentially, the overarching or umbrella term within which purchasing can be found.','0'),(3,'sup','Supply Planning','Supply Planning','Supply Planning expert hiring made easy','Involve with determining how best to fulfill the requirements created from the Demand Plan. Our objective is to balance supply and demand in a manner that we achieve the financial and service objectives of the enterprise.','0'),(4,'log','Logistics','Logistics','Logistics expert hiring made easy','Enter description here..\n','0'),(5,'tra','Training Certification','Training Certification','Training Certification expert hiring made easy','Gain a practical, how-to overview of the entire training function. Through modeling of the best practices and latest techniques in training delivery, discover the 4Ps of training: Purpose & Assessment, Planning & Preparation, Presentation & Facilitation, and Performance & Evaluation.','0'),(6,'dem','Demand Planning','Demand Planning','Demand Planning expert hiring made easy','A multi-step operational supply chain management (SCM) process used to create reliable forecasts. We can quickly guide users to improve the accuracy of revenue forecasts, align inventory levels with peaks and troughs in demands, and help enhance profitability for a given channel or product.','0'),(7,'ord','Order Fulfillment','Order Fulfillment','Order Fulfillment expert hiring made easy','We facilitate customer orders through the order fulfillment cycle. In internal advocacy and voice for sales and customer needs.','0'),(8,'man','Manufacturing','Manufacturing\t','Manufacturing expert hiring made easy','We cover work performed in mechanical, physical, or components into new products. Assembling of component parts for manufactured products also falls under this umbrella unless the activity is appropriately classified in Construction.','0'),(9,'war','Warehousing','Warehousing','Warehousing expert hiring made easy','Enter description here..\n','0');
 
 #
 # Structure for table "position_type"
@@ -303,7 +325,6 @@ CREATE TABLE `projects` (
 # Data for table "projects"
 #
 
-INSERT INTO `projects` VALUES (1,'The Teamire Projects','The Teamire projects is your one-stop destination for tips, advice and insight you can use to hire engaged and productive workers or land a challenging and fulfilling job. We also offer new research about the workplace and the latest insights into the employment market. Learn from Robert Halfâ€™s expert recruiters so you can build a talented team of employees or advance your career.','1520937470.png','2018-03-13 18:37:50','0'),(2,'asdsadsad','asdasdasdasdsadsad','1521013289.txt','2018-03-14 15:41:29','1');
 
 #
 # Structure for table "resume"
@@ -344,6 +365,7 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
+INSERT INTO `resume` VALUES (17,7,1,'E1521275321','1521275243','Sam','Sedayon','12-32-1321','09876172312','123123','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','sdfdsfdsfsfsfsdfsdafdsfdsfdsf','1521275243.txt','wwwwwwww','0','0',NULL,'1','1','0');
 
 #
 # Structure for table "timesheet"
@@ -364,6 +386,7 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
+INSERT INTO `timesheet` VALUES (10,7,'E1521275321','Timesheet as of 2018-03-17 09:33:58','3','2018-03-17 16:33:58');
 
 #
 # Structure for table "timesheet_dispute"
@@ -401,3 +424,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
+INSERT INTO `user` VALUES (9,'C1521274882','12345','Dale Torre','Villacar Transit','company'),(10,'E1521275321','12345','Sam','Sedayon','employee');

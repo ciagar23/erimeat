@@ -39,6 +39,12 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'invoice' :
+		$currentSession = isset($_SESSION["payroll_session"]);
+		$content 	= 'invoice.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	case 'archive' :
 		$currentSession = isset($_SESSION["payroll_session"]);
 		$content 	= 'archive.php';

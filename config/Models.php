@@ -122,4 +122,10 @@ function faq() {
 	$crud->table = "faq";
 	return $crud;
 }
+
+function invoice() {
+	$crud = new CRUD;
+	$crud->table = "invoice";
+	return $crud;
+}
 ?>

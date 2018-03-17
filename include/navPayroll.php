@@ -12,6 +12,12 @@
     </li>
 
     <li>
+        <a href="../payroll/?view=invoice">
+            <i class="mdi mdi-note-text"></i><span> Invoice </span>
+        </a>
+    </li>
+
+    <li>
         <a href="../payroll/?view=archive">
             <i class="mdi mdi-archive"></i><span> Archive </span>
         </a>
