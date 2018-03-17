@@ -23,8 +23,8 @@ function getPositionName($Id){
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
                     <div class="row m-b-20" style="margin-top: 100px;">
-                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn" style="width:507px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:507px;">LOOKING FOR A JOB?</button>
                     </div>
 
                 <div class="">
@@ -342,7 +342,7 @@ function getPositionName($Id){
                                         <button style="display: none;" type="submit" class="btn btn-blue btn-sm stepy-finish">Submit</button>
                                     </form>
                                       <center>
-                                            <a href="../home/?view=submitResume"  class="btn btn-blue m-t-30">SUBMIT A RESUME</a>
+                                            <a href="../home/?view=submitResume"  class="btn btn-blue m-t-30">SUBMIT RESUME</a>
                                         </center>
                                         </div>
 
@@ -363,47 +363,37 @@ function getPositionName($Id){
         <div class="row m-t-30">
           <div class="col-lg-1"></div>
           <div class="col-md-6 col-lg-2">
-            <div class="hvrbox">
-            	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">
-            	<div class="hvrbox-layer_top">
-            		<div class="hvrbox-text">MANILA</div>
-            	</div>
+            <h3 class="text-center text-blue">MANILA</h3>
+            <div class="annex-img">
+            	<img src="../include/assets/images/home-img1.png" class="annex-img-layer_bottom">
             </div>
           </div>
 
             <div class="col-md-6 col-lg-2">
-              <div class="hvrbox">
-              	<img src="../include/assets/images/home-img2.png" class="hvrbox-layer_bottom">
-              	<div class="hvrbox-layer_top">
-              		<div class="hvrbox-text">DELHI</div>
-              	</div>
+              <h3 class="text-center text-blue">DELHI</h3>
+              <div class="annex-img">
+              	<img src="../include/assets/images/home-img2.png" class="annex-img-layer_bottom">
               </div>
             </div>
 
             <div class="col-md-6 col-lg-2">
-              <div class="hvrbox">
-              	<img src="../include/assets/images/home-img3.png" class="hvrbox-layer_bottom">
-              	<div class="hvrbox-layer_top">
-              		<div class="hvrbox-text">BANGALORE</div>
-              	</div>
+              <h3 class="text-center text-blue">BANGALORE</h3>
+              <div class="annex-img">
+              	<img src="../include/assets/images/home-img3.png" class="annex-img-layer_bottom">
               </div>
             </div>
 
             <div class="col-md-6 col-lg-2">
-              <div class="hvrbox">
-              	<img src="../include/assets/images/home-img4.png" class="hvrbox-layer_bottom">
-              	<div class="hvrbox-layer_top">
-              		<div class="hvrbox-text">SYDNEY HQ</div>
-              	</div>
+              <h3 class="text-center text-blue">SYDNEY HQ</h3>
+              <div class="annex-img">
+              	<img src="../include/assets/images/home-img4.png" class="annex-img-layer_bottom">
               </div>
             </div>
 
             <div class="col-md-6 col-lg-2">
-              <div class="hvrbox">
-                <img src="../include/assets/images/home-img5.png" class="hvrbox-layer_bottom">
-                <div class="hvrbox-layer_top">
-                  <div class="hvrbox-text">RHODE ISLAND</div>
-                </div>
+              <h3 class="text-center text-blue">RHODE ISLAND</h3>
+              <div class="annex-img">
+                <img src="../include/assets/images/home-img5.png" class="annex-img-layer_bottom">
               </div>
             </div>
             <div class="col-lg-1"></div>
