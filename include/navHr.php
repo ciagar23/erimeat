@@ -35,4 +35,10 @@
         </a>
     </li>
 
+    <li>
+        <a href="../hr/?view=companyList">
+            <i class="mdi mdi-clock"></i><span> Companies </span>
+        </a>
+    </li>
+
 </ul>

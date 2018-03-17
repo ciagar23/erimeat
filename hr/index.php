@@ -106,6 +106,18 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
+	case 'companyList' :
+		$currentSession = isset($_SESSION["hr_session"]);
+		$content 	= 'companyList.php';
+		$template	= '../include/dashboard.php';
+		break;
+
+	case 'employeeList' :
+		$currentSession = isset($_SESSION["hr_session"]);
+		$content 	= 'employeeList.php';
+		$template	= '../include/dashboard.php';
+		break;
+
 	default :
 		$currentSession = isset($_SESSION["hr_session"]);
 		$content 	= 'main.php';
