@@ -2,7 +2,7 @@
 $jfList = job_function()->all();
 ?>
 
-<div class="row">
+<div class="row m-b-30">
     <div class="col-md-12">
       <h2 class="text-center m-t-30 m-b-30">Employer Registration Form</h2>
       <br>
