@@ -1,56 +1,36 @@
 <?php
-$Id = $_GET['id'];
-$job = job()->get("Id='$Id'");
+$Id = $_GET['Id'];
+$job = job()->get("Id=$Id");
 ?>
-
-
 <div class="row">
-    <div class="col-md-12">
-        <!-- Personal-Information -->
-        <div class="card-box">
-            <h4 class="header-title mt-0 m-b-20">Job Detail</h4>
-            <div class="panel-body">
-                <div class="text-left">
-                    <p class="text-muted font-13"><strong>Job Reference Number :</strong>
-                      <span class="m-l-15"><?=$job->refNum;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Job Position :</strong>
-                      <span class="m-l-15"><?=$job->position;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Company Name:</strong>
-                      <span class="m-l-15"><?=$job->company;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Company ABN:</strong>
-                      <span class="m-l-15"><?=$job->abn;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Work Email :</strong>
-                      <span class="m-l-15"><?=$job->workEmail;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Contact Person:</strong>
-                      <span class="m-l-15"><?=$job->contactName;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Job Title :</strong>
-                      <span class="m-l-15"><?=$job->jobTitle;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Business Phone :</strong>
-                      <span class="m-l-15"><?=$job->businessPhone;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Address :</strong>
-                      <span class="m-l-15"><?=$job->address;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Required Experience :</strong>
-                      <span class="m-l-15"><?=$job->requiredExperience;?></span>
-                    </p>
-                    <p class="text-muted font-13"><strong>Comment :</strong>
-                      <span class="m-l-15"><?=$job->comment;?></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- Personal-Information -->
-        <div class="card-box">
-          <button>Update</button>
-          <button onclick="location.href='process.php?action=removeJob&Id=<?=$job->Id;?>'">Remove</button>
-        </div>
-    </div>
+  <div class="col-md-7">
+      <div class="text-center card-box">
+          <div class="clearfix"></div>
+          <div class="member-card">
+
+              <?php
+              foreach ($job as $key => $value) {
+                echo $key . ": " . $value . "<br>";
+              }
+              ?>
+              <br>
+              <button onclick="location.href='?view=jobForm&Id=<?=$job->Id?>'">Update</button>
+          </div>
+      </div>
+  </div> <!-- end col -->
+
+  <div class="col-md-5">
+      <div class="text-center card-box">
+          <h4>Detail</h4>
+          <button onclick="location.href='?view=employeeList&jobId=<?=$job->Id?>&status=1'">
+              View <?=employee()->count("jobId=$job->Id and status=1");?> employees
+          </button>
+          <button onclick="location.href='?view=timesheetList&jobId=<?=$job->Id?>'">
+              View <?=timesheet()->count("jobId=$job->Id");?> timesheets
+          </button>
+          <button onclick="location.href='?view=resumeList&jobId=<?=$job->Id?>&isApproved=0'">
+              View <?=resume()->count("jobId=$job->Id and isApproved=0");?> applicants
+          </button>
+      </div>
   </div>
+</div>
