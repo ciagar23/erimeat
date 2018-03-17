@@ -11,7 +11,7 @@
 
 
 <link rel="stylesheet" href="../include/plugins/morris/morris.css">
-
+<link href="//db.onlinewebfonts.com/c/31aefc600de86877c5f9f991836a7fbb?family=Futura+BT+W01+Book" rel="stylesheet" type="text/css"/>
    <!-- DataTables -->
 <link href="../include/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../include/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -53,6 +53,10 @@
 <link href="../include/assets/css/responsive.css" rel="stylesheet" type="text/css" />
 <script src="../include/assets/js/modernizr.min.js"></script>
 <style type="text/css">
+body {
+        font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
+}
+
 	.main-text
 {
     position: absolute;

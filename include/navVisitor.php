@@ -14,6 +14,7 @@
       </ul>
     </div>
   </div>
+
         <nav style="padding-left: 2%;">
       
         <label for="drop" class="toggle">Menu</label>
@@ -325,7 +326,7 @@ li > a:only-child:after { content: ''; }
     color: #337ab7;
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
-        font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
+       
 }
 #above-nav a {
     position: relative;
@@ -334,6 +335,7 @@ li > a:only-child:after { content: ''; }
     margin: 0 12px;
     line-height: 16px;
     color: #337ab7;
+    font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
 }
 #above-nav a::before {
     content: '';
