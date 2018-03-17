@@ -1,7 +1,17 @@
-<div class="container" >
-  <a href="index.php" class="logo m-t-5  m-l-15 pull-left">
-    <img src="../include/assets/images/teamire-logo.png" width="80%">
-  </a>
+<img style="position: absolute; top:0; left:0;" src="../include/assets/images/teamire-header-image.png">
+<div class="container">
+  <div class="row">
+
+      <a href="index.php" class="logo m-t-5 pull-left">
+        <img src="../include/assets/images/teamire-logo.png" style="width: 237px; height: 80px;">
+      </a>
+
+    <div style="height: 55px; width: 1px; background-color: #9aebff;" class="header-slogan pull-left m-t-15 m-l-5"></div>
+    <div class="pull-left" style="width: 265px;height: 40px;">
+      <p class="text-lightblue m-l-15 m-t-20 font-13 header-slogan">
+        <b>It is our business to identify your needs, interests and concerns</b>
+      </p>
+    </div>
 
     <div class="form-inline pull-right"  style="padding: 30px;" id="myTopnav">
       <ul class="nav navbar-nav navbar-right nav-menu-right" id="above-nav">
@@ -10,11 +20,12 @@
         <li> <a class="m-l-3 m-r-3" href="../home/?view=downloads" style="font-size:15px;">Downloads</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=hiringForm" style="font-size:15px;">Request Staff</a></li>
         <li><a class="m-l-3 m-r-3" href="../home/?view=contactUs" style="font-size:15px;">Contact Us</a></li>
-
       </ul>
     </div>
-  </div>
 
+  </div>
+</div>
+<div class="row">
         <nav style="padding-left: 2%;">
 
         <label for="drop" class="toggle">Menu</label>
@@ -25,7 +36,7 @@
                 <li>
                     <!-- First Tier Drop Down -->
                     <label for="drop-1" class="toggle">Employers <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></label>
-                <a href="#">Employers <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
+                <a href="#">Employers <b class="fa fa-chevron-right m-l-15 text-blue"></b></a>
                     <input type="checkbox" id="drop-1"/>
                     <ul>
                         <li><a href="../home/?view=hiringForm">Request Talent</a></li>
@@ -38,7 +49,7 @@
 
                 <!-- First Tier Drop Down -->
                 <label for="drop-2" class="toggle">Job Seekers <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></label>
-                <a href="#">Job Seekers <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
+                <a href="#">Job Seekers <b class="fa fa-chevron-right m-l-15 text-blue"></b></a>
                 <input type="checkbox" id="drop-2"/>
                 <ul>
                      <li><a href="../home/?view=searchJob">Search Job</a></li>
@@ -49,7 +60,7 @@
                      <li>
                     <!-- First Tier Drop Down -->
                     <label for="drop-3" class="toggle">Work With Us <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></label>
-                <a href="#">Work With Us <b class="fa fa-chevron-right m-l-15 text-darkgrey"></b></a>
+                <a href="#">Work With Us <b class="fa fa-chevron-right m-l-15 text-blue"></b></a>
                     <input type="checkbox" id="drop-3"/>
                     <ul>
                         <li><a href="../home/?view=services">Our Services</a></li>
@@ -59,8 +70,16 @@
                 </li>
 
             </ul>
-        </nav>
 
+      <div class="pull-right m-t-10" style="padding-right: 4%;">
+        <span class="text-white">+61 452-364-793 | </span>
+        <img src="../include/assets/images/facebook.png">
+        <img src="../include/assets/images/twitter.png">
+        <img src="../include/assets/images/linkedin.png">
+        <img src="../include/assets/images/google.png">
+      </div>
+        </nav>
+</div>
 
 
 <style>
@@ -89,7 +108,7 @@ body {
 nav {
     margin:0;
     padding: 0;
-    background-color: #0b7dc4;
+    background-color: #022664;
 }
 
 #logo {
@@ -124,7 +143,7 @@ nav ul li {
     margin: 0px;
     display:inline-block;
     float: left;
-    background-color: #0b7dc4;
+    background-color: #022664;
     }
 
 /* Styling the links */
@@ -132,19 +151,19 @@ nav a {
     display:block;
     padding: 10px 25px;
     color:#fff;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration:none;
     font-size: 17px;
 }
 
 
-nav ul li ul li:hover { background-color: #232d33;
+nav ul li ul li:hover { background-color: #021844;
 
 }
 
 /* Background color change on Hover */
 nav a:hover {
-    background-color: #0a6fae;
+    background-color: #021844;
     color: #fff;
 }
 
@@ -318,12 +337,12 @@ li > a:only-child:after { content: ''; }
 #above-nav a:hover, a:focus, a:active {
 
     text-decoration: none;
-    background-color: #fff;
+    background-color: transparent;
 
 
 }
 #above-nav a {
-    color: #337ab7;
+    color: #fff;
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
 
@@ -334,7 +353,7 @@ li > a:only-child:after { content: ''; }
     padding: 2px 0;
     margin: 0 12px;
     line-height: 16px;
-    color: #337ab7;
+    color: #eeeeee;
     font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
 }
 #above-nav a::before {
@@ -348,7 +367,7 @@ li > a:only-child:after { content: ''; }
 
     transform-origin: right top;
     transform: scale(0, 0);
-    border-bottom: 0.5px solid #337ab7;
+    border-bottom: 0.5px solid #fff;
 }
 #above-nav a:active::before {
     background-color: #337ab7;
@@ -372,7 +391,7 @@ li > a:only-child:after { content: ''; }
 #above-nav a:hover, a:focus, a:active {
 
     text-decoration: none;
-    background-color: #fff;
+    background-color: transparent;
 
 }
 #above-nav a {

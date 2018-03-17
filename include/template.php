@@ -9,12 +9,13 @@
     <body>
         <!-- Navigation Bar-->
         <header id="topnav">
+          <div class="bg-darkgrey">
               <?php
                 include 'navVisitor.php';
               ?>
               <div class="clearfix"></div>
             <!-- end topbar-main -->
-
+          </div>
         </header>
         <!-- End Navigation Bar-->
         <div class="wrapper">
@@ -122,7 +123,7 @@
                               or used for marketing purposes.</p>
                             </div>
                             <div class="col-12 col-lg-3">
-                              <button type="submit" class="btn-sm btn-primary stepy-finish pull-right"> SUBMIT </button>
+                              <button type="submit" class="btn-sm btn-blue stepy-finish pull-right"> SUBMIT </button>
                         </div>
                         </div>
                         </form>

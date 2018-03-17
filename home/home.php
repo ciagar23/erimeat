@@ -18,7 +18,7 @@ function getPositionName($Id){
         <div>
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%;">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%; text-shadow: 2px 2px 5px #000000;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
@@ -44,7 +44,7 @@ function getPositionName($Id){
                         <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                       <?php } ?>
                     </select>
-                    <button type="button" class="btn-small btn-blue pull-right m-l-5 waves-effect waves-light"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="button" class="btn btn-blue pull-right m-l-5 waves-effect waves-light"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                   </form>
                 </div>
@@ -74,6 +74,8 @@ function getPositionName($Id){
     </div>
   </div>
   <div>
+<div style="position: relative;">
+  <img style="position: absolute; top:0; right:0;" src="../include/assets/images/homepage-bg-1.png">
 <div class="container">
 
 <div class="container-fluid m-t-30 m-b-30">
@@ -81,103 +83,106 @@ function getPositionName($Id){
     <h2>
       Our Supply Chain Services
     </h2>
-    <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
+    <div class="center-page" style="height: 2px; width: 20%; background-color: #3a3a3a;"></div>
     <br>
   </div>
-
-  <div class="p-t-5 container-80 center-page">
-      <div class="row">
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                    <a href="../home?view=servicesDetail&code=dem"><img src="../include/assets/images/demandPlanning.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=dem"><h5 class="text-darkgrey">Demand Planning</h5></a>
-              </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                    <a href="../home?view=servicesDetail&code=sup"><img src="../include/assets/images/supplyPlanning.png"></a>
-                  </div>
-                    <a href="../home?view=servicesDetail&code=sup"><h5 class="text-primary"><h5 class="text-darkgrey">Supply Planning</h5></a>
-                </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=ord"><img src="../include/assets/images/orderFulfilment.png"></a>
-                  </div>
-                  <a href="../home?view=servicesDetail&code=ord"><h5 class="text-darkgrey">Order Fulfillment</h5></a>
-                </div>
-          </div>
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=dem">
+      <div class="icons icons-container text-center">
+      <img src="../include/assets/images/demandPlanning.png">
+        <p class="text-white"><b>Demand Planning</b></p>
       </div>
-      <!-- end row -->
-
-      <div class="row">
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=log"><img src="../include/assets/images/logistics.png"></a>
-                  </div>
-                  <a href="../home?view=servicesDetail&code=log"><h5 class="text-darkgrey">Logistics</h5></a>
-              </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=man"><img src="../include/assets/images/manufacturing.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=man"><h5 class="text-darkgrey">Manufacturing</h5></a>
-                </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=tran"><img src="../include/assets/images/transportation.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=tran"><h5 class="text-darkgrey">Transportation</h5></a>
-                </div>
-          </div>
-      </div>
-      <!-- end row -->
-      <div class="row">
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=pro"><img src="../include/assets/images/procurement.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=pro"><h5 class="text-darkgrey">Procurement</h5></a>
-              </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=tra"><img src="../include/assets/images/certificate.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=tra"><h5 class="text-darkgrey">Training Certification</h5></a>
-              </div>
-          </div>
-
-          <div class="col-sm-4">
-              <div class="about-features-box text-center fade">
-                  <div>
-                      <a href="../home?view=servicesDetail&code=war"><img src="../include/assets/images/warehousing.png"></a>
-                  </div>
-                  <a  href="../home?view=servicesDetail&code=war"><h5 class="text-darkgrey">Warehousing</h5></a>
-              </div>
-          </div>
-      </div>
+    </a>
   </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=sup">
+      <div class="icons icons-container text-center">
+      <img src="../include/assets/images/supplyPlanning.png">
+        <p class="text-white"><b>Supply Planning</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=ord">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/orderFulfilment.png">
+        <p class="text-white"><b>Order Fulfillment</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=log">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/logistics.png">
+        <p class="text-white"><b>Logistics</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=man">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/manufacturing.png">
+        <p class="text-white"><b>Manufacturing</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-1"></div>
+</div>
 
-                    </div> <!-- container -->
-<hr>
+<div class="row m-t-20">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=tran">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/transportation.png">
+        <p class="text-white"><b>Transportation</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=pro">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/procurement.png">
+        <p class="text-white"><b>Procurement</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=tra">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/certificate.png">
+        <p class="text-white"><b>Training Certification</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="../home?view=servicesDetail&code=war">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/warehousing.png">
+        <p class="text-white"><b>Warehousing</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-2">
+    <a href="#">
+      <div class="icons icons-container text-center">
+        <img src="../include/assets/images/others.png">
+        <p class="text-white"><b>Others</b></p>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-1"></div>
+</div>
+
+</div> <!-- container -->
+</div>
     <!-- Basic Form Wizard -->
+<div style="position: relative;">
+  <hr>
+  <img style="position: absolute; top:0; left:0;" src="../include/assets/images/homepage-bg-2.png">
+  <br>
     <div class="container-80 center-page">
 
 
@@ -334,10 +339,10 @@ function getPositionName($Id){
 
                                         </fieldset>
 
-                                        <button style="display: none;" type="submit" class="btn btn-primary btn-sm stepy-finish">Submit</button>
+                                        <button style="display: none;" type="submit" class="btn btn-blue btn-sm stepy-finish">Submit</button>
                                     </form>
                                       <center>
-                                            <a href="../home/?view=submitResume"  class="btn btn-primary">SUBMIT A RESUME</a>
+                                            <a href="../home/?view=submitResume"  class="btn btn-blue m-t-30">SUBMIT A RESUME</a>
                                         </center>
                                         </div>
 
@@ -347,11 +352,14 @@ function getPositionName($Id){
 
                       </div>
                         <!-- End row -->
-<hr>
+</div>
   <!-- Start Location Panels-->
+  <div style="position: relative;">
+    <hr>
+    <img style="position: absolute; top:0; right:0;" src="../include/assets/images/homepage-bg-3.png">
       <div class="container center-page">
         <h2 class="text-center">Business Partners</h2>
-        <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
+        <div class="center-page" style="height: 2px; width: 20%; background-color: #3a3a3a;"></div>
         <div class="row m-t-30">
           <div class="col-lg-1"></div>
           <div class="col-md-6 col-lg-2">
@@ -405,6 +413,8 @@ function getPositionName($Id){
         <!-- end row -->
   <!-- End Location Panels-->
   </div>
+  <br>
+</div>
 </div>
 <script>
 var x = document.getElementById("myBtn1");

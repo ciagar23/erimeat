@@ -642,7 +642,7 @@ a:focus {
   margin-right: 15px !important; }
 
 .m-r-25 {
-    margin-right: 15px !important; }
+    margin-right: 25px !important; }
 
 .m-l-5 {
   margin-left: 5px !important; }
@@ -1038,6 +1038,12 @@ a:focus {
 .text-primary {
   color: #3399cc !important; }
 
+.text-lightblue {
+  color: #9aebff !important; }
+
+.text-blue {
+  color: #0e679f !important; }
+
 .text-darkgrey {
   color: #292b2c !important; }
 
@@ -1409,17 +1415,18 @@ a:focus {
   font-size: 18px;
   padding: 20px 65px;
   outline: none !important;
-  font-weight: bold;
-  font-family: "Century Gothic", sans-serif; }
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif; }
 
 .btn-small {
     border-radius: 0.3rem;
-    font-size: 16px;
+    font-size: 18px;
     padding: 15.5px 45px;
     margin-top: 1px;
     outline: none !important;
-    font-weight: bold;
-    font-family: "Century Gothic", sans-serif; }
+    font-weight: 600;
+    font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif; }
 
 .btn-md {
   padding: 9px 18px; }
@@ -1532,12 +1539,12 @@ a:focus {
   border-color: #e95084 !important; }
 
 .btn-blue {
-  background-color: #0b7dc4 !important;
-  border: 1px solid #0b7dc4 !important; }
+  background-color: #022664 !important;
+  border: 1px solid #022664 !important; }
 
 .btn-blue:hover, .btn-blue:focus, .btn-blue:active {
-  background-color: #0d70ae !important;
-  border-color: #0d70ae !important; }
+  background-color: #011b46 !important;
+  border-color: #011b46 !important; }
 
 .btn-bordered {
   background-color: transparent !important; }
@@ -3181,7 +3188,7 @@ textarea.form-control {
       top: 43px;
       width: 50%;
       height: 2px;
-      background-color: #3399cc;
+      background-color: #022664;
       z-index: 9; }
     .stepy-header li:before {
       left: 0; }
@@ -3195,7 +3202,7 @@ textarea.form-control {
       color: #999;
       font-weight: 600; }
     .stepy-header li div {
-      background-color: #3399cc;
+      background-color: #022664;
       font-size: 0;
       position: relative;
       color: #ffffff;
@@ -3203,7 +3210,7 @@ textarea.form-control {
       margin-right: auto;
       width: 48px;
       height: 48px;
-      border: 2px solid #3399cc;
+      border: 2px solid #022664;
       z-index: 10;
       line-height: 44px;
       text-align: center;
@@ -3233,13 +3240,13 @@ textarea.form-control {
       content: none; }
   .stepy-header li.stepy-active div {
     cursor: auto;
-    border-color: #3399cc;
+    border-color: #022664;
     background-color: #ffffff;
-    color: #3399cc; }
+    color: #022664; }
     .stepy-header li.stepy-active div:after {
       content: "\F64F"; }
   .stepy-header li.stepy-active span {
-    color: #3399cc; }
+    color: #022664; }
 
 @media (max-width: 769px) {
   .stepy-header {
@@ -3252,7 +3259,7 @@ textarea.form-control {
       .stepy-header li:first-child:before, .stepy-header li:last-child:after {
         content: ''; }
     .stepy-header li.stepy-active:last-child:after {
-      background-color: #3399cc; } }
+      background-color: #022664; } }
 @media (max-width: 480px) {
   .stepy-header li {
     width: 100%; }
@@ -5754,20 +5761,38 @@ ul.sitemap-icon ul li a {
     display: none; }
 
   .hvrbox.active .hvrbox-text_mobile {
-  display: block; }
+    display: block; }
 
   /** Multiline Truncate **/
   .truncate {
-  width: 100%;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical; }
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; }
 
-  /** Services Icons Fade **/
-  .fade {
-    opacity:0.75; }
+  /** Services Icons Hover **/
+  .icons {
+    background-color: #acacac;  }
 
-  .fade:hover {
-    opacity:1;
-    text-decoration: underline; }
+  .icons:hover {
+    background-color: #022664;
+    transition:all 0.5s ease;  }
+
+  .icons-container {
+    height: 150px;
+    padding: 35px 0px; }
+
+  .bg-darkgrey {
+    background-color: #262626; }
+
+  @media screen and (max-width: 600px) {
+    .header-slogan {
+      visibility: hidden;
+      clear: both;
+      float: left;
+      margin: 10px auto 5px 20px;
+      width: 28%;
+      display: none;
+    }
+  }
