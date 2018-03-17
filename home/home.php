@@ -17,13 +17,13 @@ function getPositionName($Id){
 
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 30px; width: 80%;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
-                    <div class="row m-b-20 m-t-50">
-                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
+                    <div class="row m-b-20" style="margin-top: 200px;">
+                      <button id="myBtn1" class="btn" style="width:400px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:400px;">LOOKING FOR A JOB?</button>
                     </div>
 
                     <div class="">
@@ -31,19 +31,19 @@ function getPositionName($Id){
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="hidden" name="view" value="searchResume">
-                    <select name="c" class="form-control" style="height: 67px; width:200px;">
+                    <select name="c" class="form-control" style="height: 67px; width:275px;">
                         <option>Select City</option>
                         <?php foreach($cityList as $row){ ?>
                           <option value="<?=$row->Id;?>"><?=$row->city;?></option>
                         <?php } ?>
                     </select>
-                    <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                    <select name="c" class="form-control" style="height: 67px; width:275px;" required>
                       <option value="">Select Category</option>
                       <?php foreach($jobFunctionList as $row){ ?>
                         <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                       <?php } ?>
                     </select>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
+                    <button type="button" class="btn-small btn-blue pull-right m-l-5 waves-effect waves-light"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
                </form>
             </div>
@@ -62,7 +62,7 @@ function getPositionName($Id){
                     <option value="<?=$row->Id;?>"><?=$row->option;?></option>
                   <?php } ?>
                 </select>
-                    <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i>Search Job</button>
+                    <button type="submit" class="btn waves-effect waves-light btn-blue"><i class="fa fa-search m-r-5"></i>Search Job</button>
 
               </div>
             </form>
@@ -263,7 +263,7 @@ function getPositionName($Id){
                                         <center>
                                             <a href="../home/?view=hiringForm"  class="btn btn-primary">REQUEST TALENT</a>
                                         </center>
-                                           <button style="display: none;" type="submit" class="btn btn-success btn-sm stepy-finish">Submit</button>
+                                           <button style="display: none;" type="submit" class="btn btn-blue btn-sm stepy-finish">Submit</button>
                                     </form>
 
                                         </div>
@@ -348,11 +348,12 @@ function getPositionName($Id){
                         <!-- End row -->
 <hr>
   <!-- Start Location Panels-->
-      <div class="container-80 center-page">
+      <div class="container center-page">
         <h2 class="text-center">Business Partners</h2>
         <div class="center-page" style="height: 2px; width: 20%; background-color: #3399cc;"></div>
         <div class="row m-t-30">
-          <div class="col-md-6 col-lg-3">
+          <div class="col-lg-1"></div>
+          <div class="col-md-6 col-lg-2">
             <div class="hvrbox">
             	<img src="../include/assets/images/home-img1.png" class="hvrbox-layer_bottom">
             	<div class="hvrbox-layer_top">
@@ -361,7 +362,7 @@ function getPositionName($Id){
             </div>
           </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img2.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -370,7 +371,7 @@ function getPositionName($Id){
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img3.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -379,7 +380,7 @@ function getPositionName($Id){
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-2">
               <div class="hvrbox">
               	<img src="../include/assets/images/home-img4.png" class="hvrbox-layer_bottom">
               	<div class="hvrbox-layer_top">
@@ -387,6 +388,16 @@ function getPositionName($Id){
               	</div>
               </div>
             </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="hvrbox">
+                <img src="../include/assets/images/home-img5.png" class="hvrbox-layer_bottom">
+                <div class="hvrbox-layer_top">
+                  <div class="hvrbox-text">RHODE ISLAND</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-1"></div>
         </div>
       </div>
       <div class="clearfix m-b-30"></div>

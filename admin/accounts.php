@@ -35,14 +35,16 @@ $jfList = job_function()->filter("isDeleted='0'");
               <th>Username</th>
               <th>Password</th>
               <th>Level</th>
-              <th>Action</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
 
            <?php foreach($adminList as $row) {
 
-            if ($row){
+            if ($row->isDeleted==0){
+              $id = $row->Id;
               ?>
               <tr>
                 <td><?=$row->firstName;?> <?=$row->lastName;?> </td>
@@ -50,7 +52,12 @@ $jfList = job_function()->filter("isDeleted='0'");
                 <td><?=$row->password;?></td>
                 <td><?=$row->level;?></td>
                 <td>
-                  <a href="edit_ay.php?ay_Id='.$id.'"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-edit"></span> Edit</a>
+                  <?php
+                    echo  '<a href="#" onclick="getAccount('.$id.')" class=" btn btn-info btn-xs" title="Click To View"  data-trigger="hover" data-toggle="tooltip"><span class="fa fa-pencil"></span> Edit</a>';
+                  ?>
+                </td>
+                <td>
+                  <a href="process.php?action=removeAccounts&Id=<?=$row->Id;?>"  class=" btn btn-danger btn-xs tooltips" title="Click To Edit"><span class="fa fa-close"></span>Remove</a>
                 </td>
               </tr>
           <?php
@@ -141,4 +148,51 @@ $jfList = job_function()->filter("isDeleted='0'");
         </form>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+
+  <div id="myModal1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="myLargeModalLabel">Update Accounts</h4>
+              </div>
+              <div class="modal-body">
+                <form id="default-wizard" action="process.php?action=updateAccounts" method="POST">
+                   <p class="m-b-0">
+                      <?=$error?>
+                  </p>
+                  <input type="hidden" name="Id" id="getId">
+                  <div class="row m-t-20">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" id="getUsername">
+                      </div>
+
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" name="firstName" id="getFirstName">
+                      </div>
+
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" name="lastName" id="getLastName">
+                      </div>
+
+                      <div class="form-group">
+                        <label>Level</label>
+                        <input type="text" class="form-control" name="level" id="getLevel">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect btn-sm" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary stepy-finish btn-sm">Update Accounts</button>
+                  </div>
+                </form>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->

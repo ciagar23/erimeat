@@ -85,7 +85,7 @@ body {
 nav {
     margin:0;
     padding: 0;
-    background-color: #205e7d;
+    background-color: #0b7dc4;
 }
 
 #logo {
@@ -120,7 +120,7 @@ nav ul li {
     margin: 0px;
     display:inline-block;
     float: left;
-    background-color: #205e7d;
+    background-color: #0b7dc4;
     }
 
 /* Styling the links */
@@ -140,7 +140,7 @@ nav ul li ul li:hover { background-color: #232d33;
 
 /* Background color change on Hover */
 nav a:hover {
-    background-color: #194f6a;
+    background-color: #0a6fae;
     color: #fff;
 }
 
