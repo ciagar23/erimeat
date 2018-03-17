@@ -77,9 +77,11 @@ function clientRequest()
 	*/
 
 	$abn = $_POST['abn'];
-	$checkAbn = admin()->get("abn='$abn'");
+	$checkAbn = company()->get("abn='$abn'");
 
 	if($checkAbn){
+		header('Location: ../home?view=clientForm&error=ABN already exist!');
+	}else{
 		$comp = company();
 		$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
 		$comp->obj['department'] = $_POST['department'];
@@ -108,8 +110,6 @@ function clientRequest()
 		sendEmail('torredale1014@gmail.com',$adminmessage);
 
 		header('Location: ../home/?view=success&Id='.$company->Id);
-	}else{
-		header('Location: ../home?view=clientForm&error=ABN already exist!');
 	}
 }
 
