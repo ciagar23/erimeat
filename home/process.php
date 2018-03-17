@@ -145,6 +145,7 @@ function __createClientLogin($Id){
 function submitResume(){
 
 		$abn = $_POST["abn"];
+		$jobFunctionId = $_POST['jobFunctionId'];
 
 		$upload = uploadFile($_FILES['upload_file']);
 		if ($upload)
@@ -174,6 +175,8 @@ function submitResume(){
 
 			$resume = resume()->get("abn='$abn'");
 
+			$hr = hr()->get("jobFunctionId='$jobFunctionId'");
+
 			// Send email
 			$content = __submitResumeEmailMessage();
 			$hrmessage = __hrEmailMessage();
@@ -182,7 +185,7 @@ function submitResume(){
 			//for candidate
 			sendEmail($res->obj['email'] , $content);
 			//for HR
-			sendEmail('rgmak12@gmail.com',$hrmessage);
+			sendEmail($hr->email,$hrmessage);
 			//for admin
 			sendEmail('torredale1014@gmail.com',$adminmessage);
 

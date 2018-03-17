@@ -111,14 +111,20 @@ $ptList = position_type()->list();
                                               data-parsley-validation-threshold="10"></textarea>
                           </div>
 
+                          <div class="p-r-10 w-50-p pull-left">
                           <div class="form-group">
                             <label>Attach Computer Specification</label>
                             <input type="file" class="filestyle form-control" name="upload_specs" accept=".png, .jpg, .jpeg"/>
+                            <span class="help-block"><small>Supported File: .png, .jpg, .jpeg</small></span>
+                          </div>
                           </div>
 
+                          <div class="p-l-10 w-50-p pull-left">
                           <div class="form-group">
                             <label>Attach Other Files</label>
                             <input type="file" name="upload_certs[]" multiple="multiple" class="form-control" accept=".pdf, .doc, .docx, .png, .jpg, .jpeg">
+                            <span class="help-block"><small>Supported File: .pdf, .doc, .docx, .png, .jpg, .jpeg</small></span>
+                          </div>
                           </div>
 
                           <div class="text-center"><h3>Attach Resume</h3>
