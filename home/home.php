@@ -23,8 +23,8 @@ function getPositionName($Id){
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
                     <div class="row m-b-20" style="margin-top: 100px;">
-                      <button id="myBtn1" class="btn" style="width:530px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn" style="width:507px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:507px;">LOOKING FOR A JOB?</button>
                     </div>
 
                 <div class="">
