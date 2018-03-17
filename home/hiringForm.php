@@ -1,6 +1,6 @@
 <?php
-$jfList = job_function()->filter("isDeleted='0'");
-$ptList = position_type()->all();
+$jfList = job_function()->list("isDeleted='0'");
+$ptList = position_type()->list();
 ?>
 
 

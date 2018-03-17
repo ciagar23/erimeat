@@ -15,7 +15,7 @@
 <div class="row">
 
 
-<?php foreach (company()->all() as $row) {
+<?php foreach (company()->list() as $row) {
 ?>
 
   <div class="col-md-4">

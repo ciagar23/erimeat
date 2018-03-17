@@ -3,7 +3,7 @@
 $error = (isset($_GET['error']) && $_GET['error'] != '') ? $_GET['error'] : '';
 $s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
 
-$downloadList = downloads()->all();
+$downloadList = downloads()->list();
 
 ?>
 <div class="container-80 center-page m-b-30">

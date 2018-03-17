@@ -1,8 +1,8 @@
 <?php
 $code = (isset($_GET['code']) && $_GET['code'] != '') ? $_GET['code'] : '';
-$jfList = job_function()->filter("isDeleted='0'");
-$ptList = position_type()->all();
-$jobFunctionList = job_function()->filter("isDeleted=0");
+$jfList = job_function()->list("isDeleted='0'");
+$ptList = position_type()->list();
+$jobFunctionList = job_function()->list("isDeleted=0");
 
 $jobFunc = job_function()->get("code='$code'");
 ?>

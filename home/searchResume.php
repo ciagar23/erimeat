@@ -2,9 +2,9 @@
 $j = (isset($_GET['j']) && $_GET['j'] != '') ? $_GET['j'] : '';
 $c = (isset($_GET['c']) && $_GET['c'] != '') ? $_GET['c'] : '';
 
-$cityList = city_option()->all();
-$resumeList = resume()->filter("jobFunctionId=$j and city=$c");
-$jobFunctionList = job_function()->filter("isDeleted=0");
+$cityList = city_option()->list();
+$resumeList = resume()->list("jobFunctionId=$j and city=$c");
+$jobFunctionList = job_function()->list("isDeleted=0");
 
 function getJobFunction($Id){
   $jf = job_function()->get("Id='$Id'");

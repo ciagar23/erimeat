@@ -1,6 +1,6 @@
 <?php
 $timesheetId = (isset($_GET['Id']) && $_GET['Id'] != '') ? $_GET['Id'] : '';
-$dtr = dtr()->all();
+$dtr = dtr()->list();
 
 function get_time_difference($record)
 {

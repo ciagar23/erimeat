@@ -1,6 +1,6 @@
 <?php
-$jobFunctionList = job_function()->filter("isDeleted=0");
-$cityList = city_option()->all();
+$jobFunctionList = job_function()->list("isDeleted=0");
+$cityList = city_option()->list();
 
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");

@@ -1,6 +1,6 @@
 <?php
-$jobFunctionList = job_function()->filter("isDeleted=0");
-$projectList = projects()->all();
+$jobFunctionList = job_function()->list("isDeleted=0");
+$projectList = projects()->list();
 
 function getPositionName($Id){
   $job = position_type()->get("Id='$Id'");
