@@ -1,48 +1,47 @@
 <?php
-$message = (isset($_GET['message']) && $_GET['message'] != '') ? $_GET['message'] : '';
-$s = (isset($_GET['s']) && $_GET['s'] != '') ? $_GET['s'] : '';
-$jobList = job()->all();
+$isApproved = $_GET['isApproved'];
+$abn = $_GET['abn'];
 
-function getJobFunction($Id){
-  $job = job_function()->get("Id='$Id'");
-  echo $job->option;
-}
+$jobList = job()->filter("abn='$abn' and isApproved='$isApproved'");
+$company = company()->get("abn='$abn'");
+
 ?>
-
-<p class="m-b-0">
-  <?=$message?></p>
-</div>
   <div class="row">
     <div class="col-sm-12">
       <div class="card-box table-responsive">
-        <h4 class="page-title">Jobs</h4><br>
+          <h4 class="page-title"><?=$company->name;?></h4><br>
         <table id="datatable" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Job Reference #</th>
-              <th>Job Category</th>
-              <th>Job Classification</th>
-              <th>Company Name</th>
-              <th>Action</th>
+              <th>Jobs</th>
+              <!-- Display this column only for approved jobs -->
+              <?php if ($isApproved==1) {?>
+                <th>Employees</th>
+                <th>Timesheets</th>
+                <th>Applicants</th>
+              <?php } ?>
             </tr>
           </thead>
           <tbody>
             <?php foreach($jobList as $row) {
-              if ($row->isApproved==1){
             ?>
             <tr>
-              <td><?=$row->refNum;?></td>
-              <td><?=getJobFunction($row->jobFunctionId);?></td>
-              <td><?=$row->position;?> </td>
-              <td><?=$row->company;?> </td>
-              <td>
-                <a href="?view=jobDetail&id=<?=$row->Id;?>"  class=" btn btn-success btn-xs tooltips" title="Click To Edit"><span class="fa fa-eye"></span> View Details</a>
-              </td>
-            </tr>
-            <?php
-              }
-            }
-            ?>
+              <td><a href="?view=jobDetail&Id=<?=$row->Id;?>"><?=$row->position;?></a></td>
+              <!-- Display this column only for approved jobs -->
+              <?php if ($isApproved==1) {?>
+                  <td><button onclick="location.href='?view=employeeList&jobId=<?=$row->Id?>&status=1'">
+                      View <?=employee()->count("jobId=$row->Id and status=1");?> employees
+                  </button></td>
+                  <td><button onclick="location.href='?view=timesheetList&jobId=<?=$row->Id?>'">
+                      View <?=timesheet()->count("jobId=$row->Id");?> timesheets
+                  </button></td>
+                  <td><button onclick="location.href='?view=resumeList&jobId=<?=$row->Id?>&isApproved=0'">
+                      View <?=resume()->count("jobId=$row->Id and isApproved=0");?> applicants
+                  </button></td>
+              <?php } ?>
+              <?php
+                }
+              ?>
           </tbody>
         </table>
       </div>

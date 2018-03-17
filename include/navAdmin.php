@@ -19,21 +19,10 @@
     </li>
 
     <li>
-        <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Clients </span> <span class="menu-arrow"></span></a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=talentRequest">Talent Requests</a></li>
-        </ul>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=companies">Companies</a></li>
-        </ul>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=jobList">Jobs</a></li>
-        </ul>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li style="list-style-type: none;" class="p-t-5 m-b-5"><a class="text-white" href="?view=timekeeping">Timekeeping</a></li>
-        </ul>
+        <a href="?view=clientList">
+            <i class="mdi mdi-account-plus"></i><span> Clients </span>
+        </a>
     </li>
-
 
       <li>
           <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> Settings </span> <span class="menu-arrow"></span></a>

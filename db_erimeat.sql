@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-17 17:03:01
+# Date: 2018-03-17 17:44:03
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -218,6 +218,24 @@ CREATE TABLE `interview_date` (
 INSERT INTO `interview_date` VALUES (7,'17','2018-03-17','13:00:00');
 
 #
+# Structure for table "invoice"
+#
+
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE `invoice` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `refNum` varchar(25) DEFAULT NULL,
+  `owner` varchar(12) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "invoice"
+#
+
+INSERT INTO `invoice` VALUES (3,'1521279029','E1521275321');
+
+#
 # Structure for table "job"
 #
 
@@ -368,7 +386,7 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
-INSERT INTO `timesheet` VALUES (10,7,'E1521275321','Timesheet as of 2018-03-17 09:33:58','1','2018-03-17 16:33:58');
+INSERT INTO `timesheet` VALUES (10,7,'E1521275321','Timesheet as of 2018-03-17 09:33:58','3','2018-03-17 16:33:58');
 
 #
 # Structure for table "timesheet_dispute"

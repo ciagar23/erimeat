@@ -90,9 +90,9 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'companyDetail' :
+	case 'clientDetail' :
 		$currentSession = isset($_SESSION["admin_session"]);
-		$content 	= 'companyDetail.php';
+		$content 	= 'clientDetail.php';
 		$template	= '../include/dashboard.php';
 		break;
 
@@ -102,9 +102,9 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'companies' :
+	case 'clientList' :
 		$currentSession = isset($_SESSION["admin_session"]);
-		$content 	= 'companies.php';
+		$content 	= 'clientList.php';
 		$template	= '../include/dashboard.php';
 		break;
 

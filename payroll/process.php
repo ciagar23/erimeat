@@ -28,6 +28,14 @@ function approveTimesheet()
 	$ts = timesheet();
 	$ts->obj['status'] = 3;
 	$ts->update("Id='$Id'");
+
+	$ts = timesheet()->get("Id='$Id'");
+
+	$invoice = invoice();
+	$invoice->obj['refNum'] = round(microtime(true));
+	$invoice->obj['owner'] = $ts->employee;
+	$invoice->create();
+
 	header('Location: index.php');
 }
 
