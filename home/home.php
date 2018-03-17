@@ -18,13 +18,13 @@ function getPositionName($Id){
         <div>
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
-                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%; text-shadow: 2px 2px 5px #000000;">
+                    <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%; color: #fff; text-shadow: 2px 2px 2px #000000;">
                       Ask Us How To Go Remote And Hire The Most Qualified Supply
                       Chain Team Member For Your Business In Unpredicted Ways
                     </p>
                     <div class="row m-b-20" style="margin-top: 100px;">
-                      <button id="myBtn1" class="btn" style="width:507px;">NEED TO HIRE?</button>
-                      <button id="myBtn2" class="btn" style="width:507px;">LOOKING FOR A JOB?</button>
+                      <button id="myBtn1" class="btn" style="width:382px;">NEED TO HIRE?</button>
+                      <button id="myBtn2" class="btn" style="width:382px;">LOOKING FOR A JOB?</button>
                     </div>
 
                 <div class="">
@@ -32,13 +32,13 @@ function getPositionName($Id){
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="hidden" name="view" value="searchResume">
-                    <select name="c" class="form-control" style="height: 67px; width:350px;">
+                    <select name="c" class="form-control" style="height: 67px; width:250px;">
                         <option>Select City</option>
                         <?php foreach($cityList as $row){ ?>
                           <option value="<?=$row->Id;?>"><?=$row->city;?></option>
                         <?php } ?>
                     </select>
-                    <select name="c" class="form-control" style="height: 67px; width:350px;" required>
+                    <select name="c" class="form-control" style="height: 67px; width:200px;" required>
                       <option value="">Select Category</option>
                       <?php foreach($jobFunctionList as $row){ ?>
                         <option value="<?=$row->Id;?>"><?=$row->option;?></option>
