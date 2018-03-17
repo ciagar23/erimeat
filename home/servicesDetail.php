@@ -2,6 +2,7 @@
 $code = (isset($_GET['code']) && $_GET['code'] != '') ? $_GET['code'] : '';
 $jfList = job_function()->filter("isDeleted='0'");
 $ptList = position_type()->all();
+$jobFunctionList = job_function()->filter("isDeleted=0");
 
 $jobFunc = job_function()->get("code='$code'");
 ?>
@@ -154,13 +155,20 @@ $jobFunc = job_function()->get("code='$code'");
       <div class="row form-container container-80 center-page">
           <div class="col-md-12 center-page">
               <div class="input-group m-t-5">
-                <form method="GET">
-                  <input type="hidden" name="view" value="jobList">
-                  <input type="text" id="" name="s" class="form-control" style="width:700px; height:67px;" placeholder="Job Title, Skills or Keyword">
-                  <span class="input-group-btn">
-                      <button type="submit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search m-r-5"></i> Search Jobs</button>
-                  </span>
-                </form>
+                <form class="form-inline" method="GET">
+                <div class="form-group">
+                  <input type="hidden" name="view" value="searchJob">
+                  <input type="text" name="s" class="form-control" placeholder="Job Title, Skills or Keywords" style="height: 67px;width:450px;">
+                  <select name="c" class="form-control" style="height: 67px; width:200px;" required>
+                    <option value="">Select Category</option>
+                    <?php foreach($jobFunctionList as $row){ ?>
+                      <option value="<?=$row->Id;?>"><?=$row->option;?></option>
+                    <?php } ?>
+                  </select>
+                      <button type="submit" class="btn waves-effect waves-light btn-primary">Search</button>
+
+                </div>
+              </form>
               </div>
           </div>
       </div>

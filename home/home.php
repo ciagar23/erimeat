@@ -15,6 +15,7 @@ function getPositionName($Id){
       <img src="../include/assets/images/worldMap.png"  style="width: 100%;">
     </div>
 
+        <div>
         <div class="main-text hidden-xs">
                 <div class="col-md-12 text-center">
                     <p class="carousel-title m-t-10 center-page" style="font-size: 40px; width: 100%;">
@@ -26,8 +27,8 @@ function getPositionName($Id){
                       <button id="myBtn2" class="btn" style="width:530px;">LOOKING FOR A JOB?</button>
                     </div>
 
-                    <div class="">
-                      <div id="myDIV">
+                <div class="">
+                <div id="myDIV">
                   <form class="form-inline" method="GET">
                     <div class="form-group">
                     <input type="hidden" name="view" value="searchResume">
@@ -45,8 +46,8 @@ function getPositionName($Id){
                     </select>
                     <button type="button" class="btn btn-blue pull-right m-l-5 waves-effect waves-light"><i class="fa fa-search m-r-5"></i> Find Candidates</button>
                     </div>
-               </form>
-            </div>
+                  </form>
+                </div>
 
 
            <div id="demo1"></div>
