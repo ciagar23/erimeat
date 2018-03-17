@@ -106,9 +106,9 @@ switch ($view) {
 		$template	= '../include/dashboard.php';
 		break;
 
-	case 'companyList' :
+	case 'clientList' :
 		$currentSession = isset($_SESSION["hr_session"]);
-		$content 	= 'companyList.php';
+		$content 	= 'clientList.php';
 		$template	= '../include/dashboard.php';
 		break;
 
