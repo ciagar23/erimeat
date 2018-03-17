@@ -77,35 +77,40 @@ function clientRequest()
 	*/
 
 	$abn = $_POST['abn'];
+	$checkAbn = admin()->get("abn='$abn'");
 
-	$comp = company();
-	$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
-	$comp->obj['department'] = $_POST['department'];
-	$comp->obj['name'] = $_POST['name'];
-	$comp->obj['abn'] = $_POST['abn'];
-	$comp->obj['contactPerson'] = $_POST['contactPerson'];
-	$comp->obj['email'] = $_POST['email'];
-	$comp->obj['address'] = $_POST['address'];
-	$comp->obj['phoneNumber'] = $_POST['phoneNumber'];
-	$comp->obj['mobileNumber'] = $_POST['mobileNumber'];
-	$comp->obj['description '] = $_POST['description'];
-	$comp->obj['isApproved '] = "1";
-	$comp->create();
+	if($checkAbn){
+		$comp = company();
+		$comp->obj['jobFunctionId'] = $_POST['jobFunctionId'];
+		$comp->obj['department'] = $_POST['department'];
+		$comp->obj['name'] = $_POST['name'];
+		$comp->obj['abn'] = $_POST['abn'];
+		$comp->obj['contactPerson'] = $_POST['contactPerson'];
+		$comp->obj['email'] = $_POST['email'];
+		$comp->obj['address'] = $_POST['address'];
+		$comp->obj['phoneNumber'] = $_POST['phoneNumber'];
+		$comp->obj['mobileNumber'] = $_POST['mobileNumber'];
+		$comp->obj['description '] = $_POST['description'];
+		$comp->obj['isApproved '] = "1";
+		$comp->create();
 
-	$company = company()->get("abn='$abn'");
+		$company = company()->get("abn='$abn'");
 
-	__createClientLogin($company->Id);
+		__createClientLogin($company->Id);
 
-	// Send email
-	$hrmessage = __hrEmailMessage();
-	$adminmessage = __adminEmailMessage();
+		// Send email
+		$hrmessage = __hrEmailMessage();
+		$adminmessage = __adminEmailMessage();
 
-	//for HR
-	sendEmail('rgmak12@gmail.com',$hrmessage);
-	//for admin
-	sendEmail('torredale1014@gmail.com',$adminmessage);
+		//for HR
+		sendEmail('rgmak12@gmail.com',$hrmessage);
+		//for admin
+		sendEmail('torredale1014@gmail.com',$adminmessage);
 
-	header('Location: ../home/?view=success&Id='.$company->Id);
+		header('Location: ../home/?view=success&Id='.$company->Id);
+	}else{
+		header('Location: ../home?view=clientForm&error=ABN already exist!');
+	}
 }
 
 function __createClientLogin($Id){
