@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.30-MariaDB)
-# Date: 2018-03-17 16:07:13
+# Date: 2018-03-17 17:03:01
 # Generator: MySQL-Front 5.4  (Build 1.40)
 
 /*!40101 SET NAMES utf8 */;
@@ -24,7 +24,7 @@ CREATE TABLE `admin` (
 # Data for table "admin"
 #
 
-INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin','0'),(16,'hr','hr','hr','hr','hr','0'),(20,'payroll','payroll','payroll','payroll','payroll','0');
+INSERT INTO `admin` VALUES (15,'admin','admin','admin','admin','admin','0'),(20,'payroll','payroll','payroll','payroll','payroll','0'),(23,'hr','hr','hr','hr','hr','0');
 
 #
 # Structure for table "city_option"
@@ -69,6 +69,7 @@ CREATE TABLE `company` (
 # Data for table "company"
 #
 
+INSERT INTO `company` VALUES (7,'C1521274882','Villacar Transit','12345678901','We are a domestic transport company that existed for more than a decade.','torredale1014@gmail.com','Dale Torre','(+61) 234-567-890','(+61) 123-213-131','Billboard, Billboard','Domestic Transport','1','1');
 
 #
 # Structure for table "downloads"
@@ -114,6 +115,7 @@ CREATE TABLE `dtr` (
 # Data for table "dtr"
 #
 
+INSERT INTO `dtr` VALUES (83,10,'E1521275321','16:33:24','16:33:27','16:33:25','16:33:25','16:33:26','16:33:26','16:33:27','16:33:27','2018-03-16','4'),(84,10,'E1521275321','16:33:40','16:33:43','16:33:40','16:33:41','16:33:41','16:33:42','16:33:43','16:33:42','2018-03-15','4'),(85,0,'E1521275321','16:51:34','16:51:36',NULL,NULL,NULL,NULL,NULL,NULL,'2018-03-17','4');
 
 #
 # Structure for table "employee"
@@ -133,6 +135,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (6,7,'E1521275321','2018-03-17 16:28:41','1');
 
 #
 # Structure for table "faq"
@@ -171,6 +174,7 @@ CREATE TABLE `hr` (
 # Data for table "hr"
 #
 
+INSERT INTO `hr` VALUES (1,'hr','1','torredale1014@gmail.com','0');
 
 #
 # Structure for table "inquiries"
@@ -211,6 +215,7 @@ CREATE TABLE `interview_date` (
 # Data for table "interview_date"
 #
 
+INSERT INTO `interview_date` VALUES (7,'17','2018-03-17','13:00:00');
 
 #
 # Structure for table "job"
@@ -242,6 +247,7 @@ CREATE TABLE `job` (
 # Data for table "job"
 #
 
+INSERT INTO `job` VALUES (7,'1521274799',1,2,'Bus Driver','Villacar Transit','12345678901','torredale1014@gmail.com','Manager','(+61) 234-567-890','6100','Billboard, Billboard','0-1 Year','We are looking for an experience bus driver.',NULL,'1','Dale Torre');
 
 #
 # Structure for table "job_function"
@@ -341,6 +347,7 @@ CREATE TABLE `resume` (
 # Data for table "resume"
 #
 
+INSERT INTO `resume` VALUES (17,7,1,'E1521275321','1521275243','Sam','Sedayon','12-32-1321','09876172312','123123','torredale1014@gmail.com','(+61) 234-567-890','Billboard','Billboard','Bacolod','Negros Occidental','6100','sdfdsfdsfsfsfsdfsdafdsfdsfdsf','1521275243.txt','wwwwwwww','0','0',NULL,'1','1','0');
 
 #
 # Structure for table "timesheet"
@@ -361,6 +368,7 @@ CREATE TABLE `timesheet` (
 # Data for table "timesheet"
 #
 
+INSERT INTO `timesheet` VALUES (10,7,'E1521275321','Timesheet as of 2018-03-17 09:33:58','1','2018-03-17 16:33:58');
 
 #
 # Structure for table "timesheet_dispute"
@@ -398,3 +406,4 @@ CREATE TABLE `user` (
 # Data for table "user"
 #
 
+INSERT INTO `user` VALUES (9,'C1521274882','12345','Dale Torre','Villacar Transit','company'),(10,'E1521275321','12345','Sam','Sedayon','employee');
