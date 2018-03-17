@@ -3,20 +3,23 @@
     <img src="../include/assets/images/teamire-logo.png" width="80%">
   </a>
 
-    <div class="form-inline pull-right"  style="padding: 20px;">
+    <div class="form-inline pull-right"  style="padding: 20px;" id="myTopnav">
       <ul class="nav navbar-nav navbar-right nav-menu-right" id="above-nav">
         <li> <a class="m-l-3 m-r-3" href="../home/?view=projects" style="font-size:15px;">Supply Chain Projects</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=logins" style="font-size:15px;">Timesheets</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=downloads" style="font-size:15px;">Downloads</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=hiringForm" style="font-size:15px;">Request Staff</a></li>
         <li><a class="m-l-3 m-r-3" href="../home/?view=contactUs" style="font-size:15px;">Contact Us</a></li>
+      
       </ul>
     </div>
   </div>
         <nav style="padding-left: 2%;">
+      
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
-            <ul class="menu">
+
+            <ul class="menu">   
 
                 <li>
                     <!-- First Tier Drop Down -->
@@ -236,6 +239,7 @@ li > a:only-child:after { content: ''; }
         display: block;
     }
 
+
     /* Change menu item's width to 100% */
     nav ul li {
         display: block;
@@ -320,6 +324,7 @@ li > a:only-child:after { content: ''; }
     color: #337ab7;
     text-decoration: none;
     transition: color 0.1s, background-color 0.1s;
+        font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
 }
 #above-nav a {
     position: relative;
@@ -349,6 +354,59 @@ li > a:only-child:after { content: ''; }
     transform-origin: left top;
     transform: scale(1, 1);
 }
+
+@media all and (max-width : 768px) {
+#above-nav ul {
+    list-style: none;
+ 
+}
+#above-nav li {
+    display: block;
+    
+    
+}
+#above-nav a:hover, a:focus, a:active {
+    
+    text-decoration: none;
+    background-color: #fff;
+
+}
+#above-nav a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+        font-family: "Futura BT W01 Book",OpenSansRegular,"Open Sans Regular",sans-serif;
+         float: left;
+}
+#above-nav a {
+    position: relative;
+    display: block;
+   
+    line-height: 16px;
+    color: #337ab7;
+}
+#above-nav a::before {
+    content: '';
+    display: block;
+    position: inherit;
+    bottom: 0px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #337ab7;
+    transform-origin: right top;
+    transform: scale(0, 0);
+    
+}
+#above-nav a:active::before {
+    background-color: #337ab7;
+}
+#above-nav a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+}
+
 
 
 
