@@ -268,10 +268,12 @@ function sendInquiry()
 		$content = "From: $email<br><br>
 								Message: $message";
 
-		//send email to HR
-		sendEmail('rgmak12@gmail.com', $content);
+		$adminList = admin()->list("level='admin'");
+
 		//send email to admin
-		sendEmail('torredale1014@gmail.com', $content);
+		foreach($adminList as $row){
+			sendEmail($row->email, $content);
+		}
 
 		header('Location: ../home/?view=success');
 }
