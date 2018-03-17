@@ -22,11 +22,8 @@ $resume = resume()->get("username='$username'");
   <div class="col-md-5">
       <div class="text-center card-box">
           <h4>Timesheet</h4>
-          <button onclick="location.href='?view=employeeTimesheetList&employee=<?=$resume->username;?>'">
+          <button onclick="location.href='?view=timesheetList&employee=<?=$resume->username;?>'">
             View timesheet
-          </button>
-          <button onclick="location.href='?view=employeeTimesheetList&employee=<?=$resume->username;?>'">
-            Terminate
           </button>
       </div>
   </div>
