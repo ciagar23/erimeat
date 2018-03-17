@@ -14,7 +14,6 @@ $company = company()->get("Id=$Id");
               }
               ?>
               <br>
-              <button onclick="location.href='?view=clientForm&Id=<?=$company->Id?>'">Update</button>
           </div>
       </div>
   </div> <!-- end col -->
@@ -22,13 +21,10 @@ $company = company()->get("Id=$Id");
   <div class="col-md-5">
       <div class="text-center card-box">
           <h4>Jobs</h4><button onclick="location.href='?view=jobList&abn=<?=$company->abn;?>&isApproved=1'">
-            Approved:<br> <?=job()->count("abn=$company->abn and isApproved=1")?>
-          </button>
-          <button onclick="location.href='?view=jobList&abn=<?=$company->abn;?>&isApproved=-1'">
-            Denied:<br> <?=job()->count("abn=$company->abn and isApproved=-1")?>
+            Ongoing:<br> <?=job()->count("abn=$company->abn and isApproved=1")?>
           </button>
           <button onclick="location.href='?view=jobList&abn=<?=$company->abn;?>&isApproved=0'">
-            Requests:<br> <?=job()->count("abn=$company->abn and isApproved=0")?>
+            Requests:<br> <?=job()->count("abn=$company->abn and isApproved!=1")?>
           </button>
       </div>
   </div>

@@ -363,7 +363,7 @@ function setInterviewDate()
 							Teamire";
 	sendEmail($email, $content);
 
-	header('Location: index.php?view=applicants');
+	header('Location: index.php?view=resumeDetail&You have scheduled an interview for this applicant&Id=' . $Id);
 }
 
 function hireApplicant()
@@ -431,7 +431,7 @@ function denyResume()
 	$content = __moreInfoEmailMessage();
 	sendEmail($resume->email, $content);
 
-	header('Location: index.php?view=applicants');
+	header('Location: index.php?view=resumeList&isApproved=0&jobId=' . $resume->jobId);
 }
 
 function removeCompany()
