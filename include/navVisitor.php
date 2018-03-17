@@ -3,8 +3,8 @@
     <img src="../include/assets/images/teamire-logo.png" width="80%">
   </a>
 
-    <div class="form-inline pull-right" id="above-nav" style="padding: 20px;">
-      <ul class="nav navbar-nav navbar-right nav-menu-right">
+    <div class="form-inline pull-right"  style="padding: 20px;">
+      <ul class="nav navbar-nav navbar-right nav-menu-right" id="above-nav">
         <li> <a class="m-l-3 m-r-3" href="../home/?view=projects" style="font-size:15px;">Supply Chain Projects</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=logins" style="font-size:15px;">Timesheets</a></li>
         <li> <a class="m-l-3 m-r-3" href="../home/?view=downloads" style="font-size:15px;">Downloads</a></li>
@@ -301,20 +301,55 @@ li > a:only-child:after { content: ''; }
 
 }
 
-@media all and (max-width : 330px) {
 
-    nav ul li {
-        display:block;
-        width: 94%;
-    }
+#above-nav ul {
+    list-style: none;
+}
+#above-nav li {
+    display: inline-block;
+    padding-right: -20px;
+    
+}
+#above-nav a:hover, a:focus, a:active {
+    
+    text-decoration: none;
+    background-color: #fff;
 
 }
-@media all and (max-width : 330px) {
-
-    #above-nav {
-        display:block;
-        width: 94%;
-    }
-
+#above-nav a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
 }
+#above-nav a {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    line-height: 16px;
+    color: #337ab7;
+}
+#above-nav a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #337ab7;
+    transform-origin: right top;
+    transform: scale(0, 0);
+    
+}
+#above-nav a:active::before {
+    background-color: #337ab7;
+}
+#above-nav a:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+
+
 </style>
